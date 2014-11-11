@@ -1,0 +1,33 @@
+---
+title: Rails Database Mechanics
+---
+^
+#### Rails DB Mechanics
+* ActiveRecord
+	* Layer in RoR which is the connection between the rails application and the underlying database
+	* For advanced designs, there are options other than Activerecord
+* Naming
+	* Model.rb file is named singular, e.g. User
+	* Corresponding db table is plural and lower case, e.g. users
+* Correspondences
+	* Each instance of the class (e.g. User) corresponds to a single record in the dabase
+	* When a query returns a bunch of records, you get a collection of instances of the class
+	* (this is classic Active Record model)
+* Attributes
+	* Rails will automagically create the methods to access each field of the record in the database
+* Different database 'servers'
+	* Sqllite - local database, no need for a server
+	* MySql - Standard industrial strength database, free
+	* Postgress - Becoming very popular with Rails community
+* Migration [Rails Guide: Migrations](http://guides.rubyonrails.org/migrations.html)
+	* rails generate model -h
+	* rails generate migration -h
+* Datatypes supported by Rails
+	* <%= link_to_topic :db_types %>
+* Queries and other ways to access the database
+
+* Validations
+	* <%= link_to_topic :rails_validations %>
+* Tools and notes
+	* Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
+	* Handy Rake Info: <%= link_to_topic :rake_commands %>

@@ -1,0 +1,77 @@
+---
+title: HTML - Hypertext Markup Language
+---
+#### Introduction
+* Remember HTML is one of the core standards of the www: html, http, uri
+* HTML is a variant of XML. Many versions. Current/latest is html5
+
+##### Minimum Example
+
+* General structure of all html files. They all have this.
+<%= code_begin %>
+<!DOCTYPE html>
+<html> 
+  <head>
+  </head>
+  <body>
+  </body>
+</html>
+<%= code_end %>
+
+#### Tags
+* Very common tags
+  * `<h1>Largest header</h1>`
+  * `<a href="http://www.google.com">Link tag</a>`
+  * `<p>A paragraph of text</p>`
+  * `<ul>A bulleted (unordered) list</ul>`
+  * `<ol>A numbered (ordered) list</ol>`
+  * `<li>An item in either kind of list</li>`
+  * `<span>a named selection of text or other info</span>`
+  * `<div>a named block of text or other in a new rectangular block</div>`
+  * `<html>...</html>`
+  * `<head>...</head>`
+  * `<body>...</body>`
+* <%= discussion "What other tags would you say are 'very common'?" %>
+
+##### More about tags
+* There are a lot lot lot of tags: [WWWSchools Tags](http://www.w3schools.com/tags/)
+* Expect to look up the not so common ones. Or [Play with them online](http://cssdesk.com)
+* There are many tools for 'experimenting': [Online Playgrounds for html css and js](http://designshack.net/articles/css/5-online-playgrounds-for-html-css-and-javascript-compared/)
+* Like in xml, html tags can and often do have attributes
+
+#### Most common attributes class= and id=
+* In the language of xml and html, these are attributes
+  * e.g. `<h1 class="chapter">Chapter 1</h1>`
+  * e.g. `<div class="subchapter supplement">Supplementary</div>`
+  * e.g. `<p id="error">Please check the ignition</p>`
+
+##### *Important!*
+* These don't do anything **in html**. (<<- notice I said "IN HTML")
+* They just create names for elements of the page
+* Names are used in other contexts: css and javascript
+* They can be combined, e.g. `<p id="error urgent" class="homework">Please check the ignition</p>`
+
+#### Links and Forms and http
+* Remember the HTTP verbs: GET, PUT, POST and DELETE (there are a few more)
+* When I type a URL into the browser, it generates an HTTP GET with that URL
+* When I click on a link (`<a href="http://varperrater.com/configuration/23-12-933">show config</a>`) the browser also generates an HTTP GET to that URL.
+* Look at the form code below. When I press "Sign In!", it generates a "POST" to relative url `/sessions`, with two parameters with these names: "sessions[email]" and "sessions[password]"
+
+<%= code_begin %>
+<h3>Please Log In!</h3>
+<form action="/sessions" method="post">
+    <div>
+        email:
+        <input id="sessions_email" name="sessions[email]" type="text" />
+    </div>
+    <div>
+        password:
+        <input id="sessions_password" name="sessions[password]" type="password" />
+    </div>
+    <input name="commit" type="submit" value="Sign in" />
+</form>
+<%= code_end %>
+
+
+
+

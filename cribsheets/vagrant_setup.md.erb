@@ -1,0 +1,38 @@
+---
+title: Vagrant Setup
+---
+[Vagrant](http://www.vagrantup.com/) is a software that acts as a wrapper around [virtualization](http://en.wikipedia.org/wiki/Virtualization) software like [VirtualBox](https://www.virtualbox.org/) and [VMWare](http://www.vmware.com/), and provides a more convenient approach to setup reproducible and portable work environments and an efficient and flexible workflow. It can easily be integrated with [provisioning tools](http://docs.vagrantup.com/v2/provisioning/) like Chef and Puppet, and there are many useful plugins that can be installed to add optional features. <br/><br/>  
+
+
+####How to setup Vagrant
+
+1. Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). 
+1. After VirtualBox is installed (if you are using Windows make sure that you restart after installation completes), download [the provided Vagrant box](http://goo.gl/5H4Jrn)
+1. Download Vagrant from [here](http://www.vagrantup.com/downloads.html)
+2. Install it and make sure that you can run `vagrant` from your terminal (on windows run it in command prompt, and on OS X run it in Terminal app)
+3. If you are using Windows, restart your computer after Vagrant installation completes.
+4. Create a new directory anywhere you prefer. (This directory will contain Vagrant config file and all your projects' files)
+5. Open your terminal
+6. Go to the directory you created in step 3 by running `cd <path to your directory>`
+7. Run `vagrant box add <box name> <path to the .box file>` (e.g. `vagrant box add ubuntu13.10 ubuntu-13.10-i386.box`)
+8. Run `vagrant init <box name>`. Note: `<box name>` should be the same as the one you entered in step 6. (e.g. `vagrant init ubuntu13.10`)
+9. Run `vagrant up`
+
+If the last command works fine, you can connect to your box by running `vagrant ssh`. 
+<br/><br/>
+
+####Development Environment
+
+You may put your projects' files in the directory that you created during Vagrant setup so you would have access to it from your virual machine instance in /vagrant directory. You have two options to edit and run your codes:
+
+1. You can install Sublime Text on your host machine and write your codes there and then run them on your virtual machine instance. This way you can interact with your vm instance via ssh. 
+
+2. You can interact with your vm instance via GUI, and write your codes and run them on your vm instance. If you choose this option you have to enable vm GUI in your Vagrant config file by editing Vagrantfile that has been generated in the directory you created while setting up Vagrant and writing/uncommenting the following lines:  
+
+<pre>
+config.vm.provider :virtualbox do |vb|
+   vb.gui = true
+end
+</pre>
+
+**Note**: make sure you relaunch your vm instance after the changes by running `vagrant halt` and then `vagrant up`.

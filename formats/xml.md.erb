@@ -1,0 +1,34 @@
+---
+title: XML - Extensible Markup Language
+---
+#### Background
+
+* Extremely commonly used.
+* Graddaddy of them all. Totally abstract.
+* Self-describing, cross platform format for hierarchical data
+  * Especially in cross-platform/cross-architecture applications
+  * Very good support for different character sets
+* Basis for a lot of "open data"
+
+#### Example
+<%= code_begin %>
+<?xml version="1.0" encoding="UTF-8"?>
+<student>
+  <name>
+    Pito Salas
+  </name>
+  <gender>
+    male
+  </gender>
+</student>
+<%= code_end %>
+
+#### Characteristics
+* Precise nesting with <tags> and </tags> (case sensitive)
+* Attributes embedded in tags <a href="http://google.com">go to google</a>
+
+#### More info
+* Here's an example of a really big xml file: [Voting Data File](https://github.com/trustthevote/converter/blob/master/inputs/mason.xml)
+* An excellent viewer and editor for XML is [Xmplify](http://xmplifyapp.com)
+* Read more about XML tags at [XML TUtorial](http://www.w3schools.com/xml/)
+* <%= discussion "When would you use XML? If you didn't have XML what would you use?" %>

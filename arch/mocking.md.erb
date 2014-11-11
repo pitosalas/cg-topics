@@ -1,0 +1,27 @@
+---
+title: Mocking
+---
+##### Mocking
+* Overview
+	* SUT ("System under test")
+	* Collaborators (other objects needed to test SUT)
+	* Decoupling is a major goal
+* What is a Mock?
+	* An object that stands in for another object during testing
+	* Make sure that only the right methods are called
+	* Other terms: doubles, stubs, and others. Don't get confused.
+* Advantages
+	* Decoupling is always a good thing.
+		* Performance
+		* Maintainability
+		* Testability
+	* If you introduce a bug in a class
+		* Only the tests that are testing that class will fail
+		* So, fewer false positives
+	* Disadvantages
+		* Need to maintain to consistency between the mock and the class-being-mocked
+		* Otherwise you may be testing somethingn that doesn't even exist
+* Coding example: [Doubles Demo](https://github.com/pitosalas/doublesdemo)
+* Refs:
+	* [Minimalicious Testing in Ruby](http://blog.arvidandersson.se/2012/03/28/minimalicous-testing-in-ruby-1-9)
+	* Great conceptual overview: [Mocks aren't Stubs](http://www.martinfowler.com/articles/mocksArentStubs.html)

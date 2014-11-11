@@ -1,0 +1,54 @@
+---
+title: Git and Github
+---
+### What is git?
+
+Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on. 
+
+Here are some features of Git:
+
+* Keep separate branches of development
+* Rollback to a previous version if a bug was found
+* Different versions for development and deployment; the deployment version should be a stable one
+* Merging branches into one branch
+* ...
+
+There are tons of online resources available for learning git. Below is a list of some that you may find useful:
+
+* [try.github.com](http://try.github.com/) (beginner)
+* [Git Tutorial](http://www.ralfebert.de/tutorials/git/) (beginner)
+* [Git Ready](http://gitready.com/) (from beginner to advanced)
+* [Learn Git Branching](http://pcottle.github.io/learnGitBranching/) (beginner/intermediate)
+* [Understanding Git Conceptually](http://www.sbf5.com/~cduan/technical/git/) (intermediate)
+* [Pro Git](http://git-scm.com/book) (advanced)
+* [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/) (advanced)
+
+<%= include_image "git_file_status_lifecycle.png" %>
+
+###What is Github?
+
+Github is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
+
+##### Discussion points
+
+* What are the main benefits of using GIT when developing a project by yourself?
+* What are the main benefits of using GIT when developing a project with a team of coders?
+* What are the reasons to create a branch?
+* When several team members commit different changes on their local repositories, how do the reconcile their different changes in the main github repository?
+* What are the advantages to having a staging area? 
+* After discussing these "big picture" ideas, we'll look at the internals to see what Git is actually doing when you branch, commit, etc. 
+
+##### Some of the basic skills you'll need are
+
+* create a local repository (git init)
+* create a github repository and push your local repo to github
+* clone a github repository
+* create a temporary branch, make some edits, do some tests, merge it into your main branch, merge it into the team main branch
+* interrupt the work flow above to fix a critical bug by stashing your current work, checking out the main branch, creating a temp branch with the fix, merging it into main, switching back to your branch and applying your stashed work to get you back to where you were
+* pulling down someone else's committed changes and resolving the inevitable conflicts that have arisen (by deleting theirs and using yours!) then pushing
+* making a temporary extension, and rebasing several times as other people are committing their changes to the main branch on the shared server
+* viewing your current status
+* checking out another branch
+* tagging the current version (e.g. v1.0 or v1.3 or v1.3.7)
+* cloning a tagged version
+

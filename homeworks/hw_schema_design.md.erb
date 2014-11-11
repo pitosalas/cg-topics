@@ -1,0 +1,57 @@
+---
+title: Schema Design Exercises
+---
+#### Notation
+^
+    table users
+    	id: integer
+    	first_name: text
+    	last_name: text
+    	dob: date
+    	department_id: integer
+
+    table departments
+    	id: integer
+    	name: text
+    	budget: float
+
+    departments
+    	has_many users
+
+#### Assignment
+* Design as many of these as you can
+* Use the notation above (not a diagram or other fancy thing)
+
+##### Department and employees
+* an employee has a name and a birthday
+* a department has a name, a code, and a budget
+* an employee works in exactly one department
+
+##### Recipes
+* A recipe has one or more ingredients, one or more steps and an author
+* An ingredient has a name, an amount, and an optional sentence of instruction
+* A step has a name, a number and a sentence of text
+
+##### University
+* A student has a first and last name, and a date of birth
+* A university has a name
+* A university has multiple departments
+* A student belongs to exactly one university
+* A student can have zero or more majors (departments)
+* A course has a number and is taught in a department
+* A student is enrolled in 0 or more courses, for which they can have a grade
+
+##### Store
+* A store has a name and a url (e.g. amazon.com)
+* A store has many departments and many products
+* Products are in one or more categories, have a name and a price
+* A customer has a name and a credit limit
+* The customer can place an order
+* An order has one or more products, and a quantity ordered for each
+* An order also has a ship date, a tax amount, and a shipping charge
+
+
+
+
+
+

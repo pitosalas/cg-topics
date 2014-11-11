@@ -1,0 +1,112 @@
+---
+title: Forms and Views
+---
+
+#### Tour of the sample code
+* Reference containing all the code: [FormDemo](https://github.com/pitosalas/formdemo)
+* Feel free to look, but DON'T COPY/PASTE! I trust you otherwise why would I give you the repo?
+* Take 10 minutes now to grab the code from github and look around
+
+##### Models
+* There are 4 models
+  * Item (Has many comments)
+  * Category (Has many items)
+  * Comment (Belongs to a comment)
+  * Sample -- IGNORE THIS ONE
+
+##### Routes
+* <%= discussion "URLs, HTTP verbs and routes" %>
+  * What's a good URL to see all items?
+  * What's a good URL for search?
+  * What's a good URL for seeing a list of comments? Think again
+  * What's a good URL for creating a comment?
+  * Let's look at routes.rb and take turns explaining each line
+
+##### Rake Tips
+* rake db:migrate:reset
+* rake db:seed
+
+##### Let's look: Migrations
+* Nothing special going on
+* Notice exactlhy ONE per table (at this stage of the game)
+
+##### Let's look: Bootstrap
+* Not using any gems for now!!
+* Why is most of the Bootstrap setup in application.html.erb?
+* Where else do we see bootstrap?
+
+##### Partials
+* the _form.html.erb is a partial (view)
+* the same body of the form is used in a new and update scenario
+* Incorporate with `render 'partial'`
+
+##### Seed data
+* Put enough 'real looking' seed data so you can get a feel for the UI
+* seeds.rb is a regular ruby program. Look at sample code.
+
+
+#### How do Forms work?
+
+##### Conceptual
+* You need a form whenever the browser needs to send data to the server
+* `<form>` tag begins the group of fields. It declares the URL that payload is sent to
+  * There are zero or more fields
+  * There's always a "submit" link or button that triggers the sending
+  * `</form>` terminates the group
+* Sending always is done via some kind of HTTP request
+  * Payload is always name=value pairs, value is always text over the wire
+
+##### Rails
+* There are always TWO controller actions:
+  * one to display the form
+  * one to accept the data from the form
+  * Where can I find them for items?
+  * Two controller actions means TWO urls!
+* Display the form
+  * Let's look at what the HTML should look like
+  * Difference between `form_for` and `form_tag`: let's look at two examples
+  * Why is there an Item.new in the form display action (new)?
+* Accept data from the form
+  * What URL is requested to send the data? What http verb? Why?
+  * How does the data come back from the form?
+  * What can the controller do with that data?
+* Security issues
+  * What if the form payload is not coming from your form?
+  * What if your form has been modified inside the browser?
+  * Explain params.require()
+
+##### More complicated case
+* Nested resources
+  * A comment always belongs to an item
+  * What should the URL look like to display the form to create a comment (THINK!) What is the verb?
+  * Does the form display to add a comment work differently?
+    * Using form_for vs. form_tag in this situation
+  * What would the URL look like to accept the data of the new comment?
+    * Let's read the action and understand what it does
+  * How do you create a nested resource, i.e. a comment for item 3?
+
+##### Making Views DRY
+* When you see yourself writing the same html over and over again
+  * write a helper: let's do an example!
+  * write a partial: And let's do another example!
+
+#### Summary
+* Routes
+  * Understand the urls and verbs and how they map to controller actions
+  * Use rake routes to verify your understanding
+  * Make changes to routes.rb to get the urls and verbs you intend
+* Forms
+  * Two actions, one to display the form, one to send the payload to the server
+  * form_for and form_tag are equally good. In real cases you end up with form_tag often
+  * Understand params and params.require
+  * Forms for nested resources
+* Other tools
+  * helpers to generate repetitive html
+  * parials to build repetitive html
+  * rake db:migrate:reset and rake db:seeds
+
+#### Hacking the sample
+* Get formdemo to run on your computer
+* Update the new item form so it looks as pretty as the search form
+* Update the search form so the options actually work
+* Update the new item form so it shows a popup of categories instead of a blank

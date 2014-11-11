@@ -1,0 +1,105 @@
+---
+title: Hands-on with Rails DBs and Models
+---
+###### Database schema for an event schedule
+<%= code_begin %>
+Person(name, dob, gender, zipcode)
+Event(name, date)
+Registrations(person_id, event_id, status, comment)
+<%= code_end %>
+###### Create the database tables
+<%= code_begin %>
+rails generate resource Person name:string dob:date gender:string zipcode:string
+rails generate resource Event name:string event_date:date event_time:time
+rails generate model Registration person_id:integer event_id:integer
+<%= code_end %>
+###### Define sample data in seeds.rb 
+<%= code_begin %>
+Event.create(name: 'Welcome', event_date: 'Feb 1 2014', event_time: '12:00pm')
+Person.create(name: 'Angelo Smith', dob: 'Jan 2, 1991', gender: 'f', zipcode: 02474)
+Registration.create(person_id: 3, event_id: 2)
+<%= code_end %>
+###### Commands relating to seeding
+<%= code_begin %>
+rake db:create  # creates the database for the current env
+rake db:seed    # (only) runs the db/seed.rb file
+rake db:setup   # runs db:schema:load, db:seed
+<%= code_end %>
+###### Examining the DB from the SQL console
+*In the database console you can type classic SQL commands*
+<%= code_begin %>
+rails dbconsole
+.help
+.databases
+select * from people
+select * from people where id > 1
+<%= code_end %>
+###### Examining the databases from the Rails console
+*In the rails console you can type ruby commands (it's pry)*
+<%= code_begin %>
+ActiveRecord::Base.connection.tables
+Person.all
+Person.where(gender: 'm')
+Person.where("dob > ?", Date.new(1995))
+Person.where("dob > ?", Date.new(1995)).count
+<%= code_end %>
+###### CRUD operations (Create, Read, Update, Delete)
+<%= code_begin %>
+p = Person.new(name: "Pito", dob: '12-12-2012', gender: 'f', zipcode: 12355)
+p.new_record?
+p.save
+p = Person.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
+p.delete
+<%= code_end %>
+###### Associations, declared in models
+<%= code_begin %>
+class Person < ActiveRecord::Base
+  has_many :registrations
+  has_many :events, through: :registrations
+end
+class Event < ActiveRecord::Base
+  has_many :registrations
+  has_many :people, through: :registrations
+end
+class Registration < ActiveRecord::Base
+  belongs_to :person
+  belongs_to :event
+end
+<%= code_end %>
+###### Association, used
+<%= code_begin %>
+Person.find(1).registrations
+Person.where(name: "Angelo Smith").first.registrations
+Event.find(1).people
+<%= code_end %>
+###### Validations
+*Validations are applied by ActiveRecord, NOT the database*
+<%= code_begin %>
+validates :zipcode, length: { is: 5}    # declared in model file
+p = Person.find(1)
+p.zipcode = 1                           # assign invalid value
+p.valid?                                # explicit check
+p.save                                  # Is not permitted into the database
+p.save!                                 # Same but throws exception
+<%= code_end %>
+
+#### Appendices
+
+##### References
+* [Awesome Print](https://github.com/michaeldv/awesome_print)
+* [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+* [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)
+* [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
+* [ActiveRecord Validations](http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers)
+* [Validations Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/03_rails_validations/)
+
+##### Gemfile
+<%= code_begin %>
+gem 'pry-rails'
+gem 'pry'
+gem 'pry-debugger'
+gem 'pry-stack_explorer'
+gem 'awesome_print'
+gem 'hirb'
+<%= code_end %>
+

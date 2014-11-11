@@ -1,0 +1,84 @@
+---
+title: CSS (the good stuff)
+---
+#### Intro
+* CSS stands for Cascading Style Sheets
+* Key word there is "Style" as in "what things look like"
+* HTML by itself, when rendered in a browser, shows everything in a vanilla "black and white" style
+* HTML file linked to a corresponding CSS with a link tag in the head section of the html file: `<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">`
+* You can have multiple `<link>`s to css files, and they act as one big file
+* The following are *NOT RECOMMENDED*
+  * You can have css statements directly inside the `<head>` section of an html file
+  * You can even have css statements attached directly to an html tag, e.g. `<p style="font-size:200%;">`
+
+##### Purpose
+* CSS sole purpose is to add 'styling' to html pages
+* Styling: color, typography, spacing, positioning, animation, and so on
+* However it can sometimes look like it's adding major new functionality
+* <%= discussion "CSS experts: are these statements 100% true? Can you find exceptions?" %>
+
+#### Syntax, in general
+* Syntax of css is very simple, yet *very* powerful. Behavior can be confusing.
+* How powerful: Look at [CSS Zen Garden](http://www.csszengarden.com)
+ 
+##### Example
+<%= code_begin %>
+  p {
+    color:red;
+    text-align:center;
+  }
+<%= code_end %>
+* `p` is the selector. Indicates what tag(s) we want to add the style to
+* `{}` enumerates the styles
+* `color: red;` parsed as `property : value`
+* Don't forget the semicolon after the property:value (but not after the {})
+* Note: There are huge numbers of properties and values: [CSS Reference](http://www.w3schools.com/cssref/default.asp)
+
+##### CSS Selectors
+* Could write a whole course just on them (exagerating)
+* Building blocks:
+  * tag itself, e.g. p, or li, or body etc. (see html doc)
+  * class which is decorated with a period, so, for examle, .chapter
+  * id which is decorated with a # sing, so, for example, #error
+* The important selectors are just tag, class and id. The challenge is in how they are combined.
+
+
+| Selector combinations | CSS |
+|-
+Element|`ul { font-size: 12px; }`
+Class|`.front-page { font-size: 125%; }`|
+ID|`#remark { font-style: italic; }`|
+Compound|`ul#remark.front-page { display: none; }`|
+Compound|`.front-page.headline { background: light-blue; }`|
+Simple grouping|`h1, h2, h3 { color: red; }`|
+Descendant|`.front-page p { font-style: bold; }`|
+|-|
+||**...there are more subtler cases.**|
+|-
+{:.table}
+
+
+##### Example
+* CSS: 
+<%= code_begin %>
+p.warning {
+    color: red;
+}
+<%= code_end %>
+* HTML: 
+<%= code_begin %>
+<p class="warning">
+  It's important to remember to test the brakes!
+<p>
+<%= code_end %>
+* Notice that it's really hard to tell what CSS does without looking at the related html
+
+##### Box Model
+* Crucial to understand when working with spacing
+* See [Box Bodel](http://www.w3schools.com/css/css_boxmodel.asp)
+
+#### Tools
+* "Web Inspector" in your browser (Chrome, Safari, Firefox)
+* Reference: [W3CSchools CSS Intro](http://www.w3schools.com/css/css_intro.asp)
+* Experiment: [CSS Desk](http://cssdesk.com)
+

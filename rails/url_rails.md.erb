@@ -1,0 +1,52 @@
+---
+title: URL in Rails
+---
+#### Fundamental importance of the URI/URL
+* URI = "Uniform Resource Identifier"
+  * Used to be called "Universal Resource Locator" (URL)
+  * Because the resources were files on the disk of the server
+  * And the URL's path was really a path!
+* Focus now on the 'path' part of the URI
+* e.g. some ugly examples
+  * http://roomscheduler.com/reserve/room/3
+  * http://bookstore/gonewiththewind/order/3
+  * http://nyt.com/latest-updates?year=2014
+* e.g. some good examples
+  * http://roomscheduler.com/room/3/request
+  * http://bookstore.com/book/412/price
+  * http://tourmanager.com/city/boston/tour/tuesday/new
+* There are many ways to structure a url
+
+#### RESTful style of URI design
+* "Representational State Transfer" (See [Original REST Paper](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm))
+* Each URI denotes a specific 'resource'
+  * 'room 3' or 'book 412' or 'tuesday tours IN Boston city'
+  * It is usually not a file but something generated 'on the fly'
+  * Still the same URI should yield the same resource every time (handwave)
+* Each URI is used in combination with an HTTP "method"
+  * Get: retrieve the indicated "resource"
+  * Put: update value of the indicated resource
+  * Delete: delete the indicated resource
+  * Post: Create a new instance of indicated resource
+  * (some other, less important ones)
+
+#### One of the earliest design questions
+* What do the URLs for my app look like?
+* Conceptually, they are "directory structure-like" URLs
+* There is a coherent "syntax" about them, e.g.
+  * http://www.myservice.org/discussion/topics/{topic}
+  * http://www.myservice.org/discussion/2008/12/10/{topic}
+  * http://www.myservice.org/discussion/{year}/{day}/{month}/{topic}
+* Touchpoints, coming soon:
+  * rails generate resource
+  * rails routes
+  * default controllers
+  * In other words, you don't have to follow this form of URL but...
+  * You really should follow it because a lot of things fall into place.
+
+#### Appendix
+* [Rails Routing Guide](http://guides.rubyonrails.org/routing.html)
+* [RESTful Web Services: The Basics](http://www.ibm.com/developerworks/webservices/library/ws-restful/)
+
+
+

@@ -1,0 +1,85 @@
+---
+title: Demo of controllers and resources
+---
+#### Setup
+  * We're going to build a simple blogging system
+  * Posts and comments
+  * Do these commands in the shell
+<%= code_begin %>
+rails new resdemo
+rails generate scaffold Post title:string body:text
+rails generate scaffold Comment body:text post_id:integer
+rake db:migrate
+<%= code_end %>
+
+#### Review
+* Examine db/migrations/*
+* Examine app/models/*
+* Examine config/routes.rb
+* Examine app/controllers
+* Examine app/views
+
+#### Routes
+* Run `rake routes`
+<%= code_begin %>
+      Prefix Verb   URI Pattern                  Controller#Action
+    comments GET    /comments(.:format)          comments#index
+             POST   /comments(.:format)          comments#create
+ new_comment GET    /comments/new(.:format)      comments#new
+edit_comment GET    /comments/:id/edit(.:format) comments#edit
+     comment GET    /comments/:id(.:format)      comments#show
+             PATCH  /comments/:id(.:format)      comments#update
+             PUT    /comments/:id(.:format)      comments#update
+             DELETE /comments/:id(.:format)      comments#destroy
+       posts GET    /posts(.:format)             posts#index
+             POST   /posts(.:format)             posts#create
+    new_post GET    /posts/new(.:format)         posts#new
+   edit_post GET    /posts/:id/edit(.:format)    posts#edit
+        post GET    /posts/:id(.:format)         posts#show
+             PATCH  /posts/:id(.:format)         posts#update
+             PUT    /posts/:id(.:format)         posts#update
+             DELETE /posts/:id(.:format)         posts#destroy
+<%= code_end %>
+#### Play with the server
+* Run the rails server (`rails server`)
+* Access these urls from your browser observe error messages, and refer to rake routes above
+  * http://0.0.0.0:3000/posts
+  * http://0.0.0.0:3000/posts/1
+  * http://0.0.0.0:3000/comments/1
+  * http://0.0.0.0:3000/posts/1/comments/1
+* Note: no nesting! 
+
+#### Update the controllers
+* Now we add some code for controllers and views
+<%= code_begin %>
+rails generate controller Posts new create update edit destroy index show
+rails generate controller Comments new create update edit destroy index show
+<%= code_end %>
+* Experiment with the urls again
+  * http://0.0.0.0:3000/posts/1/comments/1
+  * Nesting still doesn't work
+
+#### Nesting happens in routing
+* Before:
+<%= ruby_begin %>
+# config/routes.rb
+  resources :posts
+  resources :comments
+<%= ruby_end %>
+* After:
+<%= ruby_begin %>
+# config/routes.rb
+  resources :posts do
+    resources :comments
+  end
+<%= ruby_end %>
+
+#### Review results
+* Review `rake routes`
+* Illustrate what is happening by adding params.inspect in various views.
+
+
+
+
+
+
