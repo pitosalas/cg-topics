@@ -1,7 +1,7 @@
 ---
 title: Git and Github
 ---
-### What is git?
+#### What is git?
 
 Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on. 
 
@@ -12,6 +12,30 @@ Here are some features of Git:
 * Different versions for development and deployment; the deployment version should be a stable one
 * Merging branches into one branch
 * ...
+
+#### Recommended local directory structure:
+<%=code_begin%>
+~/mydev
+    /pa1
+    /pa2
+    /project1
+    /etc.
+    ...
+<%=code_end %>
+
+#### Top 5 commands
+
+* Commands done only from your top level "mydev" directory
+    * git clone (create a new directory from a repo on github)
+* Commands done from inside an individual repos local directory
+    * git add --all (add all changed files to staging)
+    * git commit -m "message" (create a "commit" with all staged files)
+    * git push (push all local commits up to github)
+    * git pull (pull any changes made from github to look at it locally)
+    * git status (see where things stand)
+* NB: Don't do a git clone from 'inside' a local repo directory
+
+#### Resources
 
 There are tons of online resources available for learning git. Below is a list of some that you may find useful:
 
