@@ -1,7 +1,12 @@
 ---
 title: Scaling
 ---
-#### Scaling and Performance
+#### Scaling
+* If you are interested in this topic, look at Cosi 105b, which covers it in much more depth!
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/Rl5WFz6Gi28" frameborder="0" allowfullscreen></iframe>
+
+#### Thought experiment
 * Real world example: cafeteria flow chart
 * Optimization:the search for bottlenecks.
 * What's a bottleneck? Refer back to the cafeteria example.
@@ -11,11 +16,7 @@ title: Scaling
 * **Important:** Measurement
 * **Worse sin:** Optimizing early. Why?
 
-##### Server Push
-* Review architecture and why
-* Look at code
-
-##### Performance
+#### Performance
 * Performance is what what a user experiences as "slow" or "fast"
 * Response time to an operation initiated by the user
 * Perception!
@@ -24,11 +25,7 @@ title: Scaling
 	* Anticipation: start doing work before user requests it
 * Different (but intertwined with) scaling
 
-<%= include_image "twittererror.png"%>
-
 ##### Scaling
-* Image above is likely a scaling problem
-
 * "How many X per minute can you do"
 	* (e.g. user log ins, page refreshes, notifications,...
 * How many (users, sessions, videos, pictures, etc) does the site need to support
@@ -42,7 +39,7 @@ title: Scaling
 	* database partitioning and sharding
 	* asynchronous processing
 
-##### Patterns of scaling problems and solutions
+#### Patterns of scaling problems and solutions
 
 * "Clients" = web browsers accessing the site, mobile apps accessing the site, etc.
 * Load on the servers. Some scenarios, one or more of:

@@ -1,0 +1,21 @@
+---
+title: Continuous Integration and Deployment
+---
+
+#### Continuous Integration and Deployment
+* Objective 1: Make sure that bugs are detected as early as possible
+  * Make sure that your source code is consistent, and integrates
+  * How? Have as much testing as you can
+  * Push all code to your source code repository
+  * Automatically triggers a pull/run all tests
+  * Ideally: report to team and to individual developer
+* Objective 2: Make sure users can start playing with new product asap
+  * Once integration works, push it out to a server
+  * Often there's a test or staging server
+  * Historically: Release every year, 6 months, month, week. Now: Serious standard is release multiple times a day!
+  * Automatic and continuous deployment
+* Let's take a look at my Codeship.io and Heroku.com installations and review how they work
+
+##### Reference
+* [Rails Integration Testing](http://babinho.net/2013/03/rails-integration-testing-with-minitestspec-and-capybara)
+* [Deploy from Codeship.io to Heroku](https://www.codeship.io/documentation/tutorials/continuous-deployment-heroku-github-ruby-rails/)

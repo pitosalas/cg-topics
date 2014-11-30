@@ -1,0 +1,24 @@
+---
+title: Feature Switches
+---
+* A direct result of engaging in continuous integration
+* How it works:
+  * Usually the toggling happens in the UI.
+  * Defines a sybol list of features that you may want to hide, e.g. "petSurvey", "profileUpload", "FacebookIntegration"
+  * And then "guard" the corresponding html, making sure user cannot get to that feature
+  * Site Administrator is able to turn on and off features without re-deploying
+<%= code_begin %>
+    <toggle name="petSurvey">
+      <p>Take our new <a href = 'petSurvey'>pet survey</a></p>
+    </toggle>
+<%= code_end %>
+* Reasons
+  * Hide a feature that is not done yet
+  * Hide a feature that you discovered is broken
+  * Hide a feature that is killing performance
+  * Split testing
+
+##### Reference
+* [Marin Fowler on Feature Toggle](http://martinfowler.com/bliki/FeatureToggle.html)
+* [Fearure Switches at Flickr](http://code.flickr.net/2009/12/02/flipping-out/)
+
