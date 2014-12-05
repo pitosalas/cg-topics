@@ -4,7 +4,7 @@ desc: Load up a big data file with movie data and compute some simple statistics
 ---
 Social networking-based webapps often collect a huge amount of information about the members of the community.  One of the most exciting developments in the past decade has been the development of tools for analyzing this data to provide value for the community.  For this assignment, you are to write a ruby program that reads in a large data set and produces some analysis.  
 
-##### Data
+#### Data
 
 The data set, ml-100k, consists of 100,000 ratings of 1682 movies from 943 users and can be downloaded from one of these places:
 * http://www.grouplens.org
@@ -16,7 +16,7 @@ The main data set u.data consists of 100,000 rows where each row has 4 tab-separ
 * timestamp
 More information about the users and movies can be found in other files, but you don't need that info for this assignment.
 
-##### Programn
+#### Program
 
 * You should write a program movie_data.rb containing a class MovieData with the following methods
 	* load_data  - this will read in the data from the original ml-100k files and stores them in whichever way it needs to be stored
@@ -29,9 +29,9 @@ More information about the users and movies can be found in other files, but you
 	* Describe an algorithm to predict the ranking that a user U would give to a movie M assuming the user hasn't already ranked the movie in the dataset.
 	* Does your algorithms scale? What factors determine the execution time of your "most_similar" and "popularity_list" algorithms.
 
-##### Deliverable
+#### Deliverable
 
 * <%= deliverable "upload a repo to your github account containing" %>
 	* the movie_data.rb source code 
 	* a transcript of running your code and generating the first and last ten elements of popularity list and most_similar(1)
-* <%= deliverable "a screenrecording showing you running the script in movie_data.rb" %>
+* <%= deliverable "a screenrecording showing you running the script in movie_data.rb" %>. See [Screen-cast-o-matic](http://screencast-o-matic.com) for a very simple, free, cross platform way to make a screen recording. Make a recording of you showing me how you run your app and also any part of the code that you think is interesting. %>
