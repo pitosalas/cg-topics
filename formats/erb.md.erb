@@ -1,18 +1,7 @@
 ---
 title: ERB (with Rails)
 ---
-#### Intro to ERB
-* "Embedded Ruby"
-* One of a class of 'template languages'
-* There are many
-* They do a simple job (used to be called "mail merge")
-
-##### What it does
-* Erb file without any `<% %>` blocks remains unchanged
-* `<% %>` **must** contain legal ruby code
-* Let's look at [ErbDemo](https://github.com/pitosalas/erbdemo)
-* The code between the angle brackets is evaluated.
-* *And only in the case of `<%= %>` it's inserted into the resulting text
+<%= include_topic :erb_crib %>
 
 #### How it works with Rails
 * ERBs are used primarily in views (also known as view templates in rails)
