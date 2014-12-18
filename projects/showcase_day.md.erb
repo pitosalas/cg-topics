@@ -1,0 +1,40 @@
+---
+title: Showcase Day
+---
+#### Plan
+
+1. Each team will have an 8 minute presentation which will be timed.
+1. Please reserve questions to the end of each presentation
+1. Product Reviewers, please make notes on this sheet with your feedback on each product.
+
+
+<% table = ::TableHelper.new(:normal) %>
+<% table.headers("Product", "Blurb") %>
+<% table.row("GLDB, ", "The Global Literary DataBase: Have you ever read a really great book and want to know more about it or were wondering if your favorite characters are in other similar books? You go to Wikipedia but the information you are looking for is buried half way down the page. Any book can now be at the ends of your fingertips: search by title, author, synopsis, and more in the global database.") %>
+
+<% table.row("DRYAD", "We provide a platform through both hardware and software to teach users how to care for plants in an interactive way. We sell water/soil sensors that relay information about the soil state and plant environment to our database where we use algorithms based off of known information about the plant type to advise users how to care for their plants. We will advise users through an interactive dashboard and custom notifications such as email and/or push notifications to mobile.") %>
+
+<% table.row("Moodle Store", "Moodle is the leading open source learning platform used globally thousands of schools. There is a thriving community of add ons and plugins that begging to be rationalized. We are building an online store selling all things Moodle. From basic libraries, to complex themes with coherent reviews and rating system and easy installation of the products. We are helping solve the problem of scattered and unorganized search of Moodle software.") %>
+
+<% table.row("PulseX", "Stress is a killer and a huge obstacle in the way of your well-being and optimal performance. We at PulseX want to change that. We are leveraging the emergent wearables trend to track your vitals, alert you when you get too stressed and offer you personalized suggestions that will help you improve your mood and go through the day a happier person!") %>
+
+<% table.row("Odds", "We’ve designed a new kind of fun and we hope viral game. It asks the question: \"What are the odds of getting your friends carry out crazy dare?\" Find out with Odds and get them do it!") %>
+
+<% table.row("Unav", "We’re building Unav, a cross-platform application that revolutionizes on-campus navigation by offering its users precise step-by-step directions to navigate between locations on campus down to the very room.  With Unav, complete with detailed campus maps, blueprints, and simple navigational directions, students and visitors alike will no longer be intimidated by the often complex layouts of college campuses.") %>
+
+<% table.row("Peal", "An app to discover events in your area. Sort by category and location and peal events that you are attending to share them with your friends and add them to your calendar.") %> 
+<%= table.render %>
+
+#### Feedback
+
+<% table = ::TableHelper.new(:big) %>
+<% table.headers("Awesome", "Great", "Good", "Ok", "", "Please enter your comments for the team") %>
+<% table.row("GLDB", "", "", "", "", "", "", "") %>
+<% table.row("DRYAD", "", "", "", "", "", "", "") %>
+<% table.row("Moodle", "", "", "", "", "", "", "") %>
+<% table.row("PulseX", "", "", "", "", "", "", "") %>
+<% table.row("Odds", "", "", "", "", "", "", "") %>
+<% table.row("Unav", "", "", "", "", "", "", "") %>
+<% table.row("Peal", "", "", "", "", "", "", "") %>
+<%= table.render %>
+
