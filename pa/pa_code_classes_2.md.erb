@@ -1,0 +1,45 @@
+---
+title: Simple car game
+---
+#### This programming assignment is a little different.") %>
+
+* You will have 20 minutes in class to work on it
+* The objective is a baseline assessment of what you learned in Cosi 12 or Cosi 21
+
+<%= callout("NOTE", " You can use any programming language or do it in pseudo code. Get as far as you can. Partial work will get credit.
+") %>
+
+#### Car game
+In this game there are parking garages where vehicles are parked. Parkingn garages can have more than one level. There are three kinds of vehicles, cars, suvs, police cars. THe assignment is:
+
+* We want to represent a parking garage. 
+  * Each parking garage can have 1 or more levels
+  * Each level can hold zero or more vehicles
+
+* We want to represent vehicles
+  * All individual vehicles has: integer height (centimeters)
+  * There are three types of vehicle, with slightly different properties
+    * car: 
+      parking)fee: integer 10 ($/hour)
+      service_requested: true/false
+    * police car: 
+      * parking_fee: integer 0 ($/hour)
+      * on_emergency: true/false
+
+* Define a class structure for each of those. You may use inheritence if you want.
+* The Garage class should include methods as follows:
+  * add_level() - allocates a level. Happens only once when the garage is first created.
+  * count_cars() - returns a count of how many police cars there are in the garage
+  * count_police_cars()
+  * car_arrives() - adds a car to a free space on any floor
+  * car_departs() - removes a car from the garage (assuming the car is there)
+  * print_report() - shows how many floors the garage has and how many vehicles of what kind are on each level
+* The Level, PoliceCar, Car classes all have constructors and other methods
+
+* Write a main program that:
+  * Creates a garage with two levels
+  * Creates 3 cars and one police car
+  * Notes the arrival of all four vehicles
+  * Prints a report of the current status of the garage
+  * Notes the departure of all four vehicles
+  * Prints a report of the current status of the garage
