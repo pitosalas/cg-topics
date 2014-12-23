@@ -39,22 +39,14 @@ The MovieTest object also has several instance methods:
 
 You should write comments for each of the methods of your two classes and use Rdoc to generate HTML documentation for the two classes. Put the documentation folder and the two classes in a folder called PA2, and upload PA2 to github.
 
-##### What to hand in.
+#### Final work product
 
-<%= deliverable "A blog post with the following components" %>
-
+1. Create a new repo on Github with your complete program. Take a look at [Codeclimate.com](www.codeclimate.com). Code climate is free when applied to "open source" github repos. Open source for github is simply a "public" repo. Run Codeclimate.
+  
+1. Submit a post with the following information about your solution:
+  * The url to the CodeClimate report for your solution
   * The Algorithm. A description of your prediction algorithm and what you think are its advantages and drawbacks. 
   * The Analysis. A description of the result of running some experiments to determine the accuracy of your method (using the z.run_test(k) method and the MovieTest methods.
   * Benchmarking. An estimate of the time it takes run each prediction (determined by using Time.now to capture the current clock time before and after making k predictions) and an explanation of what you think will happen to that time if you increase the size of the training set by a factor of 10 or 100....
-  * Connection to your Incubator Project. A description of the kind of data your webapp could collect and the kinds of predictions it could make (if you wanted to do so....)
-  * Also please update this spreadsheet with the result of your test: [PA2 Results metrics summary](https://docs.google.com/spreadsheet/ccc?key=0Avr8qvL1EWecdGxsejRzSHM2MlJBZE0yb3BzRHB5R0E#gid=0)
 
-<%= deliverable "Comments on at least two (was four) of your fellow student's blog posts." %>
-
-<%= deliverable "The code for your classes in movie_data.rb and movie_test.rb uploaded to github in a folder called PA2" %>
-
-<%= deliverable "A short screen recording showing you using irb to load the ml-100k folder into MovieData, run some tests of the instance methods, generate a MovieTest data with 10 rows from the testing set, and running the instance methods of the MovieTest object. " %> <%= nb "It's fine to just run a ruby program from the comamnd line but make sure the output is understandable and explain what you are doing!" %>
-
-<%= deliverable "A link of the result of submitting your code to code climate" %>
-
-<%= important %> This will take a few hours but don't spend too much time trying to get a super accurate prediction algorithm.  There are several published papers on this subject and the goal here is just to give you some practice writing useful Ruby code and the let you think about big data for your own applications....  If you want to create a really good prediction algorithm.  First complete this PA2 with a really simple predictor and get everything done.  Then go back and refine the algorithm, but only if you don't have more important projects to work on!  This is a really fun kind of project to work on, especially once you start getting the hang of writing ruby code to implement sophisticated algorithms.  We'll discuss some very simple algorithms in class...
+<%= callout("NOTE", " This will take a few hours but don't spend too much time trying to get a super accurate prediction algorithm.  There are several published papers on this subject and the goal here is just to give you some practice writing useful Ruby code and the let you think about big data for your own applications....  If you want to create a really good prediction algorithm.  First complete this PA2 with a really simple predictor and get everything done.  Then go back and refine the algorithm, but only if you don't have more important projects to work on!  This is a really fun kind of project to work on, especially once you start getting the hang of writing ruby code to implement sophisticated algorithms.  We'll discuss some very simple algorithms in class...") %>
