@@ -8,12 +8,27 @@ desc: Help visitors to your campus not get lost as they try and find a building,
 
 * **Tweet length summary of project:** Human readable, non-GPS, directions between locations on a campus
 
-* **Product Summary:** 
+* **Product Summary:** For any particular 'campus' there are buildings, floors, landmarks, parking lots, offices. Visitors to the campus need directions as simple as how do I get from the parking lot to the CEOs office. Or how do I get from T-Lot to Pito's office. This system will generate such directions initially in English and display or text them to a recipient. 
 
-* **Elevator pitch:** 
+* As an example: 
+
+  "...After you park, look for a big circular building that looks like a top hat. Walk towards it, passing it on the right. When you get to the corner (with the stop sign) you will see a big lawn with a glass and green building behind it. Walk towards that building and pass it on the right. You will get to a smaller green lawn. Right ahead you will see a low slung concrete building with a set of concrete stairs going into it. Walk there and up those stairs and you have arrived at Feldberg."
+
+* Implementation note: A possible technique is to organize a set of landmarks by name, with arcs connecting the ones that can be reached combined with a sentnece that would represent that part of the directions.
+
+* **Elevator pitch:** Don't you always get lost finding an office, a conference room or a building on a new large campus? This product will generate fully readable, customizable directions that can be texted or emailed to a visitor.
 
 * **Describe the customer(s):** 
+  * A new visitor to a campus of any kind, but especially a largish one. It does not have to be a college, it could be a corporate or governmental.
+  * Someone who is trying to be helpful to a new visitor coming to such a campus
+  * The 'management' of such a campus who wants to provide a generally useful resource on their web site to supplement the generally useless maps that are incomplete and not detailed enough.
 
 * **Describe what "jobs" the product will do for the customer:**
+  * Generate reliable directions for the visitor to use to find where they are going
+  * Generate reliable directions for the occupant trying to direct someone
+  * Produce a really useful feature for the web site of the 'management'
 
 * **Customer Pains/Gains:** [describe what problems the product will eliminate for the customer]
+  * I get lost finding a location
+  * I have to struggle to generate useful directions to give a visitor
+  
