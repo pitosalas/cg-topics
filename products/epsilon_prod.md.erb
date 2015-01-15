@@ -1,0 +1,71 @@
+---
+title: Epsilon
+desc: Physical media database and playlist manager for radio stations
+---
+* **Proposer:* Jess Ochs-Willard
+
+* **Product name:** Epsilon
+
+* **Tweet length summary:* Physical media database and playlist manager
+for radio stations
+
+* **Product summary:* Epsilon will be a web service for both terrestrial and online radio stations that encourages the station’s DJs to log
+the music they are playing, generate playlists accessible to the
+general public either through the site or an embedded widget,
+review and rate albums, songs, and artists, and access the reviews
+and ratings of other DJs and possibly radio stations that use the
+service. This will promote a deeper knowledge of the physical
+library, which is increasingly overlooked in an age of Spotify,
+Google Music, Youtube, etc., but which offers higher quality audio
+and media that is often not available on any streaming
+source.
+
+* **Customer base:** Terrestrial and online radio stations with large
+libraries of physical media. This is not a massive customer base,
+but it seems like a tuned-down version of the business-to-business
+software model (e.g. Salesforce) which to me is more interesting
+than consumer apps
+
+* **What does it do for the customer:** Epsilon makes available the full
+contents of any radio station’s physical library, along with the
+physical location of said media in the library, and offers
+semi-crowdsourced ratings and reviews, so that DJs will know what
+their peers like or dislike
+
+* **Personal statement:** I’m the General Manager of the campus radio
+station, WBRS, and I used to be the tech director, and it dismays
+me to see DJs play all of their music off their computers. It
+sounds worse, and it’s honestly super cool to browse through the
+library and find new things. That’s too much of a commitment for
+people, but it would be a great first step to allow them to find
+out what other students like and where it lives, and maybe they’ll
+find something else they like when they go to get that CD or
+vinyl
+
+* Basic Database Schema:
+
+* Entity: Album
+  * Name
+  * Songs
+  * Artist
+  * Release Date
+  * Reviews
+  * Rating
+  * Location
+  * Length (time)
+
+* Entity: Song
+  * Name
+  * Album
+  * Length (time)
+
+* Entity: Artist
+  * Albums
+  * Songs
+
+* Entity: DJ
+  * Playlists
+
+* Entity: Playlist
+  * Songs
+  * DJ
