@@ -12,22 +12,32 @@ title: Object Oriented Concepts
 
 ##### Classes
 * Classes: How do you decide what a class is and what it is not?
-* What is the domain or the problem space or the problem domain?
-* Look for Nouns
-* Use "CRC Cards"
+  * What is the domain or the problem space or the problem domain?
+  * Look for Nouns
+  * Use "CRC Cards"
+  * Note: SRP: Single Responsibility Principle
+  * Ask yourself: "What does this class represemt/do"
 
-#### Objects
+##### Objects
 * Classes and objects are different!
 * Instance variables
 * Constructor (no destructor in Ruby!)
-
-##### Methods
 * Methods: private/public
-* Polymorphism
+
+##### Polymorphism
+* When the same interface can be used with objects of different classes
+  * Example: In ruby, message #to_s can be sent to objects of different classes
+  * Why is it useful?
+* Ways to achieve this:
+  * Inheritance
+  * "Duck" Typing
 * "Duck" typing.
-* How is duck typing is an alternative/complement to inheritence?
-* And what about Java interfaces?
-* Consider a method like #can_speak? in a gaming application
+  * Don't rely on the class/type of a thing to know what it can do
+  * Reverse it: based on what it can do, you can tell the type of a thing.
+  * How is duck typing is an alternative/complement to inheritence?
+  * And what about Java interfaces?
+  * Consider a method like #talk in a gaming application
+  * Here's <%= link_to_topic :duck_typing %>
 
 ##### Inheritance
 * inheritence: rarely is this the best solution
