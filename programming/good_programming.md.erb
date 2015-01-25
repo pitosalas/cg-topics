@@ -1,0 +1,54 @@
+---
+title: Good programming 
+---
+
+#### Good Programming
+* Disposable code
+  * Not designed
+  * Incomprehensible 1 year, 1 month, 1 week later
+  * Just barely works, no idea why
+  * "write-only"
+  * Long, ugly methods
+  * Bad or meaningless naming
+
+* Aesthetics
+  * Like a 'beautiful proof' or an 'elegant argument'
+  * Programming in the small or large can be beautiful
+  * [Smelly code](http://martinfowler.com/bliki/CodeSmell.html) is ugly, lacks beauty, is inellegant.
+
+* Code smells
+  * What are they?
+    * Signs that your code can be made better
+    * Things you should look for when doing a code review
+    * Learned from practical experience
+    * There are many lists, this is mine of the top ones
+  * The smells
+    * Large class: Class longer than 100 or so lines
+    * Large method: Method longer than 10 lines or so
+    * Long parameter list: methods with 4 or more parameters
+    * Single Responsiblity Violations: Class should do one thing
+    * Global variables: Almost always a very bad sign
+    * Bad Name: Non descriptive or very short variable names
+    * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
+    * Feature envy: A class that uses methods of another class exessively
+  * Smells can be ambiguous or language dependent
+
+* Slogans
+  * DRY: "Do Not Repeat Yourself".
+  * YAGNI: "You're Not Gonna Need It"
+  * NIH: "Not Invented Here"
+  * BDOF: "Big Design Up Front"
+
+* Other basic hygene
+  * What's the right amount of code commenting?
+  * How important is proper formatting?
+  * Why is naming important and what is it's connection to commenting?
+
+* ['Sandy Metz' Rules](http://robots.thoughtbot.com/sandi-metz-rules-for-developers)
+  * Classes can be no longer than 100 lines of code
+  * Methods can be no longer than five lines of code
+  * Pass no more than four parameters into a method
+  * Controllers (Rails) can insantiate only one object. Therefore views can only know about one instance variable, and only send methods to that object. (@view_presenter.user.username is not allowed)
+
+* Discussion about hard and fast rules
+  * Tools to automatically check: <%= link_to_topic :code_analysis %>
