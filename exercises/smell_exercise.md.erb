@@ -3,7 +3,17 @@ title: Smell Exercise
 ---
 * Take a look at the code below. You can copy it into your own text editor
 * Run it and understand what it does
-* Concentrate on two code smells
+* Concentrate on two code smells:
+	1. The unusual way that params.each works (line 3). Try to figure out what exactly that line is doing. Yes it's pretty clever but why did I write it that way, and what are some problems with that?
+	1. The convoluted way that price is computed (line 21). Generally when you have a nested calculation like that, and secondly when a class has some kind of "code" to distinguish types, this is a code smell and tells us that there's room for improvement.
+	1. And of course, this method is much longer than it should be.
+* Exercise:
+	1. Think: For 5-10 minutes, try to come up with how to improve the code. You will be doing some "refactoring" which is a fancy way to say changing the code that is written without changing it's functionality in any way.
+	1. Pair: For 5-15 minutes, discuss your solutions or ideas or questions with one or two other students sitting near you. Write an improved version of this program using the best ideas from all of you.
+	1. Share: I will invite various groups to talk about their solutions and proposals and bring you up to the board to present.
 
+#### Here's the code:
 <%= include_ruby :mountain_bike_refactor %>
 
+#### Comments
+* 
