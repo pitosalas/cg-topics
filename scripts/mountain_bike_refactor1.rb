@@ -1,4 +1,9 @@
 class MountainBike
+
+  TIRE_WIDTH_FACTOR = 250
+  FRONT_SUSPENSION_FACTOR = 100
+  REAR_SUSPENSION_FACTOR = 150
+
   def initialize(params)
     params.each { |key, value| instance_variable_set "@#{key}", value }
     
@@ -34,12 +39,17 @@ class MountainBike
     @owner
   end
 
+  def to_s
+    "Mountain bike - owner: #{owner}, off road ability: #{off_road_ability()}, price: #{price}"
+  end
+
 end
 
 pitos_bike = MountainBike.new(:owner => "Pito", :type_code => :rigid, :tire_width => 2.5)
-puts "#{pitos_bike.owner}'s bike will cost: $#{pitos_bike.price}"
+puts pitos_bike
 
 ricks_bike = MountainBike.new(:owner => "Rick", :type_code => :front_suspension, :tire_width => 2, :front_fork_travel => 3)
-puts "#{ricks_bike.owner}'s bike will cost: $#{ricks_bike.price}"
+puts ricks_bike
+
 
 
