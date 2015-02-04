@@ -1,22 +1,26 @@
 ---
 title: Code Smells
 ---
-* Code smells
-  * What are they?
-    * Signs that your code can be made better
-    * Things you should look for when doing a code review
-    * Learned from practical experience
-    * There are many lists, this is mine of the top ones
-  * The smells
-    * Large class: Class longer than 100 or so lines
-    * Large method: Method longer than 10 lines or so
-    * Long parameter list: methods with 4 or more parameters
-    * Single Responsiblity Violations: Class should do one thing
-    * Global variables: Almost always a very bad sign
-    * Bad Name: Non descriptive or very short variable names
-    * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
-    * Feature envy: A class that uses methods of another class exessively
-  * Smells can be ambiguous or language dependent
+#####Code Smells
+
+* What are they?
+  * Signs that your code can be made better
+  * Things you should look for when doing a code review
+  * Learned from practical experience
+  * There are many lists, this is mine of the top ones
+  * They are not hard-and fast
+* The smells
+  * Large class: Class longer than 100 or so lines
+  * Large method: Method longer than 10 lines or so
+  * Long parameter list: methods with 4 or more parameters
+  * Single Responsiblity Violations: Class should do one thing
+  * Global variables: Almost always a very bad sign
+  * Bad Name: Non descriptive or very short variable names
+  * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
+  * Feature envy: A class that uses methods of another class exessively
+
+<%= callout("Note", " Smells can be ambiguous or language dependent") %>
+
 * Some references
   * [Smells to Refactorings](http://www.industriallogic.com/wp-content/uploads/2005/09/smellstorefactorings.pdf)
   * [Sandi Metz' Rules for Developers](http://robots.thoughtbot.com/sandi-metz-rules-for-developers)
