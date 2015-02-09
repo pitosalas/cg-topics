@@ -1,0 +1,67 @@
+---
+title: Refactoring and Smell Exercise
+---
+
+#### Your assignment
+
+##### On your own
+1. Clone this repository to your portfolio so you can work on it: https://github.com/pitosalas/refactor_first.git
+1. Run the rental_test.rb unit test. Each "dot" is a passing test
+1. Read it and understand all the files. See the **Tour of the Code** below.
+1. Read my description of the **Smells In The Code** below.
+1. Read this detailed chapter about the "Compose Method refactoring" from a famous book: [Compose Method](http://www.informit.com/articles/article.aspx?p=1398607)
+1. Refactor the program to make it better
+1. Use the unit test to make sure that your program continues to work whenever you make a change.
+
+##### Find one or two other students to work with (total of 3 students max per group)
+1. On your own, try to come up with how to improve the code. You will be doing some "refactoring" which is a fancy way to say changing the code that is written without changing it's functionality in any way. Take 30 minutes or less doing this.
+1. Find 1 or 2 other students in our class to work with. This can be in person or over email. Please keep it honest and make sure the other students did the "on your own" part also and really worked on the code.
+* Discuss each person's views on the smells. Why are they a problem? How could they be improved? Together write the best improved version of this program using your best ideas.
+1. Write up a joint summary of your work (remember to include your names!). Discuss:
+  * What new Ruby you had to learn to accomplish this
+  * Explain each change you made an why you made it
+  * To give me useful feedback
+    * How much time did you work by yourself (each name)
+    * How much time did you work as a group
+    * What do you think of this assignment? 
+1. Combine the PDF of the summary and all the new .rb files into a .zip file and submit that
+
+#### Tour of the code: a simple movie rental store
+
+##### rental_test.rb
+* I am using a simple testing framework called "minitest". This is your first exposure to unit testing, a topic we are going to go much deeper into. It is all just regular ruby
+  * Line 6: a set of tests is given a name with a `describe` block
+  * line 7: Each time a test is run, the `setup` block is called to prepare variables
+  * line 17: Each individual test may start with an `it` block
+  * line 19: A `must_equal` method can be called on anything to check that the value is what is expected.
+* You can have many `it` blocks for many individual tests
+* If any of the `must` equal blocks fail that is displayed for you.
+* You can run the test simply by doing `ruby rental_test.rb` because it is a regular ruby file
+
+##### movie.rb
+* Movies have a title and a price code
+* Movies can have one of three price codes
+
+##### rental.rb
+* One act of renting a movie
+* Captures what movie is rented, and for how many days
+  * Line 6: Notice the parallel assignment, equivalent to two statements, @movie = movie; @days_rented = days_rented
+
+##### customer.rb
+* One customer, tracks the customer's name and rental history
+* The key method is `statement`. It returns a statement of the customers rental history for the customer, what movies were rented, how much each cost, and also accounts for their accumulated frequent renter points
+  * Line 11: `@rentals << arg` means to add a new element at the end of the array `@rentals`
+  * Line 22: the format `Movie::REGULAR` means to look inside the `Movie` class for a constant `called REGULAR`
+
+#### Smells in this code
+* I see several smells in this code. Do you? The `statement` method is way too long. Also it has a case statement based on a kind of a type_code. And definitely it has multiple responsibilities. There are other smells also.
+* We are going to approach fixing the long `statement` method by appliying a refactoring called "Compose Method". There are lots of links about Compose method that you can read up on. My summary of it is:
+  * Transform a long method so that you can readily understand it's logic
+  * Do this by identifying groups of lines which can be grouped logically
+  * Move each of those lines into a separate method. It's a good sign if you have a meaningful, intention revealing name for that method
+  * In the end, transform the original method's logic into a small number of intention-revealing steps at the same level of detail.
+* Notice again the use of a "type_code" to distinguish the three kinds of movie. Like I said in the last exercise, this is a likely code smell and ought to be eliminated.
+
+
+
+
