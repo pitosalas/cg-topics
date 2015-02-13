@@ -9,6 +9,18 @@ Person(name, dob, gender, zipcode)
 Event(name, date)
 Registrations(person_id, event_id, status, comment)
 <%= code_end %>
+###### Create rails app
+<%= code_begin %>
+rails new demo2
+<%= code_end %>
+##### Gemfile
+<%= code_begin %>
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'awesome_print'
+gem 'hirb'
+gem 'better_errors'
+<%= code_end %>
 ###### Create the database tables
 <%= code_begin %>
 rails generate resource Person name:string dob:date gender:string zipcode:string
@@ -25,6 +37,7 @@ Registration.create(person_id: 3, event_id: 2)
 <%= code_begin %>
 rake db:create  # creates the database for the current env
 rake db:seed    # (only) runs the db/seed.rb file
+rake db:migrate # Run latest migrations
 rake db:setup   # runs db:schema:load, db:seed
 <%= code_end %>
 ###### Examining the DB from the SQL console
@@ -33,8 +46,9 @@ rake db:setup   # runs db:schema:load, db:seed
 rails dbconsole
 .help
 .databases
-select * from people
-select * from people where id > 1
+.tables
+select * from people;
+select * from people where id > 1;
 <%= code_end %>
 ###### Examining the databases from the Rails console
 *In the rails console you can type ruby commands (it's pry)*
@@ -94,13 +108,3 @@ p.save!                                 # Same but throws exception
 * [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
 * [ActiveRecord Validations](http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers)
 * [Validations Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/03_rails_validations/)
-
-##### Gemfile
-<%= code_begin %>
-gem 'pry-rails'
-gem 'pry'
-gem 'pry-byebug'
-gem 'awesome_print'
-gem 'hirb'
-<%= code_end %>
-
