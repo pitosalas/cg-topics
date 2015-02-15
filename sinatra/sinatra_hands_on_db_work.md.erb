@@ -1,0 +1,224 @@
+---
+title: Hands-on with Sinatra Persistence
+---
+##### Database schema for an event schedule
+<%= code_begin %>
+Person(name, dob, gender, zipcode)
+Event(name, date)
+Registrations(person_id, event_id, status, comment)
+<%= code_end %>
+##### Required/desired Gems
+~~~
+$ gem install sinatra
+~~~
+
+##### Basic directory structure
+~~~
+demo_app/
+  config/
+    database.yml
+    environments.rb
+  db/
+    migrate/
+      .
+    schema.rb
+  models/
+    .
+  views/
+    .
+  Gemfile
+  Rakefile
+  config.ru
+  demo_app.rb
+~~~
+
+##### Config.ru
+~~~
+# Config.ru configures the interface between "Rack" and Sinatra
+
+require './demo_app'
+run Sinatra::Application
+~~~
+
+##### config/environments.rb
+~~~
+# These Settings Establish the Proper Database Connection for Heroku Postgres
+# The environment variable DATABASE_URL should be in the following format:
+#     => postgres://{user}:{password}@{host}:{port}/path
+# This is automatically configured on Heroku, you only need to worry if you also
+# want to run your app locally
+
+configure :production do
+  puts "[production environment]"
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+
+  ActiveRecord::Base.establish_connection(
+      :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+      :host     => db.host,
+      :username => db.user,
+      :password => db.password,
+      :database => db.path[1..-1],
+      :encoding => 'utf8'
+  )
+end
+
+configure :development, :test do
+  puts "[develoment or test Environment]"
+end
+~~~
+
+##### Gemfile
+~~~
+# Gemfile lists the gems and version numbers required for this app
+# Note: Always type "bundle" at command line after making a chance here
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "activerecord"
+gem "sinatra-activerecord"
+gem 'sqlite3'
+gem "pg"
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'awesome_print'
+gem 'hirb'
+~~~
+
+##### Rakefile
+~~~
+# Rake defines developer "tasks" to automate various typical activities
+
+require './demo_app.rb'
+require 'sinatra/activerecord/rake'
+~~~
+
+##### config/database.yml
+~~~
+# Create mapping from server "environment" (development|test|production) to database
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+~~~
+
+##### demo_app.rb
+~~~
+require 'sinatra'
+require 'sinatra/activerecord'
+require './config/environments'
+~~~
+
+##### Migration files
+~~~
+# 001_create_persons.rb
+class CreatePersons < ActiveRecord::Migration
+  def change
+    create_table :persons do |t|
+      t.string :name
+      t.date :dob
+      t.string :gender
+      t.integer :zipcode
+    end
+  end
+end
+
+# 002_create_events.rb
+class CreateEvents < ActiveRecord::Migration
+  def change
+    create_table :events do |t|
+      t.string :name
+      t.date :date
+    end
+  end
+end
+
+# 003_create_registrations.rb
+class CreateRegistrations < ActiveRecord::Migration
+  def change
+    create_table :registrations do |t|
+      t.integer :person_id
+      t.integer :event_id
+      t.string :status
+      t.string :comment
+    end
+  end
+end
+~~~
+
+##### Models
+~~~
+# models/event.rb
+class Event < ActiveRecord::Base
+end
+
+# models/person.rb
+class Person < ActiveRecord::Base
+end
+
+# models/registration.rb
+class Registration < ActiveRecord::Base
+end
+
+~~~
+
+###### Examining the databases from the Debugger
+<%= code_begin %>
+$ pry
+require './demo_app.rb'
+ActiveRecord::Base.connection.tables
+Person.all
+Person.where(gender: 'm')
+Person.where("dob > ?", Date.new(1995))
+Person.where("dob > ?", Date.new(1995)).count
+<%= code_end %>
+###### CRUD operations (Create, Read, Update, Delete)
+<%= code_begin %>
+p = Person.new(name: "Pito", dob: '12-12-2012', gender: 'f', zipcode: 12355)
+p.new_record?
+p.save
+p = Person.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
+p.delete
+<%= code_end %>
+###### Associations, declared in models
+<%= code_begin %>
+class Person < ActiveRecord::Base
+  has_many :registrations
+  has_many :events, through: :registrations
+end
+class Event < ActiveRecord::Base
+  has_many :registrations
+  has_many :people, through: :registrations
+end
+class Registration < ActiveRecord::Base
+  belongs_to :person
+  belongs_to :event
+end
+<%= code_end %>
+###### Association, used
+<%= code_begin %>
+Person.find(1).registrations
+Person.where(name: "Angelo Smith").first.registrations
+Event.find(1).people
+<%= code_end %>
+###### Validations
+*Validations are applied by ActiveRecord, NOT the database*
+<%= code_begin %>
+validates :zipcode, length: { is: 5}    # declared in model file
+p = Person.find(1)
+p.zipcode = 1                           # assign invalid value
+p.valid?                                # explicit check
+p.save                                  # Is not permitted into the database
+p.save!                                 # Same but throws exception
+<%= code_end %>
+
+#### Appendices
+
+##### References
+* [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+* [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)
+* [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
+* [ActiveRecord Validations](http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers)
+* [Validations Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/03_rails_validations/)

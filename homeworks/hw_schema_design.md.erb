@@ -1,22 +1,41 @@
 ---
 title: Schema Design Exercises
 ---
+#### Introduction
+This exercise lets you practice how to design a database. You've been introduced to this in preceding homeworks and classes, and this homework is a chance to rehearse the techniques of data modeling again.
+
+To review some of the material take a look at:
+
+  * [The basics of good database design in web development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/)
+  * <%= link_to_topic :data_modeling %>
+  * <%= link_to_topic :ar_db_mechanics %>
+
 #### Notation
+* Use this notation for this work.
+* It contains exactly the same information that you've presented before, but in all text
+* It is designed to correspond more closely to what you will be doing in your code
+* Notation "syntax"
+  * **table** `name` - the name of the individual relational table
+  * `attribute_name`: **datatype** - an individual column of a table
+  * `table1` **has_many** `table2` - One to many relationship
+  * `table3` **belongs_to** `table4` - Many to one relationship
+
+##### Example
 ^
     table users
-    	id: integer
-    	first_name: text
-    	last_name: text
-    	dob: date
-    	department_id: integer
+      id: integer
+      first_name: text
+      last_name: text
+      dob: date
+      department_id: integer
 
     table departments
-    	id: integer
-    	name: text
-    	budget: float
+      id: integer
+      name: text
+      budget: float
 
     departments
-    	has_many users
+      has_many users
 
 #### Assignment
 * Design as many of these as you can
