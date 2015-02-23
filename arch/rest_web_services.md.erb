@@ -43,11 +43,11 @@ title: REST and Web Services
   * GET http://www.facebok.com/users 
   * GET 0.0.0.0:3000/cards/1.xml
 * Some things are harder to fit with the model
-  * What might a fortune cookie service look like as REST?
+  * What might a horoscope service look like as REST?
   * The 'resource' here is a single fortune
-  * http://cookieserver.org/fortunes/1
-  * http://cookieserver.org/fortunes
-  * http://cookieserver.org/fortunes/random
+  * http://myhoroscope.org/fortunes/1
+  * http://myhoroscope.org/fortunes
+  * http://myhoroscope.org/fortunes/random
 
 * Note fortunes/random, random is not exactly identifying a resource; but close enough.
 * What if caching was done strictly by url?
@@ -55,7 +55,7 @@ title: REST and Web Services
     * some rhyme or reason on how to build urls and
     * make logical use of url space
     * Different 'representations' possible: html and xml, but others too, say csv or video
-    * Big one: Standards allow caching in the cloud
+    * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
 
 #### Leveraging Web Services
 * There are many many different kinds of services that deliver their info over a web service. 
@@ -75,7 +75,6 @@ title: REST and Web Services
   * Every call to the service includes a mandatory paramter
 
 ##### Case study
-* (Borrowed from Trade Assistant)
 * Problem: Need to get an assortment of information about stocks: price quotes, historical info, and so on.
 * Steps to solve the problem
   1. Locate an appropriate web service, with google and progammable web site
