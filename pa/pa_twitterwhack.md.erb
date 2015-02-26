@@ -1,0 +1,58 @@
+---
+title: Sinatra Twitterwhack
+---
+#### Assignment Overview
+
+In this assignment, you'll make a simple sinatra web app that allows users to play a Twitter version of the Googlewhack game (http://en.wikipedia.org/wiki/Googlewhack).  The user will provide two search terms, and you'll send requests to Twitter's API to search for recent tweets containing those words.  You'll use the results to calculate the user's score and display a sample tweet that contains their search terms.
+
+#### Using the Twitter API
+
+Twitter provides a set of public API hooks that allow you to query for various data about tweets, users, etc.  You can read the full documentation here: https://dev.twitter.com/rest/public
+
+For this assignment, we're interested in the GET search/tweets call, as it will allow us to search for tweets by setting search terms.  You should read through the documentation for this hook in particular.
+
+Before we can start making API calls, we need to get access tokens from twitter so that we can properly authenticate ourselves to the API.
+
+##### Getting an API key
+
+1. Create an account with twitter.  If you already have an account, you can use that one.
+2. Go here: https://apps.twitter.com/ and sign in.
+3. Click "Create New App"
+4. Fill in a name, description, etc. for your app.  You can just use http://www.example.com for your website, and can leave the callback URL blank.
+5. Twitter may ask you to verify your account.  This will require giving them a cell phone number and receiving a text with a verificatin code.
+6. Once you've created your app, click on it in your dashboard, and go to the "Keys and access tokens" tab.
+7. The values we need are "Consumer Key", "Consumer secret", "Access token" and "Access token secret".  You may have to click to generate an access token.
+
+**NOTE:** If you are uncomfortable with giving Twitter your cell phone number, let us know and we will provide you with API keys you can use for this assignment.
+
+##### Accessing the API with Ruby
+
+Code Academy provides a helpful guide to accessing APIs with ruby, and accessing Twitter's API in parituclar.  See here: http://www.codecademy.com/en/tracks/twitter
+
+#### Final Product Specs
+
+* You should produce a sinatra app with two pages: a main page and a results page.
+
+* On the main page, the user will be presented with a form that prompts for two words, and a submit button.  When the submit button is pressed, take the two words and conduct three Twitter searches: one for both words, and two for each word alone.  Make sure to set the number of requested results to the maximum (100).
+
+* After pressing the submit button, the user will be taken to a results page.  On this page, you'll display their Twitterwhack index and score, a comment on how well they did, as well as a sample tweet that contains their search terms.
+
+* The Twitterwhack index is simply the number of results which contained both of their search terms, up to the maximum of 100.  Lower indices are better, although zero doesn't count.  
+
+* The Twitterwhack score is the product of the number of results which had the first term and the number which had the second term, up to the maximum (100*100 = 10,000).  In this case, a higher score is better.
+
+* Your comment on their result should be based on their index.  For example, you might say "Excellent!" for an index 5 or below, "Try again!" for an index 90 or above, and "You got whacked!" for an index of zero.  You only need to have a small handful of different comments.
+
+* You should select a random example tweet from among the results that had both terms and display the text of that tweet along with the name of the user who wrote it.  In the event there were no tweets, you should instead output a message saying so.
+
+Example output looks like this:
+
+~~~
+Your words (sinatra and test) gave an index of 10 with a score of 10000. That's pretty good!
+~~~
+An example tweet that contained these words is:
+
+~~~
+RT @JimmyJazz1968: If MSNBC can pull the plug on Frank Sinatra & Woody Allen's test tube baby then nobody is safe NOBODY 
+by prostgrad
+~~~

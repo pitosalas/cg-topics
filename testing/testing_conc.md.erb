@@ -1,0 +1,39 @@
+---
+title: Conceptual Arguments for Testing
+---
+
+###### Credit: Some of this is directly quoting [POODR](http://www.poodr.com)
+
+* Testing and Refactoring:
+	* Recall: *Refactoring is a controlled technique for improving the design of an existing code base. Its essence is applying a series of small behavior-preserving transformations, each of which 'too small to be worth doing'*
+	* So you always should have solid tests before you start refactoring
+	* Each small change is verified to not have changed behavior
+* Testing and Agile
+	* Notion of a 'release' is gone
+	* Notion of a 'spec' is gone
+	* Cycles are much faster
+	* Automation becomes a requirement
+* Testing and Design
+	* Insight (not shared by all) that TDD supports design
+	* Insist on looking at the class/module/unit first as a black box that delivers services
+	* Good design delays all decisions that can be delayed until further requirements are nailed down.
+	* Refactoring is how new requirements are incorporated
+	* Good test suites is what gives you the confidence to refactor
+
+#### Good Testing/Quality/Testability
+* Fundamental motivation for testing: reduce costs
+	* Writing tests should over the lifetime of the code cost less
+	* Otherwise it's not worth doing
+	* How does it reduce costs?
+* Breaking it down: Why Test?
+	* Finding bugs early
+	* Reducing errors
+	* Making assumptions explicit - documenting code with code [how do test do that?]
+	* Make refactoring possible and safe [how safe?]
+	* Driving design decisions (TDD?)
+	* Discover bad design decisions [how?]
+* Philosophy of Commenting
+	* Believe or not, it's controversial
+	* Comments should not duplicate what the code clearly says
+	* Of course, "clearly says" is in the eyes of the beholder
+	* One philosophy: If you feel the need to put in a block comment, extract that section into a method with an intention revealing name
