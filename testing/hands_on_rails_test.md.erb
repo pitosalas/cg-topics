@@ -6,6 +6,7 @@ title: Hands on Rails Test Demo
 rails new my_app
 cd my_app
 ~~~
+
 ##### Add to gemfiles
 ~~~
 gem 'pry'
@@ -13,11 +14,13 @@ gem 'pry-byebug'
 gem 'better_errors'
 gem 'minitest-spec-rails'
 ~~~
+
 #### Add and test a model
 ~~~
 rails generate model word eng:string ned:string
 rake db:migrate
 ~~~
+
 ##### Default empty test (word_test.rb)
 ~~~
 require_relative '../test_helper'
@@ -28,14 +31,16 @@ describe Word do
   end
 end
 ~~~
+
 ##### Add some more tests
 ~~~
-  it "stores a translation" do
-    word = Word.new(eng: "house", ned: "huis")
-    word.eng.must_equal "house"
-    word.ned.must_equal "huis"
-  end
+it "stores a translation" do
+  word = Word.new(eng: "house", ned: "huis")
+  word.eng.must_equal "house"
+  word.ned.must_equal "huis"
+end
 ~~~
+
 ##### Add a few fixtures
 ~~~
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -48,6 +53,7 @@ boat:
   eng: boat
   ned: boot
 ~~~
+
 ##### And see if words model can be persisted
 ~~~
 it "has two words in database" do
@@ -59,6 +65,7 @@ it "can accept a new word" do
   Word.count.must_equal 3
 end
 ~~~
+
 ##### Add a validation to the model
 ~~~
 class Word < ActiveRecord::Base
@@ -66,6 +73,7 @@ class Word < ActiveRecord::Base
   validates :ned, presence: true
 end
 ~~~
+
 ##### Add a test for the validation
 ~~~
 it "cannot save a word without the english and dutch text" do
@@ -73,6 +81,7 @@ it "cannot save a word without the english and dutch text" do
   w.valid?.must_equal false
 end
 ~~~
+
 ##### Test the Word.random method
 ~~~
 it "Can return a random word" do
@@ -80,6 +89,7 @@ it "Can return a random word" do
   w.must_be_kind_of Word
 end
 ~~~
+
 #### Implement the Word.random method
 ~~~
 def self.random
@@ -92,6 +102,7 @@ end
 ~~~
 rails generate controller Words learn
 ~~~
+
 ##### First write the test for the learn action
 ~~~
 require_relative '../test_helper'
@@ -104,6 +115,7 @@ describe WordsController do
   end
 end
 ~~~
+
 ##### Now actually implement the action in the WordsController
 ~~~
 class WordsController < ApplicationController
@@ -112,6 +124,7 @@ class WordsController < ApplicationController
   end
 end
 ~~~
+
 ##### Now, lets test that the controller is calling the Word.random method
 ~~~
 it "passes a word from random" do
@@ -122,10 +135,12 @@ it "passes a word from random" do
   end
 end
 ~~~
+
 * Stub creates a temporary override of the Word.random method
 * And then verifies that it is being called,which it is now.
 * We now need to update the controller to actually call Word.random
 ~~~
+
 ##### WordController calls Word.random
 ~~~
 class WordsController < ApplicationController
@@ -134,17 +149,10 @@ class WordsController < ApplicationController
   end
 end
 ~~~
+
 #### References
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
 * [BDD with Minitest](https://semaphoreapp.com/blog/2014/10/27/bdd-on-rails-with-minitest-part-1-up-and-running.html)
 * [Old Post on which my example above is based more or less](http://andrzejonsoftware.blogspot.com/2007/05/15-tdd-steps-to-create-rails.html)
 * [Minitest Readme](https://github.com/seattlerb/minitest)
-* [Minitest Quick Reference](http://www.mattsears.com/articles/2011/12/10/minitest-quick-reference
-)
-
-
-
-
-
-
-
+* [Minitest Quick Reference](http://www.mattsears.com/articles/2011/12/10/minitest-quick-reference)
