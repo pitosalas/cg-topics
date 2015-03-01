@@ -1,0 +1,50 @@
+---
+title: Scaling
+---
+#### Thought experiment
+* Real world example: cafeteria flow chart
+* Optimization:the search for bottlenecks.
+* What's a bottleneck? Refer back to the cafeteria example.
+* Moving target:
+	* When you eliminate/improve one bottleneck, it just reveals the next one. 
+	* You make starting the dashboard activity faster....so that now you can notice that drawing the map overlay is slow.
+* **Important:** Measurement
+* **Worse sin:** Optimizing early. Why?
+
+#### Performance
+* Performance is what what a user experiences as "slow" or "fast"
+* Response time to an operation initiated by the user
+* Perception!
+	* Can you 'fool' the user into thinking the app is faster than it is?
+	* Feedback: spinners etc
+	* Anticipation: start doing work before user requests it
+* Different (but intertwined with) scaling
+
+##### Scaling
+* "How many X per minute can you do"
+	* (e.g. user log ins, page refreshes, notifications,...
+* How many (users, sessions, videos, pictures, etc) does the site need to support
+* Different from response time: "How long does it take to accomplish Y?" Related but different
+* Scaling has to do with the load on the servers
+* Big challenge: how fast or slow will the site or app grow?
+* Architectural techniques apply equally
+	* scaling up vs. scaling out
+	* caching
+	* load balancing
+	* database partitioning and sharding
+	* asynchronous processing
+
+#### Patterns of scaling problems and solutions
+
+* "Clients" = web browsers accessing the site, mobile apps accessing the site, etc.
+* Load on the servers. Some scenarios, one or more of:
+	* Too many clients asking the server to do operation O
+ 	* Individual clients asking the server to do operation P too often
+	* Operation Q is time consuming for the server to satisfy
+* Solutions can be
+	* Add an identical server to handle operations O, P or Q
+	* Send operation O to one server and operation P to another server
+	* Why are so many clients asking for O? Can we reduce the number?
+	* What's the reason why a client would ask for operation P so often? Can we reduce that?
+	* Is there a way to make operation Q faster to satisfy?
+
