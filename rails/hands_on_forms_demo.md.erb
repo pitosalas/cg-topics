@@ -1,0 +1,142 @@
+---
+title: Hands On Forms Demo
+---
+#### Set up and modify gem file
+
+~~~
+rails new forms demo
+
+gem 'pry'
+gem 'pry-byebug'
+gem 'better_errors'
+
+bundle
+~~~~
+
+#### Make models and define associations
+
+~~~
+rails generate scaffold items title:string  description:string owner:text category_id:integer
+rails generate scaffold categories title:string description:string
+rails generate scaffold comments from:string message:string item_id:integer
+
+[category.rb] 
+has_many :items
+
+[item.rb]
+belongs_to :category
+has_many :comments
+~~~
+
+#### Create seed data (seeds.rb)
+* Notice an interesting way to create test data
+
+~~~
+puts "creating categories"
+Category.destroy_all
+
+books = Category.create(title: "book", description: "Books, Magazines etc.")
+electronics = Category.create(title: "electronics", description: "Computer, Cellphone, etc")
+clothing = Category.create(title: "clothing", description: "Shoes, Jackets, Belts, etc")
+jewelry = Category.create(title: "jewelry", description: "Rings, watches, necklaces, etc")
+
+owners = ["Jane Smith", "Ira Levin", "George Benson"]
+colors = ["red", "brown", "green", "white", "tiny"]
+clothingnames = ["shoes", "wallet", "belt"]
+adjective = ["My favorite", "The perfect", "A great"]
+
+puts "creating sample clothing"
+15.times do
+  title = colors.sample + " " + clothingnames.sample
+  description = adjective.sample + " " + title
+  Item.create(title: title, description: description, owner: owners.sample, category: clothing)
+end
+~~~
+
+#### Add Bootstrap
+* Notice not using a gem, to keep it simple
+* Reference: http://getbootstrap.com/getting-started/
+* Add this to application.html.erb
+
+~~~
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+~~~
+
+* And put the right bootstrap tags in place in application.html.erb
+
+~~~~~
+<div class="container">
+  <div class="row">
+    ```<%= "yield" %>```
+  </div>
+</div>
+~~~~~
+
+#### Lets update the routes
+* Notice: how the scategories resource stays flat
+* Notice how items > comments is a nested resource
+* Notice how the collection is set up
+
+~~~
+Formdemo::Application.routes.draw do
+  resources :samples
+
+  resources :categories
+
+  resources :items do
+    collection do
+      get 'search'
+      get 'do_search'
+    end
+    resources :comments, only: [:index, :new, :create]
+  end
+
+  root 'items#index'
+~~~
+
+#### Define the search form search.html.erb
+* Notice the introduction of [Bootstrap](http://www.getbootstrap.com) classes and ids
+* col-md-offset-1 etc.
+* See [search.html.erb](https://github.com/pitosalas/forms_demo/blob/master/app/views/items/search.html.erb)
+
+#### And it's corresponding actions
+* Why does search have two actions?
+* What controller do these actions go in?
+
+~~~~~ ruby
+def search
+  @categories = Category.all.map {|c| [c.title, c.id]}
+  @categories = [["any", 0]] + @categories
+  @items = nil
+end
+
+def do_search
+  match_parm = params.fetch(:match_no_match)
+  all_any_parm = params.fetch(:all_any)
+  title_parm = params.fetch(:title)
+  cat_id_parm = params.fetch(:category_id)
+  @items = Item.do_item_search(
+        searchtitle: title_parm,
+        catid: cat_id_parm.to_i,
+        all_any: all_any_parm,
+        match_no: match_parm)
+
+  respond_to do |format|
+    format.js
+  end
+end 
+
+~~~~~
+
+#### To Be Continued...
+
+
+
+
