@@ -1,0 +1,37 @@
+---
+title: Hands On Codeship
+---
+#### Introduction
+* [Codeship](https://codeship.com/) is one of a bunch of continuous integration services
+* They all do a variant of this:
+  * Monitor your github repository
+  * Pull out the latest sources whenver there's a change
+  * Run all the tests
+  * If they pass, then send the code to Heroku for deployment
+* Codeship](https://codeship.com/) is the one I've used most often to good success. But don't get hung up on that. New ones spring up and old ones die off.
+* This hands on example assumes:
+  * You have a working rails application which has some working tests
+  * That it is on github in a PUBLIC repository
+  * It works well as a follow up to <%= link_to_topic :hands_on_tiny_rails_demo %>
+
+#### Hands On
+* Go to codeship.com
+* Log in with your github account
+* Click on "Create a new Project"
+* Select the github icon (with the cat)
+* Select the specific name of the public github repo
+* Within "select your technology to prepopulate" choose Ruby on Rails
+* Click "save and go to dashboard"
+
+#### Get it to work
+* Go to your repo (in your shell)
+* Modify any file in the directory (readme is a good choice)
+* git commit --all; git push -m "first test"
+* Keep an eye on the browser window displaying the "dashboard"
+* If the tests pass, you should see "SUCCESS" in green
+* You now have a green build!
+* Congratulations!
+
+#### What's next
+* You might now want to deploy your application to heroku
+* Next in the process is <%= link_to_topic :hands_on_heroku %>
