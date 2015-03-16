@@ -1,0 +1,36 @@
+---
+title: Hands On Heroku for Sinatra
+---
+
+#### Introduction
+
+* Heroku is one of many "cloud app platform" (see <%= link_to_topic :cloud_deployment %>
+
+#### Assumptions
+* You have a working Sinatra application
+* The code is in a PUBLIC github repository
+* Note, you will need to make a few small changes to ready it for Heroku
+
+#### Setup
+* Go to [Heroku](https://www.heroku.com)
+* Create a new user account (free)
+* Install the Heroku Toolbelt for your platform
+
+#### Prepare your rails app
+* go to your local directory containing the rails app
+
+#### Get your environment set up
+* go to your local directory containing the Heroku app
+* The name of your app is assigned automatically and printed out once you do `heroku create`
+
+#### Prepare your application
+* Configure it for rack: make sure you have a config.ru
+
+#### Create it on Heroku
+~~~
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
+heroku open
+~~~
