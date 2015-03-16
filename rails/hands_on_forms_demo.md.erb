@@ -74,7 +74,11 @@ end
 ~~~~~
 <div class="container">
   <div class="row">
+<<<<<<< HEAD
     <%= "yield" %>
+=======
+    <%%= "yield" %>
+>>>>>>> 635c1501ab3792be8fb43c17b621e45bb3a4f474
   </div>
 </div>
 ~~~~~
@@ -102,40 +106,125 @@ Formdemo::Application.routes.draw do
 ~~~
 
 #### Define the search form search.html.erb
-* Notice the introduction of [Bootstrap](http://www.getbootstrap.com) classes and ids
-* col-md-offset-1 etc.
-* See [search.html.erb](https://github.com/pitosalas/forms_demo/blob/master/app/views/items/search.html.erb)
+~~~
+<div>
+  <h1>Search</h1>
+    <%%= form_tag(do_search_items_path, method: "get") do %>
+      <div>
+        <label>Title</label>
+        <%%= text_field_tag(:title, "") %>
+      </div>
+
+      <%%= submit_tag("Search") %>
+    <%% end %>
+</div>
+~~~
 
 #### And it's corresponding actions
 * Why does search have two actions?
 * What controller do these actions go in?
-
-~~~~~ ruby
-def search
-  @categories = Category.all.map {|c| [c.title, c.id]}
-  @categories = [["any", 0]] + @categories
-  @items = nil
-end
-
-def do_search
-  match_parm = params.fetch(:match_no_match)
-  all_any_parm = params.fetch(:all_any)
-  title_parm = params.fetch(:title)
-  cat_id_parm = params.fetch(:category_id)
-  @items = Item.do_item_search(
-        searchtitle: title_parm,
-        catid: cat_id_parm.to_i,
-        all_any: all_any_parm,
-        match_no: match_parm)
-
-  respond_to do |format|
-    format.js
-  end
-end 
+* Notice how to do "like" in order to allow close matches
+* Notice how we factor out the index page so we get a parital
 
 ~~~~~
+# [items_controller.rb]
+  def search
+  end
 
-#### To Be Continued...
+  def do_search
+    @items = Item.where("title LIKE ?", "%#{params[:title]}%")
+  end
+
+# [views/items/_index.html.erb]
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%% @items.each do |item| %>
+      <tr>
+        <td><%%= item.title %></td>
+        <td><%%= item.description %></td>
+        <td><%%= item.owner %></td>
+        <td><%%= item.category_id %></td>
+        <td><%%= link_to 'Show', item %></td>
+        <td><%%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%% end %>
+  </tbody>
+</table>
+
+# [views/items/index.html.erb]
+<h1>Listing items</h1>
+
+<%%= render "index" %>
+<br>
+
+<%%= link_to 'New Item', new_item_path %>
+~~~~~
+
+#### Let's add some Bootstrap
+* Bootstrap is already "included" in layouts/application.html.erb
+* We bring it to life by adding classes to strategic spots
+
+~~~
+# [/views/items/index.html.erb]
+<h1>Listing items</h1>
+
+<%%= render "index" %>
+<br>
+<div class=btb-group %>
+  <%%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
+  <%%= link_to 'Search', search_items_path, class: "btn btn-default" %>
+</div>
+
+# [search.html.erb]
+<div class="col-md-offset-1 col-md-4">
+  <h1>Search</h1>
+    <%%= form_tag(do_search_items_path, method: "get", class: "form") do %>
+
+      <div class="form-group">
+        <label>Title</label>
+        <%%= text_field_tag(:title, "", class: "form-control") %>
+      </div>
+
+      <%%= submit_tag("Search", class: "btn btn-default") %>
+    <%% end %>
+</div>
+~~~
+
+#### Now lets add some additional controls
+* A drop down control which will allow user to pick search options
+
+~~~
+# [views/items/search.html.erb]
+    <div class="form-group">
+      <label>Return matching or non-matching items</label>
+      <%%= select_tag(:match_no_match, 
+            options_for_select(
+            [['only matching', "match"], 
+             ['only non matching', "nomatch"]
+            ]), class: "form-control") %>
+    </div>
+
+# [controllers/items_controller.rb, in do_search]
+def do_search
+  match_no_match = params.fetch(:match_no_match)
+  negation = match_no_match == "match" ? "" : " NOT "
+  query_string = negation + "title LIKE ?"
+  @items = Item.where(query_string, "%#{params[:title]}%")
+end
+~~~
+
+
 
 
 
