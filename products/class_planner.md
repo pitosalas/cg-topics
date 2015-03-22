@@ -20,6 +20,6 @@ desc: Figure out what you want to do with your (college) life.
   1. Figure out what classes the user would like to take.
   2. Lets the user plan their years at college.
 
-* **Customer Pains/Gains:** [describe what problems the product will eliminate for the customer]
+* **Customer Pains/Gains:** \[describe what problems the product will eliminate for the customer\]
   * Reduce anxiety abotu planning college classes.
   * Give a sense of direction â knowing where one's going is incredibly powerful.
