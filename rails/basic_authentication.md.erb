@@ -44,7 +44,7 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")
 * Will assume existance of a SessionsController with create, new and destroy actions. Check rake routes to see what routes are created
 <%= ruby_begin %>
 # ./config/routes.rb
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: \[:new, :create, :destroy\]
 <%= ruby_end %>
 <%= code_begin %>
    sessions POST   /sessions(.:format)       sessions#create
@@ -80,7 +80,7 @@ new_session GET    /sessions/new(.:format)   sessions#new
 # ./app/helpers/sessions_helper.rb
   def sign_in(user)
     remember_token = User.new_remember_token
-    cookies.permanent[:remember_token] = remember_token
+    cookies.permanent\[:remember_token\] = remember_token
     user.update_attribute(:remember_token, User.hash(remember_token))
     self.current_user = user
   end

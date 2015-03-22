@@ -20,10 +20,10 @@ rails generate scaffold items title:string  description:string owner:text catego
 rails generate scaffold categories title:string description:string
 rails generate scaffold comments from:string message:string item_id:integer
 
-[category.rb] 
+\[category.rb\] 
 has_many :items
 
-[item.rb]
+\[item.rb\]
 belongs_to :category
 has_many :comments
 ~~~
@@ -40,10 +40,10 @@ electronics = Category.create(title: "electronics", description: "Computer, Cell
 clothing = Category.create(title: "clothing", description: "Shoes, Jackets, Belts, etc")
 jewelry = Category.create(title: "jewelry", description: "Rings, watches, necklaces, etc")
 
-owners = ["Jane Smith", "Ira Levin", "George Benson"]
-colors = ["red", "brown", "green", "white", "tiny"]
-clothingnames = ["shoes", "wallet", "belt"]
-adjective = ["My favorite", "The perfect", "A great"]
+owners = \["Jane Smith", "Ira Levin", "George Benson"\]
+colors = \["red", "brown", "green", "white", "tiny"\]
+clothingnames = \["shoes", "wallet", "belt"\]
+adjective = \["My favorite", "The perfect", "A great"\]
 
 puts "creating sample clothing"
 15.times do
@@ -94,7 +94,7 @@ Formdemo::Application.routes.draw do
       get 'search'
       get 'do_search'
     end
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, only: \[:index, :new, :create\]
   end
 
   root 'items#index'
@@ -122,15 +122,15 @@ Formdemo::Application.routes.draw do
 * Notice how we factor out the index page so we get a parital
 
 ~~~~~
-# [items_controller.rb]
+# \[items_controller.rb\]
   def search
   end
 
   def do_search
-    @items = Item.where("title LIKE ?", "%#{params[:title]}%")
+    @items = Item.where("title LIKE ?", "%#{params\[:title\]}%")
   end
 
-# [views/items/_index.html.erb]
+# \[views/items/_index.html.erb\]
 <table>
   <thead>
     <tr>
@@ -157,7 +157,7 @@ Formdemo::Application.routes.draw do
   </tbody>
 </table>
 
-# [views/items/index.html.erb]
+# \[views/items/index.html.erb\]
 <h1>Listing items</h1>
 
 <%%= render "index" %>
@@ -171,7 +171,7 @@ Formdemo::Application.routes.draw do
 * We bring it to life by adding classes to strategic spots
 
 ~~~
-# [/views/items/index.html.erb]
+# \[/views/items/index.html.erb\]
 <h1>Listing items</h1>
 
 <%%= render "index" %>
@@ -181,7 +181,7 @@ Formdemo::Application.routes.draw do
   <%%= link_to 'Search', search_items_path, class: "btn btn-default" %>
 </div>
 
-# [search.html.erb]
+# \[search.html.erb\]
 <div class="col-md-offset-1 col-md-4">
   <h1>Search</h1>
     <%%= form_tag(do_search_items_path, method: "get", class: "form") do %>
@@ -200,22 +200,22 @@ Formdemo::Application.routes.draw do
 * A drop down control which will allow user to pick search options
 
 ~~~
-# [views/items/search.html.erb]
+# \[views/items/search.html.erb\]
     <div class="form-group">
       <label>Return matching or non-matching items</label>
       <%%= select_tag(:match_no_match, 
             options_for_select(
-            [['only matching', "match"], 
-             ['only non matching', "nomatch"]
+            \[['only matching', "match"\], 
+             \['only non matching', "nomatch"\]
             ]), class: "form-control") %>
     </div>
 
-# [controllers/items_controller.rb, in do_search]
+# \[controllers/items_controller.rb, in do_search\]
 def do_search
   match_no_match = params.fetch(:match_no_match)
   negation = match_no_match == "match" ? "" : " NOT "
   query_string = negation + "title LIKE ?"
-  @items = Item.where(query_string, "%#{params[:title]}%")
+  @items = Item.where(query_string, "%#{params\[:title\]}%")
 end
 ~~~
 

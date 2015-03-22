@@ -55,18 +55,18 @@ title: HTML - Hypertext Markup Language
 * Remember the HTTP verbs: GET, PUT, POST and DELETE (there are a few more)
 * When I type a URL into the browser, it generates an HTTP GET with that URL
 * When I click on a link (`<a href="http://varperrater.com/configuration/23-12-933">show config</a>`) the browser also generates an HTTP GET to that URL.
-* Look at the form code below. When I press "Sign In!", it generates a "POST" to relative url `/sessions`, with two parameters with these names: "sessions[email]" and "sessions[password]"
+* Look at the form code below. When I press "Sign In!", it generates a "POST" to relative url `/sessions`, with two parameters with these names: "sessions\[email\]" and "sessions\[password\]"
 
 <%= code_begin %>
 <h3>Please Log In!</h3>
 <form action="/sessions" method="post">
     <div>
         email:
-        <input id="sessions_email" name="sessions[email]" type="text" />
+        <input id="sessions_email" name="sessions\[email\]" type="text" />
     </div>
     <div>
         password:
-        <input id="sessions_password" name="sessions[password]" type="password" />
+        <input id="sessions_password" name="sessions\[password\]" type="password" />
     </div>
     <input name="commit" type="submit" value="Sign in" />
 </form>

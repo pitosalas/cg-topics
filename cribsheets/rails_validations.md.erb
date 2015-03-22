@@ -18,7 +18,7 @@ validates :name,
 
 # format
 validates :legacy_code, :format => 
-  { :with => /\A[a-zA-Z]+\z/,
+  { :with => /\A\[a-zA-Z\]+\z/,
     :message => "Only letters allowed" }
 
 # in
@@ -29,7 +29,7 @@ validates :size,
 # numericality
 validates :points, :numericality => true
 validates :games_played, :numericality => 
-  { :only_integer => true }    # Uses regex /\A[+-]?\d+\Z/
+  { :only_integer => true }    # Uses regex /\A\[+-\]?\d+\Z/
 
 # presence
 validates :order_id, :presence => true
