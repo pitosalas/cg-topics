@@ -1,0 +1,67 @@
+---
+title: Load Testing nanoTwitter
+---
+#### Load Testing
+* Testing a product to see how it performs under load
+
+#### Deployment
+* Obviously to do load testing, your app needs to be running on a server, separately from your own computer.
+* This could be any server, even your neighbor's laptop.
+* For our purposes, it needs to be on one of the cloud services, like Heroku
+* I recommend Heroku
+  * if you are adventurous you could deploy it elsewhere too. 
+  * But then we won't really be able to give you too much help
+* Cloud deployment implies that there is a well known 'fixed' domain name
+  * (e.g. wild-mushroom-2312.herokuapp.com)
+
+#### App functionality
+* Each team has deployed nanoTwitter and has supplied us with the domain name
+* Each implementation of nanoTwitter follows the same spec
+* In particular, implement the url routes exactly as specified.
+* This allows a unified test to be run against all of the apps
+
+#### Load Testing Tools
+* There are numerous [open source Load Testing Tools])http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use)
+* We are using [loader.io](http://www.loader.io) -- at least to start.
+
+#### How to deal with authentication
+* Initial tests should be constructed so that they don't require a login
+  * For nanoTwitter, displaying of the non-logged in home page
+* Later tests will require a log in
+  * Note that within loader.io there is a provision for authenticating using basic authentication.
+
+#### Standard seed data
+* To allow us to compare apples to apples we have standard seed data
+* We might share a "seeds.rb" to make this fair.
+* Use faker to create the fake data
+  * 1000 users
+  * Each user (randomly distributed) has an average of 100 tweets
+  * Each user (on average) follows 5 other users
+
+#### Standard configuration parameters
+* Non-logged in page displays the 100 most recent tweets
+
+#### Reporting
+* Keep a careful lab notebook!
+* Make note of configuration changes that you try
+* Collect data and try to interpret it
+
+#### Using Loader.io
+* Our goal is to see how well each of your servers survive the onslaught of traffic
+* Take a look at [Loader.io](http://support.loader.io/article/16-test-types)
+* Use the "maintain client load" option (at least to start.)
+
+#### Test 1: Simple display of home page
+* Visit your root page (which will display a set number of tweets)
+* Use Loader.io to hit that page using maintain client load
+
+
+
+
+
+
+
+
+
+
+
