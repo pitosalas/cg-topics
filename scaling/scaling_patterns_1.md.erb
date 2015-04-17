@@ -1,0 +1,112 @@
+---
+title: Patterns in Scaling
+---
+### Scalability Pattern: Database Caching
+
+#### Example, Social Graph
+* Classic Relational Approach
+  * Schema (like all of you have)
+    * People(id, name)
+    * Follow(id, follower, following)
+  * Nicely normalized
+    * First, Second and Third Normal form
+    * Origins of the relational database
+  * Queries like:
+    * How many people are following user X
+    * Who is following user Y
+  * But to display each and every user, a join is needed!
+
+#### Measurement
+* Ask database system to analyze SQL queries that are slow
+  * e.g. `heroku pg:outliers`
+  * Discover that the social graph access was very slow
+* Solution: Caching
+  * Use Network scale caching (Redis) to store and share across servers
+
+#### Caching with "Redis"
+* Analogous to other network scale caching solutions (e.g. cached)
+* Typical structure is a key-value store
+* A nosql database. But in memory
+* It has some interesting characteristics
+  * ATOMIC operations, e.g. "INCR" operation
+  * keys that expire (TTL)
+  * Supports other values: lists, sets, hashes
+  * And many many more
+* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
+* Wait, where's the data actually stored?
+  * A redis host, accessible by tcp/ip: dns name + port number
+  * You can run it
+  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
+  * In all cases, if the host dies, the data is gone
+
+#### Putting the two together
+* "Store the social graph, denormalized, in a cache"
+* Means, more or less:
+  * All user information is stored as before in the relational database
+  * In addition, a denormalized copy of the key facts are stored in Redis
+* Redis is accessed
+  * Whenever ui needs to show count of followings or followers
+  * Whenever a new follow command is issued, it is updated
+  * Under certain circumstances, Redis is refreshed with good data
+
+### Scalability Pattern: Database Partitioning
+* Conflicting definitions
+  * When you divide a big database into several smaller ones
+  * Partitioning: Horizontal and Vertical
+  * Sharding; Horizontal Partitioning
+* What's the problem?
+  * When the database is the bottleneck
+  * Add a second database server
+  * What to do with the data?
+* Some options
+  * Replication: Put a complete copy of the data on the second db server
+  * Pay attention to read vs. write
+  * What to do about data consistency?
+  * Parition
+
+#### Example
+* User Database
+  * Happens to often be a monster
+  * Lots of records
+  * Each record with lots of information
+  * Accessed a lot
+* Schema
+  * User: (id, name, email, biography, hobbies, college, last_login, encrypted_pw, profile_photo_jpg, ...)
+
+#### Vertical partition
+* Often associated with an SOA
+* Divide the User table into three different database servers:
+  User: (id, name, biography, email)
+  Autentication: (id, last_login, encrypted_pw)
+  Photos: (id, profile_photo_jpg)
+* How it changes your application
+  * Pretty basic rearchitecture into separate services
+
+#### Sharding (Horizontal partition)
+* "buckets" of users (== shards)
+* How? Create multiple database servers with
+  * the same schema
+  * different subset or clump of records
+* Need a way to direct requests to the right "shard"
+  * inspect something about the record
+  * determine what shard to look in
+  * Three common flavors to decide what bucket gets a record
+    * Range Based: Range of some scalar value (record id, first letter of name, etc.)
+    * List Based: Take some other property (e.g. zipcode, department)
+    * Hash Based: Compute a hash on some value
+* How it changes your application
+  * Whenever you either read, write, or search
+  * Require to include enough information to pick the right shard
+
+#### Pros and Cons
+* Joins become a problem
+  * What was once one db is now spread over more than one db
+  * Can lead to denormalization
+* Data Integrity
+  * Foreign keys might now point to another database
+  * Databases can get out of sync
+
+<%= callout("NB", " Both kinds of sharding are advanced techniques and you should only use them when you have quantitative reasons to believe they will improve a measured performance issue.") %>
+
+#### References
+* [Building Scalable Databases: Pros and Cons of Sharding](http://www.25hoursaday.com/weblog/2009/01/16/BuildingScalableDatabasesProsAndConsOfVariousDatabaseShardingSchemes.aspx)
