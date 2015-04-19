@@ -1,7 +1,7 @@
 ---
 title: Elevator Assignment
 ---
-**[NOT QUITE DONE]**
+[NOT QUITE DONE]
 
 ### Background
 With buildings getting taller and taller, the issue of efficiently operating elevators to the benefit of people in the buildings, fire codes, and resource consumtion is one of great importance.
@@ -26,7 +26,7 @@ The domain model is as follows:
 * Each floor has a specified position in the building
 * Floors are ordered from 0 to n
 * Each floor has a series of `number_of_elevators` call buttons pairs, one for UP and one for DOWN
-* Each floor has a queue of at most who are waiting for the elevator. 
+* Each floor has a queue of `persons` who are waiting for the elevator. 
 
 #### Persons
 * Each floor and elevator can have up to the indicated maximum of people
@@ -39,7 +39,7 @@ The domain model is as follows:
 * When empty, and when no `call buttons` or `direct buttons` are depressed, it will travel to the ELEV_RESTING_FLOOR floor
 
 ### Elevator Logic
-The crux of this assigment is creating the classes for the simiulation, writing the tests and getting it all to work. But what makes it fun is to figure out the "AI" (if you can forgive the exageration) that makes the decisions for what should happen next.
+The crux of this assigment is creating the classes for the simulation, writing the tests and getting it all to work. But what makes it fun is to figure out the "AI" (if you can forgive the exageration) that makes the decisions for what should happen next.
 
 It turns out that all the "AI" can be made part of the elevator. After all, it is the one thing that acts a tiny bit intelligent, deciding what to do next. 
 
@@ -51,9 +51,23 @@ In other words, you don't need to simulate opening and closing the doors. Assume
 
 Here are the stages you can try to implement, starting from the simplest.
 
-1. The elevator doesn't ever move.
-1. The elevator moves up. When it gets to the top, it changes direction and moves down. When it gets to the bottom it stops.
-
+1. One elevator, 3 floors
+	* The elevator doesn't ever move. 
+1. One elevator, 3 floors
+	* The elevator moves up. 
+	* When it gets to the top, it changes direction and moves down.
+	* When it gets to the bottom it stops.
+1. One elevator, 3 floors
+	* Elevator starts on bottom floor
+	* Elevator has one passenger on it
+	* Passenger wants to get to top floor
+	* Elevator travels to top floor
+1. One elevator, 3 floors
+	* Floor 0 has one waiting passenger, destined for floor 2
+	* Elevator starts on Floor 0
+	* Passenger loads
+	* Elevator travels to Floor 2
+	* Passenger unloads
 
 ### Simulation Architecture
 There are many ways to architect a simulation.I have verified that this model works and is doable by you.  You are welcome to diverge from this suggested model. 
