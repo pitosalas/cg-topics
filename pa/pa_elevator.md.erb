@@ -1,0 +1,82 @@
+---
+title: Elevator Assignment
+---
+**[NOT QUITE DONE]**
+
+### Background
+With buildings getting taller and taller, the issue of efficiently operating elevators to the benefit of people in the buildings, fire codes, and resource consumtion is one of great importance.
+
+#### Objectives
+* The objective is to give you a chance to show off your software design skills
+* This is a pure ruby assignment. No need for sinatra or a database
+* Focus on good class design, separation of concerns, single responsibility principle, unit testing
+* Try to make this a `beautiful program`
+
+### Basic Structure
+* You are to design a simulation framework for the testing and optimization of elevator operations. 
+
+The domain model is as follows:
+
+#### Building
+* There is one building in the simulation
+* The building has `number_of_elevators` elevators
+* The building has `number_of_floors` floors
+
+#### Floors
+* Each floor has a specified position in the building
+* Floors are ordered from 0 to n
+* Each floor has a series of `number_of_elevators` call buttons pairs, one for UP and one for DOWN
+* Each floor has a queue of at most who are waiting for the elevator. 
+
+#### Persons
+* Each floor and elevator can have up to the indicated maximum of people
+* Each Person has an intended floor that they wish to get to
+
+#### Elevators
+* Can be empty or contain up to ELEV_MAX_PERSONS passengers
+* Have a `direct button` for every floor in the building
+* Is traveling up or down or is stationary
+* When empty, and when no `call buttons` or `direct buttons` are depressed, it will travel to the ELEV_RESTING_FLOOR floor
+
+### Elevator Logic
+The crux of this assigment is creating the classes for the simiulation, writing the tests and getting it all to work. But what makes it fun is to figure out the "AI" (if you can forgive the exageration) that makes the decisions for what should happen next.
+
+It turns out that all the "AI" can be made part of the elevator. After all, it is the one thing that acts a tiny bit intelligent, deciding what to do next. 
+
+So at every tick of the simulation clock, essentially each elevator must decide whether to stay put, go up or go down. To keep this simple we can assume (but don't have to) that when the elevator is at a certain floor, and there are passengers that want to get off, they will get off, and if there are passengers that want to get on, they will. 
+
+In other words, you don't need to simulate opening and closing the doors. Assume that they open at each floor and that the passengers are `eager`. That is, they get off as soon as they can and get on as soon as they can.
+
+#### Evolving the elevator logic
+
+Here are the stages you can try to implement, starting from the simplest.
+
+1. The elevator doesn't ever move.
+1. The elevator moves up. When it gets to the top, it changes direction and moves down. When it gets to the bottom it stops.
+
+
+### Simulation Architecture
+There are many ways to architect a simulation.I have verified that this model works and is doable by you.  You are welcome to diverge from this suggested model. 
+
+#### Simulate class
+* This is a discrete, synchronized simulation
+* The simulation is controlled by a Simulation class
+* It is run by virtual time ticks
+* All instances of the domain model classes
+	* Have a clock_tick method which gets called by the Simulation class
+	* The clock_tick method updates to object to reflect the new state
+	* Whenever a new domain model instance is created, it registers itself with the Simulate class, by calling @simulation.register(self)
+* The simulation is run by calling @simulation.run(n)
+	* which runs it for n ticks
+	* which in turn means that all registered objects get called once for each tick
+	* They update their state based on the overall context
+
+#### Running the simulation
+* A main program -  `sim.rb` runs the show. It does:
+	1. Creates an instance of the Simulation class
+	1. Creates (directly or indirectly) the building, floors, elevators, and people
+
+#### Hints
+* Start by creating the Simulate, Building, Floor and Elevator classes
+* Focus on creating a building with one elevator, and three floors
+* Add a to_s method to each of these that describes the relevant state of each of the objects
