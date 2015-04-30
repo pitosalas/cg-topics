@@ -27,6 +27,10 @@ title: Cosi 105 Final Deliverables
 	* And what is final result?
 * Fit and Finish. 
 	* Does the final product look professional and clean? Did you read the requirements (from me) broadly and go beyond the very minimum? Or did you just barely get it to work? Does it look good and show pride of work?
+* Github
+	* You will be submitting the github directory with the code in it
+	* Include a readme file that documents your design as far as you need to.
+	* Make sure to include a "CodeClimate" badge in your readme.
 
 #### How nanoTwitter Scalability will be tested
 * We will be looking at how well your server stands the load
@@ -34,15 +38,15 @@ title: Cosi 105 Final Deliverables
 * Preparation for testing:
 	* Build in a special test user called "test_user"
 	* Create a path (/test_reset) which deletes all tweets by test_user and has test_user unfollow all users. This is used between tests to reset.
+	* Create a path (/test_tweet) which when visited causes test_user to post a random tweet (use faker or a set string + a timestamp to generate unique tweets). 
+	* Create a path (/test_follow) which when visited selects a random user and has test_user follow that user or unfollow that user (if test_user currently follows that user, unfollow. If test user_does not follow that user, follow).
+	* Create a path (/test_user) that displays test_user's logged in state page. To be clear, this is not actually logging in, it's just displaying the page that would happen if test_user was logged in.
 
 ##### Test Protocol
 1. Show the homepage with 100 most recent tweets
 1. Test tweeting
-	* Create a path (/test_tweet) which when visited causes test_user to post a random tweet (use faker or a set string + a timestamp to generate unique tweets). 
 	* Use loader.io to run against /test_tweet and the home page.
 1. Test following
-	* Create a path (/test_follow) which when visited selects a random user and has test_user follow that user or unfollow that user (if test_user currently follows that user, unfollow. If test user_does not follow that user, follow).
-	* Create a path (/test_user) that displays test_user's logged in state page. To be clear, this is not actually logging in, it's just displaying the page that would happen if test_user was logged in.
 	* Use loader.io to run against /test_follow and test_user's profile page. The profile page should show the 100 most recent tweets only by people test_user follows
 
 #### Porfolio Page

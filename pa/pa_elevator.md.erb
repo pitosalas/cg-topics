@@ -1,10 +1,9 @@
 ---
 title: Elevator Assignment
 ---
-\[NOT QUITE DONE\]
 
 ### Background
-With buildings getting taller and taller, the issue of efficiently operating elevators to the benefit of people in the buildings, fire codes, and resource consumtion is one of great importance.
+With buildings getting taller and taller, the issue of efficiently operating elevators to the benefit of people in the buildings, fire codes, and resource consumtion is one of great importance. Here's some entertaining reading on the future of elevators: [Elevators in the New Yorker](http://www.newyorker.com/magazine/2008/04/21/up-and-then-down?printable=true&currentPage=all)
 
 #### Objectives
 * The objective is to give you a chance to show off your software design skills
@@ -12,10 +11,18 @@ With buildings getting taller and taller, the issue of efficiently operating ele
 * Focus on good class design, separation of concerns, single responsibility principle, unit testing
 * Try to make this a `beautiful program`
 
+#### Final Deliverbales
+* A series of ruby files implementing the elevator simulation
+* The simulation should be (at least) of 1 building with 5 floors and one elevator and people moving between floors
+* Running the simulation should be simply `ruby simul.rb` and it should display information on the console
+* A readme file which describes your solution and any interesting design concepts you applied
+* All checked into github
+* Run the github repo through code climate and add a badge to your readme showing the rating
+* Post the url of the github repo to Latte
+
 ### Basic Structure
 * You are to design a simulation framework for the testing and optimization of elevator operations. 
-
-The domain model is as follows:
+* The domain model is as follows:
 
 #### Building
 * There is one building in the simulation
@@ -48,8 +55,10 @@ So at every tick of the simulation clock, essentially each elevator must decide 
 In other words, you don't need to simulate opening and closing the doors. Assume that they open at each floor and that the passengers are `eager`. That is, they get off as soon as they can and get on as soon as they can.
 
 #### Evolving the elevator logic
-
-Here are the stages you can try to implement, starting from the simplest.
+* Start by creating the Simulate, Building, Floor and Elevator classes
+* Focus on creating a building with one elevator, and three floors
+* Add a to_s method to each of these that describes the relevant state of each of the objects
+* Here are the stages you can try to implement, starting from the simplest.
 
 1. One elevator, 3 floors
 	* The elevator doesn't ever move. 
@@ -89,8 +98,5 @@ There are many ways to architect a simulation.I have verified that this model wo
 * A main program -  `sim.rb` runs the show. It does:
 	1. Creates an instance of the Simulation class
 	1. Creates (directly or indirectly) the building, floors, elevators, and people
-
-#### Hints
-* Start by creating the Simulate, Building, Floor and Elevator classes
-* Focus on creating a building with one elevator, and three floors
-* Add a to_s method to each of these that describes the relevant state of each of the objects
+	1. Runs the simulation
+	1. Displays to the console output tracking what's happening to show that it worked
