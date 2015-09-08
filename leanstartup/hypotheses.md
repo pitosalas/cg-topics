@@ -1,6 +1,5 @@
 ---
 title: Hypotheses
-section: topics
 ---
 ##### The Lean Startup notion of hypotheses
 * Also 'assumptions', but I like the term hypothesis better because it emphasizes that we don't take a side as to whether it is true or not. We specifically want to generate evidence that will either prove or disprove it.
@@ -12,6 +11,9 @@ section: topics
 * Customer: Who is the customer? Where would you find them?
 * Problem: What is their pain? What is the 'job' they are 'hiring' a product to do?
 * Solution: What kind of solution are they seeking? What features do they need? Will this solution actually address their problem?
+* Pricing: Different tiers, prices, different customer segments
+* Technology: What kind of computer, connectivity, sophsitication do they have
+* Habits: "They do ..."
 * Growth Hypothesis - Use will grow over time.
 * Value Hypothesis - Like Solution Hypothesis
 
@@ -19,5 +21,3 @@ section: topics
 * What is important is the idea of formulating testable hypotheses, running experiments, and updating your plans accordingly.
 
 * Reference: ["Why do research when you can fail fast and pivot?"](http://www.wired.com/2013/09/why-do-research-when-you-can-fail-fast-pivot-and-act-out-other-popular-startup-cliches/)
-
-
