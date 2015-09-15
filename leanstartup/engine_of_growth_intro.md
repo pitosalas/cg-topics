@@ -1,6 +1,5 @@
 ---
 title: Engine of Growth
-section: topics
 ---
 * Some basic questions to ponder
 	* Is it a business or a hobby?
@@ -22,5 +21,3 @@ section: topics
 	* Viral (users invite other users)
 	* Paid (simple purchase, one shot)
 	* Accessory (in product purchases)
-		
-
