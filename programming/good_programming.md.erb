@@ -1,5 +1,5 @@
 ---
-title: Good programming 
+title: Good programming
 ---
 
 #### Good Programming
@@ -19,12 +19,10 @@ title: Good programming
   * DRY: "Do Not Repeat Yourself".
   * YAGNI: "You're Not Gonna Need It"
   * NIH: "Not Invented Here"
-  * BDOF: "Big Design Up Front"
+  * BDUF: "Big Design Up Front"
 
 * Discussion about hard and fast rules
 * Tools to automatically check: <%= link_to_topic :code_analysis %>
-
-<%= include_topic :code_smells %>
 
 * Other basic hygene
   * What's the right amount of code commenting?
@@ -36,7 +34,3 @@ title: Good programming
   * Methods can be no longer than five lines of code
   * Pass no more than four parameters into a method
   * Controllers (Rails) can insantiate only one object. Therefore views can only know about one instance variable, and only send methods to that object. (@view_presenter.user.username is not allowed)
-
-
-
-
