@@ -25,9 +25,12 @@ Before we can start making API calls, we need to get access tokens from twitter 
 
 **NOTE:** If you are uncomfortable with giving Twitter your cell phone number, let us know and we will provide you with API keys you can use for this assignment.
 
-##### Accessing the API with Ruby
+##### Hints
 
-Code Academy provides a helpful guide to accessing APIs with ruby, and accessing Twitter's API in parituclar.  See here: http://www.codecademy.com/en/tracks/twitter
+* Code Academy provides a helpful guide to accessing APIs with ruby, and accessing Twitter's API in parituclar.  See here: http://www.codecademy.com/en/tracks/twitter
+* If you want to go directly to a good gem to use to access twitter from your program, look for a gem called "twitter": https://github.com/sferik/twitter
+* You can get a nicer object oriented design if you separate the code that knows about how to access twitter into a standalone class, for example, called TwitterWhacker. For example the knowledge of how to compute the "score" and the "index" and how to call twitter api. This class should not know anything about sinatra, or html. You can instantiate and use that class inside your sinatra application (e.g. sinatra.rb).
+* If you want to try test drive development, then look at my recording called "TwitterWhack Background" and you might remember how to do it.
 
 #### Final Product Specs
 
@@ -37,13 +40,15 @@ Code Academy provides a helpful guide to accessing APIs with ruby, and accessing
 
 * After pressing the submit button, the user will be taken to a results page.  On this page, you'll display their Twitterwhack index and score, a comment on how well they did, as well as a sample tweet that contains their search terms.
 
-* The Twitterwhack index is simply the number of results which contained both of their search terms, up to the maximum of 100.  Lower indices are better, although zero doesn't count.  
+* The Twitterwhack index is simply the number of results which contained both of their search terms, up to the maximum of 100.  Lower indices are better, although zero doesn't count.
 
 * The Twitterwhack score is the product of the number of results which had the first term and the number which had the second term, up to the maximum (100*100 = 10,000).  In this case, a higher score is better.
 
 * Your comment on their result should be based on their index.  For example, you might say "Excellent!" for an index 5 or below, "Try again!" for an index 90 or above, and "You got whacked!" for an index of zero.  You only need to have a small handful of different comments.
 
 * You should select a random example tweet from among the results that had both terms and display the text of that tweet along with the name of the user who wrote it.  In the event there were no tweets, you should instead output a message saying so.
+
+* Note that most of this code should be in ruby and run on the server. You should use no javascript in your web pages.
 
 Example output looks like this:
 
@@ -53,6 +58,6 @@ Your words (sinatra and test) gave an index of 10 with a score of 10000. That's 
 An example tweet that contained these words is:
 
 ~~~
-RT @JimmyJazz1968: If MSNBC can pull the plug on Frank Sinatra & Woody Allen's test tube baby then nobody is safe NOBODY 
+RT @JimmyJazz1968: If MSNBC can pull the plug on Frank Sinatra & Woody Allen's test tube baby then nobody is safe NOBODY
 by prostgrad
 ~~~
