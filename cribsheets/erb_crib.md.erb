@@ -9,7 +9,20 @@ title: ERB Cribsheet
 
 ##### What it does
 * Erb file without any `<% %>` blocks remains unchanged
-* `<% %>` **must** contain legal ruby code
-* Let's look at [ErbDemo](https://github.com/pitosalas/erbdemo)
+* `<%% %>` **must** contain legal ruby code!
 * The code between the angle brackets is evaluated.
-* *And only in the case of `<%= %>` it's inserted into the resulting text
+* *And only in the case of `<%%= %>` it's inserted into the resulting text
+
+##### Example
+~~~~~
+<%% %w(Jones Hickey Salas Madeiras).each do |name| %>
+  ----
+  Dear Mr. <%%= name %>,
+  I am writing to let you know that I have moved, and my new address is
+  1 Main Street, San Fransisco, CA. Please make a note of it.
+  Sincerely,
+
+  Tom
+  -----
+<%% end %>
+~~~~~
