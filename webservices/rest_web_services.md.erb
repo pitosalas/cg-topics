@@ -6,9 +6,9 @@ title: REST and Web Services
 
 #### What is a web service?
 
-* Consider this web page: [Olin College Engineering Courses](http://wikis.olin.edu/coursecatalog/doku.php?id=course_listings:engr)
-* What would "TeachBack" do if it wanted to have a list of courses pre-populated with a college's courses? 
-  * Grab all the text `curl http://wikis.olin.edu/coursecatalog/doku.php?id=course_listings:engr > olincourses.txt`
+* Consider this web page: [Olin College Engineering Courses](http://www.olin.edu/course-listing/)
+* What would "TeachBack" do if it wanted to have a list of courses pre-populated with a college's courses?
+  * Grab all the text `curl http://www.olin.edu/course-listing/ > olincourses.txt`
   * Write a program to parse that page and then load the results into a database.
   * This is called "scraping" and usually that would violate a copyright
 * Server can also deliver information in "machine readable" formats (such as JSON or XML)
@@ -44,7 +44,7 @@ title: REST and Web Services
 * Think of everything in terms of a 'resource' that is being manipulated
 * For example, GET means get a representation of the resource marked, e.g.
   * GET http://www.facebook.com/user/pitosalas
-  * GET http://www.facebok.com/users 
+  * GET http://www.facebok.com/users
   * GET 0.0.0.0:3000/cards/1.xml
 * Some things are harder to fit with the model
   * What might a horoscope service look like as REST?
