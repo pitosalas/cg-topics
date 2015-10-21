@@ -2,21 +2,27 @@
 title: TDD homework
 ---
 ##### General
-* Don't use inheritance! 
+* Don't use inheritance!
 * Test ALL the methods (including initialize if applicable)
 * Here's an example that gives the whole thing away: <%= link_to_topic :tdd_demo %>
-* <%= nb "The concepts are the same, but the syntax of minitest, minitest/spec and rspec are a little differenbt. I recommned minitest/spec" %>
+* <%= nb "The concepts are the same, but the syntax of minitest, minitest/spec and rspec are a little different. I strongly recommned minitest/spec" %>
 
 #### Instructions
 * Develop the following simple program using Test Driven Development
 * Meaning, write the tests FIRST and then write the classes
+* In other words, for example:
+  * Write a test that creates a new Rectangle without actually writing the Rectangle class
+  * That will fail, of course. Now, in a separate file, write the minimal amount to make that test pass. That would be a class called Rectangle, with no methods.
+  * Now in your test, create a Rectangle, and call a method on it, checking that it returns the right result.
+  * That will fail too. Go back to the class, and write the minimal code to make the test pass.
+  * Rinse and repeat.
 * You may use minitest, minitest/spec or rspec. I recommend minitest/spec.
 
 #### Specifics - what you will need
 * A class called Point to represent a point on a plane (i.e. x and y coordinates, floats, representing meters from the origin)
 * A class called Rectangle that represents a rectangle with two points
 	* Rectangle#area (in square meters)
-* A class called Trangle that represents a triange with three points.
+* A class called Triangle that represents a triange with three points.
 	* Triangle#area (in square meters)
 * A class called Circle that represents a circle by a point and a radius (float)
 	* Circle#area (in square meters)
