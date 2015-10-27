@@ -1,0 +1,83 @@
+---
+title: Duck Typing Homework
+---
+#### Objective
+
+##### General case
+Design a publish-subscribe facility. In this scenario there's a class that writes log records to a log file. Whenever an interesting event happens anywhere in the system, we want to easily cause a log entry to be written.
+
+##### Specific Scenario
+We implement a PubSub processor that handles publishing and subscribing. Any class in the system who wants to find out that an event happened, can register as a subscriber. Any other class who wants to publish something to a subscriber can call publish_to_subscriber.
+
+In the code below, we show a partial example, where a Event Logging class (Logger) needs to record interesting events in the log file. Specifically, to record each time an email is received. At the same time, a MailReceiver class would like to get something into the log whenever an email is received.
+
+##### Your assignment
+* Complete the class below, adding missing lines of code
+* Write an additional class, MailBilling
+  * With a method "process" which also subscribest to email messages
+  * And displays text to the console: "Sending bill for message <subject>"
+
+#### Here's the sample code to start with
+
+<%= ruby_begin %>
+# Class contains all email processing
+class MailReceiver
+  def initialize(pubsub_handler)
+    @pubsub = pubsub_handler
+  end
+
+  def generate_test_emails
+    mail_received("Welcome to our system")
+    mail_received("You are the winner")
+    mail_received("Please applaud")
+  end
+
+  # Whenever a new email is received, the mail_received method is called.
+  def mail_received(subject_line)
+    @pubsub.publish_to_subscribers(:mail, subject_line)
+  end
+end
+
+# Class manages writing events to event logs
+class Logger
+  def initialize
+  end
+
+  # clients call this method to add something to the log
+  def process(log_message)
+    puts "Log occurred: #{log_message}"
+  end
+
+end
+
+# Class manages PubSub
+class PubSub
+  def initialize
+    @subscribers = []
+  end
+
+  # Subscribers can tell PubSub they are interested in certain events
+  def register_subscriber(subscriber)
+    @subscribers << subscriber
+  end
+
+  def publish_to_subscribers(parameter)
+    subscribers.each { |s| s.process(parameter)
+  end
+
+end
+
+# Hyper simplified code!
+
+# Create a new PubSub handler
+@ps = PubSub.new
+
+# Create a new event logging system
+@logger = Logger.new
+@ps.register_subscriber(:mail, logger)
+
+# Create a new mail handler and trigger three test emails
+@mh = MailHandler.new(@ps)
+@mh.generate_test_emails
+
+<%= ruby_end %>

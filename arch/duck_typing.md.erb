@@ -1,35 +1,37 @@
 ---
 title: The classic Duck Typing Example
 ---
+##### Classic Duck Typing Examples
+
 <%= ruby_begin %>
-class Duck  
-  def talk  
-    'Quack!'  
-  end  
-  
-  def swim  
-    'Paddle paddle paddle...'  
-  end  
-end  
-  
-class Goose  
-  def talk  
-    'Honk!'  
-  end  
-  def swim  
-    'Splash splash splash...'  
-  end  
-end  
-  
+class Duck
+  def talk
+    'Quack!'
+  end
+
+  def swim
+    'Paddle paddle paddle...'
+  end
+end
+
+class Goose
+  def talk
+    'Honk!'
+  end
+  def swim
+    'Splash splash splash...'
+  end
+end
+
 class Student
   def talk
     "Hello!"
-  end  
-  
-  def walk  
-    'Step, Step, Step'  
-  end  
-end  
+  end
+
+  def walk
+    'Step, Step, Step'
+  end
+end
 
 
 s = Student.new
@@ -44,4 +46,4 @@ make_it_talk(s)
 make_it_talk(g)
 make_it_talk(d)
 
-<%= ruby_end %>  
+<%= ruby_end %>
