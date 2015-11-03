@@ -2,16 +2,18 @@
 title: "The Cloud"
 ---
 
-#### Classification of Cloud
+#### The Cloud
 * Software as a Service **(SaaS)**: Delivers an application through a web site or app.
-  * Examples: Google Docs, Basecamp, etc.
+  * Examples: Google Docs, Basecamp, Github, etc.
   * Differentiated by what the app is
 * Platform as a Service **(Paas)**: Deploy your apps to the cloud, based on their platform.
-  * Examples: Heroku, Some AWS offerings, Google App Engine, Pusher.com
+  * Examples: Heroku, [Amazon Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/), Google App Engine, Pusher.com
   * Differentiated by what the platform is, e.g. Node.js, Rails, Go, etc.
 * Infrastructure as a Service **(IaaS)**: Delivers some part of infrastructure through the cloud. Infrastructure might be CPU, Disk, Queueing service etc.
   * Examples: Amazon EC2, S3, Google Compute Engine, Linode, etc.
   * Differentiated by what part(s) of infrastructure are offered.
+* DIY Clouds
+  * Open Source Project: [Cloud Foundry](https://www.cloudfoundry.org/learn/features/)
 * Pricing
   * These services usually have a free tier, but for 'serious' use you need to pay
   * Some examples:
@@ -21,8 +23,9 @@ title: "The Cloud"
     * CodeClimate: Free for public repos
     * Github: Free for public Repos
     * loader.io: Simulated load to test scalability
-  * Notice that the terms are not settled yet. XaaS sometimes is defined differently.
+* Notice that the terms are not settled yet. XaaS sometimes is defined differently
 
 ##### Reference
 * [Heroku: Getting Started With Rails](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * [Classification of Cloud Services](http://bitheads.com/what-types-of-cloud-services-are-available/)
+* Look at <%= link_to_topic :hands_on_herokusinatra %>
