@@ -1,0 +1,66 @@
+---
+title: Scaling by Database Partitioning
+---
+
+### Scalability Pattern: Database Partitioning
+* Conflicting definitions
+  * When you divide a big database into several smaller ones
+  * Partitioning: Horizontal and Vertical
+  * Sharding; Horizontal Partitioning
+* What's the problem?
+  * When the database is the bottleneck
+  * Add a second database server
+  * What to do with the data?
+* Some options
+  * Replication: Put a complete copy of the data on the second db server
+  * Pay attention to read vs. write
+  * What to do about data consistency?
+  * Parition
+
+#### Example
+* User Database
+  * Happens to often be a monster
+  * Lots of records
+  * Each record with lots of information
+  * Accessed a lot
+* Schema
+  * User: (id, name, email, biography, hobbies, college, last_login, encrypted_pw, profile_photo_jpg, ...)
+
+#### Vertical partition
+* Often associated with an SOA
+* Divide the User table into three different database servers:
+  User: (id, name, biography, email)
+  Autentication: (id, last_login, encrypted_pw)
+  Photos: (id, profile_photo_jpg)
+* How it changes your application
+  * Pretty basic rearchitecture into separate services
+
+#### Sharding (Horizontal partition)
+* "buckets" of users (== shards)
+* How? Create multiple database servers with
+  * the same schema
+  * different subset or clump of records
+* Need a way to direct requests to the right "shard"
+  * inspect something about the record
+  * determine what shard to look in
+  * Three common flavors to decide what bucket gets a record
+    * Range Based: Range of some scalar value (record id, first letter of name, etc.)
+    * List Based: Take some other property (e.g. zipcode, department)
+    * Hash Based: Compute a hash on some value
+* How it changes your application
+  * Whenever you either read, write, or search
+  * Require to include enough information to pick the right shard
+
+#### Pros and Cons
+* Joins become a problem
+  * What was once one db is now spread over more than one db
+  * Can lead to denormalization
+* Data Integrity
+  * Foreign keys might now point to another database
+  * Databases can get out of sync
+
+<%= callout("NB", " Both kinds of sharding are advanced techniques and you should only use them when you have quantitative reasons to believe they will improve a measured performance issue.") %>
+
+#### References
+* [Building Scalable Databases: Pros and Cons of Sharding](http://www.25hoursaday.com/weblog/2009/01/16/BuildingScalableDatabasesProsAndConsOfVariousDatabaseShardingSchemes.aspx)
+* [The Basics Of Database Sharding](http://www.brentozar.com/archive/2013/05/the-basics-of-database-sharding/)

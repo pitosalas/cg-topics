@@ -1,0 +1,51 @@
+---
+title: Scaling by Database Caching
+---
+
+### Scalability Pattern: Database Caching
+
+#### Example, Social Graph
+* Classic Relational Approach
+  * Schema (like all of you have)
+    * People(id, name)
+    * Follow(id, follower, following)
+  * Nicely normalized
+    * First, Second and Third Normal form
+    * Origins of the relational database
+  * Queries like:
+    * How many people are following user X
+    * Who is following user Y
+  * But to display each and every user, a join is needed!
+
+#### Measurement
+* Ask database system to analyze SQL queries that are slow
+  * e.g. `heroku pg:outliers`
+  * Discover that the social graph access was very slow
+* Solution: Caching
+  * Use Network scale caching (Redis) to store and share across servers
+
+#### Caching with "Redis"
+* Analogous to other network scale caching solutions (e.g. cached)
+* Typical structure is a key-value store
+* A nosql database. But in memory
+* It has some interesting characteristics
+  * ATOMIC operations, e.g. "INCR" operation
+  * keys that expire (TTL)
+  * Supports other values: lists, sets, hashes
+  * And many many more
+* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
+* Wait, where's the data actually stored?
+  * A redis host, accessible by tcp/ip: dns name + port number
+  * You can run it
+  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
+  * In all cases, if the host dies, the data is gone
+
+#### Putting the two together
+* "Store the social graph, denormalized, in a cache"
+* Means, more or less:
+  * All user information is stored as before in the relational database
+  * In addition, a denormalized copy of the key facts are stored in Redis
+* Redis is accessed
+  * Whenever ui needs to show count of followings or followers
+  * Whenever a new follow command is issued, it is updated
+  * Under certain circumstances, Redis is refreshed with good data

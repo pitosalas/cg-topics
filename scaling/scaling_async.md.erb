@@ -1,27 +1,7 @@
 ---
-title: Techniques for Scaling
+title: Scaling with Asynchronous processing
 ---
-#### Techniques: Caching
-* Save the result of a request with a given set of parameters.
-* In a future request with the same parameter (maybe) return the same result
-* Memoization: 
-  * caching applied to an individual method
-  * A basic programming technique
-* System level caching. Storage:
-  * In 'local' memory
-  * In 'remote' memory
-  * In database
-  * In Cloud
-* Name-value databases
-  * Very fast searches and lookups
-  * Distributed searches and distributed databases
-  * Robust across system and application failures
-* References:
-  * [Redis](http://redis.io)
-  * [Memcached](http://memcached.org)
-  * [Amazon Elastic Cache](http://aws.amazon.com/elasticache/)
-
-#### Techniques: Asycnhronous processing
+### Scaling Pattern: Asycnhronous processing
 * Real examples: <%= discussion "What do all of these have in common?" %>
   * Account registraton confirmation emails (actually all emails)
   * Daily (periodic or episodic) notification emails
@@ -64,21 +44,3 @@ title: Techniques for Scaling
 * References
   * [Comparing Background processing Libraries](http://www.sitepoint.com/comparing-ruby-background-processing-libraries-delayed-job/)
   * [Rails Delayed Job Gem](https://github.com/collectiveidea/delayed_job)
-
-#### Techniques: Databases
-<%= discussion "What if all the user names are stored in one table on one server?" %>
-
-* Databases are a major bottleneck! Must move the data to more than one machine!
-* Need to undertand the access pattern: read intensive/write intensive
-* Database Replication
-  * What does it do
-  * What are the benefits
-* Database Partitioning
-  * What are the different kinds: Horizontal and Vertical
-  * What does it do
-  * What are the benefits
-* Database Sharding
-  * What does it do
-  * What are the benefits
-* References
-  * [The Basics Of Database Sharding](http://www.brentozar.com/archive/2013/05/the-basics-of-database-sharding/)
