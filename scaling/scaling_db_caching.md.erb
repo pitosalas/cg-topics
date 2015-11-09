@@ -8,13 +8,16 @@ title: Scaling by Database Caching
 * Classic Relational Approach
   * Schema (like all of you have)
     * People(id, name)
-    * Follow(id, follower, following)
+    * Follow(id, follower_id, following_id)
+    * Content(id, author_id)
   * Nicely normalized
     * First, Second and Third Normal form
     * Origins of the relational database
   * Queries like:
-    * How many people are following user X
-    * Who is following user Y
+    * How many people are following user X?
+    * Who is following user Y?
+    * What are the most recent "n" posts (i.e. content) for user "u"?
+    * What are the most recent "n" posts for users that "u" is following?
   * But to display each and every user, a join is needed!
 
 #### Measurement
@@ -33,6 +36,7 @@ title: Scaling by Database Caching
   * keys that expire (TTL)
   * Supports other values: lists, sets, hashes
   * And many many more
+* [Play with Redis](http://try.redis.io)
 * Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
 * Wait, where's the data actually stored?
   * A redis host, accessible by tcp/ip: dns name + port number
@@ -40,12 +44,11 @@ title: Scaling by Database Caching
   * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
   * In all cases, if the host dies, the data is gone
 
-#### Putting the two together
-* "Store the social graph, denormalized, in a cache"
-* Means, more or less:
-  * All user information is stored as before in the relational database
-  * In addition, a denormalized copy of the key facts are stored in Redis
-* Redis is accessed
-  * Whenever ui needs to show count of followings or followers
-  * Whenever a new follow command is issued, it is updated
-  * Under certain circumstances, Redis is refreshed with good data
+#### Putting the it together
+* Example:
+  * Display list of 50 most recent posts for users who are followed by user u
+  * Key is: 50_tweets_for_user:uid
+  * Value is: ordered list of tweet ids
+* Processing:
+  * When list is displayed
+  * When user :u tweets
