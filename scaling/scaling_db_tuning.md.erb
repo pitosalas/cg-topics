@@ -1,0 +1,13 @@
+---
+title: Scaling by database tuning
+---
+### Scalability Pattern: Database Tuning
+* Considering the code
+  * Minimize the number of times code calls the database (which is usually the same as the number of SQL statements are sent.)
+  * Check whether there is a bulk operations which will do the job (e.g inserting ten records with one call)
+* Consider the Schema
+  * Are the right columns indexed? Either too many or too few can be bad for performance, depending on the scenario.
+  * Check whether there are database constraints that you can add
+  * Check whether there are stored procedures that could be useful
+* Database Administrator
+  * A separate technical title, usually highly paid and highly specialized

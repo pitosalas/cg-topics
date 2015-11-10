@@ -4,6 +4,21 @@ title: Scaling by Caching
 ### Scalability Pattern: General Caching
 * Save the result of a request with a given set of parameters.
 * In a future request with the same parameter (maybe) return the same result
+* Awareness of order of magnitude speed of operations:
+  * Access registers inside CPU
+  * Access CPU caches
+  * Access standard RAM
+  * Access local disk
+    * Access files
+    * Access local database
+  * Access over network
+    * To a nearby server
+    * To a nearby database server
+  * Access over the internet
+    * To a remote server
+    * To a remote database server
+    * To a remote Web Service
+
 * Memoization:
   * caching applied to an individual method
   * A basic programming technique

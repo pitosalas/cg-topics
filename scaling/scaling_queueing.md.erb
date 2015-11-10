@@ -1,0 +1,43 @@
+---
+title: Scaling with Queueing
+---
+### Scalability Pattern: Queueing
+
+#### Queueing and SOA
+
+* SOA: Divide software into independent "services" that talk to each other
+  * Client: code that needs the service
+  * Server: code that implements the service
+* Previously: SOA required REST between servers ('synchronous' - why?)
+* Queueing is a fundamentally different way of creating services and concurrency
+* Syncrhonous:
+  1. Client makes a request (HTTP get) and waits
+  1. Server Receives request
+  1. Server does the service, during which client and server are waiting
+  1. Server sends response
+  1. Client is free to continue processing
+* Asynchronous
+  1. Client makes a request ('Publish' to a queue)
+  1. Client can now continue
+  1. Server picks next item off queue and does the service.
+  1. When service complete, notifies client to use the result.
+* That's the theoretical framework
+
+#### RabbitMQ: One of several implementations
+* Runs in a process of it's own
+* Defines the following terminology
+  * Producers: Software that sends messages
+  * Consumers: Software that consumes (and processes) messages
+  * Queues: FIFO "holding area"  for messages
+  * Message: A bit of data which often incorporates an action or command
+  * Exchange: Receives messages from producers, and sticks them into a queue
+  * Acknowledgement: So that if the server dies before finishing, the message gets given to someone else
+  * Durability: So that if the Queueing Service dies, the content of the queue survives
+
+##### Demonstration
+* Review the scenarios from before
+
+#### References
+* [RabbitMQ Tutorial](https://www.rabbitmq.com/tutorials/tutorial-one-ruby.html)
+* [Rabbit Demo (github)](https://github.com/Cosi-105/rabbit_demo)
+* [Ruby Concurrency Exmlained](http://merbist.com/2011/02/22/concurrency-in-ruby-explained/)
