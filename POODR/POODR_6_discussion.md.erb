@@ -1,0 +1,16 @@
+---
+title: POODR Chapter 6
+---
+#### Discussion About Chapter 6
+* Compare inheritance and delegation as ways for classes to share behavior. In what way are they closely related?
+* What are the negative consequences of classes that have an instance variable (e.g. @kind_of_bike) to say what variant the class is? How do you spot that pattern. How do you remove it?
+* Can you say what the "Template Method Pattern" is?
+
+##### Inheritence
+* Lets tour the code for [Chapter 6 of POODR](https://github.com/skmetz/poodr/blob/master/chapter_6.rb)
+
+* Liskoff Substitution Principle (!!)
+  * Google it, you will see lots of hits
+  * Part of the SOLID principles of OO Design (google that too)
+  * Code that works correctly with objects of class P should continue to work correcty with objects of class C (where C < P, C )
+  * Or: Code that works correctly with Bicycle should work exactly the same with RoadBike or MountainBike. (Think of the Mechanic doing a "prepare bike")
