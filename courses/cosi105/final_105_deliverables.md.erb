@@ -4,7 +4,7 @@ title: Cosi 105 Final Deliverables
 
 #### Final Deliverables
 
-1. Individual final programming assignment: 
+1. Individual final programming assignment:
 	* Elevator Simulation
 	* Assignment is detailed here: <%= link_to_topic :pa_elevator %>
 1. Team nanoTwitter deliverables
@@ -16,16 +16,16 @@ title: Cosi 105 Final Deliverables
 
 #### How nanoTwitter will be evaluated
 
-* Quality of the engineering. 
+* Quality of the engineering.
 	* How is the design, is it broken down into some classes?
-	* Is there attention to single responsibility principle and other good design practices? 
+	* Is there attention to single responsibility principle and other good design practices?
 	* Are the classes and methods reasonably brief. How does the code look?
 	* Are there tests and are they being run automatically?
-* Quality of the Scalability. 
+* Quality of the Scalability.
 	* How well does the nT perform under load from loader.io using the specific testing rules that we described.
 	* What steps did you take to help it scale better?
 	* And what is final result?
-* Fit and Finish. 
+* Fit and Finish.
 	* Does the final product look professional and clean? Did you read the requirements (from me) broadly and go beyond the very minimum? Or did you just barely get it to work? Does it look good and show pride of work?
 * Github
 	* You will be submitting the github directory with the code in it
@@ -35,24 +35,11 @@ title: Cosi 105 Final Deliverables
 #### How nanoTwitter Scalability will be tested
 * We will be looking at how well your server stands the load
 * There is not a magic number to beat
-* Preparation for testing:
-	* Build in a special test user called "test_user"
-	* Create a path (/test_reset) which deletes all tweets by test_user and has test_user unfollow all users. This is used between tests to reset.
-	* Create a path (/test_tweet) which when visited causes test_user to post a random tweet (use faker or a set string + a timestamp to generate unique tweets). 
-	* Create a path (/test_follow) which when visited selects a random user and has test_user follow that user or unfollow that user (if test_user currently follows that user, unfollow. If test user_does not follow that user, follow).
-	* Create a path (/test_user) that displays test_user's logged in state page. To be clear, this is not actually logging in, it's just displaying the page that would happen if test_user was logged in.
-
-##### Test Protocol
-1. Show the homepage with 100 most recent tweets
-1. Test tweeting
-	* Use loader.io to run against /test_tweet and the home page.
-1. Test following
-	* Use loader.io to run against /test_follow and test_user's profile page. The profile page should show the 100 most recent tweets only by people test_user follows
+* You need to make sure that the test protocol works as defined here <%= link_to_section :nt, :nt_functionality %>
 
 #### Porfolio Page
-* Google Sites (or other)
+* Create a single page web site a [Github Page Site](https://pages.github.com) attached to your github directory
 * Make it look pretty!
-* 2 page web site
 * An "e-brochure" for your project
 * Containing info such as:
 	* Summary statement of assignment (1-2 paragraphs)
