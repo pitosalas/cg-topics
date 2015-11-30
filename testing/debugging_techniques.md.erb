@@ -1,0 +1,65 @@
+---
+title: Debugging Techniques
+---
+#### Debugging is a core skill
+
+<hr/>
+![](http://www.sherlock-holmes.co.uk/pr/silhouette.GIF)
+
+##### Sherlock Holmes Says [Quotes](http://sherlockholmesquotes.com)
+
+* 'It is a capital mistake to theorize before one has data. Insensibly one begins to twist facts to suit theories, instead of theories to suit facts.'
+* 'I never guess. It is a shocking habit,—destructive to the logical faculty.'
+* 'You know my method. It is founded upon the observation of trifles.'
+* 'Eliminate all other factors, and the one which remains must be the truth.'
+
+##### When things go wrong
+* Code doesn't stop working on its own. When it stops working it's because something changed.
+  * **First:** Blame yourself. It's probably something you are doing wrong. It's a normal, garden variety bug.
+  * **Second:** Blame your environment: Something in the environment is different. It could be a version of a library or a service
+  * **Third:** Look for a hidden dependency: Did your code somehow rely on the contents of this odd file? Does it work on my computer but not on yours?
+  * **Fourth:** After all this, consider the possibility that there's an actual bug in the gem, the library, the compiler, or even the operating system.
+
+##### Most challenging cases
+* [Heisenbugs](https://en.wikipedia.org/wiki/Heisenbug)
+* Spanning Servers/Services
+* Concurrency
+* Test vs. Production
+
+##### You have to understand what is going on
+* Don't trust "magic".
+* You need to be able to formulate a hypothesis of why something works. You need to take the time to understand
+* Catch yourself getting into trial-and-error debugging: "Let me try this", "let me try that", "let me cut and paste this line from StackOverflow.""
+  * Stop it!
+
+##### Divide and conquer
+* Write a "Hello world" demonstration of the bug.
+  * Fewest lines to illustrate that you understand how something works.
+  * Do you understand what it does, what the parameters are, what the return values are?
+* Slash and Burn
+  * If you really have no idea where the problem is
+  * You can temporarily remove tons of lines of code until the problem stops happening
+  * Binary Search
+* When dealing with services over the network
+  * Make sure you know exactly what is going "over the wire"
+  * Can you demonstrate the bug without involving more than one system?
+* Other standard Techniques
+  * Rubber Ducking
+  * Stack Overflow and similar communities
+
+##### Debuggers
+* All programming languages have a debugger of some kind.
+* Core features are:
+  * Run
+  * Stop
+  * Set Breakpoint
+  * Step over
+  * Step into
+  * Examine state
+* IDEs provide a fancier "Visual Debugging" interface
+
+##### Logging
+* Simple "printf" (puts)
+* Use logging facility
+* Logging levels: Info, Warning, Error, Severe
+* Parsing log files
