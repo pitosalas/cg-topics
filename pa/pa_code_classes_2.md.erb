@@ -4,17 +4,17 @@ desc: Leveling assignment for Object Oriented design
 ---
 In this game there are parking garages where vehicles are parked. Parking garages can have more than one level. There are two kinds of vehicles, cars and police cars. The assignment is:
 
-* We want to represent a parking garage. 
+* We want to represent a parking garage.
   * Each parking garage can have 1 or more levels
   * Each level can hold zero or more vehicles
 
 * We want to represent vehicles
   * All individual vehicles can have: integer height (centimeters)
   * There are two types of vehicle, with slightly different properties
-    * car: 
+    * car:
       parking fee: \[integer\], default is 10 ($/hour)
       service_requested: \[boolean\] default is false
-    * police: 
+    * police:
       * parking_fee: \[integer\] default is 0 ($/hour)
       * on_emergency: \[boolean\] default is false
 
@@ -23,8 +23,8 @@ In this game there are parking garages where vehicles are parked. Parking garage
   * add_level() - allocates a level. Happens only once when the garage is first created.
   * count_regular_cars() - returns a count of how many regular cars there are in the garage
   * count_police_cars() - returns a count of how many police cars there are in the garage
-  * car_arrives(car, floor) - adds a car to the specified floor
-  * car_departs(car) - removes a car from the garage (assuming the car is there)
+  * car_arrives(vehicle, floor) - adds a vehicle to the specified floor
+  * car_departs(vehicle) - removes a vehicle from the garage (assuming the car is there)
   * print_report() - shows how many floors the garage has and how many vehicles of what kind are on each level
 * The Level, PoliceCar, Car classes all have constructors and other methods
 
