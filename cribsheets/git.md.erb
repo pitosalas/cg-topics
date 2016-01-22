@@ -2,19 +2,30 @@
 title: Git and Github
 desc: Tips and hints for working with Git. Lots of links too.
 ---
-#### What is git?
+#### What is git? What is github?
 
-Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on. 
+* Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on.
+* Github is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
 
-Here are some features of Git:
 
-* Keep separate branches of development
-* Rollback to a previous version if a bug was found
-* Different versions for development and deployment; the deployment version should be a stable one
-* Merging branches into one branch
-* ...
+##### Terminiology
+* project directory: the directory that contains all the files of your project. It often contains other subdirectories. Different languages have different conventions for how to structure a project. Very often the toplevel contains a Readme file.
+* project root directory: the topmost directory of your project directory.
+* repository or repo: when a project directory is "packaged" up for Git
+* commit: one snapshot in time of the state of all the files in your project directory. Each commit is derived from an older one, it's parent. Still you can safely act as if the commit contains every single file in your project directory
+* (git) server: a server (separate from your own computer) that contains a snapshot of your repo
+* Github: the most well known, publically accessible git server
 
-#### Recommended local directory structure:
+##### Features
+* Here are some features of Git:
+   * Safely keep copies of all your source code and related files
+   * Efficiently store the source code over time, maintianing all the old copies too
+   * Allow multiple teams or people to safely collaborate in a distributed environment
+   * When necessary allow the developer to recover an older version of a file for some reason (bug, typo, accidental deletion etc.)
+   * Create parallel branches of work to allow divergent changes to be created without interference.
+   * Different versions for development and deployment; the deployment version should be a stable one
+
+##### Recommended local directory structure:
 <%=code_begin%>
 ~/mydev
     /pa1
@@ -34,7 +45,7 @@ Here are some features of Git:
     * git push (push all local commits up to github)
     * git pull (pull any changes made from github to look at it locally)
     * git status (see where things stand)
-* NB: Don't do a git clone from 'inside' a local repo directory
+<%= callout("Important"," Don't do a git clone from 'inside' a local repo directory") %>
 
 #### Resources
 
@@ -53,18 +64,14 @@ There are tons of online resources available for learning git. Below is a list o
 
 <%= include_image "/content/topics/images/git_file_status_lifecycle.png" %>
 
-###What is Github?
-
-Github is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
-
 ##### Discussion points
 
 * What are the main benefits of using GIT when developing a project by yourself?
 * What are the main benefits of using GIT when developing a project with a team of coders?
 * What are the reasons to create a branch?
 * When several team members commit different changes on their local repositories, how do the reconcile their different changes in the main github repository?
-* What are the advantages to having a staging area? 
-* After discussing these "big picture" ideas, we'll look at the internals to see what Git is actually doing when you branch, commit, etc. 
+* What are the advantages to having a staging area?
+* After discussing these "big picture" ideas, we'll look at the internals to see what Git is actually doing when you branch, commit, etc.
 
 ##### Some of the basic skills you'll need are
 
@@ -79,4 +86,3 @@ Github is a web application that provides hosted version control services using 
 * checking out another branch
 * tagging the current version (e.g. v1.0 or v1.3 or v1.3.7)
 * cloning a tagged version
-
