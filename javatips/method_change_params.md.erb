@@ -1,0 +1,18 @@
+---
+title: Methods changing parameters
+---
+Here are some rules of thumb to help you keep straight when and how the parameters can be changed by a method.
+
+The first thing to understand is that the actual parameteres supplied when a method is called exist outside of the method and will continue to exist once the method is completed.
+<%= code_begin %>
+Point center = new Point(0,0);
+moveLeft(center);
+<%= code_end %>
+In this snippet, the variable `center` exists before the method is called, and continues to exist once the method returns. So the question is whether it's possible for the method call to modify the value stored in that variable. In the above example, the variable is a reference to a `Point`. There are analogous cases where the variable used as an argument is an array, or a primitive type.
+
+#### Rules of Thumb
+
+1. A method cannot change the value of a argument of primitive type
+1. A method can change an argument which is a class (non-primitive) by changing its state.
+1. A method cannot change a String argument, even though it is a class, because Strings are immutable
+1. A method can change the contents of an array. The 'state' of an array is its contents
