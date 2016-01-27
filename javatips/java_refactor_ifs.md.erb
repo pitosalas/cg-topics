@@ -1,0 +1,236 @@
+---
+title: Java Refactoring tips
+author: Ryan Marcus
+---
+##### Author: Ryan Marcus
+
+##### The `if` collapse refactor
+
+Whenever you have code like this:
+
+```java
+if (condition) {
+    if (confition2) {
+        doSomeStuff();
+    }
+}
+```
+
+You can rewrite it to:
+
+```java
+if (condition && condition2) {
+    doSomeStuff();
+}
+```
+
+
+##### The `if/else` refactor
+
+Whenever you have code like this:
+
+```java
+if (condition) {
+    doSomeStuff();
+    return value1;
+} else {
+    doSomeOtherStuff();
+    return value2;
+}
+```
+
+You can rewrite it to:
+
+```java
+if (condition) {
+    doSomeStuff();
+    return value1;
+}
+
+doSomeOtherStuff();
+return value2;
+```
+
+##### Combine the two
+You can thus combine these two techniques. Whenever you have this:
+
+```java
+if (condition) {
+    if (condition2) {
+        return value2;
+    }
+}
+
+return value1;
+```
+
+You can rewrite as:
+
+```java
+if (condition && condition2)
+    return value2;
+
+return value1;
+```
+
+#Use case
+
+Notice how this complex code:
+
+```java
+if (condition1) {
+    if (condition2) {
+        if (condition3) {
+            return value2;
+        } else {
+            return value1;
+        }
+    } else {
+        return value1;
+    }
+} else {
+    return value1;
+}
+```
+
+Can be greatly simplified:
+
+```java
+if (condition1 && condition2 && condition3)
+    return value2;
+
+return value1;
+```
+
+
+# `if` and `for/while` refactor
+
+You can rewrite this:
+```java
+for (int i = 0; i <= 100; i++) {
+    if (i % 2 == 0) {
+        System.out.println("Even: " + i);
+    } else {
+        System.out.println("Odd: " + i);
+    }
+}
+```
+
+as...
+
+```java
+for (int i = 0; i <= 100; i++) {
+    if (i % 2 == 0) {
+        System.out.println("Even: " + i);
+        continue;
+    }
+
+    System.out.println("Odd: " + i);
+}
+```
+
+This is very useful for getting ride of "skip" clauses. For example, you can rewrite this:
+
+```java
+for (int i = 0; i < 100; i++) {
+    if (condition1) {
+        if (condition2) {
+            if (condition3) {
+                doSomething();
+            }
+        }
+    }
+}
+```
+
+As:
+
+```java
+for (int i = 0; i < 100; i++) {
+    if (!(condition1 && condition2 && condition3))
+        continue;
+
+    doSomething();
+}
+```
+
+##### The "bail" case
+Often times in programming, we find ourselves checking a number of "bail" cases
+before running a method. For example, we might check if a string is non-empty, and that
+it starts with a "(". Using these techniques can make such code much more readable.
+
+Consider this difference between this:
+
+```java
+if (str.length() != 0) {
+    if (str.charAt(0) == '(') {
+        // do
+        // a lot
+        // of stuff
+        // here.
+        // do
+        // a lot
+        // of stuff
+        // here.
+        // do
+        // a lot
+        // of stuff
+        // here.
+        // do
+        // a lot
+        // of stuff
+        // here.
+        // do
+        // a lot
+        // of stuff
+        // here.
+        // do
+        // a lot
+        // of stuff
+        // here.
+        return something;
+    }
+}
+return false;
+```
+
+And this:
+
+```java
+if (str.length() == 0)
+    return false;
+
+if (str.charAt(0) != '(')
+    return false;
+
+// do
+// a lot
+// of stuff
+// here.
+// do
+// a lot
+// of stuff
+// here.
+// do
+// a lot
+// of stuff
+// here.
+// do
+// a lot
+// of stuff
+// here.
+// do
+// a lot
+// of stuff
+// here.
+// do
+// a lot
+// of stuff
+// here.
+return something;
+```
+
+Now, when you are reading through the method, the first thing you see is that
+we "bail" on two different cases. Once these are "out of the way", you can think
+about the long complicated task ahead of you. When you reach the bottom of the
+complex task, you no longer have to think "huh, which if statement does this } close?"
