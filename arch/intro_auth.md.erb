@@ -8,7 +8,7 @@ topic: Introduction to Authentication and Authorization
 #### Key Concepts
 * True of more or less any approach to authorization and authentication
 * User record
-  * There is some kind of User record corresponding to 
+  * There is some kind of User record corresponding to
   * User is designated internally by a User (or Account, or similar concept)
 * A globally accessible method "current_user"
   * Can be called anywhere to see who is logged in
@@ -46,3 +46,8 @@ topic: Introduction to Authentication and Authorization
   * Often implemented with a list of "user types" (e.g. admin, professor, student)
   * And with a list of "operation types" (e.g. "administration", "read-write", "read-only")
   * Guard code in each controller/action
+
+#### Possible implementation strategies
+* Roll your own, using simple authentication
+* Look at https://rubygems.org/gems/clearance, https://github.com/NoamB/sorcery
+* Avoid Devise!! 
