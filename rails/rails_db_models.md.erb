@@ -11,15 +11,15 @@ Registrations(person_id, event_id, status, comment)
 <%= code_end %>
 ###### Create rails app
 <%= code_begin %>
-rails new demo2
+rails new handson
 <%= code_end %>
 ##### Gemfile
 <%= code_begin %>
 gem 'pry-rails'
-gem 'pry-byebug'
+gem 'better_errors'
 gem 'awesome_print'
 gem 'hirb'
-gem 'better_errors'
+gem 'faker'
 <%= code_end %>
 ###### Create the database tables
 <%= code_begin %>
@@ -27,17 +27,32 @@ rails generate resource Person name:string dob:date gender:string zipcode:string
 rails generate resource Event name:string event_date:date event_time:time
 rails generate model Registration person_id:integer event_id:integer
 <%= code_end %>
-###### Define sample data in seeds.rb 
+###### Define sample data in seeds.rb
 <%= code_begin %>
-Event.create(name: 'Welcome', event_date: 'Feb 1 2014', event_time: '12:00pm')
-Person.create(name: 'Angelo Smith', dob: 'Jan 2, 1991', gender: 'f', zipcode: 02474)
-Registration.create(person_id: 3, event_id: 2)
+Event.delete_all
+Person.delete_all
+Registration.delete_all
+
+5.times do
+  event_name = (Faker::Hacker.ingverb + " " + Faker::Hacker.noun + "s").capitalize
+  Event.create(name: event_name, event_date: Faker::Date.between(1.year.ago, 1.day.ago), event_time: '12:00pm')
+end
+
+(1..10).each do
+  Person.create(name: Faker::Name.name,
+    dob: Faker::Date.between(30.years.ago, 10.years.ago),
+    gender: ['f', 'm'].sample, zipcode: Faker::Address.zip)
+  end
+
+3.times do
+  Registration.create(person: Person.all.sample, event: Event.all.sample)
+end
 <%= code_end %>
 ###### Commands relating to seeding
 <%= code_begin %>
 rake db:create  # creates the database for the current env
-rake db:seed    # (only) runs the db/seed.rb file
 rake db:migrate # Run latest migrations
+rake db:seed    # (only) runs the db/seed.rb file
 rake db:setup   # runs db:schema:load, db:seed
 <%= code_end %>
 ###### Examining the DB from the SQL console
@@ -53,6 +68,7 @@ select * from people where id > 1;
 ###### Examining the databases from the Rails console
 *In the rails console you can type ruby commands (it's pry)*
 <%= code_begin %>
+rails console
 ActiveRecord::Base.connection.tables
 Person.all
 Person.where(gender: 'm')
