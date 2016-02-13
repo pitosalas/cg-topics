@@ -2,31 +2,82 @@
 title: Hands On Heroku for Rails
 ---
 #### Introduction
-* Heroku is one of many "cloud app platform"
+In this hands on demo you will create a new minimal Rails app, and then configure it so that it uses Sqlite3 in development on your local computer and Postgres in production. You will then set up Heroku and deploy the app to your Heroku account.
 
-#### Assumptions
-* You have a brand new rails application (such as shown in <%= link_to_topic :hands_on_tiny_rails_demo %>
-* The code is in a PUBLIC github repository
+##### Notation
+* A line that starts with a $ means that the text following the $ should be typed into your shell (terminal) **Remember not to type in the $ yourself!!!!**
+* Other lines are to be added to various files, and will be explained in context.
 
-#### Setup
-* Go to [Heroku](https://www.heroku.com)
-* Create a new user account (free)
-* Install the Heroku Toolbelt for your platform
+#### Creating a minimal Rails app
+* `$ rails new herokudemo`
+* `$ rails g resource universe name:text size:integer`
+* `$ rake db:migrate`
 
-#### Prepare your rails app
-* go to your local directory containing the rails app
+* Add to seeds.rb file: `Universe.create(name: "Our Universe", size: 100)`
 
-~~~
-#more to come
-~~~
+* `rake db:seed`
+* `rails generate controller welcome index`
 
-#### Get your environment set up
-* go to your local directory containing the rails app
-* the name of your app is assigned automatically and printed out once you do `heroku create`
+* Add these lines to app/views/welcome/index.html.erb:
+<%= code_begin %>
+<h2>Hello World</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+<p>
+  Number of universes: <\%= Universe.all.count %>
+</p>
+<%= code_end %>
+* Add to routes.rb: `root 'welcome#index'`
 
-~~~
-# Create the app on heroku
-heroku version
-heroku login
-heroku create
-~~~
+##### See if the app works
+* `$ rails c`
+* Type this into the console: `Universe.all`
+
+* `$ rails server`
+
+* Now visit the home page in your browser, at http://0.0.0.0:3000
+
+####  Set up heroku
+* Go to the heroku web site and create a free account on heroku
+* install heroku toolbelt (see: https://toolbelt.heroku.com)
+* check by typing `$ heroku`
+* Log into your account, by typing `$ heroku login` and supplying your email and password
+
+##### Adapt your rails app for Heroku
+* Edit your Gemfile:
+  * As the second line, add: ruby '2.2.3' # or whatever your version is
+  * Next add these lines:
+<%= code_begin %>
+  gem 'rails_12factor', group: :production
+  gem 'sqlite3', group: :development
+  gem 'pg', group: :production
+<%= code_end %>
+  * Also delete the line that says 'gem sqlite3' from the a few lines later. That line asks for Sqlite3 for all environments. While that's right for the development environment, it is not correct for the production (Heroku) environment.
+  * `$ bundle install`
+
+* Modify your database.yml file:
+<%= code_begin %>
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+<%= code_end %>
+
+* Now get your app set up on git and github:
+  * Go to www.github.com and create a brand new repo with the same name as your rails app, herokudemo
+  * Back on your own computer:
+    * `$ git init`
+    * `$ git remote add origin git@github.com:xxxxx` (substitute your git repo address there)
+    * `$ git add --all`
+    * `$ git commit -m "first commit"`
+    * `$ git push -u origin master`
+    * `$ git status`
+* Now set up your app on heroku and upload it
+  * `$ heroku create`
+  * `$ git push heroku master`
+  * `$ heroku run rake db:migrate`
+  * `$ heroku run rake db:seed`
+  * `$ heroku ps`
+  * `$ heroku run rails c`
+  * `$ heroku open`
