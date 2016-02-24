@@ -49,16 +49,6 @@ edit_comment GET    /comments/:id/edit(.:format) comments#edit
   * http://0.0.0.0:3000/posts/1/comments/1
 * Note: no nesting!
 
-#### Update the controllers
-* Now we add some code for controllers and views
-<%= code_begin %>
-rails generate controller Posts new create update edit destroy index show
-rails generate controller Comments new create update edit destroy index show
-<%= code_end %>
-* Experiment with the urls again
-  * http://0.0.0.0:3000/posts/1/comments/1
-  * Nesting still doesn't work
-
 #### Nesting happens in routing
 * Before:
 <%= ruby_begin %>
@@ -74,6 +64,12 @@ rails generate controller Comments new create update edit destroy index show
   end
 <%= ruby_end %>
 
-#### Review results
 * Review `rake routes`
-* Illustrate what is happening by adding params.inspect in various views.
+
+#### Adjusting the Model
+* Add belongs_to :post to Comment
+* Add has_many :comments to Post
+* Demonstrate that this works in Rails C
+
+#### Adjusting the controllers
+* Demonstrate what's happening by adding puts to the Post and Comment controllers
