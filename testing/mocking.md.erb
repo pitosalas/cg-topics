@@ -9,7 +9,15 @@ title: Mocking
 * What is a Mock?
 	* An object that stands in for another object during testing
 	* Make sure that only the right methods are called
-	* Other terms: doubles, stubs, and others. Don't get confused.
+	* Related terms: Test Doubles, stubs, and others. Don't get confused.
+  * More distinctions
+    * Broadest term: Test Double. They are all part of this category
+    * Test Dummy: An object that stands in for another, that has no methods. Not very useful.
+    * Stub: Responds to the key methods that are required for the test but the return values are fixed.
+    * Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
+* [Test Doubles: in Theory, in Minitest and in Rspec](https://eftimov.net/test-doubles-theory-minitest-rspec)
+* [Martin Fowler-Test Double](http://www.martinfowler.com/bliki/TestDouble.html)
+
 * Advantages
 	* Decoupling is always a good thing.
 		* Performance
@@ -21,7 +29,6 @@ title: Mocking
 	* Disadvantages
 		* Need to maintain to consistency between the mock and the class-being-mocked
 		* Otherwise you may be testing somethingn that doesn't even exist
-* Coding example: [Doubles Demo](https://github.com/pitosalas/doublesdemo)
 * Real world example:
     * Let's look at some of the code that runs this web site.
     * Note slightly different syntax because of RSpec vs. minitest/spec
