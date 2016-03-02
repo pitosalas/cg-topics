@@ -9,14 +9,14 @@ cd my_app
 
 ##### Add to gemfiles
 ~~~
-gem 'pry'
 gem 'pry-byebug'
 gem 'better_errors'
-gem 'minitest-spec-rails'
+gem 'minitest-rails'
 ~~~
 
 #### Add and test a model
 ~~~
+rails generate minitest:install
 rails generate model word eng:string ned:string
 rake db:migrate
 ~~~
@@ -32,6 +32,11 @@ describe Word do
 end
 ~~~
 
+##### See what rake tasks are present
+~~~
+rake -T
+~~~
+
 ##### Add some more tests
 ~~~
 it "stores a translation" do
@@ -41,17 +46,13 @@ it "stores a translation" do
 end
 ~~~
 
-##### Add a few fixtures
+##### One way to add fixtures
 ~~~
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-house:
-  eng: house
-  ned: huis
-
-boat:
-  eng: boat
-  ned: boot
+before do
+  Word.destroy_all
+  Word.create(eng: "house", ned: "huis")
+  Word.create(eng: "boat", ned: "boot")
+end
 ~~~
 
 ##### And see if words model can be persisted
@@ -107,7 +108,7 @@ rails generate controller Words learn
 ~~~
 require_relative '../test_helper'
 
-describe WordsController do
+describe class WordsController < ApplicationController do
   it "handles learn action" do
     get :learn
     assigns('word').must_be_kind_of Word
@@ -151,6 +152,7 @@ end
 ~~~
 
 #### References
+* [Minitest Rails Gem](http://blowmage.com/minitest-rails/)
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
 * [BDD with Minitest](https://semaphoreapp.com/blog/2014/10/27/bdd-on-rails-with-minitest-part-1-up-and-running.html)
 * [Old Post on which my example above is based more or less](http://andrzejonsoftware.blogspot.com/2007/05/15-tdd-steps-to-create-rails.html)
