@@ -1,0 +1,15 @@
+---
+title: PA Rails 2
+---
+#### Continuation
+(back to <%= link_to_topic :pa_rails_1 %>)
+
+Continuing from PA Rails 2 we will now allow the user to request to sign up for the course (fake of course :) There will be a new Search page which will help the user to find courses to sign up to, and then an enroll button to further allow them to sign up to it.
+
+####Part 2: Course Enrollment, Search
+1. Add a model/table called Enrollment linking users and courses (a many-to-many association).
+1. Add a fifth page to your app called Search. In the search page have a search form allowing users to search for courses by specifying an instructor and/or subject using dropdowns. If the user specifies an instructor and a subject, both constraints should apply. Your subject and instructor dropdowns should be populated using data from the database. When the search/submit button is clicked in the form the app should display a list of all matching courses in a new results page.
+1. Each of your search results should have a button called “Enroll” which when clicked will enroll a user in that course.
+1. Modify the Home page to list all the courses that a user is enrolled in
+
+#### Click here to continue to <%= link_to_topic :pa_rails_3 %>
