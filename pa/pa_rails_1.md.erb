@@ -3,23 +3,30 @@ title: PA Rails 1
 ---
 #### Intro
 
-This assignment introduces the MVC architecture of Rails as you design a Web app in which users can select university classes. The data you need is available at cs.brandeis.edu/~prakhar/dataset.json.
+This assignment introduces the MVC architecture of Rails as you design a Web app in which users can select university classes. The data you need is available at [This Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). The folder has 3 JSON files, each is a JSON array. Note: If you are using or already loaded data from [the original URL](http://www.cs.brandeis.edu//~prakhar/dataset.json), then you'll need to iterate through each line of that file and parsing each line as JSON - The entire file is not JSON formatted, just individual lines. Also DO NOT use/load entries of type "section" - there are too many of these and you'll end up exceeding the 10K records for a free database on Heroku. Only use data of type instructor, course and subject. 
 
 The purpose of this assignment is for each student to independently practice their knowledge of the material separate from the team work. What you learn and practice here will definitely contribute to your work on the team project.
 
-In the first part (of 3) you will build the basic rails application and import the data from the data file that we provide.
+In the first part (of 3) you will build a basic rails application that imports and displays the data according to the instructions below.
 
 #### Part 1: Bootstrap UI, User accounts, Display data
 1. Create a new rails application called Course Catalog
 1. Setup a GitHub repo and automatic deployment to Heroku
 1. Setup your application to use Bootstrap for the UI
-1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up.
-1. The university data is formatted in JSON. The first object provides a README from the university specifying the data schema.
-1. Create models for instructor, subject, and course. 1. Load the data into your database tables - how? You don’t need to store every field/attribute, just the ones you would like to include in your app.
+1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class.
+1. The university data is formatted in JSON. You may find detailed description from the university specifying the [data schema](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). You can find it here:[ Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). 
+1. Create appropraiate models in order to represent the data for instructor, subject, and course, as given in three separate JSON files.
+1. Load the data into your database tables. You don’t need to store every field/attribute, just the ones you would need and like to include in your app.
 1. UI: Once a user has signed up or logged in, your app will have four pages that a user can navigate to: Home, Subjects, Courses, Instructors.
   * Home - Display user info (Profile Page)
   * Subjects - Displays all the subjects from the database
   * Courses - Displays all the courses from the database
   * Instructors - Displays all the instructors from the database
+
+
+###Deliverables:
+1. Submit to Latte your link to GitHub.
+1. Submit to Latte your link to Heroku.
+1. Submit to Latte a zipped up folder of your app.
 
 #### Click here to continue to <%= link_to_topic :pa_rails_2 %>
