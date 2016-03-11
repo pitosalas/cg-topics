@@ -1,0 +1,12 @@
+---
+title: Cookies
+---
+#### Cookies are the crux of sessions
+* Max 4K of data, stored as 'file' by the browser on YOUR laptop
+* Each HTTP GET can potentially store a cookie:
+  * `curl -I http://www.google.com | grep Set-Cookie`
+* Browser will send that cookie back whenever:
+	* it is sending a request to the same server
+	* the cookie has not expired
+* But really, all you need is a 'fact' that the server gives to the client which is later on played back, e.g.
+  * `http://www.salas.com?SESSION=FFAF00AFFAF00AFFAF00AF`
