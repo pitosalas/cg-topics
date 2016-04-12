@@ -1,46 +1,87 @@
 ---
 title: Mobile App Approaches
 ---
-### Mobile GUI
+#### Mobile GUI
 
-#### Overview of approaches
+##### Criteria for evaluation
+* Are both iOS and Android required? How about smaller platforms?
+* Is access to hardware necessary? (e.g. GPS, camera, etc)
+* Is an Offline or occasionally connected scenario required?
+* Is a native look and feel mandatory?
+* How much effort/resources/time/money are you able to invest?
+* What are the performance and responsiveness requirements?
+* How will user discover, install and upgrade the application?
 
-* Conventional approach
-  * Responsive HTML
+*[Reference: Mobility Client Architecture](http://www.tcs.com/SiteCollectionDocuments/White%20Papers/Mobility_Whitepaper_Client-Architecture_1012-1.pdf)*
+
+##### Guide to performance goals
+* 0.1 Second: Looks and feels instant
+* 1.0 Seconds: Maximum before flow is interrupted
+* 5 Seconds: Maximum before losing user's attention and focus
+
+*[Reference: Response time in man-computer conversational transactions](http://theixdlibrary.com/pdf/Miller1968.pdf)*
+
+#### Overview of Approaches
+* Mobile web based application
+  * Responsive HTML inside Mobile browser (e.g. Safari or Chrome)
   * Plus "turbolinks" and good caching
-* Native platform
+  * Pros/Cons:
+    * Simplest to implement
+    * Levarages existing HTML
+    * Does not have native look and feel
+    * Cannot access hardware of the mobile
+    * Cannot be "installed" via the app store
+    * Requires continuos connectivity
+* Native Mobile App
   * SWIFT on iOS (https://developer.apple.com/swift/)
   * Java on Android (http://developer.android.com/sdk/index.html)
-* Unified frameworks:
-    * [PhoneGap](http://phonegap.com)
-* JavaScript Client Frameworks
+  * Pros/Cons:
+    * Most complicated and expensive to implement
+    * Hard to share code between platforms
+    * Perfectly native user experience
+    * Full access to hardware
+    * Distribution through app store
+* Hybrid App
+  * Mobile web app
+  * Embedded in a thin native shell application
+  * Some of the screens are web and some are native (degree differs)
+  * App is installed via stores
+  * Leading framework is: [PhoneGap](http://phonegap.com)
+  * Pros/Cons
+    * Not much more work than mobile web app
+    * Solves some of their key weaknesses
 
-#### TurboLinks
+#### Enhancing Mobile Web Based Applications
+
+##### What is TurboLinks?
 * Rails specific solution
 * Fully revamped in Rails 5
-* How it works
+* Unlike Rich JS Clients, controllers are sending html to clients
+* Fights to preserve state in the browser instead of re-sending it (JS, CSS and even parts of the DOM)
+* Pros/Cons
+  * Stay in Rails. Far smaller incremenental investment for better web performance
+  * On mobile, network delay is typically 300-700ms, so Turbolinks is not going to break the 100ms barrier
 
-####  JavaScript Client Frameworks
-* Lots of activity happening here
+*References: [100ms to Glass with Rails and Turbolinks](https://www.nateberkopec.com/2015/05/27/100-ms-to-glass-with-rails-and-turbolinks.html) and [Ilya Grigorik's Breaking the 1000ms to glass mobile barrier](https://youtu.be/Il4swGfTOSM)
+
+#### Rich Client GUI JS Frameworks
+* Very hot right now
 * Personally not (yet) a super fan
 * Awesome results, but very high investment
 * Shifting sands
 * Web Components: Combining appearance and behavior. Still in flux, e.g. [Component Based Web UI] (http://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/)
-
-#### Most important players (right now)
-* AngularJS
-* Ember
-* Backbone
-* React
-* Trigger.io
-* Meteor
+* Examples: Ember, React, Angular, BackBone, Aurelia, and many others
 
 #### How they work
 * Create a stateful experience in the browser
 * Use REST to get and store application state
+* Use browser's local data store as needed to achieve disconnected experience
+* Data mapping to connect data displayed in a view with data in the model
+* Use a REST-like API to access data and state from the server
+* In Rails world, use Rails-API
 
-#### Aurelia
-* A pretty new Client GUI framework
-* Recently heard about it during a [pretty compelling podcast](https://devchat.tv/js-jabber/203-jsj-aurelia-with-rob-eisenberg)
-* No reason to think it will become "the one"
-* But a good use case to experiment with
+#### In conclusion
+* Remember the YAGNI principle
+* Make sure you understand your requirements
+* Don't invest in an architecture before your users/market demand it
+* Be very careful of building on unstable/shifting/marshes!
