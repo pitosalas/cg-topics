@@ -1,0 +1,41 @@
+---
+title: Interactive music shell (IMS)
+---
+I imagine (but am really making this up) that when running a DJ needs a list of all the tracks and artists that they have at their fingertips, and a quick way to store when a certain track is plaid. This assignment proposes a simple app to make their life better and easier.!
+
+#### Objectives
+The objective is to give you a chance to show off your software design skills. This is a pure ruby assignment. Focus on good class design, separation of concerns, single responsibility principle, unit testing
+
+#### Functionality
+IML is a simplistic imaginary tool for a DJ to make their life easier. It displays an open prompt where the user can type in very simple commands:
+
+##### Commands
+1. Help - display a simple help screen
+1. Exit - save state and exist
+1. Info - display a high level summary of the state
+1. Info track - Display info about a certain track by number
+1. Info artist - Display info about a certain artist, by id
+1. Add Artist - Adds a new artist to storage and assign an artist id. Default artist id is the initials of the artist. If this is ambiguous then another id is automatically assigned and displayed. e.g. `add artist john osborne`
+1. Add Track - Add a new track to storage. `add track watching the sky turn green by jo`
+1. Play Track - Record that an existing track was played at the current time, e.g. `play track 13`.
+1. Count tracks - Display how many tracks are known by a certain artist, e.g. `count tracks by jo`
+1. List tracks - Display the tracks played by a certain artist, e.g. `list tracks by jo`
+
+#### Final Deliverbales
+* A series of ruby files implementing the IMS
+* You should include some unit tests to demonstrate that it works
+* You will store your state on disk between runs of the program. You may use any format you want, a CSV file, a JSON file, SQLite3, or PSTore.
+* Running the app should be simply `ruby ims` which will display a prompt: `> '
+* A readme file which describes your solution and any interesting design concepts you applied
+* All checked into github
+* Run the github repo through code climate and add a badge to your readme showing the rating
+* Post the url of the github repo to Latte
+
+#### Technical tips
+* Pay attention to separation of concerns. Your app will probably have approximately three parts:
+  1. The class that implements the loop that prompts the user submits the request
+  1. The classes and methods that interpret a request (coming in as a text string), process it, and return the response (as another text string)
+  1. The classes and methods which represent the information, tracks and artists, and knows how to read and store them from disk
+* Each of these parts can be very separate from the others, and also be tested separately.
+* For storing the Tracks and Artists on disk, I recommend that you use two JSON formatted files and have a class which can save all the current info to the file and read all the stored info from the file. Look at https://www.krautcomputing.com/blog/2015/09/21/rubys-built-in-databases-meet-pstore-and-yamlstore/
+*
