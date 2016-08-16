@@ -1,11 +1,10 @@
 ---
-title: Architecting for Scale
+title: Chasing scaling problems
 ---
 
-#### Architecting for scale
-<%= callout("YAGNI", " Never do extra work for scaling until measurement reveals there's a problem and where the problem is.") %>
-
 #### Base configuration
+<%= callout("YAGNI", " Basic Law of Performance and Scale: Never do extra work for scaling until measurement reveals there's a problem and where the problem is.") %>
+
 * We start with the simplest possible set up. If you have stand alone servers (which we don't) you would run the database and web server on the same box.
 * In our case we are deploying to a cloud server, where you aren't getting a full box but a virtual slice, from e.g. Heroku. In that case our base configuration is a single "web worker" to run Sinatra and a single "database" to run our database, which would be Postgress.
 * With that base, measure performance. If you have a real load, you can measure. In our case we have to create an artificial load send traffic to the server. We want to see how many simultanuous sessions we support.
