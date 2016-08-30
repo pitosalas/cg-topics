@@ -1,7 +1,28 @@
 ---
 title: Types of hypotheses
 ---
-##### Hypothesis examples for discussion
+##### Hypothesis examples for discussion for SBC
+* Customer Hypoteses, examples:
+  * International Students
+  * Science Students
+  * Male or female students
+  * Maybe they're not students at all!
+* Problem Hypotheses
+  * Person is strapped for cash
+  * Looking for a way to meet people with similar interests
+  * Collector of (DVDs, Watches, etc) wants to make cash last
+* Solution Hypotheses
+  * Product for local merchants allowing them to offer coupons
+  * Facebook group that students join
+  * Targeted at Student clubs
+  * Portal marketed to the University for incoming students
+  * Match Making site matching students with merchants
+* Leap of Faith Hypotheses
+  * Merchants or sellers are looking to access student market
+  * Students have spare $ and want to get good deals
+  * No legal or regulatory or Brandeis administration rules broken
+
+##### Hypothesis examples for discussion for P2PTours
 
 * Customer Hypothesis, examples:
 	* Young american tourists visiting europe
