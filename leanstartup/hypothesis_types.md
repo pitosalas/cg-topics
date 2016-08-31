@@ -10,11 +10,12 @@ title: Types of hypotheses
 * Problem Hypotheses
   * Person is strapped for cash
   * Looking for a way to meet people with similar interests
-  * Collector of (DVDs, Watches, etc) wants to make cash last
+  * Collector of (DVDs, Watches, etc) wants to find like minded people
+  * Student wants to start a little on-campus enterprise and needs a way to market to classmates
 * Solution Hypotheses
   * Product for local merchants allowing them to offer coupons
   * Facebook group that students join
-  * Targeted at Student clubs
+  * Site Targeted at Student clubs
   * Portal marketed to the University for incoming students
   * Match Making site matching students with merchants
 * Leap of Faith Hypotheses
