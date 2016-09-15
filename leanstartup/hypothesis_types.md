@@ -2,6 +2,7 @@
 title: Types of hypotheses
 ---
 ##### Hypothesis examples for discussion for SBC
+
 * Customer Hypoteses, examples:
   * International Students
   * Science Students
