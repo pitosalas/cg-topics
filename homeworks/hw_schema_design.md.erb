@@ -19,10 +19,12 @@ To review some of the material take a look at:
   * `attribute_name`: **datatype** - an individual column of a table
   * `table1` **has_many** `table2` - One to many relationship
   * `table3` **belongs_to** `table4` - Many to one relationship
+  * `table4` **has_many**: `table5` through: `table6`
+* You should include all tables, including bridging and regular
 
 ##### Example
 ^
-    table users
+    table students
       id: integer
       first_name: text
       last_name: text
@@ -34,8 +36,23 @@ To review some of the material take a look at:
       name: text
       budget: float
 
+    table concentrations
+      id: integer
+      department_id: integer
+      student_id: integer
+      type: string ("major", "minor" or "program")
+
+    students
+      has_many concentrations
+      has_many departments through concentrations
+
+    concentrations
+      has_one student
+      has_one department
+
     departments
-      has_many users
+      has_many concentrations
+      has_many students through concentrations
 
 #### Assignment
 * Design as many of these as you can
