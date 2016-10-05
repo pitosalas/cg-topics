@@ -5,9 +5,13 @@ title: nT Test Interface
 
 The Test Interface essentially is a set of URLs which invoke special functionality that allows your nanoTwitter to be tested from a browser, and is the foundation of the scalability testing we will be doing.
 
-##### Accessing the following URLs invokes the Test Interface:
+##### The Test user
+There's a user that we use as part of many of the tests. We refer to the user as "testuser". When you create that user use the following attributes:
+* name: testuser
+* email: testuser@sample.com
+* password: "password"
 
-<%= callout("NB", %( There is one special user called "testuser@nanotwitter.org". We refer to that user as the TestUser.)) %>
+##### Accessing the following URLs invokes the Test Interface:
 
 * /test/reset/all
   * If needed deletes all users, tweets, follows
@@ -21,7 +25,7 @@ The Test Interface essentially is a set of URLs which invoke special functionali
     * How many users, follows, and tweets are there
     * What is the TestUser's id
   * Example: `/test/status`
-* /test/users/users/create?count=u&tweets=c
+* /test/users/create?count=u&tweets=c
   * create `u` (integer) fake Users using faker. Defaults to 1.
   * each of those users gets `c` (integer) fake tweets. Defaults to zero.
   * Example: `/test/users/create?count=100&tweets=5`
