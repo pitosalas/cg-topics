@@ -25,6 +25,10 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * How many users, follows, and tweets are there
     * What is the TestUser's id
   * Example: `/test/status`
+* /test/reset/standard
+  * Deletes all users, tweets and follows
+  * Recreate TestUser
+  * Imports the complete set of standard seed data, see: <%= link_to_topic :nt_seed_data %>
 * /test/users/create?count=u&tweets=c
   * create `u` (integer) fake Users using faker. Defaults to 1.
   * each of those users gets `c` (integer) fake tweets. Defaults to zero.
