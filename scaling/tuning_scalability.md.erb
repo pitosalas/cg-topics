@@ -20,7 +20,7 @@ title: Chasing scaling problems
 * Consider whether any tables need indexes
 * Consider whether you are going back to the database more than a few times for each page displayed.
   * Consider whether you are hitting the database once for each record displayed (so called N+1 problem).
-  * If you are, look at making your queries 'greedy' meaning that they bring back more in a single call to tge server
+  * If you are, look at making your queries 'greedy' meaning that they bring back more in a single call to the server
 * Consider whether you are issuing the exact same query over and over again.
 * Consider whether an intermediate query result that is expensive is being requested again. If so, caching those results is a strategy.
 * Look at the metrics on your database servers, that is simple
