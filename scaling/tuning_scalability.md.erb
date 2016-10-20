@@ -8,9 +8,10 @@ title: Chasing scaling problems
 * We start with the simplest possible set up. If you have stand alone servers (which we don't) you would run the database and web server on the same box.
 * In our case we are deploying to a cloud server, where you aren't getting a full box but a virtual slice, from e.g. Heroku. In that case our base configuration is a single "web worker" to run Sinatra and a single "database" to run our database, which would be Postgress.
 * With that base, measure performance. If you have a real load, you can measure. In our case we have to create an artificial load send traffic to the server. We want to see how many simultanuous sessions we support.
+* As you do scalability testing, keep an eye out for errors that are happening. A server will appear to respond super fast to a request if all it is doing is returning an error code!
 
 #### Stage One Scalability Tuning
-* Analyze and think abou whether the servers are poweful enough. Is it your old laptop running a database server or is it a fairly new computer with no other load. If you are using a cloud service, like BlueMix, Heroku or Digital Ocean, what kind of virtual capacity or limits does it have? You might need to simply up the capacity.
+* Analyze and think about whether the servers are poweful enough. Is it your old laptop running a database server or is it a fairly new computer with no other load. If you are using a cloud service, like BlueMix, Heroku or Digital Ocean, what kind of virtual capacity or limits does it have? You might need to simply up the capacity.
 * Examine your database access and queries. Can you determine that pages that don't have a database call are really fast and the ones that do are slower? Can you see what pages slow down the most?
 
 #### If queries are the problem
@@ -19,7 +20,7 @@ title: Chasing scaling problems
 * Consider whether any tables need indexes
 * Consider whether you are going back to the database more than a few times for each page displayed.
   * Consider whether you are hitting the database once for each record displayed (so called N+1 problem).
-  * If you are, look at making your queries 'greedy' meaning that they bring back more in a single call to tge server
+  * If you are, look at making your queries 'greedy' meaning that they bring back more in a single call to the server
 * Consider whether you are issuing the exact same query over and over again.
 * Consider whether an intermediate query result that is expensive is being requested again. If so, caching those results is a strategy.
 * Look at the metrics on your database servers, that is simple
