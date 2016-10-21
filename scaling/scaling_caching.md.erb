@@ -1,37 +1,50 @@
 ---
 title: Scaling by Caching
 ---
-### Scalability Pattern: General Caching
+#### Scalability Pattern: General Caching
 * Save the result of a request with a given set of parameters.
 * In a future request with the same parameter (maybe) return the same result
-* Awareness of order of magnitude speed of operations:
-  * Access registers inside CPU
-  * Access CPU caches
-  * Access standard RAM
-  * Access local disk
-    * Access files
-    * Access local database
-  * Access over network
-    * To a nearby server
-    * To a nearby database server
-  * Access over the internet
-    * To a remote server
-    * To a remote database server
-    * To a remote Web Service
 
-* Memoization:
-  * caching applied to an individual method
-  * A basic programming technique
-* System level caching. Storage:
-  * In 'local' memory
-  * In 'remote' memory
-  * In database
-  * In Cloud
-* Name-value databases
-  * Very fast searches and lookups
-  * Distributed searches and distributed databases
-  * Robust across system and application failures
-* References:
-  * [Redis](http://redis.io)
-  * [Memcached](http://memcached.org)
-  * [Amazon Elastic Cache](http://aws.amazon.com/elasticache/)
+##### Access from superfast to sloow
+* Access registers inside CPU
+* Access CPU caches
+* Access standard RAM
+* Access local disk
+  * Access files
+  * Access local database
+* Access over network
+  * To a nearby server
+  * To a nearby database server
+* Access over the internet
+  * To a remote server
+  * To a remote database server
+  * To a remote Web Service
+
+##### Memoization:
+* caching applied to an individual method
+* A basic programming technique
+
+##### System level caching. Storage:
+* In 'local' memory
+* In 'remote' memory
+* In database
+* In Cloud
+
+##### Name-value databases
+* Very fast searches and lookups
+* Distributed searches and distributed databases
+* Robust across system and application failures
+
+##### Redis
+* Names and Values
+  * names syntax server:3:setup
+  * Values can be strings, lists, sets, sorted sets, hashes and others
+  * [Redis Datatypes](http://redis.io/topics/data-types)
+* Accessing from ruby: [Redis Gem](http://www.rubydoc.info/gems/redis/3.3.1)
+* [Redis Tutorial](http://try.redis.io/)
+* [Redis on Heroku](https://elements.heroku.com/addons/heroku-redis#pricing)
+
+##### References:
+* [Redis](http://redis.io)
+* [Memcached](http://memcached.org)
+* [Amazon Elastic Cache](http://aws.amazon.com/elasticache/)
