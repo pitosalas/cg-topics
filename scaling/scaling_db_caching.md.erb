@@ -22,27 +22,17 @@ title: Scaling by Database Caching
 
 #### Measurement
 * Ask database system to analyze SQL queries that are slow
-  * e.g. `heroku pg:outliers`
-  * Discover that the social graph access was very slow
+* On heroku, enable pg extras
+<%= code_begin %>
+heroku plugins:install heroku-pg-extras
+heroku pg:psql
+create extension pg_stat_statements;
+\q
+heroku pg:outliers
+<%= code_end %>
+* Discover that the social graph access was very slow
 * Solution: Caching
   * Use Network scale caching (Redis) to store and share across servers
-
-#### Caching with "Redis"
-* Analogous to other network scale caching solutions (e.g. cached)
-* Typical structure is a key-value store
-* A nosql database. But in memory
-* It has some interesting characteristics
-  * ATOMIC operations, e.g. "INCR" operation
-  * keys that expire (TTL)
-  * Supports other values: lists, sets, hashes
-  * And many many more
-* [Play with Redis](http://try.redis.io)
-* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
-* Wait, where's the data actually stored?
-  * A redis host, accessible by tcp/ip: dns name + port number
-  * You can run it
-  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
-  * In all cases, if the host dies, the data is gone
 
 #### Putting the it together
 * Example:

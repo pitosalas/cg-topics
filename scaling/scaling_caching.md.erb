@@ -1,11 +1,11 @@
 ---
 title: Scaling by Caching
 ---
-#### Scalability Pattern: General Caching
+### Scalability Pattern: General Caching
 * Save the result of a request with a given set of parameters.
 * In a future request with the same parameter (maybe) return the same result
 
-##### Access from superfast to sloow
+#### Access from superfast to sloow
 * Access registers inside CPU
 * Access CPU caches
 * Access standard RAM
@@ -20,27 +20,47 @@ title: Scaling by Caching
   * To a remote database server
   * To a remote Web Service
 
-##### Memoization:
+#### Memoization:
 * caching applied to an individual method
 * A basic programming technique
+<%= code_begin %>
+@myhash = {}
 
-##### System level caching. Storage:
+def fact(n)
+  return @myhash[n] unless @myhash[n].nil?
+  @myhash[n] = n.zero? ? 1 : n * fact(n - 1)
+end
+<%= code_end %>
+
+#### System level caching. Storage:
 * In 'local' memory
 * In 'remote' memory
 * In database
 * In Cloud
 
-##### Name-value databases
+#### Name-value databases
 * Very fast searches and lookups
 * Distributed searches and distributed databases
 * Robust across system and application failures
 
-##### Redis
+#### Redis
 * Names and Values
   * names syntax server:3:setup
   * Values can be strings, lists, sets, sorted sets, hashes and others
-  * [Redis Datatypes](http://redis.io/topics/data-types)
+* [Redis Datatypes](http://redis.io/topics/data-types)
+* Redis has some interesting characteristics
+  * ATOMIC operations, e.g. "INCR" operation
+  * keys that expire (TTL)
+  * Supports other values: lists, sets, hashes
+  * And many many more
+* [Play with Redis](http://try.redis.io)
 * Accessing from ruby: [Redis Gem](http://www.rubydoc.info/gems/redis/3.3.1)
+* Wait, where's the data actually stored?
+  * A redis host, accessible by tcp/ip: dns name + port number
+  * You can run it
+  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
+  * In all cases, if the host dies, the data is gone
+
 * [Redis Tutorial](http://try.redis.io/)
 * [Redis on Heroku](https://elements.heroku.com/addons/heroku-redis#pricing)
 
