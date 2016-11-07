@@ -30,6 +30,13 @@ create extension pg_stat_statements;
 \q
 heroku pg:outliers
 <%= code_end %>
+* Also, to reset the statistics:
+<%= code_begin %>
+heroku pg:psql
+select pg_stat_statements_reset()
+\q
+<%= code_end %>
+
 * Discover that the social graph access was very slow
 * Solution: Caching
   * Use Network scale caching (Redis) to store and share across servers
