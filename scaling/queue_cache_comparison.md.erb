@@ -1,0 +1,25 @@
+---
+title: Comparing Queueing and Caching
+---
+
+
+#### Queues and Caches compared
+
+<img src="http://previews.123rf.com/images/thorsten/thorsten0803/thorsten080300199/2735046-Traffic-Sign-Warning-Narrow-Road-Ahead-Stock-Photo-sign.jpg" width="100" align="right">
+
+* Both are techniques to achieve more scale
+* More scale requires finding and "fixing" bottlenecks
+* "Bottleneck" = "A narrow place"
+* A slow operation at a busy place
+* How to speed up?
+
+##### Caching
+* Is *slow data retrieval* the problem?
+* Is it ok for the data to be a little bit stale?
+* Does access follow repeating patterns?
+* Can process continue even without the result?
+
+##### Queueing
+* Is *slowness of the actual procedure* the problem?
+* Is the operation done for its "side effects"?
+* Can the process continue even without the operation completion?
