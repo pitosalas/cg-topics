@@ -1,0 +1,50 @@
+---
+title: nanoTwitter Client Library
+---
+#### nt Client Library
+* One or more classes written in
+* Do **not** incorporate the code of nanoTwitter itself
+* You can think of it as the nanoTwitter gem
+* Includes at least a class called NanoTwitter
+
+#### Purpose
+* Allows someone to write programmer that could use nanoTwitter as service
+* For example,
+  * get the current timeline as data
+  * Post a tweet on nano twitter
+  * Etc.
+* Your version of [Twitter Gem](https://github.com/sferik/twitter)
+
+#### Examples of use
+* Write a version of TwitterWhack that uses nanoTwitter instead of the 'real' Twitter
+* Write an iPhone nanoTwitter client
+* Write a CLI version of a twitter Client
+* Here's a faked up console log:
+
+<%= code_begin %>
+# run the nanoTwitter CLI
+$ nTClient
+
+# command to ask for help
+nt> help
+Commands: login, timeline, tweet, help, exit
+
+# command to show timeline
+nt> timeline
+
+# display of timeline
+nov-11-2016 2:01am: "Where is all my coffee?", @pitosalas
+nov-11-2016 3:30am: "It's near the coffee machine!", @timhickey
+nov-12-2016 7:10pm: "I Hate #apple", @billgates
+
+# command to log in
+nt> login pitosalas
+password:
+
+# command to tweet
+nt pitosalas> tweet "I hate Microsoft"
+
+# command to exit
+nt pitosalas> exit
+$
+<%= code_end %>

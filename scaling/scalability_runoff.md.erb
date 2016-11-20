@@ -15,8 +15,13 @@ title: Scalability Runoff
 * Any caching, queueing, etc are all ok
 * But it all has to be at the $0 tier. No paying for extra powerful services!
 * Dataset is the standard <%= link_to_topic :nt_seed_data %>
+* We will use loader.io to conduct the test
 
-##### Operations
-* Growing from 0 to 2000 users
-* Simply access the logged in home page
-* More details coming
+###### Several trials, all with "maintain client load"
+* 0 to 100 Users
+* 0 to 500 Users
+* 0 to 1000 Users
+* 0 to 2000 Users
+
+1. /test/reset/standard
+1. /?user=testuser&password=xxx
