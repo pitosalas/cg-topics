@@ -11,7 +11,9 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * email: testuser@sample.com
 * password: "password"
 
-##### Accessing the following URLs invokes the Test Interface:
+##### Doing a GET the following URLs invokes the Test Interface:
+**Note: This is a bad REST design. GET should be idempotent, meaning, if I issue the same GET twice
+it should make no difference. This will be corrected for the next semester **
 
 * /test/reset/all
   * If needed deletes all users, tweets, follows
@@ -25,10 +27,17 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * How many users, follows, and tweets are there
     * What is the TestUser's id
   * Example: `/test/status`
-* /test/reset/standard
+* /test/version
+  * Displays the version number of this build
+  * Useful as a way to make sure whether you have the latest
+  * Disaplays version as json
+  * Example: `test/version
+* /test/reset/standard?tweets=n
   * Deletes all users, tweets and follows
   * Recreate TestUser
+  * If tweets parameter is included, only load `n` tweets from seed data, otherwise load all
   * Imports the complete set of standard seed data, see: <%= link_to_topic :nt_seed_data %>
+  * Example: `/test/reset/standard`
 * /test/users/create?count=u&tweets=c
   * create `u` (integer) fake Users using faker. Defaults to 1.
   * each of those users gets `c` (integer) fake tweets. Defaults to zero.

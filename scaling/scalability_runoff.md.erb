@@ -6,16 +6,18 @@ title: Scalability Runoff
 * A standard set of torture tests that each team's nT will be subjected to
 * This is just one of many metrics that we will assess your team's work by
 
-#### Runoff
-
-##### Initial Conditions
+#### Level Playing Field
 
 * Everyone is running on Heroku
 * Any database, or services, or http server, are permitted
 * Any caching, queueing, etc are all ok
-* But it all has to be at the $0 tier. No paying for extra powerful services!
+* But it all has to be at the $0 tier.
+* No paying for extra powerful services!
+
+#### Data
 * Dataset is the standard <%= link_to_topic :nt_seed_data %>
-* We will use loader.io to conduct the test
+* Url to reset and load the standard seed is: /test/reset/standard
+
 
 ###### Several trials, all with "maintain client load"
 * 0 to 100 Users
@@ -23,5 +25,5 @@ title: Scalability Runoff
 * 0 to 1000 Users
 * 0 to 2000 Users
 
-1. /test/reset/standard
+
 1. /?user=testuser&password=xxx
