@@ -12,8 +12,8 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * password: "password"
 
 ##### Doing a GET the following URLs invokes the Test Interface:
-**Note: This is a bad REST design. GET should be idempotent, meaning, if I issue the same GET twice
-it should make no difference. This will be corrected for the next semester **
+*Note: This is a bad REST design. GET should be idempotent, meaning, if I issue the same GET twice
+it should make no difference. Many of these will change state and so do something different if issued a second time. They should be using POST. This will be corrected for the next semester*
 
 * /test/reset/all
   * If needed deletes all users, tweets, follows
