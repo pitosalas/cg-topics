@@ -10,6 +10,8 @@ title: Sofware Engineering Rules of Thumb
 
 1. **When your program blows up you should stop and read the error messages.** Catch yourself jumpint to conclusions or seeing what's not there. Fight the impulse that you know what must have failed. Often the right answer is right there in the error message. It might be buried in the middle of a lot of noisy trace output, but discipline yourself to actually read it. This is sometimes known as RTFM.
 
+1. **Small Chunks**: Break your work into smaller steps. Don't work for days without stopping to save, to commit to scm, to run tests, and to deploy regularly. The longer you go without a checkpoint, the deeper trouble you can get yourself without becoming aware of it.
+
 1. **Catch yourself engaging in magical thinking.** If it worked yesterday, and not today, then *something changed.* Similar story as "It worked on my machine, why doestn't it work in production?" Both of these are a symptom of magical engineering thinking. It's just a computer. If the behavior changed, then something cause that change in the behavior. Methodically go through each thing that might be different and, like a scientist (or Sherlock) figure out what it was.
 
 1. **Don't be satisfied with blind luck** Copying some code without knowing what is going on is not a good idea. Eventually it will come back to haunt you. Be really curious!. If a certain change fixed the problem, investigate until you understand how it fixed the problem.
@@ -48,6 +50,8 @@ title: Sofware Engineering Rules of Thumb
 
 1. **When arguing about a design or a feature, you should stop and go ask a user.** Good products don't come from debate around a table, they come from discussion with the actual users. Don't guess, don't argue, go ask! This is known as "getting out of the building".
 
+1. **Communication is crucial** Whatever work you do, software engineering or other, focus and work on your ability to communicate, to get your points across, and to listen and undertstand other. Also the way you communicate makes a difference. People list to and respond to positivity, enthusiasm, optimism. Be someone who adds not substracts energy.
+
 1. **When you are spinning your wheels, you should stop, think, and only then act.** Google It! The amount of knowledge and down and dirty solutions that you can find on google is infinite. See a strange error message? Google it! And learn how to edit the error message, removing the parts that are specific to you so that you get matches. Or ask on the right forum or mailing list. You need to learn how to ask a question in a way that it will be answered. Make it as easy as possible on the answerer.
 
 1. **When you are posting on a technical forum, you should formulate the question carefully.** Here are the best practices:
@@ -63,7 +67,6 @@ title: Sofware Engineering Rules of Thumb
 	* Keep it short and sweet. Make it "skimmable".
 	* Know your audience and write appropriately.
 	* Get to the point. Be polite.
-
 
 1. **When planning a project, you should work in short increments.** Follow Agile practices, whatever your favorite flavor is, scrum, XP, Kanban, it doesn't matter. Different teams and people like different approaches. And they change and evolve all the time. But there are eternal truths there. Work in small chunks. Even smaller. Even smaller. Don't change many things at once because when your code invariably breaks, you won't be able to tell why.
 
