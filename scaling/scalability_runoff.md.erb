@@ -19,7 +19,10 @@ title: Scalability Runoff
 * Url to reset and load the standard seed is: /test/reset/standard
 * Do this ahead of time
 
+### Heroku Data Limitation
+Due to a late breaking discovery that Heroku keeps you from updating the database once you exceed the 10,000 record limit, I have instituted the following change. Please note closely!
 
+<%= callout("NOTE", " Due to a limitiation in Heroku you should delete all but 8000 of the tweets from the standard database. This will allow you do the random tweeting required for the last day.") %>
 
 #### Process
 * We will run several trials with "maintain client load"
@@ -28,8 +31,10 @@ title: Scalability Runoff
   * 0 to 1000 Users
   * 0 to 2000 Users
 
-**NOTE: we will decide at the last minute what user we will use.
+**NOTE: we will decide at the last minute what user we will use**
 
+<%= code_begin %>
 1. /
-1. /?user=anotheruser&password=xxx
-1. /?user=anotheruser&password=xxx&randomtweet=50
+2. /?user=username&password=xxx
+3. /?user=username&password=xxx&randomtweet=50
+<%= code_end %>
