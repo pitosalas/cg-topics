@@ -1,3 +1,8 @@
+---
+title: "Ruby Example: Basics"
+---
+<%= code_begin %>
+
 ##########################
 # Strings, Numbers are a class
 
@@ -86,7 +91,7 @@ greet "Pito"   # => "Good night Pito"
 ##########################
 # Hashes aka dictionaries (Python)
 
-who = 
+who =
 	{first: "Jon", last: "Anders", age: 12}  # => {:first=>"Jon", :last=>"Anders", :age=>12}
 who[:first]                               # => "Jon"
 who[:name]                                # => nil
@@ -98,3 +103,5 @@ require 'json'    # => true
 puts who.to_json  # => nil
 
 # >> {"first":"Jon","last":"Anders","age":12}
+
+<%= code_end %>

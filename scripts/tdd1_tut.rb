@@ -3,7 +3,7 @@ require 'minitest/autorun'
 def fact(n)
 	if n == 1
 		1
-	else 
+	else
 		fact(n-1) * n
 	end
 end

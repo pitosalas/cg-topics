@@ -1,5 +1,10 @@
-require 'pry'
-require 'pry-byebug'
+---
+title: "Ruby Example: Inheritance"
+---
+<%= code_begin %>
+
+require 'byebug'
+
 # class Character
 #   attr_reader :location, :velocity, :type
 
@@ -25,7 +30,7 @@ require 'pry-byebug'
 #       error "Invalid type"
 #     end
 #   end
-      
+
 # end
 
 # person = Character.new(type: :person, starting_v: 0)
@@ -87,7 +92,7 @@ require 'pry-byebug'
 
 #   def speed_increment
 #     raise "Subclass of Character should define speed_increment"
-#   end  
+#   end
 # end
 
 # class Car < Character
@@ -205,3 +210,4 @@ require 'pry-byebug'
 # puts p
 # puts c
 
+<%= code_end %>
