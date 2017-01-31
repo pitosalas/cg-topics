@@ -22,7 +22,7 @@ I propose the following class design.
 
 * **Class Ratings:** contains one of the files of ratings, u.data, or u1.test or u1.base etc. Knows how to read the file while analyzing what it sees. Importantly it has a method predict(user, movie) which will generate a prediction, based on that file, of what rating a user would give to a movie.
 
-* **Class Validator:** Takes two instances of Ratings, one representing a base set and the other representing a test set. Has one important method, validate, which runs through all the entries in the test set and see what ratings would be predicted vs. which ones were given.
+* **Class Validator:** Takes two instances of Ratings, one representing a base set and the other representing a test set. Has one important method, validate, which runs through all the entries in the test set and see what ratings would be predicted vs. which ones were given. Compute statistics about the prediction: how many predictions were exact, off by one, etc. Also the mean and stdev of the difference between the two.
 
 * **Class Control:** Has one key method, run, which instantiates and invokes the other two classes. It's the top level of your program.
 
@@ -32,11 +32,11 @@ I propose the following class design.
 
 1. After writing the program, do a systematic set of runs experimenting with the different u? files, and if you have more than one prediction algorithm, try those.
 
-1. Submit a short summary of your work as a pdf to latte. Include the following information about your solution:
+1. Submit your code plus a short summary of your work as a pdf to latte. Include the following information about your solution:
   * The url to the CodeClimate report for your solution
   * The url of the public github repo containing your solutun
   * The Algorithm. A description of your prediction algorithm and what you think are its advantages and drawbacks.
-  * The Analysis. A description of the result of running some experiments to determine the accuracy of your method (using the z.run_test(k) method and the MovieTest methods.
+  * The Analysis. A description of the results of running some experiments to determine the accuracy of your method.
   * Benchmarking. An estimate of the time it takes run each prediction (determined by using Time.now to capture the current clock time before and after making k predictions) and an explanation of what you think will happen to that time if you increase the size of the training set by a factor of 10 or 100....
 
 ##### NOTES
