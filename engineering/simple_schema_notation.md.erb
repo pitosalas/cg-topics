@@ -1,0 +1,19 @@
+---
+title: Simple Schema Notation
+---
+
+		Please use exactly this format!
+
+		Table: Course
+		Attributes: integer id, string course_name, integer course_number
+
+		Table: Student
+		Attributes: integer id, string first_name, string last_name, Grad_year
+
+		Table: Enrollment
+		Attributes: integer id, integer student_id, integer course_id
+
+		Relationships:
+		Student -> Enrollment is One to Many
+		Course -> Enrollment is One to Many
+		Course <-> Student is Many to Many
