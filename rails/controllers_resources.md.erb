@@ -7,6 +7,7 @@ title: Demo of controllers and resources
   * Do these commands in the shell
 <%= code_begin %>
 rails new resdemo
+cd resdemo
 rails generate scaffold Post title:string body:text
 rails generate scaffold Comment body:text post_id:integer
 rails db:migrate
@@ -20,34 +21,39 @@ rails db:migrate
 * Examine app/views
 
 #### Routes
-* Run `rake routes`
+* Run `rails routes`
 <%= code_begin %>
-      Prefix Verb   URI Pattern                  Controller#Action
-    comments GET    /comments(.:format)          comments#index
-             POST   /comments(.:format)          comments#create
- new_comment GET    /comments/new(.:format)      comments#new
+Prefix Verb   URI Pattern                  Controller#Action
+comments GET    /comments(.:format)          comments#index
+       POST   /comments(.:format)          comments#create
+new_comment GET    /comments/new(.:format)      comments#new
 edit_comment GET    /comments/:id/edit(.:format) comments#edit
-     comment GET    /comments/:id(.:format)      comments#show
-             PATCH  /comments/:id(.:format)      comments#update
-             PUT    /comments/:id(.:format)      comments#update
-             DELETE /comments/:id(.:format)      comments#destroy
-       posts GET    /posts(.:format)             posts#index
-             POST   /posts(.:format)             posts#create
-    new_post GET    /posts/new(.:format)         posts#new
-   edit_post GET    /posts/:id/edit(.:format)    posts#edit
-        post GET    /posts/:id(.:format)         posts#show
-             PATCH  /posts/:id(.:format)         posts#update
-             PUT    /posts/:id(.:format)         posts#update
-             DELETE /posts/:id(.:format)         posts#destroy
-<%= code_end %>
+comment GET    /comments/:id(.:format)      comments#show
+       PATCH  /comments/:id(.:format)      comments#update
+       PUT    /comments/:id(.:format)      comments#update
+       DELETE /comments/:id(.:format)      comments#destroy
+ posts GET    /posts(.:format)             posts#index
+       POST   /posts(.:format)             posts#create
+new_post GET    /posts/new(.:format)         posts#new
+edit_post GET    /posts/:id/edit(.:format)    posts#edit
+  post GET    /posts/:id(.:format)         posts#show
+       PATCH  /posts/:id(.:format)         posts#update
+       PUT    /posts/:id(.:format)         posts#update
+       DELETE /posts/:id(.:format)         posts#destroy
+ <%= code_end %>
 #### Play with the server
 * Run the rails server (`rails server`)
 * Access these urls from your browser observe error messages, and refer to rake routes above
   * http://0.0.0.0:3000/posts
+    * Now create one post
+  * http://0.0.0.0:3000/comments
+    * Now create one comment
   * http://0.0.0.0:3000/posts/1
   * http://0.0.0.0:3000/comments/1
-  * http://0.0.0.0:3000/posts/1/comments/1
-* Note: no nesting!
+
+  * http://0.0.0.0:3000/posts/1/comments
+
+##### Note: no nesting!
 
 #### Nesting happens in routing
 * Before:
@@ -66,10 +72,14 @@ edit_comment GET    /comments/:id/edit(.:format) comments#edit
 
 * Review `rake routes`
 
-#### Adjusting the Model
-* Add belongs_to :post to Comment
-* Add has_many :comments to Post
-* Demonstrate that this works in Rails C
+#### Adjusting the views
+* Try http://0.0.0.0:3000/posts/1/comments
+* Error because the helpers have all changed!
 
-#### Adjusting the controllers
-* Demonstrate what's happening by adding puts to the Post and Comment controllers
+#### What else needs to change?
+* belongs_to and has_many added to model
+* Patch data in sample records to have the post_id point to the post
+* Update the comment controller supply the relevant post
+* Look at the comments index.erb.html and fix to use new helpers
+* Update the Comment create view to create the link
+* Update the comment create controller to create the link
