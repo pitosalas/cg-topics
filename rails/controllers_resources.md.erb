@@ -40,46 +40,32 @@ edit_post GET    /posts/:id/edit(.:format)    posts#edit
        PATCH  /posts/:id(.:format)         posts#update
        PUT    /posts/:id(.:format)         posts#update
        DELETE /posts/:id(.:format)         posts#destroy
- <%= code_end %>
+..
+<%= code_end %>
+
 #### Play with the server
 * Run the rails server (`rails server`)
 * Access these urls from your browser observe error messages, and refer to rake routes above
   * http://0.0.0.0:3000/posts
     * Now create one post
+
   * http://0.0.0.0:3000/comments
     * Now create one comment
+
   * http://0.0.0.0:3000/posts/1
   * http://0.0.0.0:3000/comments/1
 
-  * http://0.0.0.0:3000/posts/1/comments
+##### But: http://0.0.0.0:3000/posts/1/comments
 
-##### Note: no nesting!
+#### Updates to make nesting work
 
-#### Nesting happens in routing
-* Before:
-<%= ruby_begin %>
-# config/routes.rb
-  resources :posts
-  resources :comments
-<%= ruby_end %>
-* After:
-<%= ruby_begin %>
-# config/routes.rb
-  resources :posts do
-    resources :comments
-  end
-<%= ruby_end %>
-
-* Review `rake routes`
-
-#### Adjusting the views
-* Try http://0.0.0.0:3000/posts/1/comments
-* Error because the helpers have all changed!
-
-#### What else needs to change?
-* belongs_to and has_many added to model
+* Update routes to parse the right thing
+* Add belongs_to and has_many added to model
 * Patch data in sample records to have the post_id point to the post
 * Update the comment controller supply the relevant post
 * Look at the comments index.erb.html and fix to use new helpers
 * Update the Comment create view to create the link
 * Update the comment create controller to create the link
+* Add "add comment link"
+* Update the comment create controller again to represent the nested form
+* More and more steps
