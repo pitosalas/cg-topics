@@ -1,0 +1,66 @@
+---
+title: Rails TDD Demo
+---
+
+#### shell commands
+~~~~
+rails new shoes
+cd shoes
+bundle
+rails generate scaffold Shoes name:string price:float shelf_id:integer
+rails generate scaffold Shelves name:string
+rake db:migrate
+~~~~
+
+#### Update models/shoe.rb and models/shelf.rb
+
+<%= ruby_begin %>
+
+#shelf.rb
+class Shelf < ApplicationRecord
+  has_many :shoes
+end
+
+#shoe.rb
+class Shoe < ApplicationRecord
+  belongs_to :shelf
+end
+<%= ruby_end %>
+
+#### Update test/models/shoe_test.rb
+
+<%= ruby_begin %>
+require_relative '../test_helper'
+
+class ModelRelationships < ActionDispatch::IntegrationTest
+  setup do
+    Shoe.destroy_all
+    Shelf.destroy_all
+    @shelf = Shelf.create(name: 'Top')
+    @shoe1 = @shelf.shoes.create(name: "Pito's Shoe")
+    @shoe2 = @shelf.shoes.create(name: 'Black Beauties')
+  end
+
+  teardown do
+    Shoe.destroy_all
+    Shelf.destroy_all
+  end
+
+  test 'Test shelf to shoe association' do
+    assert_equal @shelf.shoes.length, 2
+  end
+
+  test 'Test shoe to shelf association' do
+    assert_equal @shoe1.shelf.name, 'Top'
+  end
+end
+<%= ruby_end %>
+
+#### shell commands
+
+Delete test/controllers/\*.rb which are the test controlelrs generated automatically by rails generate. They are now incorrect because we added an association.
+
+~~~~
+rm test/controllers/*.rb
+rake testguard
+~~~~
