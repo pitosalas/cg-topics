@@ -1,25 +1,24 @@
 ---
 title: Hands on Rails Test Demo
 ---
-##### Set up
+#### Set up
 ~~~
-rails new my_app
-cd my_app
-~~~
-
-##### Add to gemfiles
-~~~
-gem 'pry-byebug'
-gem 'better_errors'
-gem 'minitest-rails'
+rails new wordgame
+cd wordgame
 ~~~
 
 #### Add and test a model
 ~~~
-rails generate minitest:install
 rails generate model word eng:string ned:string
-rake db:migrate
+rails db:migrate
 ~~~
+
+##### Optional: Enable Minitest/spec syntax
+~~~
+# in test_helper.rb
+require 'minitest/spec'
+~~~
+
 
 ##### Default empty test (word_test.rb)
 ~~~
@@ -34,7 +33,7 @@ end
 
 ##### See what rake tasks are present
 ~~~
-rake -T
+rails -T
 ~~~
 
 ##### Add some more tests
@@ -67,19 +66,19 @@ it "can accept a new word" do
 end
 ~~~
 
-##### Add a validation to the model
-~~~
-class Word < ActiveRecord::Base
-  validates :eng, presence: true
-  validates :ned, presence: true
-end
-~~~
-
-##### Add a test for the validation
+##### Want to make sure all words have translations
 ~~~
 it "cannot save a word without the english and dutch text" do
   w = Word.create(eng: "university")
   w.valid?.must_equal false
+end
+~~~
+
+##### Now make it work: Add a validation to the model
+~~~
+class Word < ActiveRecord::Base
+  validates :eng, presence: true
+  validates :ned, presence: true
 end
 ~~~
 
@@ -108,7 +107,7 @@ rails generate controller Words learn
 ~~~
 require_relative '../test_helper'
 
-describe class WordsController < ApplicationController do
+describe "Learn controller"
   it "handles learn action" do
     get :learn
     assigns('word').must_be_kind_of Word
