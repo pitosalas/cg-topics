@@ -13,20 +13,11 @@ rails generate model word eng:string ned:string
 rails db:migrate
 ~~~
 
-##### Optional: Enable Minitest/spec syntax
-~~~
-# in test_helper.rb
-require 'minitest/spec'
-~~~
-
-
 ##### Default empty test (word_test.rb)
 ~~~
-require_relative '../test_helper'
-
-describe Word do
-  it "succeeds in default test" do
-    1.must_equal 1
+class WordTest < ActiveSupport::TestCase
+  test "the truth" do
+    assert true
   end
 end
 ~~~
@@ -38,16 +29,16 @@ rails -T
 
 ##### Add some more tests
 ~~~
-it "stores a translation" do
-  word = Word.new(eng: "house", ned: "huis")
-  word.eng.must_equal "house"
-  word.ned.must_equal "huis"
+test 'stores translation' do
+  word = Word.new(eng: 'house', ned: 'huis')
+  assert_equal 'house', word.eng
+  assert_equal 'huis', word.ned
 end
 ~~~
 
 ##### One way to add fixtures
 ~~~
-before do
+def setup
   Word.destroy_all
   Word.create(eng: "house", ned: "huis")
   Word.create(eng: "boat", ned: "boot")
@@ -56,21 +47,21 @@ end
 
 ##### And see if words model can be persisted
 ~~~
-it "has two words in database" do
-  Word.count.must_equal 2
+test 'records stay around in database' do
+  assert_equal 2, Word.count
 end
 
-it "can accept a new word" do
+test 'can add a record on the fly' do
   Word.create(eng: "shoe", ned: "schoen")
-  Word.count.must_equal 3
+  assert_equal 3, Word.count
 end
 ~~~
 
 ##### Want to make sure all words have translations
 ~~~
-it "cannot save a word without the english and dutch text" do
-  w = Word.create(eng: "university")
-  w.valid?.must_equal false
+test 'cannot store word without both language versions' do
+  myword = Word.create(eng: "university")
+  assert_equal false, myword.valid?
 end
 ~~~
 
@@ -98,21 +89,50 @@ def self.random
 end
 ~~~
 
+#### Add some fixture data to create fake words in words.yml
+~~~
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 25.times do |n| %>
+  word_<%= n %>:
+    eng: <%= "english#{n}" %>
+    ned: <%= "dutch#{n}" %>
+<% end %>
+~~~
+
+#### Make appropriate modification to word_test to make it know about those words
+1. Remove destroy_all from setup
+1. Modify assert_equal to be 27 in one case and 28 in the other
+1. Run rails test to check all green.
+
+#### See if random word works if there are zero words in db
+~~~
+test "random word when there are no words in the database" do
+  Word.destroy_all
+  myword = Word.random
+  assert_nil myword
+end
+~~~
+
 #### Add and test a controller
 ~~~
 rails generate controller Words learn
 ~~~
+#### Look in the pre-generated test/controllers/word_controller.rb
+* Basic test for a get is automatically provided
+* Try running it for a quick happy hit
 
-##### First write the test for the learn action
+#### Add a fancier case in the same file
+
+* first add to Gemfile: gem 'rails-controller-testing'
+* Add this test
 ~~~
 require_relative '../test_helper'
 
-describe "Learn controller"
-  it "handles learn action" do
-    get :learn
-    assigns('word').must_be_kind_of Word
-    assert_response :success
-  end
+test "should pick up new word learn" do
+  get words_learn_url
+  assert_kind_of Word, assigns('word')
+  assert_response :success
 end
 ~~~
 
@@ -141,7 +161,7 @@ end
 * We now need to update the controller to actually call Word.random
 ~~~
 
-##### WordController calls Word.random
+#### WordController calls Word.random
 ~~~
 class WordsController < ApplicationController
   def learn
@@ -149,6 +169,22 @@ class WordsController < ApplicationController
   end
 end
 ~~~
+
+#### Add a view views/words/learn.html.erb
+~~~
+<h1>Words#learn</h1>
+
+<h1>The Word of the day is: <%%= "English: #{@word.eng} Dutch: #{@word.ned}" %> </h1>
+~~~
+
+#### Add some seed data
+~~~
+Word.create(eng: "House", ned: "Huis")
+Word.create(eng: "Boat", ned: "Boot")
+Word.create(eng: "Shoe", ned: "Schoen")
+~~~
+
+
 
 #### References
 * [Minitest Rails Gem](http://blowmage.com/minitest-rails/)
