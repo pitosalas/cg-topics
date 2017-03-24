@@ -10,6 +10,7 @@ title: REST and Web Services
   * Grab all the text `curl http://www.olin.edu/course-listing/ > olincourses.txt`
   * Write a program to parse that page and then load the results into a database.
   * This is called "scraping" and usually that would violate a copyright
+  * Take a look at the scraping of Brandeis' course listing
 * Server can also deliver information in "machine readable" formats (such as JSON or XML)
 * The term "API" is used to describe the permissable ways that one program can call another, such as a library
 * Web Service API is when this is between servers on the internet
@@ -62,9 +63,52 @@ title: REST and Web Services
   * http://myhoroscope.org/fortunes/random
 
 * Note fortunes/random, random is not exactly identifying a resource; but close enough.
-* What if caching was done strictly by url?
-  * Two advantages:
-    * some rhyme or reason on how to build urls and
-    * make logical use of url space
-    * Different 'representations' possible: html and xml, but others too, say csv or video
-    * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
+* Good URL design helps caching
+  * some rhyme or reason on how to build urls and
+  * make logical use of url space
+  * Different 'representations' possible: html and xml, but others too, say csv or video
+  * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
+
+#### Use Cases
+
+##### Using a Web Service
+* Motivations:
+  * There's data (or UI) provided by another entity that you can use
+  * It would augment and add a feature that you need
+  * You can tolerate the dependencies
+* Considerations
+  * You will need to have an active internet connection
+  * Does the server or the client call the web service?
+  * Cost and/or rate restrictions
+  * Identity (i.e. who's API key do you use?)
+
+##### Providing a web service
+* Motivations
+  * Your product generates or incorporates data which would be useful to another party
+  * Might be a revenue source
+  * Might be a way to create dependence on your product or brand
+  * Might be a way to be a 'good citizen'
+* Considerations
+  * Added complexity to your code
+  * More to maintain and document and support
+  * Places a load on your server
+  * You probably have to imlement (and support) some kind of API key
+
+#### In the Rails World
+<%=nb "A REST API can be written in any language. The client can't tell!" %>
+
+* [Using rails for API only applications](http://edgeguides.rubyonrails.org/api_app.html)
+* What does this even mean?
+* Rails Server only returns JSON (no html)
+* Why is this interesting?
+* Scalability, second app can share the database but run on another service
+* URLs are totally different from URLs for UI
+
+#### Advantages of using Rails
+* Routing specified via resources
+* URL generation and Controller dispatch
+* Sophisticated Caching
+* Generators
+* Dev, Test, Production modes
+* Sophisticated logging
+* Built in security
