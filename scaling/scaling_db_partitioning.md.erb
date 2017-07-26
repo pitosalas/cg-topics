@@ -26,6 +26,15 @@ title: Scaling by Database Partitioning
 * Schema
   * User: (id, name, email, biography, hobbies, college, last_login, encrypted_pw, profile_photo_jpg, ...)
 
+#### Vertical partition
+* Often associated with an SOA
+* Divide the User table into three different database servers:
+  User: (id, name, biography, email)
+  Autentication: (id, last_login, encrypted_pw)
+  Photos: (id, profile_photo_jpg)
+* How it changes your application
+  * Pretty basic rearchitecture into separate services
+
 #### Sharding (Horizontal partition)
 * "buckets" of users (== shards)
 * How? Create multiple database servers with
@@ -49,17 +58,6 @@ title: Scaling by Database Partitioning
 * Data Integrity
   * Foreign keys might now point to another database
   * Databases can get out of sync
-
-#### Vertical partition
-* Often associated with an SOA
-* Basically create n > 1 new tables with subsets of the columns
-
-##### Team Discussion
-* Would this make for a non-normalized situation?
-* How would you break up your user table to achieve vertical partition?
-* Where would your code change?
-
-
 
 <%= callout("NB", " Both kinds of sharding are advanced techniques and you should only use them when you have quantitative reasons to believe they will improve a measured performance issue.") %>
 

@@ -24,7 +24,7 @@ title: Scaling with Concurrency
   * After creating the new user in db, send a confirm email with a link
   * Inline is no good, due to network latency and error handling
 
-##### Scaling pattern: concurrency on a single computer
+### Scaling pattern: concurrency on a single computer
 
 * Difference between syncrhonous and asynchronous
 * Difference between concurrent and parallel
@@ -50,12 +50,7 @@ title: Scaling with Concurrency
 * A property of software, or a routine or a class
 * Does it behave 'well' when running in a thread (sharing memory)
 * Deadlock ("mortal embrace")
-  * n people are eating together
-  * in the middle of table there are m < n knives and m < n forks
-  * at random intervals a person neets a fork and a knife to eat
-  * they take it from the middle of the table, eat, and return it
-  * if they get one, they will wait until they can get another
-  * RESULT: Deadlock!
+  * Example with two people and two tools
 * Race Condition
   * When the results vary due to
   * How to avoid: using semaphors, queues, and other techniques

@@ -4,22 +4,22 @@ title: Homework -  Forms in Rails
 #### Part 1: Step by Step
 
 1. Create a new rails app (called lostandfound): `rails new lostandfound`
-1. Create a scaffold for the one and only model: `rails generate scaffold Item title:string description:text category:string`
-1. Don't forget to `rails db:migrate`
+1. Create a scaffold for the one and only model: `rails generate scaffold Item title:string description:text type:string`
+1. Don't forget to `rake db:migrate`
 1. Run the server to make sure that you can list, create, change, delete items
 1. Add a route to allow the following url: `/items/search`. It should go to a controller action item#search. Refer to [Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html): hint: you will be adding a "Collection Route" (section 2.10.2)
 1. Use `rake routes` to see that this route in fact now exists
 1. Add an action to the ItemController called "search"
-1. Add a view to views/items that will contain the search form, and define a form in that new view that will be the search form, using what you learned reading [Rails Guide on Form Helpers](http://guides.rubyonrails.org/form_helpers.html).
+1. Add a view to views/items that will contain the search form, and define a form in that new view that 1.ill be the search form, using what you learned reading [Rails Guide on Form Helpers](http://guides.rubyonrails.org/form_helpers.html).
 1. For now only worry about displaying the form including the fields for title, description and type, and also have a submit box. You don't need to actually make it search.
-1. Optional: If you want to be fancy -- instead of using a text box for the "category" of item, make it a drop down box allowing a specified options such as "book", "clothing", "cellphone", "computer"
+1. Optional: If you want to be fancy -- instead of using a text box for the "type" of item, make it a drop down box allowing a specified options such as "book", "clothing", "cellphone", "computer"
 1. Make the form actually search. You will have to add an additional controller action to take the info from the form and perform an actual search.
 
 #### Part 2 - Expand the example
 
 1. Update Database
-  * Modify the migration for item so that the item database has the following fields: **title:string descript   ion: text, owner: text, category_id: integer**
-  * Add a new table called "categories" with the following fields: **title: string, description: string**
+  * Modify the migration for item so that the item database has the following fields: **title:string description: text, owner: text, type_id: integer**
+  * Add a new table called "types" with the following fields: **title: string, description: string**
   * You should have two files in db/migrations (not three!)
   * Use rake db:migrate:reset to force the database to be deleted and recreated and both migrations reapplied.
   * Add seed data for 20 lost and found items
@@ -28,7 +28,7 @@ title: Homework -  Forms in Rails
 1. Update UI
   * Add Bootstrap css files
   * Make the form you created in Part 1 "Pretty"
-  * Add drop down menu to the search form for the "category" and populate it from the second table you created
+  * Add drop down menu to the search form for the "type" and populate it from the second table you created
   * Make the search actually work and generate an attractive list of matching lost and found items
 1. Allow user to pick AND and OR
   * Add an additional drop down at the top of the search field that says, Serch for "Any of these conditions (OR)" vs. "All of these conditions (AND)"

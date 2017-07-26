@@ -10,29 +10,25 @@ title: Sofware Engineering Rules of Thumb
 
 1. **When your program blows up you should stop and read the error messages.** Catch yourself jumpint to conclusions or seeing what's not there. Fight the impulse that you know what must have failed. Often the right answer is right there in the error message. It might be buried in the middle of a lot of noisy trace output, but discipline yourself to actually read it. This is sometimes known as RTFM.
 
-1. **Learn to Debug** Debugging is a craft in itself. Approach it like a scientist. Don't poke blindly at the code, or solve the problem just by thinking about it. Have hypotheses to test. Do experiments.
-
-1. **Small Chunks**: Break your work into smaller steps. Don't work for days without stopping to save, to commit to scm, to run tests, and to deploy regularly. The longer you go without a checkpoint, the deeper trouble you can get yourself without becoming aware of it.
-
-1. **Don't cut and Paste code.** DRY is a "law". If you see any duplicated code it is almost always a bad thing. Look for it and kill it.
-
-1. **Learn your tools**: Take the time to learn how your tools work. MORE TO ADD
-
-1. **Keep your files, methods and functions short** Depending on the language and the program, the right number may vary. But a method that has more than 20 lines is almost always a serious code smell. A guideline would be 10 lines. A class that is more than 100 lines is a likely code smell.
-
 1. **Catch yourself engaging in magical thinking.** If it worked yesterday, and not today, then *something changed.* Similar story as "It worked on my machine, why doestn't it work in production?" Both of these are a symptom of magical engineering thinking. It's just a computer. If the behavior changed, then something cause that change in the behavior. Methodically go through each thing that might be different and, like a scientist (or Sherlock) figure out what it was.
 
 1. **Don't be satisfied with blind luck** Copying some code without knowing what is going on is not a good idea. Eventually it will come back to haunt you. Be really curious!. If a certain change fixed the problem, investigate until you understand how it fixed the problem.
+
+1. **Learn to Debug** Debugging is a craft in itself. Approach it like a scientist. Don't poke blindly at the code, or solve the problem just by thinking about it. Have hypotheses to test. Do experiments.
 
 1. **Don't optimize early** Optimizing too early is one of the cardinal sins of programming. You never know where the bottleneck will be, The thing you think will be slow, will be fast, and vice-versa. Actually you might end up ripping it out anyway!
 
 1. **Keep a list of 'technical debt' items** These are coding chores, cleanups, fill ins, removal of dead wood, that you purposely put off, even though you know you will have to come back to them. Later, when you want a change of pace in your coding, you can look at that list for some easy pickings!
 
-1. **If you think you spot a code smell you should come back and eradicate it** Train yourself to recognize (and HATE) code smells. Like nails on a blackboard, badly designed code should make yourstomach turn or your skin crawl.
+1. **If you think you spot a code smell you should come back and eradicate it** Train yourself to recognize (and HATE) code smells. Like nails on a blackboard, badly designed code should make your stomach turn or your skin crawl.
+
+1. **Don't cut and Paste code.** DRY is a law. If you see any duplicated code it is almost always a bad thing. Look for it and kill it.
 
 1. **Learn how to Refactor.** This is a fundamental coding skill. When you see non-dry code or other violations, refactor ruthlessly.
 
 1. **Don't leave dead code behind. Delete it.**
+
+1. **Keep your files, methods and functions short** Depending on the language and the program, the right number may vary. But a method that has more than 20 lines is almost always a serious code smell. A guideline would be 10 lines. A class that is more than 100 lines is a likely code smell.
 
 1. **When designing software, you should keep concerns as separate as possible.** Design for loose coupling. Pay attention to the Single Responsibility principle. Whether it's a single class or function, a subsystem or module, or a whole system, minimize dependencies. Learn about dependency injection and other techniques for decoupling.
 
@@ -42,9 +38,7 @@ title: Sofware Engineering Rules of Thumb
 
 1. **When programming, you should comment your code, but not too much.** The exact line is a matter of (fervent) debate but it is almost universally accepted that having no comments is a bad idea and that its easy to have too many comments. Keep your comments at the start of each source file, and at the start of each method. Occasionally you might want to put a few lines of comments inline. But that desire often alerts you to a refactoring opportunity.
 
-#### Professional Effectiveness Rules of Thumb
-
-1. **Communication is crucial** Whatever work you do, software engineering or other, focus and work on your ability to communicate, to get your points across, and to listen and undertstand other. Also the way you communicate makes a difference. People list to and respond to positivity, enthusiasm, optimism. Be someone who adds not substracts energy. Most problems that occur in teams are communications problems.
+#### Personal Effectiveness Rules of Thumb
 
 1. **When you have your best idea ever, you should remember that the idea is just 1% of the journey** Yes, ideas are cheap. At least in the world of software engineering and product development, everyone and their grandfather have ideas that may be great. The distance between the idea and the reality is great. [Here's Steve Jobs about ideas](http://www.kaspertidemann.com/steve-jobs-on-the-difference-between-a-great-idea-and-a-great-product/)
 
@@ -69,6 +63,7 @@ title: Sofware Engineering Rules of Thumb
 	* Keep it short and sweet. Make it "skimmable".
 	* Know your audience and write appropriately.
 	* Get to the point. Be polite.
+
 
 1. **When planning a project, you should work in short increments.** Follow Agile practices, whatever your favorite flavor is, scrum, XP, Kanban, it doesn't matter. Different teams and people like different approaches. And they change and evolve all the time. But there are eternal truths there. Work in small chunks. Even smaller. Even smaller. Don't change many things at once because when your code invariably breaks, you won't be able to tell why.
 

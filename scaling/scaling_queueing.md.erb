@@ -1,18 +1,15 @@
 ---
 title: Scaling with Message Queueing
 ---
+### Scalability Pattern: Queueing
 
-#### Thinking about Queueing
+#### Queueing and SOA
 
-* SOA: Divide software into independent "services"
+* SOA: Divide software into independent "services" that talk to each other
   * Client: code that needs the service
   * Server: code that implements the service
-* Previously: SOA required REST between servers
-* This is known as Synchronous - why?
-
-##### Synchronous vs. Asynchronous
-
-* Two basic ways to connect services in SOA
+* Previously: SOA required REST between servers ('synchronous' - why?)
+* Queueing is a fundamentally different way of creating services and concurrency
 * Syncrhonous:
   1. Client makes a request (HTTP get) and waits
   1. Server Receives request
@@ -26,7 +23,7 @@ title: Scaling with Message Queueing
   1. When service complete, notifies client to use the result.
 * That's the theoretical framework
 
-#### A small case study
+##### A small case study
 * Need: a service to send emails
 * Example: nanoTwitter, user wants to be notified by email when they are followed
 
@@ -45,31 +42,10 @@ title: Scaling with Message Queueing
   * Problems: Request handling is delayed and so the whole site hangs for each follow request: UNACCEPTABLE
 1. Option 2: Seperate SOA / REST Service
   * Write a REST service (nanoTwitterEmailer) which accepts an EmailRequest and returns immediately to allow the main line code to continue. Email is sent to outside Mail server in a seperate process by nanoTwitterEmailer.
-  * Problems: How are error handled? What if the REST Service crashes, or hangs? What if it is flooded with requests? How do we keep track of the emails that need to be sent?
+  * Problems: How are error handled? What if the REST Service crashes, or hangs? What if it is flooded with requests? How do we keep track of the emails that need to be sent? What if the whole nanoTwitterEmailer service dies?
 1. Option 3: Message Queue
   * Use an EmailRequest message queue to collect info about the email that has to be sent in it's queue. Configure nanoTwitterEmailer to subscribe to a message queue and process the EmailRequests in the order they were submitted.
   * Result: The EmailRequest message queue robustly tracks the email requests. If the nanoTwitterEmailer dies, then when it comes back up the requests are still there. If there are too many requests, it's simple to run a second nanoTwitterEmailer.
-
-#### Queues Conceptually
-* Also known as "message queues", "publish/subscribe techniques", "message bus"
-* Applications
-  * Data delivery
-  * Non-blocking operations
-  * Push notifications
-  * Publish / subscribe
-  * Asynchronous processing
-  * Work queues
-
-##### Key Concepts
-* Queues: Ordered, first in, first out, sequence of Messages
-* Messages: Arbitrary (think JSON) data
-* Message categories and types
-* Publusher: program that may publish messages to a certain queue
-* Subscriber: program that may look at and process messages from certain queues
-
-##### Key operations
-* Publish: place a message at the end of a certain queue
-* Subscribe: get the first message in a queue (wait if needed)
 
 #### RabbitMQ: One of several implementations
 * Runs in a process of it's own
@@ -88,4 +64,4 @@ title: Scaling with Message Queueing
 #### References
 * [RabbitMQ Tutorial](https://www.rabbitmq.com/tutorials/tutorial-one-ruby.html)
 * [Rabbit Demo (github)](https://github.com/Cosi-105/rabbit_demo)
-* [Ruby Concurrency Explained](http://merbist.com/2011/02/22/concurrency-in-ruby-explained/)
+* [Ruby Concurrency Exmlained](http://merbist.com/2011/02/22/concurrency-in-ruby-explained/)

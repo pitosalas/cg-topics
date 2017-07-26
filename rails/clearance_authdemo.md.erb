@@ -1,7 +1,6 @@
 ---
 title: Demo of Clearance for Authentication
 ---
-#### Intro
 * This is a step by step demo clearance.
 * Starting with Rails New we adding Clearance
 * Authenticate with a username and a password.
@@ -9,89 +8,46 @@ title: Demo of Clearance for Authentication
 of Devise.
 * We then show some steps to customize things.
 * Clearance is new so I can't vouch for it. You can read the doc here: [Clearance](https://github.com/thoughtbot/clearance).
-* You can find the code here: [Cosi166b Clearnance Demo Code](https://github.com/pitosalas/clearancedemo.git)
 
 #### Step by step
 
-##### Command line
-
+* `$ rails new clearancedemo`
+* `$ cd clearancedemo`
+* Add to gemfile:
 <%= code_begin %>
-$ rails new clearancedemo
-$ cd clearancedemo
+`gem 'clearance'`
+`gem 'pry-byebug'`
+`gem 'better_errors'`
+`gem 'minitest-rails'`
 <%= code_end %>
 
-##### Add to gemfile:
-<%= ruby_begin %>
-gem 'clearance'
-<%= ruby_end %>
+* `$ rails generate clearance:install`
+* Add this to config/environments/{development,test}.rb:
+  `config.action_mailer.default_url_options = { host: 'localhost:3000' }`
 
-##### Command line
+$ `rails generate scaffold course name:string number:string`
+
+* `Add this to CoursesCOntroller`
+
 <%= code_begin %>
-$ bundle
-$ rails generate clearance:install
-$ rails generate scaffold course name:string number:string
-<%= code_end %>
-
-##### Code
-<%= ruby_begin %>
-# Add this to config/environments/{development,test}.rb:
-config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
-# Add this to CoursesController
 class CoursesController < ApplicationController
   before_action :require_login
   ...
-end
-<%= ruby_end %>
-
-##### Command line
-<%= code_begin %>
-$ rake db:migrate`
-$ rails server`
 <%= code_end %>
+
+* `$ rake db:migrate`
+* `$ rails server`
 
 #### Questions
 * Ok it seems like it works
-#### Options
-
-<%= ruby_begin %>
-# Lets take a look at initializer/clearance.rb
-Clearance.configure do |config|
-  config.allow_sign_up = true
-  config.cookie_domain = ".example.com"
-  config.cookie_expiration = lambda { |cookies| 1.year.from_now.utc }
-  config.cookie_name = "remember_token"
-  config.cookie_path = "/"
-  config.routes = true
-  config.httponly = false
-  config.mailer_sender = "reply@example.com"
-  config.password_strategy = Clearance::PasswordStrategies::BCrypt
-  config.redirect_url = "/"
-  config.rotate_csrf_on_sign_in = false
-  config.secure_cookie = false
-  config.sign_in_guards = []
-  config.user_model = User
-end
-<%= ruby_end %>
-
-#### Step by step, continued
 * How do I get a logout link?
 * They suggest to override routing
+
+#### Step by step, continued
 * `$ rails generate clearance:routes`
 * In routes.rb: Change logout route to be a get not a delete
 * Update Clearance.configuration.redirect_url to `courses`
-
-#### Add better log in and log out links:
-<%= ruby_begin %>
-<p>
-  <%%= if signed_in? %>
-  User: <%%= current_user.email %>
-  <%%= button_to "Sign out", sign_out_path, method: :delete %>
-<%% else %>
-  <%%= link_to "Sign in", sign_in_path %>
-<%% end %>
-</p>
-<%= ruby_end %>
+* Add logout to layout: `<%%= link_to "logout", sign_out_path %>`
 
 #### Questions
 * Where is the login html?
@@ -100,23 +56,26 @@ end
 #### Step by step, continued
 * create views: `$ rails generate clearance:views`
 * Modify the new session view
-* Now, I want anyone to be able to list
+
+#### Questions
+* I want anyone to be able to list
 * Only loggged in to be able to add a course
 
-#### Coding
-<%= ruby_begin %>
-# Modify the courses controller adding:
+#### Step by step
+* Modify the courses controller adding:
+```
 if signed_in?
   @course = Course.new
 else
   render action: :not_allowed
 end
+```
+* Add not_allowed.md.erb
 
-# Add not_allowed.md.erb
-
+<%= code_begin %>
 <h1>Sorry, you can't do that!</h1>
 <%%= link_to "course listing", courses_path %>
-<%= ruby_end %>
+<%= code_end %>
 
 #### Conclusion
 * Pretty straightforward

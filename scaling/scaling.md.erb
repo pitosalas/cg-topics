@@ -11,6 +11,15 @@ title: Scaling
 * **Important:** Measurement
 * **Worse sin:** Optimizing early. Why?
 
+#### Performance
+* Performance is what what a user experiences as "slow" or "fast"
+* Response time to an operation initiated by the user
+* Perception!
+	* Can you 'fool' the user into thinking the app is faster than it is?
+	* Feedback: spinners etc
+	* Anticipation: start doing work before user requests it
+* Different (but intertwined with) scaling
+
 ##### Scaling
 * "How many X per minute can you do"
 	* (e.g. user log ins, page refreshes, notifications,...
@@ -25,22 +34,13 @@ title: Scaling
 	* database partitioning and sharding
 	* asynchronous processing
 
-#### Performance
-* Performance is what what a user experiences as "slow" or "fast"
-* Response time to an operation initiated by the user
-* Perception!
-	* Can you 'fool' the user into thinking the app is faster than it is?
-	* Feedback: spinners etc
-	* Anticipation: start doing work before user requests it
-* Different (but intertwined with) scaling
-
 #### Patterns of scaling problems and solutions
 
 * "Clients" = web browsers accessing the site, mobile apps accessing the site, etc.
 * Load on the servers. Some scenarios, one or more of:
 	* Too many clients asking the server to do operation O
-  * Individual clients asking the server to do operation P too often
-  * Operation Q is time consuming for the server to satisfy
+ 	* Individual clients asking the server to do operation P too often
+	* Operation Q is time consuming for the server to satisfy
 * Solutions can be
 	* Add an identical server to handle operations O, P or Q
 	* Send operation O to one server and operation P to another server
