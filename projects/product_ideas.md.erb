@@ -5,10 +5,11 @@ title: Product ideas
 <%= list_of(source: "topics",
             rows: ["page"],
             subsections: ["/content/topics/products/"],
-            cols: [:title, :desc]) %>
+            cols: [:title, :desc],
+            items: @items) %>
+ %>
 
 ##### Other List
-
 
 *RegisterBot:* Alert me when a course that I want to take is open for registration. Uses the Universities data access API to efficiently monitor and then alert user about course availability. Generalize to other situations when you want to know as soon as something becomes available.
 
