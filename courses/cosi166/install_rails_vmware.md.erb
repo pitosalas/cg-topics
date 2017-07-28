@@ -12,3 +12,21 @@ title: Installing Rails using VMWare
 1. Install [Ubuntu Desktop 16.04 LTS](https://www.ubuntu.com/download/desktop) into a newly created VMWare virtual machine
 1. Run Ubuntu
 1. Install Rails with rbenv: [How to install Rails, Ruby with Rbenv on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04)
+
+When everything is installed correctly, you should be able to check the versions with the following commands:
+
+<%= code_begin %>
+which ruby
+which gem
+which rails
+<%= code_end %>
+
+#### Notes
+When you install ruby, check to see that your gem's env home looks a little like this:
+
+<%= code_begin %>
+$ gem env home
+# => ~/.rbenv/versions/<ruby-version>/lib/ruby/gems/...
+<%= code_end %>
+
+When you do gem install rails, there may be some other errors. Get help from one of the TAs.
