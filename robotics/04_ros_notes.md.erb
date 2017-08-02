@@ -1,0 +1,47 @@
+---
+title: ROS FAQ
+---
+These notes were made by us as we were preparing the course and were the result of reading, experimentation, googling, etc. Many of them are direct cut/paste from answers we got on the Ask Ros board.
+
+
+#### wstool and rosdep
+These are two utilities that come up a lot as you are getting ROS installed. In a nutshell:
+
+* wstool: from the wiki page: Command-line tools for maintaining a workspace of projects from multiple version-control systems
+so it manages source checkouts (ie: clones in git parlor) in a workspace.
+
+* rosdep: from the wiki page: rosdep is a command-line tool for installing system dependencies where system dependencies typically means binary pkgs (ie: debs on Ubuntu/Debian)
+
+So, wstool is used to get the sources of the packages that you wish to work on (or need to compile, if there are no binaries for your platform). rosdep is then used to make sure you have all the necessary dependencies installed on your system.
+
+#### Where to put your own code
+Does all the ROS specific code get installed there? And then if I write ROS code myself, my modules are also kept there? And if I created a new ros_catkin_ws2 it would be fully independent of the first one and possibly / likely contain duplicates of lots of ROS code?
+
+For your second question, no. I usually create a separate ~/catkin_ws for my code. `mkdir -p ~/catkin_ws/src && cd ~/catkin_ws && catkin_make` is the usual approach. After that, you'll just `source ~/catkin_ws/devel/setup.bash` to use your packages/those that weren't downloaded by wstool.
+
+#### Installing software on Linux
+You will see apt-get install and apt install. [This link](https://www.maketecheasier.com/apt-vs-apt-get-ubuntu/) says that apt install is the newer and recommended one.
+
+#### Directory structure
+If you're talking about a package within a package then it does not make sense to have a 3rd level. Like you said, wanderbot_ws is your catkin_workspace and wanderbot is the ROS package. Packages are not nested within other packages, as @gvdhoorn mentioned in a comment to your question.
+
+The only time that you would "nest" a package within a package is with a metapackage. And the reason to do that is for logical organization of packages and to make installation of these packages easier as a distribution via apt-get or some other method.
+
+#### Running Linux on your own computer
+* [Here's a good intro to the topic of running Linux on your regular computer](http://www.macworld.co.uk/how-to/mac/how-install-linux-on-mac-3637265/)
+
+#### Small detailed tips
+* When following the then read the Troubleshooting section at the end it has some great tips
+* Important for me was
+  * Fix some path names when looking for sip stuff during install `$ ln -s /usr/local/share/sip/Qt5 /usr/local/share/sip/PyQt5`
+
+#### What is a rosdep key?
+A rosdep key is either a ROS package name, or a key for a 3rd party system dependency (that is not a ROS package). You can find the mapping from rosdep keys to homebrew packages here: https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml
+
+You can also just type something like
+
+rosdep db | grep qt5
+to check what rules there are involving qt5, or if you want to know about a specific rosdep key, you can also do something like:
+
+rosdep resolve libqt5-core
+It seemed to me that some of the dependencies are installed as apps in the file system and others are installed as python scripts or header files etc.
