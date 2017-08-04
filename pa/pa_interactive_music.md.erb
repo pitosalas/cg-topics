@@ -23,12 +23,17 @@ Specifically review the following:
 #### Functionality of IMS
 I imagine (but am really making this up) that when running a DJ needs a list of all the tracks and artists that they have at their fingertips, and a quick way to store when a certain track is played. This assignment proposes a simple app to make their life better and easier!
 
-IML is a simplistic imaginary tool for a DJ to make their life easier. It displays an open prompt where the user can type in very simple commands:
+The user runs IMS from the command line, where it displays the ims> prompt. At that point the user can type commands.
+
+<%= code_begin %>
+$ ./ims.rb
+ims>
+<%= code_end %>
 
 ##### Commands
 1. Help - display a simple help screen. This is a text message, multi line, that explains the available commands. Sort of like this list.
 1. Exit - save state and exit. The effect of this is that when the app is run again, it is back to exactly where it was when you exited. What this amounts to is basically to make sure the tracks and artists and their info have all been saved.
-1. Info - display a high level summary of the state. At minimum, the last 3 tracks plahyed, and a count of the total number of tracks and the total number of artists. You can elaborate if you want.
+1. Info - display a high level summary of the state. At minimum, the last 3 tracks played, and a count of the total number of tracks and the total number of artists. You can elaborate if you want.
 1. Info track - Display info about a certain track by number
 1. Info artist - Display info about a certain artist, by id
 1. Add Artist - Adds a new artist to storage and assign an artist id. Default artist id is the initials of the artist. If this is ambiguous then another id is automatically assigned and displayed. e.g. `add artist john osborne`

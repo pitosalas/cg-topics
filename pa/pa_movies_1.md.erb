@@ -22,18 +22,22 @@ More information about the users and movies can be found in other files, but you
 
 #### Program
 
-* Below is a suggested structure for the program. It's ok to include additional classes, methods or parameters if you feel it will make for a nicer design.
-* Class MovieData - will contain a sample of movie data from the data files.
-  * MovieData#initialize - the constructor of the MovieData class accepts a single parameter, the file name of the main data file. It reads the file content in.
-  * MovieData#popularity(movie_id) - returns an integer from 1 to 5 to indicate the popularity of a certain movie.
-	* MovieData#popularity_list - this will generate a list of all movie_id's ordered by decreasing popularity
-  * MovieData#similarity(user1, user2) - generates a number between 0 and 1 indicating the similarity in movie preferences between user1 and user2. 0 is no similarity.
-	* similarity(user1,user2) - this will generate a number which indicates the similarity in movie preference between user1 and user2 (where higher numbers indicate greater similarity)
-	* most_similar(u) - this return a list of users whose tastes are most similar to the tastes of user u
+Below is a suggested structure for the program. It's ok to include additional classes, methods or parameters if you feel it will make for a nicer design.
 
-* Questions to think about (be prepared to discuss them ...)
-	* Describe an algorithm to predict the ranking that a user U would give to a movie M assuming the user hasn't already ranked the movie in the dataset.
-	* Does your algorithms scale? What factors determine the execution time of your "most_similar" and "popularity_list" algorithms.
+In ruby we use this notation: `MovieData#initialize` means an **instance**  method called `initialize` in a class called MovieData. And `MovieData::roundup` means a **class** method called `roundup`.
+
+Class MovieData - will contain a sample of movie data from the data files. Here are some of the methods:
+
+* `MovieData#initialize` - the constructor of the MovieData class accepts a single parameter, the file name of the main data file. It reads the file content in.
+* `MovieData#popularity(movie_id)` - returns an integer from 1 to 5 to indicate the popularity of a certain movie.
+* `MovieData#popularity_list` - this will generate a list of all movie_id's ordered by decreasing popularity
+* `MovieData#similarity(user1, user2)` - generates a number between 0 and 1 indicating the similarity in movie preferences between user1 and user2. 0 is no similarity.
+* `MovieData#most_similar(u)` - this return a list of users whose tastes are most similar to the tastes of user u
+
+Questions to think about (be prepared to discuss them ...)
+
+* Describe an algorithm to predict the ranking that a user U would give to a movie M assuming the user hasn't already ranked the movie in the dataset.
+* Does your algorithms scale? What factors determine the execution time of your "most_similar" and "popularity_list" algorithms.
 
 #### Deliverables
 * the movie_data.rb source code, as clean and elegant as you can make it.
