@@ -20,14 +20,14 @@ title: CSS (the good stuff)
 #### Syntax, in general
 * Syntax of css is very simple, yet *very* powerful. Behavior can be confusing.
 * How powerful: Look at [CSS Zen Garden](http://www.csszengarden.com)
- 
+
 ##### Example
-<%= code_begin %>
+<%= ruby_begin %>
   p {
     color:red;
     text-align:center;
   }
-<%= code_end %>
+<%= ruby_end %>
 * `p` is the selector. Indicates what tag(s) we want to add the style to
 * `{}` enumerates the styles
 * `color: red;` parsed as `property : value`
@@ -59,13 +59,13 @@ Descendant|`.front-page p { font-style: bold; }`|
 
 
 ##### Example
-* CSS: 
+* CSS:
 <%= code_begin %>
 p.warning {
     color: red;
 }
 <%= code_end %>
-* HTML: 
+* HTML:
 <%= code_begin %>
 <p class="warning">
   It's important to remember to test the brakes!
@@ -81,4 +81,3 @@ p.warning {
 * "Web Inspector" in your browser (Chrome, Safari, Firefox)
 * Reference: [W3CSchools CSS Intro](http://www.w3schools.com/css/css_intro.asp)
 * Experiment: [CSS Desk](http://cssdesk.com)
-

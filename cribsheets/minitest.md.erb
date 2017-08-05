@@ -5,7 +5,7 @@ desc: Handy tipsheet for writing unit tests in Ruby
 **Content Credit:** [Minitest Cheatsheet](http://cheat.errtheblog.com/s/minitest)
 
 #### test
-<%= code_begin %>
+<%= ruby_begin %>
 
 capture_io
 flunk msg = nil
@@ -82,7 +82,7 @@ wont_equal             -> refute_equal
 wont_include           -> refute_includes
 wont_match             -> refute_match
 wont_respond_to        -> refute_respond_to
-<%= code_end %>
+<%= ruby_end %>
 
 ### mock
 
@@ -90,4 +90,3 @@ wont_respond_to        -> refute_respond_to
 expect(name, retval, args=\[\])
 verify
 <%= code_end %>
-

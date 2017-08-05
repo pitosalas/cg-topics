@@ -11,12 +11,12 @@ In the first part (of 3) you will build a basic rails application that imports a
 
 #### Part 1: Bootstrap UI, User accounts, Display data
 1. Create a new rails application called Course Catalog
-1. Setup a (private) GitHub repo and automatic deployment to Heroku
-1. Setup your application to use Bootstrap for the UI
-1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class.
-1. The university data is formatted in JSON. You may find detailed description from the university specifying the [data schema](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). You can find it here:[ Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing).
+1. The university data is formatted in JSON. You may find detailed description from the university specifying the [data schema](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). You can find it here:[Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). You will need the JSON gem to read the files in. Inspect the files to see what the fields are you will need for your database tables.
 1. Create appropriate models in order to represent the data for instructor, subject, and course, as given in three separate JSON files.
 1. Load the data into your database tables. You don’t need to store every field/attribute, just the ones you would need and like to include in your app.
+1. Setup a (private) GitHub repo and automatic deployment to Heroku
+1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class.
+1. Setup your application to use Bootstrap for the UI
 1. UI: Once a user has signed up or logged in, your app will have four pages that a user can navigate to: Home, Subjects, Courses, Instructors.
   * Home - Display user info (Profile Page)
   * Subjects - Displays all the subjects from the database

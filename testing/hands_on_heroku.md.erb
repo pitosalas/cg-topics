@@ -22,6 +22,7 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 * `rails generate controller welcome index`
 
 * Add these lines to app/views/welcome/index.html.erb:
+
 <%= code_begin %>
 <h2>Hello World</h2>
 <p>
@@ -30,7 +31,8 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 <p>
   Number of universes: <\%= Universe.all.count %>
 </p>
-<%= code_end %>
+<%= code_end "html" %>
+
 * Add to routes.rb: `root 'welcome#index'`
 
 ##### See if the app works
@@ -55,7 +57,7 @@ In this hands on demo you will create a new minimal Rails app, and then configur
   gem 'rails_12factor', group: :production
   gem 'sqlite3', group: :development
   gem 'pg', group: :production
-<%= code_end %>
+<%= code_end "ruby" %>
   * Also delete the line that says 'gem sqlite3' from the a few lines later. That line asks for Sqlite3 for all environments. While that's right for the development environment, it is not correct for the production (Heroku) environment.
   * `$ bundle install`
 
@@ -65,7 +67,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-<%= code_end %>
+<%= code_end "ruby" %>
 
 * Now get your app set up on git and github:
   * Go to www.github.com and create a brand new repo with the same name as your rails app, herokudemo
