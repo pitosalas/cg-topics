@@ -2,26 +2,20 @@
 title: ROS Install
 ---
 #### Introduction
-The generic ROS for TurtleBot3 instructions work very well, see [Robotis TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html). The architecture of ROS is that the computer onboard the robot as well as a separate wifi connected computer, e.g. a laptop, which they refer to as \[Remote PC\], both are running ROS. However you can get a lot done with just the \[Remote PC\], to test and experiment with ROS.
+The generic ROS for TurtleBot3 instructions work very well to install onto Ubuntu 16.04 (if you happen to have that). See [Robotis TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html).
 
-#### Installing ROS on Mac
+The architecture of ROS is that the computer onboard the robot as well as a separate wifi connected computer, e.g. a laptop, which they refer to as \[Remote PC\], both are running ROS. However you can get a lot done with just the \[Remote PC\], to test and experiment with ROS.
 
-All this works fine if the \[Remote PC\] runs Ubuntu. However in other cases we need to be more clever. We've done many time consuming experiments trying to get the software stack to run natively on a Mac, which is officially not yet supported. In my experience it is extremely challenging due to very intricate dependencies
+So if you don't natively run on Ubuntu 16.04 you are going to want to install it on your computer. **Do not try to install it directly on your mac or windows computer.** If you're curious, you can see  <%= link_to_topic :problems_ros_mac %>
 
-##### Python
-The first problem is that The ROS install relies heavily on Python. Python is built in on Mac, but it's very possible that you have more than one installed. Maybe you installed it from their web site, maybe you installed it with brew. I have found that you have to be vareful and thorough in disabling all but one Python.
+So instead you are going to have to create a virtual environment of some kind. Here are two approaches, both have been tested and seem to work well. Use the one that appeals to you.
 
-##### Instructions
-But even after squaring that away there are pip packages, linux packages, ROS packages to be installed. On Mac we use "homebrew" to install open source stuff, Python uses Pip and ROS has it's own. It's a mess.
-
-* [Unsupported Mac Install instructions from ros.org](http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source)
-* [Supposedly working instructions from github user lubiluk](https://gist.github.com/lubiluk/361a018b267ca4e3ce10cdc68b17363d)
-
-Neither of those worked.
-
-#### Using VMWare
+#### 1 - Use VMWare
 
 Brandeis offers us VMWare for free. VMWare is a Virtual Machine software that allows you to run any operating system natively. I had good success with it. I created a VM with Ubuntu 16.04 and then followed the standard process.
 
 ##### Tips
 * Place the VM file (which will be around 20Gig so you have to have that much space) on a SSD (solid state disk) and allocate additional memory for it. I found performance to be acceptable.
+
+#### 2 - Create a Linux Partition
+...

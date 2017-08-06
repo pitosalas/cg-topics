@@ -1,0 +1,17 @@
+---
+title: Why not to try and install on Mac or Windows
+---
+#### Installing ROS on Mac (DONT DO THIS)
+
+All this works fine if the \[Remote PC\] runs Ubuntu. However in other cases we need to be more clever. We've done many time consuming experiments trying to get the software stack to run natively on a Mac, which is officially not yet supported. In my experience it is extremely challenging due to very intricate dependencies
+
+##### Python
+The first problem is that The ROS install relies heavily on Python. Python is built in on Mac, but it's very possible that you have more than one installed. Maybe you installed it from their web site, maybe you installed it with brew. I have found that you have to be vareful and thorough in disabling all but one Python.
+
+##### Instructions
+But even after squaring that away there are pip packages, linux packages, ROS packages to be installed. On Mac we use "homebrew" to install open source stuff, Python uses Pip and ROS has it's own. It's a mess.
+
+* [Unsupported Mac Install instructions from ros.org](http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source)
+* [Supposedly working instructions from github user lubiluk](https://gist.github.com/lubiluk/361a018b267ca4e3ce10cdc68b17363d)
+
+Neither of those worked.
