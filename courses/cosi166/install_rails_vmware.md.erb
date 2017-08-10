@@ -2,16 +2,25 @@
 title: Installing Rails using VMWare
 ---
 * This is not a foolproof recipe, it's just a guide of the kinds of things you have to do.
-
 * These instructions are for people who want to run Rails and are currently on a Windows computer.
+* Prerequisites: You must have around 20Gig free, preferably on a solid state disk (SSD)
 
-* Prerequisites: You must have around 25Gig free, preferably on a solid state disk (SSD)
+#### Install VMWare
 
-#### Process
 1. Install the appropriate version of VMWare. [Brandeis Software Store](https://e5.onthehub.com/WebStore/Welcome.aspx?ws=253068f1-0c11-df11-85a5-0030487d8897&vsro=8)
-1. Install [Ubuntu Desktop 16.04 LTS](https://www.ubuntu.com/download/desktop) into a newly created VMWare virtual machine
-1. Run Ubuntu
-1. Install Rails with rbenv: [How to install Rails, Ruby with Rbenv on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04)
+1. Download [Ubuntu Desktop 16.04 LTS](https://www.ubuntu.com/download/desktop). Then use it to install a new VMWare virtual machine
+1. Run the Ubuntu Virtual Machine via VMWare
+
+#### Install Rails with rbenv
+You are installing into your Linux running on VMWare. So your environment for these commands will be the linux shell displayed inside the VMWare window.
+
+Before you follow the instructions, notice the following:
+
+1. Rbenv is a ruby utility which makes it easy to install ruby and update it in the future
+1. Modify: `rbenv install 2.3.1` -> `rbenv install 2.4.1`
+1. Modify: `rbenv global 2.3.1` -> `rbenv global 2.4.1`
+1. When you enter `gem env home` you should see something very similar to what is shown in the instructions. If not there's a problem and you should talk to your TA.
+1. Now follow these instructions: [How to install Rails, Ruby with Rbenv on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04)
 
 When everything is installed correctly, you should be able to check the versions with the following commands:
 
@@ -19,14 +28,7 @@ When everything is installed correctly, you should be able to check the versions
 which ruby
 which gem
 which rails
+ruby -v # should say something around 2.4
+gem -v # should say something around 2.6
+rails -v # should say something around 5.1
 <%= code_end %>
-
-#### Notes
-When you install ruby, check to see that your gem's env home looks a little like this:
-
-<%= code_begin %>
-$ gem env home
-# => ~/.rbenv/versions/<ruby-version>/lib/ruby/gems/...
-<%= code_end %>
-
-When you do gem install rails, there may be some other errors. Get help from one of the TAs.
