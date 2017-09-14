@@ -8,9 +8,11 @@ title: HTTP - Hypertext Transfer Protocol
     * Client receives the result
 
 ##### Let's use telnet to make such a 'call'
-`$ telnet example.com 80`
-`$ GET / HTTP/1.1`
-`$ Host: example.com`   
+<%= code_begin %>
+$ telnet example.com 80
+$ GET / HTTP/1.1
+$ Host: example.com
+<%= code_end %>
 
 ##### Deconstructing the call
 * "Call" includes:
@@ -41,7 +43,7 @@ title: HTTP - Hypertext Transfer Protocol
 #### What are the HTTP Methods
 * GET, PUT, POST, DELETE
 * Think of them like a reguired first argument to the call
-* The interpretation of the 
+* The interpretation of the
 
 #### Simplified view of the world
 

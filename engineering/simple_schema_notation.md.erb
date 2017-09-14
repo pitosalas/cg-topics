@@ -1,19 +1,34 @@
 ---
 title: Simple Schema Notation
 ---
+<%= callout("NB", " This is a notation that I invented to allow it to be written in a text file. Its not SQL nor an actual Schema declaration any database would understand.") %>
 
-		Please use exactly this format!
+##### "Syntax"
 
-		Table: Course
-		Attributes: integer id, string course_name, integer course_number
+* A simple text file
+* Two sections, Tables: and Associations
+* Tables section:
+  * Table name
+  * List of columns
+  * datatype and name
+* Associations
+  * Table name -> Table name (is One to Many)
+  * Table name <- Table name (is Many to One)
+  * Table name <-> Table name (is Many to Many)
 
-		Table: Student
-		Attributes: integer id, string first_name, string last_name, Grad_year
+##### Example
 
-		Table: Enrollment
-		Attributes: integer id, integer student_id, integer course_id
+    Tables:
+    Name: Courses
+    Columns: integer id, string course_name, integer course_number
 
-		Relationships:
-		Student -> Enrollment is One to Many
-		Course -> Enrollment is One to Many
-		Course <-> Student is Many to Many
+    Name: Students
+    Columns: integer id, string name, int grad_year
+
+    Name: Enrollments
+    Columns: integer id, integer student_id, integer course_id
+
+    Associations:
+    Student -> Enrollment (is One to Many)
+    Course -> Enrollment (is One to Many)
+    Course <-> Student is (Many to Many)
