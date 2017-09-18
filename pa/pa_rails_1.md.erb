@@ -14,7 +14,7 @@ In the first part (of 3) you will build a basic rails application that imports a
 1. The university data is formatted in JSON. You may find detailed description from the university specifying the [data schema](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). You can find it here:[Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). You will need the JSON gem to read the files in. Inspect the files to see what the fields are you will need for your database tables.
 1. Create appropriate models in order to represent the data for instructor, subject, and course, as given in three separate JSON files.
 1. Load the data into your database tables. You don’t need to store every field/attribute, just the ones you would need and like to include in your app.
-1. Setup a (private) GitHub repo and automatic deployment to Heroku
+1. Setup a (**private**) GitHub repo and automatic deployment to Heroku
 1. Setup your application to use Bootstrap for the UI
 1. The home page of the application should display four tabs, as follows:
     * Home - Display user info (Profile Page)
@@ -23,15 +23,21 @@ In the first part (of 3) you will build a basic rails application that imports a
     * Instructors - Displays all the instructors from the database
 
 #### Deliverables:
-1. Submit to Latte your link to GitHub.
+1. Submit to Latte your link to a **private** GitHub repo
 1. Submit to Latte your link to Heroku.
 1. Submit to Latte a zipped up folder of your app.
 
-#### Optional Tips
-
+#### Timesaving Tips
+* Check out these really useful gems
+* json to parse and process json files
+* activerecord-import to make loading lots of records faster and more efficient
+* better-errors to give you more legible errors from Rails
+* pry-rails to invoke the nicer repl called pry when you do a `rails console`
 <%= ruby_begin %>
 # Gemfile
 group :development do
+  gem 'json'
+  gem 'activerecord-import'
   gem "better_errors"
   gem "pry-rails"
 end
