@@ -17,14 +17,25 @@ In the first part (of 3) you will build a basic rails application that imports a
 1. Setup a (private) GitHub repo and automatic deployment to Heroku
 1. Setup your application to use Bootstrap for the UI
 1. The home page of the application should display four tabs, as follows:
-  * Home - Display user info (Profile Page)
-  * Subjects - Displays all the subjects from the database
-  * Courses - Displays all the courses from the database
-  * Instructors - Displays all the instructors from the database
+    * Home - Display user info (Profile Page)
+    * Subjects - Displays all the subjects from the database
+    * Courses - Displays all the courses from the database
+    * Instructors - Displays all the instructors from the database
 
-###Deliverables:
+#### Deliverables:
 1. Submit to Latte your link to GitHub.
 1. Submit to Latte your link to Heroku.
 1. Submit to Latte a zipped up folder of your app.
 
-#### Click here to continue to <%= link_to_topic :pa_rails_2 %>
+#### Optional Tips
+
+<%= ruby_begin %>
+# Gemfile
+group :development do
+  gem "better_errors"
+  gem "pry-rails"
+end
+<%= ruby_end %>
+
+#### Continue to next pa in this sequence
+**Click here to continue to <%= link_to_topic :pa_rails_2 %>**

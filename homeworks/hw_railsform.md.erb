@@ -17,19 +17,22 @@ title: Homework -  Forms in Rails
 
 #### Part 2 - Expand the example
 
-1. Update Database
-  * Modify the migration for item so that the item database has the following fields: **title:string description: text, owner: text, type_id: integer**
-  * Add a new table called "types" with the following fields: **title: string, description: string**
-  * You should have two files in db/migrations (not three!)
-  * Use rake db:migrate:reset to force the database to be deleted and recreated and both migrations reapplied.
-  * Add seed data for 20 lost and found items
-  * Create an appropriate 1-many relationship between them
-  * Test what you have so far to make sure it works.
-1. Update UI
-  * Add Bootstrap css files
-  * Make the form you created in Part 1 "Pretty"
-  * Add drop down menu to the search form for the "type" and populate it from the second table you created
-  * Make the search actually work and generate an attractive list of matching lost and found items
+##### Update the Database
+
+1. Modify the migration for item so that the item database has the following fields: **title:string description: text, owner: text, type_id: integer**
+1. Add a new table called "types" with the following fields: **title: string, description: string**
+1. You should have two files in db/migrations (not three!)
+1. Use rails db:migrate:reset to force the database to be deleted and recreated and both migrations reapplied.
+1. Add seed data for 20 lost and found items
+1. Create an appropriate 1-many relationship between them
+1. Test what you have so far to make sure it works.
+
+##### Update the UI
+
+1. Add Bootstrap css files
+1. Make the form you created in Part 1 "Pretty"
+1. Add drop down menu to the search form for the "type" and populate it from the second table you created
+1. Make the search actually work and generate an attractive list of matching lost and found items
 1. Allow user to pick AND and OR
-  * Add an additional drop down at the top of the search field that says, Serch for "Any of these conditions (OR)" vs. "All of these conditions (AND)"
-  * Update the back end (the controller action) to distinguish those two cases.
+1. Add an additional drop down at the top of the search field that says, Serch for "Any of these conditions (OR)" vs. "All of these conditions (AND)"
+1. Update the back end (the controller action) to distinguish those two cases.
