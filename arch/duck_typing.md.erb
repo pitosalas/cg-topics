@@ -1,9 +1,8 @@
 ---
-title: The classic Duck Typing Example
+title: Classic Duck Typing Example
 ---
-##### Classic Duck Typing Examples
-
 <%= ruby_begin %>
+
 class Duck
   def talk
     'Quack!'
@@ -31,19 +30,21 @@ class Student
   def walk
     'Step, Step, Step'
   end
+
+  def method_missing (arg)
+    puts "forgettabouttit: I dont know how to #{arg}"
+  end
+
 end
 
 
-s = Student.new
-g = Goose.new
-d = Duck.new
+things = [Student.new, Goose.new, Duck.new]
 
 def make_it_talk(x)
   x.talk
+  x.swim
 end
 
-make_it_talk(s)
-make_it_talk(g)
-make_it_talk(d)
+things.each { |t| make_it_talk(t) }
 
 <%= ruby_end %>
