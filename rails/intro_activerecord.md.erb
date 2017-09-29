@@ -1,6 +1,61 @@
 ---
 title: Introduction to ActiveRecord
 ---
-#### Activerecord
+### Introduction to ActiveRecord programming
 
-* What is it
+#### Basics
+
+* An [ORM Framework](https://martinfowler.com/bliki/OrmHate.html)
+* Reference: [Active Record Basics Guide](http://guides.rubyonrails.org/active_record_basics.html)
+
+* What are Models? Very important to understand this!
+* Jobs that AR does
+  * Representations for models and their data
+  * Representation of associations / relationships between models
+  * Declarative validations of models
+  * Abstraction over SQL, provides excellent optimization of SQL
+  * Performance by caching, optimization
+
+#### Conventions
+* Naming Conventions
+  * Models
+  * Tables
+  * Records
+  * Column names
+* Schema conventions
+  * Primary keys are always integers called "id"
+  * Foreign keys are always called <other table>_id
+  * Several other standard column names: created_at, updated_at, type, etc.
+
+#### Magic
+* Sequence of events when database is opened
+* Automatic creation of "attributes" based on column names
+
+#### Migrations
+* Rails programmer utility
+* Automates the updating of schemas as the application evolves
+* Source of confusion often
+
+#### Examples
+
+##### Models and databases
+<%= ruby_begin %>
+# Assume Database table was called products and that it had a column called name
+
+class Product < ApplicationRecord
+  validates :name, presence: true
+end
+
+# Access the database
+# Create a new valid record
+p = Product.new
+p.name = "Some Book"
+p.save!
+puts p.name # "Some Book"
+
+# Try to create a new record, invalid:
+p = Product.new
+p.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+<%= ruby_end %>
+
+<%= include_topic :rails_activerecord_queries %>
