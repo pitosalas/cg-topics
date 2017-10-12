@@ -1,5 +1,5 @@
 ---
-title: Demo of Clearance for Authentication
+title: Handson with Clearance Authentication
 ---
 * This is a step by step demo clearance.
 * Starting with Rails New we adding Clearance
@@ -8,76 +8,100 @@ title: Demo of Clearance for Authentication
 of Devise.
 * We then show some steps to customize things.
 * Clearance is new so I can't vouch for it. You can read the doc here: [Clearance](https://github.com/thoughtbot/clearance).
+* Reference code: [Private Repository](https://github.com/pitosalas/clearancedemo)
 
-#### Step by step
+#### Create basic scaffolding
 
-* `$ rails new clearancedemo`
-* `$ cd clearancedemo`
-* Add to gemfile:
 <%= code_begin %>
-`gem 'clearance'`
-`gem 'pry-byebug'`
-`gem 'better_errors'`
-`gem 'minitest-rails'`
+# Shell
+rails new clearancedemo
+cd clearancedemo
+
+# Update gemfile:
+gem 'clearance'
+gem 'pry-byebug'
+gem 'better_errors'
+gem 'minitest-rails'
+
+# Run bundler
+bundle
+
+# Shell
+rails generate clearance:install`
 <%= code_end %>
 
-* `$ rails generate clearance:install`
-* Add this to config/environments/{development,test}.rb:
-  `config.action_mailer.default_url_options = { host: 'localhost:3000' }`
+#### Add this to config/environments/{development,test}.rb:
+<%= ruby_begin %>
+config.action_mailer.default_url_options = { host: 'localhost:3000' }
+<%= ruby_end %>
 
-$ `rails generate scaffold course name:string number:string`
+#### Update views/layouts/application.html.erb
+<%= ruby_begin %>
+<%% if signed_in? %>
+  Signed in as: <%%= current_user.email %>
+  <%%= button_to 'Sign out', sign_out_path, method: :delete %>
+<%% else %>
+  <%%= link_to 'Sign in', sign_in_path %>
+<%% end %>
+<div id="flash">
+  <%% flash.each do |key, value| %>
+    <div class="flash <%%= key %>"><%%= value %></div>
+  <%% end %>
+</div>
+<%= ruby_end %>
 
-* `Add this to CoursesCOntroller`
-
+#### In the Shell
 <%= code_begin %>
+rails db:migrate
+rails generate scaffold course name:string number:string user_id:integer
+<%= code_end %>
+
+#### Update CoursesController
+Now we update CoursesController to take into account the login and also to only display courses owned by the looged on user.
+
+<%= ruby_begin %>
 class CoursesController < ApplicationController
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :require_login
-  ...
-<%= code_end %>
 
-* `$ rake db:migrate`
-* `$ rails server`
+  # GET /courses
+  # GET /courses.json
+  def index
+    @courses = current_user.courses
+  end
 
-#### Questions
-* Ok it seems like it works
-* How do I get a logout link?
-* They suggest to override routing
+  # GET /courses/1
+  # GET /courses/1.json
+  def show
+  end
 
-#### Step by step, continued
-* `$ rails generate clearance:routes`
-* In routes.rb: Change logout route to be a get not a delete
-* Update Clearance.configuration.redirect_url to `courses`
-* Add logout to layout: `<%%= link_to "logout", sign_out_path %>`
+  # GET /courses/new
+  def new
+    @course = current_user.courses.build
+  end
 
-#### Questions
-* Where is the login html?
-* Reading the documentation
+  # GET /courses/1/edit
+  def edit
+  end
 
-#### Step by step, continued
-* create views: `$ rails generate clearance:views`
-* Modify the new session view
+  # POST /courses
+  # POST /courses.json
+  def create
+    @course = current_user.courses.build(course_params)
 
-#### Questions
-* I want anyone to be able to list
-* Only loggged in to be able to add a course
+    respond_to do |format|
+      if @course.save
+        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.json { render :show, status: :created, location: @course }
+      else
+        format.html { render :new }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+<%= ruby_end %>
 
-#### Step by step
-* Modify the courses controller adding:
-```
-if signed_in?
-  @course = Course.new
-else
-  render action: :not_allowed
-end
-```
-* Add not_allowed.md.erb
-
-<%= code_begin %>
-<h1>Sorry, you can't do that!</h1>
-<%%= link_to "course listing", courses_path %>
-<%= code_end %>
-
-#### Conclusion
-* Pretty straightforward
-* More controllable than Devise
-* More research needed to figure out how to add OAUTH, Twitter, FB etc.
+#### Finally
+* Add to model users.rb: `has_many :courses`
+* Add to model course.rb: `belongs_to :user`
+* Run in shell: `rails db:migrate; rails server`

@@ -5,15 +5,15 @@ title: Adding basic authentication
 #### Rails Details for Authentication
 
 ##### References
-* Reference: [Ruby on Rails Tutorial](http://ruby.railstutorial.org/chapters/modeling-users#book_menu) - Chapters 6,7 and 8
-* Reference: [AuthDemo source code](https://github.com/pitosalas/authdemo)
+* Reference: [Ruby on Rails Tutorial](https://www.railstutorial.org/book/modeling_users) - Chapters 6,7 and 8
+* Reference: [AuthDemo source code, private repo](https://github.com/pitosalas/authdemo)
 
 ##### Intro
 
 * There are several popular gems to implement authentication
 * Beware that the fact that there is a gem does not mean that it's trivial
 * You need to understand what's going on.
-* Advice: Avoid getting fancy with OAuth, or FB or LinkedIn log in.
+* Advice: Avoid getting fancy with initially, with devise, clearance, oauth, etc.
 * Start with a simple password
 
 ##### has_secure_password
@@ -43,13 +43,11 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")
 * Will assume existance of a SessionsController with create, new and destroy actions. Check rake routes to see what routes are created
 <%= ruby_begin %>
 # ./config/routes.rb
-  resources :sessions, only: \[:new, :create, :destroy\]
+  get    '/signup', to: 'users#new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 <%= ruby_end %>
-<%= code_begin %>
-   sessions POST   /sessions(.:format)       sessions#create
-new_session GET    /sessions/new(.:format)   sessions#new
-    session DELETE /sessions/:id(.:format)   sessions#destroy
-<%= code_end %>
 
 ##### Sessions Controller
 * Tricky: Session is not a model!
@@ -59,28 +57,8 @@ new_session GET    /sessions/new(.:format)   sessions#new
 * session#create: try validate password and save "logged in status"
 * session#destroy: reset logged_in_status
 
-##### Building a form of any kind
-* form_for is a view helper. Makes it easier to generate the required html for a form.
-* Effect of the form is to do an HTTP PUT. This is what submit does
-* URL for that form can come from the form_for method
-
-##### ActiveRecord Triggers
-* Methods that get called before, during or after key activerecord events.
-<%= ruby_begin %>
-# ./app/models/user.rb
-  before_save { self.email = email.downcase }
-  before_create :create_remember_token
-<%= ruby_end %>
-
-##### Helpers and Remember Token
-* Think of these as "view helpers", used in creating and working with views and controllers
-* Remember Token Used in sessions so we don't expose the actual ID of the user record
-<%= ruby_begin %>
-# ./app/helpers/sessions_helper.rb
-  def sign_in(user)
-    remember_token = User.new_remember_token
-    cookies.permanent\[:remember_token\] = remember_token
-    user.update_attribute(:remember_token, User.hash(remember_token))
-    self.current_user = user
-  end
-<%= ruby_end %>
+###### Sessions Helper
+* Where the core authorization logic is
+* Session[] is used to store the user_id of logged in user
+* Helper methods are used throughout
+* Take a look at view/users/index
