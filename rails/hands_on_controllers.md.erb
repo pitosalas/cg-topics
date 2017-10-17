@@ -1,0 +1,19 @@
+---
+title: Hands On Controllers Demo
+---
+
+rails new controllersdemo
+cd controllersdemo
+bundle
+rails generate resource fortune fortune:string source:string
+rails db:migrate
+
+Rails.application.routes.draw do
+  resources :fortunes do
+    collection do
+      get 'random'
+    end
+  end
+end
+
+Fortune.create(fortune: %s(Today it's up to you to create the peacefulness you long for.), source: " rails generate resource fortune fortune:string source:string")
