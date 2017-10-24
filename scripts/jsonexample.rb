@@ -25,13 +25,13 @@ puts "\nAnd the other way around"
 name_hash = '{"name": "Pito", "town": "Arlington"}'
 puts JSON.parse(name_hash)
 
-name_list_hash = '[{"name": "Pito", "town": "Arlington"}, 
-                   {"name": "Chris", "town": "Willemstad"}, 
+name_list_hash = '[{"name": "Pito", "town": "Arlington"},
+                   {"name": "Chris", "town": "Willemstad"},
                    {"name": "Amin", "town": "Lafayette"}]'
 puts JSON.parse(name_list_hash)
 
 puts "\n*** How about converting from XML to JSON?"
-require 'xmlsimple'
+require 'xml-simple'
 
 xml = <<EOS
 <?xml version="1.0" encoding="UTF-8"?>

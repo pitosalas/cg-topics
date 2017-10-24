@@ -1,5 +1,5 @@
 require 'json'
-require 'xmlsimple'
+require 'xmlsimple' # gem install xml-simple
 require 'byebug'
 #
 # This example illustrates conversions between JSON, XML and
