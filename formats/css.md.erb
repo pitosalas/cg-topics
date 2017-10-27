@@ -1,6 +1,9 @@
 ---
 title: CSS (the good stuff)
 ---
+#### Setup
+Please clone [cssdemo](https://github.com/pitosalas/cssdemo) and you can play around with code as we experiment together.
+
 #### HTML is a hierarchy
 
 <%= include_image "/content/topics/images/htmlhier.png" %>
@@ -11,7 +14,7 @@ title: CSS (the good stuff)
 * HTML by itself, when rendered in a browser, shows everything in a vanilla "black and white" style
 * HTML file linked to a corresponding CSS with a link tag in the head section of the html file: `<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">`
 * You can have multiple `<link>`s to css files, and they act as one big file
-* The following are *NOT RECOMMENDED*
+* The following are **NOT RECOMMENDED**
   * You can have css statements directly inside the `<head>` section of an html file
   * You can even have css statements attached directly to an html tag, e.g. `<p style="font-size:200%;">`
 
@@ -29,8 +32,8 @@ title: CSS (the good stuff)
 ##### Example
 <%= ruby_begin %>
   p {
-    color:red;
-    text-align:center;
+    color: red;
+    text-align: center;
   }
 <%= ruby_end %>
 * `p` is the selector. Indicates what tag(s) we want to add the style to
