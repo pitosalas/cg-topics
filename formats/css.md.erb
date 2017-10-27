@@ -5,7 +5,6 @@ title: CSS (the good stuff)
 
 <%= include_image "/content/topics/images/htmlhier.png" %>
 
-
 #### Intro
 * CSS stands for Cascading Style Sheets
 * Key word there is "Style" as in "what things look like"
@@ -15,7 +14,6 @@ title: CSS (the good stuff)
 * The following are *NOT RECOMMENDED*
   * You can have css statements directly inside the `<head>` section of an html file
   * You can even have css statements attached directly to an html tag, e.g. `<p style="font-size:200%;">`
-
 
 ##### Purpose
 * CSS sole purpose is to add 'styling' to html pages
@@ -66,24 +64,31 @@ Descendant|`.front-page p { font-style: bold; }`|
 
 
 ##### Example
-* CSS:
 <%= code_begin %>
+# myfile.css
 p.warning {
     color: red;
 }
-<%= code_end %>
-* HTML:
-<%= code_begin %>
+# myfile.html
 <p class="warning">
   It's important to remember to test the brakes!
 <p>
 <%= code_end %>
 * Notice that it's really hard to tell what CSS does without looking at the related html
 
-##### Box Model
+#### Box Model
+<%= include_image "/content/topics/images/boxmodel.png" %>
+
+<br/>
+
 * Crucial to understand when working with spacing
+  * `width:` applies to *content*
+  * `padding` goes *outside* of content
+  * `border` goes *outside* of padding
+  * `margin` goes *outside* of border
+  * See [Box Bodel](http://www.w3schools.com/css/css_boxmodel.asp)
 * Works different for Inline vs. Block elements
-* See [Box Bodel](http://www.w3schools.com/css/css_boxmodel.asp)
+  * inline elements (e.g. `span` or `a`) can only have margin and padding applied left and right (not top and bottom!)
 
 #### Tools
 * "Web Inspector" in your browser (Chrome, Safari, Firefox)
