@@ -2,7 +2,7 @@
 title: How do forms and views work?
 ---
 
-##### Conceptual
+#### Conceptual
 * You need a form whenever the browser needs to send data to the server
 * `<form>` tag begins the group of fields. It declares the URL that payload is sent to
   * There are zero or more fields
@@ -11,7 +11,7 @@ title: How do forms and views work?
 * Sending always is done via some kind of HTTP request
   * Payload is always name=value pairs, value is always text over the wire
 
-##### Rails
+#### Rails
 * There are always TWO controller actions:
   * one to display the form
   * one to accept the data from the form
@@ -30,7 +30,7 @@ title: How do forms and views work?
   * What if your form has been modified inside the browser?
   * Explain params.require()
 
-##### More complicated case
+#### More complicated case
 * Nested resources
   * A comment always belongs to an item
   * What should the URL look like to display the form to create a comment (THINK!) What is the verb?
@@ -40,10 +40,10 @@ title: How do forms and views work?
     * Let's read the action and understand what it does
   * How do you create a nested resource, i.e. a comment for item 3?
 
-##### Making Views DRY
+#### Making Views DRY
 * When you see yourself writing the same html over and over again
-  * write a helper: let's do an example!
-  * write a partial: And let's do another example!
+* write a helper: let's do an example!
+* write a partial: And let's do another example!
 
 #### Summary
 * Routes
