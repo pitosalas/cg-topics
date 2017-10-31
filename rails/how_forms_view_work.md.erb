@@ -36,13 +36,30 @@ title: How do forms and views work?
 
 #### More complicated case
 * Nested resources
-  * A comment always belongs to an item
-  * What should the URL look like to display the form to create a comment (THINK!) What is the verb?
-  * Does the form display to add a comment work differently?
-    * Using form_for vs. form_tag in this situation
-  * What would the URL look like to accept the data of the new comment?
-    * Let's read the action and understand what it does
-  * How do you create a nested resource, i.e. a comment for item 3?
+* Routes automatically create a set of helpers
+* `resource` routes create a complete set of CRUD helpers
+* Consider difference between:
+<%= ruby_begin %>
+# /items, /items/3, /items/3/comments
+resources :items do
+  resources :comments
+end
+
+# /items, /items/5, /comments, /comments/4
+resources :items do
+resources :comments
+
+<%= ruby_end %>
+
+* Different URLS have varied impact
+* Is it meaningful to specify, e.g. /comments/44 ?
+* When you create a new comments, are you required to specify what book it's in?
+* How is the POST different?
+* Does the form display to add a comment work differently?
+  * Using form_for vs. form_tag in this situation
+* What would the URL look like to accept the data of the new comment?
+  * Let's read the action and understand what it does
+* How do you create a nested resource, i.e. a comment for item 3?
 
 #### Making Views DRY
 * When you see yourself writing the same html over and over again
