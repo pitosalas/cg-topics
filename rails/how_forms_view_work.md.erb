@@ -40,13 +40,13 @@ title: How do forms and views work?
 * `resource` routes create a complete set of CRUD helpers
 * Consider difference between:
 <%= ruby_begin %>
-# /items, /items/3, /items/3/comments
+# /items, /items/3, /items/3/comments, /items/3/comments/5
 resources :items do
   resources :comments
 end
 
 # /items, /items/5, /comments, /comments/4
-resources :items do
+resources :items
 resources :comments
 
 <%= ruby_end %>
