@@ -6,8 +6,8 @@ title: Hands On Forms Demo
 ~~~
 rails new formsdemo
 
-gem 'pry'
-gem 'pry-byebug'
+gem 'binding_of_caller'
+gem 'awesome_print'
 gem 'better_errors'
 
 bundle
@@ -48,40 +48,54 @@ owners = ["Jane Smith", "Ira Levin", "George Benson"]
 colors = ["red", "brown", "green", "white", "tiny"]
 clothingnames = ["shoes", "wallet", "belt"]
 adjective = ["My favorite", "The perfect", "A great"]
+categories = [books, electronics, clothing, jewelry]
 
-puts "creating sample clothing"
-15.times do
+puts "creating sample items"
+50.times do
   title = colors.sample + " " + clothingnames.sample
   description = adjective.sample + " " + title
-  Item.create(title: title, description: description, owner: owners.sample, category: clothing)
+  Item.create(title: title, description: description, owner: owners.sample, category: categories.sample)
 end
 ~~~
 
+#### Create dbs and add seed data
+~~~
+rails db:migrate
+rails db:seed
+
+~~~
+
 #### Add Bootstrap
+
 * Notice not using a gem, to keep it simple
-* Reference: http://getbootstrap.com/getting-started/
-* Add this to application.html.erb
+* Reference: https://getbootstrap.com/docs/4.0/getting-started/introduction/
+* Update views/layouts/application.html.erb
 
 ~~~
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formsdemo</title>
+    <%%= csrf_meta_tags %>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <%%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <body>
+    <div class="container">
+      <div class="row">
+        <%%= yield %>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
 ~~~
-
-##### And put the right bootstrap tags in place in application.html.erb
-
-~~~~
-<div class="container">
-  <div class="row">
-    <%%= "yield" %>
-  </div>
-</div>
-~~~~
 
 #### Update the routes
 * Notice: how the scategories resource stays flat
@@ -89,20 +103,18 @@ end
 * Notice how the collection is set up
 
 ~~~
-Formdemo::Application.routes.draw do
-  resources :samples
-
+Rails.application.routes.draw do
   resources :categories
-
   resources :items do
     collection do
       get 'search'
       get 'do_search'
     end
-    resources :comments, only: \[:index, :new, :create\]
+    resources :comments, only: [:index, :create]
   end
-
   root 'items#index'
+
+end
 ~~~
 
 #### Define the search form search.html.erb
@@ -182,7 +194,7 @@ Formdemo::Application.routes.draw do
 
 <%%= render "index" %>
 <br>
-<div class=btb-group %>
+<div class=btn-group %>
   <%%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
   <%%= link_to 'Search', search_items_path, class: "btn btn-default" %>
 </div>

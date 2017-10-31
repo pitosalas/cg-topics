@@ -10,6 +10,9 @@ title: How do forms and views work?
   * `</form>` terminates the group
 * Sending always is done via some kind of HTTP request
   * Payload is always name=value pairs, value is always text over the wire
+  * Request is usually **POST** if the form is creating something.
+  * In the case of, e.g. a **search** form, a **GET** is more appropriate.
+  * See [HTTP Methods: GET vs POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
 #### Rails
 * There are always TWO controller actions:
@@ -19,7 +22,7 @@ title: How do forms and views work?
   * Two controller actions means TWO urls!
 * Display the form
   * Let's look at what the HTML should look like
-  * Difference between `form_for` and `form_tag`: let's look at two examples
+  * Difference between `form_for`, `form_tag` and `form_with`: let's look at two examples
   * Why is there an Item.new in the form display action (new)?
 * Accept data from the form
   * What URL is requested to send the data? What http verb? Why?
@@ -29,6 +32,7 @@ title: How do forms and views work?
   * What if the form payload is not coming from your form?
   * What if your form has been modified inside the browser?
   * Explain params.require()
+  * Explain injection attacks
 
 #### More complicated case
 * Nested resources

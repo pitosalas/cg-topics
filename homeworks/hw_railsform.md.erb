@@ -5,10 +5,10 @@ title: Homework -  Forms in Rails
 
 1. Create a new rails app (called lostandfound): `rails new lostandfound`
 1. Create a scaffold for the one and only model: `rails generate scaffold Item title:string description:text type:string`
-1. Don't forget to `rake db:migrate`
+1. Don't forget to `rails db:migrate`
 1. Run the server to make sure that you can list, create, change, delete items
 1. Add a route to allow the following url: `/items/search`. It should go to a controller action item#search. Refer to [Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html): hint: you will be adding a "Collection Route" (section 2.10.2)
-1. Use `rake routes` to see that this route in fact now exists
+1. Use `rails routes` to see that this route in fact now exists
 1. Add an action to the ItemController called "search"
 1. Add a view to views/items that will contain the search form, and define a form in that new view that 1.ill be the search form, using what you learned reading [Rails Guide on Form Helpers](http://guides.rubyonrails.org/form_helpers.html).
 1. For now only worry about displaying the form including the fields for title, description and type, and also have a submit box. You don't need to actually make it search.

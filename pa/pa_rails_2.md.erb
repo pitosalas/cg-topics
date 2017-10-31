@@ -7,7 +7,7 @@ title: PA Rails 2
 Continuing from PA Rails 1 we will now allow the user to request to sign up for the course (fake of course :) There will be a new Search page which will help the user to find courses to sign up to, and then an enroll button to further allow them to sign up to it.
 
 ####Part 2: Course Enrollment, Search
-1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class.
+1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class, or any other you discover.
 1. Only once logged in can the user see the tabs with the details
 1. Add a model/table called Enrollment linking users and courses (a many-to-many association).
 1. Add a fourth page to your app called Search. In the search page have a search form allowing users to search for courses by specifying a course name and/or subject. Remember that a subject has zero to many courses. If the user specifies a course name and a subject, both constraints should apply. The subject field should be a dropdown that is populated using data from the database. The course name field should be a text field. When the search/submit button is clicked in the form the app should display a list of all matching courses in a new results page.
@@ -19,5 +19,8 @@ Continuing from PA Rails 1 we will now allow the user to request to sign up for 
 1. Submit to Latte your link to GitHub.
 1. Submit to Latte your link to Heroku.
 1. Submit to Latte a zipped up folder of your app.
+
+#### Useful links
+* [Google authentication in Ruby on Rails](https://richonrails.com/articles/google-authentication-in-ruby-on-rails/)
 
 #### Click here to continue to <%= link_to_topic :pa_rails_3 %>
