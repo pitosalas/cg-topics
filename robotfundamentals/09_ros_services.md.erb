@@ -1,0 +1,16 @@
+---
+title: ROS Services
+---
+#### Intro
+
+* Alternative to using topics to communicate between nodes
+* Unlike publish/subscribe uses a "remote procedure call" (RPC) model
+* Service has a string name, a message for request, and a message for response
+* Client calls service using the name and is blocked until reply comes
+* Means that it is expected to be fast
+* For performance, client can make a persistent connection to service
+
+#### Details
+
+* Service has a "type" which is the packgage name + the name of the srv file, e.g. `my_srvs/srv/PolledImage.srv` has the service type `my_srvs/PolledImage`
+* A standard ROS message file is used to declare the messages

@@ -1,0 +1,21 @@
+---
+title: Ros Programming Assignment
+---
+#### Objectives
+* Understand ROS concurrent, distributed design
+* Understand key types of communication: publish/subscribe, service, action
+* Demonstrate understanding by implementing, testing, documenting and demonstrating code
+
+#### Assignment
+
+You will be implementing a ROS package which will include four nodes as python programs. They will communicate with each other using particular specified neans. You will test this in the simulator and then demonstrate it in the running TurtleBot3.
+
+* ConsoleNode: Read users console input. For example, commands like "Turn 84" etc. The string is simply published on the custom topic "/demo/command", with the message type of "string".
+
+* MainNode: This node is subscribed to "/demo/command". Every time a message comes in it is submitted to a service called "FakeNLP" which will return a single float. Once this float is received, the float is used to generate an action to actionServer. While the action is occurring, the MainNode queries the ActionServer and writes it's progress to the log.
+
+* FakeNLP: This is a service, which will do simple text processing (using a Regex) to see if the command is valid and extract the number and convert it to a float, which is returned to the caller.
+
+* ActionServer: The action server receives the request, and generates appropriate Twist messages to get the robot to spin the desired number of degrees. The action server is able to return progress status to the MainNode.
+
+Finally you will write a ROS launch file which will launch all four of these and allow the user to type commands on the console, see the robot turn, and see the log messages in the log.

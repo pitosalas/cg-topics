@@ -1,0 +1,70 @@
+---
+title: Subscribing Example
+---
+
+### Recipe for a Simple Scan Subscriber
+
+* Before getting started, you should have a workspace ready. Suppose the workspace name is `/catkin_ws`.
+* Recipe:
+  * Initialize a *package*
+    * `$ cd /catkin_ws/src` cd to the src of your workspace first.
+    * `$ catkin_create_pkg scan_monitor std_msgs rospy` Create a new package called *scan_monitor* that depends on *std_msgs* and *rospy*.
+  * Create your code.
+    * `$ cd /scan_monitor/src`
+    * `$ gedit scan_subscriber.py`
+
+##### Copy and paste the following code.
+
+<%= code_begin %>
+#!/usr/bin/env python
+# Be sure to include the shebang line!!!
+# You should figure out what's the shebang line for your system.
+
+import rospy #import the ros python package
+from sensor_msgs.msg import LaserScan #You have to import the message
+from Tkinter import *  #a Python UI library
+
+class ScanMonitor:
+  def __init__(self, scan_topic):
+    self.scan_topic_name = scan_topic
+
+  def scanCallback(self,msg):
+    print("Range array has "+str(len(msg.ranges))+" elements.")
+    print("Angle Increment is "+str(msg.angle_increment))
+    print(str(len(msg.ranges)*msg.angle_increment))
+    #this is going to print out
+    #how many elements are there in the Range array of the message
+
+  def start(self):
+    root = Tk() #Bring up the UI, for now there's nothing
+    rospy.Subscriber(self.scan_topic_name,LaserScan,self.scanCallback)
+    #Every time you receive a new message, the scanCallback will be called.
+    root.mainloop() #This just goes into an infinite loop and stops the program from exiting.
+
+
+def main():
+  rospy.init_node('scan_monitor')
+  #The first time to do is always initialize the node.
+  scan_monitor = ScanMonitor("/scan")
+  scan_monitor.start()
+
+if __name__ == '__main__':
+  main()
+<%= code_end %>
+#### Notes
+* We are subscribing for the `scan` topic and we get message type `LaserScan`
+* `rostopic list` to see all topics
+* `rostopic show /scan` to see the detail of scan topic
+* `rosmsg show LaserScan` to see the message(data structure). You can also see it online from [here](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html). For all kinds of message types, you can always just google it. You will get a well-structure wiki of this type of message.
+* save and quit.
+* `$ chmod +x scan_subscriber.py` This command will make your code executable. If you `$ ls`, you would the scan_subscriber.py is marked green. That means it became executable. Now you can `$ python scan_subscriber.py` to run it, but it's recommended to build this in the ROS environment.
+* `$ cd ` to go back to the home folder. `$ cd /catkin_ws/src` again.
+* `$ catkin_make ` to build. Remember you have to do it in the root of your workspace.
+
+#### Run It!
+
+* `$ source ~/catkin_ws/devel/setup.bash`, if haven't done so. This command will enable your system to know the it can run stuffs in your workspace. You can also add this line to your bashrc file of your terminal, so that you don't need to type that every time.
+* `$ roslaunch turtlebot_gazebo turtlebot_world.launch` Bring up your (simulated)robot first.
+* `$ roslaunch turtlebot_teleop keyboard_teleop.launch` Open the controller for turtlebot. Select the window to use the controller.
+* `$ rosrun scan_monitor scan_subscriber.py` run it! You can call this anywhere. You will see a stream of printing on your console.
+* Now you can play with your code. Anytime you changed something, you just need to **save** and call **rosrun**.

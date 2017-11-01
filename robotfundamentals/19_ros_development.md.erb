@@ -1,0 +1,58 @@
+---
+title: Developing on ROS
+desc: What is the developers workflow on ROS? What languages do I use, and how do I do a build
+---
+Coding in ROS is actually straightforward, but the non-coding part can sometimes be frustrating. First of all, you have to know the idea of **workspace** and **packages**.
+
+#### **Workspace** is in where all your ROS code lives
+
+It's nothing but a directory(a folder, to make it even clearer). Besides the code in underlying ROS system, all code in you want to use should be in the workspace. You can have multiple workspaces, but each time there can be only one in effect.
+
+##### How does the system know which one and where it is?
+
+Everytime you want to start working on your code, you have to source a setup shell script file in the workspace. So that the system knows this particular workspace and code in your packages are what you are talking about. A lot of times, the reason people run into "package not found" error is because they forgot to source the setup file in the workspace. It's a pain to type in all the commands everytime you open a terminal. To aviod that, put in the source command in the .bashrc file, so that the terminal runs this command automatically.
+
+`echo "source ~/(YOUR WORK SPACE)/devel/setup.bash" >> ~/.bashrc`
+
+Conventionally, the workspace is named as something like `catkin_ws`. [(What's catkin?)](http://wiki.ros.org/catkin/conceptual_overview)
+
+Quick exmaple of commands for create a workspace(just for saving you some time and headache):
+
+1. `source /opt/ros/indigo/setup.bash` This sources system-wise ROS setup file, so that the terminal can find the commands in ROS.
+2. `mkdir -p ~/catkin_ws/src` and `cd ~/catkin_ws/src`
+3. `catkin_init_workspace` This command creates a workspace directory call *catkin_ws*. (If you forgot to source, you will run in to a command-not-found error)
+4. `cd ~/catkin_ws`
+5. `catkin_make` This command will build the all the code and meta-data into executables that you can run. The underlying ROS takes care of all that. If you use C++, you will have to call this every time you made some changes in your code. Since we are using python. We don't really pay a lot attention to this.
+6. `source /catkin_ws/devel/setup.bash` Source the setup file in your package, so that the system can find it.
+
+#### **Packages** store all your code, data and metadata:
+
+ROS organizes the softwares into *packages*. All your packages will be in the src folder in your workspace.
+
+  `cd ~/catkin_ws/src` & `catkin_create_pkg (WHATEVER-NAME-YOU-LIKE) rospy`
+
+  Simple as that, you made a ROS package. Congratultions, you can start coding!
+
+#### **Programming Languages**
+<%= callout("NB", " This tutorial is the last time you will use C++. All our coding should be in Python!") %>
+
+In theory, you can code for ROS in almost any main stream languages, but most people do it in python and c++. They will be our main focus. Due to the CMake structure, there are lots of annoying details if you are working with c++. This is **complicated**. It's strongly recommanded to watch and follow exactly this video.
+
+  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2Cmdu6mkxD0/0.jpg "ROS tutorial: C++ walkthrough of publisher & subscriber")](https://youtu.be/2Cmdu6mkxD0)
+
+##### Learn Python in ROS**
+
+After finishing following the first tutorial, now do the same to this tutorial. After that, you will find out how much your life will be easier with python.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DLVyc9hOvk8/0.jpg "ROS tutorial: C++ walkthrough of publisher & subscriber")](https://youtu.be/DLVyc9hOvk8)
+
+#### Your friends
+
+Remember these are your friends:
+
+* `rostopic list`
+* `rostopic info /(The_Topic_You_Want_To_Know_More)`
+* `rostopic echo /(The_Topic_You_Want_To_Know_More_In_Real_Time)`
+* `rosmsg show (The_Message_You_Want_To_Know)`
+* [The AMAZING community](http://answers.ros.org/questions/)
+* GOOGLE!

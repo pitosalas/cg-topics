@@ -1,0 +1,45 @@
+---
+title: "Project: Robot API"
+desc: Give the Robot a REST API to allow non-ROS software to control it
+---
+#### Summary
+Our goal is that the robot work *without* a developer running ROS on a nearby laptop and using ROS modules. Instead it is (imagine) having a mobile app with a few buttons on it and a status display.
+
+The buttons might say: "Go to Office GZang-112" or something like that. The display might say: "Robot status: Stuck in a corner. Please help"
+
+This project is to figure out the architecture and code to make this possible.
+
+#### High level Campus Rover REST protocol
+We imagine that this will require a simple REST interface to the robot. We assume that the robot will be on the wifi network and have an IP address. One structure would be to use http to do the following sequence:
+
+<%= code_begin %>
+GET /control/startoffice/123
+GET /control/targetoffice/992
+GET /control/start
+GET /status/summary
+<%= code_end %>
+
+Of course a proper design of the protocol is required
+
+#### Implementation
+This would require a small web server to run on the robot listening to the commands and then dispatching the right functionality through ROS messages. Here's a sketch:
+
+1. Run a very light weight web server on the turtlebot. Python must have one, it must be pretty simple. It would be another ROS node which can subscribe and publish topics
+1. Design a trivial REST Api like I indicated in my sketch
+1. Using a desktop tool (there are many) manually issue GET requests to the lightweight web server
+1. Enhance the ROS node with the web server to listen for topics of interest and use them to respond to /status requests
+1. Enhance the ROS node to listen publish “move to this office” commands as a result of the web server
+
+#### Goal
+The goal of this project is to prototype this architecture to figure out if it is workable and how it should be done.
+
+#### Alternative Architecture
+Use a ROS Service. Here's a sketch:
+
+* Install standard "Flask" python web framework on board the TB3. It's supposed to be quite simple.
+* Flask will accept HTTP and respond to the URLs described above, taking actions or returning status. It does this by sending XMLRPC requests to the service described below.
+* Create a service within ROS on the TB3. That service receives XML/RPC messages from the Flask server and actually implements the actions.
+
+
+#### Relevant links
+* You can also look at: [Android](http://wiki.ros.org/android), specifically: [Building A ROS Android App](http://wiki.ros.org/ApplicationsPlatform/Clients/Android/Tutorials/Getting%20Started)

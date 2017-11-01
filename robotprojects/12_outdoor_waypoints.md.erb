@@ -1,0 +1,24 @@
+---
+title: "Project: Outdoor MVP"
+desc: Most basic implementation stages of an outdoor navigating robot
+---
+#### Introduction
+The goal here is to build the most fundamental parts of campus rover, in a way that will be easily expanded upon. You should complete the project with a rover that can decide on a path from one building to another, and avoid basic along the way.
+
+#### Steps
+1. Waypoint navigation
+  * Have the robot navigate to a specific GPS point, on a favorable surface without obstacles
+  * Detect when it's reached a waypoint (it won't ever be perfectly on the point, pick a good waypoint radius)
+  * Navigate through a series of waypoints
+1. Obstacle avoidance
+  * Make slight deviations in the path to a waypoint to avoid obstacles
+  * Don't worry about maze-like obstacles, solve those with more waypoints
+  * Test with multiple waypoints
+1. Path planning
+  * Plot several waypoints around an area
+  * Assign values to cost-of-travel between waypoints
+  * Implement an algorithm that generates a series of waypoints, given start and destination waypoints
+1. Put it all together
+  * Set up obstacle course, with a few options from start to finish
+  * Plot waypoints and assign cost
+  * Watch your robot work perfectly!

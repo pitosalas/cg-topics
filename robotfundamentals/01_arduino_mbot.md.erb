@@ -1,0 +1,96 @@
+---
+title: Arduinos and mBots
+desc: What is an Arduino? How does it relate to the mBot? What are all the kinds of Arduinos that exist?
+---
+#### Families of computers
+* Common threads
+  * Large user community
+  * Relatively cheap
+  * Large set of add-on hardware and software
+* Microcontroler or Microprocessor
+  * Usually means a single chip
+  * SOC - System On Chip
+  * Some of the key chips are
+    * ARM architecture (cellphone quality chip)
+    * AtMel Chip (lower power, cheaper)
+    * MSP430 (Super low power)
+* Microcomputers
+  * Boards, e.g. Arduino, Raspbery Pi
+* Arduino Family
+  * Most well known family of microcomputers
+  * Used in automation, art, hobby etc
+  * Some people say they are a bit dated?
+  * Models
+    * Uno
+    * Mega
+    * Nano
+    * Due
+  * All have compatible layout but different degree of resources
+  * Shields
+    * General term in Arduino land for add-on boards
+* BeagleBone Family
+  * More Powerful
+  * Can run Linux
+  * Less Rich community
+  * Models
+    * Regular
+    * Blue
+    * Black
+  * Capes
+    * General term for add-on boards
+  * [BeagleBone](http://beagleboard.org/bone)
+* Raspberry PI Family
+  * Can run Linux
+  * Models
+    * Original, Zero
+  * [Raspberry Pi Family](https://socialcompare.com/en/comparison/raspberrypi-models-comparison)
+* mBed
+  * Claim to fame: Web based IDE
+  * More of a software platform
+  * Huge compatabiloty with boards from different vendors
+  * [mBed](https://os.mbed.com/platforms/)
+
+#### Arduino
+* What's on it
+* What are pins
+  * Are numbered, e.g. from 1 to 20
+  * Vary from model to model
+  * Analog "pins"
+    * read a range from e.g. 0-255
+    * Used e.g. for motor speed
+  * Digital "pins"
+    * set/read 0 or 1
+    * Used e.g. for turn on LED
+  * Notes
+    * Generally you need to know the pins to use
+    * And a library provided by device/sensor/motor handles "encoding"
+    * To output analog data, digital pins are used, with PWM
+    * PWM = "Pulse Width Modulation"
+  * New devices
+    * Have to be connected to "the right pin"
+    * Documentation will specify
+* How can I fry it?
+  * Never connect a device to your arduino at all
+  * Unless you have verified documentation of how exactly to connect it
+  * "Measure Twice, Cut once"
+  * Have another pair of eyes check
+  * Otherwise: SMOKE!
+
+#### mBot Component
+* "MCore" board, which is essentiall an Arduino Uno plus the following:
+  * dual motor controller
+  * two serial RGB LEDs (WS2812 aka "NeoPixels")
+  * piezo buzzer
+  * light sensor
+  * IR LED
+  * IR receiver
+  * button
+  * header block for either a bluetooth or 2.4GHz radio
+  * four RJ25 connectors for external peripherals
+    * Correspond to some combination of pins
+  * [Details about MCore](http://blog.hmpg.net/2016/04/makeblock-mcore-information.html)
+* MBot itself has
+  * MCore Board
+  * Chassis
+  * Wheels
+  * Motor
