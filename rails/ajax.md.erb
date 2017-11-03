@@ -1,0 +1,67 @@
+---
+title: Ajax
+---
+#### Background!
+
+##### Ajax
+* Used to stand for "Asynchronous Javascript and XML"
+* Nowadays the term has gotten generic -- XML is rarely involved, JSON is used instead
+* If it means anything it means updating a page without a visible refresh
+* Unobtrusive Javascript: [Why is Unobtrusive Javascript Important?](http://blog.teamtreehouse.com/unobtrusive-javascript-important)
+
+##### Responsive Design
+* Single web site for all devices (web browser vs. mobile)
+* Layout changes (radically) if needed to accommodate screen size
+* Radically means: rearranging components, and even dropping content altogether
+* You've seen this so much, it's more or less expected now
+* Famous example [Boston Globe](http://www.bostonglobe.com), was one of the earliest really responsive web pubs.
+
+##### Use Cases
+* **Asynchronous update**: page changes without the user doing anything
+* **Typeahead**: suggested completions added to a textbox while typing
+* **Delayed Rendering**: Result from a query comes in gradually
+* **In Place Editing**: Forms that allow in place editing (instead of a big submit button)
+* **Server Push**: Browser update initiated by the server!
+
+##### How Ajax works
+* Steps
+  1. Browser makes a 'background' http request
+  1. Server (i.e. the controller) returns 'data' or 'js code'
+  1. Browser based code (javascript) interprets that data or executes the code.
+  1. Browser changes DOM which changes what is displayed in the current page
+
+#### Deeper dive
+
+<%= callout("Not a toy", " Javascript is a serious and very important langauge") %>
+
+* It might be the most important language right now
+  * Why?
+  * Has nothing to do with Java!
+  * Name is strictly political (back in the 80's I think)
+* Browser DOM :: HTML :: CSS :: JavaScript are interlocking partners that work together
+* Document Object Model
+  * DOM is a strictly a tree with the `<html></html>` at the top of the tree, assigned to variable `document`.
+  * Each tree element is a node. Every node has exactly one parent
+  * The DOM tree can be modified AT RUN TIME
+  * Any change to the DOM tree is immediately reflected in the visual appearance of the page!
+
+##### Demo
+
+#### Ajax basics in Rails
+* Unobtrusive Javascript
+* Uses JQuery
+* Ties js to erbs and the views
+
+#### Server Push
+* Not a real term :)
+* Many different ways of approaching. Sort of immature right now
+* Key techniques are:
+  * Periodic background polling by browser
+  * WebSockets and variants which maintain an open connection to server
+  * Rails 5 Action Cable
+* Some links to study further:
+  * New Service to support Pusher on a separate Service: [Pusher Service - free push](http://pusher.com)
+  * How to use WebSockets on Heroku: [Websockets on Heroku](https://devcenter.heroku.com/articles/ruby-websockets)
+  * Rails 5 Action Cable, [YouTube Demo of Rails 5 Action Cable](https://www.youtube.com/watch?v=n0WUjGkDFS0)
+
+##### Demo
