@@ -1,0 +1,53 @@
+---
+title: Product Architecture
+homework: 1) NEST Thermostat UX; 2) Continue digging deeper on Term Project
+desc: The role of the architecture in the plan
+cat: MVP
+---
+<%= homework_hdr %>
+
+<%= include_topic :hw_nest_ux %>
+* Meet with your team for 1-2 hours.
+	* Do a more detailed and complete iteration of your User Experience flow, including paper prototypes and the UX flow itself. Document and/or revise your user experience flow. Make paper prototypes of all the important screens. Prepare to do a usability test with it.
+	* Have a wide ranging discussion about your hypotheses and what more testing you need to do. Refer especially to my guidelines from a week ago about how to improve all the projects:
+		* **Think bigger.** You will need to make a case that the product will be a viable business.
+		* **Be Serious.** Your work is evaluated not just on whether you follow the steps or the format but based on whether you are being realistic and intellectually honest about your proposal. Would you actually pitch this to an Angel?
+		* **Get Out.** Everyone needs to get out of the building more. Go beyond your friends. Talk to strangers!
+   * **Pivot.** If you need to. Real startups pivot if the evidence is not coming in. Zoom  out pivot if your idea is too small. Zoom in if it's too big. See <%= link_to_topic :pivot_types %>
+    * **Presentation.** Professional, neat, readable etc.
+
+    <%= italic_red "Make notes of changes and plans to incorporate into your Term Project Report."%>
+
+#### Technology and Architectural tradeoffs
+
+* These form hypotheses like any other solution hypothesis
+* For example
+	* Can it be built? ("the api is rich enough to allow this product to be built")
+	* How long will it take? ("the product can be built to release 1 in 3 months")
+	* Will it perform? ("the product will be able to support 10,000 users in the first release")
+	* Should we use Android or iPhone, etc.  ("it is safe to ignore the iPhone platform")
+	* What would it cost to manufacture?  ("The first 100 units can be manufactured for $10 per")
+	* ... etc.
+* These kinds of hypotheses need to be answered from a technical/technologoical perspective
+* How would you test the hypothesis?
+	* Check with some experts to corroborate your hypothesis
+	* Show them your design concept
+	* Build a prototype/experiment/mvp to validate *that assumption* specifically
+* For example distinguish between:
+	* Customers will require that we support both iPhone and Android
+	* Our architecture can work on iPhone and Android
+	* Different questions, requiring different experiments to check
+* Common Fundamental Architectural and Technology questions
+	* Scale: How do we support the required number of users
+	* Deployment vehicle: Cloud, Web, Mobile or Device
+	* <%= discussion "Did I leave any out?" %>
+* What about the 'secret sauce?'
+	* Your app may or may not require some
+	* You might consider it your competitive advantage and even patent it
+	* Most of your work (80% overall) will not be advanced computer science or new invention
+	* For a real commercial product, most of the work will be hard engineering
+
+<%= include_topic :innovators_dilemma %>
+
+#### Next Class
+* Look at homework: <%= link_to_next_lecture %>
