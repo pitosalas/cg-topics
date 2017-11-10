@@ -6,13 +6,15 @@ title: REST and Web Services
 #### What is a web service?
 
 * Consider this web page: [Olin College Engineering Courses](http://www.olin.edu/course-listing/)
-* What would "TeachBack" do if it wanted to have a list of courses pre-populated with a college's courses?
-  * Grab all the text `curl http://www.olin.edu/course-listing/ > olincourses.txt`
+* What would  [schdl.net](https://brandeis.schdl.net/term/Spring_2018) di if it wanted to have a list of courses pre-populated with a college's courses?
+  * Grab all the text `curl http://olin.smartcatalogiq.com/en/2017-18/Catalog/Courses-Credits-Hours/ENGR-Engineering > olincourses.txt`
   * Write a program to parse that page and then load the results into a database.
   * This is called "scraping" and usually that would violate a copyright
 * Server can also deliver information in "machine readable" formats (such as JSON or XML)
 * The term "API" is used to describe the permissable ways that one program can call another, such as a library
 * Web Service API is when this is between servers on the internet
+
+
 
 ##### Protocols
 * This can be done with many different standards and formats and protocols
@@ -46,12 +48,12 @@ title: REST and Web Services
   * GET http://www.facebok.com/users
   * GET 0.0.0.0:3000/cards/1.xml
 * Some things are harder to fit with the model
-  * What might a horoscope service look like as REST?
+  * What might a fortunecookie service look like as REST?
   * The 'resource' here is a single fortune
-  * http://myhoroscope.org/fortunes/1
-  * http://myhoroscope.org/fortunes
-  * http://myhoroscope.org/fortunes?date=mar-15-2025,sign=scorpio
-  * http://myhoroscope.org/fortunes/random
+  * http://myfortunes.org/fortune/1
+  * http://myfortunes.org/fortune
+  * http://myfortunes.org/fortune/random
+  * http://myfortunes.org/fortune?about=money
 
 * Note fortunes/random, random is not exactly identifying a resource; but close enough.
 * What if caching was done strictly by url?
@@ -60,3 +62,7 @@ title: REST and Web Services
     * make logical use of url space
     * Different 'representations' possible: html and xml, but others too, say csv or video
     * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
+
+#### Let's play with it!
+* Here's the web site for [Fortunes](https://rpsfortune.herokuapp.com)
+* Here's the code for it [Fortunes Source code](https://github.com/pitosalas/restapidemo)

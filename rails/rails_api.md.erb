@@ -1,0 +1,31 @@
+---
+title: Rails API
+---
+#### Rails API Only apps
+* Realize that you can have multiple apps accessing the same databases!
+* You can have a Rails app for your views and controllers, and a different app for your API
+* The "automatically created" REST APIs in Rails are "questionnable"
+* Client side frameworks (e.g. React etc) put all the UI in the client
+* Introducing: rails new foo --api-only
+
+#### But why use Rails in that case?
+* Alternatives: Sinatra, Express, etc etc
+* Nothing wrong with a hybrid configuration
+* Isn't Rails overkill?
+  * development, test, production modes
+  * Really good security protection
+  * "Reloading" -- really nice for developer
+  * Logging is built in
+  * routes.rb
+  * Really deep caching
+  * on and on
+  * Finally: Why learn another framework?
+* Why not just use Rails in the usual way?
+  * That would be fine
+  * Unless youre conserned about memory footprint etc
+  * Or your sene of aesthetics is offended (why have all this stuff I never use?)
+
+#### Using Rails API
+<%= ruby_begin %>
+rails new my_api --api
+<%= ruby_end %>
