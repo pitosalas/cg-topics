@@ -9,7 +9,7 @@ title: Load Testing nanoTwitter
 * This could be any server, even your neighbor's laptop.
 * For our purposes, it needs to be on one of the cloud services, like Heroku
 * I recommend Heroku
-  * if you are adventurous you could deploy it elsewhere too. 
+  * if you are adventurous you could deploy it elsewhere too.
   * But then we won't really be able to give you too much help
 * Cloud deployment implies that there is a well known 'fixed' domain name
   * (e.g. wild-mushroom-2312.herokuapp.com)
@@ -21,7 +21,9 @@ title: Load Testing nanoTwitter
 * This allows a unified test to be run against all of the apps
 
 #### Load Testing Tools
-* There are numerous [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use)
+* There are numerous Load Testing tools. Here are two lists:
+  * [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use).
+  * [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
 * We are using [loader.io](http://www.loader.io) -- at least to start.
 
 #### How to deal with authentication
@@ -43,16 +45,16 @@ title: Load Testing nanoTwitter
 * Collect data and try to interpret it
 
 #### When your app is failing to scale
-* Think about what happens when your app response time is longer than 
-the time between new connections. Requests will start to pile up. 
-* If it takes too long for a request to reach the front of the line, it 
-will time out. 
-* If your app is too overloaded, it may shut down entirely. Make sure 
-to consult your Heroku logs after a test to identify this. 
-* When an app hasn't been accessed for a while, Heroku will put it in a 
-sleep state. If your app is asleep, make sure to access it manually 
-to wake it up before beginning a test. Waking up may take several 
-seconds, which would influence your results. 
+* Think about what happens when your app response time is longer than
+the time between new connections. Requests will start to pile up.
+* If it takes too long for a request to reach the front of the line, it
+will time out.
+* If your app is too overloaded, it may shut down entirely. Make sure
+to consult your Heroku logs after a test to identify this.
+* When an app hasn't been accessed for a while, Heroku will put it in a
+sleep state. If your app is asleep, make sure to access it manually
+to wake it up before beginning a test. Waking up may take several
+seconds, which would influence your results.
 
 #### Using Loader.io
 * Our goal is to see how well each of your servers survive the onslaught of traffic
@@ -73,4 +75,3 @@ seconds, which would influence your results.
 * Form some hypotheses about what is going on with your performance
 * Make a report correlating load to performance
 * Try `heroku pg:outliers` to see if it tells you anything about your db performance
-
