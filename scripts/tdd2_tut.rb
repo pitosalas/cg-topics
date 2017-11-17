@@ -3,9 +3,10 @@ require "minitest/autorun"
 # Represent Standard Playng Cards
 class PlayingCard
   attr_reader :rank, :suit
-  def initialize(suit: nil, rank: nil)
+  def initialize(s: nil, r: nil)
     @suit = suit
     @rank = rank
+    throw Exception unless valid?(s, r)
   end
 
   def random
@@ -22,8 +23,8 @@ class PlayingCard
     rank_to_english + ' of ' + @suit
   end
 
-  def valid?
-    @rank >= 1 && @rank <= 13 && !@suit.nil?
+  def valid?(r, s)
+    r >= 1 && r <= 13 && !s.nil?
   end
 
   private
@@ -53,8 +54,11 @@ class Deck
     @cards = {}
   end
 
-  def cards_left
-    52 - @cards.length
+  def deal
+  end
+
+  def length
+    @cards.length
   end
 end
 
@@ -67,9 +71,8 @@ describe PlayingCard do
   end
 
   it 'Cant create an invalid card' do
-    c = PlayingCard.new(suit: 100, rank: 200)
-    if !c.nil?
-      c.valid?.must_equal true
+    assert_raises Exception do
+      PlayingCard.new(suit: 100, rank: 200)
     end
   end
 end
@@ -78,16 +81,18 @@ end
 describe Deck do
   it "starts out empty" do
     deck = Deck.new
-    deck.cards_left.must_equal 52
+    deck.length.must_equal 0
   end
 
   it 'can deal a card' do
     deck = Deck.new
     acard = deck.deal
-    if !acard.nil?
-      acard.valid?.must_equal true
-    else
-      deck.cards_left.must_be 52
-    end
+    acard.valid?.assert_equal true
+  end
+
+  it "can receive a card" do
+    deck = Deck.new
+    deck.insert(PlayingCard.new.random)
+    deck.cards_left.must_equal 1
   end
 end
