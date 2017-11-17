@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require "minitest/autorun"
 
 # Represent Standard Playng Cards
 class PlayingCard
@@ -47,6 +47,19 @@ class PlayingCard
   end
 end
 
+### Represent a Deck of cards
+class Deck
+  def initialize
+    @cards = {}
+  end
+
+  def cards_left
+    52 - @cards.length
+  end
+end
+
+#### Minitest/spec for Playing card
+
 describe PlayingCard do
   it 'creates a valid card' do
     @a_card = PlayingCard.new.random
@@ -57,6 +70,24 @@ describe PlayingCard do
     c = PlayingCard.new(suit: 100, rank: 200)
     if !c.nil?
       c.valid?.must_equal true
+    end
+  end
+end
+
+
+describe Deck do
+  it "starts out empty" do
+    deck = Deck.new
+    deck.cards_left.must_equal 52
+  end
+
+  it 'can deal a card' do
+    deck = Deck.new
+    acard = deck.deal
+    if !acard.nil?
+      acard.valid?.must_equal true
+    else
+      deck.cards_left.must_be 52
     end
   end
 end
