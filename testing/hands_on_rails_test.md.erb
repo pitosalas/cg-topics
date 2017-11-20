@@ -3,16 +3,25 @@ title: Hands on Rails Test Demo
 ---
 ##### Set up
 ~~~
-rails new my_app
-cd my_app
+rails new railstestdemo
+cd railstestdemo
 ~~~
 
 ##### Add to gemfiles
 ~~~
 gem 'pry-byebug'
 gem 'better_errors'
+gem 'binding_of_caller'
 gem 'minitest-rails'
+bundle
 ~~~
+
+#### Add to config/application.rb
+<%= ruby_begin %>
+config.generators do |g|
+  g.test_framework :minitest, spec: true
+end
+<%= ruby_end %>
 
 #### Add and test a model
 ~~~
@@ -21,20 +30,10 @@ rails generate model word eng:string ned:string
 rake db:migrate
 ~~~
 
-##### Default empty test (word_test.rb)
-~~~
-require_relative '../test_helper'
-
-describe Word do
-  it "succeeds in default test" do
-    1.must_equal 1
-  end
-end
-~~~
 
 ##### See what rake tasks are present
 ~~~
-rake -T
+rails -T
 ~~~
 
 ##### Add some more tests
@@ -101,7 +100,7 @@ end
 
 #### Add and test a controller
 ~~~
-rails generate controller Words learn
+rails generate controller Words random
 ~~~
 
 ##### First write the test for the learn action
@@ -109,9 +108,8 @@ rails generate controller Words learn
 require_relative '../test_helper'
 
 describe class WordsController < ApplicationController do
-  it "handles learn action" do
-    get :learn
-    assigns('word').must_be_kind_of Word
+  it "handles random action" do
+    get words_random_url
     assert_response :success
   end
 end
@@ -120,41 +118,21 @@ end
 ##### Now actually implement the action in the WordsController
 ~~~
 class WordsController < ApplicationController
-  def learn
-    @word = Word.new
-  end
-end
-~~~
-
-##### Now, lets test that the controller is calling the Word.random method
-~~~
-it "passes a word from random" do
-  target_word = Word.new(eng: "nose", ned: "neus")
-  Word.stub :random, target_word do
-    get :learn
-    assigns('word').must_equal target_word
-  end
-end
-~~~
-
-* Stub creates a temporary override of the Word.random method
-* And then verifies that it is being called,which it is now.
-* We now need to update the controller to actually call Word.random
-~~~
-
-##### WordController calls Word.random
-~~~
-class WordsController < ApplicationController
-  def learn
+  def random
     @word = Word.random
   end
 end
 ~~~
 
+##### And the view:
+~~~
+<h1>Words#random</h1>
+
+<h2>A random Word:</h2>
+
+<p>Dutch: <%%= @randword.ned %></p>
+<p>English: <%%= @randword.eng %> </p>
+~~~
+
 #### References
-* [Minitest Rails Gem](http://blowmage.com/minitest-rails/)
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
-* [BDD with Minitest](https://semaphoreapp.com/blog/2014/10/27/bdd-on-rails-with-minitest-part-1-up-and-running.html)
-* [Old Post on which my example above is based more or less](http://andrzejonsoftware.blogspot.com/2007/05/15-tdd-steps-to-create-rails.html)
-* [Minitest Readme](https://github.com/seattlerb/minitest)
-* [Minitest Quick Reference](http://www.mattsears.com/articles/2011/12/10/minitest-quick-reference)

@@ -1,0 +1,40 @@
+---
+title: Push processing
+---
+#### Push capability in Rails
+* Options: Homegrown, pusher.com or Rails ActionCable
+* Homegrown
+  * Directly code WebSockets code in Javacript. Most complicated
+* Pusher.com
+  * Pretty simple, but involves a 3d party vendor
+  * Small cases: free
+  * Large cases: cost
+* ActionCable
+  * A little more complicated (so far)
+  * Need to set up a new server (Redis)
+  * You control cost fully
+
+#### Examples
+
+##### Pusher
+* Separate Service
+* [Heroku Demo](https://rpsformsdemo.herokuapp.com)
+* Lets play with it
+* Lets look at the code
+
+##### Rails ActionCable Example
+* Rails: ActionCable: Railsification of Websockets
+* [Heroku Demo](https://pscabledemo.herokuapp.com/homes/1)
+* Uses system cache software called "Redis"
+* Rails Server also acts as a WebSockets server
+* Quick look at Heroku dashboard
+* Channel:
+  * Communication channel, carrying "messages"
+  * Analogous to a Controller
+  * Can stream messages to subscribers
+* Message
+  * A packet of JSON sent from the server back to the client
+  * Analogous to an action
+* Consumer
+  * Usually it is the web browser of a user
+  * It can subscribe to messages from a certain channel
