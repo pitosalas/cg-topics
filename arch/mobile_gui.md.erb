@@ -1,7 +1,7 @@
 ---
 title: Mobile App Approaches
 ---
-#### Mobile GUI
+#### Client Considerations
 
 ##### Criteria for evaluation
 * Are both iOS and Android required? How about smaller platforms?
@@ -12,14 +12,10 @@ title: Mobile App Approaches
 * What are the performance and responsiveness requirements?
 * How will user discover, install and upgrade the application?
 
-*[Reference: Mobility Client Architecture](http://www.tcs.com/SiteCollectionDocuments/White%20Papers/Mobility_Whitepaper_Client-Architecture_1012-1.pdf)*
-
 ##### Guide to performance goals
 * 0.1 Second: Looks and feels instant
 * 1.0 Seconds: Maximum before flow is interrupted
 * 5 Seconds: Maximum before losing user's attention and focus
-
-*[Reference: Response time in man-computer conversational transactions](http://theixdlibrary.com/pdf/Miller1968.pdf)*
 
 #### Overview of Approaches
 * Mobile web based application
@@ -46,10 +42,10 @@ title: Mobile App Approaches
   * Embedded in a thin native shell application
   * Some of the screens are web and some are native (degree differs)
   * App is installed via stores
-  * Leading framework is: [PhoneGap](http://phonegap.com)
   * Pros/Cons
     * Not much more work than mobile web app
     * Solves some of their key weaknesses
+    * Be very careful picking the framework. They come and go!
 
 #### Enhancing Mobile Web Based Applications
 
@@ -62,9 +58,7 @@ title: Mobile App Approaches
   * Stay in Rails. Far smaller incremenental investment for better web performance
   * On mobile, network delay is typically 300-700ms, so Turbolinks is not going to break the 100ms barrier
 
-*References: [100ms to Glass with Rails and Turbolinks(https://www.nateberkopec.com/2015/05/27/100-ms-to-glass-with-rails-and-turbolinks.html) and [Ilya Grigorik's Breaking the 1000ms to glass mobile barrier](https://youtu.be/Il4swGfTOSM)
-
-#### Rich Client GUI JS Frameworks
+##### Rich Client GUI JS Frameworks
 * Very hot right now
 * Personally not (yet) a super fan
 * Awesome results, but very high investment
@@ -72,7 +66,7 @@ title: Mobile App Approaches
 * Web Components: Combining appearance and behavior. Still in flux, e.g. [Component Based Web UI](http://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/)
 * Examples: Ember, React, Angular, BackBone, Aurelia, and many others
 
-#### How they work
+##### How they work
 * Create a stateful experience in the browser
 * Use REST to get and store application state
 * Use browser's local data store as needed to achieve disconnected experience

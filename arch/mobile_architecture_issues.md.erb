@@ -1,16 +1,17 @@
 ---
 title: Mobile - architectural considerations
-section: topics
 ---
+#### Server/Service Considerations
 
-##### Mobile Architectures
-Most of the concerns we talked about for web and cloud apply almost equally for mobile, with the major addition of communications:
-
-* What kind of information needs to be sent between mobile app and server?
-* Characteristics:
-	* How much of it is there?
-	* How fast does it have to go?
-	* What is acceptable latency?
+* Server
+  * Practically all mobile apps are backed by a server
+  * Do you own it or does it belong to a third party?
+  * Can you change the API? Can the API change from under you?
+  * What kind of information needs to be sent between mobile app and server?
+* How to think about this information
+	* How much data are we talking about?
+	* What are user expectations of perforamnce and latency?
+  * What should the app do when there's no network?
 * Firewalls
 	* Are there likely to be firewalls in the way?
 	* Does the client have to reach the server, or vice versa or both?
