@@ -2,8 +2,6 @@
 title: Homework info
 ---
 
-### Homework Mechanics
-
 <%= callout("Student Quote", " \"Pay close attention to this. It's not complicated if you do. Still, almost everyone got it wrong the first few times.\" ") %>
 
 #### Facts
@@ -23,17 +21,21 @@ title: Homework info
 #### Automatic deductions
 * If you hand  in up to 3 days late we will automatically deduct 20 points.
 * If you don't hand in homework by the due date and time, it is marked as a zero.
-* If you don't hand in homework in the right form (e.g. "pdf, with your name and course number in the text")
+* If you don't hand in homework in the right form (e.g. "pdf, with your name and course number in the text") we will automatically deduct. 20 for no name, and another 20 for not in pdf form.
 * No exceptions unless pre-agreed in an email by either the Professor or a TA.
+
+<%= include_topic :particip_grading %>
 
 #### Numbering scheme in detail:
 
 * Homeworks that have an expected deliverable:
-	* Will be clearly marked as "deliverable" or "team deliverable"
-	* Can be identified by a code, X.Y: X is the lecture number and Y is the homework for this lecture
-	* Those are submitted to the appropriate spot in Latte, either as a .pdf (for writing) or as a .zip file
-* To help you navigate, there are the following symbols:
-  * <%= pdfbadge %>: this symbol reminds you that you are to submit a pdf to latte. Anything else will receive a 0.
-  * <%= partbadge %>: this symbol tells you that this assignment is graded as "participation only". You will receive a 100 if you show a good faith effort, without regard to whether your answer is correct. You will receive a zero otherwise
-  * <%= timebadge %>: This symbol reminds you that this assignment is due in the morning on the day of class. No late submissions or make ups are accepted.
-  * <%= codebadge %>: \[**Not applicable to Cosi165**\] This symbol reminds you that this is a coding assignment which you will do inside your **portfolio**
+* Will be clearly marked as "deliverable" or "team deliverable"
+* Can be identified by a code, X.Y: X is the lecture number and Y is the homework for this lecture
+* Those are submitted to the appropriate spot in Latte, either as a .pdf (for writing) or as a .zip file
+
+#### Symbols
+
+* <%= pdfbadge %>: this symbol reminds you that you are to submit a pdf to latte. Anything else will receive a 0.
+* <%= partbadge %>: this symbol tells you that this assignment is graded as "participation only". You will receive a 100 if you show a good faith effort, without regard to whether your answer is correct. You will receive a zero otherwise
+* <%= timebadge %>: This symbol reminds you that this assignment is due in the morning on the day of class. No late submissions or make ups are accepted.
+* <%= codebadge %>: \[**Not applicable to Cosi165**\] This symbol reminds you that this is a coding assignment which you will do inside your **portfolio**
