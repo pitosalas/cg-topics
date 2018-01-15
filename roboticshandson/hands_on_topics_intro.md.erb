@@ -1,0 +1,41 @@
+---
+title: Hands ROS Topics Intro
+---
+<%= include_topic :ros_cheatsheet %>
+#### Demo
+
+* Lets write a sample topic publisher
+
+<%= ruby_begin %>
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import Int32
+rospy.init_node('topic_publisher')
+pub = rospy.Publisher('counter', Int32. queue_size=10)
+rate = rospy.Rate(2)
+count = 0
+while not rospy.is_shutdown():
+    pub.publish(count)
+    count += 1
+    rate.sleep()
+<%= ruby_end %>
+
+* `rostopic list`
+* `rostopic echo /counter`
+* `rostopic info /counter`
+* Now lets write a sample subscriber
+
+<%= ruby_begin %>
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import Int32
+def callback(msg):
+  print msg.data
+
+rospy.init_node('topic_subscriber')
+sub = rospy.Subscriber('counter', Int32, callback)
+rospy.spin()
+<%= ruby_end %>
+
+* `rostopic info /counter`
+* `rqt_graph`
