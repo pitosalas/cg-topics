@@ -3,7 +3,7 @@ title: ROS Cheat Sheet
 ---
 #### FAQ
 * Install VMWare on your computer. You can get VMWare from Brandeis here: [Brandeis Software Portal](https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_mnuMain_child=760fe823-f6c9-e111-971c-f04da23e67f6&cmi_mnuMain=0b2e917e-0b0c-e311-93f3-b8ca3a5db7a1&ws=253068f1-0c11-df11-85a5-0030487d8897&vsro=8)
-* Use Ubuntu 16.05 **exactly**
+* Use Ubuntu 16.04 **exactly**
 * Follow the installation instructions for the [TurtleBot3](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_software_setup/#install-ubuntu-on-remote-pc-desktop-or-laptop-pc) **exactly**
 * Each part of ROS is run in it's own terminal window as a CLI (command line interface) utility
 * Your ROS programs will be written in Python.
@@ -11,6 +11,7 @@ title: ROS Cheat Sheet
 * All your work happens inside the directory `catkin_ws` (catkin is the builder, and ws stands for workspace. Don't change those names.)
 * Remember the **TAB** key which is greatly automated for ROS developers
 * In order to execute a program/script on Linux, you must `chmod +x filename.py`
+* Also include the 'shebang': #!/usr/bin/env python
 
 #### Key command line utilities (CLI) for using ROS
 * `roscore`: Start the ROS Core program
@@ -26,3 +27,11 @@ title: ROS Cheat Sheet
 
 #### Linux Commands
 * `apt` family of commands, see: https://itsfoss.com/apt-command-guide/
+
+#### Troubleshooting
+If you get an error message that Ubuntu is running Lo-res mode or ubuntu just stalls during bootup, then:
+* Ctrl-Alt F1  # get to terminal
+* sudo apt-get update # update the apt-get app itself
+* sudo apt-get upgrade # upgrade packages
+* sudo apt-get install -f # apt-get fix its database
+* restart
