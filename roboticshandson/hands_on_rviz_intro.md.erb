@@ -20,8 +20,19 @@ rospack profile
 
 #### Install TB3 Simulation
 * Follow these instructions: http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#turtlebot3-fake-node-implementation
-
-#### RViz
+* We are going to use the turtlebot3 simulator not the one that the ROS By Example book uses
+* Install the simulator
+* Make sure TURTLEBOT3_MODEL=burger
+* Launch the turtlebot simulator, which also launches Rviz
+* Launch the turtlebot3 teleop
+* Play with it
 <%= code_begin %>
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0.1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
 <%= code_end %>
+
+#### Out and Back using Odometry
+* See page 57? of ROS By Example book
+* We don't launch tbx1_bringup because we are already running the TB3 fake.
+* We don't launch rviz because that is already running
+* Run the program odom_out_and_back.py
+* Lets look at the code
