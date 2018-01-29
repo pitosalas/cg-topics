@@ -4,7 +4,7 @@ desc: Interesting array manipulation to layout and solve a maze
 ---
 #### Mazes:
 
-One of the most basic kinds of games that we can represent in software is a maze. A maze is defined as a rectangular grid (n by m) of cells. Each cell has between 1 and 3 walls. Also, the walls at the outside cells (along the top, left, right and bottom of the maze) are closed. A cell that has 4 walls is a dead end and one that has zero walls of course floats and has no impact.
+One of the most basic kinds of games that we can represent in software is a maze. A maze is defined as a rectangular grid (n by m) of cells. By convention in this writeup, the first coordinate cab be thought of as the column number and the second as the row number. Each cell has between 1 and 3 walls. Also, the walls at the outside cells (along the top, left, right and bottom of the maze) are closed. A cell that has 4 walls is a dead end and one that has zero walls of course floats and has no impact.
 
 A basic 4x4 maze might look like this if it has all cells with 4 walls. This is not a valid maze.
 
@@ -48,7 +48,7 @@ as follows:
 111111111
 <%= code_end %>
 
-Note that a row with 4 cells has 4 spaces and at least 2 but potentially 5 walls. So each row in the 1/0 notation has 9 ones or zeros. 
+Note that a row with 4 cells has 4 spaces and at least 2 but potentially 5 walls. So each row in the 1/0 notation has 9 ones or zeros.
 
 More compactly, I could represent a maze as a string:
 <%= code_begin %>
@@ -57,7 +57,7 @@ More compactly, I could represent a maze as a string:
 
 (By the way, unless you are very clever I wouldn't be fooled into thinking of that as a number)
 
-#### Assignment specifics: 
+#### Assignment specifics:
 
 Here's the puzzle/assignment. Write a program in Ruby that does as many of these as you can. You probably will not get to (6) but its there if you are adventurous. Make sure you print results as you go along because you will also be submitting the output that your app generates to show it's results.
 
