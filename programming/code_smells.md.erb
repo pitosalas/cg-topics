@@ -13,10 +13,23 @@ title: Code Smells
   * Large class: Class longer than 100 or so lines
   * Large method: Method longer than 10 lines or so
   * Long parameter list: methods with 4 or more parameters
-  * Single Responsiblity Violations: Class should do one thing
+  * Single Responsiblity Violations: Class, methods should do one thing
   * Global variables: Almost always a very bad sign
   * Bad Name: Non descriptive or very short variable names
   * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
   * Feature envy: A class that uses methods of another class exessively
 
 <%= callout("Note", " Smells can be ambiguous or language dependent") %>
+
+#### Automated Smell Detection
+* CodeClimate: A great web site that will look inside your github repo and run a report
+* For Ruby: RuboCop: great integration with text editors (Atom etc.)
+* For Ruby: Reek: Runs across your own code directories, locally
+* For Ruby: sandy_meter: Analogous to Reek
+
+#### Exercxise for teams
+* Set up each of your computers with rubocop
+* Do a code review of each of your mazes submissions (don't believe rubocop)
+* Make a list of the code smells you see (including some not mentioned on my list)
+* Discuss some specific changes you would make to remove smells
+* We will discuss that after 20 minutes of team work.

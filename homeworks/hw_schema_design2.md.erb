@@ -1,0 +1,68 @@
+---
+title: Schema Design Exercises
+---
+#### Introduction
+This exercise lets you practice how to design a database. You've been introduced to this in preceding homeworks and classes, and this homework is a chance to rehearse the techniques of data modeling again.
+
+To review some of the material take a look at:
+
+  * [The basics of good database design in web development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/)
+  * <%= link_to_topic :data_modeling %>
+  * <%= link_to_topic :ar_db_mechanics %>
+
+#### Notation
+* Use this notation for this work.
+* It contains exactly the same information that you've presented before, but in all text
+* It is designed to correspond more closely to what you will be doing in your code. Put in both sides of a one to many relationship?
+* Notation "syntax"
+  * **table** `name` - the name of the individual relational table
+  * \[**primary key \| foreign key** \] `attribute_name`: **datatype** - an individual column of a table
+  * `table1` **has_many** `table2` - 0 or more to many relationship
+  * `table3` **belongs_to** `table4` - Many to one relationship
+  * `table4` **has_one** `table4` - Many to one relationship
+
+
+##### Example
+^
+    table users
+      primary key id: integer
+      first_name: text
+      last_name: text
+      dob: date
+      foreign key department_id: integer
+
+    table departments
+      id: integer
+      name: text
+      budget: float
+
+    departments
+      has_many users
+
+#### Assignment
+* Design as many of these as you can
+* **Use the notation above** (not a diagram or other fancy thing)
+
+##### Stamp Collection
+* A country has a name
+* A stamp has a country of origin, a year of issue and a denomination (e.g. 50 cents)
+
+##### Room Inventory
+* A room has a building and a room number
+* A person has a name and is assigned to a certain room
+* An item has a type, a name, a value (dollars), and a room where it can be found
+* A type has a type name (e.g. furniture, clothing, electronics, etc.)
+
+##### Music Collection
+* An artist has a name and a genre
+* A track has a name, duration, and a collection of artists, and a genre
+* A record has a name, a year, and a collection of tracks
+* A genre has a name
+
+##### University
+* An employee has a first and last name, date of birth and a date of hire
+* A company has a name
+* A company has multiple departments
+* An employee works at exactly one company
+* An employee can work in one ore more deparments
+* A product has a product number (SKU) and is sold in a certain department, and was manufactured by a company
