@@ -1,11 +1,11 @@
 ---
 title: Hands-on with Sinatra Persistence
 ---
-##### Database schema for an event schedule
+##### Database schema for a small bit of Twitter
 <%= code_begin %>
 Person(name, dob, gender, zipcode)
-Event(name, date)
-Registrations(person_id, event_id, status, comment)
+Hashtag(name)
+Message(person_id, hashtag_id, comment)
 <%= code_end %>
 ##### Gemfile
 ~~~
@@ -216,8 +216,6 @@ p.save!                                 # Same but throws exception
 #### Appendices
 
 ##### References
-* [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
-* [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)
-* [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
+* [ActiveRecord Associations](http://edgeguides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+* [ActiveRecord Queries](http://edgeguides.rubyonrails.org/active_record_querying.html)
 * [ActiveRecord Validations](http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers)
-* [Validations Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/03_rails_validations/)
