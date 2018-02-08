@@ -88,8 +88,8 @@ require 'pry-byebug'
 
 ##### Migration files
 ~~~
-rake db:create_migration NAME=create_registrations
-rake db:create_migration NAME=create_events
+rake db:create_migration NAME=create_messages
+rake db:create_migration NAME=create_hashtags
 rake db:create_migration NAME=create_people
 
 # Create people
@@ -104,24 +104,23 @@ class CreatePeople < ActiveRecord::Migration[5.1]
   end
 end
 
-# Create events
-class CreateEvents < ActiveRecord::Migration[5.1]
+# Create hashtags
+class CreateHashtags < ActiveRecord::Migration[5.1]
   def change
-    create_table :events do |t|
+    create_table :hashtags do |t|
       t.string :name
-      t.date :date
     end
   end
 end
 
-# # Create registrations migration
-class CreateRegistrations < ActiveRecord::Migration[5.1]
+# # Create messages migration
+class CreateMessages < ActiveRecord::Migration[5.1]
   def change
-    create_table :registrations do |t|
+    create_table :messages do |t|
       t.integer :person_id
-      t.integer :event_id
+      t.integer :hashtag_id
       t.string :status
-      t.string :comment
+      t.string :text
     end
   end
 end
@@ -131,7 +130,7 @@ rake db:migrate
 
 ##### Models
 ~~~
-# models/event.rb
+# models/hashtag.rb
 class Event < ActiveRecord::Base
 end
 
@@ -139,8 +138,8 @@ end
 class Person < ActiveRecord::Base
 end
 
-# models/registration.rb
-class Registration < ActiveRecord::Base
+# models/message.rb
+class Message < ActiveRecord::Base
 end
 ~~~
 
@@ -149,18 +148,17 @@ end
 require_relative '../demo_app.rb'
 puts "[seeds.rb]"
 puts "[creating seed Persons]"
-Person.create(name: "John", dob: '12-12-2012', gender: 'f', zipcode: 12355)
-Person.create(name: "Jake", dob: '12-12-2012', gender: 'f', zipcode: 12355)
-Person.create(name: "Jane", dob: '12-12-2012', gender: 'f', zipcode: 12355)
+Person.create(name: "John", dob: '12-12-1980', gender: 'f', zipcode: 12355)
+Person.create(name: "Angelo Smith", dob: '12-12-2000', gender: 'm', zipcode: 12355)
+Person.create(name: "Jane", dob: '12-12-2018', gender: 'f', zipcode: 12355)
 puts "Created #{Person.count} people"
 
-puts "[creating seed Events]"
-Event.create(name: "WWW Show", date: '12-12-12')
-Event.create(name: "Brandeis", date: '1-1-2015')
-puts "Created #{Event.count} events"
+puts "[creating seed Hashtags]"
+Hashtag.create(name: "programming")
+Hashtag.create(name: "recreation")
+puts "Created #{Hashtag.count} hashtags"
 
 puts "[create registrations]"
-
 $ rake db:seed
 ~~~
 
@@ -186,22 +184,22 @@ p.delete
 ###### Associations, declared in models
 <%= code_begin %>
 class Person < ActiveRecord::Base
-  has_many :registrations
-  has_many :events, through: :registrations
+  has_many :messages
+  has_many :hashtags, through: :messages
 end
-class Event < ActiveRecord::Base
-  has_many :registrations
-  has_many :people, through: :registrations
+class Hashtag < ActiveRecord::Base
+  has_many :messages
+  has_many :people, through: :messages
 end
-class Registration < ActiveRecord::Base
+class Message < ActiveRecord::Base
   belongs_to :person
-  belongs_to :event
+  belongs_to :hashtag
 end
 <%= code_end %>
 ###### Association, used
 <%= code_begin %>
-Person.find(1).registrations
-Person.where(name: "Angelo Smith").first.registrations
+Person.find(1).hashtags
+Person.where(name: "Angelo Smith").first.messages
 Event.find(1).people
 <%= code_end %>
 ###### Validations
