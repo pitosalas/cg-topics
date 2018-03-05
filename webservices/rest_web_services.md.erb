@@ -5,7 +5,7 @@ title: REST and Web Services
 
 #### What is a web service?
 
-* Consider this web page: [Olin College Engineering Courses](http://www.olin.edu/course-listing/)
+* Consider this web page: [Olin College Engineering Courses]http://olin.smartcatalogiq.com/2017-18/Catalog/Courses-Credits-Hours/SCI-Science)
 * What would  [schdl.net](https://brandeis.schdl.net/term/Spring_2018) di if it wanted to have a list of courses pre-populated with a college's courses?
   * Grab all the text `curl http://olin.smartcatalogiq.com/en/2017-18/Catalog/Courses-Credits-Hours/ENGR-Engineering > olincourses.txt`
   * Write a program to parse that page and then load the results into a database.
@@ -43,24 +43,127 @@ title: REST and Web Services
 * Think of everything in terms of a 'resource' that is being manipulated
 * For example, GET means get a representation of the resource marked, e.g.
   * GET http://www.facebook.com/user/pitosalas
-  * GET http://www.facebok.com/users
-  * GET 0.0.0.0:3000/cards/1.xml
+  * GET http://www.facebook.com/users
+  * GET http://myaddressbook.com/cards/1.xml
+* Also consider nested or associated resources
+  * GET http://www.nanotwitter.com/user/pitosalas/tweets/10231
 * Some things are harder to fit with the model
   * What might a fortunecookie service look like as REST?
   * The 'resource' here is a single fortune
-  * http://myfortunes.org/fortune/1
-  * http://myfortunes.org/fortune
-  * http://myfortunes.org/fortune/random
-  * http://myfortunes.org/fortune?about=money
+    * http://myfortunes.org/fortune/1
+    * http://myfortunes.org/fortune
+  * But things get weird, and don't necessarily feel like a resource
+    * http://myfortunes.org/fortune/random
+    * http://myfortunes.org/fortune?about=money
+    * http://myfortunes.org/fortune/create
 
 * Note fortunes/random, random is not exactly identifying a resource; but close enough.
-* What if caching was done strictly by url?
-  * Two advantages:
-    * some rhyme or reason on how to build urls and
-    * make logical use of url space
-    * Different 'representations' possible: html and xml, but others too, say csv or video
-    * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
 
-#### Let's play with it!
+* What if caching was done strictly by url? Advantages:
+  * some rhyme or reason on how to build urls and
+  * make logical use of url space
+  * Different 'representations' possible: html and xml, but others too, say csv or video
+  * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
+
+##### Let's play with it!
 * Here's the web site for [Fortunes](https://rpsfortune.herokuapp.com)
-* Here's the code for it [Fortunes Source code](https://github.com/pitosalas/restapidemo)
+* Here's the code for it [Fortunes RAILS Source code](https://github.com/pitosalas/restapidemo)
+
+#### GraphQL
+* New kid on the block
+* Not clear yet whether it will become a standard
+* Addresses the case of "multi-model" APIs
+* Instead of having a bunch of "dumb" REST endpoints, have a single "smart" endpoint
+* Inputs are simple, JSON 'query' structures, and outputs are JSON result structures
+* Handled via a "resolver" that you write
+* It is its own *service* and does not have to be tied to your schema, or even whether you have a schema!
+* Using GraphQL for nanoTwitter
+  * Replace the whole or part of your REST API with a single GraphQL resolver
+  * The resulting APIs need to be sufficient to write a simple nanoTwitter client (say on iOS)
+  * Why?
+    * No Scaling advantage
+    * Possibly less work to do (not sure ahead of time)
+    * Learn GraphQL
+    * Learn a new architectural pattern
+
+##### Input to Github's GraphQL endpoint
+* Play here: https://developer.github.com/v4/explorer/
+
+<%= ruby_begin %>
+query {
+  user(login: "pitosalas") {
+    repositories(first:10 ) {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+<%= ruby_end %>
+
+##### Output from Github GraphQL endpoint
+
+<%= ruby_begin %>
+{
+  "data": {
+    "user": {
+      "repositories": {
+        "edges": [
+          {
+            "node": {
+              "name": "blogbridge"
+            }
+          },
+          {
+            "node": {
+              "name": "blogbridge-utils"
+            }
+          },
+          {
+            "node": {
+              "name": "govsdk"
+            }
+          },
+          {
+            "node": {
+              "name": "opmlassist"
+            }
+          },
+          {
+            "node": {
+              "name": "gopml"
+            }
+          },
+          {
+            "node": {
+              "name": "Tabulator-v1"
+            }
+          },
+          {
+            "node": {
+              "name": "brandeis-cosci"
+            }
+          },
+          {
+            "node": {
+              "name": "ilab"
+            }
+          },
+          {
+            "node": {
+              "name": "DCdigitalVBM"
+            }
+          },
+          {
+            "node": {
+              "name": "tictactoe"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+<%= ruby_end %>
