@@ -1,9 +1,17 @@
 ---
 title: Scaling by Caching
 ---
-### Scalability Pattern: General Caching
+###  Scalability Pattern: General Caching
+
+#### Overview of caching
+
 * Save the result of a request with a given set of parameters.
 * In a future request with the same parameter (maybe) return the same result
+* System level caching. Storage:
+  * In 'local' memory
+  * In 'remote' memory
+  * In database
+  * In Cloud
 * Awareness of order of magnitude speed of operations:
   * Access registers inside CPU
   * Access CPU caches
@@ -22,16 +30,19 @@ title: Scaling by Caching
 * Memoization:
   * caching applied to an individual method
   * A basic programming technique
-* System level caching. Storage:
-  * In 'local' memory
-  * In 'remote' memory
-  * In database
-  * In Cloud
+  * Simple
 * Name-value databases
   * Very fast searches and lookups
   * Distributed searches and distributed databases
   * Robust across system and application failures
-* References:
-  * [Redis](http://redis.io)
-  * [Memcached](http://memcached.org)
-  * [Amazon Elastic Cache](http://aws.amazon.com/elasticache/)
+* Database Caching
+  * To a certaine extent, it's what databases do
+  * Caching both at the server (postgres itself)
+  * And at the client (the postgres and activerecord subsystems)
+  * Yet a lot more can be done
+* Server page caching
+  * Done at the server
+  * Don't regenerate the page if it's requested again
+  * As long as you know it hasn't changed
+  * Page fragment caching, including "russian doll caching"
+  * A key feature of good frameworks

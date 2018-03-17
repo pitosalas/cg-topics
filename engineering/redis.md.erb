@@ -1,0 +1,62 @@
+---
+title: Redis
+---
+#### Caching with "Redis"
+* Analogous to other network scale caching solutions (e.g. cached)
+* Typical structure is a key-value store
+* A nosql database. But in memory!
+* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
+* Wait, where's the data actually stored?
+  * A redis host, accessible by tcp/ip: dns name + port number
+  * You can run it
+  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
+  * In all cases, if the host dies, the data is gone
+* It has some interesting characteristics
+  * ATOMIC operations, e.g. "INCR" operation
+  * keys that expire (TTL)
+  * Supports other values: lists, sets, hashes
+  * And many many more
+
+##### Redis Concepts
+* [Play with Redis](http://try.redis.io)
+* Keys
+  * are text with colons, e.g. global:usercount by convention
+  * but can be anything. You decide your structure. Colons are recommended.
+* Values
+  * Are strings
+  * Or compoounds: lists, sets, sorted sets, hashes
+* Note we play with commands (a kind of a REPL)
+* But you will be doing API calls
+<%= code_begin %>
+SET key value                   # store a singular key and give it a value
+GET key                         # retrieve its value
+INCR key                        # add one to key value, should be an integer. Atomic!
+DECR key                        # delete one from key value
+EXPIRE key seconds              # key will cease to exsit `seconds` later
+RPUSH key value                 # Append value to list
+LPUSH key value                 # Prepend value to list
+LPOP key                        # Remove first value
+RPOP                            # Remvoe last value
+SADD key value                  # Add value to set
+SREM key                        # Remove value from set
+SISMEMBER key value             # Is value a member of set
+SUNION key1 key2                # Get union of two sets
+ZADD key score value            # Add value with score to sorted set
+HSET hashname hashkey value     # Add entry to hash
+HHET hashname hashkey           # Retrieve a value from hash
+<%= code_end %>
+* Ahem: That is not all: [Redis Commands](https://redis.io/commands)
+
+
+
+#### Putting the it together
+* Redis is a power tool!
+* Don't be scared of putting lots of information into it
+* Remember that it's a cache. You need to have real persistent store to recover
+* Example:
+  * Display list of 50 most recent posts for users who are followed by user uid
+  * Key is: 50_tweets_for_user:uid
+  * Value is: ordered list of tweet ids
+* Processing:
+  * When list is displayed
+  * When user :u tweets

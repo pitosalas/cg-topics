@@ -26,29 +26,3 @@ title: Scaling by Database Caching
   * Discover that the social graph access was very slow
 * Solution: Caching
   * Use Network scale caching (Redis) to store and share across servers
-
-#### Caching with "Redis"
-* Analogous to other network scale caching solutions (e.g. cached)
-* Typical structure is a key-value store
-* A nosql database. But in memory
-* It has some interesting characteristics
-  * ATOMIC operations, e.g. "INCR" operation
-  * keys that expire (TTL)
-  * Supports other values: lists, sets, hashes
-  * And many many more
-* [Play with Redis](http://try.redis.io)
-* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
-* Wait, where's the data actually stored?
-  * A redis host, accessible by tcp/ip: dns name + port number
-  * You can run it
-  * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
-  * In all cases, if the host dies, the data is gone
-
-#### Putting the it together
-* Example:
-  * Display list of 50 most recent posts for users who are followed by user u
-  * Key is: 50_tweets_for_user:uid
-  * Value is: ordered list of tweet ids
-* Processing:
-  * When list is displayed
-  * When user :u tweets
