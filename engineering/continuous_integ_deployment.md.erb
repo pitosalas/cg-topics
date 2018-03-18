@@ -21,7 +21,7 @@ title: Continuous Integration and Deployment
 1. **Maintain a single source code repository:** Decide on your branching strategy and make sure all developers understand it. There are different philosophies.
 1. **Automate the "build":** Whatever the process is for your product to turn hundreds of source code files into a working application should be fully automated so it can be triggered by any developer with a click of the button.
 1. **Implement a comprehensive test suite** As much of the functionality as possible should be covered by tests, both functional and regression tests. Unit and integration tests. A software product approaching version 1.0 will have multiple hundreds of tests.
-1. **Everyone commits to the repository at least daily. Letting one developer's local code diverge from what's visible to the rest of the team can easily lead to bugs, lost work, replicated work.
+1. **Everyone commits to the repository at least daily**: Letting one developer's local code diverge from what's visible to the rest of the team can easily lead to bugs, lost work, replicated work.
 1. **Every commit should run tests:** Automatically. Given that both those operations can be done with "a single click", automatically triggering them as a result of a commit is not hard.
 1. **Fix broken builds immediately:**  When the test suite fails, ideally, the "responsible" developer should be immediately notified. Make it a group norm that you either fix the breaking commit or roll it back. The build should not be broken for any length of time.
 1. **Deploy to a test server:** Before deploying to the live production server, do an automatic deployment to a test or staging server. Run tests there. Give access to that server to trusted testers to play with it.
