@@ -16,18 +16,18 @@ title: Scaling with Concurrency
   * It can be a one shot, or regenerated at midnight
   * It can be displayed on the screen or emailed
   * Inline is no good because of computational cost and error handling
-* Users tweet with attached images
-  * Submitted in all kinds of formats, shapes and sizes
-  * Need to convert and resize to standard shapes and sizes
-  * Inline no good due to computational cost and error handling
-* System sends an email to newly registered users
-  * After creating the new user in db, send a confirm email with a link
-  * Inline is no good, due to network latency and error handling
+* User enters a new value in a spreadsheet
+  * The cell can update immediately
+  * The recalculation can be done concurrently (asynchronously)
+* Note: AJAX uses a very common form of concurrency
+* Note: Count the users' own computer as one of the processors!
 
 ### Scaling pattern: concurrency on a single computer
 
 * Difference between syncrhonous and asynchronous
 * Difference between concurrent and parallel
+
+<%= callout("Each Team", " Plan to use concurrency?") %>
 
 #### Processes and Threads
 * Key Operating System facility for concurrency
@@ -45,6 +45,11 @@ title: Scaling with Concurrency
   * Communication cheap (via queues and shared memory)
   * Fast to create and destroy
   * Harder to program and debug
+* Ruby and Pyton "GIL"
+  * Global interpretter lock
+  * Essentially they become single threaded
+  * Except for asynchrony provded by OS via IO operations
+  * "It's complicated"
 
 #### Thread-safe
 * A property of software, or a routine or a class
@@ -54,7 +59,6 @@ title: Scaling with Concurrency
 * Race Condition
   * When the results vary due to
   * How to avoid: using semaphors, queues, and other techniques
-* Ruby GIL
 * Higher level constructs, e.g. Actors (threads that only talk through queues)
   * See [Celluloid Actor Based Library for Ruby](https://github.com/celluloid/celluloid)
 
