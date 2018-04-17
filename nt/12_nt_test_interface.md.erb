@@ -13,6 +13,12 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * email: testuser@sample.com
 * password: "password"
 
+#### Test Data
+* Url to reset and load the standard seed is: /test/reset/standard?tweets=n
+* Dataset is the standard <%= link_to_topic :nt_seed_data %>
+* If necessary, you may modify the creation dates of tweets, but all the other data should be intact
+* Note that in our tests, n will be 7000 or less
+
 ##### Here are the URLs of the test interface
 
 * POST /test/reset/all
@@ -22,6 +28,10 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * POST /test/reset/testuser
   * Deletes and recreates TestUser, including all his tweets, follows, and removes him from any other users' follow list.
   * Example: `/test/reset/testuser`
+* POST /test/reset/standard
+  * If needed deletes all users, tweets, follows
+  * Recreates TestUser
+  * Loads the test data - see above
 * GET /test/status
   * One page "report":
     * How many users, follows, and tweets are there
@@ -35,8 +45,8 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * POST /test/reset/standard?tweets=n
   * Deletes all users, tweets and follows
   * Recreate TestUser
-  * If tweets parameter is included, only load `n` tweets from seed data, otherwise load all
   * Imports the complete set of standard seed data, see: <%= link_to_topic :nt_seed_data %>
+  * If tweets parameter is included, only load `n` tweets from seed data, otherwise load all
   * Example: `/test/reset/standard`
 * POST /test/users/create?count=u&tweets=c
   * create `u` (integer) fake Users using faker. Defaults to 1.

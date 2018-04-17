@@ -75,7 +75,9 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
   * List of the most recent 50 tweets from any user, each with link to tweeter's page
   * Login link
 * Logged-in root page (/)
-  * List of most recent 50 tweets of users you follow
+  * Two tabs:
+    * "Users I follow": List of most recent 50 tweets of users you follow + your own tweets
+    * "All users": List of the most 50 tweets on the platform + your own tweets
   * Ability to tweet
   * Mini-profile
 * Specific user's page (/user/1234)
@@ -90,6 +92,8 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
   * Display user login prompt, and check for correct password (/login)
   * Logout (/logout)
   * Display Search interface (/search)
+* `/user/testuser` - specifically load "testusers" user page (analogous to /user/1234)
+* `/tweet/testuseruser?tweets=n` (POST) - have testuser create n "faker" tweets
 
 <%= include_topic :nt_test_interface %>
 

@@ -10,6 +10,7 @@ Here's how testing of scaling will be done with loader.io. You need to make sure
 Before we can run a standardized test, we want to get each server to a known state we do the following commands directly from a browser.
 
 * `/test/reset/all` - Delete everything and recreate testuser
+* `/test/reset/standard?tweets=6000` - Load the test seed data
 * `/test/status` - See that the state is what you expect
 * `/test/users/create?count=u&tweets=10` - create "u" new users, 10 tweets each
 * `/test/user/testuser/tweets?count=t` - have testuser tweet "t" times
@@ -27,7 +28,7 @@ Ok, now the server is in a known state. Next we want to do three distinct load t
 
 * Test case 1: u = 100, t = 500, f = 30
 * Test case 2: u = 500, t = 500, f = 100
-* Test case 3: u = 3000, t = 2000, f = 1000
+* Test case 3: u = 1000, t = 1000, f = 300
 
 ##### Loader.io Setup for test
 * Create a test case for each of the cases you want to test
@@ -36,6 +37,3 @@ Ok, now the server is in a known state. Next we want to do three distinct load t
   * Enter each of the three urls above for three different test at least
   * Make sure you /test/reset between each test
 * Collect data
-
-##### Scalability Runoff
-For the Final Team to Team playoffs each team will use a standard data set and seeds.rb. Here is how. <%= link_to_topic :scalability_runoff %>.

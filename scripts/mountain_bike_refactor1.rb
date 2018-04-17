@@ -6,7 +6,7 @@ class MountainBike
 
   def initialize(params)
     params.each { |key, value| instance_variable_set "@#{key}", value }
-    
+
     @commission = 0.25
     @front_suspension_price = 95.0
     @rear_suspension_price = 67.0
@@ -23,6 +23,7 @@ class MountainBike
     end
     result
   end
+  
   def price
     case @type_code
     when :rigid
@@ -50,6 +51,3 @@ puts pitos_bike
 
 ricks_bike = MountainBike.new(:owner => "Rick", :type_code => :front_suspension, :tire_width => 2, :front_fork_travel => 3)
 puts ricks_bike
-
-
-
