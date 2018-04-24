@@ -10,7 +10,7 @@ Here's how testing of scaling will be done with loader.io. You need to make sure
 Before we can run a standardized test, we want to get each server to a known state we do the following commands directly from a browser.
 
 * `/test/reset/all` - Delete everything and recreate testuser
-* `/test/reset/standard?tweets=6000` - Load the test seed data
+* `/test/reset/standard?tweets=5000` - Load the test seed data
 * `/test/status` - See that the state is what you expect
 * `/test/users/create?count=u&tweets=10` - create "u" new users, 10 tweets each
 * `/test/user/testuser/tweets?count=t` - have testuser tweet "t" times
