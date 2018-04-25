@@ -14,7 +14,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * password: "password"
 
 #### Test Data
-* Url to reset and load the standard seed is: /test/reset/standard?tweets=n
+* Url to reset and load the standard seed is: /test/reset/standard?tweets=n&users=u&follows=u
 * Dataset is the standard <%= link_to_topic :nt_seed_data %>
 * If necessary, you may modify the creation dates of tweets, but all the other data should be intact
 * Note that in our tests, n will be 7000 or less
@@ -42,12 +42,12 @@ There's a user that we use as part of many of the tests. We refer to the user as
   * Useful as a way to make sure whether you have the latest
   * Disaplays version as json
   * Example: `test/version
-* POST /test/reset/standard?tweets=n
+* POST /test/reset/standard?tweets=n&users=u&follows=f
   * Deletes all users, tweets and follows
   * Recreate TestUser
   * Imports the complete set of standard seed data, see: <%= link_to_topic :nt_seed_data %>
-  * If tweets parameter is included, only load `n` tweets from seed data, otherwise load all
-  * Example: `/test/reset/standard`
+  * If tweets parameters areincluded, follow them
+  * Example: `/test/reset/standard?users=100&tweets=100&follows=5`
 * POST /test/users/create?count=u&tweets=c
   * create `u` (integer) fake Users using faker. Defaults to 1.
   * each of those users gets `c` (integer) fake tweets. Defaults to zero.
