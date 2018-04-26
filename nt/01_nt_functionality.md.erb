@@ -44,19 +44,22 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Tags
 
 #### nT Web Services (REST) API
-**Important:** All paths start with this prefix, `/api/v1/{apitoken}/...`
+<%= callout("PREFIX", " All paths start with the prefix /api/v1/{apitoken}/...") %>
 
-* GET /tweets/23 - return tweet with id
+* GET /tweets/23 - return tweet with id 23
 * GET /users/23 - return user information for user 23
-* GET /tweets/recent - return the recent n tweets
-* GET /users/23/tweets - return the users recent tweets
+* GET /tweets/recent - return the recent 50 tweets for this user (if api token is supplied)
+* GET /tweets/recent - return the recent 50 tweets for the system (if no api token is supplied)
+* GET /users/23/tweets - return user 23's recent 50 tweets
 * POST /tweets/new - create a new tweet
 
+##### Notes
 * You need to figure out the other ones.
 * The objective is that someone can write, for example, an iPhone nanoTwitter client that would use this API to implement the functionality.
 * Distinguish between the API calls that need a logged in user vs. those that are public. Those that are public would not require the user's `apitoken`
 
-* Values as JSON, as example:
+##### JSON
+* API calls work with Values as JSON, as example:
   * Tweet:
 `{  "id": 123,
     "text": foobar,
