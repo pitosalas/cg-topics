@@ -1,0 +1,49 @@
+---
+title: ROS Notes
+---
+#### ROS Introduction
+* A distributed operating system
+* Not really an operating system.
+* A process coordinator and an inter-process communications model
+* Different parts (nodes) can run on different computers
+* They all need to be connected by a LAN via TCP/IP
+
+#### Nodes
+* ROS runs a number of collaborating processes called "nodes"
+* Everything starts with the 'traffic-cop' roscore
+* Once ROSCore runs, additional nodes can run
+* Each node is essentially a serpate program, maybe even a single file
+* Can be written in Python or C++
+* We will use Python mostly
+
+#### Communication model
+* Message based
+* Most important model is "publish/subscribe"
+* publish a **topic**, subscribe to a **topic**
+* Many to many
+* Topics have a name (e.g. /cmd_vel)
+* Topics have an associated message
+
+#### Odometry
+* Topics have a name and a message type
+* Twist message type is very very common.
+  * Expresses a velocity in linear and angular aspects
+  * Note our robot can only move forward and backward (x axis)
+  * And it can only rotate around (z axis)
+  * Twist doesn't say anything about where the robot (thinks it) is
+  * "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
+* Odometry
+  * The Robot's "belief" of where it is, and what it is doing.
+  * Based on sensors in the base, including possibly the motors, a gps, a magnetometer etc.
+  * Odometry is published as topic /odom and the message is nav_msgs/Odometry
+* nav_msgs/Odometry
+  * Header - standard header
+  * pose - where does the robot thinks that it is (including Covariance - how sure is it?)
+  * twist - how does it think it is moving (also with a covariance)
+* tf packages
+  * See [TF Tutorial](http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF)
+  * Coordinate system
+  * There will/can be many
+  * Some of the components might move (an arm for example)
+  * tf system periodically broadcasts the current relationship between coordinate systems
+  * Quaternions

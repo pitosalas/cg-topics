@@ -1,0 +1,133 @@
+---
+title: "2: ROS at a high level"
+desc: Basic concepts of ROS
+---
+
+* Not really an operating system!
+* Runs on top of the OS, i.e. Linux
+* A highly sophisticated concurrent distributed process management and communication framework (my own definition)
+
+#### Nodes
+* Fundamental concept in ROS
+* Think of it as a program or a process which forms part of a system
+* A real robot will have dozens to hundreds of nodes
+* You can write nodes in Python (we will do) or C++
+* Nodes talk top each other by publishing and subscribing to messages
+
+#### ROSCORE
+* Master coordinator of all the nodes
+* It is run once at a known IP (in our case, roscore1.cs.brandeis.edu)
+* Any other node will make contact with it to announce itself
+* When one node talks to another, roscore helps them find each other and then steps out of the way.
+
+#### rosutils/
+* A directory maintained by the course with useful goodies
+* Clone it from git into ~/mydev/
+
+#### .bashrc
+* A "hidden" file in your home directory
+* Contains a series of shell commands that are executed each time you start a shell
+* It is populated with lots of useful stuff by the installation of ROS
+* Any commands you want run each time will be placed there
+
+<%= code_begin %>
+source ~/mydev/rosutils/.bashrc
+source /opt/ros/kinetic/setup.bash
+<%= code_end %>
+
+* Key environment variables have to be defined in .bashrc
+
+<%= code_begin %>
+export ROS_IP=11.22.33.44 # this computer's IP. each one will be different
+export ROS_MASTER_URL=http://
+export TB3_MODEL=burger
+export TURTLEBOT3_model=burger
+<%= code_end %>
+
+#### catkin
+* catkin is the ROS build system
+* It's quite complicated and related to CMAKE
+* Treat it like a black box
+
+#### Workspaces
+* A subdirectory in which you will be doing your ROS work
+* You need only one and it will be called catkin_ws/
+* Create it as follows and just once
+
+<%= code_begin %>
+mkdir -p ~/catkin_ws/src
+cs
+catkin_init_workspace
+<%= code_end %>
+
+* From time to time you have to build things, called "doing a build or make"
+* Use the alias `cm`
+
+#### ROS Packages
+* A complete "application" or "tool"
+* Analogous to a gem in ruby, or a library in Java
+* Has a standardized layout
+* Create a new package:
+<%= code_begin %>
+$ cs
+$ catkin_create_pkg my_new_package rospy
+<%= code_end %>
+* Contents of a package directory
+  * package.xml # describes all the things that are in the package
+  * CMakeLists.txt # describes how to "build"
+  * ./messages # descriptors of the messages
+  * ./scripts # contains all the python source files
+  * ./launch # contains all the .launch files
+
+##### Python programs
+* Most of your python code will implement nodes
+* You should put them into the ./scripts directory
+* Name them *.py and give them execution file property: `chmod +x myfile.py`
+
+##### Synchronizing clocks
+* It is important that all computers that are in the ROS system (probably three - robot, roscore1 and your computer) have the same time
+<%= code_begin %>
+$ timeset
+<%= code_end %>
+
+##### Handy ROS CLI utilities
+
+<%= code_begin %>
+$ rosrun <package> <program>          # run a certain program from a certain package
+$ rqt_graph                           # display nodes and topics graphically
+$ roscd <package>                     # change directories to directory containing that package
+$ roslaunch <package> file.launch     # "execute" that launch file
+<%= code_end %>
+
+##### Names, Namespaces and Remapping
+* Everything in the ros world has a name that looks like a file path
+* For example: `/cmd_vel` is a topic name
+* To allow flexibility,m you can remap a name to another name on the command line, e.g.
+<%= code_begin %>
+$ ./image_view image:=right/image
+<%= code_end %>
+
+##### roslaunch
+* Many real ROS applications have multiple nodes
+* To save time having to start each one separately
+* (And for many other reasons)
+* A .launch file contains instructios on what to launch and in what order
+<%= code_begin %>
+<launch>
+    <node name="talker" pkg="rospy_tutorials" type="talker.py" output="screen" /> 
+    <node name="listener" pkg="rospy_tutorials" type="listener.py" output="screen" />
+</launch>
+<%= code_end %>
+
+#### Coordinate Transforms (tf)
+* Essential concept
+* Complicated concept
+* High level: a way to quickly compute relative coordinate systems
+* If I know a position relative to the room, what is that position relative to the robot?
+
+##### pose
+* Handy and very common term to mean: 3d position and 3d orientation of something
+* (Not velocity, just the position)
+
+##### tf
+* tf subsystem is super efficient and computing coordinate transformations
