@@ -47,3 +47,235 @@ title: Rough ROS Notes
   * Some of the components might move (an arm for example)
   * tf system periodically broadcasts the current relationship between coordinate systems
   * Quaternions
+
+  ### Review
+* ROS Node: In general any ROS functionality is packaged into a node
+* A node is a node because at startup it calls `rospy.init_node('name')`
+* That declares its presence to ROS Core (`roscore`)
+* Much ROS functionality is in the form of `topics`
+* Nodes can be topic **publishers** and/or **subscribers**
+
+#### Topics
+* Topics have a name (e.g. `cmd_vel`)
+* Topics have a Message type (e.g. `Twist`)
+* There is a large catalog of topic names and Message types.
+* It is recommended that you use one of those
+* This is for consistency and learnability but also because declaring a new Message type is a little kludgy.
+
+##### Subscribing
+* A subscriber declares that it is waiting for a Topic by a certain name to be published and declares a callback function to
+
+<%= ruby_begin %>
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+def callback(data):
+    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+
+def listener():
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber("chatter", String, callback)
+
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+
+if __name__ == '__main__':
+    listener()
+<%= ruby_end %>
+
+##### Publishing
+* A publisher simply makes a call, including topic name and message
+* The call never  blocks!
+* All subscribers' callbacks are called for each publication on a topic
+
+<%= code_begin %>
+#!/usr/bin/env python
+# license removed for brevity
+import rospy
+from std_msgs.msg import String
+
+def talker():
+    pub = rospy.Publisher('chatter', String, queue_size=10)
+    rospy.init_node('talker', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    while not rospy.is_shutdown():
+        hello_str = "hello world %s" % rospy.get_time()
+        rospy.loginfo(hello_str)
+        pub.publish(hello_str)
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
+<%= code_end %>
+
+#### Services
+* Create a more simple "client/server" API
+* Difference with Topics
+  * Not subscribe and publish (async)
+  * But Call/Return (sync)
+  * Can return data to the caller directly
+  * Will block
+  * Note: client and server will be in different nodes (possibly on different computers!)
+
+* Defining a service
+  * Define service **input** and **output** messages
+  * See book for details of declaration files and builds etc.
+  * `rosservice` CLI to examine and call services by hand
+
+##### Example
+  * [ROS Tutorial on Services](http://wiki.ros.org/ROS/Tutorials/WritingServiceClient%28python%29)
+  * Service that adds two numbers, e.g. "addTwoInts(i, j) returns i+j"
+
+##### Server
+<%= ruby_begin %>
+#!/usr/bin/env python
+
+from beginner_tutorials.srv import *
+import rospy
+
+def handle_add_two_ints(req):
+    print "Returning [%s + %s = %s]"%(req.a, req.b, (req.a + req.b))
+    return AddTwoIntsResponse(req.a + req.b)
+
+def add_two_ints_server():
+    rospy.init_node('add_two_ints_server')
+    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
+    print "Ready to add two ints."
+    rospy.spin()
+
+if __name__ == "__main__":
+    add_two_ints_server()
+<%= ruby_end %>
+
+##### Client
+
+<%= ruby_begin %>
+#!/usr/bin/env python
+
+import sys
+import rospy
+from beginner_tutorials.srv import *
+
+def add_two_ints_client(x, y):
+    rospy.wait_for_service('add_two_ints')
+    try:
+        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
+        resp1 = add_two_ints(x, y)
+        return resp1.sum
+    except rospy.ServiceException, e:
+        print "Service call failed: %s"%e
+
+def usage():
+    return "%s [x y]"%sys.argv[0]
+
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        x = int(sys.argv[1])
+        y = int(sys.argv[2])
+    else:
+        print usage()
+        sys.exit(1)
+    print "Requesting %s+%s"%(x, y)
+    print "%s + %s = %s"%(x, y, add_two_ints_client(x, y))
+<%= ruby_end %>
+
+#### Actions
+* The final common way to communicate between nodes
+* Used for processes that might take long (seconds and minutes)
+* Goal time-extended, goal oriented, asynchronous, actions, including partial result feedback.
+* Follow a particular call protocol
+* Action specification:
+  * Goal
+  * Feedback
+  * Result
+* Rules for Goals (of an action)
+  * Only one goal can have 'active' status at one time
+  * New goals preempt previous goals based on the time stamp in their GoalId
+  * An explicit preempt goal (?) preempts all goals with timestamps that are less than or equal to the new goal
+  * Accepting a new goal implies successfull preemption of any old goal and the status of the old goal will automatically be changed to reflect this.
+  * [See ActionLib](http://wiki.ros.org/actionlib)
+
+#### Dishwasher Example
+* Action: Please wash this many dishes
+* Feedback: How many have been washed so far
+* Result: All requested dishes were washed
+
+<%= ruby_begin %>
+uint32 requested_dishes # How many dishes to wash
+---
+uint32 total_dishes_cleaned
+---
+float32 percent_complete
+<%= ruby_end %>
+
+#### Action Requester
+<%= ruby_begin %>
+#! /usr/bin/env python
+
+import roslib
+import rospy
+import actionlib
+from beginner_tutorials.msg import DoDishesAction, DoDishesGoal
+
+if __name__ == '__main__':
+    print "initting node"
+    rospy.init_node('do_dishes_client')
+    client = actionlib.SimpleActionClient('do_dishes', DoDishesAction)
+    client.wait_for_server()
+
+    goal = DoDishesGoal()
+    goal.requested_dishes = 50
+    client.send_goal(goal)
+    client.wait_for_result(rospy.Duration.from_sec(5.0))
+<%= ruby_end %>
+
+#### Action Server
+<%= ruby_begin %>
+#! /usr/bin/env python
+# Do Dishes Server will accept a goal of a number of dishes to wash.
+# Each dish takes x milliseconds. Once all the dishes are washed the goal
+# has been met.
+
+import roslib
+import rospy
+import actionlib
+import time
+
+from beginner_tutorials.msg import DoDishesAction, DoDishesResult, DoDishesGoal, DoDishesFeedback
+
+class DoDishesServer:
+  def __init__(self):
+    self.server = actionlib.SimpleActionServer('do_dishes', DoDishesAction, self.execute, False)
+    self.server.start()
+
+  def execute(self, goal):
+    dishes_so_far = 0
+    num_dishes = goal.requested_dishes
+
+    print("Received a goal to clean %d" % num_dishes)
+
+    while (dishes_so_far < num_dishes):
+      if self.server.is_preempt_requested():
+        result = DoDishesResult()
+        result.total_dishes_cleaned = dishes_so_far
+        result.percent_complete = (dishes_so_far * 100) / num_dishes
+        server.set_preempted(result, "Dishwasher Preempted")
+      dishes_so_far +=1
+      print("Washed another dish %d" % dishes_so_far)
+      time.sleep(0.1)
+
+    res = DoDishesResult()
+    res.total_dishes_cleaned = dishes_so_far
+    self.server.set_succeeded(res, "Done washing dishes!")
+
+if __name__ == '__main__':
+  rospy.init_node('do_dishes_server')
+  print "About to start server"
+  server = DoDishesServer()
+  rospy.spin()
+  print "Exiting..."
+<%= ruby_end %>
