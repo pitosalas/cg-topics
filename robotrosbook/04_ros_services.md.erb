@@ -26,8 +26,11 @@ desc: "What are ROS services, and why do we need them? How are they different?"
 * You will immediately be able to see the service declared with `$ rossrv show WordCount`
 
 ##### Defining the logic
-* Returns an integer equal to the number of words
-* The money quote: `len(request.words.split())`
+* It looks a lot like a node subscribing to a topic
+* Big difference is that it has a 'return' statement
+* In this example, it returns an integer equal to the number of words
+* The money quote: `return len(request.words.split())`
+* Notice the two ways of returning the result
 * Everything else is plubming
 
 ##### Checking if it worked
