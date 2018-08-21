@@ -1,0 +1,86 @@
+---
+title: "6: Robots and Simulators"
+desc: Looking more widely now at the world of robotics
+---
+#### Building blocks
+* Robots are made up of many subsystems
+* Subsystems are 'represented' in the software
+* Actualion (e.g. wheels)
+* Sensing (e.g. cameras)
+* Computing (e.g. brains)
+
+#### Actuation
+* Wheels - Differential Drive
+  * Differential drive: Turtlebot3
+  * Turning by different speed on two or more wheels
+  * Sometimes there is a caster
+  * Can only move forward and backward.
+  * Not up and down or (directly) sideways
+  * With more than 2 wheels, or a track - skid teering
+  * Cars have "ackerman" steering (4 wheels, 2 that can steer)
+* Holonomic - non-Holonomic
+  * Holonomic - can move in any direction
+* Manipulator Arm
+  * Degrees of freedom
+  * Coordiante transforms
+
+#### Sensors
+
+##### Lidar
+* Rotates and uses a laser to measure distance to nearest obstacle
+* Returns a vector of values corresponding to the directions
+<%= callout("Limitation", " Operates in a plane, like a disk. Can't detect an obstacle above or below the plane!") %>
+
+##### Visual Cameras
+* Webcam sees a color picture
+* Matrix of dots, each dot has a color
+* Dot[x,y] = {r,g,b}
+* Data can be processed for example with `opencv`
+* A lot of data and a lot of processing
+* Bandwidth limits
+
+##### Depth Cameras
+* Like a Microsoft Kinect
+* In addition to {r,g,b} also has distance
+* iPhoneX
+
+#### Computation
+* Our Turtlebots have:
+  1. Arduino to control the motor. Also with various sensors, lights, and i/o ports. Board is from Robotis and is called OpenCR
+  1. Raspberry Pi which runs Ubuntu Mate and ROS
+* Distributed environment, typically:
+  1. ROSCORE running on our roscore1.cs.brandeis.edu
+  1. Some ROS nodes running on Raspberry Pi
+  1. More Ros nodes running on a laptop or other computer
+* Workload is truly distributed across all of those
+* Eventually we may have to have a much beefier computer running all three
+* This would make the robot much more independent
+
+### Simulators
+* Software to allow work even without actual robots
+* A series of nodes which:
+  * publish topics that a robot would publish (e.g. /odom)
+  * Subscribe to topics that a robot would (e.g. /cmd_vel)
+  * Use a "physics engine" to simulate what would happen in the real world
+* For example, simulator
+  * Maintains an imagenary x,y where the robot is right now
+  * Maintains a 3-d model of the robot
+  * Has 3-d models of obstacles like walls
+  * Changes all these states based on motion commands it receives
+  * Of course, much more complex
+* We will not be using `Stage`
+* Gazebo
+  * Really sophsticated 3d simulator plus visualization
+  * Can do much more than Turtlebots
+  * I have seen Gazebo models of a complete Amazon Warehouse Floor
+  * With multiple Robots running around
+* RViz
+  * While it looks similar, it is not a simulator
+  * It "simply" visualizes topics that it subscribes
+  * In a 3-d space
+* Stdr
+  * Much simpler than Gazebo
+  * We might use that.
+
+
+
