@@ -24,6 +24,21 @@ desc: What are topics, how are they used. How do messages fit in
 * Latched Topics
   * New subscribers to a latched topic automatically get the last published message for that topic
   * Useful for topics which change rarely
+* Shebang line.
+  * Ignore why its called shebang.
+  * pronounced shuh-bang
+  * It's an old joke.
+  * Here's what it looks like:
+
+<%= code_begin %>
+#!/usr/bin/env python
+<%= code_end %>
+
+  * To make a text file executable on linux you do these things:
+    * Put shebang line as line 1. It tells what the language of that text file
+    * Change the file mode to have "executable priviliges"
+    * `chmod +x filename`
+    * Execute it from shell `$ ./filename`
 
 #### Useful references
 * [Publishers and Subscribers](http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers)
