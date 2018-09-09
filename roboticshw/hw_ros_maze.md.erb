@@ -1,0 +1,69 @@
+---
+title: Programming Assignment 2 - Maze
+---
+
+## Assignment
+Write a python script to solve a maze. Your code should be able to run on both simulators (STDR) and real Turtlebot3. The wall-following algorithm we introduced in previous assignments is one of the solution, but is not the only one. We strongly encourage you to try different You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. The maze looks like the following picture:
+
+<%= include_image "/content/topics/images/pa2mazediagram.png" %>
+
+We will give out the png and yaml file of the maze map today or tomorrow. You should know how to load it to the STDR. Test in the simulator first and then deploy your code to the physical robot. We will arrange a training session this week to help you upload your code to turtlebot. But here are the basic steps:
+
+<%= include_image "/content/topics/images/pa2launchsteps.png" %>
+
+The maze will be set up in the lab by cardboard blocks (12"×6"×3"). You can test your robot there. Testing your theory with a simulator is a good start. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+
+## Submission
+
+This is a group assignment. The students will be divided into 3 teams of 3. The team which takes the least time to solve this maze in the physical world wins.
+
+Use git for version control and share you repo with Pito and the TAs.
+
+## Background Info
+
+**Right hand Rule:**
+[https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) - For this assignment, you can choose either one from Right-Hand Rule (which means you will turn to the rightmost route whenever possible) and Left-hand Rule (which means you will turn left whenever possible). Here are some examples for what you should expect when using Right-hand Rule:
+
+<%= include_image "/content/topics/images/pa2righthandrule.png" %>
+
+Left hand rule follows the same idea. Either works fine for this assignment.
+
+**Tip for Teleop:**
+You can run the teleop_twist_keyboard node, and remap its cmd_vel topic to the robot use wish to control. For example, to control robot0, run:
+
+`rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=robot0/cmd_vel`
+
+**Tip for visualizing:**
+[rqt_graph](http://wiki.ros.org/rqt_graph) can be very helpful in visualizing the nodes and topics
+
+**Tips for LaserScan:**
+When subscribing to the /scan topic of turtlebot, we will get an array of numbers. The info at the beginning of the message should tell you the min and max angle, and the increment of angle and time between each readings. The details are listed below:
+
+<%= include_image "/content/topics/images/pa2laserscaninfo.png" %>
+
+Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [http://www.theconstructsim.com/read-laserscan-data/] (http://www.theconstructsim.com/read-laserscan-data/)
+The most important field that you need to understand is the "ranges" (which is circled in the red box above). You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
+
+PS. An infinite LIDAR value in STDR is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3).
+
+Here are some solutions that might be helpful, but please do not limit to these.
+
+<%= include_image "/content/topics/images/pa2samplesolutions.png" %>
+
+
+## Advanced (Optional)
+**PID Control:**
+Please read the links and understand how PID works:
+[http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control](http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control)
+
+<%= include_image "/content/topics/images/pa2pidgraph.png" %>
+
+Applying PID control to your algorithm will make it more robust and perform more consistently. PID control is a smoothing function which helps you better follow the wall without too much fluctuation. It will make the robot turn at a higher speed when you are too away from the designated route (too far or too close to the wall), and turn at a slower speed when you are close to it.
+
+<%= include_image "/content/topics/images/pa2pidcomparison.png" %>
+
+
+## Appendix
+
+**Turtlebot3 Burger**
+<%= include_image "/content/topics/images/pa2turtlebotinfo.png" %>
