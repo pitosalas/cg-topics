@@ -4,12 +4,6 @@ desc: Enhance Movies Part 1 by adding basic recommendation logic
 ---
 #### Background
 
-<%= callout("nb", " This Movies_2 is new and improved as of this semester!") %>
-
-<%= callout("portfolio", " Please use directory movies-2 in your portfolio") %>
-
-If you started on and decided to pursue the original <%= link_to_topic :pa_movies_2_old %> that's perfectly fine and will count the same. I think you will find this one clearer, however.
-
 Building on <%= link_to_topic :pa_movies_1 %>, we are now going to include a prediction method that will predict the rating a user would give to a movie and you are to run some tests to determine how accurate your method is.
 
 Take a look at the data files. In addition to the file u.data you will find a series of pairs of files, u?.base and u?.test. They have the exact same format as u.data, but partitioned into batches. For example, u1.test contains 2000 ratings and u1.base contains the other 8000 ratings. The same is true for all the other u?, except they contain different subsets.
@@ -36,14 +30,15 @@ I propose the following class design.
 
 1. Do a systematic set of runs experimenting with the different u? files, and if you have more than one prediction algorithm, try those.
 
-1. Zip together your code plus a short summary of your work as a pdf to latte. Include the following information about your solution:
-  * The Algorithm. A description of your prediction algorithm and what you think are its advantages and drawbacks.
-  * The Analysis. A description of the results of running some experiments to determine the accuracy of your method.
-  * Benchmarking. An estimate of the time it takes run each prediction (determined by using Time.now to capture the current clock time before and after making k predictions) and an explanation of what you think will happen to that time if you increase the size of the training set by a factor of 10 or 100....
+1. Zip together your code plus a readme.md file containing a summary of your work. Include the following information about your solution. Submit the zip file to Latte.
+    * The Algorithm. A description of your prediction algorithm and what you think are its advantages and drawbacks.
+    * The Analysis. A description of the results of running some experiments to determine the accuracy of your method.
+    * Benchmarking. An estimate of the time it takes run each prediction (determined by using Time.now to capture the current clock time before and after making k predictions) and an explanation of what you think will happen to that time if you increase the size of the training set by a factor of 10 or 100....
+    * Reflection. What did you enjoy, what did you struggle with, did you think this assignment met its goal of giving you a real feel for programming Ruby? How would you improve or change it?
 
-##### NOTES
+#### NOTES
 
-* This will take a few hours but don't spend too much time trying to get a super accurate prediction algorithm.  There are several published papers on this subject and the goal here is just to give you some practice writing useful Ruby code and the let you think about big data for your own applications....  If you want to create a really good prediction algorithm.
+* This will take several hours, so please **don't spend too much time trying to get a super accurate prediction algorithm.**  If this is a topic you are interested in, tthere are several published papers as wellas Brandeis courses on this subject. However, the goal for this assignment is to give you  practice writing good Ruby code.
 
 * Surprisingly it seems like returning a constant prediction of 4 does quite well compared to other more complicated algorithms. Interesting.
 
