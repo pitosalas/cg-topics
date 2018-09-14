@@ -1,23 +1,25 @@
 ---
-title: Programming Assignment 2 - Maze
+title: "Programming Assignment: Robot Maze Runner"
+desc: UNDERGOING SOME REMODELING!
 ---
 
 #### Assignment
-Write a python script to solve a maze. Your code should be able to run on both simulators (STDR) and real Turtlebot3. The wall-following algorithm we introduced in previous assignments is one of the solution, but is not the only one. We strongly encourage you to try different You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. The maze looks like the following picture:
+
+Write a python script to solve a maze. Your code should be able to run on both simulators (STDR or Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/) and real Turtlebot3. The wall-following algorithm can be one of the solutions, but it is not the only one. We strongly encourage you to try different You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. 
+
+This is a team assignment, teams of two students should work together. It's fine to talk to everyone else as long as the code is yours. You will submit one solition for each team.
+
+Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. Remember that the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
 
 <%= include_image "/content/topics/images/pa2mazediagram.png" %>
 
-We will give out the png and yaml file of the maze map today or tomorrow. You should know how to load it to the STDR. Test in the simulator first and then deploy your code to the physical robot. We will arrange a training session this week to help you upload your code to turtlebot. But here are the basic steps:
+You can use STDR (use instructions from before) or Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/) One of the built in Gazebo Turtlebot3 maps is a maze, you can use that oo. But you definitely want to test and be able to demonstrate your algorithm in a simulator.
 
-<%= include_image "/content/topics/images/pa2launchsteps.png" %>
-
-The maze will be set up in the lab by cardboard blocks (12"×6"×3"). You can test your robot there. Testing your theory with a simulator is a good start. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+Test in the simulator first and then deploy your code to the physical robot. By now you should be familiar with how to set up code and run the Turtlebot3. Set up the maze in the lab with cardboard blocks (12"×6"×3"). You can test your robot there. Testing your theory with a simulator is a good start. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
 
 #### Submission
 
-This is a group assignment. The students will be divided into 3 teams of 3. The team which takes the least time to solve this maze in the physical world wins.
-
-Use git for version control and share you repo with Pito and the TAs.
+This can be done individually or in a group. However it is crucial that if in a group, that all the team members are fully engaged and The students will be divided into 3 teams of 3. The team which takes the least time to solve this maze in the physical world wins. Use git for version control and share you repo with Pito and the TAs.
 
 #### Background Info
 
@@ -51,7 +53,8 @@ Here are some solutions that might be helpful, but please do not limit to these.
 <%= include_image "/content/topics/images/pa2samplesolutions.png" %>
 
 
-####  Advanced (Optional)
+####  Advanced
+
 **PID Control:**
 Please read the links and understand how PID works:
 [http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control](http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control)
