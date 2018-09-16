@@ -1,78 +1,69 @@
 ---
 title: "Programming Assignment: Robot Maze Runner"
-desc: UNDERGOING SOME REMODELING!
+desc: Programming a more serious ROS  application
 ---
 
 #### Assignment
 
-Write a python script to solve a maze. Your code should be able to run on both simulators (STDR or Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/) and real Turtlebot3. The wall-following algorithm can be one of the solutions, but it is not the only one. We strongly encourage you to try different You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. 
+Write a python script to control a robot running a maze from a starting point to an ending point. For our purposes the ending point is when you stop the script, or pick up the robot. In other words for the moment your robot does not need to detect the end of the maze itself.
 
-This is a team assignment, teams of two students should work together. It's fine to talk to everyone else as long as the code is yours. You will submit one solition for each team.
+You should write and test your code first on the simulator. You can choose STDR, Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/). They are all three legitimate simuators, each with it's pros and cons. This command will give you a pretty nice "built-in" maze using Gazebo, but remember that Gazebo doesn't work well in VMs at all. It usually crashes :)
 
-Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. Remember that the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch 
+<%= code_end %>
+
+Remember it's worth trying to work in the simulator first. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+
+The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well.
+
+#### The Maze
+
+Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. **Remember:** the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
 
 <%= include_image "/content/topics/images/pa2mazediagram.png" %>
 
-You can use STDR (use instructions from before) or Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/) One of the built in Gazebo Turtlebot3 maps is a maze, you can use that oo. But you definitely want to test and be able to demonstrate your algorithm in a simulator.
 
-Test in the simulator first and then deploy your code to the physical robot. By now you should be familiar with how to set up code and run the Turtlebot3. Set up the maze in the lab with cardboard blocks (12"×6"×3"). You can test your robot there. Testing your theory with a simulator is a good start. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+#### Process
 
-#### Submission
+This is a pair programming assignment. Students should self select into teams of two students. It's fine to talk to everyone else, as well as google for ideas. Just  as long as the code is written and fully understood by both members of the team. You will submit one solution for each team (see below.) 
 
-Please submit to Latte:
+#### What to submit
 
-1. The source code
-1. A video of the real robot running the maze successfully
-1. 
+The submission to Latte will require:
 
+* The source code, as nicely structured and designed as possible.
+* A video of the real Turtlebot3 running the maze successfully
 
 
 #### Background Info
 
-**Right hand Rule:**
+##### Right hand Rule##### 
+
 [https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) - For this assignment, you can choose either one from Right-Hand Rule (which means you will turn to the rightmost route whenever possible) and Left-hand Rule (which means you will turn left whenever possible). Here are some examples for what you should expect when using Right-hand Rule:
 
 <%= include_image "/content/topics/images/pa2righthandrule.png" %>
 
-Left hand rule follows the same idea. Either works fine for this assignment.
+##### Working with LaserScan data
 
-**Tip for Teleop:**
-You can run the teleop_twist_keyboard node, and remap its cmd_vel topic to the robot use wish to control. For example, to control robot0, run:
+Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data] (http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
 
-`rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=robot0/cmd_vel`
+An infinite LIDAR value in STDR is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
 
-**Tip for visualizing:**
-[rqt_graph](http://wiki.ros.org/rqt_graph) can be very helpful in visualizing the nodes and topics
-
-**Tips for LaserScan:**
-When subscribing to the /scan topic of turtlebot, we will get an array of numbers. The info at the beginning of the message should tell you the min and max angle, and the increment of angle and time between each readings. The details are listed below:
-
-<%= include_image "/content/topics/images/pa2laserscaninfo.png" %>
-
-Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [http://www.theconstructsim.com/read-laserscan-data/] (http://www.theconstructsim.com/read-laserscan-data/)
-The most important field that you need to understand is the "ranges" (which is circled in the red box above). You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
-
-PS. An infinite LIDAR value in STDR is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3).
+##### Some ideas
 
 Here are some solutions that might be helpful, but please do not limit to these.
 
 <%= include_image "/content/topics/images/pa2samplesolutions.png" %>
 
+#####  PID Control
 
-####  Advanced
+PID is a well known technique for smoothing out control, to avoid oscilation. Applying PID control to your algorithm will make it more robust and perform more consistently. PID control is a smoothing function which helps you better follow the wall without too much fluctuation. It will make the robot turn at a higher speed when you are too away from the designated route (too far or too close to the wall), and turn at a slower speed when you are close to it.
 
-**PID Control:**
-Please read the links and understand how PID works:
-[http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control](http://wiki.ros.org/pid https://www.robotshop.com/letsmakerobots/pid-control)
+Here are some great links. You will be amazed at how well this works.
+
+* [MIT Pid Video](https://www.youtube.com/watch?v=4Y7zG48uHRo)
+* [ROS PID Package ](http://wiki.ros.org/pid)
+* [PID Control from Lets Make RObots](https://www.robotshop.com/letsmakerobots/pid-control)
 
 <%= include_image "/content/topics/images/pa2pidgraph.png" %>
-
-Applying PID control to your algorithm will make it more robust and perform more consistently. PID control is a smoothing function which helps you better follow the wall without too much fluctuation. It will make the robot turn at a higher speed when you are too away from the designated route (too far or too close to the wall), and turn at a slower speed when you are close to it.
-
-<%= include_image "/content/topics/images/pa2pidcomparison.png" %>
-
-
-## Appendix
-
-**Turtlebot3 Burger**
-<%= include_image "/content/topics/images/pa2turtlebotinfo.png" %>
