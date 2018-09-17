@@ -2,7 +2,14 @@
 title: (PA) Movies Part 2
 desc: Enhance Movies Part 1 by adding basic recommendation logic
 ---
-#### Background
+
+#### IMPORTANT NOTE
+
+<%= callout("NB", " It is important to read and heed this advice!") %>
+
+This will take several hours, so please **don't spend too much time trying to get a super accurate prediction algorithm.**  If this is a topic you are interested in, tthere are several published papers as wellas Brandeis courses on this subject. However, the goal for this assignment is to give you  practice writing good Ruby code. Surprisingly it seems like returning a constant prediction of 4 does quite well compared to other more complicated algorithms. Interesting. Therefore, first complete this PA2 with a really simple predictor and get everything done.  Then go back and refine the algorithm, but only if you don't have more important projects to work on!  This is a really fun kind of project to work on, especially once you start getting the hang of writing ruby code to implement sophisticated algorithms.  We'll discuss some very simple algorithms in class.
+
+#### Introduction
 
 Building on <%= link_to_topic :pa_movies_1 %>, we are now going to include a prediction method that will predict the rating a user would give to a movie and you are to run some tests to determine how accurate your method is.
 
@@ -28,18 +35,11 @@ I propose the following class design.
 
 1. Install the reek gem and see if there are ways to improve your code.
 
-1. Do a systematic set of runs experimenting with the different u? files, and if you have more than one prediction algorithm, try those.
+2. Do a systematic set of runs experimenting with the different u? files, and if you have more than one prediction algorithm, try those.
 
-1. Zip together your code plus a readme.md file containing a summary of your work. Include the following information about your solution. Submit the zip file to Latte.
+3. Zip together your code plus a readme.md file containing a summary of your work. Include the following information about your solution. Submit the zip file to Latte.
     * The Algorithm. A description of your prediction algorithm and what you think are its advantages and drawbacks.
     * The Analysis. A description of the results of running some experiments to determine the accuracy of your method.
     * Benchmarking. An estimate of the time it takes run each prediction (determined by using Time.now to capture the current clock time before and after making k predictions) and an explanation of what you think will happen to that time if you increase the size of the training set by a factor of 10 or 100....
     * Reflection. What did you enjoy, what did you struggle with, did you think this assignment met its goal of giving you a real feel for programming Ruby? How would you improve or change it?
 
-#### NOTES
-
-* This will take several hours, so please **don't spend too much time trying to get a super accurate prediction algorithm.**  If this is a topic you are interested in, tthere are several published papers as wellas Brandeis courses on this subject. However, the goal for this assignment is to give you  practice writing good Ruby code.
-
-* Surprisingly it seems like returning a constant prediction of 4 does quite well compared to other more complicated algorithms. Interesting.
-
-* Therefore, first complete this PA2 with a really simple predictor and get everything done.  Then go back and refine the algorithm, but only if you don't have more important projects to work on!  This is a really fun kind of project to work on, especially once you start getting the hang of writing ruby code to implement sophisticated algorithms.  We'll discuss some very simple algorithms in class.
