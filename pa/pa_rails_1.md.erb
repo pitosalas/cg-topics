@@ -3,23 +3,23 @@ title: PA Rails 1
 ---
 #### Intro
 
-This assignment introduces the MVC architecture of Rails as you design a Web app in which users can select university classes. The data you need is available at [This Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). The folder has 3 JSON files, each is a JSON array. Note: If you are using or already loaded data from [the original URL](http://www.cs.brandeis.edu//~prakhar/dataset.json), then you'll need to iterate through each line of that file and parsing each line as JSON - The entire file is not JSON formatted, just individual lines. Also DO NOT use/load entries of type "section" - there are too many of these and you'll end up exceeding the 10K records for a free database on Heroku. Only use data of type instructor, course and subject.
+This assignment introduces the MVC architecture of Rails as you design a Web app in which users can select university classes. The data you need is available at [This Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). The folder has 3 JSON files, each is a JSON array. Note: If you are using or already loaded data from [the original URL](http://www.cs.brandeis.edu//~prakhar/dataset.json), then you'll need to iterate through each line of that file and parsing each line as JSON - The entire file is not JSON formatted, just individual lines. Also DO NOT use/load entries of type "section" - there are too many of these and you'll end up exceeding the 10K records for a free database on Heroku. Only use data of type **instructor, course and subject.**
 
-The purpose of this assignment is for each student to independently practice their knowledge of the material separate from the team work. What you learn and practice here will definitely contribute to your work on the team project.
+The purpose of this assignment is for each student to independently practice their knowledge of the material separate from the team work. What you learn and practice here will definitely contribute to your work on the team project. You will be using a lot of what you are learning in class and in the RORT. You might have to read ahead a little.
 
 In the first part (of 3) you will build a basic rails application that imports and displays the data according to the instructions below.
 
 #### Part 1: Bootstrap UI, Import JSON files and Display data
 1. Create a new rails application called Course Catalog
 1. The university data is formatted in JSON. You may find detailed description from the university specifying the [data schema](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). You can find it here:[Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). You will need the JSON gem to read the files in. Inspect the files to see what the fields are you will need for your database tables.
-1. Create appropriate models in order to represent the data for instructor, subject, and course, as given in three separate JSON files.
-1. Load the data into your database tables. You don’t need to store every field/attribute, just the ones you would need and like to include in your app.
-1. Setup a (**private**) GitHub repo and automatic deployment to Heroku
-1. Setup your application to use Bootstrap for the UI
+1. Use `rails generate scaffold` to generate appropriate models and views in order to represent the data for instructor, subject, and course, as given in three separate JSON files. You need to look at the JSON files to see what the fields are that will be available. Courses have a field for the subject, which is a number. The number corresponds to a record in the subject database. For now, it's ok if you just display the course number.
+1. Load the data into your database tables. You don’t need to store every field/attribute, just the ones you would need and like to include in your app. The logical place for that code is in the db/seeds.rb file. There are several ways to code the import. Here's a good article about [Importing Large Datasets in Ruby on Rails](https://medium.com/@eric_lum/importing-large-datasets-in-ror-why-you-should-use-activerecord-import-26fc915e6fd0)
 1. The home page of the application should display three tabs, as follows:
     * Subjects - Displays all the subjects from the database
     * Courses - Displays all the courses from the database
     * Instructors - Displays all the instructors from the database
+2. Setup a (**private**) GitHub repo and automatic deployment to Heroku
+3. Setup your application to use Bootstrap for the UI
 
 #### Deliverables:
 1. Write a readme.md for your app including link to a **private** GitHub repo and your link to Heroku.
@@ -27,10 +27,10 @@ In the first part (of 3) you will build a basic rails application that imports a
 
 #### Timesaving Tips
 * Check out these really useful gems
-* json to parse and process json files
-* activerecord-import to make loading lots of records faster and more efficient
-* better-errors to give you more legible errors from Rails
-* pry-rails to invoke the nicer repl called pry when you do a `rails console`
+  * json to parse and process json files
+  * activerecord-import to make loading lots of records faster and more efficient
+  * better-errors to give you more legible errors from Rails
+  * pry-rails to invoke the nicer repl called pry when you do a `rails console`
 <%= ruby_begin %>
 # Gemfile
 group :development do
