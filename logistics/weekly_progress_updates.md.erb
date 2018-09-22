@@ -1,0 +1,37 @@
+---
+title: Weekly Progress Updates
+cat: logistics
+desc: Motivation and structure of weekly updates
+---
+#### Intro
+This recurring assignment will require you to produce weekly status reports on your project, similar to what professional software engineering teams do on a far more frequent basis.
+
+Note that this assignment isn't a replacement for a Kanban board: You can use the status of your Kanban board to help figure out what you write here, but the purpose of this assignment is to give us a series of static snapshots of your progress throughout the semester, rather than a fluid Kanban board to track your entire backlog of tasks.
+
+#### Requirements
+
+Every team will submit a PDF to LATTE every Friday with their team name, the current date, and a chart similar to this example:
+
+<% tbh = TableHelper.new(:normal, :bordered) %>
+<% tbh.headers("Who", "Completed", "In Progress/Slow Blocked") %>
+<% tbh.row("Ari", "Run scaffolding commands to generate schema","Implement authentication with Brandeis credentials") %>
+<% tbh.row("Cam", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax") %>
+<% tbh.row("Zhengyang", "", "Set up \"my profile\" page, Implement calendar syncing" ) %>
+<%= tbh.render %>
+
+#### Suggestions
+
+* Every week, start writing this chart by copying the one you submitted last week.
+	* Delete everything that was in its "Completed" column last week. (i.e. there shouldn't be anything more than a week old in "Completed", otherwise that column would get really big really fast)
+	* Update each entry in the "In Progress" column, either by moving it to "Completed" or "Slowed/Blocked", or by leaving it in "In Progress" and writing a bullet-point explanation of what work has been done that week.
+	* This will help us see the progression of each task as it gets worked on and make sure each task is accounted for.
+* Use "Slowed/Blocked" to list tasks that are waiting on something beyond your control.
+	* Example: If you're trying to integrate with a web service and you've sent their support team an email, now you're waiting on that before work can continue.
+* **Don't worry about reporting too much or too little!** We're not grading the quality of your contributions every single week, we're just using these for insight into your work over the course of the semester.
+
+#### Grading
+This is a **team participation warmup** assignment: 
+
+* Only one person from each team needs to submit the PDF on LATTE each week.
+* The assignment will be due at **10 AM every Friday** we have class, with a separate LATTE slot for each Friday.
+* Every team member will receive a grade of 100 if a **good-faith effort** was put into the submission, otherwise, they will receive a grade of 0.
