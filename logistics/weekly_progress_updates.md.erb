@@ -13,10 +13,10 @@ Note that this assignment isn't a replacement for a Kanban board: You can use th
 Every team will submit a PDF to LATTE every Friday with their team name, the current date, and a chart similar to this example:
 
 <% tbh = TableHelper.new(:normal, :bordered) %>
-<% tbh.headers("Who", "Completed", "In Progress/Slow Blocked") %>
-<% tbh.row("Ari", "Run scaffolding commands to generate schema","Implement authentication with Brandeis credentials") %>
-<% tbh.row("Cam", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax") %>
-<% tbh.row("Zhengyang", "", "Set up \"my profile\" page, Implement calendar syncing" ) %>
+<% tbh.headers("Who", "Completed", "In Progress", "Slowed/Blocked") %>
+<% tbh.row("Ari", "Run scaffolding commands to generate schema","Implement authentication with Brandeis credentials", "") %>
+<% tbh.row("Cam", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax", "") %>
+<% tbh.row("Zhengyang", "", "Set up \"my profile\" page, Implement calendar syncing", "") %>
 <%= tbh.render %>
 
 #### Suggestions
@@ -30,7 +30,7 @@ Every team will submit a PDF to LATTE every Friday with their team name, the cur
 * **Don't worry about reporting too much or too little!** We're not grading the quality of your contributions every single week, we're just using these for insight into your work over the course of the semester.
 
 #### Grading
-This is a **team participation warmup** assignment: 
+This is a **team participation warmup** assignment:
 
 * Only one person from each team needs to submit the PDF on LATTE each week.
 * The assignment will be due at **10 AM every Friday** we have class, with a separate LATTE slot for each Friday.
