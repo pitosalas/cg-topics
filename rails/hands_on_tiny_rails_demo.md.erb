@@ -1,43 +1,32 @@
 ---
 title: Hands On Tiny Rails Demo
 ---
-#### Setup
+#### Basic Example
+* Basic example of rails, minitest and activerecord
+* Code for this example is [rails-faker-minitest-tiny-demo](https://github.com/pitosalas/rails-faker-minitest-tiny-demo)
+
+##### Setup
 ~~~
 rails new demo_tiny_rails
 cd demo_tiny_rails
-subl .
+code .
 
 # Gemfile
 gem 'better_errors'
-gem 'minitest-rails-capybara'
-gem 'minitest-reporters'
 gem 'faker'
 gem 'pry'
 gem 'pry-byebug'
-
+gem 'hirb'
 bundle
 
 ~~~
 
-#### Tune for minitest spec
-~~~
-# config/application.rb
-config.generators do |g|
-  g.test_framework :mini_test, :spec => true, :fixture => true
-  g.integration_tool :mini_test
-end
-
-# test/test_helper.rb
-require "minitest/autorun"
-require "minitest/rails"
-require "minitest/pride" # let's have awesome colorful output;)
-~~~
-
-#### Setup Models and Databases
+##### Setup Models and Databases
 ~~~~
 rails generate scaffold course number:integer name:string desc:string prof:string
 
-rake db:migrate
+rails db:create
+rails db:migrate
 
 # seeds.rb
 25.times do
@@ -49,7 +38,7 @@ rake db:migrate
 end
 ~~~~
 
-#### Setup rudimentary tests
+##### Setup rudimentary tests
 ~~~
 # \[test/fixtures/courses.yml\]
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -74,7 +63,7 @@ class CourseTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  describe "With all test" do
+  test "With all test" do
     it "tautology works" do
       1.must_equal 1
     end
@@ -86,9 +75,19 @@ class CourseTest < ActiveSupport::TestCase
 end
 ~~~
 
-#### See that app runs and tests run.
+##### See that app runs and tests run.
 
 ~~~~
-rake 
+rails test
 ~~~~
 
+
+##### Play with Rails console
+
+~~~~
+rails db:seed
+rails console
+Hirb.enable
+Course.all
+
+~~~~
