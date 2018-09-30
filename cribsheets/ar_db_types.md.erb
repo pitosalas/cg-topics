@@ -1,5 +1,5 @@
 ---
-title: DB Datatypes and migrations
+title: ActiceRecord Datatypes
 desc: List of the datatypes used in Rails migrations and other places
 ---
 #### Built in standard data types
@@ -18,52 +18,6 @@ desc: List of the datatypes used in Rails migrations and other places
   * date
   * binary
   * boolean
-* Certain databases, notably Postgres, has some very interesting additional types
+
+* Certain databases, notably Postgres, has some very interesting additional types: [ActiveRecord Postgres](https://edgeguides.rubyonrails.org/active_record_postgresql.html)
 * To use them you need to go outside the built in ActiveRecord datatypes
-
-#### Migrations
-* [Guide on Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
-* When you discover you need a new column or table, you can modify the database
-* E.g.break the "name" field into a "first name" and "last name"
-* Data Migration
-	* How do I move over all the user records that were already there?
-* Logic Migration
-	* What has to change in the server code to accomodate this change?
-* Does this mean that migration is bad?
-	* It's not good nor bad: it's unavoidable
-	* It's much more painful when you are 'in production'
-
-* Migrations usually include the standard types, e.g.
-<%= ruby_begin %>
-class CreateProducts < ActiveRecord::Migration[5.0]
-  def change
-    create_table :products do |t|
-      t.string :name
-      t.text :description
-    end
-  end
-end
-<%= ruby_end %>
-* Notice **change** indicates that this is a **reversible** migration
-* There are quite a number of available statements (**note create_table is a method!**)
-  * add_column
-  * add_foreign_key
-  * add_index
-  * add_reference
-  * add_timestamps
-  * change_column_default (must supply a :from and :to option)
-  * change_column_null
-  * create_join_table
-  * create_table
-  * disable_extension
-  * drop_join_table
-  * drop_table (must supply a block)
-  * enable_extension
-  * remove_column (must supply a type)
-  * remove_foreign_key (must supply a second table)
-  * remove_index
-  * remove_reference
-  * remove_timestamps
-  * rename_column
-  * rename_index
-  * rename_table

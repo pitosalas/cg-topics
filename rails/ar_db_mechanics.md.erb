@@ -2,9 +2,12 @@
 title: ActiveRecord Mechanics
 ---
 #### ActiveRecord DB Mechanics
+* Concepts
+	* Object Relational Mapper
+	* Model class
 * ActiveRecord
 	* Library from Ruby on Rails which is the connection between the rails application and the underlying database
-	* For advanced designs, there are options other than Activerecord
+	* For advanced designs, there are options other than ActiveRecord
 	* ActiveRecord is also often used by itself, especially in Sinatra
 * Naming
 	* Model.rb file is named singular, e.g. User
@@ -14,19 +17,27 @@ title: ActiveRecord Mechanics
 	* When a query returns a bunch of records, you get a collection of instances of the class
 	* (this is classic Active Record model)
 * Attributes
-	* Rails will automagically create the methods to access each field of the record in the database
+	* Rails will automagically create the methods to access each field (column) of the record in the database
+* Datatypes supported by ActiveRecord
+	* <%= link_to_topic :ar_db_types %>
+	* <%= link_to_topic :ar_migrations %>
+* Queries and other ways to access the database
+  * <%= link_to_topic :ar_queries %>
+  * [ActiveRecord Guide for Queries](http://guides.rubyonrails.org/active_record_querying.html)
+* Validations
+	* [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
 * Different database 'servers'
 	* Sqllite - local database, no need for a server
 	* MySql - Standard industrial strength database, free
 	* Postgress - Becoming very popular with Rails community
-* Datatypes supported by ActiveRecord
-	* <%= link_to_topic :ar_db_types %>
-* Queries and other ways to access the database
-  * <%= link_to_topic :ar_queries %>
-  * [ActiveRecord Guide for QUeries](http://guides.rubyonrails.org/active_record_querying.html)
-* Validations
-	* [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
+* Rails server "Modes" (technically they are `environments`)
+	* An example: `rails server -e production`
+	* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
+		* `development` - working on your own computer, developing
+		* `test` - running tests
+		* `production` - working on Heroku for example
 * Tools and notes
 	* Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
-  * On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/ is robust)
-	* Handy Rake Info: <%= link_to_topic :rake_commands %>
+	* Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
+	* On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
+	* Handy Rails Info: <%= link_to_topic :rake_commands %>
