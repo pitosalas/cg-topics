@@ -5,6 +5,13 @@ title: ActiveRecord Mechanics
 * Concepts
 	* Object Relational Mapper
 	* Model class
+  * ORM means we have to keep the database and the Objects "in sync"
+* Rails server "Modes" (technically they are `environments`)
+	* An example: `rails server -e production`
+	* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
+		* `development` - working on your own computer, developing
+		* `test` - running tests
+		* `production` - working on Heroku for example
 * ActiveRecord
 	* Library from Ruby on Rails which is the connection between the rails application and the underlying database
 	* For advanced designs, there are options other than ActiveRecord
@@ -30,12 +37,6 @@ title: ActiveRecord Mechanics
 	* Sqllite - local database, no need for a server
 	* MySql - Standard industrial strength database, free
 	* Postgress - Becoming very popular with Rails community
-* Rails server "Modes" (technically they are `environments`)
-	* An example: `rails server -e production`
-	* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
-		* `development` - working on your own computer, developing
-		* `test` - running tests
-		* `production` - working on Heroku for example
 * Tools and notes
 	* Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
 	* Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
