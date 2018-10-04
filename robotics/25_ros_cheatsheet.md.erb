@@ -1,0 +1,71 @@
+---
+title: ROS Cheat Sheet
+---
+#### Shell Commands 
+
+<%= code_begin %>
+# bringup command (on the robot itself)
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+<%= code_end %>
+
+<%= code_begin %>
+# run teleop application
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+<%= code_end %>
+
+<%= code_begin %>
+# rostopic command to send cmd_vel to robot
+$ rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+<%= code_end %>
+
+#### ROS Shell utilities
+
+* `roscore`: Start the ROS Core program
+* `rostopic`: Work with topics
+  * `rostopic list`: list all ros topics that roscore knows about
+  * `rostopic echo`: print out any topics that are published
+  * `rostopic info`: ask ros what it knows about a certain topic
+* `rqt_graph` - display topics and subscriptions in a nice graphical format
+* `roslaunch` - tool to launch collections of ROS nodes in one command. Requires a 'package launch file'
+* `rosversion -d` - what ros version is installed?
+
+#### FAQ
+* **Linux:** Use Ubuntu 16.04 **exactly**
+* **ROS Install for Turtlebot3:** Follow the installation instructions for the [TurtleBot3](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_software_setup/#install-ubuntu-on-remote-pc-desktop-or-laptop-pc) **exactly**
+* **roscore:** You must have `roscore` running before you try to run any ros-related program
+* **Execution**: In order to execute a program/script on Linux, you must `chmod +x filename.py`
+* **shebang:** Also include the 'shebang': #!/usr/bin/env python
+
+#### Linux Commands
+* `apt` family of commands, see: https://itsfoss.com/apt-command-guide/
+
+#### Troubleshooting
+If you get an error message that Ubuntu is running Lo-res mode or ubuntu just stalls during bootup, then:
+
+* Ctrl-Alt F1  # get to terminal
+* sudo apt-get update # update the apt-get app itself
+* sudo apt-get upgrade # upgrade packages
+* sudo apt-get install -f # apt-get fix its database
+* restart
+
+#### Commands
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=stage4
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+$ rosbag record rosbag record -O stage4.bag /scan /tf /odom
+$ rosbag info stage4.bag
+$ rosparam set use_sim_time true
+$ rosbag play --clock stage4.bag
+$ rosrun map_server map_saver -f stage4
+$ rosrun map_server map_server stage4.yaml
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+<%= code_end %>
