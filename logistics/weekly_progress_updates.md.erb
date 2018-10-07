@@ -10,13 +10,13 @@ Note that this assignment isn't a replacement for a Kanban board: You can use th
 
 #### Requirements
 
-Every team will submit a PDF to LATTE every Friday with their team name, the current date, and a chart similar to this example:
+Every team will submit a PDF to LATTE every week with their team name, the current date, and a chart similar to this example:
 
 <% tbh = TableHelper.new(:normal, :bordered) %>
 <% tbh.headers("Who", "Completed", "In Progress", "Slowed/Blocked") %>
-<% tbh.row("Ari", "Run scaffolding commands to generate schema","Implement authentication with Brandeis credentials", "") %>
-<% tbh.row("Cam", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax", "") %>
-<% tbh.row("Zhengyang", "", "Set up \"my profile\" page, Implement calendar syncing", "") %>
+<% tbh.row("Chris", "Create paper prototypes","Update cohort analysis", "Mark Zuckerberg is not returning my calls.") %>
+<% tbh.row("Charlie", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax", "") %>
+<% tbh.row("Terry", "", "Set up \"my profile\" page, Implement calendar syncing", "") %>
 <%= tbh.render %>
 
 #### Suggestions
@@ -33,5 +33,5 @@ Every team will submit a PDF to LATTE every Friday with their team name, the cur
 This is a **team participation** assignment:
 
 * Only one person from each team needs to submit the PDF on LATTE each week.
-* The assignment will be due at 12:30 PM every Friday we have class, with a separate LATTE slot for each Friday.
+* The assignment will be due every week we have class, with a separate LATTE slot.
 * Every team member will receive a grade of 100 if a **good-faith effort** was put into the submission, otherwise, they will receive a grade of 0.
