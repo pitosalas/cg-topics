@@ -1,5 +1,5 @@
 ---
-title: Classes and Objects
+title: "Coding Pattern: Classes and Objects"
 ---
 #### Classes
 * Classes: How do you decide what a class is and what it is not?
@@ -8,13 +8,13 @@ title: Classes and Objects
   * Remember SRP: Single Responsibility Principle (see [Single Responsibility Principle](https://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
   * Ask yourself: "What does this class represent/do?"
 
-##### Objects
+#### Objects
 * Classes and objects are different!
 * Instance variables
 * Constructor (no destructor in Ruby!)
 * Methods: private/public
 
-##### Polymorphism
+#### Polymorphism
 * When the same interface can be used with objects of different classes
   * Example: In ruby, message #to_s can be sent to objects of different classes
   * Why is it useful?
@@ -28,8 +28,8 @@ title: Classes and Objects
   * And what about Java interfaces?
   * Consider a method like #talk in a gaming application
 
-##### Inheritance
-* inheritence: rarely is this the best solution
-* composition and delegation: a better solution
-
-<%= include_topic :duck_typing %>
+#### Inheritance and Delegation
+* This is pretty subtle!
+* Inheritence: rarely is this the best solution
+* Consider Composition and Delegation: often a better solution
+* Look at this sample: [Ruby Inheritance Demo Code](https://github.com/pitosalas/ruby_inheritance_demo)

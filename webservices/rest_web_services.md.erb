@@ -1,18 +1,17 @@
 ---
 title: REST and Web Services
 ---
-### SOA and REST and Services
+#### SOA and REST and Services
 
-#### What is a web service?
-
-* Consider this web page: [Olin College Engineering Courses]http://olin.smartcatalogiq.com/2017-18/Catalog/Courses-Credits-Hours/SCI-Science)
-* What would  [schdl.net](https://brandeis.schdl.net/term/Spring_2018) di if it wanted to have a list of courses pre-populated with a college's courses?
-  * Grab all the text `curl http://olin.smartcatalogiq.com/en/2017-18/Catalog/Courses-Credits-Hours/ENGR-Engineering > olincourses.txt`
+* Consider this web page: [Brandeis Course Catalog](http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all)
+* What would  [schdl.net](https://brandeis.schdl.net/term/Spring_2018) do if it wanted to have a list of courses pre-populated with a college's courses?
+  * Grab all the text `curl http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all > brandeiscourses.txt`
   * Write a program to parse that page and then load the results into a database.
   * This is called "scraping" and usually that would violate a copyright
 * Server can also deliver information in "machine readable" formats (such as JSON or XML)
 * The term "API" is used to describe the permissable ways that one program can call another, such as a library
 * Web Service API is when this is between servers on the internet
+* The Brandeis Course Catalog implements such an API! [Readme for Registrar's Web Service](http://registrar-prod-rhel6.unet.brandeis.edu/export/readme.html). [Actual JSON Data](http://registrar-prod-rhel6.unet.brandeis.edu/export/export.json)
 
 ##### Protocols
 * This can be done with many different standards and formats and protocols
@@ -20,7 +19,7 @@ title: REST and Web Services
   * XMLRPC: [XML-RPC](http://en.wikipedia.org/wiki/XML-RPC)
   * REST: [Representational State Transfer](http://en.wikipedia.org/wiki/Representational_state_transfer) -- our focus
 
-<%= discussion "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?" %>
+<%= discussion_box "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?" %>
 
 ##### Pause to look at the big picture
 * Servers on the internet, anywhere, can be called as objects and methods
@@ -30,7 +29,8 @@ title: REST and Web Services
 #### One level deeper
 
 ##### RPC - Remote Procedure Calls
-* Imagine a procedure (method): get_horoscope(date, sign) => String, so for example: `get_horoscope("march 22, 2015", "aries")` which returns a sentence of text (not html!)
+* Imagine a procedure (method): `get_horoscope(date, sign) => String`
+* So for example: `get_horoscope("march 22, 2015", "aries")` which returns a sentence of text (not html!)
   * I could use it to improve my calendar app to optionally display the user's horoscope
   * Or, I could use it to create a twitter "robot" to answer a tweet with my horosc
 * What would it mean to call it between two computers?
