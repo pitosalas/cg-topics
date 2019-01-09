@@ -7,27 +7,25 @@ Here's how testing of scaling will be done with loader.io. You need to make sure
 
 ##### Setup
 
-Before we can run a standardized test, we want to get each server to a known state we do the following commands directly from a browser.
+Before we can run each standardized test, we want to get each server to a known state we do the following commands directly from a browser. 
 
-* `/test/reset/all` - Delete everything and recreate testuser
-* `/test/reset/standard?tweets=4000&users=1000&follows=2000` - Load the test seed data
+* `/test/reset/standard?users=X` - Load the test seed data
 * `/test/user/testuser/tweets?count=10` - have testuser tweet 10 times, random text
 * `/test/status` - See that the state is what you expect
 
 #### Test Runs
 * During the test "someone" may try to log in by hand to make sure things are running ok
 
-
 ##### Maintain Client Load
-1. `/` - user tries to simply load up the home page (non-logged in) with 500
-1. `/` - user tries to simply load up the home page (non-logged in) with 1500
-1. `/` - user tries to simply load up the home page (non-logged in) with 2500
-1. `/user/testuser` (GET) - display test users - with 500
-1. `/user/testuser` (GET) - display test users - with 1500
-1. `/user/testuser` (GET) - display test users - with 2500
+1. `/` - user tries to simply load up the home page (non-logged in) with u = 500
+1. `/` - user tries to simply load up the home page (non-logged in) with u = 1500
+1. `/` - user tries to simply load up the home page (non-logged in) with u = 2500
+1. `/user/testuser` (GET) - display test users - with u = 500
+1. `/user/testuser` (GET) - display test users - with u = 1500
+1. `/user/testuser` (GET) - display test users - with u = 2500
 
 ##### Clients per test
-1. `/user/testuser/tweet` (POST) - have testuser create one tweet with 500
+1. `/test/user/testuser/tweet?count=5` (POST) - have testuser create one tweet with 500
 
 #### Data Collected
 * Ave response time
