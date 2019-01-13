@@ -1,16 +1,15 @@
 ---
 title: Part 2 of Sinatra Series
 ---
-### Intro
+#### Intro
 * A multi-part series of Sinatra introductory lectures
-* Previous section: <%= link_to_topic :sinatra_series_1 %>
-* Next Section: NONE YET
 
 #### Goal
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
+* Make sure you do Part 1 first!
 
 #### Initial API Spec
 * `GET /api/users/paul => JSON result
@@ -29,3 +28,32 @@ title: Part 2 of Sinatra Series
 * Create the corresponding ActiveRecord model in model/user.rb
 * Create database and migrate, both development and test databases!
 * `rake db:create db:migrate RACK_ENV=development`
+
+#### Implement GET
+* `get '/api/users/:name' do`
+* Retrieve the parameter `:name` with `params[:name]'
+* Use normal `activerecord` features to retrieve database
+* Use `.to_json` to convert result to json
+
+#### Extend TDD tests
+* Check that email, bio are also returned
+* Check that password is NOT returned
+* Add code to the User model so that password is not returned
+* And tests now pass
+ 
+#### Continue to implement
+* Implement test cases (TDD), demonstrate that they fail
+* Impement the new APIS
+* Demonstrate the test cases succeed
+* Demonstrate operation of the server using an API testing client
+  * Mac: Insomnia
+  * Chrome: Advanded Rest Client
+  * Many many others!
+* `POST /api/users"
+  * Supply HTTP attributes: name, email, password and bio
+  * Create a new user
+  * Return the right status code.
+
+
+
+
