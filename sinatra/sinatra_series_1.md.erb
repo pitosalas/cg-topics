@@ -1,0 +1,151 @@
+---
+title: Part 1 of Sinatra Series
+---
+### Intro
+* A multi-part series of Sinatra introductory lectures
+* Previous section: None
+* Next Section: <%= link_to_topic :sinatra_series_2 %>
+* Some valuable links:
+  * [Minitest/Spec](https://github.com/seattlerb/minitest)
+  * [Sinatra Testing](http://sinatrarb.com/testing.html)
+  * [Sinatra ActiveRecord Extension](https://github.com/janko-m/sinatra-activerecord)
+  * [ActiveRecord Basics Guide](https://edgeguides.rubyonrails.org/active_record_basics.html)
+  * [ActiveRecord Migration Guide](https://edgeguides.rubyonrails.org/active_record_migrations.html)
+
+#### Mission
+* Implementing a simple service in Sinatra
+* Service = Web Service = Web API
+* It will offer CRUD operations on a database
+* It will use Sinatra and ActiveRecord
+
+#### Key technologies, standards, libraries, etc.
+* Like Rails, developing Sinatra apps involves many other pioeves of technology
+* Some of it is very reminiscent of Rails
+* Some is new.
+  * Ruby
+  * Sinatra
+  * ActiveRecord
+  * Erb
+  * Postgres
+  * JSON
+  * Minitest
+
+#### Setting Up Sinatra
+* Make sure you have the following installed:
+  * rbenv 1.1+
+  * ruby 2.6
+  * git 2+
+  * postgres
+
+#### Recommended directory structure
+* Unlike Rails, Sinatra does not dictate a directory structure
+* I have found the following to work well
+* The reason it looks a tiny bit like Rails is because it accomodates ActiveRecord most easily that way
+
+<%= code_begin %>
+/config
+  database.yml
+/db
+  /migrate
+    ...migration files
+  schema.rb (generated)
+/views
+  ...erb files
+/test
+  ... test files
+/models
+  ... activerecord model files
+config.ru
+Gemfile
+app.rb
+Rakefile
+<%= code_end %>
+
+#### Key files
+<%= code_begin %>
+# Gemfile
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "activerecord"
+gem "sinatra-activerecord"
+gem "pg"
+<%= code_end %>
+
+<%= code_begin %>
+# Rakefile
+require './app'
+require 'sinatra/activerecord/rake'
+<%= code_end %>
+
+<%= code_begin %>
+# app.rb
+require 'sinatra'
+require 'byebug'
+
+get '/' do
+  "Hello Sinatra!"
+end
+<%= code_end %>
+<%= code_begin %>
+# config.ru
+require './app'
+run Sinatra::Application
+<%= code_end %>
+
+<%= code_begin %>
+# database.yml, where we declare various DB
+# settings and parameters
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: sin_series_dev
+  pool: 2
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sin_series_test
+  pool: 2
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: sin_series_prod
+  pool: 2
+  username: your_username
+  password: your_password
+<%= code_end %>
+
+#### Using Rack::Test to do TDD
+* Add `gem rack-test` to Gemfile, `bundle`
+* Notice that all your server does so far is to return `hello sinatra` when it receives a `GET` at root
+* Lets test that
+* We are going to be using Rack::Test with Minitest/Spec
+
+<%= code_begin %>
+# test/root_test.rb
+ENV['APP_ENV'] = 'test'
+
+require_relative '../app.rb'
+require 'minitest/autorun'
+require 'rack/test'
+
+include Rack::Test::Methods
+
+def app
+  Sinatra::Application
+end
+
+describe 'The HelloWorld App' do
+
+  it "says hello" do
+    get '/'
+    last_response.ok?
+    last_response.body.must_equal 'Hello Sinatra!'
+  end
+end
+<%= code_end %>
+* When you run this program (`ruby test/root_test.rb`) it will run the test and it should succeed
+* This is the basic pattern we will use for testing.
+  
