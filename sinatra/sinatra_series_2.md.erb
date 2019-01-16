@@ -1,15 +1,12 @@
 ---
-title: Part 2 of Sinatra Series
+title: "Sinatra Series 2: A Basic Service"
 ---
-#### Intro
-* A multi-part series of Sinatra introductory lectures
-
 #### Goal
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
-* Make sure you do Part 1 first!
+* Make sure first do <%= link_to_topic :sinatra_series_1 %>
 
 #### Initial API Spec
 * `GET /api/users/paul => JSON result
@@ -41,19 +38,30 @@ title: Part 2 of Sinatra Series
 * Add code to the User model so that password is not returned
 * And tests now pass
  
-#### Continue to implement
+#### Continue to implement, as follows:
 * Implement test cases (TDD), demonstrate that they fail
-* Impement the new APIS
+* Implement the new APIs
 * Demonstrate the test cases succeed
 * Demonstrate operation of the server using an API testing client
   * Mac: Insomnia
   * Chrome: Advanded Rest Client
   * Many many others!
-* `POST /api/users"
+#### Additional APIs
+* `POST /api/users`
   * Supply HTTP attributes: name, email, password and bio
   * Create a new user
   * Return the right status code.
+* `DELETE /api/users/:name`
+  * Delete user with name :name
+  * When user with valid :name, then return status OK
+  * When user with invalid :name, then return status 404
+* `POST /api/users/:name/sessions`
+  * Validate that a certain user's credentials are correct
+  * Supply parameter: :password (clear text)
+  * When supplied password is the password for user :name
+    * Returns status OK
+    * And name, email, bio and password of said user
+  * When not, returns status 404
 
-
-
-
+#### Continues
+* Next section will be assigned separately: <%= link_to_topic :sinatra_series_3 %>
