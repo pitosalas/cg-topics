@@ -1,0 +1,24 @@
+---
+title: Sinatra Technology Options
+desc: The key bits of technology and some important players in each space
+---
+#### Introduction
+* Everything is constantly changing
+* Improved sometimes, made worse sometimes
+* New alternatives are invented
+* Totally new approaches are invented
+
+#### Software Engineering
+* Key responsibility is to know the options
+* Understand the tradeoffs
+* Decide what is worth learning and what is just [cargo culting](https://skepticalagile.com/cargo-cult-agile-23340e0647ae)
+* Learn how to critically analyze your needs and the tradeoffs.
+
+#### Technology Grid
+
+<% tbh = TableHelper.new(:normal) %>
+<% tbh.headers("Subject", "Default", "Alternatives", "Comments") %>
+<% tbh.row("ORM", "ActiveRecord", "X", "Y") %>
+<% tbh.row("Database", "Postgres", "MongoDB, ", "Relational databases are the obvious choice. But could you get better performance, scalability or programmer happyness from other choices?") %>
+<%= tbh.row("Cloud Deployment", "Heroku", "Digital Ocean, AWS BeanStalk", "Heroku is the easiest to use. But Beanstalk is a little more large scale for the same price, and Digital Ocean is somewhere in the middle") %>
+<%= tbh.render %>
