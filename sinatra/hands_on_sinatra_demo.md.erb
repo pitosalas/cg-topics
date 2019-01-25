@@ -3,22 +3,36 @@ title: Hands On Sinatra Intro
 ---
 #### Hands On Demo
 
-This introductory demo script uses source code from [Source Code](https://github.com/pitosalas/sinatra_examples)
+This introductory demo script uses source code from **sinatra_first_project**, which you can find in my [sinatra_examples](https://github.com/pitosalas/sinatra_examples) repo.
 
-##### Basic case
-* Ruby 2.5
-* Create directory myapp/ in a convenient spot and `cd` to it
-* Set that diretory up as a git repo: `git init`
+##### Steps
+* Ruby 2.6
+* Directories
+  * Create directory myapp/ in a convenient spot and `cd` to it
+  * Set that directory up as a git repo: `git init`
 * Create the simplest possible sinatra app and run it
-* Add app.rb, with just get '/' "hello world"
-* Update gemfile, bundle, run ruby to demonstrate
-
-##### Add database
-* Update app.rb to full example
+  * Add app.rb, with just get '/' "hello world"
+* Create a gemfile, bundle, and run the program
 * Install Postgres: [Detailed Installation Guides](https://wiki.postgresql.org/wiki/Detailed_installation_guides)
-* Add environment/ directory
-* create migration
-* rake db:migrate
+* Update app.rb to full example
+* Add model directory, 
+  * And model.rb
+* Create config directory
+  * database.yml tells activerecord where and how the databases are
+  * Indicate the modes and the database names
+* Add db directory
+  * Take a look at schema.rb
+  * create migration in migrate folder
+  * rake db:migrate
+* Run the program
+  * Error, no erb!
+* Create views directory
+  * Add index.erb with a form in it.
+  * Form will allow user to enter data
+  * But entering a new model gives an error
+  * Now add a another view called models.erb
+* Show that we have a list of models now
+* Success!
 
 #### Screencast of Handson Demo
 
