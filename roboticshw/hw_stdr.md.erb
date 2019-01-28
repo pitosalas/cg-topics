@@ -8,7 +8,7 @@ There are multiple different simulators in ROS. This homework uses STDR. Running
 * [STDR-simulator official tutorials](http://wiki.ros.org/stdr_simulator)
 * <%= link_to_topic :ros_cheatsheet %>
 
-#### Objective and Steps to Learn:
+#### 1: Introduction to STDR
 
 1. Installation and set-up: [Setup STDR Simulator](http://wiki.ros.org/action/fullsearch/stdr_simulator/Tutorials/Set%20up%20STDR%20Simulator)
 1. Basics, read tutorials and practice to learn how to:
@@ -20,14 +20,11 @@ There are multiple different simulators in ROS. This homework uses STDR. Running
     1. Familiar with naming / topics / messages for STDR robots e.g. default topic for speed and laser sensor: ‘robot0/cmd_vel’, ‘robot0/laser_0’
     * Hint: with STDR running with a spawned robot, use ‘rostopic list’, ‘rosmsg’etc.check see what’s new there? Also examine the topics, to see who is publishing/subscribing that topic, its msg types, etc.
 1. Learn to publish and subscribe to topics either via terminal commands or running python scripts to control the STDR robots
+1. Test your knowledge of how to use the STDR simulation tool at the most basic level: launch the GUI, load maps and spawn robots. Your learning in the Advanced part will be tested in the next assignment.
 
-* Notes: the first robot got loaded into the map becomes robot0, the second becomes robot1, the third becomes robot2... And the number will keep increasing even though you delete the previous robot(s). Keep in mind, publishing/subscribing to /cmd_vel and /robot0/cmd_vel is DIFFERENT! Try to explore why and how are they different from each other. Assignment 1.2
+**Tip**: the first robot loaded into the map becomes robot0, the second becomes robot1, the third becomes robot2... And the number will keep increasing even though you delete the previous robot(s). Keep in mind, publishing/subscribing to /cmd_vel and /robot0/cmd_vel is DIFFERENT! Try to explore why and how are they different from each other.
 
-#### Part 2
-
-Test your knowledge of how to use the STDR simulation tool at the most basic level: launch the GUI, load maps and spawn robots. Your learning in the Advanced part will be tested in the next assignment.
-
-#### Submission:
+##### Deliverable:
 
 Screenshots to prove that you know how to use roslaunch to, called shotN.png
 
@@ -37,7 +34,7 @@ Screenshots to prove that you know how to use roslaunch to, called shotN.png
 1. launch the STDR server and GUI, register with this [external map](../../images/celimaze.png)
 1. Create a custom robot on the map on the GUI. Your robot should have: 3 sonars, one in the front with a range of 30 degrees, and two on the side, each with a range of 20 degrees. 
 
-*Tip: Use the launchers in the* `stdr_launchers` *folder*
+**Tip:** Use the launchers in the `stdr_launchers` *folder*
 
 It should look like this when loaded into the map:
 
@@ -45,14 +42,14 @@ It should look like this when loaded into the map:
 
 Please submit one folder named STDR containing the following files: shot1.png, shot2.png, shot3.png, shot4.png (or .jpb) 
 
-#### Part 3 - Sensors and motors
+#### 2: Sensors and motors
 
-* Preparation:
-  1. Use terminal to echo the values of the LIDAR. Submit a screenshot to prove it works.
-  2. Publish a Twist message to make the robot move/turn/stop in STDR
-  3. Create your own robot file. Your robot should contain 3 sonars, one in the front with a range of 30 degrees, and two on the side, each with a range of 20 degrees. (Please refer to Figure 1 in Assignment 1.2) Submit your xml file named as customized.xml
+##### Preparation:
+1. Use terminal to echo the values of the LIDAR. Submit a screenshot to prove it works.
+2. Publish a Twist message to make the robot move/turn/stop in STDR
+3. Create your own robot file. Your robot should contain 3 sonars, one in the front with a range of 30 degrees, and two on the side, each with a range of 20 degrees. (Please refer to Figure 1 in Assignment 1.2) Submit your xml file named as customized.xml
 
-#### Part 4: Programming Assignment:
+##### Programming Assignment:
 
 Write a python script, which should be able to achieve the following goals:
 
@@ -64,18 +61,17 @@ Write a python script, which should be able to achieve the following goals:
 
 <%= include_image "/content/topics/images/robotex2.png" %>
 
-
 (Figure 2) Initially, the robot will go straight forward (along the solid red arrow). When it detects an obstacle (e.g. wall), it will turn to the opening. In this case, there is a wall in the front, and another one on the left, so you should turn right (as showed by the dotted red line. The robot will keep following the wall through another turn, always turning right. Eventually, the robot will walk in a square in the given situation.
 
-#### NOTE
+##### NOTE
 
 1. You should start turning when you detect an obstacle within 0.2 meter, and maintain 0.2 meter away from the wall when you walk along it.
 2. The final test will be EITHER clockwise OR counterclockwise. So please do NOT hard-code your turning. Submission:
 
-#### Submission:
+##### Deliverable
 
 Please submit a folder named SM including the following files:
 
-• screenshot of LIDAR values(Preparation.1)
-• customized.xml (Preparation.3)
-• the src folder of your package
+* screenshot of LIDAR values(Preparation.1)
+* customized.xml (Preparation.3)
+* the src folder of your package
