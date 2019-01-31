@@ -1,13 +1,17 @@
 ---
 title: ActiveRecord Mechanics
 ---
+* References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
+
 #### ActiveRecord DB Mechanics
 * Concepts
 	* Object Relational Mapper
 	* Model class
   * ORM means we have to keep the database and the Objects "in sync"
-* Rails server "Modes" (technically they are `environments`)
-	* An example: `rails server -e production`
+* Rails/Sinatra server "modes" (technically they are `environments`)
+	* `rails server -e production` (for Rails)
+	* `set :environment, :development (for Sinatra)
+	* Actually these modes are ActiveRecord modes!
 	* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
 		* `development` - working on your own computer, developing
 		* `test` - running tests
@@ -25,12 +29,25 @@ title: ActiveRecord Mechanics
 	* (this is classic Active Record model)
 * Attributes
 	* Rails will automagically create the methods to access each field (column) of the record in the database
+* Two copies!
+	*	Instance of the class, in memory
+	* Corresponding record in database
+	* One or the other or both may exist!
+	* Need to save, need to query, etc.
 * Datatypes supported by ActiveRecord
 	* <%= link_to_topic :ar_db_types %>
 	* <%= link_to_topic :ar_migrations %>
+* CRUD: Reading and Writing Data
+	* NB: memory vs. persisted copy of the object
+	* Create: create record and persist it
+	* New: create model object without persisting it
 * Queries and other ways to access the database
   * <%= link_to_topic :ar_queries %>
   * [ActiveRecord Guide for Queries](http://guides.rubyonrails.org/active_record_querying.html)
+* Updating
+	* Retrieve the object (.where etc), modify the attribute, and save it
+* Deleting
+	* Retrieve the object and .destroy (also class method .destroy_all)
 * Validations
 	* [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
 * Different database 'servers'

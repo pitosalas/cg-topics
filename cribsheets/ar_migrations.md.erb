@@ -13,6 +13,7 @@ desc: Summary - why they exist, how they work
 * Does this mean that migration is bad?
 	* It's not good nor bad: it's unavoidable
 	* It's much more painful when you are 'in production'
+* Use Rake db:create_migratoin
 
 #### Example
 * Migrations usually include the standard types
@@ -41,3 +42,9 @@ end
 * `rails db:migrate` - applies the migrations to the existing databases
 * `rails db:rollback` - rolls the most recent migration back (un-applies)
 * `rails db:reset` - drop the database and set it up again
+
+#### Rake/Sinatra/Activerecord commands
+* `rake db:create_migration` - creates a new migration. Look it up for how to parameters work
+* `rake db:migrate` - applies the migrations to the existing databases
+* `rake db:rollback` - rolls the most recent migration back (un-applies)
+* `rake db:reset` - drop the database and set it up again
