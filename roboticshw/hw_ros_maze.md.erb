@@ -21,25 +21,30 @@ The wall-following algorithm can be the basis of the solution, but it is not the
 
 Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. **Remember:** the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
 
-<%= include_image "/content/topics/images/pa2mazediagram.png" %>
-
-1. The source code, including a readme explaining what it is, how to run it and any other reflections
-1. A video of the real robot running the maze successfully. THis can be totally rough, unedited, with crazy laughing in the background. We just want to see that it worked.
+<%= callout("Maze!", " There is a maze already set up next to the lab for you to practice on. You can change it if you want, but it doesnt need to be too complex.") %> 
 
 #### Process
 
 This is a pair programming assignment. Students should self select into teams of two students. It's fine to talk to everyone else, as well as google for ideas. Just  as long as the code is written and fully understood by both members of the team. You will submit one solution for each team (see below.) 
 
 #### What to submit
+The submission to Latte:
 
-The submission to Latte will require:
-
-* The source code, as nicely structured and designed as possible.
-* A video of the real Turtlebot3 running the maze successfully
+1. The source code, including a readme explaining what it is, how to run it and any other reflections
+1. A video of the real robot running the maze successfully. THis can be totally rough, unedited, with crazy laughing in the background. We just want to see that it worked.
 
 #### Background Info
 
-##### Right hand Rule##### 
+From previous semesters here are some practical tips:
+
+* Wall following is tricky because depending on how you do it, it might oscilate back and forth. Read up about PID below, it has some good but advanced ideas.
+* Note that as you are following a wall, you need to notice when the wall suddenly disappears and at that point you have to turn to keep following it.
+* Conversely the robot might be in the middle where all walls are far and as far from it, in which case you have to just drive until you get to the wall and then start following it
+* Feel free to google for wall following robot and be inspired by what you read. Just don't copy the code, please.
+* Here are some solutions that might be helpful, but please do not limit to these.
+<%= include_image "/content/topics/images/pa2samplesolutions.png" %>
+
+##### Right hand Rule
 
 [https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) - For this assignment, you can choose either one from Right-Hand Rule (which means you will turn to the rightmost route whenever possible) and Left-hand Rule (which means you will turn left whenever possible). Here are some examples for what you should expect when using Right-hand Rule:
 
@@ -47,15 +52,9 @@ The submission to Latte will require:
 
 ##### Working with LaserScan data
 
-Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data] (http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
+Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
 
 An infinite LIDAR value in STDR is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
-
-##### Some ideas
-
-Here are some solutions that might be helpful, but please do not limit to these.
-
-<%= include_image "/content/topics/images/pa2samplesolutions.png" %>
 
 #####  PID Control
 

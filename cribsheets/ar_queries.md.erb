@@ -5,6 +5,7 @@ title: Rails Activerecord Queries
 
 <%= ruby_begin %>
 # Simple queries return collections of instances
+	Article.all
 	Article.find(3) # id=3
 	Article.w­her­e(a­uthor: 'admin')
 	Article.where("likes_count = ?", value_for_count)
@@ -17,5 +18,8 @@ title: Rails Activerecord Queries
 
 # Working with associated Models
 article = Article.comments.where(author: 'georg')
+
+# What is the sql for a certain query?
+Department.sample.people.samle.to_sql
 
 <%= ruby_end %>
