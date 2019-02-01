@@ -40,6 +40,10 @@ title: "Sinatra Series: Introduction to SOA"
 * Describe the "API" of the service
 * Usually an HTTP request and response
 * Long running services should be implemented as multiple calls
+  * One to initiate
+  * One to request results if any
+  * So as not to "block" the caller
+  * But then, what happens if the service has crashed or is hung?
 * Synchronous calls need to be very fast
 * Another excellent way to communicate is with a queue
 

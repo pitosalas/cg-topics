@@ -63,5 +63,20 @@ title: "Sinatra Series 2: A Basic Service"
     * And name, email, bio and password of said user
   * When not, returns status 404
 
+#### Exercises
+* Respond to the following warmup questions:
+    * Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many?
+    * Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
+    * In what way is a relational database similar or reminiscent of a spreadsheet?
+    * Please list two concepts from the reading that you don't understand, and if you feel you understand it well, then the two most important ideas of this reading.
+
+Write the following additional APIs (which are not in the sample code) and add the test cases as well!
+
+* `PUT /api/users/:id`
+    * Supply parameters name, email, password and bio (one or more of them)
+    * Return OK or 404 depending on whether the id is valid
+    * Update the stated parameters
+    * In the test case, verify that the update actually occurred.
+
 #### Continues
 * Next section will be assigned separately: <%= link_to_topic :sinatra_series_3 %>
