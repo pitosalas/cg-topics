@@ -2,6 +2,7 @@
 title: "Sinatra Series: Introduction to SOA"
 ---
 * Make sure first have done <%= link_to_topic :sinatra_series_2 %>
+* Make sure you also understand <%= link_to_topic :www %> this well
 
 #### Goal
 * Service Oriented Architecture
@@ -30,7 +31,7 @@ title: "Sinatra Series: Introduction to SOA"
 * Flexibility and Interoperability
   * No service can know or depend on how another service is implemented
   * Services will interoperate without worrying about the language or platform
-  * Or it could be reimplemented in another language or another platform 
+  * Or it could be reimplemented in another language or another platform
 * Reuse
   * A service that is well designed can be reused in different contexts
   * There are services that different applications or products will require
@@ -46,5 +47,13 @@ title: "Sinatra Series: Introduction to SOA"
   * But then, what happens if the service has crashed or is hung?
 * Synchronous calls need to be very fast
 * Another excellent way to communicate is with a queue
+* Sinatra is especially suited for SOA services because it is lightweight
 
-<%= include_topic :www %>
+#### Discussion Questions
+
+* How would you recognize a system that is designed in an Service Oriented Architecture?
+* What are some of the advantages and disadvantages of this approach?
+* What is in an http response? And what would be somewhat different about the http response produced from an SOA system?
+
+
+
