@@ -9,7 +9,7 @@ title: "Sinatra Series: Case Study"
 
 #### Non SOA Approach to scaling
 
-<img src="/content/topics/images/soa1.png" align="right" hspace="10">
+<img src="/content/topics/images/soa1.png" widht="350" hspace="10">
 
 * A Web Server (aka App Server) runs your code. 
 * That server is connected by network to a database server.
@@ -34,24 +34,106 @@ title: "Sinatra Series: Case Study"
 * Here are the basics: you should be writing this app as you read
 * It will be helfpul with NanoTwitter
 
-#### User Model
-* Columns
+#### Overview
+* Users can follow other users
+* A user can follow 0 or more users, and be followed by zero or more users
+* A user cannot follow itself
+
+#### Useful links
+* [Ruby Toolbox](https://www.ruby-toolbox.com/categories)
+* [Minitest Spec](https://github.com/seattlerb/minitest)
+* [Ruby Faker](https://github.com/stympy/faker)
+
+#### Tables
+
+* `users` Columns
   * id: integer
   * name: string
   * email: string
   * bio: string
 
-#### Follow Model
-* Columns
+* `follows` Columns
   * id: integer
   * integer: user_id
   * integer: followed_user_id
-* This is ultra confusing, who is following whom! 
+* This is ultra confusing, who is following whom!
 
-#### Basic tests
+#### Models
+
+* `User` model
+  * Will contain some intricate has_manys
+  * Along these lines
+
+<%= ruby_begin %>
+class User < ActiveRecord::Base
+  has_many :follows
+  has_many :followed_users, ...
+  has_many :followings, ...
+  has_many :followers ...
+end
+<%= ruby_end %>
+
+* `Follow` model
+  * Is a lot simpler, here is one way to do it
+
+<%= ruby_begin %>
+class Follow < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :followed_user, class_name: "User"
+end
+<%= ruby_end %>
+
+#### Testing
+
+##### General
 * Because the follow/follower/following is very confusing
 * Write tests to see that they work as you want
-* Create the test database with, e.g., `rake rake db:drop db:migrate db:seed  RACK_ENV=test`
+* Note that you need to ensure that the RACK_ENV environment variable is set to test
+* Create the test database with, e.g., `rake db:drop db:migrate db:seed RACK_ENV=test`
+* Invoke pry with the environment variable set: `RACK_ENV=test pry` (note `fish shell` is a little different)
+* Invoke pry with sinatra loaded: `pry -e "require_relative `./app,rb`"
+* Use `before do` to set up "test fixtures"
+
+##### Examples of additional tests to write
+* If user a follows user b, 
+  * then user b is a follower of a
+  * also user a is a followed_user of user b
+* if user a is followed by b,c and d
+  * then user a has three followers
+  * also user b is a follower of a
+  * user a is a followed_user if user a
+* If user a attempts to follow user a
+  * then an error occurs
+
+##### Sample tests
+* A very basic test to see if it works at all:
+
+<%= ruby_begin %>
+describe 'associations' do
+  before do
+    @p = User.create(name: "Pito")
+    @cc = User.create(name: "Chris")
+    @f = Follow.create(user: @p, followed_user_id: @cc.id)
+  end
+  it "can tell how many people are following me" do
+    @cc.followings.length.must_equal 1
+  end
+end
+<%= ruby_end %>
+
+#### Paritioning into services
+
+
+#### Deliverable
+* A zipped up sinatra app with tests according to the above suggestions
+* A readme explaining what is going on
+
+
+
+
+
+
+
 
 
 
