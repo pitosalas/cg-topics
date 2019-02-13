@@ -18,7 +18,7 @@ title: "Sinatra Series: Case Study"
 
 ##### Scaling
 
-<img src="/content/topics/images/soa3.png" width="350">
+<img src="/content/topics/images/soa3.png" width="350" hspace="10">
 
 * As load becomes greater, capacity is added where it is needed
 * A "load balancer" sends traffic to different servers
@@ -34,6 +34,12 @@ title: "Sinatra Series: Case Study"
 * Here are the basics: you should be writing this app as you read
 * It will be helfpul with NanoTwitter
 
+#### Features (long term)
+* User Profiles and Fllowing: basic profile information, user name, password, and who is following whom
+* Feeds: Each user can make feed entries, which are collected into their feed
+* Votes: Any user can vote up or down a feed entry belonging to another user
+* Notifications: A user can request to be notified when someone votes on their entry, or when someone they follow makes another post.
+
 #### Overview
 * Users can follow other users
 * A user can follow 0 or more users, and be followed by zero or more users
@@ -44,21 +50,34 @@ title: "Sinatra Series: Case Study"
 * [Minitest Spec](https://github.com/seattlerb/minitest)
 * [Ruby Faker](https://github.com/stympy/faker)
 
-#### Tables
+#### Tables, in their initial form
 
-* `users` Columns
+* `users` table - Columns
   * id: integer
   * name: string
   * email: string
   * bio: string
 
-* `follows` Columns
+* `follows` table - columns
   * id: integer
-  * integer: user_id
-  * integer: followed_user_id
-* This is ultra confusing, who is following whom!
+  * user_id: integer
+  * followed_user_id: integer
 
-#### Models
+* `feed` table - columns
+  * id: integer
+  * user_id: user who owns the feed
+
+* `feed_entry` table - columns
+  * id: integer
+  * feed_id: feed to whom this entry belongs
+  * body: text field contained
+
+* `vote` table - columns
+  * id: integer
+  * entry_id: integer 
+  * vote: string (up or down, room for expansion)
+
+#### Models (not all are detailed here)
 
 * `User` model
   * Will contain some intricate has_manys
@@ -74,7 +93,7 @@ end
 <%= ruby_end %>
 
 * `Follow` model
-  * Is a lot simpler, here is one way to do it
+* Is a lot simpler structurally but really confusing remantically!. Here is one way to do it
 
 <%= ruby_begin %>
 class Follow < ActiveRecord::Base
@@ -121,10 +140,38 @@ describe 'associations' do
 end
 <%= ruby_end %>
 
-#### Paritioning into services
+### Paritioning into services
+* At a high level this service is pretty simple
+* There are just a few tables... but the semantics are tricky
+* But when we implement it properly we will touch on many of the representative challenges
+* As well as database/activerecord capabilitiers: caches, one-to-many, many-to-many, single-table-inheritance etc.
 
+#### How to think about services
+* Fundamentally this is a designn challenge
+* There are different ways of attacking this
+* You can think of these questions:
+  * Which information is read often but updated much more rarely? This will help determine which models can be in a different service
+  * Which is written and updated frequently? You will want to possibly put the updating in a seperate service so that the main threads are not delayed
+  * Which joins will occur the most often? You will want to keep those tables together in the same service.
+  * Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
+
+#### Start here
+* It is natural to begin with a monolythic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
+
+<img src="/content/topics/images/soa4.png" width="175" hspace="10" align="center">
+
+* Some or all the models could be broken off into services, one model per service, or more likely, several models in one service.
+
+<img src="/content/topics/images/soa5.png" width="275" hspace="10" align="center">
+
+* This is just a start. We will build on this scheme and use this in Nanotwitter
 
 #### Deliverable
+* Build out the five tables and models
+* Do not design or implement the routing blocks or views
+* Do write unit tests, folllowing my example to see that your models and associations work
+* This is an individual assignment not a team assignment.
+* Include a readme explaining what you did and any interesting insights or obstacles you hit.
 * A zipped up sinatra app with tests according to the above suggestions
 * A readme explaining what is going on
 
