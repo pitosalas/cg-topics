@@ -1,0 +1,33 @@
+---
+title: Sinatra Series 5 - Service and API Desingn
+---
+* Lets look deeper at SOA design
+* Samples, strategies for partitioning
+* Launching new services, upgrading existing ones
+* Designing the API itself
+
+#### Partitioning into Services
+* Difficult question and doesn't have one correct solution
+* Usual advice is to build it as a monolity and then "peel off" services
+* Read: [How to break a Monolity into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+* Read [Why you shouldnt start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
+
+#### Four Different Strategies to consider
+* Partition based on iteration speed
+* Partition based on logical function
+* Partition based on read/write frequency
+* Partition based on Joins
+
+##### Iteration speed
+* Identify parts of the app which have stabalized and are not changing a lot
+* Versus the ones that are still being molded into final shape
+* It has to do also with whether they are at the "core"
+* For example with SocialApp: are the feeds and feed entries pretty much a given?
+* Would it make sense to partition them out into a separate service?
+
+#### More to come
+
+### Warmup questions
+* In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
+* Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interace (API) design of the service. What is the relationship with HTTP and the URI?
+* Can you come up with a nanoTwitter API which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
