@@ -1,5 +1,5 @@
 ---
-title: Sinatra Series 5 - Service and API Desingn
+title: Sinatra Series 5 - Service and API Design
 ---
 * Lets look deeper at SOA design
 * Samples, strategies for partitioning
@@ -9,7 +9,7 @@ title: Sinatra Series 5 - Service and API Desingn
 #### Partitioning into Services
 * Difficult question and doesn't have one correct solution
 * Usual advice is to build it as a monolity and then "peel off" services
-* Read: [How to break a Monolity into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+* Read: [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
 * Read [Why you shouldnt start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
 
 #### Four Different Strategies to consider
@@ -24,6 +24,94 @@ title: Sinatra Series 5 - Service and API Desingn
 * It has to do also with whether they are at the "core"
 * For example with SocialApp: are the feeds and feed entries pretty much a given?
 * Would it make sense to partition them out into a separate service?
+
+##### Logical Function
+* Inutitively partitioning based on logical function makes perfect sense
+* Especially if the logical function is distinct and separate from other parts of the product
+* In the social reader, the processes which follow RSS feeds and import them into feed items are very separate
+* This service would periodically access all feed URLs (of blogs etc that a user is following) to see if new items had been posted and if so import them and build the feed items.
+* If two users are reading the same feed (blog etc) this service would only need to import it once.
+* Similarly, there will be functionality to send out notifications. This is a natural and classic kind of service.
+
+##### Read/Write frequencies
+* Directly out of the Basebal example we worked on
+* Data which is updated often and read much less often
+* Or, that is updated rarely but read extremely often
+* When the data is in different conventional databases this can benefit data consistency
+* Having one r/w database and a cluster of read only databases is a classic configuration
+* But using totally different kinds of storage, for example memory based and disk based
+* Or local versus cloud based
+
+##### Join Frequency
+* Tables that need to be joined most likely should stay in the same database and managed by the same service.
+* But most tables are joined to another table at one point or another
+* Which is a good reason to go slowly when deciding to split data between databases
+* You might put table X which joins often with both table A and B, with table A because the joins with A occur much more often.
+* Sometimes it makes sense to *denormalize*, that is, store the same data in more than one place. That is duplicate table X in two databases.
+* This introduces the risk of data inconsistency which would introduce its own complexities
+
+#### Versioning
+
+* Both external APIs and internal services should be kept as stable as possible
+* The reliance on an API is a kind of *coupling* which may bring about the very dependency which we are trying to guard against.
+* Service APIs should be *versioned* so that service A which accesses service X can specify that it is using version 1 of the API. 
+* When service X updates the API they can maintain both version 1 and 2 until service X is updated to Version 2.
+
+##### Version numbers
+* The system as a whole must decide on a version numbering scheme
+* A useful new standard for this is known as Semver, [Semantic Versioning](https://semver.org/)
+* Within the codebase each service will include it's current latest version
+* Importantly, each client of the service will include the version of the service they are assuming
+
+##### What can be different?
+* New APIs can be added, old ones can be deprecated
+* APIs can get new arguments, or have the order of arguments, or the datatype change
+* The way arguments are supplied can change
+* The semantic meaning of the API can change
+* The format or datatype of the result can change
+
+##### Caveat
+* Changing the API can be very disruptive to clients
+* It should be done very rarely
+* A *non-breaking change* is one that a client doesn't notice
+* A *Backward compatible change* is a change that allows a new client to still safely use an old client
+* A *Shim* or *Stub* is an API that is kept around to support old clients, but just calls the new API
+
+##### Version in the URI
+* Both `http://www.nanotwitter/api/12/user/1` and `http://www.nanotwitter/user/1?ver=12` are reasonable approaches
+* Using the URI query string has the advantage of making it optional
+* The convention is then that without the version, the service uses the latest
+
+##### Version in the *Accept:* header of the HTTP request
+* A new *mime-type* is defined for the new version of the api
+* For example `Accept: application/edu.brandeis.nantotwitter-v2+json`
+* This would indicate that the request will accept results that are json and also application specific
+* But this technique is not recommended
+* While APIs in general operate over HTTP, there are different ways of structuring them
+
+##### URIs and interface design
+* The starting point in contemporary applications is often `REST` structured URIs, e.g.
+  * GET /users
+  * GET /user/1
+  * POST /user/1/tweet
+  * PUT /tweet/12/text
+* The concept is that the URI refers to a *representation* of some *resource*
+* The resource would be user/1 which is a specific bit of information in the server
+* Stored in an unknownn format
+* `GET /user/1` requests, for example, an `html` or `json` representation of that user information
+
+##### [HTTP responses](https://httpstatuses.com/)
+* The HTTP standard defines a large collection of standard status codes
+* These are used in any HTTP scenario, including APIs
+* The most standard are
+  * `200 OK`  means that the request succeeded and the data or action requested has been done
+  * `404 Not Found` means that the URI was not valid or recognized
+* [The list is long](https://httpstatuses.com/) and use is not super consistent
+
+##### HTTP Caching
+
+
+
 
 #### More to come
 
