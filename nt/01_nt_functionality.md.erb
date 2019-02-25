@@ -21,11 +21,11 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Can follow and unfollow other registered users
 * Can tweet
 * Can see the flow of the last n tweets by the users that they have followed
-* Can see their `APItoken`. (You can define what it looks like. Don't worry about securit for now.)
 
 ##### Non-logged in users:
 
-* See the flow of the last n tweets by any user
+* Will not see anything on the home page (e.g. nt.com/)
+* Will see a specific user's tweets on their page (e.g. nt.com/user/12)
 
 ##### Tweets:
 
@@ -44,7 +44,7 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Tags
 
 #### nT Web Services (REST) API
-<%= callout("PREFIX", " All paths start with the prefix /api/v1/{apitoken}/...") %>
+<%= callout("URL", " APIs all start with /api/v1") %>
 
 * GET /tweets/23 - return tweet with id 23
 * GET /users/23 - return user information for user 23
@@ -56,7 +56,6 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 ##### Notes
 * You need to figure out the other ones.
 * The objective is that someone can write, for example, an iPhone nanoTwitter client that would use this API to implement the functionality.
-* Distinguish between the API calls that need a logged in user vs. those that are public. Those that are public would not require the user's `apitoken`
 
 ##### JSON
 * API calls work with Values as JSON, as example:
@@ -75,12 +74,11 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 
 ##### Routes
 * Non-logged-in root page (/)
-  * List of the most recent 50 tweets from any user, each with link to tweeter's page
   * Login link
+  * Sign up link
 * Logged-in root page (/)
-  * Two tabs:
-    * "Users I follow": List of most recent 50 tweets of users you follow + your own tweets
-    * "All users": List of the most 50 tweets on the platform + your own tweets
+  * "Users I follow": List of most recent 50 tweets of users you follow + your own tweets
+  * "All users": List of the most 50 tweets on the platform + your own tweets
   * Ability to tweet
   * Mini-profile
 * Specific user's page (/user/1234)
@@ -95,8 +93,6 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
   * Display user login prompt, and check for correct password (/login)
   * Logout (/logout)
   * Display Search interface (/search)
-* `/user/testuser` - specifically load "testusers" user page (analogous to /user/1234)
-* `/tweet/testuseruser?tweets=n` (POST) - have testuser create n "faker" tweets
 
 <%= include_topic :nt_test_interface %>
 
