@@ -101,19 +101,29 @@ title: Sinatra Series 5 - Service and API Design
 * `GET /user/1` requests, for example, an `html` or `json` representation of that user information
 
 ##### [HTTP responses](https://httpstatuses.com/)
+* Recall a response consists of a status code, a body and a set of headers
 * The HTTP standard defines a large collection of standard status codes
 * These are used in any HTTP scenario, including APIs
 * The most standard are
   * `200 OK`  means that the request succeeded and the data or action requested has been done
   * `404 Not Found` means that the URI was not valid or recognized
 * [The list is long](https://httpstatuses.com/) and use is not super consistent
+* The body of the response normally comes as <%= link_to_topic :json %>, and is totally application dependent.
 
 ##### HTTP Caching
+* One of the advantages of REST structured APIs is that they benefit from systen and network services
+* There are proxys and CDNs that will cache HTTP responses when conditions allow
+* The context is this:
+  * the client has received a resource. The user clicks on a link for the same resource. Is it safe to just give them the one we have or should be go back to the server to ash for it?
+  * These HTTP headers may be present on the request or on the response. Also remember that there's the `HEAD` http verb which can query for information about the resource without receiving the resource itself. This is especially good for very large resources which rarely change.
+* Here are various HTTP headers involved:
+  * `Cache-Control: public` Various settings that tell caching proxies what can and cannot be done
+  * `ETag: 737060cd8c284d8af7ad3082f209582d` A unique key that corresponds to the specific "version" of a response. In other words, if the version on the server has the same etag as the client has, then the response can be truncated to just the header. Or the server can request the current etag of the resource and choose not to ask for the body because it already hasd it.
+  * `Expires: Wed, 02 Sep 2009 08:37:12 GMT` The content returned by the server is considered valid up to that date/time. It doesn't need to request it again until then.
+  * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it agaim.
 
+#### Handling Joins
 
-
-
-#### More to come
 
 ### Warmup questions
 * In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.

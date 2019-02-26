@@ -12,7 +12,7 @@ desc: The key bits of technology and some important players in each space
 * Decide what is worth learning and what is just [cargo culting](https://skepticalagile.com/cargo-cult-agile-23340e0647ae)
 * Learn how to critically analyze your needs and the tradeoffs.
 
-#### Technology Grid
+##### Technology Grid
 
 <% tbh = TableHelper.new(:normal) %>
 <% tbh.headers("Subject", "Default", "Alternatives", "Comments") %>
@@ -20,6 +20,6 @@ desc: The key bits of technology and some important players in each space
 <% tbh.row("Database", "Postgres", "Amazon DynamoDB, MongoDB, ", "Relational databases are the obvious choice. But could you get better performance, scalability or programmer happyness from other choices?") %>
 <% tbh.row("Cloud Deployment", "Heroku", "Digital Ocean, AWS BeanStalk", "Heroku is the easiest to use. But Beanstalk is a little more large scale for the same price, and Digital Ocean is somewhere in the middle") %>
 <% tbh.row("Continuos Testing and Deployment", "CodeShip", "Github Actions", "There are lots of choices and many of them are pretty similar. The one new entrant that is pretty interesting is Github actions") %>
-<% tbh.row("Logging and Error Tracking", "Rails Built In", "Rollbar, Lograge, Sentry, Airbrake", "Complex systems rely heavily on log and error tracking, for troubleshooting, notification, and billing.") %>
+<% tbh.row("Logging and Error Tracking", "Rails Built In", "DataDog, Rollbar, Lograge, Sentry, Airbrake", "Complex systems rely heavily on log and error tracking, for troubleshooting, notification, and billing.") %>
 <% tbh.row("Background Processing", "SideKiq", "SuckerPunch, Delayed::Job", "There are options and tradeoffs. Here's a good article: https://scoutapp.com/blog/which-ruby-background-job-framework-is-right-for-you") %>
 <%= tbh.render %>
