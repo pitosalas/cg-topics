@@ -1,12 +1,18 @@
 ---
 title: Sinatra Series 5 - Service and API Design
 ---
+#### Deliverables
+* Please answer these warmup questions:
+  * In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
+  * Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interace (API) design of the service. What is the relationship with HTTP and the URI?
+  * Can you come up with a nanoTwitter Service (API) which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
+  * Please indicate any concepts ideas that you feel you dont understand, if any.
+
+#### Partitioning into Services
 * Lets look deeper at SOA design
 * Samples, strategies for partitioning
 * Launching new services, upgrading existing ones
 * Designing the API itself
-
-#### Partitioning into Services
 * Difficult question and doesn't have one correct solution
 * Usual advice is to build it as a monolity and then "peel off" services
 * Read: [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
@@ -122,10 +128,35 @@ title: Sinatra Series 5 - Service and API Design
   * `Expires: Wed, 02 Sep 2009 08:37:12 GMT` The content returned by the server is considered valid up to that date/time. It doesn't need to request it again until then.
   * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it agaim.
 
-#### Handling Joins
+##### Handling Joins
+* As an example:
+  * it would be useful if an API that retuns a Tweet also return information from the user record as well
+  * This way just one API call would be needed to retrieve information that is displayed in the Twitter timeline
+  * If this were made into a separate service, then that service would need access to both Tweet and User records
+  * In this "tweet" service, in order to really remove coupling it is tempting to give TweetService control of those two dataases. It would do the join (efficiently) and clients of the service would get great peformance.
+  * However other parts of Twitter also need to access the Users. Do we give that job to the TweetService too?
+  * That would make no sense!
+  * This scenario brings us to the question of where joins should happen
+  * How do you decide?
+* Here are the principles:
+  * If joins are going to be common, or perhaps, even needed, it suggests that the tables should be together in the database
+  * This is because the join logic when performed by the database is far far faster than anything you could do in the application server.
+  * There are techniques to overcome this guideline but they are complicated and are very situation dependent.
+  * Sometimes considering a non-REST approach such as GraphQL makes sense.
 
+##### Evolving an API
+* Remember that an API exists to help the client
+  * It is not at all unusual to add an API specifically to make a client operation more convenient or faster
+  * APIs may be great places to handle errors, formatting, caching etc.
+  * When you are designing an API for an actual client it is useful to start simple and add (YAGNI)
+  * The simplest is just to create APIs for single models at a time, and have the client construct results that use info from more than one model.
+* As the client evolves, new requirements may become apparent
+  * This model can be expanded by having APIs which include an explicit list of items or records, e.g.:
+  `/APIV1/users?id=1,12,33,1,22`
+  * This does not help with Joins. For example in the scenario above, how would the combined tweet/user API work?
+  * When those needs arise it is time to create a new API which returns specific combined results on a case by case basis, for example `/APIV1/tweets?id=22,32,55,2&includeuserinfo=name
 
-### Warmup questions
-* In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
-* Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interace (API) design of the service. What is the relationship with HTTP and the URI?
-* Can you come up with a nanoTwitter API which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
+##### Summary
+* Partitioning an application into services is a serious design challenge
+* Its YAGNI vs. Performance
+* The general advice is to start with a monolyth and break into services only when it's clearly required
