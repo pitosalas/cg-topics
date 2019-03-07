@@ -19,10 +19,10 @@ desc: The key bits of technology and some important players in each space
 <% tbh.row("ORM", "ActiveRecord", "Sequel, Mongoid", "Of the others, I think Sequel is the most interesting alternative. If you are using Nosql then you would be required to use a different ORM.") %>
 <% tbh.row("Database", "Postgres", "Amazon DynamoDB, MongoDB, ", "Relational databases are the obvious choice. But could you get better performance, scalability or programmer happyness from other choices?") %>
 <% tbh.row("Cloud Deployment", "Heroku", "Digital Ocean, AWS BeanStalk", "Heroku is the easiest to use. But Beanstalk is a little more large scale for the same price, and Digital Ocean is somewhere in the middle") %>
-<% tbh.row("Continuos Testing and Deployment", "CodeShip", "Github Actions", "There are lots of choices and many of them are pretty similar. The one new entrant that is pretty interesting is Github actions") %>
+<% tbh.row("Continuous Testing and Deployment", "CodeShip", "Github Actions", "There are lots of choices and many of them are pretty similar. The one new entrant that is pretty interesting is Github actions") %>
 <% tbh.row("Logging and Error Tracking", "Rails Built In", "DataDog, Rollbar, Lograge, Sentry, Airbrake", "Complex systems rely heavily on log and error tracking, for troubleshooting, notification, and billing.") %>
 <% tbh.row("Background Processing", "SideKiq", "SuckerPunch, Delayed::Job", "There are options and tradeoffs. Here's a good article: https://scoutapp.com/blog/which-ruby-background-job-framework-is-right-for-you") %>
+<% tbh.row("Caching", "Redis", "CachedD", "These are the two main ones") %>
+<% tbh.row("UI", "HTML", "Bootstream, React, Elm", "I recommend keeping it simple with just HTML plus some css library like Bootstrap or others") %>
+<% tbh.row("Web Framework", "Sinatra", "Padrino, Hanami, Rails, many more", "Good article: https://naturaily.com/blog/8-frameworks-ruby-not-rails") %>
 <%= tbh.render %>
-
-* add chaching
-* add ui 
