@@ -2,20 +2,30 @@
 title: Redis
 ---
 #### Caching with "Redis"
-* Analogous to other network scale caching solutions (e.g. cached)
-* Typical structure is a key-value store
-* A nosql database. But in memory!
-* Ruby bindings [`gem redis-objects`](https://github.com/nateware/redis-objects)
+* Advantages
+  * Blindingly fast
+  * Many data types: list, set, sorted set and hashes
+  * Atomic operations
+  * Has many uses: caching, message queue, publish subscribe, sharing application global state
+* An instance of "network caching"
+  * Evolved from the original `cached`
+  * Typical structure is a key-value store
+  * A nosql database. But in memory!
+  * Ruby bindings [`gem redis`](https://github.com/redis/redis-rb)
 * Wait, where's the data actually stored?
   * A redis host, accessible by tcp/ip: dns name + port number
-  * You can run it
+  * You can run it: `$ redis-server`
   * Heroku can run it for you with [Redis to go](https://devcenter.heroku.com/articles/redistogo). Nano size is free!
-  * In all cases, if the host dies, the data is gone
+  * In all cases, if the host dies, the data is gone (not 100% true)
 * It has some interesting characteristics
   * ATOMIC operations, e.g. "INCR" operation
   * keys that expire (TTL)
   * Supports other values: lists, sets, hashes
   * And many many more
+* Heroku
+  * Can provide a basic free instance of it
+  * Remember it has a URL and can be shared across applications
+  * `heroku redis:cli`
 
 ##### Redis Concepts
 * [Play with Redis](http://try.redis.io)
@@ -27,6 +37,7 @@ title: Redis
   * Or compoounds: lists, sets, sorted sets, hashes
 * Note we play with commands (a kind of a REPL)
 * But you will be doing API calls
+
 <%= code_begin %>
 SET key value                   # store a singular key and give it a value
 GET key                         # retrieve its value
@@ -46,7 +57,6 @@ HSET hashname hashkey value     # Add entry to hash
 HHET hashname hashkey           # Retrieve a value from hash
 <%= code_end %>
 * Ahem: That is not all: [Redis Commands](https://redis.io/commands)
-
 
 
 #### Putting the it together
