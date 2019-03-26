@@ -24,6 +24,9 @@ title: Scaling by Database Caching
 * Ask database system to analyze SQL queries that are slow
   * e.g. `heroku pg:outliers`
   * Discover that the social graph access was very slow
+* Discussion
+  * Have you started using redis yet in your projects?
+  * What do your redis keys look like?
 
 ##### Solution: Caching
 * Use Network scale caching (Redis) to store and share across servers
@@ -50,4 +53,4 @@ Redis::put("key", "value")
 Redis::get("gey")
 Redis::increment("key")
 Redis::decrement("key")
-<%= code_end
+<%= code_end %>
