@@ -27,30 +27,22 @@ title: Scaling by Database Caching
 * Discussion
   * Have you started using redis yet in your projects?
   * What do your redis keys look like?
+  * How do you compute your cache key?
 
-##### Solution: Caching
+##### DB: Caching
 * Use Network scale caching (Redis) to store and share across servers
-* `count:followers:u = number`
-* `count:following:u = number`
+  * `count:followers:u = number`
+  * `count:following:u = number`
 * How to maintain this number?
 * How important is it that it is correct?
 * What might make it incorrect?
 * Add APIs in your code to maintain the cache
-  * get_follower_count(user)
-  * get_following_count(user)
-  * incr_follower_count(user)
-  * decr_follower_count(user)
-  * incr_following_count(user)
-  * decr_following_count(user)
-* What class has those methods?
-* Where are they invoked?
+  * get_follower_count(user), get_following_count(user), incr_follower_count(user), decr_follower_count(user), incr_following_count(user), decr_following_count(user)
+  * What class has those methods?
+  * Where are they invoked?
+* Result of queries?
+* Result of search?
+* Creating the cache key
+* What do you store in the cache?
 
 <%= callout("Teams", " Discuss and design how you would incorporate this idea in your specific nanoTwitter") %>
-
-##### What Redis Interface looks like (more or less)
-<%= code_begin %>
-Redis::put("key", "value")
-Redis::get("gey")
-Redis::increment("key")
-Redis::decrement("key")
-<%= code_end %>
