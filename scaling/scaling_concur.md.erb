@@ -29,27 +29,38 @@ title: Scaling with Concurrency
 
 <%= callout("Each Team", " Plan to use concurrency?") %>
 
-#### Processes and Threads
+#### Processes and Threads - General
 * Key Operating System facility for concurrency
 * Processes ("forking")
   * Use more memory (new VM for each process)
     * for the data + the program + everything
     * "Copy on write"
+  * If parent dies before children, they can become "zombie" processes
   * Context switching very expensive
   * Communication expensive (IPC or file system)
   * Slower to create and destroy
   * Less hard to program and debug (not easy!)
 * Threads
   * Use less memory (Shared memory space)
+  * All threads die when oricess dies
   * Context switching cheap
   * Communication cheap (via queues and shared memory)
   * Fast to create and destroy
   * Harder to program and debug
+
+#### Ruby-related issues
 * Ruby and Pyton "GIL"
   * Global interpretter lock
   * Essentially they become single threaded
   * Except for asynchrony provded by OS via IO operations
   * "It's complicated"
+* Ruby libraries that use processes
+  * Resque - background processing framework
+  * Unicordn - http server 
+* Ruby Libraries that use Threads
+  * Sidekiq - background processing framework
+  * Puma - http server
+  * Thin - http server
 
 #### Thread-safe
 * A property of software, or a routine or a class
