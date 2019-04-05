@@ -25,7 +25,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
   * If needed deletes all users, tweets, follows
   * Recreates TestUser
   * Example: `test/reset/all`
-* POST /test/reset?users=u
+* POST /test/reset/standard?users=u
   * Deletes all users, tweets and follows
   * Recreate TestUser
   * Imports data from standard seed data, see: <%= link_to_topic :nt_seed_data %>
@@ -33,7 +33,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * Including all the related follows (i.e. both users need to be present)
     * And all the related tweets
   * Example: `/test/reset/standard?users=100&tweets=100
-* POST /test/user/{u}/tweets?count=n
+* GET /test/user/{u}/tweets?count=n
   * {u} can be the user id of some user, or the keyword testuser
   * n is how many randomly generated tweets are submitted on that users behalf
 * GET /test/status
