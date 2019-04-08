@@ -7,25 +7,32 @@ Here's how testing of scaling will be done with loader.io. You need to make sure
 
 ##### Setup
 
-Before we can run each standardized test, we want to get each server to a known state we do the following commands directly from a browser. 
+Before we can run each standardized test, we want to get each server to a known state we do the following commands directly from a browser. We want to make sure that the complete seed data is loaded. We will ask you to show us this before the test. The numbers are approximately:
 
-* `/test/reset/standard?users=X` - Load the test seed data
-* `/test/user/testuser/tweets?count=10` - have testuser tweet 10 times, random text
-* `/test/status` - See that the state is what you expect
+* x users
+* y tweets
+* z relations
 
-#### Test Runs
+#### Required urls **(all have to be GET)**
+* /?user_id=n
+* /search?search=word
+* /test/user/tweet?user_id=x&tweet_count=y
+
+#### Test Scripts
 * During the test "someone" may try to log in by hand to make sure things are running ok
+* We will use the [Payload File](https://support.loader.io/article/17-payload-files) feature of loader.io. You will set it up as follows:
 
-##### Maintain Client Load
-1. `/` - user tries to simply load up the home page (non-logged in) with u = 500
-1. `/` - user tries to simply load up the home page (non-logged in) with u = 1500
-1. `/` - user tries to simply load up the home page (non-logged in) with u = 2500
-1. `/user/testuser` (GET) - display test users - with u = 500
-1. `/user/testuser` (GET) - display test users - with u = 1500
-1. `/user/testuser` (GET) - display test users - with u = 2500
+1. Rotate through 5 different user-ids, including testuser
+1. Rotate through 10 different urls, as follows:
+  1. 7 times `/?user_id=n`
+  1. 2 times `/test/tweet?user_id=x&count=y
+  1. 1 time `/search?search=z`
 
-##### Clients per test
-1. `/test/user/testuser/tweet?count=5` (POST) - have testuser create one tweet with 500
+#### Test runs - using maintain client load
+1. Run payload with u=250
+1. Run payload with u=500
+1. Run payload with u=1000
+1. Run payload with u=2000
 
 #### Data Collected
 * Ave response time

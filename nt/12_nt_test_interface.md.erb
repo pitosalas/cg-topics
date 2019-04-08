@@ -17,7 +17,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * Url to reset and load the standard seed is: /test/reset/standard?tweets=n&users=u&follows=u
 * Dataset is the standard <%= link_to_topic :nt_seed_data %>
 * If necessary, you may modify the creation dates of tweets, but all the other data should be intact
-* Note that in our tests, n will be 7000 or less
+* Our tests will require the complete set of records
 
 ##### Here are the URLs of the test interface
 
@@ -33,11 +33,15 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * Including all the related follows (i.e. both users need to be present)
     * And all the related tweets
   * Example: `/test/reset/standard?users=100&tweets=100
-* GET /test/user/{u}/tweets?count=n
-  * {u} can be the user id of some user, or the keyword testuser
+* GET /test/tweet?user_id=x&count=y
+  * {x} can be the user id of some user, or the keyword testuser
   * n is how many randomly generated tweets are submitted on that users behalf
+  * Returns a page that just says "OK"
 * GET /test/status
   * One page "report":
     * How many users, follows, and tweets are there
     * What is the TestUser's id
   * Example: `/test/status`
+* GET /?user_id=x
+  * When user_id is added to the normal root url, NanoTwitter will quietly and automatically log in that user.
+
