@@ -20,13 +20,16 @@ Before we can run each standardized test, we want to get each server to a known 
 
 #### Test Scripts
 * During the test "someone" may try to log in by hand to make sure things are running ok
-* We will use the [Payload File](https://support.loader.io/article/17-payload-files) feature of loader.io. You will set it up as follows:
+* We will use the [Payload File](https://support.loader.io/article/17-payload-files) feature of loader.io
+* I will provide one. Here's an [example payload file](https://gist.githubusercontent.com/pitosalas/033456da51039066f911fca0fd6f01a0/raw/e3007da7c81caefc7a1222edc4cd1bb60cf8c1b0/gistfile1.txt)
 
 1. Rotate through 5 different user-ids, including testuser
 1. Rotate through 10 different urls, as follows:
   1. 7 times `/?user_id=n`
   1. 2 times `/test/tweet?user_id=x&count=y
   1. 1 time `/search?search=z`
+
+
 
 #### Test runs - using maintain client load
 1. Run payload with u=250
