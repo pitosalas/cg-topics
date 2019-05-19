@@ -1,0 +1,71 @@
+---
+title: "5: Actions"
+desc: What are ROS actions and how do they relate to topics and services?
+---
+#### Review
+* Nodes: all code written for ROS is a Node
+  * A node is like a process
+  * You run it with, e.g. `$ rosrun`
+* Topics: the fundamental way nodes communicate with each other
+  * Topic naames
+  * Publishers and Subscribers
+  * Message with data types
+* Services: Synchronous communication
+  * Client/Server
+  * Ask and answer
+  * Like a function call
+
+#### Actions
+* For long running activities, for example, navigate to somewhere
+  * Activity is initiated
+  * Activity announces that it has terminated (successfully or not.)
+  * From time to time it reports its progress
+* When defined as an action, this corresponds to three submessages
+  * Part1: the goal (initiate the request)
+  * Part2: the result (report completion)
+  * Part3: the action is running (status update)
+* See [Github Code](http://www.github.com/campusrover/rosbook)
+
+
+#### Creating an Action
+* Analogous to topics and services
+* File now has three sections corresponding to the goal, result and feedback
+* Some tricky updates to CMakeList.txt and package.xml
+* `cm` for Catkin_make
+
+#### Action Server
+* Handles the three submessages (see simple_action_server.py)
+  1. Initialize node
+  1. Declare that we want to serve action requests and start it
+  1. Wait for callback to be called.
+* Run the server
+  1. Notice that there are now 5 topics generated from that one Timer.action file
+  1. Notice that the messages associated with the actions also have had more information atached to them
+
+#### Action Client
+* Node which will now ask request an action
+  1. Initialize node
+  1. Declare that we want to be an action client, and start it
+  1. Begin the ball rolling by sending the goal to the action server
+  1. Now block and wait for the action to complete.
+* Run the client
+  1. Notice that it displays the result of the fake action
+
+#### Getting fancier - Server
+* Callback of the sever handles all three parts
+* First called when the goal is sent
+  1. Check whether the goal is reasonable and abort if not.
+  1. Begin performing the action.
+  1. Reguarly check whether preemption was requested
+  1. Whenever desired, send a feedback message
+  1. When done send completion message.
+
+#### Getting fancier -- Client
+* Create node
+* Connect to action server
+* Send it the goal, while declaring handler for feedback calls
+* Wait for completion or abort.
+
+
+
+

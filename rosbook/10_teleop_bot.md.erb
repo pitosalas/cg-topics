@@ -1,0 +1,162 @@
+---
+title: "8: Teleop-bot"
+desc: Designing and implementing a slightly more complicated ROS program
+---
+#### Intro
+
+* Teleop is a common term for "remote controlling" a robot
+* It's a perfectly respectable way go, and there are plenty of real world examples which are teleoperated
+* Campus Rover will be autonomous, meaning there's no person overtly streering it
+* That does not preclude, for example, having a person give commands to the robot, like where to go
+* CampusRobot will have a small tablet interface mounted on it to give it commands
+* That tablet will be directly wired to the robot (as it is mounted!)
+* Notice that with a slightly more capable computer (processor, memory and storage) directly mounted on the robot it is perfectly possible to run roscore directly on the robot
+
+#### Twist Messages
+
+* Recall that Topics are the names of the publish/subscribe "channels" and the content that is sent and received is a Message.
+* `/cmd_vel` messages tell a mobile robots 'base' to move in all the possible directions
+* Depending on the hardware and type of robot, it has up to 6 degrees of freedom to move
+* Our robots can move forward (and backward) and can spin (left or right) in place, or both at the same time. They cannot go sideways, up or down or pitch (tip forward) or yaw (tip sideways). Drones can go in all 6
+* The message type sent over `/cmd_vel` is `Twist`
+  * which incldues two fields, `linear` and `angular`.
+  * each of which has an `x`, `y`, and `z`.
+* Notice that Twist is generic and general, but depending on what kind of robot is receiving it, there are limits in which direction it will be told to move.
+* Notice also that Twist is about motion, not about location
+
+#### Structure of an "idiomatic" ROS program
+
+* ROS is distributed, with nodes talking to each other
+* Nodes should be small and have one job
+* Make nodes small and simple
+* Use a `.launch` file to launch all the nodes at once.
+
+#### Teleop-bot
+
+* Node 1 - Keyboard Driver
+  * listens to keystrokes, interprets them
+  * Publishes the 'semantic' commands
+* Node 2
+  * Subscribes to 'semantic' commands
+  * Publishes `cmd_vel`
+
+#### Keyboard Driver
+* You can find key_publisher.py in the src/rosbook directory. If it's not there try doing a git pull.
+* You will need two Terminals (plus roscore running on roscore1.cs.brandeis.edu)
+  * `rosrun roscore key_publisher.py`
+  * `rostopic echo keys`
+* Verify that the topic is being published any time a key is pressed
+  * All that is happening is that the letter is being sent as the content of the message
+  * If the letter is not printable then you won't be able to see it
+* Questions to ponder:
+  * Could you write a graphical interface to control the robot given what you know?
+  * What features could you add to the basic key_publisher.rb?
+
+#### Motion Generator
+
+* You can find keys_to_twist.py in the src/rosbook directory
+* Run it with key_publisher from before and then monitor both topics with two separate instances of rostopic echo. This will require two terminals!
+* Questions to ponder:
+  * How are you going to test it?
+  * Does it work?
+  * How long will the robot move in the requested direction as the result of a single cmd_vel?
+
+#### Generating a stream of cmd_vel
+
+* We will update the program to generate a stream of cmd_vels, around 10 per second
+* You can find keys_to_twist_using_rate.py in the src/rosbook directory. If it is not there try doing a git pull.
+* Run it and verify that it works
+  * How would you verify that?
+* Try running `$ rqt_plot` to view the information in a graph
+* Plot `cmd_vel/angular/z` and `cmd_vel/linear/x`
+
+#### Where we are
+
+* Two nodes:
+  * key_publisher: waits for user input and publishes the keys typed on topic `keys`
+  * keys_to_twist_using_rate: subscribes to `keys` and generates cmd_vels based on decode
+* Comments
+  * `cmd_vel` is published at a constant steady stream
+  * Meaning of the keys is part of `keys_to_twist_using_rate.py` which to me is not a great Design
+  * Better would to keep the translation of a key to an intended motion inside key_publisher
+  * And instead of publishing the letters, publish something with semantic meaning, e.g.
+    * stop = cmd_stop
+    * turn left = cmd_turnleft
+    * turn right = cmd_turnright
+    * forward = cmd_forward
+    * backward = cmd_backward
+  * The encoding could be part of a class.
+
+#### Parameters
+
+* Being a distributed operating system means brings configuration hassles
+* Just about any code that is written will have some parameters, e.g. "how far from the wall should I get before trying to turn?"
+* We know that hardwiring constants inside code is a very bad idea (at least for any kind of production code.)
+* Usual way of providing parameters is either command line arguments or Environment variables
+* Parameters are a ROS specific way, well adapted to the distributed nature
+  
+##### Parameter Server
+
+* Parameter server is 'built into' roscore and is a simple 'key/value' store
+* Private and Public Parameters
+  * Private: node name is automatically pre-pended to parameter name to avoid name conflicts
+  * Public: parameter name "as-is"
+
+##### Command Line
+
+* It is possible to set paramters directly from the command line
+
+<%= code_begin %>
+$ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
+<%= code_end %>
+
+* In this example we are running a script and at the same time assigning values to two private parameters
+* They will be known as `keys_to_twist/linear_scale` and `keys_to_twist/angular_scale` with values of 0.5 and 0.4 respectively
+* The values can be accessed from the code as follows:
+
+<%= code_begin %>
+rospy.has_param('~linear_scale') => returns True or false
+rospy.get_param('~linear_scale') => returns 0.5
+<%= code_end %>
+
+##### Notes
+
+* The `~` tilde preceding the parameter name means that the parameter is "private", which means that it is prepanded with the node's name
+* Oddly enough, the `-` hyphen preceding the paratmer in the command line argument, means the same thing!
+* A default value can be supplied
+
+#### Velocity Ramps
+
+* When a robot with mass is commanded to change speed or direction  too suddenly
+* Cant defy physics so you can see misbehavior: skidding, slipping, shuddering, even damaging the motor
+* So we overrule the human's command and just change speed gradually and up to a maximum
+* Take a close look at keys_to_twist_with_ramps.py
+* Make sure you understand how the ramp works
+
+#### Using Gazebo to test
+
+* Gazebo is a simulator which can simulate physical things with 3d rendering and realistic physics
+* In our case we configure it to simularte a tb3 and reasonable surroundings.
+* Note that I have not gotten gazebo to run with any stability on VMWare
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+<%= code_end %>
+* If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
+* Dont forget that you need to have roscore running as well
+
+#### Using RViz
+
+* Unlike Gazebo, RViz is NOT a simulator
+* RViz == ROS Visualization
+* RViz visualizes the data coming through topics onto a 3D graphical world
+* Note that in ROS, whenever a set of coordinates are given (x,y,z) they always are accompanied by a "frame of reference" (or a *tf*)
+* The *odometry* TF has an origin where the robot was powered on (or where the odometry was most recently reset)
+
+* You run rviz as follows. It comes up with a fake robot and the landscape
+<%= code_begin %>
+roslaunch turtlebot3_fake turtlebot3_fake.launch
+<%= code_end %>
+* You can zoom and rotate and move around that world
+
+
+

@@ -1,0 +1,86 @@
+---
+title: "7: Wander Bot"
+desc: Simulating behavior in simulation
+---
+<%= callout("NOTE!", " All the book instructions make reference to \"turtlebot_xxx\". We will be using \"turtlebot3_xxx\"") %>
+
+#### Intro
+* We will modify the instructions from the book so follow along here!
+* Code will be part of `rosbook` package which we have been using: [Github for Rosbook](https://github.com/campusrover/rosbook)
+* Setup the simulation packages for Turtlebot3 by following [11. Simulation](http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). In particular make sure you add the turtlebot3_simulations package, as follows:
+
+<%= code_begin %>
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ cd ~/catkin_ws && catkin_make
+<%= code_end %>
+
+#### Red Light/Green Light
+
+* Pretty trivial, toe in the water
+  * Drive forward for a bit
+  * Stop.
+  * Repeat
+* Look at red_light_green_light.py
+* Run code:
+
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+$ ./red_light_green_light.py
+<%= code_end %>
+
+#### Reading sensor data
+* TB3 has a lidar
+* Lidar returns and array of 360 doubles (and some other stuff)
+* 0 degrees is straight ahead
+* Each element has distance to nearest obstacle (in M)
+* Compute bearing (in degrees) of element i as follows:
+
+<%= code_begin %>
+bearing = msg.angle_min + i * msg.angle_max / len(msg.ranges)
+<%= code_end %>
+
+* To compute the distance to the obstacle immediately ahead (0 degrees)
+  * `msg.ranges[0]`
+* To compute the nearest obstacle:
+  * nearest_obstacle = min(msg.ranges)
+* But of course those won't be very useful (why?)
+
+* Experiment by running laser_scan.py program and understanding it
+* Experiment by seeing how the scan data changes based on where the simulated robot is
+
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+$ rostopic echo scan
+<%= code_end %>
+
+#### Wander Bot
+* Program will perform a pretty stupid trick
+* It will drive in a straight line for some seconds
+* Then it will spin in place for some more seconds
+* If it is too near an obstacle then it will spin in place
+* It turns out this is a pretty terrible algorithm
+* It gets stuck all the time
+* Take a look at the annotaed code: [Wander Bot Code](https://github.com/campusrover/rosbook/blob/master/scripts/wander.py)
+
+* rospy.Time.now()
+  * returns a time structure with
+  * fields secs and nscecs
+  * Comparison operator is defined
+  * rospy.Duration(x) is an interval, in seconds
+
+* Now run the program
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot_world.launch
+$ chmod +x  wander.py
+$ ./wander.py
+<%= code_end %>
+
+#### Summary
+* Logic in a .py program can estabish behaviors
+* All .py programs become nodes (almost)
+* Nodes can publish and subscribe, and do both at the same Time
+* Need to know the exact names of the topics
+* Simulator is used for an idealized context for testing
+
+

@@ -1,0 +1,109 @@
+---
+title: "12: Follow Bot"
+desc: "Adding perception to our robot algorithms"
+---
+#### Introduction
+* How can the robot follow lines on the ground?
+    * Acquire images
+    * Filter the images
+    * Steer the robot
+
+#### Acquiring Images
+* Message: `sensor_msgs/Image`
+* Run Gazebo to simulate a robot with a camera
+* Since the TB3 Waffle has a camera, we will use those models, and then run gazebo
+
+<%= code_begin %>
+$ export TURTLEBOT3_MODEL="waffle"
+$ export TB3_MODEL="waffle"
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+$ rostopic list | grep /camera
+<%= code_end %>
+
+* Note all the camera related topics being published
+* The image itself can be found upder `/camera/rgb/image_raw`
+* `../compressed` is good for sending the images over wifi
+* `../theora` applies even more compression
+
+##### Look at image
+
+* Lets visualize the image
+* Choose from each of the topics relating to the camera
+* Move the robot in Gazebo and watch the picture change
+
+<%= code_begin %>
+$ rqt_image_view
+<%= code_end %>
+
+##### Run the simplest program
+
+* `$ /follower.py`
+* We can see the new  node subscibing to the topic:
+
+<%= code_begin %>
+$ rosrun
+$ rosnode info follower
+--------------------------------------------------------------------------------
+Node [/follower]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /camera/rgb/image_raw [sensor_msgs/Image]
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /follower/get_loggers
+ * /follower/set_logger_level
+
+
+contacting node http://10.0.0.95:39103/ ...
+Pid: 17179
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /clock
+    * to: /gazebo (http://10.0.0.95:42857/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /camera/rgb/image_raw
+    * to: /gazebo (http://10.0.0.95:42857/)
+    * direction: inbound
+    * transport: TCPROS
+
+<%= code_end %>
+* First section is information determined from roscore about what /follower is doing
+* Second section is information directly from the /follower node about it's connections
+    * We see that it is publishing to /rosout
+    * And is subscribed to /clock (from gazebo)
+    * And /camera/rgb/image_raw (from gazebo too)
+* Lets find out the frame rate (simulated by gazebo)
+<%= code_begin %>
+rostopic hz /camera/rgb/image_raw
+subscribed to [/camera/rgb/image_raw]
+WARNING: may be using simulated time
+average rate: 10.204
+	min: 0.019s max: 0.131s std dev: 0.03037s window: 10
+<%= code_end %>
+* So, we are receiving about 10 images per second
+* Which is why my computer is so slow :)
+
+#### Race Course
+<%= callout("NB", " We diverge from the book a little. Note different roslaunch") %>
+
+* Load a new world into gazebo
+<%= code_begin %>
+roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
+<%= code_end %>
+
+* You will see in gazebo, a TB3 Waffle on a little racetrack
+* Here's the track, and the view from the camera:
+
+<%= include_image "/content/topics/images/follow_camera.png" %>
+<%= include_image "/content/topics/images/follow_track.png" %>
+
+* Our goal is to detect the line using OpenCV, so we can then actually follow it
+* Technique will be simplistic: filter a block of rows by image color and drive the robot towards the center of the pixels that pass the filte
+* Note that this will fail in many normal cases!
