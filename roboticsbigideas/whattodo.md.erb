@@ -1,0 +1,24 @@
+---
+title: How do Robots Know What To Do?
+---
+<%= postit_begin "How do Robots Know What To Do?" %>
+<%= ul_begin %>
+<%= list_items(
+  "Big idea: Autonomous robot behaviors are mechanisms constructed from carefully designed algorithms and representations.", 
+  "Underlying technology: event-based architectures and hierarchically structured, parallel state machines.", 
+  "Learning goal, students will understand:") %>
+  <%= ul_begin %>
+  <%= list_items(
+      "the role of state management, concurrency and a distributed architecture in Robot behavior.",
+      "students will be able to explain the distributed OS principles of ROS", 
+      "Some other examples of control schemes, in particular layered control") %>
+  <%= ul_end %>
+<%= list_items("Skill goals: Students will be able to") %>
+  <%= ul_begin %>
+  <%= list_items(
+        "Write a ROS node; write several interoperating ROS nodes",
+        "Understand the code for the CR state manager",
+        "Think about desired behavior in a robot and how to turn them into states and transitions") %>
+  <%= ul_end %>
+<%= ul_end %>
+<%= postit_end %>
