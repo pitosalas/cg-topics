@@ -1,14 +1,23 @@
 ---
 title: How do robots orient themselves in space?
 ---
-##### How do robots orient themselves in space?
-
-1. **Big idea:** The importance of coordinate systems
-1. **Underlying technologies:**
-   1. Math
-1. **Learning goal: Students will understand**
-   1. That there are different coordinate systems
-   1. The standard data representations for positions and poses
-   1. The transformations betwen coordinate systems
-1. **Skill goals: Students will be able to:**
+<%= postit_begin "How do robots orient themselves in space?" %>
+<%= ul(
+  list_items("Big idea: Coordiante systems, local, global and relative",
+    "Underlying technologies:",
+    ul(
+      list_items("Mathematics",
+        "Frames of Reference",
+        "Quaternions",
+        "Euler Coordinates")),
+    "Learning goal: Students will understand:",
+    ul(
+      list_items("That there are different coordinate systems",
+        "Standard representations for positions and poses",
+        "APIs for managing and transforming those")),
+    "Skill goals: Students will be able to:",
+    ul(
+      list_items("Work with quaternions"))))
+%>
+<%= postit_end %>
 
