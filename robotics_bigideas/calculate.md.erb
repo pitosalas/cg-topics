@@ -1,14 +1,18 @@
 ---
-title: How Do We Calculate the Quantities Needed To Make A Robot Function?
+title: How are the complex computations handled?
 ---
-
-##### How Do We Calculate the Quantities Needed To Make A Robot Function?
-1. **Big idea:** Geometry, trigonometry, and linear algebra are the mathematical underpinnings of much of robotics.
-1. **Underlying technologies:**
-   1. Tekkotsu’s angular arithmetic classes and fmat matrix/vector manipulation package.
-1. **Learning goal: Students will understand**
-   1. Frames of reference, angular and vector arithmetic, homogeneous coordinates, coordinate transformation matrices
-   1. how these concepts are applied in robotics.
-1. **Skill goals: Students will be able to:**
-   1. Students will be able to solve simple kinematics problems using Tekkotsu’s built-in kinematics solvers and matrix/vector classes.
-
+<%= postit_begin "How are the complex computations handled?" %>
+<%= ul(
+  list_items("Big idea: Geometry, trigonometry, and linear algebra are the mathematical underpinnings of much of robotics.",
+    "Underlying technologies:",
+    ul(
+      list_items("Tekkotsu’s angular arithmetic classes and fmat matrix/vector manipulation package")),
+    "Learning goal: Students will understand:",
+    ul(
+      list_items("Frames of reference, angular and vector arithmetic, homogeneous coordinates, coordinate transformation matrices",
+      "How these concepts are applied in robotics.")),
+    "Skill goals: Students will be able to:",
+    ul(
+      list_items("Students will be able to solve simple kinematics problems using Tekkotsu’s built-in kinematics solvers and matrix/vector classes"))))
+%>
+<%= postit_end %>
