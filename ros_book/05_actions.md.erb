@@ -5,9 +5,9 @@ desc: What are ROS actions and how do they relate to topics and services?
 #### Review
 * Nodes: all code written for ROS is a Node
   * A node is like a process
-  * You run it with, e.g. `$ rosrun`
+  * You run it with, e.g. `$ rosrun` or (later) `$ roslaunch`
 * Topics: the fundamental way nodes communicate with each other
-  * Topic naames
+  * Topic names
   * Publishers and Subscribers
   * Message with data types
 * Services: Synchronous communication
@@ -24,7 +24,7 @@ desc: What are ROS actions and how do they relate to topics and services?
   * Part1: the goal (initiate the request)
   * Part2: the result (report completion)
   * Part3: the action is running (status update)
-* See [Github Code](http://www.github.com/campusrover/rosbook)
+* See [Github Code](http://www.github.com/campusrover/prrexamples)
 
 
 #### Creating an Action
@@ -39,8 +39,8 @@ desc: What are ROS actions and how do they relate to topics and services?
   1. Declare that we want to serve action requests and start it
   1. Wait for callback to be called.
 * Run the server
-  1. Notice that there are now 5 topics generated from that one Timer.action file
-  1. Notice that the messages associated with the actions also have had more information atached to them
+  1. Notice that there are now 5 topics generated from that one Timer.action file. (`rosmsg list`)
+  1. Notice that the messages associated with the actions also have had more information attached to them
 
 #### Action Client
 * Node which will now ask request an action

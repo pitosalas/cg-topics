@@ -17,7 +17,7 @@ desc: "What are ROS services, and why do we need them? How are they different?"
 ##### Defining the inputs and outputs
 * Analogous to defining the "method signature" of the service
 * Very reminiscent of how Topic messages were defined
-* You will find this example in the [rosbook github package](https://github.com/campusrover/rosbook)
+* You will find this example in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 
 ##### Example: WordCount.srv
 * WordCount.srv shows that it will take one input (string) and give one output (uint32)
@@ -35,9 +35,9 @@ desc: "What are ROS services, and why do we need them? How are they different?"
 
 ##### Checking if it worked
 * Run the service with a standard rosrun command
-* Remember our package is called `rosbook`
+* Remember our package is called `prrexamples`
 * Remember that you must have `$ roscore` running!
-* `rosrun rosbook service_server.py`
+* `rosrun prrexamples service_server.py`
 * You can tell that it worked:
   1. It shows up in `$ rosservice list`
   1. It shows up in `$ rosservice info word_count`
