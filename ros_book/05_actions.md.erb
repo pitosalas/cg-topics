@@ -2,6 +2,9 @@
 title: "5: Actions"
 desc: What are ROS actions and how do they relate to topics and services?
 ---
+
+### PRR Chapter 5: Actions
+
 #### Review
 * Nodes: all code written for ROS is a Node
   * A node is like a process
@@ -33,7 +36,7 @@ desc: What are ROS actions and how do they relate to topics and services?
 * Some tricky updates to CMakeList.txt and package.xml
 * `cm` for Catkin_make
 
-#### Action Server
+#### Action Server (simple_action_server.py)
 * Handles the three submessages (see simple_action_server.py)
   1. Initialize node
   1. Declare that we want to serve action requests and start it
@@ -42,7 +45,7 @@ desc: What are ROS actions and how do they relate to topics and services?
   1. Notice that there are now 5 topics generated from that one Timer.action file. (`rosmsg list`)
   1. Notice that the messages associated with the actions also have had more information attached to them
 
-#### Action Client
+#### Action Client (simple_action_client.py)
 * Node which will now ask request an action
   1. Initialize node
   1. Declare that we want to be an action client, and start it
@@ -51,7 +54,7 @@ desc: What are ROS actions and how do they relate to topics and services?
 * Run the client
   1. Notice that it displays the result of the fake action
 
-#### Getting fancier - Server
+#### Getting fancier - (fancy_action_server.py)
 * Callback of the sever handles all three parts
 * First called when the goal is sent
   1. Check whether the goal is reasonable and abort if not.
@@ -60,7 +63,7 @@ desc: What are ROS actions and how do they relate to topics and services?
   1. Whenever desired, send a feedback message
   1. When done send completion message.
 
-#### Getting fancier -- Client
+#### Getting fancier - (fancy_action_client.py)
 * Create node
 * Connect to action server
 * Send it the goal, while declaring handler for feedback calls
