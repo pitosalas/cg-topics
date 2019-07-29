@@ -1,0 +1,70 @@
+---
+title: Campus Rover
+---
+#### Grand Vision
+
+<blockquote class="pretty">Campus Rover will be able to deliver a small package between any two offices on the Brandeis campus, as long as there is an accessible route between the two offices. It will be able to navigate autonomously between the offices, down corridors, and between floors, going outdoors if needed.</blockquote>
+
+#### Reality
+
+This is a very difficult goal which we will not reach in the first, second or third semester of this course. Some of the very difficult parts of this are:
+
+* Building a complete map of the campus that includes all the offices, obstacles and so on.
+* Dealing with non-fixed obstacles, like, people
+* Navigating outdoors, where there are no barriers to guide navigation
+* Navigating outdoors, where distance measuring sensors (like lasers, ultrasonic or IR) all have a hard time due to sunlight
+* Going up and down between floors - using elevators?
+
+And those are just the ones we can think of so far. Most likely those are the easy difficult parts.
+
+### CampusRover Mark2
+"Draft Campus Rover Mark 2 Deliverable: “CR Mark 2 is an indoor capable robot, equipped with a speaker, microphone camera, lidar and arm. A user will be able to use voice to command it to retrieve a food item from the pantry and deliver it to a certain room. It will use the arm to press buttons on an elevator to go from floor to floor.”
+
+#### Campus Rover Mark 2: Specifics
+
+* Platform
+  * Built either on TB2 platform or on Mutant platform
+  * Updated tablet user interface
+* Speech, Voice
+  * Able to accept spoken commands and respond with voice using either onboard google home or microphone plus speaker
+  * Basic command set will be, for example, 
+    * "stop what you are doing"
+    * "return to base"
+    * "what are you doing?"
+    * "What commands do you accept?"
+    * "where do you think you're going?"
+* State Management
+  * Updated internal state manager, to support voice and gesture commands
+  * A pair of hardware eyes that will do funny things based on state
+  * Will recognize faces of the people on the team and greet them with its voice and eyes
+* Built in Arm
+  * Will move up and down to show excitement or to greet
+  * Will travel up and down and be able to punch the buttons.
+* Computer Vision
+  * Will recognize faces of the people on the team and greet them with its voice and eyes
+  * Recognizes door numbers visually to know office numbers
+  * Will recognize certain basic hand gestures to do "visual teleop"
+  * Consider placing the camera on the arm
+* Localization
+  * Built in map of our test track as well as Volen 1 and 2
+  * Map will contain coordinates of the elevator(s) including where the buttons are.
+  * Uses fiducials to localize on the map (including where and what floor)
+  * Detect what floor it is actually on via fiducial or CV
+* Payload
+  * A container or platform or shelf to hold the food (payload)
+  * A way (could be human) to place and remove payload from the shelf
+  
+
+### CampusRover Mark1:
+* Package delivery robot for first floor of Volen only."
+
+#### CampusRover Mark 1: Specifics
+
+* Able to move effectively on all interior surfaces of Volen's first floor.
+* A tablet or other screen mounted on top provides a UI
+* Built in map of the floor and the offices
+* Uses Fiducials to orient itself
+* Has knowledge of the room numbers of all rooms on Volen's first floor
+* Commands issued on the tablet to navigate to the designated room
+* Built on the Turtlebot2
+* Some kind of enclosure to make it look cool

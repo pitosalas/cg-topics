@@ -1,0 +1,19 @@
+---
+title: PID Control
+---
+
+* PID stands for "proportional", "integrated", "derivitive"
+* It is used to make a feedback loop stable
+<%= discussion_box "Consider the feedback loop when following a wall"%>
+* PID is a well known technique for smoothing out control, to avoid oscilation. 
+* Applying PID control to a feedback algoritm will make it more robust and perform more consistently. 
+* PID control is a smoothing function which helps you better follow a wall without too much fluctuation.
+* It will make the robot turn at a higher speed when you are too away from the designated route (too far or too close to the wall), and turn at a slower speed when you are close to it.
+
+Here are some great links. You will be amazed at how well this works.
+
+* [MIT Pid Video](https://www.youtube.com/watch?v=4Y7zG48uHRo)
+* [ROS PID Package ](http://wiki.ros.org/pid)
+* [PID Control from Lets Make Robots](https://www.robotshop.com/letsmakerobots/pid-control)
+
+<%= include_image "/content/topics/images/pa2pidgraph.png" %>
