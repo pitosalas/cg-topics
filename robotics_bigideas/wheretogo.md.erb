@@ -2,13 +2,32 @@
 title: How Do Robots Know Where To Go?
 ---
 
-##### How Do Robots Know Where To Go?
+<%= postit_begin "How Do Robots Know Where To Go" %>
 
-1. **Big idea:** Robots navigate through the world using a path planner to search for routes around obstacles and an execution monitor to ensure that the robot stays on the path.
-1. **Underlying technologies:**
-   1. RRTs (Rapidly-exploring Random Trees)
-1. **Learning goal: Students will understand**
-   1. Concept of a stochastic search algorithm
-   1. How the RRT-Connect algorithm is used for path planning, and how planning can fail.
-1. **Skill goals: Students will be able to:**
-   1. Invoke one of the Pilot’s path planners to plan and execute paths through environments containing obstacles.
+<%= ul (
+    list_items(
+        "Big idea: Robots navigate through the world using a path planner to search for routes around obstacles and an execution monitor to ensure that the robot stays on the path.",
+        "Underlying Technologies",
+        ul(
+            list_items(
+                "RRTs (Rapidly-exploring Random Trees)"
+            )
+        ),
+        "Learning goal: Students will understand", 
+        ul(
+            list_items(
+                "Concept of a stochastic search algorithm",
+                "How the RRT-Connect algorithm is used for path planning, and how planning can fail."
+            )
+        ),
+        "Skill goals: Students will be able to",
+        ul(
+            list_items(
+                "Invoke one of the Pilot’s path planners to plan and execute paths through environments containing obstacles."
+            )
+        )
+    )
+)
+%>
+
+<%= postit_end %>
