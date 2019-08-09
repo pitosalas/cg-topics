@@ -33,9 +33,16 @@ desc: Localization and Navigation are the core of mobile robotics!
 <%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!") %>
 
 <%= code_begin %>
+# create the simulated environment called stage_4
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+
+# launch a simulated turtlebot3 that drives a random pattern
 $ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+
+# launch the slam algoritm, which will create an in-memory map data structure
 $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+
+# After the map looks done, save it into a map file for later.
 $ cd ~
 $ rosrun map_server map_saver -f stage4
 <%= code_end %>
