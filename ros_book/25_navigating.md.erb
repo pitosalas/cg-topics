@@ -51,9 +51,9 @@ $ rosrun map_server map_saver -f stage4
 
 #### Navigating
 
-* The ROS **nav stack** is another complex bit of computer science and engineering
+* The ROS **nav stack** is another complex bit of computer science, mathematics, and engineering
 * For now we are going to just scratch the surface
-* Inputs are a map, an estiamted current position, scanner inforamtion, and a destinaion
+* Inputs are a map, an estimated current position, scanner inforamtion, and a destination
 * Behavior is to generate a path and steer the robot to it
 * Avoiding obstacles
 * Roughly:
@@ -66,9 +66,12 @@ $ rosrun map_server map_saver -f stage4
 <%= code_begin %>
 # Now, close all the exiting ROS nodes down and next run this. Be careful with the
 # file names because the yaml file contains a file name too and it is easy to 
-# get things misaligned.
+# get things misaligned. 
+# <filemname> will be something like /home/youraccount/stage4.yaml but check to make sure.
 
-$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=stage4.yaml
+$ roslaunch turtlebot3_gazebo turtlebot3_stage4.launch
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filename>
+
 <%= code_end %>
 
 
