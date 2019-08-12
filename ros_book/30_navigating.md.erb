@@ -1,35 +1,20 @@
 ---
-title: "10: Navigating"
-desc: Localization and Navigation are the core of mobile robotics!
+title: "10 part2: Navigating"
+desc: How does the robot get from here to there, iven a map and AMCL localization
 ---
-#### Localization
-* How does the Robot "know" where it is?
-* How does it determine it's "pose"?
-* Relative to a coordiante system
-* Could be GPS coordinates
-* But more likely coordiantes of a given map
+#### Navigation
 
-##### Localizing the Robot on a map
+* Continuing from where we left off
+* We have created a map using slam
+* How do we use it for navigation?
 
-* Key package is called `amcl` - Adaptive Monte Carlo Localization
-* It's a deep theoretical area covered in *Probabilistic Robotics by Sebsastian Thrun, et al*
+#### SLAM
+* Simultanuous Localiation and Mapping
+* We will localize the robot on a map that is incomplete
+* When it leaves the map it is able to extend it with the same algorithm
 
-##### How it works at a high level
+#### Reconstruct where we left off
 
-* Location of robot is its **pose**
-* Always known with respect to a **map coordinate frame** (also called sometimes the *world coordinate frame*)
-* `amcl` maintains a set of *candidate poses* plus a probability that they reflect reality
-* As robot moves, actual sensor readings are compared with expected sensor readings for each pose, and the probability of each candidate pose can be updated.
-* Low probability poses are discarded, and high probability poses are updated based on odometry, scan, and probability.
-* For path planning purposes the highest probability pose is used.
-* It is definitely a *guess* not a certainty.
-
-##### Simulating localization
-
-* We will rebuild the map here to make sure things are consistent
-* A new wrinkle here is the use of turtlebot3_simulation which will take the place of teleop
-* That node drives the robot around ranomly while gmapping is building the map
-* After some time has gone by, save the map.
 <%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!") %>
 
 <%= code_begin %>
@@ -51,17 +36,7 @@ $ rosrun map_server map_saver -f stage4
 
 #### Navigating
 
-* The ROS **nav stack** is another complex bit of computer science, mathematics, and engineering
-* For now we are going to just scratch the surface
-* Inputs are a map, an estimated current position, scanner inforamtion, and a destination
-* Behavior is to generate a path and steer the robot to it
-* Avoiding obstacles
-* Roughly:
-    1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
-    1. Nav stack uses a path-planning algorithm in the *global plannner* to create shortest path route
-    1. Local planner drives along that path, while using sensor information to aboid obstacles.
-    1. When the robot arrives at the goal pose the action terminates.
-* Lets try it!
+##### Demo
 
 <%= code_begin %>
 # Now, close all the exiting ROS nodes down and next run this. Be careful with the
@@ -77,10 +52,26 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
 
 <%= include_image "/content/topics/images/book10path.png" %>
 
+* Give the robot an estimated position
 * Give the robot a navigation goal by clicking the button in rviz
 * Play around and see the robot solve the simple maze navigation including places it can't 'see' from where it is
 
 <%= include_image "/content/topics/images/book10longrange.png" %>
+
+##### Explanation
+
+* The ROS **nav stack** is another complex bit of computer science, mathematics, and engineering
+* For now we are going to just scratch the surface
+* Inputs are a map, an estimated current position, scanner inforamtion, and a destination
+* Behavior is to generate a path and steer the robot to it
+* Avoiding obstacles
+* Roughly:
+    1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
+    1. Nav stack uses a path-planning algorithm in the *global plannner* to create shortest path route
+    1. Local planner drives along that path, while using sensor information to aboid obstacles.
+    1. When the robot arrives at the goal pose the action terminates.
+* Lets try it!
+
 
 ##### AMCL 
 
@@ -100,7 +91,6 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
 * When amcl receives that message it resets its collection of candidate poses
 
 ##### Going inside the Nav Stack
-
 
 * Global planner: works out best path assuming map is accurate
     **global costmap**: How safe or unsafe is each spot on the map
