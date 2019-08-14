@@ -14,6 +14,7 @@ desc: "Adding perception to our robot algorithms"
 * Since the TB3 Waffle has a camera, we will use those models, and then run gazebo
 
 <%= code_begin %>
+# Set model to WAFFLE!!!
 $ export TURTLEBOT3_MODEL="waffle"
 $ export TB3_MODEL="waffle"
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
@@ -37,11 +38,8 @@ $ rqt_image_view
 
 ##### Run the simplest program
 
-* `$ /follower.py`
-* We can see the new  node subscribing to the topic:
-
 <%= code_begin %>
-$ rosrun
+$ rosrun prrexamples follower.py
 $ rosnode info follower
 --------------------------------------------------------------------------------
 Node [/follower]
@@ -93,9 +91,11 @@ average rate: 10.204
 #### Race Course
 <%= callout("NB", " We diverge from the book a little. Note different roslaunch") %>
 
+* Kill everything from before
 * Load a new world into gazebo
+
 <%= code_begin %>
-roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
 <%= code_end %>
 
 * You will see in gazebo, a TB3 Waffle on a little racetrack
@@ -104,6 +104,58 @@ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
 <%= include_image "/content/topics/images/follow_camera.png" %>
 <%= include_image "/content/topics/images/follow_track.png" %>
 
+#### Introducing OpenCV
+
 * Our goal is to detect the line using OpenCV, so we can then actually follow it
 * Technique will be simplistic: filter a block of rows by image color and drive the robot towards the center of the pixels that pass the filte
 * Note that this will fail in many normal cases!
+* First, just demonstrate that OpenCV and ROS Talk:
+```
+$ rosrun prrexamples follower_opencv.py
+```
+
+* Simple program captures each image from camera
+* Gives it to OpenCV to display in a window
+
+##### Detecting the yellow line
+
+* Image and Pattern Recognition is arbitrarily complex
+* Here we will take a simplistic approach
+* An interesting relevant link: [Tracking Colored Objects](http://aishack.in/tutorials/tracking-colored-objects-opencv/)
+* Note that we customized the values to recognize yellow as HSV [40,0,0]:[120,255,255]
+* These values are very rough and could be improved
+
+```
+$ rosrun prrexamples follower_color_filter.py
+```
+
+* Will display three windows: the original image, the mask and the original as masked
+* We will really only need the masked image
+
+##### Now, use yellow line to pick a direction
+
+* First we take a 20 pixel slice near the bottom of the filtered image, which contains ony the yellow line
+* We process the image further to locate the ["centroid"](https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/)
+* And we paint a red circle there to show where that is
+* Notice that while the image is still, its actually being regenerated 10 times per second, once for each  frame. Move the robot manually in Gazebo to notice this.
+
+```
+$ rosrun prrexamples follower_line_finder.py
+```
+
+##### Actually following the line
+* We will use the location of the centroid
+* We offset it because the yellow line is not in the middle of the road
+* We move the robot forward and give it a little turn
+* Based on how far from the middle the centroid is
+* Notice this is a PID controller!
+
+```
+$ rosrun prrexamples follower_p.py
+```
+
+
+
+
+
+
