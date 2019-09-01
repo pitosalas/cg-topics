@@ -12,17 +12,23 @@ assigned: 5
 
 #### Assignment
 
-You will be implementing a ROS package which will include four nodes as python programs. They will communicate with each other using particular specified neans. You will test this in the simulator and then demonstrate it in the running TurtleBot3.
+You will be implementing a ROS package which will include four nodes as python programs. They will communicate with each other using particular specified neans. You will test this in the simulator and then demonstrate it in the running TurtleBot3. These are totally made up nodes within an imaginary and kind of illogical context.
 
-* ConsoleNode: Read users console input. For example, commands like "Turn 84" etc. The string is simply published on the custom topic "/demo/command", with the message type of "string".
+* ConsoleNode: Read users console input. For example, commands like "Turn 84" etc. The string is simply published on the custom topic "/demo/command", with the message type of "string". This node will be run on your laptop.
 
-* MainNode: This node is subscribed to "/demo/command". Every time a message comes in it is submitted to a service called "FakeNLP" which will return a single float. Once this float is received, the float is used to generate an action to actionServer. While the action is occurring, the MainNode queries the ActionServer and writes it's progress to the log.
+* MainNode: This node is subscribed to "/demo/command". Every time a message comes in it is submitted to a service called "FakeNLP" which will return a single float. Once this float is received, the float is used to generate an action to actionServer. While the action is occurring, the MainNode queries the ActionServer and writes it's progress to the log. This node will also run on your laptop.
 
-* FakeNLP: This is a service, which will do simple text processing (using a Regex) to see if the command is valid and extract the number and convert it to a float, which is returned to the caller.
+* FakeNLP: This is a service, which will do simple text processing (using a Regex) to see if the command is valid and extract the number and convert it to a float, which is returned to the caller. We call it FakeNLP because it's simply doing pattern matching on the string, no natural language involved. This too will run on your laptop.
 
-* ActionServer: The action server receives the request, and generates appropriate Twist messages to get the robot to spin the desired number of degrees. The action server is able to return progress status to the MainNode.
+* ActionServer: The action server receives the request, and generates appropriate Twist messages to get the robot to spin the desired number of degrees. The action server is able to return progress status to the MainNode. And again this will run on your laptop.
 
 Finally you will write a ROS launch file which will launch all four of these and allow the user to type commands on the console, see the robot turn, and see the log messages in the log.
+
+The flow is something like this:
+
+1. ConsoleNode prompts the user. The user types in a command in Fake Natural Language. One example is turn 84. You can make up other examples. The string is published as-is on the /demo/command.
+1. MainNode subscribes to /demo/command. It extracts the string and calls the FakeNLP service to ask it to "parse" the command. FakeNLP will process the command and return the number as a float or it returns nil if the command is not valid. If the command result is valid, MainNode then begins an action, asking the robot to spin by the stated number of degrees.
+1. ActionServer receives this request and starts sending cmd_vel Twist messages to ask the robot to turn. ActionServer also subscribes to /odom messages to see how far the robot has gone around. Once it reaches the right number of degrees, it tells MainNode that the action is done.
 
 #### Deliverables
 * Working demonstration of the project - running roslaunch
