@@ -78,17 +78,12 @@ desc: Basic concepts of ROS
 * It is populated with lots of useful stuff by the installation of ROS
 * Any commands you want run each time will be placed there
 * note: `source` command reads the file and exectutes it as if you typed it into bash
-
-<%= code_begin %>
-$ source ~/mydev/rosutils/.bashrc
-$ source /opt/ros/kinetic/setup.bash
-<%= code_end %>
-
 * Key environment variables have to be defined in .bashrc
 
 <%= code_begin %>
-$ export ROS_IP=11.22.33.44 # this computer's IP. each one will be different
-$ export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
+$ source ~/catkin_ws/devel/setup.bash
+$ export ROS_MASTER_URI=http://localhost:11311
+$ export ROS_HOSTNAME=localhost
 $ export TB3_MODEL=burger
 $ export TURTLEBOT3_MODEL=burger
 <%= code_end %>
