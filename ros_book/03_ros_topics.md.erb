@@ -50,9 +50,9 @@ desc: What are topics, how are they used. How do messages fit in
 
 #### Publishing a topic
 
-* You will find all the book's examples in the [prr_examples github package](https://github.com/campusrover/prrexamples)
+* You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 * Use the ones in our github because they have been tested with TB3
-* Clone it in your ~/catkin_ws/src directory
+* If it's not there yet, clone it in your ~/catkin_ws/src directory
 * See `~/catkin_ws/src/prrexamples/scripts/topic_publisher.py`
 * Remember:
   * to do the necessary code gen and compilation you must run `catkin_make` (with the alias `cm`)
@@ -74,8 +74,8 @@ $ rostopic echo counter -n 5
 <%= code_begin %>
 # shell commands
 $ chmod +x topic_subscriber.py
-$ roscd basics
-$ rosrun basics topic_subscriber
+$ roscd prrexamples
+$ rosrun prrexamples topic_subscriber
 <%= code_end %>
 
 #### Examine what's going on

@@ -37,3 +37,24 @@ The flow is something like this:
   * Code is well designed, modular, readable
   * Launch file
   * Readme explaining key ideas, as well as instructions to run
+* The directory structrure will look something like this:
+
+<%= code_begin %>
+ros_summary_project/
+  README.md/.pdf (optional)
+  CMakeLists.txt
+  package.xml
+  action/
+    ActionServer.action
+  launch/
+    main.launch|
+  msg/
+    command.msg
+  scripts/
+    ActionServer.py
+    ConsoleNode.py
+    FakeNLP.py
+    MainNode.py
+  srv/
+    FakeNLP.srv
+<%= code_end %>
