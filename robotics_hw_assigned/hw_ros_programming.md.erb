@@ -14,7 +14,7 @@ assigned: 5
 
 You will be implementing a ROS package which will include four nodes as python programs. They will communicate with each other using particular specified neans. You will test this in the simulator and then demonstrate it in the running TurtleBot3. These are totally made up nodes within an imaginary and kind of illogical context.
 
-* ConsoleNode: Read users console input. For example, commands like "Turn 84" etc. The string is simply published on the custom topic "/demo/command", with the message type of "string". This node will be run on your laptop.
+* ConsoleNode: Read users console input. For example, commands like "Turn 84" etc. The string is simply published on the custom topic "/demo/command", with the message type of "string". This node will be run on your laptop. You may also define your own message type as a way to learn how to do that.
 
 * MainNode: This node is subscribed to "/demo/command". Every time a message comes in it is submitted to a service called "FakeNLP" which will return a single float. Once this float is received, the float is used to generate an action to actionServer. While the action is occurring, the MainNode queries the ActionServer and writes it's progress to the log. This node will also run on your laptop.
 
@@ -30,14 +30,32 @@ The flow is something like this:
 1. MainNode subscribes to /demo/command. It extracts the string and calls the FakeNLP service to ask it to "parse" the command. FakeNLP will process the command and return the number as a float or it returns nil if the command is not valid. If the command result is valid, MainNode then begins an action, asking the robot to spin by the stated number of degrees.
 1. ActionServer receives this request and starts sending cmd_vel Twist messages to ask the robot to turn. ActionServer also subscribes to /odom messages to see how far the robot has gone around. Once it reaches the right number of degrees, it tells MainNode that the action is done.
 
+#### Helpful Notes
+* The /odom topic generates is mapped to a msg/Odometry message type to indicate where the robot thinks it is, where it is pointed and how it is moving)
+* The msg/Odometry message type includes pose (where it is and where it is pointed) and twist (how it is moving)
+* The pose field (PoseWithCovariance) includes a Pose and a Covariance. You can ignore Covariance for now but it is a value which reflects the statistical confidence we have in the Pose.
+* The Pose type includes a position(Point) (where the robot is) and a orientation(Quaternion) (where it is pointed.)
+* So if your command to the robot is to rotate in place, you know that the position should not change, but the orientation will. If your command was to make the robot travel a certain distance, then the position would change and not the orientation.
+* Here's a video explaining [how to convert Quaterinions to Euler Angles](http://www.theconstructsim.com/ros-qa-how-to-convert-quaternions-to-euler-angles/)
+* Here's the key code snippets from that video (which you should watch!)
+
+<%= code_begin %>
+from tf.transformations import euler_from_quaternion, quaternion_from_euler
+
+global roll, pitch, yaw
+orientation_q = msg.pose.pose.orientation
+orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
+(roll, pitch, yaw) = euler_from_quaternion (orientation_list)
+print yaw
+<%= code_end %>
 #### Deliverables
-* Working demonstration of the project - running roslaunch
+* Working demonstration of the project - running roslaunch. This can be in the form of a rough video of your demonstration, or showing it to a TA or Pito, or any other way to demonstrate that you got it running. You can use a simulator (Gazebo) or an actual Robot.
 * Code zipped up containing:
   * Python source code
   * Code is well designed, modular, readable
   * Launch file
   * Readme explaining key ideas, as well as instructions to run
-* The directory structrure will look something like this:
+* The directory structrure will look something like this. You are not required to have precisely the same file names. It is meant more as a guide.
 
 <%= code_begin %>
 ros_summary_project/
