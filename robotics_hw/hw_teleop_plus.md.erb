@@ -1,0 +1,46 @@
+---
+title: Teach Robot to dance!
+---
+
+#### Learning Objectives
+
+1. Practice with more python
+1. ROS program design including topics, pub and sub, and possibly actions.
+1. Incorporate both /cmd_vel, /scan and /odom in one system
+1. Learn rqt_plot and how to use it
+1. Learn how to show off your code on a live robot.
+
+#### Steps
+
+1. Write a program similar to one of the teleop programs but with some interesting new wrinkles.
+1. You will be changing the command letters and adding a few:
+    1. l: rotate left
+    1. r: rotate right
+    1. f: move forward
+    1. b: move backward
+    1. h: halt all motion
+    1. s: spiraling motion
+    1. z: zigzag motion
+
+1. As these motions are executed, you are also following the /scan topic. If the robot comes within 0.2 meters from any wall it halts (i.e. the equivalent of an 'h' command)
+1. Constantly display the current speed and location of the robot (numerically, i.e. with print statements)
+1. Come up with one or two interesting elaborations to this basic assignment to get a full 100!
+
+#### Background and tips
+* If you want, you can start with rosbook/scripts/keys_to_twist_with_ramps.py. As you can see that program has a loop which checks for a command and then publishes cmd_vel to tell the robot what to do.
+* The loop keeps a few variables indicating the desired speed and rotation and the actual speed and rotation and sends /cmd_vels to get it closer to the desired speed and rotation
+* You can choose to subscribe to /odom also to see what it thinks about the current speed and rotation (as well as location!)
+* in order to handle the sensing of an obstacle, it also has to subscribe to /scan and figure out what the nearest obstacle is and whether it's necessary to set the desired speed and rotation to zero.
+* Each time the loop goes around you can print the current target and actual speeds and rotations
+* You can elaborate this by inventing additional commands that do other motions; or to have a nicer interface than printing in a rapid loop; or to do something intersting with /odom; or something completely different.
+
+#### Deliverables
+1. The python code with a directory structure that looks like this:
+
+~~~
+Coming Soon
+~~~
+
+1. A readme which explains your code and also reflects on how it was to write it
+1. A demonstration (video or live) of you running it in a simulator
+1. A demonstration (video or live) of you running it on an actual TB3
