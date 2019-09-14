@@ -6,7 +6,7 @@ desc: Simulating behavior in simulation
 
 #### Intro
 * We will modify the instructions from the book so follow along here!
-* Code will be part of `rosbook` package which we have been using: [Github for Rosbook](https://github.com/campusrover/rosbook)
+* Code will be part of `rosbook` package which we have been using: [prrexamples](https://github.com/campusrover/prrexamples)
 * Setup the simulation packages for Turtlebot3 by following [11. Simulation](http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). In particular make sure you add the turtlebot3_simulations package, as follows:
 
 <%= code_begin %>
@@ -37,7 +37,7 @@ $ ./red_light_green_light.py
 * Compute bearing (in degrees) of element i as follows:
 
 <%= code_begin %>
-bearing = msg.angle_min + i * msg.angle_max / len(msg.ranges)
+bearing = ((msg.angle_max - msg.angle_min) / (len (msg.ranges - 1)) * i + msg.angle_min
 <%= code_end %>
 
 * To compute the distance to the obstacle immediately ahead (0 degrees)
