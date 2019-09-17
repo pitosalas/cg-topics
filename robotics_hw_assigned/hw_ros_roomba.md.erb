@@ -3,28 +3,41 @@ title: ROS Roomba
 desc: Simple ROS program to run around a rectangular space, while avoiding walls.
 assigned: 10
 ---
-#### Roomba Homework
 
 ##### Learning goals
 * Learn and practice Python
 * Learn and practice ROS Concepts
 * Experience the fact that there's noise in the sensors
 
-##### What to do
+##### Background
+* This is a two part assignment. Each part is graded separately.
 * The iRobot ROOMBA is a vaccum cleaner. It moves in straight lines in a room until it comes to a wall or obstacle. At this point it stops and rotates in place for some number of degrees. And then it takes off again until it hits another obstacle.
 * You will be writing a ROS node to exhibit this behavior
+* The challenge is first, just getting it to work
 * Initially write and test in simulation (using Gazebo)
 * Then test in a live robot
-* The challenge is first, just getting it to work
 
 ##### Project
-* Write a new program which has a robot drive through an area surrounded by walls, and act something like a variation on a roomba. 
+* Use the one of the TurtleBot3 canned Gazebo environments or create your own
+* Write a new program which has a robot drive through a walled space, and act something like a variation on a roomba. The walled space can be as simple as a square or more complicated, up to you.
 * It drives around until it comes close to an obstacle, rotates in place, and continues in a new direction.
-* It's not immediately clear how much to rotate: should it rotate some amount each time or should the amount of rotation vary randomly? 
+* It's not immediately clear how much to rotate: should it rotate some amount each time or should the amount of rotation vary randomly?
 * You can elaborate this any way you like. 
 * The challenge beyond just getting it to work, is to make sure it doesn't get stuck somewhere. See how robust you can make it
 
-##### Deliverables
+#### Deliverables
+
+##### Part 1 Deliverables
+* Partial implementation, no source code deliverable
+* A video showing it run in the simulator
+* The robot should move and turn for at least 10 seconds before something goes wrong
+* Longer is better of course
+* You can narrate to explain what is happening
+
+##### Part 2 Deliverables
 * Source code for your solution, zipped up
-* A pdf document explaining your solution in as much or as little detail as you like
-* A short video demonstration of your solution, as if you were showing it to a friend.
+* Nice package directory
+* Readme file with substance. Explain your approach, and why you used it and any known failure modes
+* Credit for using more than just a rectangle
+* Video of the robot running for 60 seconds in simulation without a problem
+* Video of the robot running for 60 seconds with a real robot without a problem
