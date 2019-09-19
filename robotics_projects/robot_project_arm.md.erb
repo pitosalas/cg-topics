@@ -1,0 +1,11 @@
+---
+title: Robot Arm
+desc: Interface a simple robot arm to Campus Rover
+---
+Work with Charlie Squires (our resident hardware roboticist) to mount a robot arm on one of our robots and then write the low level and ROS code to allow a ROS program to publish to a topic and control the arm.
+
+An arm can be simple or complex. A simple one, for example, can only go up and down vertically and rotate at the wrist. Only two degrees of freedom. So you can imagine a topic /arm which gives something like cmd_vel parametres. Move arm vertically to position x cm above the origin. And move the arm around the wrist so that points in a certain bearing.
+
+We need to also decide what is mounted at the end of the arm. Is it a camera? Is it a blunt "finger-like" device suitable for pushing buttons on elevators?
+
+Ther are many directions to take this core idea.
