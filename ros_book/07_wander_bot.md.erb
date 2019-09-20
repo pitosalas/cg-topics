@@ -37,7 +37,7 @@ $ ./red_light_green_light.py
 * Compute bearing (in degrees) of element i as follows:
 
 <%= code_begin %>
-bearing = ((msg.angle_max - msg.angle_min) / (len (msg.ranges - 1)) * i + msg.angle_min
+bearing = ((msg.angle_max - msg.angle_min) / (len (msg.ranges) - 1) * i + msg.angle_min
 <%= code_end %>
 
 * To compute the distance to the obstacle immediately ahead (0 degrees)
@@ -71,7 +71,7 @@ $ rostopic echo scan
 
 * Now run the program
 <%= code_begin %>
-$ roslaunch turtlebot3_gazebo turtlebot_world.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 $ chmod +x  wander.py
 $ ./wander.py
 <%= code_end %>

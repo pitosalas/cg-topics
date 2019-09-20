@@ -18,7 +18,7 @@ You will be implementing a ROS package which will include four nodes as python p
 
 * MainNode: This node is subscribed to "/demo/command". Every time a message comes in it is submitted to a service called "FakeNLP" which will return a single float. Once this float is received, the float is used to generate an action to actionServer. While the action is occurring, the MainNode queries the ActionServer and writes it's progress to the log. This node will also run on your laptop.
 
-* FakeNLP: This is a service, which will do simple text processing (using a Regex) to see if the command is valid and extract the number and convert it to a float, which is returned to the caller. We call it FakeNLP because it's simply doing pattern matching on the string, no natural language involved. This too will run on your laptop.
+* FakeNLP: This is a service, which will do simple text processing (we recommend using a Regex. If you dont know what that is, we recommend learning.) See if the command is valid and extract the number and convert it to a float, which is returned to the caller. We call it FakeNLP because it's simply doing pattern matching on the string, no natural language involved. This too will run on your laptop.
 
 * ActionServer: The action server receives the request, and generates appropriate Twist messages to get the robot to spin the desired number of degrees. The action server is able to return progress status to the MainNode. And again this will run on your laptop.
 
@@ -55,7 +55,7 @@ print yaw
   * Code is well designed, modular, readable
   * Launch file
   * Readme explaining key ideas, as well as instructions to run
-* The directory structrure will look something like this. You are not required to have precisely the same file names. It is meant more as a guide.
+* The directory structure will look something like this (You are not required to have precisely the same file names, but you should have the same directories)
 
 <%= code_begin %>
 ros_summary_project/
