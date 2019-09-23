@@ -1,11 +1,7 @@
 ---
 title: Balance Stick
-desc: Make a robot balance a stick on it's head
+desc: Make a robot balance itself on a seesaw
 ---
-The core idea is to demonstrate balancing by a robot. But it's not obvious especially with our robots. If you place a stick on top of a turtlebot3, there's no way for it to see or detect it and so it's unclear how it could possibly balance it. 
-
-You could mount an upfaceing camera and use image processing to see the stick and respond to its motion away from vertical. However, our robots only drive forward and backwards, not left and right.
-
-So instead of a general stick, it could be stick on a hinge that allows it only to move forward and backwards. The robot could drive forward and backwards to keep the stick pointing up. But that is not nearly as cool.
+The core idea is to demonstrate balancing by a robot. One way to do that with our non-holonomic robots is with a seesaw. The concept is that we create a ramp that is balanced in the middle like a seesaw. The robot drives up the ramp up to the middle and then uses micro motions to remain balanced. Any attempt to throw it off by pushing it or one side of the seesaw is instantly compensated.
 
 So more thought is needed around this project. But the high level goal seems quite nice and worth figuring out.
