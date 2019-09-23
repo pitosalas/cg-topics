@@ -11,11 +11,13 @@ assigned: 10
 
 ##### Background
 * This is a two part assignment. Each part is graded separately.
-* The iRobot ROOMBA is a vaccum cleaner. It moves in straight lines in a room until it comes to a wall or obstacle. At this point it stops and rotates in place for some number of degrees. And then it takes off again until it hits another obstacle.
+* The iRobot ROOMBA is a vaccum cleaner ([video](https://www.youtube.com/watch?v=09Wc4Q_R3Ac)
+* It moves in straight lines in a room until it comes to a wall or obstacle. At this point it stops and rotates in place for some number of degrees. And then it takes off again until it hits another obstacle. 
 * You will be writing a ROS node to exhibit this behavior
-* The challenge is first, just getting it to work
-* Initially write and test in simulation (using Gazebo)
-* Then test in a live robot
+* The challenge is first, just getting it to work. Remember that a node that works perfectly in simulation might not behave the same way in a real robot
+* For example, the Lidar data will probably look a little different.
+* Initially write and test in simulation (using Gazebo). 
+* Then test in a live robot. Noting that the code is slightly different for a real robot you should either parameterize it (ideal) or once you've moved on to the real robot realize that in simulation it would not work the same again (less ideal).
 
 ##### Project
 * Use the one of the TurtleBot3 canned Gazebo environments or create your own
