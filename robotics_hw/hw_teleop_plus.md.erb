@@ -27,7 +27,7 @@ title: Teach Robot to dance!
 1. Come up with one or two interesting elaborations to this basic assignment to get a full 100!
 
 #### Background and tips
-* If you want, you can start with rosbook/scripts/keys_to_twist_with_ramps.py. As you can see that program has a loop which checks for a command and then publishes cmd_vel to tell the robot what to do.
+* If you want, you can start with prrexamples/scripts/keys_to_twist_with_ramps.py. As you can see that program has a loop which checks for a command and then publishes cmd_vel to tell the robot what to do.
 * The loop keeps a few variables indicating the desired speed and rotation and the actual speed and rotation and sends /cmd_vels to get it closer to the desired speed and rotation
 * You can choose to subscribe to /odom also to see what it thinks about the current speed and rotation (as well as location!)
 * in order to handle the sensing of an obstacle, it also has to subscribe to /scan and figure out what the nearest obstacle is and whether it's necessary to set the desired speed and rotation to zero.

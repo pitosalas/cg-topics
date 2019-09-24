@@ -41,8 +41,8 @@ desc: Designing and implementing a slightly more complicated ROS program
   * Publishes `cmd_vel`
 
 #### Keyboard Driver
-* You can find key_publisher.py in the src/rosbook directory. If it's not there try doing a git pull.
-* You will need two Terminals (plus roscore running on roscore1.cs.brandeis.edu)
+* You can find key_publisher.py in the src/prrexamples directory. If it's not there try doing a git pull.
+* You will need two Terminals (plus roscore running somewhere)
   * `rosrun roscore key_publisher.py`
   * `rostopic echo keys`
 * Verify that the topic is being published any time a key is pressed
@@ -54,7 +54,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 
 #### Motion Generator
 
-* You can find keys_to_twist.py in the src/rosbook directory
+* You can find keys_to_twist.py in the src/prrexamples directory
 * Run it with key_publisher from before and then monitor both topics with two separate instances of rostopic echo. This will require two terminals!
 * Questions to ponder:
   * How are you going to test it?
@@ -64,7 +64,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 #### Generating a stream of cmd_vel
 
 * We will update the program to generate a stream of cmd_vels, around 10 per second
-* You can find keys_to_twist_using_rate.py in the src/rosbook directory. If it is not there try doing a git pull.
+* You can find keys_to_twist_using_rate.py in the src/prrexamples directory. If it is not there try doing a git pull.
 * Run it and verify that it works
   * How would you verify that?
 * Try running `$ rqt_plot` to view the information in a graph

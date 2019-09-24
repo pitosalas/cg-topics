@@ -27,6 +27,13 @@ assigned: 10
 * You can elaborate this any way you like. 
 * The challenge beyond just getting it to work, is to make sure it doesn't get stuck somewhere. See how robust you can make it
 
+##### Tips
+1. When you pick a turning method, reason with yourself why you are choosing your method example: "I am choosing to make the robot turn exactly 90 degrees every turn because most corners are 90 degrees and most walls are flat, so one or two 90 degree turns should always get a robot unstuck" Then, think of all the ways your turning method could fail - sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist (you may lose points for this) B: add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method
+1. get code to run in simulation before real life. make note of sensor readings- like lidar (using rostopic in the command line). Then, run the exact same code on a real robot. How does the behavior change? Maybe go back and forth a 1 or 2 times without changing anything, just observe and begin to form hypotheses. does the sensor data look different? Add to your code to account for real world inconsistencies that are not present in simulation. 
+1. Tricks like wall following are neat, but get obstacle avoidance done first before implementing more robust behavior. 
+1. remember that lidar data comes in a python list structure and can be easily manipulated as any other list. you can break the data down into relevant chunks (front view, rear view, etc). for more information, try googling: python list slicing, list comprehension,  list basics, could be a few staring points.
+1. Consider writing a separate filter which takes "raw" Lidar data (subscribes to /scan) and publishes "cleaned up" Lidar data (publishes for example to /scan/clean). A related approach is to subscribe to /scan and publish something like /scan/semantic that instead of just cleaning up the data also computes some mins and maxes in different directions of interest.
+
 #### Deliverables
 
 ##### Part 1 Deliverables

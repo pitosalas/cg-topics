@@ -7,13 +7,13 @@ desc: Programming a more serious ROS  application
 
 Write a python script to control a robot running a maze from a starting point to an ending point. For our purposes the ending point is when you stop the script, or pick up the robot. In other words for the moment your robot does not need to detect the end of the maze itself.
 
-You should write and test your code first on the simulator. You can choose STDR, Gazebo or [The ConstructSim](https://rds.theconstructsim.com/simulations/). They are all three legitimate simuators, each with it's pros and cons. This command will give you a pretty nice "built-in" maze using Gazebo, but remember that Gazebo doesn't work well in VMs at all. It usually crashes :)
+You should write and test your code first on the simulator. This command will give you a pretty nice "built-in" maze using Gazebo, but remember that Gazebo doesn't work well in VMs at all. It usually crashes :)
 
 <%= code_begin %>
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch 
 <%= code_end %>
 
-Remember it's worth trying to work in the simulator first. If your code works well in the simulator, you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+Remember it's worth trying to work in the simulator first. If your code works well in the simulator you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
 
 The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well.
 
@@ -30,8 +30,8 @@ This is a pair programming assignment. Students should self select into teams of
 #### What to submit
 The submission to Latte:
 
-1. The source code, including a readme explaining what it is, how to run it and any other reflections
-1. A video of the real robot running the maze successfully. THis can be totally rough, unedited, with crazy laughing in the background. We just want to see that it worked.
+1. The source code, including a readme explaining what it is, how to run it and any other reflections. This should be a nice ROS package directory structure as before.
+1. A video of the real robot running the maze successfully. This can be totally rough, unedited, with crazy laughing in the background. We just want to see that it worked.
 
 #### Background Info
 
