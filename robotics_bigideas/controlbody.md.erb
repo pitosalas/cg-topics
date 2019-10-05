@@ -6,14 +6,15 @@ title: How Do Robots Control Their Bodies?
   list_items("Big idea: Robots describe their bodies as kinematic trees and use kinematics solvers to translate between joint angles and body coordinates.",
     "Underlying technologies:",
     ul(
-      list_items("Kinematic description files, forward and inverse kinematics solver")),
-    "Learning goal: Students will understand:",
+      list_items(
+        "Kinematic description files", 
+        "URDF",
+        "forward and inverse kinematics calculations")),
+    "Learning goal: Students will:",
     ul(
-      list_items("Students will understand kinematic descriptions expressed as trees of joints and links",
-        "How kinematics solvers use this representation when translating between world coordinates and joint coordinates.")),
-    "Skill goals: Students will be able to:",
-    ul(
-      list_items("Students will be able to construct and visualize kinematic descriptions using Tekkotsu’s DH Wizard tools",
-      "Invoke kinematics solvers via the Lookout or Grasper to produce desired robot motions"))))
+      list_items(
+        "Understand kinematic descriptions expressed as trees of joints and links",
+        "Understand how kinematics solvers use this representation when translating between world coordinates and joint coordinates.",
+        "Be able to construct and visualize kinematic descriptions"))))
 %>
 <%= postit_end %>
