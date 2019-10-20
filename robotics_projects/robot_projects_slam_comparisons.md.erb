@@ -1,0 +1,12 @@
+---
+title: Research to compare different SLAMs
+desc: Investigate compaetrative performance of various SLAM algos
+---
+SLAM is the algorithm which, given sensor input will compute the location of walls, and generate a map file as output. There are multiple SLAM packages and more coming all the time. For example, `gmapping` and `cartographer` but there are others
+
+The project is to compare each of these packages and write an analysis. This is in the form of a research paper. I would start with a litarature search to see if anyone has done this before, and how it was done. Also a search for actual SLAM packages and figure out which ones are viable candidates. Determine what your research questions are. For example: RQ1: Are there a set of useful standard metrics by which to compare SLAM algorithms? RQ2: Given some of the important SLAM algorithms for which there are implementations, can the metrics above be used to compare them?
+RQ3: Given the comparisons, what are recommendations that practitioners could use to select the right choice.
+
+Identify their tuning parameters and try to see how they perform in different scenarios. For example a simple maze, a real world hallway, outdoors, different materials or lighting conditions. Whatever makes sense.
+
+From this decide on the dimensions of comparison and how to measure. Then run tests of different SLAM algorithms and report on a comparison and recommendations on when to use each. 
