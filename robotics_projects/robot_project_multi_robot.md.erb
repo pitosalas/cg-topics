@@ -1,0 +1,21 @@
+---
+title: Multi Robot Discovery
+desc: Design a system that would allow the control of multiple robots
+---
+In the standard configuration, we run roscore on the robot itself which means that only one robot can be accessing ROS at a time. What if we had multiple robots?
+
+* After investigating the literature and available libraries
+* Design a scenario with 5 robots that are all working together
+* At the least you need to overcome the roscore restriction
+* But then you also need the robots to know where each one is
+
+* What if they are within sight of each other
+* What if they cannot see each other
+* What if an unknown robot appears
+
+* Can they do something together?
+* Choreographed
+* Perhaps they all follow a leader in a convoy
+* The leader is teleop controlled
+* The others follow
+
