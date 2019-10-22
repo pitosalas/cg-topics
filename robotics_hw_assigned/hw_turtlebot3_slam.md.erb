@@ -32,7 +32,7 @@ To work with SLAM, the `turtlebot3_slam` package is necessary. To prepare the ro
 
 To get the most out of `turtlebot3_slam`, some tuning of parameters in the launch file is required. To tune the parameters, open the `turtlebot3_gmapping.launch file` and modify it to look like the following:
 
-<%= include_image "/content/images/slam_launch_file.png" %>
+<%= include_image "/content/topics/images/slam_launch_file.png" %>
 
 The file above has taken the default configuration, but modified the `map_update_interval`, `linearUpdate`, and `angularUpdate` parameters. Although this may not be the optimal configuration, these parameter updates do significantly increase the map quality from the default launch file. Further expermimentation and tuning of the parameters can be done if results are not satisfactory, and a tuning guide can be found here: http://emanual.robotis.com/docs/en/platform/turtlebot3/slam/#slam
 
