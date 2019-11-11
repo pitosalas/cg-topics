@@ -1,0 +1,120 @@
+---
+title: Path Planning
+---
+#### Path Planning Conceptual overview
+
+* Given an 'outside' command, make a robotic device move to a known destination
+    * Robotic device: could be a land-based robot, a arial robot, a robot arm
+    * Really: Any component which can be moved from one location to another location
+    * Do this reliably under a variety of conditions
+
+* Do this safely
+    * Avoid "prohibited" states
+    * Might be: contact with a wall, with itself, with an unknown obstacle
+    * Avoid prohibited motions
+    * Might be a maximum speed
+
+* Do this efficiently
+    * Some notion of cost that is minimized
+    * Time, power consumption
+
+##### Prerequisites - some or all
+* We need coordinate systems within which to place the device and  obstacles
+* We need maps to show where the device can and cannot go
+* We need localization so that the robot can know where it is at any point
+* We need sensors to detect obstacles which may not be on the map
+* We need a way to propel and steer the device
+
+##### Maps
+
+<img src="/content/topics/images/subwaymap.png" class="img-responsive img-thumbnail" style="height: 300px;">
+
+* A set of locations
+* A set of connections between adjacent locations
+* A "cost" to get from one location to the next
+* Information to allow navigating (driving) from one location to the next
+
+##### Topological Representation
+
+<img src="/content/topics/images/graphmap.png" class="img-responsive img-thumbnail" style="height: 300px">
+
+* Very simple network diagram
+* Well known how to search and analyze it
+* Could be useful for path planning
+* Works out in a scenario like a subway or road network
+* On the surface not so good for an open field of navigation
+
+##### metric representation
+
+<img src="/content/topics/images/metricmap.png" class="img-responsive img-thumbnail" style="height: 300px;">
+
+* Precise coordinates
+* But takes up much more storage
+* Typical datastructure is an "occupancy map" 
+
+##### Creating the maps
+* Often a map will be known (i.e. a floorplan)
+* Sometimes a map can be built by the robot (SLAM)
+* SLAM creates a "metric" representation
+
+##### Localization Theory
+* Global
+    * Location with respect to the world (coordinate system)
+    * Example: GPS or WiFi hotspots
+    * Can be quite inaccurate
+
+* Local
+    * Location with rspect to sensor feedback
+    * Can be highly accurate
+
+* Note the role of filters such as Kalman filter to refine noisy sensor data
+
+#### ROS Navigation Stack
+
+##### Path Planning
+
+* Using a topological Representation
+* Network search can find the best path through the network
+* You are optimizing relative to some parameter - distance, time, risk, etc.
+
+##### ROS Navigation Stack
+
+* 2D navigation
+* Inputs
+  * Odometry
+  * Sensor Data
+  * Goal Pose
+  * Map
+* Output
+  * "Safe" velocity command
+
+* Limitations
+  * Only for differential drive or holonomic wheeled robots
+  * Requires a Lidar (or at least a node publishing /scan topics)
+  * Needs a square or circular robot (base)
+
+##### Key Node: move_base
+* Implements a ROS action (recall they are for longer term tasks)
+* Uses a global and local planner
+* Highly modular allowing different implementation and algorithms.
+
+**MOVE_BASE Architecture**
+
+<img src="http://wiki.ros.org/move_base?action=AttachFile&do=get&target=overview.png" style="width:800px">
+
+* Move_base implements action: Go from whereever you are now to this goal
+* Inputs into the move_base node
+  * map_server: if present delivers the geometry of the map. What is clear, obstructed, inpassible, or unknown
+  * sensor sources: Lidar gives information about nearby obstacles in the real world
+  * odometry: Gives information about "dead reconning" prediction of robot's location
+  * amcl: Gives information about localization based on amcl
+
+  
+* Outputs:
+  * base_controller: cmd_vel topic published
+* Behavior:
+  * Attempt to go to the requested destination within user-specified tollerance
+  * Do optimal path planning, recompute the plan constantly
+  * Engage in recovery behaviors
+
+**Reference: [move_base Wiki](http://wiki.ros.org/move_base?distro=melodic)**
