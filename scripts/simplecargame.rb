@@ -1,3 +1,5 @@
+# A basic implementation of the Simple Car Gama
+
 class Garage
   def initialize(name)
     @name = name
@@ -33,7 +35,7 @@ class Level
 
   def report
     puts "Level #{@name} with max height: #{@max_height}"
-    @vehicles.each { |v| puts "v: #{v}"  }
+    @vehicles.each { |v| puts "v: #{v}" }
   end
 end
 

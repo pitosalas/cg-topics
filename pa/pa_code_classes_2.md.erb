@@ -7,18 +7,13 @@ In this game there are parking garages where vehicles are parked. Parking garage
 * We want to represent a parking garage.
   * Each parking garage can have 1 or more levels
   * Each level can hold zero or more vehicles
+  * Each level has a maximum height vehicle that it can handle
 
 * We want to represent vehicles
   * All individual vehicles can have: integer height (centimeters)
   * There are two types of vehicle, with slightly different properties
-    * passenger:
-      * parking fee: \[integer\], default is 10 ($/hour)
-      * service_requested: \[boolean\] default is false
-    * police:
-      * parking_fee: \[integer\] default is 0 ($/hour)
-      * on_emergency: \[boolean\] default is false
-
-* WHat classes do you need? Do you use inheritance?
+  
+* What classes do you need? Do you use inheritance?
 * There should be methods such as:
   * add_level() - allocates a level. Happens only once when the garage is first created.
   * count_regular_cars() - returns a count of how many regular cars there are in the garage
@@ -31,6 +26,4 @@ In this game there are parking garages where vehicles are parked. Parking garage
   * Creates a garage with two levels
   * Creates 3 cars and one police car with different heights and statuses
   * Notes the arrival of all four vehicles
-  * Prints a report of the current status of the garage
-  * Notes the departure of all four vehicles
   * Prints a report of the current status of the garage
