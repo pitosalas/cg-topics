@@ -1,31 +1,28 @@
-
 require 'byebug'
+
+# Case 1
 class Character
   attr_reader :location, :velocity, :type
 
-  def initialize(args)
-    @type = args[:type]
-    @velocity = args[:starting_v]
+  def initialize(type:, starting_v:)
+    @type = type
+    @velocity = starting_v
   end
 
   def passengers
-    if @type == :car
-      4
-    else
-      nil
-    end
+    @type == :car ? 4 : nil
   end
 
   def to_s
-    if @type == :person
+    case @type
+    when :person
       "[person]"
-    elsif @type == :car
+    when :car
       "[car]"
     else
-      error "Invalid type"
+      "[invalid type]"
     end
   end
-
 end
 
 person = Character.new(type: :person, starting_v: 0)
@@ -35,12 +32,12 @@ car = Character.new(type: :car, starting_v: 0)
 puts car
 puts car.passengers
 
--------
+#### Case 2
 
 class Character
   attr_reader :location, :velocity, :type
-  def initialize(args)
-    @velocity = args[:starting_v]
+  def initialize(starting_v:)
+    @velocity = starting_v
   end
 end
 
@@ -63,7 +60,7 @@ class Person < Character
   end
 
   def to_s
-    "[Person v=#{@velocity}]"
+    "[Person with v=#{@velocity}]"
   end
 end
 
@@ -73,12 +70,12 @@ c = Car.new(starting_v: 0)
 puts p
 puts c
 
--------
+# Case 3
 
 class Character
   attr_reader :location, :velocity, :type, :speed_increment
-  def initialize(args)
-    @velocity = args[:starting_v]
+  def initialize(starting_v:)
+    @velocity = starting_v
   end
 
   def faster
@@ -101,7 +98,6 @@ class Car < Character
   def speed_increment
     15
   end
-
 
   def to_s
     "[car with p=#{@passengers}, v=#{@velocity}]"
@@ -134,8 +130,7 @@ c.faster
 puts p
 puts c
 
-----
-
+# Case 4
 class Character
   attr_reader :location, :velocity
   def initialize(features)
