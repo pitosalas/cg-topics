@@ -1,8 +1,12 @@
 ---
 title: REST and Web Services
 ---
-#### SOA and REST and Services
+#### What is a web service and an SOA?
+* A web server is now used not just as a place that has web pages for people to read, but as a place that delivers a service (functionality, data, information) to other programs, without human intervention.
+* instead of returning HTML (for web browsers to render) it returns data (for other apps to use!) Such a server is often said to be delivering a *web service* or *web API*.
+* This brings the notion of modularity, isolation, information hiding all the way up to the level of full servers. And creating an application can now become the stringing together of web services, each of which might be delivered by a different company (think Amazon, Heroku, Apple, IBM)
 
+#### Scenario
 * Consider this web page: [Brandeis Course Catalog](http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all)
 * What would  [schdl.net](https://brandeis.schdl.net/term/Spring_2018) do if it wanted to have a list of courses pre-populated with a college's courses?
   * Grab all the text `curl http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all > brandeiscourses.txt`
