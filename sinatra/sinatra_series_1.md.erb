@@ -30,10 +30,29 @@ title: "Sinatra Series 1: Basic Plumbing"
 
 #### Setting Up Sinatra
 * Make sure you have the following installed:
-  * rbenv 1.1+
-  * ruby 2.6.5
-  * git 2+
-  * postgres
+  * rbenv 1.1+ [install instructions](https://github.com/rbenv/rbenv)
+  * ruby 2.6.5 **use rbenv commands to install 2.6.5 as your "global" ruby**
+  * git 2+ [install instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * postgres [install instructions](https://www.postgresql.org/)
+
+#### Checking your installation
+Don't worry if you don't have precisely the same version number. Ask if you're not sure
+
+<%= code_begin %>
+$ rbenv -v
+rbenv 1.1.2
+$ ruby -v
+ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin19]
+$ git --version
+git version 2.22.0
+$ psql --version
+psql (PostgreSQL) 12.1
+
+*** LOCAL GEMS ***
+
+sinatra (2.0.8.1)
+sinatra-activerecord (2.0.14)
+<%= code_end %>
 
 #### Recommended directory structure
 * Unlike Rails, Sinatra does not dictate a directory structure
@@ -79,7 +98,6 @@ require 'sinatra/activerecord/rake'
 <%= code_begin %>
 # app.rb
 require 'sinatra'
-require 'byebug'
 
 get '/' do
   "Hello Sinatra!"
