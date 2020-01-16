@@ -98,3 +98,9 @@ require 'json'    # => true
 puts who.to_json  # => nil
 
 # >> {"first":"Jon","last":"Anders","age":12}
+
+###########
+# Fun
+
+a = ('a'..'z').to_a.shuffle[0..10].join
+puts a
