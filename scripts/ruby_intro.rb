@@ -1,8 +1,3 @@
----
-title: "Ruby Example: Basics"
----
-<%= ruby_begin %>
-
 ##########################
 # Strings, Numbers are a class
 
@@ -103,5 +98,3 @@ require 'json'    # => true
 puts who.to_json  # => nil
 
 # >> {"first":"Jon","last":"Anders","age":12}
-
-<%= ruby_end %>
