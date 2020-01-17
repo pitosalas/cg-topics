@@ -46,7 +46,7 @@ ims>
 * A series of ruby files implementing the IMS
 * You should include some unit tests to demonstrate that it works
 * You will store your state on disk between runs of the program. See technical Tips below for suggestions on how to do it.
-* Running the app should be simply `ruby ims` which will display a prompt `> ims`
+* Running the app should be simply `ruby ims.rb` which will display a prompt `> ims`
 * A readme file which describes your solution and any interesting design concepts you applied
 * In addition to all the files, include a file called transcript.txt. Demonstrate the operation of your solution by running it in the shell and copy/pasting the shell transcript in the file called transcript.txt. Include this file in the `pa-ims` directory.
 * To submit to Latte, just zip up the directory and post it to Latte.
@@ -58,4 +58,4 @@ ims>
   1. The classes and methods that interpret a request (coming in as a text string), process it, and return the response (as another text string)
   1. The classes and methods which represent the information, tracks and artists, and knows how to read and store them from disk
 * Each of these parts can be very separate from the others, and also be tested separately.
-* For storing the Tracks and Artists on disk, I recommend that you use two JSON formatted files and have a class which can save all the current info to the file and read all the stored info from the file. In particular, the YAML::Store class is a good choice. Keep it simple Look at [Ruby's Built In Databases]( https://www.krautcomputing.com/blog/2015/09/21/rubys-built-in-databases-meet-pstore-and-yamlstore/).
+* For storing the Tracks and Artists on disk, I recommend that you use two JSON formatted files and have a class which can save all the current info to the file and read all the stored info from the file. In particular, the YAML::Store class is a good choice. Keep it simple Look at [3 Built in Methods for Simple File Based Storage in Ruby]( https://solidfoundationwebdev.com/blog/posts/3-built-in-methods-for-simple-file-based-storage-in-ruby-or-rails).

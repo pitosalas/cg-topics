@@ -9,12 +9,12 @@ title: "Sinatra Series 2: A Basic Service"
 * Make sure first do <%= link_to_topic :sinatra_series_1 %>
 
 #### Initial API Spec
-* `GET /api/users/paul => JSON result
-* Properly withold password
-* Propertly return key information
+* `GET /api/users/paul` => JSON result
+* Properly withhold password
+* Properly return key information
 
 #### TDD
-* Look at api_test.rb (in [sinatra_series](https://github.com/pitosalas/sinatra_series) **branch )
+* Look at api_test.rb (in [sinatra_series](https://github.com/pitosalas/sinatra_examples/tree/master/sinatra_series) **branch )
 * Test is for a set of specific API calls, not of the database or other internals of the service
 * And before the test runs, it creates a `test fixture` the particular user being looked up
 * For the test to run there has to be a database (ActiveRecord) which is not yet set up
