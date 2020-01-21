@@ -1,12 +1,14 @@
 ---
 title: "Sinatra Series 2: A Basic Service"
 ---
+* Make sure first have done <%= link_to_topic :sinatra_series_1 %>
+* Next after this section is: <%= link_to_topic :sinatra_series_3 %>
+
 #### Goal
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
-* Make sure first do <%= link_to_topic :sinatra_series_1 %>
 
 #### Initial API Spec
 * `GET /api/users/paul` => JSON result
@@ -28,7 +30,7 @@ title: "Sinatra Series 2: A Basic Service"
 
 #### Implement GET
 * `get '/api/users/:name' do`
-* Retrieve the parameter `:name` with `params[:name]'
+* Retrieve the parameter `:name` with `params[:name]`
 * Use normal `activerecord` features to retrieve database
 * Use `.to_json` to convert result to json
 
