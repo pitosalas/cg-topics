@@ -10,7 +10,7 @@ title: "Sinatra Series: Case Study"
 
 #### Non SOA Approach to scaling
 
-<img src="/content/topics/images/soa1.png" widht="350" hspace="10">
+<img src="/content/topics/images/soa1.png" width="350" hspace="10">
 
 * A Web Server (aka App Server) runs your code. 
 * That server is connected by network to a database server.
@@ -33,7 +33,7 @@ title: "Sinatra Series: Case Study"
 ### Case Study: Social Application
 * To delve more into SOA we will be using a "Social Application"
 * Here are the basics: you should be writing this app as you read
-* It will be helfpul with NanoTwitter
+* It will be helpful with NanoTwitter
 
 #### Features (long term)
 
@@ -41,7 +41,7 @@ This is an RSS feed reader, with a social network integrated into it.
 
 * A user indicates that they are interested in a certain RSS feed, and they are imported into the app to allow the user to read it comfortably. Furthermore, users can follow each other so that user1 can follow along and see user2's feeds (say they share an interest.)
 * And if user1 sees a feed entry that they think is great they can vote it up.
-* User Profiles and Fllowing: basic profile information, user name, password, and who is following whom
+* User Profiles and Following: basic profile information, user name, password, and who is following whom
 * Feeds: Each user can make feed entries, which are collected into their feed
 * Votes: Any user can vote up or down a feed entry, whether it's one they are following themselves, or another user's
 * Notifications: A user can request to be notified when someone votes on a feed item from one of their own feeds, when someone starts following them, and so on.
@@ -99,7 +99,7 @@ end
 <%= ruby_end %>
 
 * `Follow` model
-* Is a lot simpler structurally but really confusing remantically!. Here is one way to do it
+* Is a lot simpler structurally but really confusing semantically!. Here is one way to do it
 
 <%= ruby_begin %>
 class Follow < ActiveRecord::Base
@@ -146,23 +146,23 @@ describe 'associations' do
 end
 <%= ruby_end %>
 
-### Paritioning into services
+### Partitioning into services
 * At a high level this service is pretty simple
 * There are just a few tables... but the semantics are tricky
 * But when we implement it properly we will touch on many of the representative challenges
-* As well as database/activerecord capabilitiers: caches, one-to-many, many-to-many, single-table-inheritance etc.
+* As well as database/activerecord capabilities: caches, one-to-many, many-to-many, single-table-inheritance etc.
 
 #### How to think about services
-* Fundamentally this is a designn challenge
+* Fundamentally this is a design challenge
 * There are different ways of attacking this
 * You can think of these questions:
   * Which information is read often but updated much more rarely? This will help determine which models can be in a different service
-  * Which is written and updated frequently? You will want to possibly put the updating in a seperate service so that the main threads are not delayed
+  * Which is written and updated frequently? You will want to possibly put the updating in a separate service so that the main threads are not delayed
   * Which joins will occur the most often? You will want to keep those tables together in the same service.
   * Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
 
 #### Start here
-* It is natural to begin with a monolythic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
+* It is natural to begin with a monolithic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
 
 <img src="/content/topics/images/soa4.png" width="175" hspace="10" align="center">
 
@@ -175,7 +175,7 @@ end
 #### Deliverable
 * Build out the five tables and models
 * Do not design or implement the routing blocks or views
-* Do write unit tests, folllowing my example to see that your models and associations work
+* Do write unit tests, following my example to see that your models and associations work
 * This is an individual assignment not a team assignment.
 * Include a readme explaining what you did and any interesting insights or obstacles you hit.
 * A zipped up sinatra app with tests according to the above suggestions
