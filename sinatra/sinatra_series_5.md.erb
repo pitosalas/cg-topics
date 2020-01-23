@@ -6,9 +6,9 @@ title: Sinatra Series 5 - Service and API Design
 #### Deliverables
 * Please answer these warmup questions:
   * In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
-  * Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interace (API) design of the service. What is the relationship with HTTP and the URI?
+  * Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interface (API) design of the service. What is the relationship with HTTP and the URI?
   * Can you come up with a nanoTwitter Service (API) which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
-  * Please indicate any concepts ideas that you feel you dont understand, if any.
+  * Please indicate any concepts ideas that you feel you don't understand, if any.
 
 #### Partitioning into Services
 * Lets look deeper at SOA design
@@ -16,9 +16,9 @@ title: Sinatra Series 5 - Service and API Design
 * Launching new services, upgrading existing ones
 * Designing the API itself
 * Difficult question and doesn't have one correct solution
-* Usual advice is to build it as a monolity and then "peel off" services
+* Usual advice is to build it as a monolith and then "peel off" services
 * Read: [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
-* Read [Why you shouldnt start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
+* Read [Why you shouldn't start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
 
 #### Four Different Strategies to consider
 * Partition based on iteration speed
@@ -27,14 +27,14 @@ title: Sinatra Series 5 - Service and API Design
 * Partition based on Joins
 
 ##### Iteration speed
-* Identify parts of the app which have stabalized and are not changing a lot
+* Identify parts of the app which have stabilized and are not changing a lot
 * Versus the ones that are still being molded into final shape
 * It has to do also with whether they are at the "core"
 * For example with SocialApp: are the feeds and feed entries pretty much a given?
 * Would it make sense to partition them out into a separate service?
 
 ##### Logical Function
-* Inutitively partitioning based on logical function makes perfect sense
+* Intuitively partitioning based on logical function makes perfect sense
 * Especially if the logical function is distinct and separate from other parts of the product
 * In the social reader, the processes which follow RSS feeds and import them into feed items are very separate
 * This service would periodically access all feed URLs (of blogs etc that a user is following) to see if new items had been posted and if so import them and build the feed items.
@@ -42,7 +42,7 @@ title: Sinatra Series 5 - Service and API Design
 * Similarly, there will be functionality to send out notifications. This is a natural and classic kind of service.
 
 ##### Read/Write frequencies
-* Directly out of the Basebal example we worked on
+* Directly out of the Baseball example we worked on
 * Data which is updated often and read much less often
 * Or, that is updated rarely but read extremely often
 * When the data is in different conventional databases this can benefit data consistency
@@ -67,7 +67,7 @@ title: Sinatra Series 5 - Service and API Design
 
 ##### Version numbers
 * The system as a whole must decide on a version numbering scheme
-* A useful new standard for this is known as Semver, [Semantic Versioning](https://semver.org/)
+* A useful new standard for this is known as SemVer, [Semantic Versioning](https://semver.org/)
 * Within the codebase each service will include it's current latest version
 * Importantly, each client of the service will include the version of the service they are assuming
 
@@ -92,7 +92,7 @@ title: Sinatra Series 5 - Service and API Design
 
 ##### Version in the *Accept:* header of the HTTP request
 * A new *mime-type* is defined for the new version of the api
-* For example `Accept: application/edu.brandeis.nantotwitter-v2+json`
+* For example `Accept: application/edu.brandeis.nanotwitter-v2+json`
 * This would indicate that the request will accept results that are json and also application specific
 * But this technique is not recommended
 * While APIs in general operate over HTTP, there are different ways of structuring them
@@ -105,7 +105,7 @@ title: Sinatra Series 5 - Service and API Design
   * PUT /tweet/12/text
 * The concept is that the URI refers to a *representation* of some *resource*
 * The resource would be user/1 which is a specific bit of information in the server
-* Stored in an unknownn format
+* Stored in an unknown format
 * `GET /user/1` requests, for example, an `html` or `json` representation of that user information
 
 ##### [HTTP responses](https://httpstatuses.com/)
@@ -119,23 +119,23 @@ title: Sinatra Series 5 - Service and API Design
 * The body of the response normally comes as <%= link_to_topic :json %>, and is totally application dependent.
 
 ##### HTTP Caching
-* One of the advantages of REST structured APIs is that they benefit from systen and network services
-* There are proxys and CDNs that will cache HTTP responses when conditions allow
+* One of the advantages of REST structured APIs is that they benefit from system and network services
+* There are proxies and CDNs that will cache HTTP responses when conditions allow
 * The context is this:
   * the client has received a resource. The user clicks on a link for the same resource. Is it safe to just give them the one we have or should be go back to the server to ash for it?
   * These HTTP headers may be present on the request or on the response. Also remember that there's the `HEAD` http verb which can query for information about the resource without receiving the resource itself. This is especially good for very large resources which rarely change.
 * Here are various HTTP headers involved:
   * `Cache-Control: public` Various settings that tell caching proxies what can and cannot be done
-  * `ETag: 737060cd8c284d8af7ad3082f209582d` A unique key that corresponds to the specific "version" of a response. In other words, if the version on the server has the same etag as the client has, then the response can be truncated to just the header. Or the server can request the current etag of the resource and choose not to ask for the body because it already hasd it.
+  * `ETag: 737060cd8c284d8af7ad3082f209582d` A unique key that corresponds to the specific "version" of a response. In other words, if the version on the server has the same ETag as the client has, then the response can be truncated to just the header. Or the server can request the current ETag of the resource and choose not to ask for the body because it already has it.
   * `Expires: Wed, 02 Sep 2009 08:37:12 GMT` The content returned by the server is considered valid up to that date/time. It doesn't need to request it again until then.
-  * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it agaim.
+  * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it again.
 
 ##### Handling Joins
 * As an example:
-  * it would be useful if an API that retuns a Tweet also return information from the user record as well
+  * it would be useful if an API that returns a Tweet also return information from the user record as well
   * This way just one API call would be needed to retrieve information that is displayed in the Twitter timeline
   * If this were made into a separate service, then that service would need access to both Tweet and User records
-  * In this "tweet" service, in order to really remove coupling it is tempting to give TweetService control of those two dataases. It would do the join (efficiently) and clients of the service would get great peformance.
+  * In this "tweet" service, in order to really remove coupling it is tempting to give TweetService control of those two databases. It would do the join (efficiently) and clients of the service would get great performance.
   * However other parts of Twitter also need to access the Users. Do we give that job to the TweetService too?
   * That would make no sense!
   * This scenario brings us to the question of where joins should happen
@@ -161,4 +161,4 @@ title: Sinatra Series 5 - Service and API Design
 ##### Summary
 * Partitioning an application into services is a serious design challenge
 * Its YAGNI vs. Performance
-* The general advice is to start with a monolyth and break into services only when it's clearly required
+* The general advice is to start with a monolith and break into services only when it's clearly required
