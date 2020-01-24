@@ -11,6 +11,7 @@ class Floor
   # what elevators are at this floor right now
   # List of people waiting here
   a = 1 + 1
+  puts a
 end
 
 a = {a: 100, b: 200, c: 300, a1: 100, b1: 200, c1: 300, a2: 100, b2: 200,

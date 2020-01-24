@@ -3,18 +3,28 @@ title: Hands On Sinatra Intro
 ---
 #### Hands On Demo
 
-This introductory demo script uses source code from **sinatra_first_project**, which you can find in my [sinatra_examples](https://github.com/pitosalas/sinatra_examples) repo.
+This introductory demo script uses source code from **sinatra_first_project**, which you can find in my [sinatra_examples](https://github.com/pitosalas/sinatra_examples) repo. You should copy it step by step if you really want to learn!
 
 ##### Steps
 * Ruby 2.6.5
 * Directories
   * Create directory myapp/ in a convenient spot and `cd` to it
   * Set that directory up as a git repo: `git init`
-* Create the simplest possible sinatra app and run it
-  * Add app.rb, with just get '/' "hello world"
+* Make sure you have the Sinatra gem installed
+* Create the simplest possible sinatra app and run it with ruby
+
+<%= code_begin %>
+require 'sinatra'
+
+get '/' do
+  '<h1>Hello world</h1>!'
+end
+<%= code_end %>
+
 * Create a gemfile, bundle, and run the program
 * Install Postgres: [Detailed Installation Guides](https://wiki.postgresql.org/wiki/Detailed_installation_guides)
 * Update app.rb to full example
+
 * Add model directory, 
   * And model.rb
 * Create config directory
@@ -24,7 +34,7 @@ This introductory demo script uses source code from **sinatra_first_project**, w
   * Take a look at schema.rb
   * create migration in migrate folder
   * rake db:migrate
-* Run the program
+* Run the programruby 
   * Error, no erb!
 * Create views directory
   * Add index.erb with a form in it.
