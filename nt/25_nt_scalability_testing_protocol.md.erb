@@ -13,12 +13,13 @@ Before we can run each standardized test, we want to get each server to a known 
 * y tweets
 * z relations
 
-#### Required urls **(all have to be GET)**
+##### Required urls **(all have to be GET)**
 * /?user_id=n
-* /search?search=word
+* /search?phrase=word
 * /test/user/tweet?user_id=x&tweet_count=y
+* /test/reset?count
 
-#### Test Scripts
+##### Test Scripts
 * During the test "someone" may try to log in by hand to make sure things are running ok
 * We will use the [Payload File](https://support.loader.io/article/17-payload-files) feature of loader.io
 * I will provide one. Here's an [example payload file](https://gist.githubusercontent.com/pitosalas/033456da51039066f911fca0fd6f01a0/raw/e3007da7c81caefc7a1222edc4cd1bb60cf8c1b0/gistfile1.txt)
@@ -27,17 +28,15 @@ Before we can run each standardized test, we want to get each server to a known 
 1. Rotate through 10 different urls, as follows:
   1. 7 times `/?user_id=n`
   1. 2 times `/test/tweet?user_id=x&count=y
-  1. 1 time `/search?search=z`
+  1. 1 time `/search?phrase=z`
 
-
-
-#### Test runs - using maintain client load
+##### Test runs - using maintain client load
 1. Run payload with u=250
 1. Run payload with u=500
 1. Run payload with u=1000
 1. Run payload with u=2000
 
-#### Data Collected
+##### Data Collected
 * Ave response time
 * Worse response time
 * NUmber of timeouts
