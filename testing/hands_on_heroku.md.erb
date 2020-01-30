@@ -2,7 +2,7 @@
 title: Hands On Heroku for Rails
 ---
 #### Introduction
-In this hands on demo you will create a new minimal Rails app, and then configure it so that it uses Sqlite3 in development on your local computer and Postgres in production. You will then set up Heroku and deploy the app to your Heroku account.
+In this hands on demo you will create a new minimal Rails app, and then configure it so that it uses Postgres for both development and production.
 
 **Here's the video: [Click here to view a video of this process](https://youtu.be/jlm4CxkguAc)**
 
@@ -51,7 +51,6 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 
 ##### Adapt your rails app for Heroku
 * Edit your Gemfile:
-  * As the second line, add: ruby '2.2.3' # or whatever your version is
   * Next add these lines:
 <%= code_begin %>
   gem 'rails_12factor', group: :production
