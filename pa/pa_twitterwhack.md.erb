@@ -26,11 +26,14 @@ Before we can start making API calls, we need to get access tokens from twitter 
 **NOTE:** If you are uncomfortable with giving Twitter your cell phone number, let us know and we will provide you with API keys you can use for this assignment.
 
 ##### Hints
-
-* Code Academy provides a helpful guide to accessing APIs with ruby, and accessing Twitter's API in parituclar.  See here: http://www.codecademy.com/en/tracks/twitter
-* If you want to go directly to a good gem to use to access twitter from your program, look for a gem called "twitter": https://github.com/sferik/twitter
+wo
+* There are lots of guides on accessing twitter from Ruby. I encourage you to be adventurous and look at more than one. Consider why it would be good or not good for your requirements. Can you tell how recently the gem was updated? Cany you tell whether the video is up to date? Can you tell how many other people are using it? Is it light or heavy weight? Does it still work?
+    * Here's one that looks good, but it's not from Twitter: https://github.com/sferik/twitter
+    * Here's what I think Twitter itself recommends: 
+    * Here's one that I've not seen before but looks interesting because it's from a service that seems to support many other APIs: https://rapidapi.com/blog/how-to-use-the-twitter-api/
+    * Here's another guide that looks good: https://www.rubyguides.com/2016/04/twitter-api-from-ruby-tutorial/
+* In all cases I strongly recommend writing a small "Hello World" example or running it in `irb` before building an application around it. Twitter frequently changes their API or their terms and conditions. You need to make sure the path you take works.
 * You can get a nicer object oriented design if you separate the code that knows about how to access twitter into a standalone class, for example, called TwitterWhacker. For example the knowledge of how to compute the "score" and the "index" and how to call twitter api. This class should not know anything about sinatra, or html. You can instantiate and use that class inside your sinatra application (e.g. sinatra.rb).
-* If you want to try test drive development, then look at my recording called "TwitterWhack Background" and you might remember how to do it.
 
 #### Final Product Specs
 
