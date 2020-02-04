@@ -21,7 +21,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
 
 ##### Here are the URLs of the test interface
 
-* `GET /test/reset?users=u&count=c`
+* `GET /test/reset?users=u&tweets=t`
   * Deletes all users, tweets and follows
   * Recreate TestUser
   * Imports data from standard seed data, see: <%= link_to_topic :nt_seed_data %>
@@ -30,9 +30,6 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * And all the related tweets
   * Example: `/test/reset?users=100&tweets=100
   * Returns a page that says "OK"
-* `GET /test/search?search=phrase`
-  * Performs a full text search for the phrase
-  * Returns a page that says "x matches found" 
 * `GET /test/tweet?user_id=x&tweet_count=y`
   * {x} can be the user id of some user, or the keyword testuser
   * n is how many randomly generated tweets are submitted on that users behalf
@@ -42,4 +39,14 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * How many users, follows, and tweets are there
     * What is the TestUser's id
   * Example: `/test/status`
+* `GET /test/validate?n=n`
+  * Checks for valid processing of database back end
+  * The purpose to detect that the nt back end is faithfully storing and retrieving the data
+  * This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
+  * In one request, does the following process
+    * Create `n` tweets using faker and the whole real back end including caching and queues and whatever else
+    * Store the tweet ids and the content in memory during the test
+    * Once complete, query the backend for those same ids, and check that the content is correct
+    * HTTP: OK if it validates, and HTTP: ERROR if it doesn't
+  
 
