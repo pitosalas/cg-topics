@@ -40,7 +40,16 @@ title: Introduction to ActiveRecord
 
 ##### Models and databases
 <%= ruby_begin %>
-# Assume Database table was called products and that it had a column called name
+
+# Build a quick and dirty Rails app
+$ rails new product_demo
+$ cd product_demo
+$ rails generate scaffold Product name:string
+$ rails db:create
+$ rails db:migrate
+$ rails console
+
+# Modify the Product model
 
 class Product < ApplicationRecord
   validates :name, presence: true

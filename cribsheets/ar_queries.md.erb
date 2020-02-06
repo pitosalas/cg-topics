@@ -4,22 +4,23 @@ title: Rails Activerecord Queries
 ##### Queries using ActiveRecord
 
 <%= ruby_begin %>
+
 # Simple queries return collections of instances
-	Article.all
-	Article.find(3) # id=3
-	Article.w­her­e(a­uthor: 'admin')
-	Article.where("likes_count = ?", value_for_count)
-	Article.f­ind­_by­(title: 'Rails 4', author: 'admin')
-	Article.find_or_create_by(title: 'Beatles')
+	Product.all
+	Product.find(3) # id=3
+	Product.w­her­e(a­uthor: 'admin')
+	Product.where("likes_count = ?", value_for_count)
+	Product.f­ind­_by­(title: 'Rails 4', author: 'admin')
+	Product.find_or_create_by(title: 'Beatles')
 
 # Working with collections
-	Article.where(author: 'pito').last # choosing
-	Article.where(author: 'pito').order(created_at: :desc) # sorting
+	Product.where(author: 'pito').last # choosing
+	Product.where(author: 'pito').order(created_at: :desc) # sorting
 
 # Working with associated Models
-article = Article.comments.where(author: 'georg')
+Product = Product.comments.where(author: 'georg')
 
 # What is the sql for a certain query?
-Department.sample.people.samle.to_sql
+Product.sample.to_sql
 
 <%= ruby_end %>
