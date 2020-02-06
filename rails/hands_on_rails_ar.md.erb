@@ -17,10 +17,11 @@ rails new handson
 
 ##### Gemfile
 <%= ruby_begin %>
-gem 'pry-rails'
+gem 'pry-byebug'
 gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
+gem 'hirb'
 <%= ruby_end %>
 
 ##### Create the database tables
@@ -38,12 +39,12 @@ Registration.delete_all
 
 5.times do
   event_name = (Faker::Hacker.ingverb + " " + Faker::Hacker.noun + "s").capitalize
-  Event.create(name: event_name, event_date: Faker::Date.between(1.year.ago, 1.day.ago), event_time: '12:00pm')
+  Event.create(name: event_name, event_date: Faker::Date.between(from: 1.year.ago, to: 1.day.ago), event_time: '12:00pm')
 end
 
 (1..10).each do
   p = Person.create(name: Faker::Name.name,
-    dob: Faker::Date.between(30.years.ago, 10.years.ago),
+    dob: Faker::Date.between(from: 30.years.ago, to: 10.years.ago),
     gender: ['f', 'm'].sample, zipcode: Faker::Address.zip)
 end
 
@@ -58,17 +59,6 @@ rails db:create  # creates the database for the current env
 rails db:migrate # Run latest migrations
 rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
-<%= ruby_end %>
-
-##### Examining the DB from the SQL console
-*In the database console you can type classic SQL commands*
-<%= ruby_begin %>
-rails dbconsole
-.help
-.databases
-.tables
-select * from people;
-select * from people where id > 1;
 <%= ruby_end %>
 
 ##### Examining the databases from the Rails console

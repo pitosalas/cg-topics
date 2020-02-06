@@ -29,7 +29,7 @@ rails db:migrate
 
 # seeds.rb
 25.times do
-  Course.create(number: Faker::Number.number(4), 
+  Course.create(number: Faker::Number.number(digits:4), 
                 name: Faker::Company.catch_phrase,
                 desc: Faker::Hacker.say_something_smart,
                 prof: Faker::Name.name)
@@ -62,14 +62,12 @@ class CourseTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "With all test" do
-    it "tautology works" do
-      1.must_equal 1
-    end
+  test "tautology works" do
+    assert_equal 2, 1+1, "Cant add?"
+  end
 
-    it "should be able to find a certain course" do
-      Course.where(number: 167).size.must_equal 1
-    end
+  test "should be able to find a certain course" do
+    assert Course.where(number: 167).size == 1
   end
 end
 ~~~
@@ -88,5 +86,4 @@ rails db:seed
 rails console
 Hirb.enable
 Course.all
-
 ~~~~
