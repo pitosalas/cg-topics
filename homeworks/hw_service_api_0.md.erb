@@ -1,29 +1,37 @@
 ---
 title: Service API - Introduction
 ---
+#### Here are the steps:
 
-----
+* Read the overview below
 
-<%= include_image "/content/topics/images/frontend.png" %>
+* **Setting up your cloud architecture - <%= link_to_topic :hw_service_api_1 %>**
 
-In this homework, we will create a multi-server architecture for making a simple app for creating and retrieving a list of users from the database!
+* **Setting up your Sinatra app - <%= link_to_topic :hw_service_api_2 %>**
 
-#### Start here
+* **Setting up CI/CD - <%= link_to_topic :hw_service_api_3 %>**
 
-##### Setting up your cloud architecture - <%= link_to_topic :hw_service_api_1 %>
+#### Overall Objective
 
-##### Setting up your Sinatra app - <%= link_to_topic :hw_service_api_2 %>
+<%= include_image "/content/topics/images/frontend.png" , extra: "style=\"max-width: 150\%\""%>
 
-##### Setting up CI/CD - <%= link_to_topic :hw_service_api_3 %>
-
-#### Flow
-
-<%= include_image "https://static.swimlanes.io/e86bed77d0258067e318c30e9f2c52fa.png" %>
+In this homework, we will create a multi-server architecture for making a simple app for creating and retrieving a list of users from the database! The homework proceeds in 4 steps. Each one will be assigned separately.
 
 #### Architecture
 
-- Sinatra Frontend (1 Droplet)
-  - Responsible for asking the Service API for the list of users, and render a html page for it.
-- Sinatra Service API (1 Droplet)
-  - Responsible for talking to Postgres and retrieving Users' information.
+* The structure of your final resilt will include three droplets
+* The logic of each will be trivial. 
+* Our objective here is to practice creating a multi-node architecture and deploying it
+
+##### The three nodes
+
+- Sinatra Frontend (1 Droplet). Responsible for asking the Service API for the list of users, and render a html page for it.
+- Sinatra Service API (1 Droplet). Responsible for talking to Postgres and retrieving Users' information.
 - Postgres DB (1 Database)
+
+#### Flow
+
+* The request logic will look like this: 
+
+<%= include_image "https://static.swimlanes.io/e86bed77d0258067e318c30e9f2c52fa.png", extra: "style=\"max-width: 150\%\""%>
+
