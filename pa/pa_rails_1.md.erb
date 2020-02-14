@@ -36,12 +36,10 @@ In the first part (of 3) you will build a basic rails application that imports a
   * pry-rails to invoke the nicer repl called pry when you do a `rails console`
 <%= ruby_begin %>
 # Gemfile
-group :development do
-  gem 'json'
-  gem 'activerecord-import'
-  gem "better_errors"
-  gem "pry-rails"
-end
+gem 'activerecord-import'
+gem 'json'
+gem "better_errors"
+gem "pry-rails"
 <%= ruby_end %>
 #### Useful Links
 * [ActiveRecord Import](https://github.com/zdennis/activerecord-import/wiki/Examples)
