@@ -95,7 +95,7 @@ Go to `Settings` -> `Secrets` and add the following keys:
 
 If you don't have the private key in your sever, you need to generate them and add the public key to `authorized_keys`.
 
-1. `keygen`
+1. `ssh-keygen`
 2. `cd .ssh`
 3. `echo "$(cat id_rsa.pub)" >> authorized_keys`
 4. To show the content of your private key `cat id_rsa` <- copy this to the corresponding `*_SSHKEY`
