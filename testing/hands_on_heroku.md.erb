@@ -11,13 +11,13 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 * **Remember not to type in the $ yourself!!!!**
 * Other lines are to be added to various files, and will be explained in context.
 
-#### Creating a minimal Rails app
-* `$ rails new herokudemo`
-* `$ rails g resource universe name:text size:integer`
+##### Creating a minimal Rails app
+* `$ rails new -d=postgresql herokudemo`
+* `$ rails g resource solar_system name:text size:integer`
 * `$ rake db:migrate`
 
-* Add to seeds.rb file: `Universe.create(name: "Our Universe", size: 100)`
-
+#### Get Database going
+* Add to seeds.rb file: `SolarSystem.create(name: "Sol", size: 9)`
 * `rake db:seed`
 * `rails generate controller welcome index`
 
@@ -26,10 +26,10 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 <%= code_begin %>
 <h2>Hello World</h2>
 <p>
-  The time is now: <%= Time.now %>
+  The time is now: <%%= Time.now %>
 </p>
 <p>
-  Number of universes: <\%= Universe.all.count %>
+  Number of Solar Systems: <%%= SolarSystem.all.count %>
 </p>
 <%= code_end "html" %>
 
@@ -37,36 +37,15 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 
 ##### See if the app works
 * `$ rails c`
-* Type this into the console: `Universe.all`
-
+* Type this into the console: `SolarSystem.all`
 * `$ rails server`
-
 * Now visit the home page in your browser, at http://0.0.0.0:3000
 
-####  Set up heroku
+#####  Set up heroku
 * Go to the heroku web site and create a free account on heroku
 * install heroku toolbelt (see: https://toolbelt.heroku.com)
 * check by typing `$ heroku`
 * Log into your account, by typing `$ heroku login` and supplying your email and password
-
-##### Adapt your rails app for Heroku
-* Edit your Gemfile:
-  * Next add these lines:
-<%= code_begin %>
-  gem 'rails_12factor', group: :production
-  gem 'sqlite3', group: :development
-  gem 'pg', group: :production
-<%= code_end "ruby" %>
-  * Also delete the line that says 'gem sqlite3' from the a few lines later. That line asks for Sqlite3 for all environments. While that's right for the development environment, it is not correct for the production (Heroku) environment.
-  * `$ bundle install`
-
-* Modify your database.yml file:
-<%= code_begin %>
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-<%= code_end "ruby" %>
 
 * Now get your app set up on git and github:
   * Go to www.github.com and create a brand new repo with the same name as your rails app, herokudemo
