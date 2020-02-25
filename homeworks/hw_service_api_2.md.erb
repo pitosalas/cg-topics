@@ -9,9 +9,53 @@ title: Service API - Sinatra
 
 - You must complete part 1 first, with 2 droplets and a database up and running on DO
 
+#### Step 0 - Modify your database.yml
+
+**It is important that you change your `database.yml` to create your personal database, since the class will be sharing one database cluster.**
+
+Create an unique database name that only you know at `$DEV_DB`, `$TEST_DB`, `$PROD_DB`. An good example would be `jho_dev_db`.
+
+<pre>
+<code class="language-yaml"># database.yml, where we declare various DB
+# settings and parameters
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # db private ip address
+  # https://cloud.digitalocean.com/databases
+  host: <%= ENV['DB_HOST'] %>
+  # db port
+  # https://cloud.digitalocean.com/databases
+  port: 25060
+  # db username
+  # https://cloud.digitalocean.com/databases
+  username: doadmin
+  # db password
+  # https://cloud.digitalocean.com/databases
+  password: <%= ENV['DB_PASSWORD'] %>
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 2
+
+
+development:
+  <<: *default
+  database: $DEV_DB
+
+test:
+  <<: *default
+  database: $TEST_DB
+
+production:
+  <<: *default
+  database: $PROD_DB</code>
+</pre>
+
 #### Step 1 - Create databases remotely
 
-Navigate to the `./service-api-sinatra` directory and create the databases using `rake` on your local machine
+Navigate to the `./service-api-sinatra` directory and create the databases using `rake` on your local machine.
+
+*Note: You should have received an email containing the database address and password, email your TA if you did not receive one!*
 
 *Replace `$DB_HOST` with the public address of the database (looks something like this: `postgres-sinatra...db.ondigitalocean.com`)*
 
@@ -23,7 +67,7 @@ Navigate to the `./service-api-sinatra` directory and create the databases using
 <code class="language-bash">rake db:create DB_HOST=$DB_HOST DB_PASSWORD=$DB_PASSWORD RACK_ENV=development</code>
 </pre>
 
-This will create these databases: `srv_api_dev` and `srv_api_test`
+This will create these databases: `$DEV_DB` and `$TEST_DB`.
 
 Then migrates the `User` table:
 
@@ -68,7 +112,7 @@ Homepage
     - `<a href="/">Refresh</a>`
   - A "destroy" button for removing all the user in the database
     - Does a `POST` to `http://API_HOST/users/destroy`
-- Hint: use `Net::HTTP.get` or `xhttp` to call your service API
+- Hint: use `Net::HTTP.get`, `xhttp`, or `html form` to call your service API
 
 #### Step 4 - Running locally
 
@@ -90,7 +134,7 @@ Now that you have tested it works locally, it is time to have it run on the clou
 *Replace `$REPO` with your own github repo (looks like `https://github.com/.../service-api-example.git`)*
 
 <pre><code class="language-bash"># For frontend
-doctl compute ssh --ssh-command frontend-sinatra
+doctl compute ssh frontend-sinatra
 # switch to rails user
 sudo -i -u rails
 # grab your code for github
