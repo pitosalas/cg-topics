@@ -25,12 +25,16 @@ In this homework, we will create a multi-server architecture for making a simple
 
 ##### Digital Ocean Architecture
 
-* Each individual will have two droplets named, e.g. pito-frontend and pito-service
-* Each team will share the postgres managed database across the students, as well as with the team's nano twitter.
-* The droplets are
-    * Sinatra Frontend (1 Droplet). Responsible for asking the Service API for the list of users, and render a html page for it.
-    * Sinatra Service API (1 Droplet). Responsible for talking to Postgres and retrieving Users' information.
-
+* Each student will have two droplets named, **yourname**-frontend and **yourname**-service
+    * e.g. pito-frontend (1 Droplet) will be running a Sinatra app, responsible for asking the Service API for the list of users, and render a html page for it.
+    * e.g. pito-backend (1 Droplet). Will also be running a Sinatra app, Responsible for handling the service requests, and talking to Postgres and retrieving Users' information.
+* Each team will share the postgres managed database across the students, named **projectname**-pg. 
+    * It will be used for student's individual projects as well as nano twitter.
+* NanoTwitter itself will have, in addition, at least three more droplets:
+    * one for the `front end` of nT
+    * one for the `backend` of nT 
+    * and one more for an additional service.
+    
 #### Flow
 
 * The request logic will look like this: 

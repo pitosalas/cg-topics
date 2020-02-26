@@ -9,7 +9,15 @@ title: "Service API - 2: Sinatra"
 
 * You must complete <%= link_to_topic :hw_service_api_1 %>, with 2 droplets and a database up and running on DO
 
-#### Step 0 - Modify your database.yml
+##### What to submit
+
+* Answer these questions and submit the answers to Latte in a pdf
+  * How many 'sinatra routes' does the Service API app have?
+  * Will you be connecting to postgres on your laptop or only on DO?
+  * What is `systemctl`? (You will have to do a little googling for this one)
+
+
+##### Step 0 - Modify your database.yml
 
 **It is important that you change your `service-api-sinatra/config/database.yml` in the githup repo which you created from the template.**
 
@@ -23,14 +31,14 @@ default: &default
   encoding: unicode
   # The environment variable DB_HOST will be set up to correspond to the ip address of our shared managed postgres instance
   # https://cloud.digitalocean.com/databases
-  host: <%= ENV['DB_HOST'] %>
+  host: <%%= ENV['DB_HOST'] %>
   port: 25060
   # db username is preset by DO to be `doadmin`
   # https://cloud.digitalocean.com/databases
   username: doadmin
   # db password is again supplied via the environment variable. 
   # https://cloud.digitalocean.com/databases
-  password: <%= ENV['DB_PASSWORD'] %>
+  password: <%%= ENV['DB_PASSWORD'] %>
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 2

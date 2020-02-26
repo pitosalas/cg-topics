@@ -5,7 +5,7 @@ title: "Service API - 1: Cloud"
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 
-#### Questions
+#### What to submit
 
 Answer these questions at the end and submit to latte as pdf:
 
@@ -37,7 +37,7 @@ Answer these questions at the end and submit to latte as pdf:
 
 * Create your front end droplet:
   * *Replace `$fingerprint` below with your "fingerprint"*
-  * *Replace `$frontend-name` below with something unique, e.g. `fe-pito`*
+  * *Replace `$frontend-name` below with something unique, e.g. `pito-frontend`*
 <pre>
 <code class="language-bash">doctl compute droplet create $frontend-name frontend-sinatra --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
 </pre>
@@ -50,7 +50,7 @@ You should see something like this:
 </code>
 </pre>
 
-* Do the same for the Service  droplet, again picking a unique name
+* Do the same for the Service  droplet, again picking a unique name, e.g. `pito-backend`ß
 
 <pre>
 <code class="language-bash">doctl compute droplet create $service-name --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
@@ -72,7 +72,7 @@ Go on your droplet's public IP with your browser, you should see something like 
 
 #### Step 2 - Setup database on DigitalOcean
 
-Now you need a Postgres database server or instance. This is equivalent to a computer running postgres. But you still have to create a named database on this server. That is the step after.
+Now you need a Postgres database server or instance. This is equivalent to a computer running postgres. Remember that each team will share a single managed postgres cluster, so only one team member has to do the following step:
 
 <pre>
 <code class="language-bash">doctl database create postgres-sinatra --engine pg --region nyc3 --size db-s-1vcpu-1gb --version 11 --num-nodes 1</code>
