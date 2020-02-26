@@ -1,5 +1,5 @@
 ---
-title: Service API - CI/CD
+title: "Service API - 3: CI/CD"
 ---
 
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
@@ -91,7 +91,7 @@ Go to `Settings` -> `Secrets` and add the following keys:
 - `API_SSHKEY`
   - The private key `.ssh/id_rsa` of `service-api-sinatra` droplet
 
-<%= include_image "/content/topics/images/secrets.png" %>
+<%= include_image "/content/topics/images/secrets.png", extra: "style=\"max-width: 145%;\"" %>
 
 If you don't have the private key in your sever, you need to generate them and add the public key to `authorized_keys`.
 
@@ -112,7 +112,7 @@ git push
 
 You should see the pipeline running under `Actions`
 
-<%= include_image "/content/topics/images/pipeline.png" %>
+<%= include_image "/content/topics/images/pipeline.png", extra: "style=\"max-width: 145%;\"" %>
 
 Once it finish you should be able to see the updated site at http://frontend-sinatra/
 

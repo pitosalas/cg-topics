@@ -1,5 +1,5 @@
 ---
-title: Service API - Sinatra
+title: "Service API - 2: Sinatra"
 ---
 
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
@@ -11,9 +11,9 @@ title: Service API - Sinatra
 
 #### Step 0 - Modify your database.yml
 
-**It is important that you change your `database.yml` to create your personal database, since the class will be sharing one database cluster.**
+**It is important that you change your `service-api-sinatra/config/database.yml` in the githup repo which you created from the template.**
 
-Create an unique database name that only you know at `$DEV_DB`, `$TEST_DB`, `$PROD_DB`. An good example would be `jho_dev_db`.
+Create a unique database names that only you know and use them where you see`$DEV_DB`, `$TEST_DB` and `$PROD_DB` below. Note that these will all be in the single managed postgres cluster for your project (shared with individual students as well as the team's nanotwitter.)
 
 <pre>
 <code class="language-yaml"># database.yml, where we declare various DB
@@ -21,16 +21,14 @@ Create an unique database name that only you know at `$DEV_DB`, `$TEST_DB`, `$PR
 default: &default
   adapter: postgresql
   encoding: unicode
-  # db private ip address
+  # The environment variable DB_HOST will be set up to correspond to the ip address of our shared managed postgres instance
   # https://cloud.digitalocean.com/databases
   host: <%= ENV['DB_HOST'] %>
-  # db port
-  # https://cloud.digitalocean.com/databases
   port: 25060
-  # db username
+  # db username is preset by DO to be `doadmin`
   # https://cloud.digitalocean.com/databases
   username: doadmin
-  # db password
+  # db password is again supplied via the environment variable. 
   # https://cloud.digitalocean.com/databases
   password: <%= ENV['DB_PASSWORD'] %>
   # For details on connection pooling, see rails configuration guide
@@ -48,7 +46,8 @@ test:
 
 production:
   <<: *default
-  database: $PROD_DB</code>
+  database: $PROD_DB
+  </code>
 </pre>
 
 #### Step 1 - Create databases remotely
@@ -99,7 +98,7 @@ Then migrates the `User` table:
 
 #### Step 3 - Implement Frontend
 
-<%= include_image "/content/topics/images/frontend.png" %>
+<%= include_image "/content/topics/images/frontend.png", extra: "style=\"max-width: 145%;\"" %>
 
 Homepage
 
@@ -234,3 +233,5 @@ sudo systemctl restart rails.service
 </code></pre>
 
 ##### **Now your app is live!** 🎉
+
+* Continue <%= link_to_topic :hw_service_api_3 %>

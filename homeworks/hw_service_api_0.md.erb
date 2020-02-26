@@ -1,5 +1,5 @@
 ---
-title: Service API - Introduction
+title: "Service API - 0: Introduction"
 ---
 #### Here are the steps:
 
@@ -19,15 +19,17 @@ In this homework, we will create a multi-server architecture for making a simple
 
 #### Architecture
 
-* The structure of your final resilt will include three droplets
+* The structure of your final resilt will include multiple droplets
 * The logic of each will be trivial. 
 * Our objective here is to practice creating a multi-node architecture and deploying it
 
-##### The three nodes
+##### Digital Ocean Architecture
 
-- Sinatra Frontend (1 Droplet). Responsible for asking the Service API for the list of users, and render a html page for it.
-- Sinatra Service API (1 Droplet). Responsible for talking to Postgres and retrieving Users' information.
-- Postgres DB (1 Database)
+* Each individual will have two droplets named, e.g. pito-frontend and pito-service
+* Each team will share the postgres managed database across the students, as well as with the team's nano twitter.
+* The droplets are
+    * Sinatra Frontend (1 Droplet). Responsible for asking the Service API for the list of users, and render a html page for it.
+    * Sinatra Service API (1 Droplet). Responsible for talking to Postgres and retrieving Users' information.
 
 #### Flow
 

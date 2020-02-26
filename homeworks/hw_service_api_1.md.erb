@@ -1,5 +1,5 @@
 ---
-title: Service API Part 1 - Cloud
+title: "Service API - 1: Cloud"
 ---
 
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
@@ -16,28 +16,30 @@ Answer these questions at the end and submit to latte as pdf:
 
 #### Prerequisites
 
+* Read <%= link_to_topic :hw_service_api_0 %>
 * DigitalOcean account
-  * Signup and get an API key: [https://cloud.digitalocean.com/account/api/](https://cloud.digitalocean.com/account/api/) -> "Generate New Token"
+  * Signup and get an API key: [https://cloud.digitalocean.com/account/api/](https://cloud.digitalocean.com/account/api/) -> "Generate New Token". **Write down the token**
 * SSH key on DigitalOcean
   * Go on: [https://cloud.digitalocean.com/account/security](https://cloud.digitalocean.com/account/security) and add your "SSH Key" following the instructions on the site, **and write down your "fingerprint"**
 * DO command line tool `doctl`
   * Install: [https://github.com/digitalocean/doctl#installing-doctl](https://github.com/digitalocean/doctl#installing-doctl)
-* Create a repo using this template: [https://github.com/xumr0x/service-api-example](https://github.com/xumr0x/service-api-example)
+* Create a repo using this template: [https://github.com/xumr0x/service-api-example](https://github.com/xumr0x/service-api-example). This will create a repo in your account, following the template.
 
 #### Step 0 - Set your team's project as default for your account
 
-Select your team -> Settings -> check "This is my default project" -> save.
+* Select your team -> Settings -> check "This is my default project" -> save.
 
-<%= include_image "/content/topics/images/default_team.png" %>
+<%= include_image "/content/topics/images/default_team.png", extra: "style=\"max-width: 145%;\"" %>
+
+* Authenticate yourself using your DO token: `doctl auth init`
 
 #### Step 1 - Create Resources on DigitalOcean
 
-To create a droplet for Frontend named: "frontend-sinatra"
-
-*Replace `$fingerprint` below with your "fingerprint"*
-
+* Create your front end droplet:
+  * *Replace `$fingerprint` below with your "fingerprint"*
+  * *Replace `$frontend-name` below with something unique, e.g. `fe-pito`*
 <pre>
-<code class="language-bash">doctl compute droplet create frontend-sinatra --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
+<code class="language-bash">doctl compute droplet create $frontend-name frontend-sinatra --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
 </pre>
 
 You should see something like this:
@@ -48,10 +50,10 @@ You should see something like this:
 </code>
 </pre>
 
-Do the same for the Service API droplet:
+* Do the same for the Service  droplet, again picking a unique name
 
 <pre>
-<code class="language-bash">doctl compute droplet create service-api-sinatra --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
+<code class="language-bash">doctl compute droplet create $service-name --size s-1vcpu-1gb --image rails-18-04 --region nyc3 --ssh-keys $fingerprint --enable-private-networking</code>
 </pre>
 
 Now you should have 2 droplets created:
@@ -66,11 +68,11 @@ ID           Name                   Public IPv4        Private IPv4      Public 
 
 Go on your droplet's public IP with your browser, you should see something like this:
 
-<%= include_image "/content/topics/images/rails.png" %>
+<%= include_image "/content/topics/images/rails.png", extra: "style=\"max-width: 145%;\"" %>
 
 #### Step 2 - Setup database on DigitalOcean
 
-Now you need a Postgres database:
+Now you need a Postgres database server or instance. This is equivalent to a computer running postgres. But you still have to create a named database on this server. That is the step after.
 
 <pre>
 <code class="language-bash">doctl database create postgres-sinatra --engine pg --region nyc3 --size db-s-1vcpu-1gb --version 11 --num-nodes 1</code>
@@ -84,7 +86,7 @@ You should see something like this:
 bd0e7e9f-01ba-40cf-a48f-defbdde78560    postgres-sinatra          pg        11         1                  nyc3      creating    db-s-1vcpu-1gb
 </code></pre>
 
-Create a "postgres" database, this will be useful for `db:migrate` later on in the tutorial
+You also need an initial database called "postgres" which we now create
 
 *Replace `$ID` with the database ID you got above*
 
@@ -96,11 +98,11 @@ Create a "postgres" database, this will be useful for `db:migrate` later on in t
 
 Go on [https://cloud.digitalocean.com/databases](https://cloud.digitalocean.com/databases) and click on the database you just created ("postgres-sinatra")
 
-<%= include_image "/content/topics/images/db_dashboard.png" %>
+<%= include_image "/content/topics/images/db_dashboard.png", extra: "style=\"max-width: 145%;\"" %>
 
 Click on "Add trusted sources" and select the two droplets, plus your laptop's ip.
 
-<%= include_image "/content/topics/images/db_add_trusted_source.png" %>
+<%= include_image "/content/topics/images/db_add_trusted_source.png", extra: "style=\"max-width: 145%;\"" %>
 
 Then click "Allow these inbound sources only".
 
@@ -110,8 +112,11 @@ Now you should be able to access your database from your droplets and your lapto
 
 Click "Connection details" then "Flags" to see the commands for connecting using `psql`
 
-<%= include_image "/content/topics/images/db_connection_details.png" %>
+<%= include_image "/content/topics/images/db_connection_details.png", extra: "style=\"max-width: 145%;\"" %>
 
 Run that command in terminal and you should be able to connect to the database.
 
-##### **Now your cloud architecture is all ready to go!** 🎉
+##### **Now your cloud architecture is all ready to go!** 🎉 Continue to next
+* Next: <%= link_to_topic :hw_service_api_2 %>
+
+
