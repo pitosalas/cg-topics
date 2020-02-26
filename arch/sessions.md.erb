@@ -1,6 +1,13 @@
 ---
 title: Sesions
 ---
+##### Sessions
+
+<%= include_image "/content/topics/images/how_cookies_work.jpg", extra: "style=\"max-width: 145%;\"" %>
+
+* Sessions
+  * User "state" across requests
+  * May store, for example, whether they are logged in, what's in their shopping cart, what their access level is, etc.
 * Web Server is stateless
 	* <%= discussion "What does that mean exactly?" %>
 	* Sessions: a general concept tying 'state' from one request to the next
@@ -24,6 +31,5 @@ title: Sesions
 	* `session_store = :active_record_store`
 	* `session_store = :mem_cache_store`
 
-<%= include_image "/content/topics/images/how_cookies_work.jpg" %>
 
 

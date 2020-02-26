@@ -5,7 +5,10 @@ title: Adding basic authentication
 
 ##### References
 * Reference: [Ruby on Rails Tutorial](https://www.railstutorial.org/book/modeling_users) - Chapters 6,7 and 8
-* Reference: [AuthDemo source code, private repo](https://github.com/pitosalas/authdemo)
+* Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
+* Reference: [Simple Authentication Tutorial](https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8)
+
+<%= callout("NB", "Use Rails 6!") %>
 
 ##### Intro
 
@@ -15,38 +18,48 @@ title: Adding basic authentication
 * Advice: Avoid getting fancy with initially, with devise, clearance, oauth, etc.
 * Start with a simple password
 
+##### Create minimal Rails app
+<pre><code class="language-ruby">rails new basic_auth_demo
+cd basic_auth_demo
+rails generate scaffold users name:string
+rails db:create db:migrate</code></pre>
+
 ##### has_secure_password
 * Line added to top of the model representing what is logging in
 * Might be Users, or Accounts, or whatever. The thing that logs in.
 * Makes base assumptions about that model
 * Database contains a field called password_digest (and does NOT contain a field called password)
 * Implements various aspects of the authentication model
-* Look at
-  * ./db/schema.rb
-  * ./app/models/user.rb
+* Steps
+  1. Add (uncomment) bcrypt gem to Gemfile; bundle update
+  1. Add field `password_digest:string` to your User table
+  1. Add this to the model User
+
+<%= source_begin("language-ruby") %># add this to models/user.rb
+include ActiveModel::SecurePassword
+has_secure_password
+<%= source_end %>
+
+##### Test out in the console
+* See: * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
 
 ##### password_digest, password, password_confirmation
 * Database only stores password_digest
 * Model logic supplied by has_secure_password
-  * On create: compare password, password_confirmation are equal
   * Computed a cryptographic hash (digest)
   * And store as password_digest
-<%= code_begin %>
-User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
-User.where(email: "tim@brandeis.edu").first.authenticate("abc")
-<%= code_end %>
+
+<%= source_begin("language-ruby") %>User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
+User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
 
 ##### Log in/out
 * Displaying the log in page: see ./app/views/sessions/new.html.erb
-* Log in is a page like any other, needs a route
-* Will assume existance of a SessionsController with create, new and destroy actions. Check rake routes to see what routes are created
-<%= ruby_begin %>
-# ./config/routes.rb
+* Log in is a page like any other, needs a route. something like this: 
+<%= source_begin("language-ruby") %># ./config/routes.rb
   get    '/signup', to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-<%= ruby_end %>
+  delete '/logout',  to: 'sessions#destroy'<%= source_end %>
 
 ##### Sessions Controller
 * Tricky: Session is not a model!
@@ -56,7 +69,29 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")
 * session#create: try validate password and save "logged in status"
 * session#destroy: reset logged_in_status
 
-###### Sessions Helper
+<%= source_begin("language-ruby") %>rails g controller sessions new create login welcome 
+
+# Add this to routes.rb
+resources :users, only: [:new, :create]
+get 'login', to: 'sessions#new'
+post 'login', to: 'sessions#create'
+get 'welcome', to: 'sessions#welcome'
+
+# Add this to sessions/welcome.html.erb
+<%%= button_to "Login", '/login', method: :get%>
+<%%= button_to "Sign Up", '/users/new', method: :get%>
+
+# Add this to views/users/_form.html.erb
+<%%= form_for @user do |f|%>
+  <%%= f.label :username%>
+  <%%= f.text_field :username%>
+  <%%= f.label :password%>
+  <%%= f.password_field :password%>
+  <%%= f.submit %>
+<%% end%>
+<%= source_end %>
+
+##### Sessions Helper
 * Where the core authorization logic is
 * Session[] is used to store the user_id of logged in user
 * Helper methods are used throughout
