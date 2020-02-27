@@ -8,7 +8,7 @@ title: Adding basic authentication
 * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
 * Reference: [Simple Authentication Tutorial](https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8)
 
-<%= callout("NB", "Use Rails 6!") %>
+<%= callout("NB", " Use Rails 6! These instructiosn won't work fully in earlier versions.") %>
 
 ##### Intro
 
@@ -52,15 +52,6 @@ has_secure_password
 <%= source_begin("language-ruby") %>User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
 User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
 
-##### Log in/out
-* Displaying the log in page: see ./app/views/sessions/new.html.erb
-* Log in is a page like any other, needs a route. something like this: 
-<%= source_begin("language-ruby") %># ./config/routes.rb
-  get    '/signup', to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'<%= source_end %>
-
 ##### Sessions Controller
 * Tricky: Session is not a model!
 * Session controller maps a url (route) to some code
@@ -77,7 +68,7 @@ get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 get 'welcome', to: 'sessions#welcome'
 
-# Add this to sessions/welcome.html.erb
+# Add this to views/sessions/welcome.html.erb
 <%%= button_to "Login", '/login', method: :get%>
 <%%= button_to "Sign Up", '/users/new', method: :get%>
 
