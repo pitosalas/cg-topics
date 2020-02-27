@@ -63,7 +63,6 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
 <%= source_begin("language-ruby") %>rails g controller sessions new create login welcome 
 
 # Add this to routes.rb
-resources :users, only: [:new, :create]
 get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 get 'welcome', to: 'sessions#welcome'
@@ -74,16 +73,53 @@ get 'welcome', to: 'sessions#welcome'
 
 # Add this to views/users/_form.html.erb
 <%%= form_for @user do |f|%>
-  <%%= f.label :username%>
+  <%%= f.label :name%>
   <%%= f.text_field :username%>
   <%%= f.label :password%>
   <%%= f.password_field :password%>
   <%%= f.submit %>
-<%% end%>
+<%% end %>
+
+# Modify this line in users_controller.rb#user_params
+params.require(:user).permit(:name, :email, :password, :password_confirmation)
+
 <%= source_end %>
 
-##### Sessions Helper
-* Where the core authorization logic is
+##### Adding actual authentication
+* We now know how to manage users and passwords. Now lets check them.
 * Session[] is used to store the user_id of logged in user
 * Helper methods are used throughout
-* Take a look at view/users/index
+* Note how they in a very simple way use sessions and state to
+  1. remember who is logged in
+  1. And check whether someone is logged in
+
+<%= source_begin "language-ruby" %>
+module SessionsHelper
+  # Logs in the given user.
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
+  # Returns the current logged-in user (if any).
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
+  # Returns true if the user is logged in, false otherwise.
+  def logged_in?
+    !current_user.nil?
+  end
+
+  # Logs out the current user.
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
+end
+
+# and add this to ApplicationController
+include SessionsHelper
+
+# Now start requiring log in (authorizatoin)
+
+<%= source_end %>
