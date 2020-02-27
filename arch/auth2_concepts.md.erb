@@ -1,6 +1,7 @@
 ---
 title: Authentication and Authorization Concepts
 ---
+
 <%= callout("Beware", " This is hairy stuff!") %>
 ##### Underlying Concepts
 1. Authentication: As an app runs, need to know "who is logged in"
@@ -8,7 +9,10 @@ title: Authentication and Authorization Concepts
 1. Cryptographical one-way hash
 1. Statelessness of http, statefulness and sessions
 
-##### Key Patterns
+<%= include_topic :sessions %>
+<%= include_topic :one_way_hash %>
+
+#### Key Patterns
 * True of more or less any approach to authorization and authentication
 * User record
   * There is some kind of User record corresponding to
@@ -21,4 +25,3 @@ title: Authentication and Authorization Concepts
   * User Capabilities: Each user has a series of CAN_xxx flags in the user database
   * User Types: Admin, Operator, Guest, etc.
 
-<%= include_topic :sessions %>
