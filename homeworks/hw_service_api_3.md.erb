@@ -2,16 +2,28 @@
 title: "Service API - 3: CI/CD"
 ---
 
-<link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+#### Introduction to CI/CD
 
-It is cumbersome to have to ssh into your droplets to update your app every time. We want to be able to just push the code, and the app will be updated automagically.
+* Contrinuous Integrationand Continuous Deployment. It is one of the building blocks of the practice of `devops`. 
+* Some people describe it as "process as code." Instead of writing down instructions for a human to follow, if the deployment process can be turned into code then we can bring great software engineering practices to the operation of our servers. 
+* Just imagine having hundreds if not more servers (droplets) then imagine the previous parts of this assigment being done over and over by hand!
+* Process automation by writing "code" in simple text files
+* This can now be managed by source code control and revision histories
+* It can be subjected to automated testing, modularity etc.
 
-#### Prerequisites
+##### Prerequisites
 
 * You must complete <%= link_to_topic :hw_service_api_1 %> and <%= link_to_topic :hw_service_api_2 %> first, with 2 droplets and a database up and running on DO
 
-#### Step 1 - Setup Github Actions file
+##### Deliverables
+* Your deliverable for this step is to answer these warmup questions. Keep your code clean though because at the end of the series we will ask you to submit your code!
+  * What is the role of the `journalctl` command?
+  * What are some alternative services to do CI/CD other than Github Actions?
+  * Explain how you would introduce automated testing. In other words if I had a ruby program that I could run with the command `ruby servcices_api_tests.rb`, how and where would I place itin the GitHub Actions file, if anywhere?
+
+#### Detailed Instructions
+
+##### Step 1 - Setup Github Actions file
 
 We are going to use Github Actions to setup our continuous deployment pipeline.
 
@@ -76,7 +88,7 @@ jobs:
           sudo systemctl restart rails.service
 </code></pre>
 
-#### Step 2 - Setup secrets
+##### Step 2 - Setup secrets
 
 This pipeline needs to have access to your droplets in order to update them.
 
@@ -100,7 +112,7 @@ If you don't have the private key in your sever, you need to generate them and a
 3. `echo "$(cat id_rsa.pub)" >> authorized_keys`
 4. To show the content of your private key `cat id_rsa` <- copy this to the corresponding `*_SSHKEY`
 
-#### Step 3 - Trigger the pipeline
+##### Step 3 - Trigger the pipeline
 
 Now you have the Secrets all set up, you need to push your code to trigger the pipeline.
 
