@@ -1,0 +1,29 @@
+---
+title: One Way Hash
+---
+#### One Way Hash
+
+* A cryptographic algorithm
+* Takes a plain text input (a message)
+* Generates a scrambled result (ciphertext)
+* Such that:
+    * given the plain text it is easy and cheap to compute the ciphertext
+    * given the cypher text it is next to impossible to compute the plaintext
+    * The chance of having two different plaintext map to the same cipher text is very tiny
+
+<%= include_image "/content/topics/images/onewayhash.jpg", extra: "style=\"max-width: 145%;\"" %>
+
+##### Password Checking
+1. When user registers
+    1. Compute one way hash of password
+    1. Store in database
+1. When someone attempts to log in
+    1. Compute one way hash the password they entered
+    1. Search the database for anyone who has the matching hash in their user record
+
+<%= source_begin("language-ruby") %>
+require 'digest'
+
+Digest::SHA256.digest "A very long string that is easy to remember!"
+
+<%= source_end %>

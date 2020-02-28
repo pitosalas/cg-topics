@@ -1,12 +1,18 @@
 ---
 title: Authentication and Authorization Concepts
 ---
-##### Terminology
-* Beware: this is hairy
-* Authentication: As an app runs, need to know "who is logged in"
-* Authorization: For anyone who is logged in: What is s/he allowed to do
 
-##### Key Concepts
+<%= callout("Beware", " This is hairy stuff!") %>
+##### Underlying Concepts
+1. Authentication: As an app runs, need to know "who is logged in"
+1. Authorization: For anyone who is logged in: What is s/he allowed to do
+1. Cryptographical one-way hash
+1. Statelessness of http, statefulness and sessions
+
+<%= include_topic :sessions %>
+<%= include_topic :one_way_hash %>
+
+#### Key Patterns
 * True of more or less any approach to authorization and authentication
 * User record
   * There is some kind of User record corresponding to
@@ -19,16 +25,3 @@ title: Authentication and Authorization Concepts
   * User Capabilities: Each user has a series of CAN_xxx flags in the user database
   * User Types: Admin, Operator, Guest, etc.
 
-<%= include_topic :sessions %>
-
-##### Complications that have to be considered
-* What does the product do when user is not logged in?
-  * Sometimes you have an artificial ("seed") user to be the non-logged-in user
-* How to store the password
-  * Never ever in free text
-  * At minimum hashed
-* Dealing with Social Media log in
-  * Facebook
-  * Google
-* What to use for user id
-  * A made up id (pitosalas) or just an email (pitosalas@gmail.com)
