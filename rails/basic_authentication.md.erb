@@ -67,6 +67,7 @@ resources :users, only: [:new, :create]
 get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 get 'welcome', to: 'sessions#welcome'
+get 'logout', to: 'sessions#destroy'
 
 # Add this to views/sessions/welcome.html.erb
 <%%= button_to "Login", '/login', method: :get%>
@@ -74,8 +75,8 @@ get 'welcome', to: 'sessions#welcome'
 
 # Add this to views/users/_form.html.erb
 <%%= form_for @user do |f|%>
-  <%%= f.label :username%>
-  <%%= f.text_field :username%>
+  <%%= f.label :name%>
+  <%%= f.text_field :name%>
   <%%= f.label :password%>
   <%%= f.password_field :password%>
   <%%= f.submit %>
