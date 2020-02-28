@@ -2,11 +2,53 @@
 title: Monolith or Not?
 ---
 
-#### Monolith vs. Microservices
+##### Monolith vs. Microservices
 * Opposite of Microservices
-* No "internal" services
+* Monolith:
+  * No "internal" services
+  * A single code base (repo)
 * Actually it's a spectrum
 * Actually even a monolith is three tier
+* Monoliths are not `bad` and Microservices are not `good`
 
-##### Microservices - Why?
+##### Pros and Cons
+* Monolith
+  * Fewer API/Interfaces to design, test and deploy
+  * One codebase is more efficient
+  * Devops is far simpler
+  * No extra network communications overhead
+  * But: Overly-tight coupling
+  * But: A bigger, single architecture is harder to understand
+* Microservices
+  * Forces more modularity and better organization
+  * Allows service reuse, and additional scaling options
+  * Really isolated testing is possible
+  * But: Extra work for cross cutting concerns (e.g. logging, authentication, monitoring etc.)
+  * But: Far more complicated operations and devops
+
+#### Microservices
+
+**Diagram illustrates the benefits of microservices**
+
 <%= include_image "/content/topics/images/microservicesecosystem.svg", extra: "style=\"max-width: 200%;\"" %>
+
+##### Steps in outline
+* This article lays out an approach to [Break a monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+* **STEP 1**: Start thinking about building Devops
+    * Environment variables
+    * Services mapped to hosts
+    * Automation
+* **STEP 2**: First attack simple self-contained functionality
+    * Either needs no database or has a table that no other part of the system uses
+    * It should be easy to isolate with interface of a single class or a few methods
+    * Preferably "functional", think amazon Lambda etc
+    * Next create a think sinatra (or other) layer to accept requests as urls and paths and return results as http results. 
+    * Demonstrate that it works by running automated deployment, installation, configuration, and service start, stop and restart operations
+* **STEP 3**: Next decouple a service which doesn't share data 
+  * Again a service that needs no database or has a table that it fully controls
+  * The goal again is to make the interface in the form of a class and/or a set of methods
+  * Might need <%= link_to_topic :refactoring %> in order to remove or reduce dependencies
+  * Then, continue as above
+
+
+
