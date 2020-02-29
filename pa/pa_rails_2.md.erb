@@ -4,28 +4,60 @@ title: PA Rails 2
 #### Continuation
 (click here to go back to <%= link_to_topic :pa_rails_1 %>)
 
-Continuing from PA Rails 1 we will now allow the user to request to sign up for the course (fake of course :) There will be a new Search page which will help the user to find courses to sign up to, and then an enroll button to further allow them to sign up to it.
+##### Purpose
 
-####Part 2: Course Enrollment, Search
-1. Create a User model with user accounts where the first page of the app will ask users to sign in or sign up. This requires implementing user authentication using any of the methods we covered in class, or any other you discover.
-1. Only once logged in can the user see the tabs with the details
+This assignment series is designed to have each student practice some important *skills, including:**
+  1. Structuring a web based application using Rails
+  1. Implementing such an application using Ruby
+  1. Designing a relational database schema including a many to many relationshop
+You will also gain imporant specific knowledge
+  1. You will learn more and more shell commands
+  1. You will learn how to do a drop down menu in HTML
+I believe you will find that these skills amount to general `full stack programming` skills which you will need as a software engineer either in academia or in the business world/
+  
+#### Context 
+
+Continuing from PA Rails 1 we will now allow the user to request to sign up for the course (fake of course :) There will be a new Search page which will help the user to find courses to sign up to, and then an enroll button to further allow them to sign up to it. 
+
+#### Part 2: Course Enrollment, Search
+1. Create a User model with user accounts.
+1. Update your app to incorporate user authentication using any of the techniques we covered in class or that you discover on your own.
+1. The desired result is that the home page (i.e. the root or `/` page) displays just the login and register links if the user is not logged in. Actually you can call them whatever you want and they can be links or buttons. All that is required is that the home page provide *affordances* for login and register.
+1. Once logged in, every page should include am *affordance* for logging out.
+1. Only once logged in can the user see the tabs and information from <%= link_to_topic :pa_rails_1 %>. 
 1. Add a model/table called Enrollment linking users and courses (a many-to-many association).
-1. Add a fourth page to your app called Search. In the search page have a search form allowing users to search for courses by specifying a course name and/or subject. Remember that a subject has zero to many courses. If the user specifies a course name and a subject, both constraints should apply. The subject field should be a dropdown that is populated using data from the database. The course name field should be a text field. When the search/submit button is clicked in the form the app should display a list of all matching courses in a new results page.
+1. Add a fourth page to your app called Search. In the search page have a search form allowing users to search for courses. The search page should have a text box for the course name and a dropdown (or select box) for the subjects. Remember that forms have two controller actions: one to display the search form and one to actually peform the search. 
+1. There are several ways to approach the dropdown menu (also known as a `select box`). Look at the `subject` data. Each subject has a name (e.g. "Computer Science") and an id (e.g. "1161-1400"). You need to write a simple algorithm which creates a datastructure which maps the id to the subject. Look at section 3.2 of [Form Helpers Rails Guide](https://guides.rubyonrails.org/form_helpers.html) for one common way to do it. As you can see, the datastructure you want to build looks like: `[['Computer Science',  "1161-1400"], ["East Asian Studies","1161-1500"], [... etc]]`. When the user picks out a subject the "id" would be returned to the controller.
+1. You might end up with code in the do_search controller action that looks like this: 
+<%= source_begin "language-ruby" %>
+if params[:subject].blank?
+  @courses = Course.where("name LIKE ?", "%#{params[:search_text]}%")
+else
+  @courses = Subject.find(params[:subject]).courses.where("name LIKE ?", 
+                          "%#{params[:search_text]}%")
+end
+<%= source_end %>
 1. Each of your search results should have a button called “Enroll” which when clicked will enroll a user in that course.
 1. Modify the Home page to list all the courses that a user is enrolled in
 1. Continue using Bootstrap to make the pages look good.
 
-###Deliverables:
-Make sure your code is as nice as you can get it and that your repo is clear. Make sure to incldue a readme.md file to explain whatever you would like to explain.
-1. Submit to Latte your link to GitHub.
+#### Deliverables:
+
+##### Caveats
+1. Make sure your code is as nice as you can get it and that your repo is clear. 
+1. Make sure to include a readme.md file to explain whatever you would like to explain.
+1. You must be using ruby 2.6.5
+1. We will not attempt to run your program ourselves (too many confuguration nuances). Instead we rely on your heroku link to WORK!
+1. If your Heroku link doesn't work then we wont be able to see your app and there will be points off!
+
+##### Specific Deliverables
 1. Submit to Latte your link to Heroku.
-1. Submit to Latte a zipped up folder of your app.
+1. Submit to Latte a zipped up folder of your complete app.
 
 #### Useful links
-<%= callout("NB", " I have not yet tried these out") %>
 
 * [Implementing authentication with Auth0 and Rails 6](https://emmanuelhayford.com/implementing-authentication-with-auth0-and-rails-6/)
-* [Google API Ruby Client](https://github.com/googleapis/google-api-ruby-client/blob/master/docs/getting-started.md)
+* [Form Helpers Rails Guide](https://guides.rubyonrails.org/form_helpers.html) 
 * [Google authentication in Ruby on Rails](https://developers.google.com/gdata/articles/gdata_on_rails)
 * [OmniAuth Google OAuth2 Strategy](https://github.com/zquestz/omniauth-google-oauth2)
 * [Action View Form Helpers Guide](https://guides.rubyonrails.org/form_helpers.html)
