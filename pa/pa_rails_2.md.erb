@@ -14,7 +14,6 @@ This assignment series is designed to have each student practice some important 
   1. Designing a relational database schema including a many to many relationshop
 
 You will also gain imporant specific knowledge
-
   1. You will learn more and more shell commands
   1. You will learn how to do a drop down menu in HTML
 I believe you will find that these skills amount to general `full stack programming` skills which you will need as a software engineer either in academia or in the business world/
@@ -22,9 +21,9 @@ I believe you will find that these skills amount to general `full stack programm
 #### Part 2: Course Enrollment, Search
 1. Create a User model with user accounts.
 1. Update your app to incorporate user authentication using any of the techniques we covered in class or that you discover on your own.
-1. The desired result is that the home page (i.e. the root or `/` page) displays just the login and register links if the user is not logged in. Actually you can call them whatever you want and they can be links or buttons. All that is required is that the home page provide *affordances* for login and register.
-1. Once logged in, every page should include am *affordance* for logging out.
-1. Only once logged in can the user see the tabs and information from <%= link_to_topic :pa_rails_1 %>. 
+1. When the user is not logged in, the home page (i.e. the root or `/` page) displays only a page title plus a login and a register link or button, nothing more.
+1. When the user is logged in, the home page (and every other page) should display the data for each tab (like before) *and* a logout link or button.
+1. For Registration, all that is required is a simple password plus username and/or email. Validation, repeat password, etc. are not required.
 1. Add a model/table called Enrollment linking users and courses (a many-to-many association).
 1. Add a fourth page to your app called Search. In the search page have a search form allowing users to search for courses. The search page should have a text box for the course name and a dropdown (or select box) for the subjects. Remember that forms have two controller actions: one to display the search form and one to actually peform the search. 
 1. There are several ways to approach the dropdown menu (also known as a `select box`). Look at the `subject` data. Each subject has a name (e.g. "Computer Science") and an id (e.g. "1161-1400"). You need to write a simple algorithm which creates a datastructure which maps the id to the subject. Look at section 3.2 of [Form Helpers Rails Guide](https://guides.rubyonrails.org/form_helpers.html) for one common way to do it. As you can see, the datastructure you want to build looks like: `[['Computer Science',  "1161-1400"], ["East Asian Studies","1161-1500"], [... etc]]`. When the user picks out a subject the "id" would be returned to the controller.
@@ -39,7 +38,7 @@ end
 <%= source_end %>
 1. Each of your search results should have a button called “Enroll” which when clicked will enroll a user in that course.
 1. Modify the Home page to list all the courses that a user is enrolled in
-1. Continue using Bootstrap to make the pages look good.
+1. Continue using Bootstrap. Implement a simple [Bootstrap 4 Grid](https://getbootstrap.com/docs/4.0/layout/grid/). And use bootstrap classes for at least one or two of your other elements. Buttons, tabs, columns are all possibilities.
 
 #### Deliverables:
 
