@@ -1,0 +1,30 @@
+---
+title: Testing Services
+---
+#### Background
+* Service testing is key when building a Service Oriented Architecure
+* It is exactly analogous to End-to-end testing or integration testing
+* It supplements basics of Unit Testing
+
+##### Internal vs. External API
+* We are focused here on *internal" service APIs
+* Since you control that the considerations are different
+* External APIS - Web APIs provided to you by another company altogether
+  * You don't control it. The response time may vary dramatically from test to test
+  * You might need tokens or log ins. There may be quotas (maximum number of calls)
+  * The service may not be free
+  * You need to make sure that your code behaves correctly no matter what that service does
+  * You cannot fix bugs in the service, all you can do is respond in a safe way
+  * Here's a good article discussing a classic scenario and a typical conceuptual approach. In this example it is using a well known Ruby tool: [Learn How to Test Third Party Services With Minitest & VCR](https://blog.eduonix.com/web-programming-tutorials/learn-test-third-party-services-minitest-vcr/)
+
+##### How Services are put together
+* By definition what makes it a service is that is accessed over HTTP
+* The functionality is nvoked via a URL (or queue -- for later) 
+* And it produces results by returning JSON (or XML -- for later)
+* We happen to be using Sinatra for dispatching HTTP routes and returning JSON
+
+
+##### Unit Testing Services
+* Keep the app server aspect (e.g. `sinatra`) as thin as possible
+* Create your functionality from POROs ()
+
