@@ -25,7 +25,11 @@ title: Testing Services
 * And it produces results by returning JSON (or XML -- for later)
 * We happen to be using Sinatra for dispatching HTTP routes and returning JSON
 
-##### Unit Testing Services
+##### Unit Testing Services Components
 * Keep the app server aspect (e.g. `sinatra`) as thin as possible
 * Create your functionality from POROs ()
+
+##### Mechanics
+* Actually accessing urls etc from your test scripts
+* In Ruby, use `capybara` - [Capybara](https://github.com/teamcapybara/capybara#using-capybara-with-minitest)
 
