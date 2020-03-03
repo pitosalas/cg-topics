@@ -5,6 +5,8 @@ title: Testing Services
 * Service testing is key when building a Service Oriented Architecure
 * It is exactly analogous to End-to-end testing or integration testing
 * It supplements basics of Unit Testing
+* It's an extension of testing in general
+* Concurrent software is the most difficult kind to reason about
 
 ##### Internal vs. External API
 * We are focused here on *internal" service APIs
@@ -22,7 +24,6 @@ title: Testing Services
 * The functionality is nvoked via a URL (or queue -- for later) 
 * And it produces results by returning JSON (or XML -- for later)
 * We happen to be using Sinatra for dispatching HTTP routes and returning JSON
-
 
 ##### Unit Testing Services
 * Keep the app server aspect (e.g. `sinatra`) as thin as possible
