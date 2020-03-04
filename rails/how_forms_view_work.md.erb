@@ -1,8 +1,9 @@
 ---
 title: How do forms and views work?
 ---
+#### How Forms and Views Work
 
-#### Conceptual
+##### Conceptual
 * You need a form whenever the browser needs to send data to the server
 * `<form>` tag begins the group of fields. It declares the URL that payload is sent to
   * There are zero or more fields
@@ -14,7 +15,7 @@ title: How do forms and views work?
   * In the case of, e.g. a **search** form, a **GET** is more appropriate.
   * See [HTTP Methods: GET vs POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
-#### Rails
+##### Rails
 * There are always TWO controller actions:
   * one to display the form
   * one to accept the data from the form
@@ -34,7 +35,7 @@ title: How do forms and views work?
   * Explain params.require()
   * Explain injection attacks
 
-#### More complicated case
+##### More complicated case
 * Nested resources
 * Routes automatically create a set of helpers
 * `resource` routes create a complete set of CRUD helpers
@@ -61,12 +62,12 @@ resources :comments
   * Let's read the action and understand what it does
 * How do you create a nested resource, i.e. a comment for item 3?
 
-#### Making Views DRY
+##### Making Views DRY
 * When you see yourself writing the same html over and over again
 * write a helper: let's do an example!
 * write a partial: And let's do another example!
 
-#### Summary
+##### Summary
 * Routes
   * Understand the urls and verbs and how they map to controller actions
   * Use rake routes to verify your understanding
