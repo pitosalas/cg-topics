@@ -1,5 +1,6 @@
 ---
 title: ERB Cribsheet
+desc: Facts about ERB
 ---
 #### Intro to ERB
 * "Embedded Ruby"
@@ -14,7 +15,7 @@ title: ERB Cribsheet
 * *And only in the case of `<%%= %>` it's inserted into the resulting text
 
 ##### Example
-<%= ruby_begin %>
+<%= source_begin "language-ruby" %>
 <%% %w(Jones Hickey Salas Madeiras).each do |name| %>
   ----
   Dear Mr. <%%= name %>,
@@ -27,4 +28,4 @@ title: ERB Cribsheet
   Tom
   -----
 <%% end %>
-<%= ruby_end %>
+<%= source_end %>
