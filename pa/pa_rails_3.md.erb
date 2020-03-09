@@ -8,8 +8,16 @@ Continuing from PA Rails 2 we finally add Ajax and Javascript to the search page
 
 #### Part 3: Searching with AJAX and Javascript
 1. Modify the search functionality to use AJAX and Javascript such that search results are displayed in the same search page - preferably underneath the search form.
-1. The search results should be updated without reloading the page or rendering a new page.
+1. The search results should be updated without reloading the page or rendering a new page. 
+1. In rails 6, `application.js` has been moved to `app/javascript/packs` from `assets/javascripts`, be wary of this when looking online! Adding JQuery in rails 6 is different from rails 5! See [Introducing JQuery in Rails 6 Using Webpacker](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker) for an up-to-date guide.
+<%= callout("NOTE", " environment.js is in config/webpack/environment.js") %>
+{:start="4"}
 1. Remove the search/submit button from the search form, and instead add Javascript events on the subject dropdown and course name text field so that results are automatically updated whenever a change is detected in any of the inputs.
+<%= callout("NOTE", " When including custom jquery, you tend to need to wrap it in a function that looks like this") %>
+<%= source_begin "language-js" %>$( document ).on('turbolinks:load', () => {<%= source_end %>
+{:start="5"}
+1. Keep in mind that there are many jquery events, not just change, that may be useful for text fields, and using the `$(#selector).on('event1 event2 event3')` may be useful. Look some up!
+1. Be wary of the jquery `submit` function-- this may cause problems when using AJAX.
 
 #### Deliverables:
 1. Submit to Latte your link to GitHub.
