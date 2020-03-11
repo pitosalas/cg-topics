@@ -1,42 +1,47 @@
 ---
 title: Hands On Forms Demo
 ---
-#### Set up and modify gem file
+##### Rails Defaults
+* You can setup some defaults for rails in a file called `~/.bashrc`
+* These are mine. You can look them up yourself to see if you like them!
 
-~~~
-rails new formsdemo
+<%= source_begin "language-bash" %>--database=postgresql
+-B
+--skip-coffee
+--skip-active-storage
+--skip-action-mailer
+--skip-action-mailbox<%= source_end %>
 
-gem 'binding_of_caller'
+##### Set up and modify gem file
+<%= source_begin "language-ruby" %>rails new formsdemo
+
 gem 'awesome_print'
 gem 'better_errors'
 gem 'hirb'
 
 bundle
-~~~~
+<%= source_end %>
 
-#### Make models and define associations
+##### Make models and define associations
 
-~~~
-rails generate scaffold items title:string  description:string owner:text category_id:integer
+<%= source_begin "language-ruby" %>rails generate scaffold items title:string  description:string owner:text category_id:integer
 rails generate scaffold categories title:string description:string
-rails generate scaffold comments from:string message:string item_id:integer
-~~~
+rails generate scaffold comments from:string message:string item_id:integer<%= source_end %>
 
-#### Model changes
+##### Model changes
 
-~~~
-# category.rb
+<%= source_begin "language-ruby" %># category.rb
 has_many :items
 
 # item.rb
 belongs_to :category
-has_many :comments
-~~~
+has_many :comments<%= source_end %>
 
-#### Create seed data (seeds.rb)
+##### Create seed data (seeds.rb)
 * Notice an interesting way to create test data
 
-~~~
+<%= source_begin "language-ruby" %>
+# seed.rb
 puts "creating categories"
 Category.destroy_all
 
@@ -57,53 +62,25 @@ puts "creating sample items"
   description = adjective.sample + " " + title
   Item.create(title: title, description: description, owner: owners.sample, category: categories.sample)
 end
-~~~
+<%= source_end %>
 
-#### Create dbs and add seed data
-~~~
+##### Create dbs and add seed data
+<%= source_begin "language-ruby" %>rails db:create
 rails db:migrate
-rails db:seed
+rails db:seed<%= source_end %>
 
-~~~
-
-#### Add Bootstrap
+##### Add Bootstrap
 
 * Notice not using a gem, to keep it simple
-* Reference: https://getbootstrap.com/docs/4.0/getting-started/introduction/
+* Reference: https://getbootstrap.com/docs/4.1/getting-started/introduction/
 * Update views/layouts/application.html.erb
 
-~~~
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Formsdemo</title>
-    <%%= csrf_meta_tags %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <%%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <%%= yield %>
-      </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
-</html>
-~~~
-
-#### Update the routes
+##### Update the routes
 * Notice: how the scategories resource stays flat
 * Notice how items > comments is a nested resource
 * Notice how the collection is set up
 
-~~~
+<%= source_begin "lang-ruby" %>
 Rails.application.routes.draw do
   resources :categories
   resources :items do
@@ -114,12 +91,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create]
   end
   root 'items#index'
-
 end
-~~~
+<%= source_end %>
 
-#### Define the search form search.html.erb
-~~~
+##### Define the search form search.html.erb
+
+~~~~
 <div>
   <h1>Search</h1>
     <%%= form_tag(do_search_items_path, method: "get") do %>
@@ -131,15 +108,15 @@ end
       <%%= submit_tag("Search") %>
     <%% end %>
 </div>
-~~~
+~~~~
 
-#### And it's corresponding actions
+##### And it's corresponding actions
 * Why does search have two actions?
 * What controller do these actions go in?
 * Notice how to do "like" in order to allow close matches
 * Notice how we factor out the index page so we get a parital
 
-~~~~~
+~~~~
 #[items_controller.rb]
 
   def search
@@ -183,9 +160,10 @@ end
 <br/>
 
 <%%= link_to 'New Item', new_item_path %>
-~~~~~
+~~~~
 
-#### Let's add some Bootstrap
+
+##### Let's add some Bootstrap
 * Bootstrap is already "included" in layouts/application.html.erb
 * We bring it to life by adding classes to strategic spots
 
