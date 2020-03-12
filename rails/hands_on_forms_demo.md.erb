@@ -41,7 +41,7 @@ has_many :comments<%= source_end %>
 * Notice an interesting way to create test data
 
 <%= source_begin "language-ruby" %>
-# seed.rb
+# db/seeds.rb
 puts "creating categories"
 Category.destroy_all
 
@@ -79,8 +79,11 @@ rails db:seed<%= source_end %>
 * Notice: how the scategories resource stays flat
 * Notice how items > comments is a nested resource
 * Notice how the collection is set up
+* Perform a `rails routes` after you edit routes.rb to see what it created
 
 <%= source_begin "lang-ruby" %>
+# config/routes.rb
+
 Rails.application.routes.draw do
   resources :categories
   resources :items do
@@ -94,9 +97,10 @@ Rails.application.routes.draw do
 end
 <%= source_end %>
 
-##### Define the search form search.html.erb
+##### Define the search form:
 
 ~~~~
+# views/items/search.html.erb
 <div>
   <h1>Search</h1>
     <%%= form_tag(do_search_items_path, method: "get") do %>
@@ -117,7 +121,7 @@ end
 * Notice how we factor out the index page so we get a parital
 
 ~~~~
-#[items_controller.rb]
+#/controllers/items_controller.rb
 
   def search
   end
@@ -126,7 +130,7 @@ end
     @items = Item.where("title LIKE ?", "%#{params\[:title\]}%")
   end
 
-#[views/items/_index.html.erb]
+# views/items/_index.html.erb
 <table>
   <thead>
     <tr>
@@ -152,23 +156,15 @@ end
     <%% end %>
   </tbody>
 </table>
-
-#[views/items/index.html.erb\]
-<h1>Listing items</h1>
-
-<%%= render "index" %>
-<br/>
-
-<%%= link_to 'New Item', new_item_path %>
 ~~~~
 
-
 ##### Let's add some Bootstrap
+
 * Bootstrap is already "included" in layouts/application.html.erb
 * We bring it to life by adding classes to strategic spots
 
 ~~~
-# [views/items/index.html.erb]
+# views/items/index.html.erb
 <h1>Listing items</h1>
 
 <%%= render "index" %>
@@ -178,10 +174,10 @@ end
   <%%= link_to 'Search', search_items_path, class: "btn btn-default" %>
 </div>
 
-#[search.html.erb]
+# search.html.erb
 <div class="col-md-md-offset-1 col-md-md-4">
   <h1>Search</h1>
-form_tag(do_search_items_path, method: "get", class: "form") do %>
+    <%%= form_tag(do_search_items_path, method: "get", class: "form") do %>
 
       <div class="form-group">
         <label>Title</label>
@@ -193,26 +189,31 @@ form_tag(do_search_items_path, method: "get", class: "form") do %>
 </div>
 ~~~
 
-#### Now lets add some additional controls
+##### Now lets add some additional controls
 * A drop down control which will allow user to pick search options
+* Notice also that now we use the _index.html.erb partial to display an index right along with the search result
+* This is pointing the way to AJAX!
 
 ~~~~
-
-# [views/items/search.html.erb]
+# views/items/search.html.erb
     <div class="form-group">
       <label>Return matching or non-matching items</label>
       <%%= select_tag(:match_no_match,
             options_for_select(
-            \[['only matching', "match"\],
-             \['only non matching', "nomatch"\]
+            [['only matching', "match"\],
+             ['only non matching', "nomatch"\]
             ]), class: "form-control") %>
     </div>
+    <%%= render "index" %>
 
-#[controllers/items_controller.rb, in do_search\]
+# controllers/items_controller.rb, in do_search
 def do_search
   match_no_match = params.fetch(:match_no_match)
   negation = match_no_match == "match" ? "" : " NOT "
   query_string = negation + "title LIKE ?"
-  @items = Item.where(query_string, "%#{params\[:title\]}%")
+  @items = Item.where(query_string, "%#{params[:title]}%")
+  render "search"
 end
 ~~~~
+
+
