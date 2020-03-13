@@ -1,6 +1,7 @@
 ---
-title: "PA1: Out and Back"
-desc: Drive a real robot out and back to its starting point 
+title: "PA0: Out and Back"
+desc: Drive a real robot out and back to its starting point
+order: 0
 ---
 #### Summary
 
@@ -29,12 +30,28 @@ Write ROS code to drive the robot out 1 meters, rotate 180 degrees and return. T
 
 #### Tasks
 
-##### create a package called papackage
+* See xxx for how to set up your package initially
 
 ##### write the out_and_pack_time.py
 
+* Publish to `/cmd_vel` at a slow speed (e.g. 0.1 meters per second)
+* If you know the current time, you can loop until 10 seconds have passed
+* Which would approximate one meter
+* Do a similar approac to rotate
+
 ##### write out_and_back_time.launch
 
-##### test it in Rviz
+* See xxx for the syntax of a launch file
+* Remember to chmod +x your script
+* Run it with roslaunch command
+
+##### test it in Rviz or Gazebo
+
+* Follow these instructions to create your simulated robot: `xxxx`
+* Now run your app and see that it does what you expect
 
 ##### test it in the actual robot
+
+* The program does not have to be changed
+* Follow these instructions to turn on and bring up the robot
+* Test your pogram
