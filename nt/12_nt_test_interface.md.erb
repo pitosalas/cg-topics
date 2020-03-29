@@ -13,6 +13,10 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * email: testuser@sample.com
 * password: "password"
 
+##### Special url argument
+* To facilitate testing, any URL can have `?user_id=x` appended which will bypass the login and automatically make this NT session logged in as user x. For example:
+* `GET /?user_id=x` would show the homepage as if user_id x was logged in.
+
 ##### Test Data
 * Url to reset and load the standard seed is: /test/reset/standard?tweets=n&users=u&follows=u
 * Dataset is the standard <%= link_to_topic :nt_seed_data %>
@@ -21,23 +25,25 @@ There's a user that we use as part of many of the tests. We refer to the user as
 
 ##### Here are the URLs of the test interface
 
-* `GET /test/reset?users=u&tweets=t`
+* `GET /test/reset?user_count=u`
   * Deletes all users, tweets and follows
   * Recreate TestUser
   * Imports data from standard seed data, see: <%= link_to_topic :nt_seed_data %>
-    * ?users=n means to import n users from the seed data...
-    * Including all the related follows (i.e. both users need to be present)
-    * And all the related tweets
-  * Example: `/test/reset?users=100&tweets=100
-  * Returns a page that says "OK"
-* `GET /test/tweet?user_id=x&tweet_count=y`
-  * {x} can be the user id of some user, or the keyword testuser
+    * ?user_count=n means to import n users from the seed data...
+    * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users.
+    * Also import the follows associated with the users
+  * Example: `/test/reset?user_count=10` means to import 10 users from the seed data plus their tweets and follows. 
+  * Returns 200 or 400
+* `GET /test/tweet?tweet_user=x&tweet_count=y`
+  * {x} is the user id of some user
   * n is how many randomly generated tweets are submitted on that users behalf
-  * Returns a page that says "OK"
+  * Example `GET ../test?tweet_user=123&tweet_count=22` will generate 22 random tweets for user 123
+  * Returns 200 or 400
 * `GET /test/status`
   * One page "report":
     * How many users, follows, and tweets are there
     * What is the TestUser's id
+  * Returns 200 or 400
   * Example: `/test/status`
 * `GET /test/validate?n=n`
   * Checks for valid processing of database back end
@@ -47,6 +53,6 @@ There's a user that we use as part of many of the tests. We refer to the user as
     * Create `n` tweets using faker and the whole real back end including caching and queues and whatever else
     * Store the tweet ids and the content in memory during the test
     * Once complete, query the backend for those same ids, and check that the content is correct
-    * HTTP: OK if it validates, and HTTP: ERROR if it doesn't
-  
+    * Returns 200 or 400
+
 

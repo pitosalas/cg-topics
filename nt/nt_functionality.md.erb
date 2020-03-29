@@ -22,18 +22,18 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Authentication will use a simplistic hashed password in the User record
 * We will not be concerned for this exercise with having tight security
 
+##### Non-logged in users:
+
+* Will not be able to do anything other than register an account or log into an existing account
+
 ##### Logged in users:
 
 * Can follow and unfollow other registered users
 * Can tweet
-* Can see the flow of the last n tweets by the users that they have followed
+* Can see the flow of the last 50 tweets by the users that they have followed
 * Can search for a phrase
 * Can see a list of users who are following them and who they are following
 * Can see a list of tweets referring to a particular "#tag"
-
-##### Non-logged in users:
-
-* Will not be able to do anything other than register an account or log into an existing account
 
 ##### Tweets:
 
@@ -63,10 +63,6 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Display the user registration page: `/register`
 * Display user login prompt, and check for correct password: `/login`
 * Logout: `/logout`
-
-##### Special url argument
-* To facilitate testing, any URL can have `?user_id=x` appended which will bypass the login and automatically make this NT session logged in as user x. For example:
-* `GET /?user_id=x` would show the homepage as if user_id x was logged in.
 
 <%= include_topic :nt_test_interface %>
 

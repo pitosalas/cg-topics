@@ -3,12 +3,10 @@ title: Load Testing nanoTwitter
 ---
 #### Load Testing
 * Testing a product to see how it performs under load
-
-#### Deployment
 * Obviously to do load testing, your app needs to be running on a server, separately from your own computer.
 * This could be any server, even your neighbor's laptop.
-* For our purposes, it needs to be on one of the cloud services, like Heroku
-* I recommend Heroku
+* For our purposes, it needs to be on one of the cloud services like Digital Ocean or Heroku
+  * We are all using Digital Ocean
   * if you are adventurous you could deploy it elsewhere too.
   * But then we won't really be able to give you too much help
 * Cloud deployment implies that there is a well known 'fixed' domain name
@@ -16,29 +14,21 @@ title: Load Testing nanoTwitter
 
 #### App functionality
 * Each team has deployed nanoTwitter and has supplied us with the domain name
-* Each implementation of nanoTwitter follows the same spec
+* Each implementation of nanoTwitter follows the same spec (<%= link_to_topic :nt_functionality %>) includeing the <%= link_to_topic :nt_test_interface %>
 * In particular, implement the url routes exactly as specified.
 * This allows a unified test to be run against all of the apps
-
-#### Load Testing Tools
-* There are numerous Load Testing tools. Here are two lists:
-  * [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use).
-  * [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
-* We are using [loader.io](http://www.loader.io) -- at least to start
-* Lets look at the [types of tests](https://support.loader.io/article/16-test-types)
-
-#### How to deal with authentication
-* Initial tests should be constructed so that they don't require a login
-  * For nanoTwitter, displaying of the non-logged in home page
-* Later tests will require a log in
-  * Note that within loader.io there is a provision for authenticating using basic authentication.
-
-#### Standard <%= link_to_topic :nt_seed_data %>
 * To allow us to compare apples to apples we have <%= link_to_topic :nt_seed_data %>
 * Adapt your code to use this <%= link_to_topic :nt_seed_data %>
 
-#### Standard configuration parameters
-* Non-logged in page displays the **100** most recent tweets
+#### Load Testing Tools
+* There are numerous Load Testing tools. Here are two lists: [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use) and [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
+* We are using [loader.io](http://www.loader.io)
+* You need to understand the different [types of tests](https://support.loader.io/article/16-test-types)
+
+#### How to deal with authentication
+* The <%= link_to_topic :nt_test_interface %> specifies an authentication bypass argument
+* All your urls will need to check for the special argument in the url: `?user_id=x`
+* If you see that argument, then you bypass the normal login sequence and instead set x as your currently logged in user by storing it in your session variable.
 
 #### Reporting
 * Keep a careful lab notebook!
@@ -63,6 +53,7 @@ seconds, which would influence your results.
 * Use the "maintain client load" option (at least to start.)
 
 #### Test 1: Simple display of home page
+
 * Visit your root page (which will display a set number of tweets)
 * Use Loader.io to hit that page using maintain client load
 * Collect and record data
