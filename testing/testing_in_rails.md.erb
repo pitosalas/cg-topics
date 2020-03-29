@@ -1,0 +1,20 @@
+---
+title: Testing in Rails
+---
+##### Testing in Rails
+* Principle is the same
+* Remember there's no good reason to test whether Rails is doing what it is supposed to do
+* For example, whether validations are validating, or whether has_many is actually working
+    * Maybe a few tests to poke some holes, but certainly not each and every test.
+* Rails gives you "for free"
+  * A test/ directory that includes:
+    * Folders to hold tests for each part of your application
+    * Folders for storing YAML fixture data (test/fixtures/) and other types of data files (test/fixtures/files)
+    * A test helper file (test/test_helper.rb) that you'll use to configure your testing stack and runs
+  * Generators that will spit out assert-style unit tests for any Rails components you create
+  * Configuration for a test database in config/database.yml
+  * A way to run your test suite or subsets of it with the rails executable (Rails 5+) or rake (previous versions)
+  * A complete, pre-tuned test environment configuration
+  * The Spring application preloader that speeds up tests and Rake task execution in your development and testing environments by keeping an instance of your application running in a background process (installed by default in Rails 4.1 and up)”
+
+    **Excerpt From: Chris Kottom. "The Minitest Cookbook." iBooks**

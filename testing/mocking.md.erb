@@ -1,34 +1,34 @@
 ---
 title: Mocking
 ---
-#### Mocking
-* Overview
-	* SUT ("System under test")
-	* Collaborators (other objects needed to test SUT)
-	* Decoupling is a major goal
-* What is a Mock?
-	* An object that stands in for another object during testing
-	* Make sure that only the right methods are called
-	* Related terms: Test Doubles, stubs, and others. Don't get confused.
-  * More distinctions
-    * Broadest term: Test Double. They are all part of this category
-    * Test Dummy: An object that stands in for another, that has no methods. Not very useful.
-    * Stub: Responds to the key methods that are required for the test but the return values are fixed.
-    * Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
+##### Overview
+* SUT ("System under test")
+* Collaborators (other objects needed to test SUT)
+* Decoupling is a major goal
 
-* Advantages
-	* Decoupling is always a good thing.
-		* Performance
-		* Maintainability
-		* Testability
-	* If you introduce a bug in a class
-		* Only the tests that are testing that class will fail
-		* So, fewer false positives
-	* Disadvantages
-		* Need to maintain to consistency between the mock and the class-being-mocked
-		* Otherwise you may be testing somethingn that doesn't even exist
+##### What is a Mock?
+* An object that stands in for another object during testing
+* Make sure that only the right methods are called
+* Related terms: Test Doubles, stubs, and others. Don't get confused.
+* More distinctions
+	* Broadest term: Test Double. They are all part of this category
+	* Test Dummy: An object that stands in for another, that has no methods. Not very useful.
+	* Stub: Responds to the key methods that are required for the test but the return values are fixed.
+	* Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
+
+##### Advantages and Disadvantages
+* Decoupling is always a good thing.
+	* Performance
+	* Maintainability
+	* Testability
+* If you introduce a bug in a class
+	* Only the tests that are testing that class will fail
+	* So, fewer false positives
+* Disadvantages
+	* Need to maintain to consistency between the mock and the class-being-mocked
+	* Otherwise you may be testing somethingn that doesn't even exist
 * Real world example:
-    * Let's look at some of the code that runs this web site.
-    * Note slightly different syntax because of RSpec vs. minitest/spec
-    * [citem_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/citem_spec.rb)
-    * [toc_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/toc_spec.rb)
+	* Let's look at some of the code that runs this web site.
+	* Note slightly different syntax because of RSpec vs. minitest/spec
+	* [citem_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/citem_spec.rb)
+	* [toc_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/toc_spec.rb)
