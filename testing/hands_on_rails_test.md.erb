@@ -2,137 +2,108 @@
 title: Hands on Rails Test Demo
 ---
 ##### Set up
-~~~
+<%= source_begin "language-bash" %>
 rails new railstestdemo
 cd railstestdemo
-~~~
-
+<%= source_end %>
 ##### Add to gemfiles
-~~~
+<%= source_begin "language-ruby" %>
 gem 'pry-byebug'
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'minitest-rails'
-bundle
-~~~
+gem 'minitest-spec-rails'
 
-#### Add to config/application.rb
-<%= ruby_begin %>
-config.generators do |g|
-  g.test_framework :minitest, spec: true
-end
-<%= ruby_end %>
+# then remeber to run `bundle`
+<%= source_end %>
 
 #### Add and test a model
-~~~
-rails generate minitest:install
-rails generate model word eng:string ned:string
-rake db:migrate
-~~~
+<%= source_begin "language-bash" %>rails generate model word eng:string ned:string
+rails db:migrate
+<%= source_end %>
 
 
 ##### See what rake tasks are present
-~~~
-rails -T
-~~~
+<%= source_begin "language-bash" %>rails -T
+<%= source_end %>
 
 ##### Add some more tests
-~~~
-it "stores a translation" do
-  word = Word.new(eng: "house", ned: "huis")
-  word.eng.must_equal "house"
-  word.ned.must_equal "huis"
-end
-~~~
+<%= source_begin "language-ruby" %># test/models/word_test.rb
+  it "stores a translation" do
+    word = Word.new(eng: "house", ned: "huis")
+    assert_equal word.eng, "house"
+    assert_equal word.ned, "huis"
+  end
+<%= source_end %> 
 
 ##### One way to add fixtures
-~~~
-before do
+<%= source_begin "language-ruby" %>before do
   Word.destroy_all
   Word.create(eng: "house", ned: "huis")
   Word.create(eng: "boat", ned: "boot")
 end
-~~~
+<%= source_end %> 
 
 ##### And see if words model can be persisted
-~~~
-it "has two words in database" do
-  Word.count.must_equal 2
-end
+<%= source_begin "language-ruby" %>  it "has two words in database" do
+    assert_equal Word.count, 2
+  end
 
-it "can accept a new word" do
-  Word.create(eng: "shoe", ned: "schoen")
-  Word.count.must_equal 3
-end
-~~~
+  it "can accept a new word" do
+    Word.create(eng: "shoe", ned: "schoen")
+    assert_equal Word.count, 3
+  end
+<%= source_end %> 
 
 ##### Add a validation to the model
-~~~
-class Word < ActiveRecord::Base
+<%= source_begin "language-ruby" %>class Word < ActiveRecord::Base
   validates :eng, presence: true
   validates :ned, presence: true
 end
-~~~
+<%= source_end %> 
 
 ##### Add a test for the validation
-~~~
-it "cannot save a word without the english and dutch text" do
+<%= source_begin "language-ruby" %>it "cannot save a word without the english and dutch text" do
   w = Word.create(eng: "university")
-  w.valid?.must_equal false
+  assert !w.valid?
 end
-~~~
+<%= source_end %> 
 
 ##### Test the Word.random method
-~~~
-it "Can return a random word" do
+<%= source_begin "language-ruby" %>it "Can return a random word" do
   w = Word.random
-  w.must_be_kind_of Word
+  assert_equal w.class, Word
 end
-~~~
+<%= source_end %> 
 
 #### Implement the Word.random method
-~~~
-def self.random
-  offset = rand(Word.count)
-  Word.offset(offset).first
+<%= source_begin "language-ruby" %>def self.random
+  Word.sample
 end
-~~~
+<%= source_end %> 
 
 #### Add and test a controller
-~~~
-rails generate controller Words random
-~~~
-
-##### First write the test for the learn action
-~~~
-require_relative '../test_helper'
-
-describe class WordsController < ApplicationController do
-  it "handles random action" do
-    get words_random_url
-    assert_response :success
-  end
-end
-~~~
+<%= source_begin "language-bash" %>rails generate controller Words random
+<%= source_end %> 
 
 ##### Now actually implement the action in the WordsController
-~~~
+<%= source_begin "language-ruby" %>
+
 class WordsController < ApplicationController
   def random
     @word = Word.random
   end
 end
-~~~
+<%= source_end %> 
 
 ##### And the view:
-~~~
+<%= source_begin "language-html" %>
 <h1>Words#random</h1>
 
 <h2>A random Word:</h2>
 
 <p>Dutch: <%%= @randword.ned %></p>
 <p>English: <%%= @randword.eng %> </p>
-~~~
+<%= source_end %> 
 
 #### References
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
