@@ -6,19 +6,19 @@ title: Hands on Rails Test Demo
 rails new railstestdemo
 cd railstestdemo
 <%= source_end %>
+
 ##### Add to gemfiles
 <%= source_begin "language-ruby" %>
 gem 'pry-byebug'
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'minitest-spec-rails'
 
 # then remeber to run `bundle`
 <%= source_end %>
 
 #### Add and test a model
 <%= source_begin "language-bash" %>rails generate model word eng:string ned:string
-rails db:migrate
+rails db:create db:migrate db:test:prepare
 <%= source_end %>
 
 
@@ -28,7 +28,7 @@ rails db:migrate
 
 ##### Add some more tests
 <%= source_begin "language-ruby" %># test/models/word_test.rb
-  it "stores a translation" do
+  test "stores a translation" do
     word = Word.new(eng: "house", ned: "huis")
     assert_equal word.eng, "house"
     assert_equal word.ned, "huis"
@@ -36,7 +36,7 @@ rails db:migrate
 <%= source_end %> 
 
 ##### One way to add fixtures
-<%= source_begin "language-ruby" %>before do
+<%= source_begin "language-ruby" %>  setup do
   Word.destroy_all
   Word.create(eng: "house", ned: "huis")
   Word.create(eng: "boat", ned: "boot")
@@ -44,11 +44,11 @@ end
 <%= source_end %> 
 
 ##### And see if words model can be persisted
-<%= source_begin "language-ruby" %>  it "has two words in database" do
+<%= source_begin "language-ruby" %>  test "has two words in database" do
     assert_equal Word.count, 2
   end
 
-  it "can accept a new word" do
+  test "can accept a new word" do
     Word.create(eng: "shoe", ned: "schoen")
     assert_equal Word.count, 3
   end
@@ -62,14 +62,14 @@ end
 <%= source_end %> 
 
 ##### Add a test for the validation
-<%= source_begin "language-ruby" %>it "cannot save a word without the english and dutch text" do
+<%= source_begin "language-ruby" %>test "cannot save a word without the english and dutch text" do
   w = Word.create(eng: "university")
   assert !w.valid?
 end
 <%= source_end %> 
 
 ##### Test the Word.random method
-<%= source_begin "language-ruby" %>it "Can return a random word" do
+<%= source_begin "language-ruby" %>test "Can return a random word" do
   w = Word.random
   assert_equal w.class, Word
 end
@@ -77,7 +77,7 @@ end
 
 #### Implement the Word.random method
 <%= source_begin "language-ruby" %>def self.random
-  Word.sample
+  Word.all.sample
 end
 <%= source_end %> 
 
@@ -107,3 +107,4 @@ end
 
 #### References
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
+* [Source Code](https://github.com/pitosalas/public_samples/tree/master/rails/rails_test_demo)
