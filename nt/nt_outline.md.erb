@@ -65,14 +65,6 @@ As these instructions have evolved over the years, there are sometimes inconsist
 * **\[SCALEEXPERIMENT\]** Design and execute scaling experiments and see the differences. Make sure you record the results carefully so you will be able to report on them in your final report!
 * **\[nanoTwitter 0.6\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
-
-##### nanoTwitter 0.7: Web Service API and Client
-
-* **\[APIROUTES\]**Go back to the beginning Design external REST API urls. Implement them as further Sinatra routes. The needed routes are explained in <%= link_to_topic :nt_functionality %>. Remember that you have to state the url's "syntax" and the format of the input and output data (JSON). Your documentation should be good enough for a programmer who doesn't know anything about your app to properly access the API.  You have a few other intersting alternatives: You can use [Swagger](https://swagger.io) to document your API and actually generate code for the service and the client. Or, you can use [GraphQL](http://graphql.org) to design a totally different, modern, yet non-REST Api. Both of these options are more advanced and would be recognized as a way to make your product more advanced.
-* **\[CLIENTLIB\]** Write client libraries for your APIs. This client library could be written in any language, because it's purpose is to support a programmer who wants to use nanoTwitter's functionality as a service. Follow the example as explained early in \[SODRR\]. I have some tips on how to do this here: <%= link_to_topic :nt_client_library %>
-* **\[CLIENTLIBTEST\]** Write a complete set of tests for your client library demonstrating that the client library indeed works. Again the example is explained early in \[SODRR\].
-* **\[nanoTwitter 0.7\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
-
 ##### nanoTwitter 1.0: Completion
 * **\[MICROSERVICE\]**Based on our class discussions, refactor one bit of functionality from your main Sinatra app into a separate microservice. Determine how you will communicate between the two services. See how your scalability is affected, if at all.
 * **\[CODECLIMATE\]** Do a static code analysis by submitting your source code to [Code Climate](www.codeclimate.com). It will motivate you to clean up your code, remove code smells etc.
