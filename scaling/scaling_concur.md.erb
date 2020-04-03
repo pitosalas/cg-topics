@@ -1,7 +1,7 @@
 ---
 title: Scaling with Concurrency
 ---
-### Scalability Pattern: Concurrency
+#### Scalability Pattern: Concurrency
 * Do more with the available resources
 * Do more things at the same time
 * Resource idle time is your enemy
@@ -10,7 +10,7 @@ title: Scaling with Concurrency
   * Disk
   * Database
 
-#### Scenarios when concurrency is an option
+##### Scenarios when concurrency is an option
 
 * Users can ask for a detailed report about their twitter traffic
   * It can be a one shot, or regenerated at midnight
@@ -22,7 +22,7 @@ title: Scaling with Concurrency
 * Note: AJAX uses a very common form of concurrency
 * Note: Count the users' own computer as one of the processors!
 
-### Scaling pattern: concurrency on a single computer
+##### Scaling pattern: concurrency on a single computer
 
 * Difference between syncrhonous and asynchronous
 * Difference between concurrent and parallel
@@ -31,7 +31,7 @@ title: Scaling with Concurrency
 
 <%= include_topic :threads_processes %>
 
-#### Ruby-related issues
+##### Ruby-related issues
 * Ruby and Pyton "GIL"
   * Global interpretter lock
   * Essentially they become single threaded
@@ -45,7 +45,7 @@ title: Scaling with Concurrency
   * Puma - http server
   * Thin - http server
 
-#### Thread-safe
+##### Thread-safe
 * A property of software, or a routine or a class
 * Does it behave 'well' when running in a thread (sharing memory)
 * Deadlock ("mortal embrace")
@@ -53,7 +53,3 @@ title: Scaling with Concurrency
 * Race Condition
   * When the results vary due to
   * How to avoid: using semaphors, queues, and other techniques
-* Higher level constructs, e.g. Actors (threads that only talk through queues)
-  * See [Celluloid Actor Based Library for Ruby](https://github.com/celluloid/celluloid)
-
-##### Demonstrations...
