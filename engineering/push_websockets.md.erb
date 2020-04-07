@@ -2,25 +2,28 @@
 title: Push processing and Web Sockets
 descc: Understanding web sockets and Rails Action Cable
 ---
-#### Web Sockets - Conceptual
-<%= include_image "https://heroku-blog-files.s3.amazonaws.com/posts/1473343847-1462551384-websocket-protocol.png" %>
+#### Push Processing and Web Sockets
 
+##### TCP/IP in the Browser
+
+##### Push Processing
+
+* What is it?
+* Where is it used?
+* Recall HTTP is stateless
+* Browser creates a new connection for each request and then closes it
+* Expensive!
+
+<img src="https://assets.ably.io/assets/concepts/http-request-response-092cc9945889e17c21adfe637dad5b4daaf1910784424000d2ad114ccd75238f.png" style="width: 80%;">
+
+##### Web Sockets - Conceptual
 * Originally the only way that a browser would talk to the server was via the address bar or forms
 * There was no way for the server to initiate communication to the browser.
 * Needed for: notification, live updates and other functionality
 * Microsoft introduced a Javascript call which allowed a js program to initiate HTTP silently (without the screen blinking)
 
 ##### Client initiated
-<img src="https://assets.ably.io/assets/concepts/http-request-response-092cc9945889e17c21adfe637dad5b4daaf1910784424000d2ad114ccd75238f.png" style="width: 80%;">
-
-<%= code_begin %>
-const req = new XMLHttpRequest();
-req.addEventListener("load", () => console.log(this.responseText));
-req.open("GET", "/api/example");
-req.send();
-<%= code_end %>
-
-##### Server initiated 
+* Just refresh the browser
 * Why was this not enough? 
 * Push processing; notification
 * Some early hacks
@@ -29,19 +32,11 @@ req.send();
 * Very bad scaling behavior!
 
 ##### Websockets
-  * Browser feature
-  * TCP/IP socket
-    * Can stay open
-    * Are bi-directional
-  * Built as an extension to HTTP
-
-<%= code_begin %>
-GET /index.html HTTP/1.1
-Host: www.example.com
-Connection: Upgrade
-Upgrade: websocket
-<%= code_end %>
-
+* Browser feature
+* TCP/IP socket
+  * Can stay open
+  * Are bi-directional
+* Built as an extension to HTTP
 * Still pretty complex
 * Libraries are built to make it easier!
 
@@ -49,19 +44,12 @@ Upgrade: websocket
 * Separate company, free accounts
 * Best to look at an example: [Rails Forms Pusher Demo](https://github.com/pitosalas/forms_pusher_demo)
 
-
-#### Rails Action Cable
+##### Rails Action Cable
 * Javascript code libraries
-* A new server feature to allow WebSockets connections
+* Rails feature to allow WebSockets connections
 * Fairly intricate to wire up
 * But not hard once you understand it
 * Let's look at the code: [rails_actioncable_demo](https://github.com/pitosalas/rails_actioncable_demo)
-
-##### Channels
-* A "channel" is a name associated with the connection between the client and the server
-* You define it (a little like a controller) in app/channels/xxx_channel.rb
-  * class with a series of standard methods that are called when certain things happen
-* Client will "subscribe" to the channel, which opens the connection
 
 
 
