@@ -8,11 +8,17 @@ title: nanoTwitter Validation API
   * star and fan are existing users user_ids
   * In one request, does the following process
     * Make sure that user `fan` is following user `star` and if not, make it so
-    * Have user `sart` create `n` tweets using faker and the whole real back end including caching and queues and whatever else
-    * Store the tweet ids and the content in memory during the test
+    * Have user `star` create `n` tweets using faker.
+      * Don't just use Tweet.create; use the code that is actually executed when a user submits a tweet
+      * This will invoke whaterver optimizations, follower handling which may include redis, queues, or other optimizations.
+    * Store the tweet ids and the content for later. 
+    * You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
   * Once complete
-    * query the backend for those same ids, and check that the content is correct
+    * query the backend for those same ids
+      * Again dont just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
+      * Similarly, it will use whatever optimizations, redis, queues and so on.
     * query the timeline of `fan` to make sure that the new tweets are listed
+      * Again, use the code that is used by the front end not just the low level code.
   * Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
   * Returns 200 or 400
 
