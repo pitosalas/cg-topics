@@ -2,7 +2,7 @@
 title: nanoTwitter Validation API
 ---
 * `GET /test/validate?n=n&star=u1&fan=u2
-* Checks for valid processing of the backend
+* Checks for valid processing of the app
 * The purpose to detect that the nt back end is faithfully storing and retrieving the data
 * This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
 * star and fan are existing users user_ids
@@ -21,4 +21,3 @@ title: nanoTwitter Validation API
     * Again, use the code that is used by the front end not just the low level code.
 * Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
 * Returns 200 or 400
-
