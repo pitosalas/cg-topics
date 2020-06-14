@@ -1,9 +1,9 @@
 ---
 title: Poro Service Objects
 ---
-#### Background 
+## Background 
 
-##### Poro: Plain Old Ruby Object
+### Poro: Plain Old Ruby Object
 * An object which doesn't depend or inherit from classes that are not part of ruby
 * In the Rails world this means objects (classes) which are not derived from ActiveRecord (especially) or any of the other Rails framework classes
 * Poros are easier to write and easier to test
@@ -11,13 +11,13 @@ title: Poro Service Objects
 * Poros are defined in standalone ruby files called, e.g. matcher.rb.
 * Put them in any Rails directory under app. I suggest creating a new directory under app called lib/ but it's not the only option
 
-##### Service Objects
+### Service Objects
 * The terminology here is currently muddled
 * You will find ardent debates between terms like Service or Presenter or Facade classes
 * In rails a very common use case is to make controllers simpler and better encapuslated
 * Remember that Rails helpers are meant to be shorthand or macros for generating html in views.
 
-#### Example: Matcher
+## Example: Matcher
 * Imagine that you are writing a dating app where you want to match Members to each other
 * Given a Member model or a Member object, it will compute the Member that best matches them.
 * This can be a pretty complicated algorithm, taking as input one Member object as well as the complete list of available (unmatched) Members and producing as output another Member object, something like this:
@@ -30,7 +30,7 @@ title: Poro Service Objects
 
 * Having this much code in the controller smells bad!
 
-##### Instead try this
+### Instead try this
 
 * Define a poro called Matcher which does not depend, itself or in the arguments it takes or the results it generates, on anything in Rails
 
@@ -55,7 +55,7 @@ class Matcher
 end
 <%= source_end %>
 
-##### Usage
+### Usage
 * In the controller, or wherever you need it, you create an instance of the Matcher
 * You retrieve the members from the database using ActiveRecord
 * You convert them to non-ActiveRecord arrays
@@ -75,7 +75,7 @@ match.add_population_members = unmatched_members
 looking.matched_member = Member.find(match.find_best_match)
 <%= source_end %>
 
-##### Benefits
+### Benefits
 1. You have pulled the logic for matching out of the controller into a separate class
 1. You can have several different matching algorithms and change them out cleanly by modifying the line match = Match.new to be for example match = FancyMatcher.new
 1. You can test class Match very simply, including generating randome combinations of data to see that it works correctly

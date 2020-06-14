@@ -2,7 +2,7 @@
 title: "Service API - 3: CI/CD"
 ---
 
-#### Introduction to CI/CD
+## Introduction to CI/CD
 
 * Continuous Integrations and Continuous Deployment. It is one of the building blocks of the practice of `devops`. 
 * Some people describe it as "process as code." Instead of writing down instructions for a human to follow, if the deployment process can be turned into code then we can bring great software engineering practices to the operation of our servers. 
@@ -11,19 +11,19 @@ title: "Service API - 3: CI/CD"
 * This can now be managed by source code control and revision histories
 * It can be subjected to automated testing, modularity etc.
 
-##### Prerequisites
+### Prerequisites
 
 * You must complete <%= link_to_topic :hw_service_api_1 %> and <%= link_to_topic :hw_service_api_2 %> first, with 2 droplets and a database up and running on DO
 
-##### Deliverables
+### Deliverables
 * Your deliverable for this step is to answer these warmup questions. Keep your code clean though because at the end of the series we will ask you to submit your code!
   * What is the role of the `journalctl` command?
   * What are some alternative services to do CI/CD other than Github Actions?
   * Explain how you would introduce automated testing. In other words if I had a ruby program that I could run with the command `ruby services_api_tests.rb`, how and where would I place it in the GitHub Actions file, if anywhere?
 
-#### Detailed Instructions
+## Detailed Instructions
 
-##### Step 1 - Setup Github Actions file
+### Step 1 - Setup Github Actions file
 
 We are going to use Github Actions to setup our continuous deployment pipeline.
 
@@ -98,7 +98,7 @@ There are a variety of Actions you can specify: a simple one would be `ssh-actio
 * A [list of actions](https://github.com/marketplace?type=actions) available.
 * [Configuration options](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) for creating a workflow file.
 
-##### Step 2 - Setup secrets
+### Step 2 - Setup secrets
 
 This pipeline needs to have access to your droplets in order to update them.
 
@@ -122,7 +122,7 @@ If you don't have the private key in your sever, you need to generate them and a
 3. `echo "$(cat id_rsa.pub)" >> authorized_keys`
 4. To show the content of your private key `cat id_rsa` <- copy this to the corresponding `*_SSHKEY`
 
-##### Step 3 - Trigger the pipeline
+### Step 3 - Trigger the pipeline
 
 Now you have the Secrets all set up, you need to push your code to trigger the pipeline.
 
@@ -144,4 +144,4 @@ Once it finish you should be able to see the updated site at http://frontend-sin
 <code class="language-bash">doctl compute ssh service-api-sinatra --ssh-command "journalctl -u rails.service -e -f"</code>
 </pre>
 
-##### **Congrats! You now have a auto-deploying pipeline!** 🎉
+### **Congrats! You now have a auto-deploying pipeline!** 🎉

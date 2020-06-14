@@ -3,16 +3,16 @@ title: "Project: Ardiono Immersion"
 desc: "Required project to learn to use Arduino Robot"
 ---
 
-#### Intro
+## Intro
 Arduino is the main processor board on many many hobby, experimental, robotics and IoT devices. It is also the one that powers our little mBot robots.
 
-#### Learning Objectives
+## Learning Objectives
 * Understand the difference between software that runs on a screen and software that controls the real world
 * Understand the Arduino hardware and software architecture, the basic event loop and the libraries
 * Install arduino necessary software and learn how to write some simple programs
 * Demonstrate profficiency by writing and demoing a fun example
 
-#### Steps.
+## Steps.
 
 1. Download [Arduino IDE](https://www.arduino.cc/en/Main/Software) for Windows/Linux/MacOS, and follow the installation instructions in [Getting Started](https://www.arduino.cc/en/Guide/HomePage). * Notice that Linux requires an extra step of setting serial port permission at the end.
 1. Set up arduino libraries for mBots. See Background section below.
@@ -20,13 +20,13 @@ Arduino is the main processor board on many many hobby, experimental, robotics a
 1. Connect mBot with your device by USB cable, turn on your mBot, choose your mBot in **Tools->Port**. Notice it is not the bluetooth one.
 1. Upload your own program or test on the examples.
 
-#### Background - arduino language and libraries
+## Background - arduino language and libraries
 
 The basic Arduino programming language reference(structure, variables and functions), check [Language Reference](https://www.arduino.cc/en/Reference/HomePage).
 
 The following are the useful libraries you might want to include in the heading of your code to help you with your mBot programming.
 
-#### Built-in Arduino Libraries
+## Built-in Arduino Libraries
 
 * Arduino (built-in)
   * insert code:  `#include <Arduino.h>`
@@ -41,7 +41,7 @@ The following are the useful libraries you might want to include in the heading 
   * or go: Sketch->Include Library->SoftwareSerial
   * reference: https://www.arduino.cc/en/Reference/SoftwareSerial
 
-#### MeMCore   (MUST INSTALL)
+## MeMCore   (MUST INSTALL)
 
 This is the official library from MakeBlock, include most useful functions that enable interacting with mBot, such as its motor, sensors, LED, etc.
 
@@ -62,7 +62,7 @@ For example we use MeDCMotor class to control mBot motors:
   * Check out Sketch->Include **Library->MakeBlockDrive->Me_DCMotor->DCMotorDriverTest**
   * In this example, to see how to declare this object, its function list, and subsequently, which to use to make the motor ‘run’, ’stop’, etc.
 
-#### Ultrasonic   (MUST INSTALL)
+## Ultrasonic   (MUST INSTALL)
 
 The ultrasonic-HC-SR04 Library for Arduino. This library enables you to interact with the two HC-SR04 sensors on the left and right hand side of your mBot. Notice that these are separate from your front Makeblock sensor.
 

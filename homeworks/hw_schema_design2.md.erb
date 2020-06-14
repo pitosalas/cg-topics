@@ -1,7 +1,7 @@
 ---
 title: Schema Design Exercises
 ---
-#### Introduction
+## Introduction
 This exercise lets you practice how to design a database. You've been introduced to this in preceding homeworks and classes, and this homework is a chance to rehearse the techniques of data modeling again.
 
 To review some of the material take a look at:
@@ -10,7 +10,7 @@ To review some of the material take a look at:
   * <%= link_to_topic :data_modeling %>
   * <%= link_to_topic :ar_db_mechanics %>
 
-#### Notation
+## Notation
 * Use this notation for this work.
 * It contains exactly the same information that you've presented before, but in all text
 * It is designed to correspond more closely to what you will be doing in your code. Put in both sides of a one to many relationship?
@@ -22,7 +22,7 @@ To review some of the material take a look at:
   * `table4` **has_one** `table4` - Many to one relationship
 
 
-##### Example
+### Example
 ^
     table users
       primary key id: integer
@@ -39,27 +39,27 @@ To review some of the material take a look at:
     departments
       has_many users
 
-#### Assignment
+## Assignment
 * Design as many of these as you can
 * **Use the notation above** (not a diagram or other fancy thing)
 
-##### Stamp Collection
+### Stamp Collection
 * A country has a name
 * A stamp has a country of origin, a year of issue and a denomination (e.g. 50 cents)
 
-##### Room Inventory
+### Room Inventory
 * A room has a building and a room number
 * A person has a name and is assigned to a certain room
 * An item has a type, a name, a value (dollars), and a room where it can be found
 * A type has a type name (e.g. furniture, clothing, electronics, etc.)
 
-##### Music Collection
+### Music Collection
 * An artist has a name and a genre
 * A track has a name, duration, and a collection of artists, and a genre
 * A record has a name, a year, and a collection of tracks
 * A genre has a name
 
-##### University
+### University
 * An employee has a first and last name, date of birth and a date of hire
 * A company has a name
 * A company has multiple departments

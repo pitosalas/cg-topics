@@ -25,7 +25,7 @@ title: Scaling with Asynchronous processing
     * Or what if the server crashes as a whole?
     * It's a mess. Need abstractions!
 
-##### Case 1: Schedule based
+### Case 1: Schedule based
 * CRON jobs. Most elementary. Require "privileges"
 * Alternative: Native "scheduler" application (e.g. Heroku Simple Job Scheduler)
 * References:
@@ -34,7 +34,7 @@ title: Scaling with Asynchronous processing
   * [Creating Cron Jobs on Mac](http://www.maclife.com/article/columns/terminal_101_creating_cron_jobs)
   * [Rails Runner](http://guides.rubyonrails.org/command_line.html#rails-runner) **Rails Only**
 
-##### Case 2: Request based
+### Case 2: Request based
 * Request handled 'asynchronously' of course
 * By local server, in a separate process
 * By a remote server

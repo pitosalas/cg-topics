@@ -1,23 +1,23 @@
 ---
 title: Duck Typing Homework
 ---
-#### Objective
+## Objective
 
-##### General case
+### General case
 Design a publish-subscribe facility. In this scenario there's a class that writes log records to a log file. Whenever an interesting event happens anywhere in the system, we want to easily cause a log entry to be written.
 
-##### Specific Scenario
+### Specific Scenario
 We implement a PubSub processor that handles publishing and subscribing. Any class in the system who wants to find out that an event happened, can register as a subscriber. Any other class who wants to publish something to a subscriber can call publish_to_subscriber.
 
 In the code below, we show a partial example, where a Event Logging class (Logger) needs to record interesting events in the log file. Specifically, to record each time an email is received. At the same time, a MailHandler class would like to get something into the log whenever an email is received.
 
-##### Your assignment
+### Your assignment
 * Complete the class below, adding missing lines of code
 * Write an additional class, MailBilling
   * With a method "process" which also subscribest to email messages
   * And displays text to the console: "Sending bill for message <subject>"
 
-#### Here's the sample code to start with
+## Here's the sample code to start with
 <%= ruby_begin %>
 # Class contains all email processing
 class MailHanndler

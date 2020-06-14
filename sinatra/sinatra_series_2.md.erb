@@ -4,43 +4,43 @@ title: "Sinatra Series 2: A Basic Service"
 * Make sure first have done <%= link_to_topic :sinatra_series_1 %>
 * Next after this section is: <%= link_to_topic :sinatra_series_3 %>
 
-#### Goal
+## Goal
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
 
-#### Initial API Spec
+## Initial API Spec
 * `GET /api/users/paul` => JSON result
 * Properly withhold password
 * Properly return key information
 
-#### TDD
+## TDD
 * Look at <%= link_to_topic :sinatra_series_api_test_tut %>
 * Test is for a set of specific API calls, not of the database or other internals of the service
 * And before the test runs, it creates a `test fixture` the particular user being looked up
 * For the test to run there has to be a database (ActiveRecord) which is not yet set up
 
-#### Database
+## Database
 * Create a migration `rake db:create_migration NAME=create_users`
 * Add to the name, password, email and bio fields to the migration
 * Create the corresponding ActiveRecord model in model/user.rb
 * Create database and migrate, both development and test databases!
 * `rake db:create db:migrate RACK_ENV=development`
 
-#### Implement GET
+## Implement GET
 * `get '/api/users/:name' do`
 * Retrieve the parameter `:name` with `params[:name]`
 * Use normal `activerecord` features to retrieve database
 * Use `.to_json` to convert result to json
 
-#### Extend TDD tests
+## Extend TDD tests
 * Check that email, bio are also returned
 * Check that password is NOT returned
 * Add code to the User model so that password is not returned
 * And tests now pass
  
-#### Continue to implement, as follows:
+## Continue to implement, as follows:
 * Implement test cases (TDD), demonstrate that they fail
 * Implement the new APIs
 * Demonstrate the test cases succeed
@@ -48,7 +48,7 @@ title: "Sinatra Series 2: A Basic Service"
   * Mac: Insomnia
   * Chrome: Advanded Rest Client
   * Many many others!
-#### Additional APIs
+## Additional APIs
 * `POST /api/users`
   * Supply HTTP attributes: name, email, password and bio
   * Create a new user
@@ -65,7 +65,7 @@ title: "Sinatra Series 2: A Basic Service"
     * And name, email, bio and password of said user
   * When not, returns status 404
 
-#### Exercises
+## Exercises
 * Respond to the following warmup questions:
     * Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many?
     * Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
@@ -80,5 +80,5 @@ Write the following additional APIs (which are not in the sample code) and add t
     * Update the stated parameters
     * In the test case, verify that the update actually occurred.
 
-#### Continues
+## Continues
 * Next section will be assigned separately: <%= link_to_topic :sinatra_series_3 %>

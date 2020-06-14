@@ -1,13 +1,13 @@
 ---
 title: Hands-on with Sinatra Persistence
 ---
-##### Database schema for a small bit of Twitter
+### Database schema for a small bit of Twitter
 <%= code_begin %>
 Person(name, dob, gender, zipcode)
 Hashtag(name)
 Message(person_id, hashtag_id, comment)
 <%= code_end %>
-##### Gemfile
+### Gemfile
 ~~~
 source 'https://rubygems.org'
 
@@ -23,7 +23,7 @@ gem 'pg'
 bundle install
 ~~~
 
-##### Basic directory structure
+### Basic directory structure
 ~~~
 demo_app/
   config/
@@ -42,7 +42,7 @@ demo_app/
   demo_app.rb
 ~~~
 
-##### Config.ru
+### Config.ru
 ~~~
 # Config.ru configures the interface between "Rack" and Sinatra
 
@@ -50,7 +50,7 @@ require './demo_app'
 run Sinatra::Application
 ~~~
 
-##### Rakefile
+### Rakefile
 ~~~
 require './demo_app.rb'
 require 'sinatra/activerecord/rake'
@@ -61,7 +61,7 @@ Rake::TestTask.new do |t|
 end
 ~~~
 
-##### config/database.yml
+### config/database.yml
 ~~~
 # Create mapping from server "environment" (development|test|production) to database
 development:
@@ -79,14 +79,14 @@ production:
   password: your_password
 ~~~
 
-##### demo_app.rb
+### demo_app.rb
 ~~~
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'pry-byebug'
 ~~~
 
-##### Migration files
+### Migration files
 ~~~
 rake db:create_migration NAME=create_messages
 rake db:create_migration NAME=create_hashtags
@@ -128,7 +128,7 @@ end
 rake db:migrate
 ~~~
 
-##### Models
+### Models
 ~~~
 # models/hashtag.rb
 class Event < ActiveRecord::Base
@@ -143,7 +143,7 @@ class Message < ActiveRecord::Base
 end
 ~~~
 
-#### Seed the database, create seeds.rb
+## Seed the database, create seeds.rb
 ~~~
 require_relative '../demo_app.rb'
 puts "[seeds.rb]"
@@ -162,7 +162,7 @@ puts "[create registrations]"
 $ rake db:seed
 ~~~
 
-###### Examining the databases from the Debugger
+#### Examining the databases from the Debugger
 <%= code_begin %>
 $ pry -r './demo_ap.rb'
 ActiveRecord::Base.connection.tables
@@ -172,7 +172,7 @@ Person.where("dob > ?", Date.new(1995))
 Person.where("dob > ?", Date.new(1995)).count
 <%= code_end %>
 
-###### CRUD operations (Create, Read, Update, Delete)
+#### CRUD operations (Create, Read, Update, Delete)
 <%= code_begin %>
 p = Person.new(name: "Pito", dob: '12-12-2012', gender: 'f', zipcode: 12355)
 p.new_record?
@@ -181,7 +181,7 @@ p = Person.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
 p.delete
 
 <%= code_end %>
-###### Associations, declared in models
+#### Associations, declared in models
 <%= code_begin %>
 class Person < ActiveRecord::Base
   has_many :messages
@@ -196,13 +196,13 @@ class Message < ActiveRecord::Base
   belongs_to :hashtag
 end
 <%= code_end %>
-###### Association, used
+#### Association, used
 <%= code_begin %>
 Person.find(1).hashtags
 Person.where(name: "Angelo Smith").first.messages
 Event.find(1).people
 <%= code_end %>
-###### Validations
+#### Validations
 *Validations are applied by ActiveRecord, NOT the database*
 <%= code_begin %>
 validates :zipcode, length: { is: 5}    # declared in model file
@@ -213,9 +213,9 @@ p.save                                  # Is not permitted into the database
 p.save!                                 # Same but throws exception
 <%= code_end %>
 
-#### Appendices
+## Appendices
 
-##### References
+### References
 * [ActiveRecord Associations](http://edgeguides.rubyonrails.org/association_basics.html#the-has-many-through-association)
 * [ActiveRecord Queries](http://edgeguides.rubyonrails.org/active_record_querying.html)
 * [ActiveRecord Validations](http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers)

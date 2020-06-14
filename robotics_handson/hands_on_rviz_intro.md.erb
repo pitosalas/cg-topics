@@ -3,11 +3,11 @@ title: Hands On Ros rviz intro
 ---
 <%= include_topic :ros_cheatsheet %>
 
-#### Intro
+## Intro
 * We are going to use an example from the [ROS By Example Volume 1 Book](http://www.lulu.com/shop/http://www.lulu.com/shop/r-patrick-goebel/ros-by-example-indigo-volume-1/ebook/product-23032353.html)
 * Follow the instructions to install the "ROS by example code". Even though it says "indigo" it should work on "kinetics".
 
-#### Install ROS by Example Code
+## Install ROS by Example Code
 <%= code_begin %>
 cd ~/catkin_ws/src
 git clone https://github.com/pirobot/rbx1.git $ cd rbx1
@@ -18,7 +18,7 @@ source ~/catkin_ws/devel/setup.bash
 rospack profile
 <%= code_end %>
 
-#### Install TB3 Simulation
+## Install TB3 Simulation
 * Follow these instructions: http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#turtlebot3-fake-node-implementation
 * We are going to use the turtlebot3 simulator not the one that the ROS By Example book uses
 * Install the simulator
@@ -30,7 +30,7 @@ rospack profile
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0.1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
 <%= code_end %>
 
-#### Out and Back using Odometry
+## Out and Back using Odometry
 * See page 57? of ROS By Example book
 * We don't launch tbx1_bringup because we are already running the TB3 fake.
 * We don't launch rviz because that is already running

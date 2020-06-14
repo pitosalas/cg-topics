@@ -2,11 +2,11 @@
 title: "Project: mBot Simulator"
 desc: Write a simulator and visualizer to allow mBot programs to be tested without a physical robot
 ---
-#### Intro
+## Intro
 
 if you don’t have a robot it’s hard to see if your Arduino program works. As far as we know, there's no Arduino or mBot simulator to allow students to experiment without having hardware
 
-#### Project
+## Project
 
 This project is to create an MBot emulator which runs actual Arduino code (without having an Arduino), including emulating the upload process from the Arduino IDE, and then allows the student to both test, debug and then watch the MBot drive around.
 
@@ -14,7 +14,7 @@ This will not require 3D rendering. What is needed is a birds-eye view looking d
 
 This project too starts with googling and looking through github and then doing some experimentation). There might be parts of this already developed that can be used for building blocks.
 
-##### Architectural idea
+### Architectural idea
 When writing software for the mBot, we use one of several libraries provided by mBot to control the motors and  read the sensors. The libraries provide a series of functions with specific names and paramters (the "api")
 
 We can write an alternative library, with the same api, but that don't control a real robot but instead read and write information from a simulator.
@@ -23,7 +23,7 @@ Imagine a 2D game where you look down on a world. That world is in two dimension
 
 Now: connect the two. When the alternative library reads a simulated sensor, the data returned comes from information from the simulated world. And when it asks for a motor to run, that again sends information to the simulated world, causing the simulated robot to move.
 
-##### More advanced
+### More advanced
 What if we generalize that API so it's not tied to the mBot specifically. We invent an abstraction (like a Java Interface) for the robot, the motors, the sensors etc. And we build that library in such a way as there can be multiple "implementations", one for the mBot (usingn the mBot supplied libraries), one for the simulation (using the library we just wrote) and possibly in the future, for a different robot.
 
 This would be the beginning of the <%= link_to_topic :arduinorts %>.

@@ -32,7 +32,7 @@ car = Character.new(type: :car, starting_v: 0)
 puts car
 puts car.passengers
 
-#### Case 2
+## Case 2
 
 class Character
   attr_reader :location, :velocity, :type

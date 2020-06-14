@@ -1,33 +1,33 @@
 ---
 title: Ajax
 ---
-#### Ajax
+## Ajax
 
 * Used to stand for "Asynchronous Javascript and XML"
 * Nowadays the term has gotten generic -- XML is rarely involved, JSON is used instead
 * If it means anything it means updating a page without a visible refresh
 
-##### Responsive Design
+### Responsive Design
 * Single web site for all devices (web browser vs. mobile)
 * Layout changes (radically) if needed to accommodate screen size
 * Radically means: rearranging components, and even dropping content altogether
 * You've seen this so much, it's more or less expected now
 
-##### Use Cases
+### Use Cases
 * **Asynchronous update**: page changes without the user doing anything
 * **Typeahead**: suggested completions added to a textbox while typing
 * **Delayed Rendering**: Result from a query comes in gradually
 * **In Place Editing**: Forms that allow in place editing (instead of a big submit button)
 * **Server Push**: Browser update initiated by the server!
 
-##### How Ajax works
+### How Ajax works
 * Steps
   1. Browser makes a 'background' http request
   1. Server (i.e. the controller) returns 'data' or 'js code'
   1. Browser based code (javascript) interprets that data or executes the code.
   1. Browser changes DOM which changes what is displayed in the current page
 
-##### Deeper dive
+### Deeper dive
 
 <%= callout("Not a toy", " Javascript is a serious and very important langauge") %>
 

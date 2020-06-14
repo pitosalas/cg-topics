@@ -1,9 +1,9 @@
 ---
 title: What to test
 ---
-#### What to Test
+## What to Test
 
-##### Costs of testing
+### Costs of testing
 * Code to write
 * Tests to run
 * As the software (inevitably) evolves
@@ -13,7 +13,7 @@ title: What to test
 * Conclusion:
   * More is not necessarily better
 
-##### Testing Pyramid
+### Testing Pyramid
 * From (fewest -> most) tests and brittleness
   1. User Interface tests
   1. ...
@@ -21,21 +21,21 @@ title: What to test
   1. ...
   1. Unit Tests
 
-##### What not to test
+### What not to test
 * Try not to test the same thing in more than one place
 * Try not to test a library which is itself well tests
 * Try not to test something that is self-evidently trivial (eye of the beholder)
 
-##### What to test
+### What to test
 * Try to test code which is prone to off-by-one errors
 * Try to test code with intricate algorithms
 * Try to test to verify assumption
 
-##### Natural 'borders' in the architecture
+### Natural 'borders' in the architecture
 * If I check your passport (i.e. validate inputs) at the border
 * Then it makes no sense to check it every time you enter a building
 * As long as there are no unguarded borders :)
 
-##### About Brittle Tests
+### About Brittle Tests
 * When a change in design suddenly makes a large number of tests fail
 * Sign that either your design or your test approach can be improved

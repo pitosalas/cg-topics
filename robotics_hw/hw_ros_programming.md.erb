@@ -3,14 +3,14 @@ title: ROS Summary Project
 desc: Demonstrate the four kinds of communications in ROS
 assigned: 5
 ---
-#### Objectives
+## Objectives
 * Understand PRR up to Chapter 5
 * Understand ROS concurrent, distributed design
 * Understand key types of communication: publish/subscribe, service, action
 * Demonstrate understanding by implementing, testing, documenting and demonstrating code
 
 
-#### Assignment
+## Assignment
 
 You will be implementing a ROS package which will include four nodes as python programs. They will communicate with each other using particular specified neans. You will test this in the simulator and then demonstrate it in the running TurtleBot3. These are totally made up nodes within an imaginary and kind of illogical context.
 
@@ -30,7 +30,7 @@ The flow is something like this:
 1. MainNode subscribes to /demo/command. It extracts the string and calls the FakeNLP service to ask it to "parse" the command. FakeNLP will process the command and return the number as a float or it returns nil if the command is not valid. If the command result is valid, MainNode then begins an action, asking the robot to spin by the stated number of degrees.
 1. ActionServer receives this request and starts sending cmd_vel Twist messages to ask the robot to turn. ActionServer also subscribes to /odom messages to see how far the robot has gone around. Once it reaches the right number of degrees, it tells MainNode that the action is done.
 
-#### Helpful Notes
+## Helpful Notes
 * The /odom topic generates is mapped to a msg/Odometry message type to indicate where the robot thinks it is, where it is pointed and how it is moving)
 * The msg/Odometry message type includes pose (where it is and where it is pointed) and twist (how it is moving)
 * The pose field (PoseWithCovariance) includes a Pose and a Covariance. You can ignore Covariance for now but it is a value which reflects the statistical confidence we have in the Pose.
@@ -48,7 +48,7 @@ orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientati
 (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
 print yaw
 <%= code_end %>
-#### Deliverables
+## Deliverables
 * Working demonstration of the project - running roslaunch. This can be in the form of a rough video of your demonstration, or showing it to a TA or Pito, or any other way to demonstrate that you got it running. You can use a simulator (Gazebo) or an actual Robot.
 * Code zipped up containing:
   * Python source code

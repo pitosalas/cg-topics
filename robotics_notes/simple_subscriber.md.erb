@@ -12,7 +12,7 @@ title: Subscribing Example
     * `$ cd /scan_monitor/src`
     * `$ gedit scan_subscriber.py`
 
-##### Copy and paste the following code.
+### Copy and paste the following code.
 
 <%= code_begin %>
 #!/usr/bin/env python
@@ -50,7 +50,7 @@ def main():
 if __name__ == '__main__':
   main()
 <%= code_end %>
-#### Notes
+## Notes
 * We are subscribing for the `scan` topic and we get message type `LaserScan`
 * `rostopic list` to see all topics
 * `rostopic show /scan` to see the detail of scan topic
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 * `$ cd ` to go back to the home folder. `$ cd /catkin_ws/src` again.
 * `$ catkin_make ` to build. Remember you have to do it in the root of your workspace.
 
-#### Run It!
+## Run It!
 
 * `$ source ~/catkin_ws/devel/setup.bash`, if haven't done so. This command will enable your system to know the it can run stuffs in your workspace. You can also add this line to your bashrc file of your terminal, so that you don't need to type that every time.
 * `$ roslaunch turtlebot_gazebo turtlebot_world.launch` Bring up your (simulated)robot first.

@@ -1,13 +1,13 @@
 ---
 title: Interactive music shell (IMS)
 ---
-#### Objective
+## Objective
 
 The objective is to give you a chance to brush up your ruby and show off your software design skills. This is a pure ruby assignment. Focus on good class design, separation of concerns, single responsibility principle, unit testing.
 
 Below you will find description of the required functionality, a specific description of the final deliverables. Don't miss the important technical tips and pointers at the bottom!
 
-#### Brushing up on ruby
+## Brushing up on ruby
 
 There are plenty of  resources for learning or reviewing Ruby. One that I've used which has been pretty decent is [Ruby the Hard Way](https://learnrubythehardway.org/book/intro.html). It's a book but the whole content is available online at [Ruby the Hard Way](https://learnrubythehardway.org/book/intro.html).
 
@@ -20,7 +20,7 @@ Specifically review the following:
 * Hashes
 * Loops
 
-#### Functionality of IMS
+## Functionality of IMS
 I imagine (but am really making this up) that when running a DJ needs a list of all the tracks and artists that they have at their fingertips, and a quick way to store when a certain track is played. This assignment proposes a simple app to make their life better and easier!
 
 The user runs IMS from the command line, where it displays the ims> prompt. At that point the user can type commands.
@@ -30,7 +30,7 @@ $ ./ims.rb
 ims>
 <%= code_end %>
 
-##### Commands
+### Commands
 1. Help - display a simple help screen. This is a text message, multi line, that explains the available commands. Sort of like this list.
 1. Exit - save state and exit. The effect of this is that when the app is run again, it is back to exactly where it was when you exited. What this amounts to is basically to make sure the tracks and artists and their info have all been saved.
 1. Info - display a high level summary of the state. At minimum, the last 3 tracks played, and a count of the total number of tracks and the total number of artists. You can elaborate if you want.
@@ -42,7 +42,7 @@ ims>
 1. Count tracks - Display how many tracks are known by a certain artist, e.g. `count tracks by jo`
 1. List tracks - Display the tracks played by a certain artist, e.g. `list tracks by jo`
 
-#### Final Deliverables
+## Final Deliverables
 * A series of ruby files implementing the IMS
 * You should include some unit tests to demonstrate that it works
 * You will store your state on disk between runs of the program. See technical Tips below for suggestions on how to do it.
@@ -51,7 +51,7 @@ ims>
 * In addition to all the files, include a file called transcript.txt. Demonstrate the operation of your solution by running it in the shell and copy/pasting the shell transcript in the file called transcript.txt. Include this file in the `pa-ims` directory.
 * To submit to Latte, just zip up the directory and post it to Latte.
 
-#### Technical Tips
+## Technical Tips
 * Take a moment to map out your approach before you begin coding. What classes make sense to do this? How will you convert them to and from  json and back??
 * Pay attention to separation of concerns. Your app will probably have approximately three parts. Your code will reflect that.
   1. The class that implements the loop that prompts the user submits the request

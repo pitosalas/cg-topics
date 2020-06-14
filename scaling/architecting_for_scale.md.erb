@@ -2,19 +2,19 @@
 title: Architecting for Scale
 ---
 
-#### Architecting for scale
+## Architecting for scale
 <%= callout("YAGNI", " Never do extra work for scaling until measurement reveals there's a problem and where the problem is.") %>
 
-#### Base configuration
+## Base configuration
 * We start with the simplest possible set up. If you have stand alone servers (which we don't) you would run the database and web server on the same box.
 * In our case we are deploying to a cloud server, where you aren't getting a full box but a virtual slice, from e.g. Heroku. In that case our base configuration is a single "web worker" to run Sinatra and a single "database" to run our database, which would be Postgress.
 * With that base, measure performance. If you have a real load, you can measure. In our case we have to create an artificial load send traffic to the server. We want to see how many simultanuous sessions we support.
 
-#### Stage One Scalability Tuning
+## Stage One Scalability Tuning
 * Analyze and think abou whether the servers are poweful enough. Is it your old laptop running a database server or is it a fairly new computer with no other load. If you are using a cloud service, like BlueMix, Heroku or Digital Ocean, what kind of virtual capacity or limits does it have? You might need to simply up the capacity.
 * Examine your database access and queries. Can you determine that pages that don't have a database call are really fast and the ones that do are slower? Can you see what pages slow down the most?
 
-#### If queries are the problem
+## If queries are the problem
 * Make sure you clearly understand the separation between the web and the database server.
 * Consider whether you should put the database on it's own server
 * Consider whether any tables need indexes
@@ -25,7 +25,7 @@ title: Architecting for Scale
 * Consider whether an intermediate query result that is expensive is being requested again. If so, caching those results is a strategy.
 * Look at the metrics on your database servers, that is simple
 
-#### If the app/web server seems to be the problem
+## If the app/web server seems to be the problem
 * Consider what app server you are using
   * For example: webrick, unicorn, puma, thin, passenger
   * See [App Server Arena](https://blog.engineyard.com/2014/ruby-app-server-arena-pt1)
@@ -36,7 +36,7 @@ title: Architecting for Scale
   * You have to be careful that your architecture allows that. Is your design ready to run concurrently.
   * Is there any way that one request can corrupt another one running at the same time?
 
-#### If you still have scaling issues
+## If you still have scaling issues
 * Consider adding another discrete server
   * Once you see one box does not cut it any longer add another server, you will need a load balancer for this.
   * Adding another server, increases your redundancy. Depending on how valuable this app is and how badly it needs to stay up 2 app servers is a good idea, as well as 2 database servers, 1 primary and 1 follower on stand by. AWS RDS makes that last part easy.

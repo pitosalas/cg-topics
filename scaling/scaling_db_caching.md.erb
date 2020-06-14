@@ -4,7 +4,7 @@ title: Scaling by Database Caching
 
 ### Scalability Pattern: Database Caching
 
-#### Example, Social Graph
+## Example, Social Graph
 * Classic Relational Approach
   * Schema (like all of you have)
     * User(id, name)
@@ -20,7 +20,7 @@ title: Scaling by Database Caching
     * What are the most recent "n" posts for users that "u" is following?
   * But to display each and every user, a join is needed!
 
-##### Measurement
+### Measurement
 * Ask database system to analyze SQL queries that are slow
   * Discover that the social graph access was very slow
 * Discussion
@@ -28,7 +28,7 @@ title: Scaling by Database Caching
   * What do your redis keys look like?
   * How do you compute your cache key?
 
-##### DB: Caching
+### DB: Caching
 * Use Network scale caching (Redis) to store and share across servers
   * `count:followers:u = number`
   * `count:following:u = number`

@@ -1,7 +1,7 @@
 ---
 title: "Service API - 0: Introduction"
 ---
-#### Here are the steps:
+## Here are the steps:
 
 * Read the overview below
 
@@ -11,19 +11,19 @@ title: "Service API - 0: Introduction"
 
 * **Setting up CI/CD - <%= link_to_topic :hw_service_api_3 %>**
 
-#### Overall Objective
+## Overall Objective
 
 <%= include_image "/content/topics/images/frontend.png" , extra: "style=\"max-width: 150\%\""%>
 
 In this homework, we will create a multi-server architecture for making a simple app for creating and retrieving a list of users from the database! The homework proceeds in 4 steps. Each one will be assigned separately.
 
-#### Architecture
+## Architecture
 
 * The structure of your final resilt will include multiple droplets
 * The logic of each will be trivial. 
 * Our objective here is to practice creating a multi-node architecture and deploying it
 
-##### Digital Ocean Architecture
+### Digital Ocean Architecture
 
 * Each student will have two droplets named, **yourname**-frontend and **yourname**-service
     * e.g. pito-frontend (1 Droplet) will be running a Sinatra app, responsible for asking the Service API for the list of users, and render a html page for it.
@@ -35,7 +35,7 @@ In this homework, we will create a multi-server architecture for making a simple
     * one for the `backend` of nT 
     * and one more for an additional service.
     
-#### Flow
+## Flow
 
 * The request logic will look like this: 
 

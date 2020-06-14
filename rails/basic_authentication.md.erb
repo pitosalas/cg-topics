@@ -1,16 +1,16 @@
 ---
 title: Adding basic authentication
 ---
-#### Rails Details for Authentication
+## Rails Details for Authentication
 
-##### References
+### References
 * Reference: [Ruby on Rails Tutorial](https://www.railstutorial.org/book/modeling_users) - Chapters 6,7 and 8
 * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
 * Reference: [Simple Authentication Tutorial](https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8)
 
 <%= callout("NB", " Use Rails 6! These instructiosn won't work fully in earlier versions.") %>
 
-##### Intro
+### Intro
 
 * There are several popular gems to implement authentication
 * Beware that the fact that there is a gem does not mean that it's trivial
@@ -18,13 +18,13 @@ title: Adding basic authentication
 * Advice: Avoid getting fancy with initially, with devise, clearance, oauth, etc.
 * Start with a simple password
 
-##### Create minimal Rails app
+### Create minimal Rails app
 <pre><code class="language-ruby">rails new basic_auth_demo
 cd basic_auth_demo
 rails generate scaffold users name:string
 rails db:create db:migrate</code></pre>
 
-##### has_secure_password
+### has_secure_password
 * Line added to top of the model representing what is logging in
 * Might be Users, or Accounts, or whatever. The thing that logs in.
 * Makes base assumptions about that model
@@ -40,10 +40,10 @@ include ActiveModel::SecurePassword
 has_secure_password
 <%= source_end %>
 
-##### Test out in the console
+### Test out in the console
 * See: * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
 
-##### password_digest, password, password_confirmation
+### password_digest, password, password_confirmation
 * Database only stores password_digest
 * Model logic supplied by has_secure_password
   * Computed a cryptographic hash (digest)
@@ -52,7 +52,7 @@ has_secure_password
 <%= source_begin("language-ruby") %>User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
 User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
 
-##### Sessions Controller
+### Sessions Controller
 * Tricky: Session is not a model!
 * Session controller maps a url (route) to some code
 * Specifically code to execute when loging in and out
@@ -86,7 +86,7 @@ params.require(:user).permit(:name, :email, :password, :password_confirmation)
 
 <%= source_end %>
 
-##### Adding actual authentication
+### Adding actual authentication
 * Try this command `rails routes` to see how Rails is interpreting your `routes.rb` specification
 * We now know how to manage users and passwords. Now lets check them.
 * Session[] is used to store the user_id of logged in user

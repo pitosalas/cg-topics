@@ -1,7 +1,7 @@
 ---
 title: ROS Cheat Sheet
 ---
-#### Shell Commands 
+## Shell Commands 
 
 <%= code_begin %>
 # bringup command (on the robot itself)
@@ -25,13 +25,13 @@ angular:
   z: 0.0"
 <%= code_end %>
 
-#### Display TF Frame Tree
+## Display TF Frame Tree
 '''
 $ rosrun tf view_frames
 $ evince frames.pdf
 '''
 
-#### ROS Shell utilities
+## ROS Shell utilities
 
 * `roscore`: Start the ROS Core program
 * `rostopic`: Work with topics
@@ -42,17 +42,17 @@ $ evince frames.pdf
 * `roslaunch` - tool to launch collections of ROS nodes in one command. Requires a 'package launch file'
 * `rosversion -d` - what ros version is installed?
 
-#### FAQ
+## FAQ
 * **Linux:** Use Ubuntu 16.04 **exactly**
 * **ROS Install for Turtlebot3:** Follow the installation instructions for the [TurtleBot3](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_software_setup/#install-ubuntu-on-remote-pc-desktop-or-laptop-pc) **exactly**
 * **roscore:** You must have `roscore` running before you try to run any ros-related program
 * **Execution**: In order to execute a program/script on Linux, you must `chmod +x filename.py`
 * **shebang:** Also include the 'shebang': #!/usr/bin/env python
 
-#### Linux Commands
+## Linux Commands
 * `apt` family of commands, see: https://itsfoss.com/apt-command-guide/
 
-#### Troubleshooting
+## Troubleshooting
 If you get an error message that Ubuntu is running Lo-res mode or ubuntu just stalls during bootup, then:
 
 * Ctrl-Alt F1  # get to terminal
@@ -61,7 +61,7 @@ If you get an error message that Ubuntu is running Lo-res mode or ubuntu just st
 * sudo apt-get install -f # apt-get fix its database
 * restart
 
-#### Commands
+## Commands
 <%= code_begin %>
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=stage4

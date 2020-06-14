@@ -1,20 +1,20 @@
 ---
 title: Sinatra Service Hands On
 ---
-#### Scenario
+## Scenario
 * A horoscope web service to allow apps (e.g. a calendar) to place a horoscope into their user interface
 * It has no "user interface", that is no web site: Just a set of web services
 * Reference: [Designing with Class: Heroku, Sinatra, Postgress](http://mherman.org/blog/2013/06/08/designing-with-class-sinatra-plus-postgresql-plus-heroku/#.VQXZfCZ8ToA)
 
-#### Web Service API
+## Web Service API
 
-##### GET /fortune/:date/:sign
+### GET /fortune/:date/:sign
 * :date -> date for the fortune, e.g. mar-15-2015
 * :sign -> sign, e.g. "scorpio"
 * Returns english language fortune
 * Status 200 unless parameters are invalid
 
-##### Implementation
+### Implementation
 * A database of fortunes
   * migrations
   * seed data

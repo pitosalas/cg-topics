@@ -1,7 +1,7 @@
 ---
 title: Hands On Forms Demo
 ---
-##### Rails Defaults
+### Rails Defaults
 * You can setup some defaults for rails in a file called `~/.bashrc`
 * These are mine. You can look them up yourself to see if you like them!
 
@@ -12,7 +12,7 @@ title: Hands On Forms Demo
 --skip-action-mailer
 --skip-action-mailbox<%= source_end %>
 
-##### Set up and modify gem file
+### Set up and modify gem file
 <%= source_begin "language-ruby" %>rails new formsdemo
 
 gem 'awesome_print'
@@ -22,13 +22,13 @@ gem 'hirb'
 bundle
 <%= source_end %>
 
-##### Make models and define associations
+### Make models and define associations
 
 <%= source_begin "language-ruby" %>rails generate scaffold items title:string  description:string owner:text category_id:integer
 rails generate scaffold categories title:string description:string
 rails generate scaffold comments from:string message:string item_id:integer<%= source_end %>
 
-##### Model changes
+### Model changes
 
 <%= source_begin "language-ruby" %># category.rb
 has_many :items
@@ -37,7 +37,7 @@ has_many :items
 belongs_to :category
 has_many :comments<%= source_end %>
 
-##### Create seed data (seeds.rb)
+### Create seed data (seeds.rb)
 * Notice an interesting way to create test data
 
 <%= source_begin "language-ruby" %>
@@ -64,18 +64,18 @@ puts "creating sample items"
 end
 <%= source_end %>
 
-##### Create dbs and add seed data
+### Create dbs and add seed data
 <%= source_begin "language-ruby" %>rails db:create
 rails db:migrate
 rails db:seed<%= source_end %>
 
-##### Add Bootstrap
+### Add Bootstrap
 
 * Notice not using a gem, to keep it simple
 * Reference: https://getbootstrap.com/docs/4.1/getting-started/introduction/
 * Update views/layouts/application.html.erb
 
-##### Update the routes
+### Update the routes
 * Notice: how the scategories resource stays flat
 * Notice how items > comments is a nested resource
 * Notice how the collection is set up
@@ -97,7 +97,7 @@ Rails.application.routes.draw do
 end
 <%= source_end %>
 
-##### Define the search form:
+### Define the search form:
 
 ~~~~
 # views/items/search.html.erb
@@ -114,7 +114,7 @@ end
 </div>
 ~~~~
 
-##### And it's corresponding actions
+### And it's corresponding actions
 * Why does search have two actions?
 * What controller do these actions go in?
 * Notice how to do "like" in order to allow close matches
@@ -158,7 +158,7 @@ end
 </table>
 ~~~~
 
-##### Let's add some Bootstrap
+### Let's add some Bootstrap
 
 * Bootstrap is already "included" in layouts/application.html.erb
 * We bring it to life by adding classes to strategic spots
@@ -189,7 +189,7 @@ end
 </div>
 ~~~
 
-##### Now lets add some additional controls
+### Now lets add some additional controls
 * A drop down control which will allow user to pick search options
 * Notice also that now we use the _index.html.erb partial to display an index right along with the search result
 * This is pointing the way to AJAX!

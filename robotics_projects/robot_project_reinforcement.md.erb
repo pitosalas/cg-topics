@@ -2,15 +2,15 @@
 title: Reinforcement Learning
 desc: Use RL to discover the most efficient way to traverse a path
 ---
-#### Background
+## Background
 The basic idea is to experiment with RL as it applies to guiding a robot safely down a marked path. We don't know a priori whether this will work and whether in fact it will discover the most efficient path but it should be very intersting to experiment with.
 
-#### Literature
+## Literature
 * There is no doubt literature on this or related experiments.
 * Make sure you do a literature review so we at least know what has been done before.
 * It is fine to attempt to 'reproduce' a result you find in someone's paper
 
-#### Potential Outline
+## Potential Outline
 * We can try to do this in a simulator thereby potentially running many tests overnight or more quickly.
 * Create a path using red blocks on either side that is perhaps 50 to 75 cm wide and 5-10 meters long. Place the robot at one end and a target at the other end. 
 * Start the algorithm running until the battery dies or the robot crosses a finish line.
@@ -18,11 +18,11 @@ The basic idea is to experiment with RL as it applies to guiding a robot safely 
 * When encountering a wall presumably or the start line, the robot will turn in some direction and amount and continue.
 * The RL algorithm will be taking in a variety of data, e.g. scanner data, odometry data.
 
-#### Question
+## Question
 * Is there  a way to do this so that the robot discovers the most efficient way to get from the start line to the finish line?
 * What happens if the marked path is not straight but has turns (like a race track?)
 * What RL algorithm or approach works best (or at all?)
 
-#### Deliverable
+## Deliverable
 * A live demo with an actual robot
 * A report

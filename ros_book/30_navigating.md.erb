@@ -2,18 +2,18 @@
 title: "10 part2: Navigating"
 desc: How does the robot get from here to there, iven a map and AMCL localization
 ---
-#### Navigation
+## Navigation
 
 * Continuing from where we left off
 * We have created a map using slam
 * How do we use it for navigation?
 
-##### SLAM
+### SLAM
 * Simultanuous Localiation and Mapping
 * We will localize the robot on a map that is incomplete
 * When it leaves the map it is able to extend it with the same algorithm
 
-#### Reconstruct where we left off
+## Reconstruct where we left off
 
 <%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!") %>
 
@@ -34,9 +34,9 @@ $ rosrun map_server map_saver -f stage4
 
 <%= include_image "/content/topics/images/book10stage4.png" %>
 
-#### Navigating
+## Navigating
 
-##### Demo
+### Demo
 
 <%= code_begin %>
 # Now, close all the exiting ROS nodes down and next run this. Be careful with the
@@ -58,7 +58,7 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
 
 <%= include_image "/content/topics/images/book10longrange.png" %>
 
-##### Explanation
+### Explanation
 
 * The ROS **nav stack** is another complex bit of computer science, mathematics, and engineering
 * For now we are going to just scratch the surface
@@ -73,7 +73,7 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
 * Lets try it!
 
 
-##### AMCL 
+### AMCL 
 
 * Uncheck everything except RobotModel, Map and ParticleCloud in rViz.
 * The green arrows are the pose estimates from `amcl`
@@ -85,13 +85,13 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
 
 <%= include_image "/content/topics/images/book10amcl.png" %>
 
-##### Behind the scenes
+### Behind the scenes
 
 * amcl subscribes to a topic `geometry_msgs/PoseWith`
 * rviz command *2d pose estimate* publishes the new proposed pose on that topic
 * When amcl receives that message it resets its collection of candidate poses
 
-##### Going inside the Nav Stack
+### Going inside the Nav Stack
 
 * Global planner: works out best path assuming map is accurate
     **global costmap**: How safe or unsafe is each spot on the map
@@ -102,14 +102,14 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filena
     * Map shows square area around robot with further analysis
     * Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
 
-##### Navigating in code
+### Navigating in code
 
 * Look at [patrol.py](https://raw.githubusercontent.com/campusrover/rosbook/master/scripts/patrol.py)
 * It is a `SimpleActionClient` which sends a repeating sequence of two Action Goals to `move_base`
 * There's nothing tricky about itself.
 * The challenge might be getting all the other bits set up so that it will work correctly
 
-#### Summary
+## Summary
 * How robots move around the world
 * Building maps
 * Using maps

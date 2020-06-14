@@ -5,11 +5,11 @@ title: "Service API - 2: Sinatra"
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 
-#### Prerequisites
+## Prerequisites
 
 * You must complete <%= link_to_topic :hw_service_api_1 %>, with 2 droplets and a database up and running on DO
 
-##### What to submit
+### What to submit
 
 * Answer these questions and submit the answers to Latte in a pdf
   * How many 'sinatra routes' does the Service API app have?
@@ -17,7 +17,7 @@ title: "Service API - 2: Sinatra"
   * What is `systemctl`? (You will have to do a little googling for this one)
 
 
-##### Step 0 - Modify your database.yml
+### Step 0 - Modify your database.yml
 
 **It is important that you change your `service-api-sinatra/config/database.yml` in the githup repo which you created from the template.**
 
@@ -58,7 +58,7 @@ production:
   </code>
 </pre>
 
-#### Step 1 - Create databases remotely
+## Step 1 - Create databases remotely
 
 Navigate to the `./service-api-sinatra` directory and create the databases using `rake` on your local machine.
 
@@ -84,7 +84,7 @@ Then migrates the `User` table:
 <code class="language-bash">rake db:migrate DB_HOST=$DB_HOST DB_PASSWORD=$DB_PASSWORD RACK_ENV=development</code>
 </pre>
 
-#### Step 2 - Implement Service API
+## Step 2 - Implement Service API
 
 - Implement `GET /users`
   - This route is responsible for returning all the users in the database
@@ -104,7 +104,7 @@ Then migrates the `User` table:
   - Returns a `200 OK` if it was successful
   - Returns a `500 Internal Error` if it failed
 
-#### Step 3 - Implement Frontend
+## Step 3 - Implement Frontend
 
 <%= include_image "/content/topics/images/frontend.png", extra: "style=\"max-width: 145%;\"" %>
 
@@ -121,7 +121,7 @@ Homepage
     - Does a `POST` to `http://API_HOST/users/destroy`
 - Hint: use `Net::HTTP.get`, `xhttp`, or `html form` to call your service API
 
-#### Step 4 - Running locally
+## Step 4 - Running locally
 
 To connect to the remote database, you should always run your apps like this:
 
@@ -134,7 +134,7 @@ API_HOST=127.0.0.1 API_PORT=4568 bundle exec puma -p 4567
 
 This will ensure they can all connect to each other.
 
-#### Step 5 - Running remotely for the first time
+## Step 5 - Running remotely for the first time
 
 Now that you have tested it works locally, it is time to have it run on the cloud servers.
 
@@ -240,6 +240,6 @@ Restart the rails.service:
 sudo systemctl restart rails.service
 </code></pre>
 
-##### **Now your app is live!** 🎉
+### **Now your app is live!** 🎉
 
 * Continue <%= link_to_topic :hw_service_api_3 %>

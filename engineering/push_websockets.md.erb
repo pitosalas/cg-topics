@@ -2,11 +2,11 @@
 title: Push processing and Web Sockets
 descc: Understanding web sockets and Rails Action Cable
 ---
-#### Push Processing and Web Sockets
+## Push Processing and Web Sockets
 
-##### TCP/IP in the Browser
+### TCP/IP in the Browser
 
-##### Push Processing
+### Push Processing
 
 * What is it?
 * Where is it used?
@@ -16,13 +16,13 @@ descc: Understanding web sockets and Rails Action Cable
 
 <img src="https://assets.ably.io/assets/concepts/http-request-response-092cc9945889e17c21adfe637dad5b4daaf1910784424000d2ad114ccd75238f.png" style="width: 80%;">
 
-##### Web Sockets - Conceptual
+### Web Sockets - Conceptual
 * Originally the only way that a browser would talk to the server was via the address bar or forms
 * There was no way for the server to initiate communication to the browser.
 * Needed for: notification, live updates and other functionality
 * Microsoft introduced a Javascript call which allowed a js program to initiate HTTP silently (without the screen blinking)
 
-##### Client initiated
+### Client initiated
 * Just refresh the browser
 * Why was this not enough? 
 * Push processing; notification
@@ -31,7 +31,7 @@ descc: Understanding web sockets and Rails Action Cable
   * Not reliable and difficult
 * Very bad scaling behavior!
 
-##### Websockets
+### Websockets
 * Browser feature
 * TCP/IP socket
   * Can stay open
@@ -40,11 +40,11 @@ descc: Understanding web sockets and Rails Action Cable
 * Still pretty complex
 * Libraries are built to make it easier!
 
-##### Pusher Service
+### Pusher Service
 * Separate company, free accounts
 * Best to look at an example: [Rails Forms Pusher Demo](https://github.com/pitosalas/forms_pusher_demo)
 
-##### Rails Action Cable
+### Rails Action Cable
 * Javascript code libraries
 * Rails feature to allow WebSockets connections
 * Fairly intricate to wire up

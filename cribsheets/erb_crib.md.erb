@@ -2,19 +2,19 @@
 title: ERB Cribsheet
 desc: Facts about ERB
 ---
-#### Intro to ERB
+## Intro to ERB
 * "Embedded Ruby"
 * One of a class of 'template languages'
 * There are many
 * They do a simple job (used to be called "mail merge")
 
-##### What it does
+### What it does
 * Erb file without any `<% %>` blocks remains unchanged
 * `<%% %>` **must** contain legal ruby code!
 * The code between the angle brackets is evaluated.
 * *And only in the case of `<%%= %>` it's inserted into the resulting text
 
-##### Example
+### Example
 <%= source_begin "language-ruby" %>
 <%% %w(Jones Hickey Salas Madeiras).each do |name| %>
   ----

@@ -1,4 +1,4 @@
-#### BikeSpecs: Described fixed characteristics of different kinds of Mountain Bikes
+## BikeSpecs: Described fixed characteristics of different kinds of Mountain Bikes
 class BikeSpec
   TIRE_WIDTH_FACTOR = 250
   FRONT_SUSPENSION_FACTOR = 100
@@ -50,7 +50,7 @@ class FullSuspensionBikeSpec < BikeSpec
 end
 
 
-#### Describes one particular bike
+## Describes one particular bike
 class MountainBike
   def initialize(bike_spec)
     @bike_spec = bike_spec
