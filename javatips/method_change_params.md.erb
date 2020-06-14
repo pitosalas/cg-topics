@@ -10,7 +10,7 @@ moveLeft(center);
 <%= code_end %>
 In this snippet, the variable `center` exists before the method is called, and continues to exist once the method returns. So the question is whether it's possible for the method call to modify the value stored in that variable. In the above example, the variable is a reference to a `Point`. There are analogous cases where the variable used as an argument is an array, or a primitive type.
 
-#### Rules of Thumb
+## Rules of Thumb
 
 1. A method cannot change the value of a argument of primitive type
 1. A method can change an argument which is a class (non-primitive) by changing its state.

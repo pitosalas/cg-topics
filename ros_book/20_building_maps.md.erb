@@ -2,7 +2,7 @@
 title: "9: Building Maps"
 desc: "What is a map, how to build one"
 ---
-#### Maps in ROS
+## Maps in ROS
 * Our focus is mobile, ground based robots
 * In ROS maps are represented as a 2d grid
 * Each dot in the grid corresponds to a square in the real world (based on the resulution of the map)
@@ -32,7 +32,7 @@ negate: 1
   * free_thresh: pixels with color value less than this number are considered free. (Values in between are considered unknown)
   * negate: Depending on whether black is 1 or black is 0 in the image representation, it might have to be negated
 
-#### rosbag
+## rosbag
 
 * A tool to record messages (some or all) and replay them later
 * Allows you to try another algorithm on the exact same sensor data 
@@ -47,7 +47,7 @@ $ rosbag play --clock foo.bag
 <%= code_end %>
 * The --clock flag is interesting. rosbag play will set and publish the clock. Be careful that nothing else (e.g. gazebo) is publishing the clock at the same time because this will mess things up!
 
-#### Building Maps
+## Building Maps
 
 * Maps that are made via Lidar or other sensors will be somewhat rough
 * Walls may not be exactly straight and will be blocky
@@ -56,7 +56,7 @@ $ rosbag play --clock foo.bag
 * Collect sensor data in a bag
 * Then generate a map from it
 
-##### Phase 1: Simulated Robot
+### Phase 1: Simulated Robot
 
 
 * As we are working with a simulated robot (not a physical one) we need a simulator
@@ -114,7 +114,7 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 $ rosbag info data.bag
 <%= code_end %>
 
-#### Introduction to SLAM using the saved map
+## Introduction to SLAM using the saved map
 
 <%= lab_note "Lab Instruction: Use collected data to run SLAM and build a map "%>
 
@@ -159,7 +159,7 @@ $ rosrun rviz rviz
 
 <%= include_image "/content/topics/images/rosbag2.png" %>
 
-#### Summary and Conclusion
+## Summary and Conclusion
 
 * Used slam_gmapping package to create a map of a simulated world
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes

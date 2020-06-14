@@ -3,13 +3,13 @@ title: (PA) Movies Part 2
 desc: Enhance Movies Part 1 by adding basic recommendation logic
 ---
 
-#### IMPORTANT NOTE
+## IMPORTANT NOTE
 
 <%= callout("NB", " It is important to read and heed this advice!") %>
 
 This will take several hours, so please **don't spend too much time trying to get a super accurate prediction algorithm.**  If this is a topic you are interested in, tthere are several published papers as wellas Brandeis courses on this subject. However, the goal for this assignment is to give you  practice writing good Ruby code. Surprisingly it seems like returning a constant prediction of 4 does quite well compared to other more complicated algorithms. Interesting. Therefore, first complete this PA2 with a really simple predictor and get everything done.  Then go back and refine the algorithm, but only if you don't have more important projects to work on!  This is a really fun kind of project to work on, especially once you start getting the hang of writing ruby code to implement sophisticated algorithms.  We'll discuss some very simple algorithms in class.
 
-#### Introduction
+## Introduction
 
 Building on <%= link_to_topic :pa_movies_1 %>, we are now going to include a prediction method that will predict the rating a user would give to a movie and you are to run some tests to determine how accurate your method is.
 
@@ -21,7 +21,7 @@ Then we will use the second batch (the "test" set) to see how good our predictio
 
 If we do this process across all the records in the test set, we can find an average and standard deviation (and whatever other statistics) of the error. This is what we are going to do.
 
-#### Class design
+## Class design
 
 I propose the following class design.
 
@@ -31,7 +31,7 @@ I propose the following class design.
 
 * **Class Control:** Has one key method, run, which instantiates and invokes the other two classes. It's the top level of your program.
 
-#### Final work product
+## Final work product
 
 1. Install the reek gem and see if there are ways to improve your code.
 

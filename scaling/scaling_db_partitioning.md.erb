@@ -17,7 +17,7 @@ title: Scaling by Database Partitioning
   * What to do about data consistency?
   * Parition
 
-#### Example
+## Example
 * User Database
   * Happens to often be a monster
   * Lots of records
@@ -26,7 +26,7 @@ title: Scaling by Database Partitioning
 * Schema
   * User: (id, name, email, biography, hobbies, college, last_login, encrypted_pw, profile_photo_jpg, ...)
 
-#### Vertical partition
+## Vertical partition
 * Often associated with an SOA
 * Divide the User table into three different database servers:
   User: (id, name, biography, email)
@@ -35,7 +35,7 @@ title: Scaling by Database Partitioning
 * How it changes your application
   * Pretty basic rearchitecture into separate services
 
-#### Sharding (Horizontal partition)
+## Sharding (Horizontal partition)
 * "buckets" of users (== shards)
 * How? Create multiple database servers with
   * the same schema
@@ -51,7 +51,7 @@ title: Scaling by Database Partitioning
   * Whenever you either read, write, or search
   * Require to include enough information to pick the right shard
 
-#### Pros and Cons
+## Pros and Cons
 * Joins become a problem
   * What was once one db is now spread over more than one db
   * Can lead to denormalization

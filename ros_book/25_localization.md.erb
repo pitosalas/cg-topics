@@ -2,19 +2,19 @@
 title: "10 part1: Localizing"
 desc: How does a Robot figure out where it is? Even if there's no map?
 ---
-#### Localization
+## Localization
 * How does the Robot "know" where it is?
 * How does it determine it's "pose"?
 * Relative to a coordinate system
 * Could be GPS coordinates
 * But more likely coordinate of a given map
 
-##### Localizing the Robot on a map
+### Localizing the Robot on a map
 
 * Key package is called `amcl` - Adaptive Monte Carlo Localization
 * It's a deep theoretical area covered in *Probabilistic Robotics by Sebsastian Thrun, et al*
 
-##### How it works at a high level
+### How it works at a high level
 
 * Location of robot is its **pose**
 * Always known with respect to a **map coordinate frame** (also called sometimes the *world coordinate frame*)
@@ -24,7 +24,7 @@ desc: How does a Robot figure out where it is? Even if there's no map?
 * For path planning purposes the highest probability pose is used.
 * It is definitely a *guess* not a certainty.
 
-##### Simulating localization
+### Simulating localization
 
 * We will rebuild the map here to make sure things are consistent
 * A new wrinkle here is the use of turtlebot3_simulation which will take the place of teleop

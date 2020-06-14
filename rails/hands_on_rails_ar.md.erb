@@ -1,21 +1,21 @@
 ---
 title: Hands-on with Rails DBs and Models
 ---
-#### Live Coding
+## Live Coding
 
-##### Database schema for an event schedule
+### Database schema for an event schedule
 <%= ruby_begin %>
 Person(name, dob, gender, zipcode)
 Event(name, date)
 Registrations(person_id, event_id, status, comment)
 <%= ruby_end %>
 
-##### Create rails app
+### Create rails app
 <%= ruby_begin %>
 rails new handson
 <%= ruby_end %>
 
-##### Gemfile
+### Gemfile
 <%= ruby_begin %>
 gem 'pry-byebug'
 gem 'better_errors'
@@ -24,14 +24,14 @@ gem 'faker'
 gem 'hirb'
 <%= ruby_end %>
 
-##### Create the database tables
+### Create the database tables
 <%= ruby_begin %>
 rails generate resource Person name:string dob:date gender:string zipcode:string
 rails generate resource Event name:string event_date:date event_time:time
 rails generate model Registration person_id:integer event_id:integer
 <%= ruby_end %>
 
-##### Define sample data in seeds.rb
+### Define sample data in seeds.rb
 <%= ruby_begin %>
 Event.delete_all
 Person.delete_all
@@ -53,7 +53,7 @@ end
 end
 <%= ruby_end %>
 
-##### Commands relating to seeding
+### Commands relating to seeding
 <%= ruby_begin %>
 rails db:create  # creates the database for the current env
 rails db:migrate # Run latest migrations
@@ -61,7 +61,7 @@ rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
 <%= ruby_end %>
 
-##### Examining the databases from the Rails console
+### Examining the databases from the Rails console
 *In the rails console you can type ruby commands (it's pry)*
 <%= ruby_begin %>
 rails console
@@ -72,7 +72,7 @@ Person.where("dob > ?", Date.new(1995))
 Person.where("dob > ?", Date.new(1995)).count
 <%= ruby_end %>
 
-##### CRUD operations (Create, Read, Update, Delete)
+### CRUD operations (Create, Read, Update, Delete)
 <%= ruby_begin %>
 p = Person.new(name: "Pito", dob: '12-12-2012', gender: 'f', zipcode: 12355)
 p.new_record?
@@ -81,7 +81,7 @@ p = Person.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
 p.delete
 <%= ruby_end %>
 
-##### Associations, declared in models
+### Associations, declared in models
 <%= ruby_begin %>
 class Person < ActiveRecord::Base
   has_many :registrations
@@ -97,14 +97,14 @@ class Registration < ActiveRecord::Base
 end
 <%= ruby_end %>
 
-##### Association, used
+### Association, used
 <%= ruby_begin %>
 Person.find(1).registrations
 Person.where(name: "Angelo Smith").first.registrations
 Event.find(1).people
 <%= ruby_end %>
 
-###### Validations
+#### Validations
 *Validations are applied by ActiveRecord, NOT the database*
 <%= ruby_begin %>
 validates :zipcode, length: { is: 5}    # declared in model
@@ -116,9 +116,9 @@ p.save                                  # Is not permitted
 p.save!                                 # Same but exception
 <%= ruby_end %>
 
-#### Appendices
+## Appendices
 
-##### References
+### References
 * [Awesome Print](https://github.com/michaeldv/awesome_print)
 * [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
 * [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)

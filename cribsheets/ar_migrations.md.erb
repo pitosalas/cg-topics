@@ -2,7 +2,7 @@
 title: ActiveRecord Migrations
 desc: Summary - why they exist, how they work
 ---
-#### Background
+## Background
 * Great resource: [Guide on Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
 * When you discover you need a new column or table, you can modify the database
 * E.g.break the "name" field into a "first name" and "last name"
@@ -15,7 +15,7 @@ desc: Summary - why they exist, how they work
 	* It's much more painful when you are 'in production'
 * Use Rake db:create_migratoin
 
-#### Example
+## Example
 * Migrations usually include the standard types
 * Notice **change** indicates that this is a **reversible** migration
 <%= ruby_begin %>
@@ -29,7 +29,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
 end
 <%= ruby_end %>
 
-##### Datatypes
+### Datatypes
 * There are quite a number of available statements (**note they are actually medthods!!**): 
   * add_column, add_foreign_key, add_index, add_reference, add_timestamps, 
   * change_column_default (must supply a :from and :to option), change_column_null, 
@@ -37,13 +37,13 @@ end
   * drop_join_table, drop_table (must supply a block), 
   * remove_column (must supply a type), remove_foreign_key (must supply a second table), remove_index, remove_reference, remove_timestamps, rename_column, rename_index, rename_table
 
-#### Rails commands
+## Rails commands
 * `rails generate migration` - creates a new migration. Look it up for how to parameters work
 * `rails db:migrate` - applies the migrations to the existing databases
 * `rails db:rollback` - rolls the most recent migration back (un-applies)
 * `rails db:reset` - drop the database and set it up again
 
-#### Rake/Sinatra/Activerecord commands
+## Rake/Sinatra/Activerecord commands
 * `rake db:create_migration` - creates a new migration. Look it up for how to parameters work
 * `rake db:migrate` - applies the migrations to the existing databases
 * `rake db:rollback` - rolls the most recent migration back (un-applies)

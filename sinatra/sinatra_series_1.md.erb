@@ -3,7 +3,7 @@ title: "Sinatra Series 1: Basic Plumbing"
 ---
 * Next after this section is: <%= link_to_topic :sinatra_series_2 %>
 
-#### Intro
+## Intro
 * A multi-part series of Sinatra introductory lectures
 * Some valuable links:
   * [Minitest/Spec](https://github.com/seattlerb/minitest)
@@ -12,13 +12,13 @@ title: "Sinatra Series 1: Basic Plumbing"
   * [ActiveRecord Basics Guide](https://edgeguides.rubyonrails.org/active_record_basics.html)
   * [ActiveRecord Migration Guide](https://edgeguides.rubyonrails.org/active_record_migrations.html)
 
-#### Mission
+## Mission
 * Implementing a simple service in Sinatra
 * Service = Web Service = Web API
 * It will offer CRUD operations on a database
 * It will use Sinatra and ActiveRecord
 
-#### Key technologies, standards, libraries, etc.
+## Key technologies, standards, libraries, etc.
 * Like Rails, developing Sinatra apps involves many other pioeves of technology
 * Some of it is very reminiscent of Rails
 * Some is new.
@@ -30,14 +30,14 @@ title: "Sinatra Series 1: Basic Plumbing"
   * JSON
   * Minitest
 
-#### Setting Up Sinatra
+## Setting Up Sinatra
 * Make sure you have the following installed:
   * rbenv 1.1+ [install instructions](https://github.com/rbenv/rbenv)
   * ruby 2.6.5 **use rbenv commands to install 2.6.5 as your "global" ruby**
   * git 2+ [install instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * postgres [install instructions](https://www.postgresql.org/)
 
-#### Checking your installation
+## Checking your installation
 Don't worry if you don't have precisely the same version number. Ask if you're not sure
 
 <%= code_begin %>
@@ -56,7 +56,7 @@ sinatra (2.0.8.1)
 sinatra-activerecord (2.0.14)
 <%= code_end %>
 
-#### Recommended directory structure
+## Recommended directory structure
 * Unlike Rails, Sinatra does not dictate a directory structure
 * I have found the following to work well
 * The reason it looks a tiny bit like Rails is because it accomodates ActiveRecord most easily that way
@@ -80,7 +80,7 @@ app.rb
 Rakefile
 <%= code_end %>
 
-#### Key files
+## Key files
 <%= code_begin %>
 # Gemfile
 source "https://rubygems.org"
@@ -135,7 +135,7 @@ production:
   password: your_password
 <%= code_end %>
 
-#### Using Rack::Test to do TDD
+## Using Rack::Test to do TDD
 * Add `gem rack-test` to Gemfile, `bundle`
 * Notice that all your server does so far is to return `hello sinatra` when it receives a `GET` at root
 * Lets test that
@@ -167,7 +167,7 @@ end
 * When you run this program (`ruby test/root_test.rb`) it will run the test and it should succeed
 * This is the basic pattern we will use for testing.
 
-#### Continues
+## Continues
 * Next section will be assigned separately: <%= link_to_topic :sinatra_series_2 %>
 
   

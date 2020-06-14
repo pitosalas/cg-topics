@@ -1,13 +1,13 @@
 ---
 title: Hands on Rails Test Demo
 ---
-##### Set up
+### Set up
 <%= source_begin "language-bash" %>
 rails new railstestdemo
 cd railstestdemo
 <%= source_end %>
 
-##### Add to gemfiles
+### Add to gemfiles
 <%= source_begin "language-ruby" %>
 gem 'pry-byebug'
 gem 'better_errors'
@@ -16,17 +16,17 @@ gem 'binding_of_caller'
 # then remeber to run `bundle`
 <%= source_end %>
 
-#### Add and test a model
+## Add and test a model
 <%= source_begin "language-bash" %>rails generate model word eng:string ned:string
 rails db:create db:migrate db:test:prepare
 <%= source_end %>
 
 
-##### See what rake tasks are present
+### See what rake tasks are present
 <%= source_begin "language-bash" %>rails -T
 <%= source_end %>
 
-##### Add some more tests
+### Add some more tests
 <%= source_begin "language-ruby" %># test/models/word_test.rb
   test "stores a translation" do
     word = Word.new(eng: "house", ned: "huis")
@@ -35,7 +35,7 @@ rails db:create db:migrate db:test:prepare
   end
 <%= source_end %> 
 
-##### One way to add fixtures
+### One way to add fixtures
 <%= source_begin "language-ruby" %>  setup do
   Word.destroy_all
   Word.create(eng: "house", ned: "huis")
@@ -43,7 +43,7 @@ rails db:create db:migrate db:test:prepare
 end
 <%= source_end %> 
 
-##### And see if words model can be persisted
+### And see if words model can be persisted
 <%= source_begin "language-ruby" %>  test "has two words in database" do
     assert_equal Word.count, 2
   end
@@ -54,38 +54,38 @@ end
   end
 <%= source_end %> 
 
-##### Add a validation to the model
+### Add a validation to the model
 <%= source_begin "language-ruby" %>class Word < ActiveRecord::Base
   validates :eng, presence: true
   validates :ned, presence: true
 end
 <%= source_end %> 
 
-##### Add a test for the validation
+### Add a test for the validation
 <%= source_begin "language-ruby" %>test "cannot save a word without the english and dutch text" do
   w = Word.create(eng: "university")
   assert !w.valid?
 end
 <%= source_end %> 
 
-##### Test the Word.random method
+### Test the Word.random method
 <%= source_begin "language-ruby" %>test "Can return a random word" do
   w = Word.random
   assert_equal w.class, Word
 end
 <%= source_end %> 
 
-#### Implement the Word.random method
+## Implement the Word.random method
 <%= source_begin "language-ruby" %>def self.random
   Word.all.sample
 end
 <%= source_end %> 
 
-#### Add and test a controller
+## Add and test a controller
 <%= source_begin "language-bash" %>rails generate controller Words random
 <%= source_end %> 
 
-##### Now actually implement the action in the WordsController
+### Now actually implement the action in the WordsController
 <%= source_begin "language-ruby" %>
 
 class WordsController < ApplicationController
@@ -95,7 +95,7 @@ class WordsController < ApplicationController
 end
 <%= source_end %> 
 
-##### And the view:
+### And the view:
 <%= source_begin "language-html" %>
 <h1>Words#random</h1>
 
@@ -105,6 +105,6 @@ end
 <p>English: <%%= @randword.eng %> </p>
 <%= source_end %> 
 
-#### References
+## References
 * [RoR Guide about testing](http://guides.rubyonrails.org/testing.html)
 * [Source Code](https://github.com/pitosalas/public_samples/tree/master/rails/rails_test_demo)

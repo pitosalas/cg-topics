@@ -1,11 +1,11 @@
 ---
 title: Hands On Tiny Rails Demo
 ---
-#### Basic Example
+## Basic Example
 * Basic example of rails, minitest and activerecord
 * Code for this example is [rails-faker-minitest-tiny-demo](https://github.com/pitosalas/rails-faker-minitest-tiny-demo)
 
-##### Setup
+### Setup
 ~~~
 rails new demo_tiny_rails
 cd demo_tiny_rails
@@ -20,7 +20,7 @@ bundle
 
 ~~~
 
-##### Setup Models and Databases
+### Setup Models and Databases
 ~~~~
 rails generate scaffold course number:integer name:string desc:string prof:string
 
@@ -37,7 +37,7 @@ rails db:migrate
 end
 ~~~~
 
-##### Setup rudimentary tests
+### Setup rudimentary tests
 ~~~
 # \[test/fixtures/courses.yml\]
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -72,14 +72,14 @@ class CourseTest < ActiveSupport::TestCase
 end
 ~~~
 
-##### See that app runs and tests run.
+### See that app runs and tests run.
 
 ~~~~
 rails test
 ~~~~
 
 
-##### Play with Rails console
+### Play with Rails console
 
 ~~~~
 rails db:seed

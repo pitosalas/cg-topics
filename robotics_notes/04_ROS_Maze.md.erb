@@ -3,15 +3,15 @@ title: "Project: ROS Maze"
 desc: Use ROS to design a simuated robot that runs a maze
 level: intermediate
 ---
-#### Background
+## Background
 Working in a team of 3 students, we will write ROS code to drive the robot through a maze. You will do it first in simulation [STDR] (http://wiki.ros.org/stdr_simulator) and then with the TB3. We will not use SLAM as a way to really get familiar with the lower level issues.
 
-##### Reference
+### Reference
 * ROS Book up to Chapter 7: "WanderBot"
 * [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
 * [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)
 
-##### Notes
+### Notes
 You will **not** be using SLAM for this project. Instead you will use the Lidar to return to you distances to the next obstacle at different bearings. That way you can sense walls left, right and in front of you.
 
 Notice that you will be writing and testing this algorithm in simulation mode. The simulator which you will use is called STDR. That stands for Simple Two Dimensional Robots. You will be designing and testing your algorithm totally in simulation.
@@ -20,14 +20,14 @@ Once you have the algorithm working, we will go to the next big step which is to
 
 As you write code, please try to think about good programming habits and designs. Your code may start as a bunch of spaghetti but by the time you hand it in we are expecting something with reasonable modularity, abstractions, single responsibility principle etc.
 
-#### Learning Objectives
+## Learning Objectives
 * Demonstrate ability to write a multi node ROS app
 * Learn how sensors work, especially the LIDAR
 * Learn how to leverage the simulators for testing and development in ROS
 * Research how to use raw LIDAR data to orient the robot in a maze
 * Learn how to actually deploy code to an TB3 and test it
 
-#### Steps
+## Steps
 1. Make sure you've read or looked at Chapters 1-7 of the book, or gotten the same background through your means
 1. Study Lessons 1-4 of [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821). Studying means actually doing the exercises and quizzes. Lessons 1 and 2 will give you a great intuitive and conceptual understanding of localization. Chapter 4 will teach you about Kalman filters. This is worth your time, you will learn a lot!
 1. Set up and play with STDR
@@ -40,7 +40,7 @@ As you write code, please try to think about good programming habits and designs
 1. Adapt your code (if necessary) to work as well in the live robot
 1. Demonstrate!
 
-#### ROS-MAZE Challenge
+## ROS-MAZE Challenge
 * This challenge is designed for getting known of ROS and utilizing data from sensors.
 * Implement an algorithm that will solve the maze bellow. Your code should be able to run on both the Turtlebot3 and simulators (gazebo, stdr...).
 * The team takes the least time to solve this maze in the physical world will win.

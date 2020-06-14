@@ -2,31 +2,31 @@
 title: nano Twitter Functionality
 desc: Details of the funtcionality (looking from the outside) that nanoTwitter requires
 ---
-#### General Notes
+## General Notes
 
 * NanoTwitter (nT) is a baby version of Twitter designed as a platform for experimentation with scaling issues.
 * The list of features and URLs is quite incomplete. It is meant to set the pattern for you to build upon.
 * All the URLs, both for the User Interface and for the Web Services API will attempt to follow REST design principles as far as possible.
 
-#### Minimum nT Functionality
+## Minimum nT Functionality
 
-##### Users
+### Users
 
 * can register for an account by supplying an email, a name and a password
 * are never deleted
 * are assigned a numeric id (the record id)
 
-##### Authentication
+### Authentication
 * All pages include login, logout and register links
 * If a user is logged in then the link says logout <username> and otherwise it will say login
 * Authentication will use a simplistic hashed password in the User record
 * We will not be concerned for this exercise with having tight security
 
-##### Non-logged in users:
+### Non-logged in users:
 
 * Will not be able to do anything other than register an account or log into an existing account
 
-##### Logged in users:
+### Logged in users:
 
 * Can follow and unfollow other registered users
 * Can tweet
@@ -35,7 +35,7 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Can see a list of users who are following them and who they are following
 * Can see a list of tweets referring to a particular "#tag"
 
-##### Tweets:
+### Tweets:
 
 * Consist of
   * a 280 characters of text
@@ -45,17 +45,17 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Belong to one user
 * Can never be deleted
 
-##### Search
+### Search
 * A page with a search box
 * User can enter a phrase or a "@username" or a "#tag"
 * Result of matching is displayed
 * Top 50 are displayed with next and previous links
 
-##### General User Interface
+### General User Interface
 * Basic bootstrappy html/css/javascript interface at minimum
 * Clean but doesn't have to be fancy
 
-##### Routes
+### Routes
 * Home page page: `/`
 * Specific user's page: `/user/1234`
 * Search form: `/search`

@@ -2,9 +2,9 @@
 title: Rails Magic FAQ
 desc: A grab bag of Rails tidbits that confuse beginners
 ---
-#### Database and ActiveRecord
+## Database and ActiveRecord
 
-##### Naming and plurals
+### Naming and plurals
 This is super confusing. Model name should be capitalized and singular, model file name is lower case. Corresponding database table is lower case plural. So:
 <%= source_begin("language-ruby") %># file: car_part.rb
 # database table: car_parts
@@ -12,7 +12,7 @@ class CarPart
     ...
 end<%= source_end %>
 
-##### Associations
+### Associations
 
 You need to put in both sides of the relation between two models, so:
 <%= source_begin("language-ruby") %>class CarPart
@@ -24,7 +24,7 @@ class Car
    has_many :car_parts
 end<%= source_end %>
 
-##### Many to many relations
+### Many to many relations
 
 * Do not use has_and_belongs_to_many
 * Whenever you think many to many, you will need an extra "bridging" table

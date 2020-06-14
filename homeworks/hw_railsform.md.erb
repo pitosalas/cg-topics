@@ -1,7 +1,7 @@
 ---
 title: Homework -  Forms in Rails
 ---
-#### Part 1: Step by Step
+## Part 1: Step by Step
 
 1. Create a new rails app (called lostandfound): `rails new lostandfound`
 1. Create a scaffold for the one and only model: `rails generate scaffold Item title:string description:text type:string`
@@ -15,9 +15,9 @@ title: Homework -  Forms in Rails
 1. Optional: If you want to be fancy -- instead of using a text box for the "type" of item, make it a drop down box allowing a specified options such as "book", "clothing", "cellphone", "computer"
 1. Make the form actually search. You will have to add an additional controller action to take the info from the form and perform an actual search.
 
-#### Part 2 - Expand the example
+## Part 2 - Expand the example
 
-##### Update the Database
+### Update the Database
 
 1. Modify the migration for item so that the item database has the following fields: **title:string description: text, owner: text, type_id: integer**
 1. Add a new table called "types" with the following fields: **title: string, description: string**
@@ -27,7 +27,7 @@ title: Homework -  Forms in Rails
 1. Create an appropriate 1-many relationship between them
 1. Test what you have so far to make sure it works.
 
-##### Update the UI
+### Update the UI
 
 1. Add Bootstrap css files
 1. Make the form you created in Part 1 "Pretty"

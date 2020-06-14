@@ -4,11 +4,11 @@ title: "Sinatra Series: Case Study"
 * Make sure first have done <%= link_to_topic :sinatra_series_3 %>
 * Next after this section is: <%= link_to_topic :sinatra_series_5 %>
 
-#### Goal
+## Goal
 * We will build a large fairly complicated example
 * To illustrate more principles of Service Oriented Architectures and Sinatra
 
-#### Non SOA Approach to scaling
+## Non SOA Approach to scaling
 
 <img src="/content/topics/images/soa1.png" width="350" hspace="10">
 
@@ -17,7 +17,7 @@ title: "Sinatra Series: Case Study"
 * There are background processes and they run on the same server
 * Scaling it follows a path of least resistance
 
-##### Scaling
+### Scaling
 
 <img src="/content/topics/images/soa3.png" width="350" hspace="10">
 
@@ -35,7 +35,7 @@ title: "Sinatra Series: Case Study"
 * Here are the basics: you should be writing this app as you read
 * It will be helpful with NanoTwitter
 
-#### Features (long term)
+## Features (long term)
 
 This is an RSS feed reader, with a social network integrated into it.
 
@@ -46,17 +46,17 @@ This is an RSS feed reader, with a social network integrated into it.
 * Votes: Any user can vote up or down a feed entry, whether it's one they are following themselves, or another user's
 * Notifications: A user can request to be notified when someone votes on a feed item from one of their own feeds, when someone starts following them, and so on.
 
-#### Overview
+## Overview
 * Users can follow other users
 * A user can follow 0 or more users, and be followed by zero or more users
 * A user cannot follow itself
 
-#### Useful links
+## Useful links
 * [Ruby Toolbox](https://www.ruby-toolbox.com/categories)
 * [Minitest Spec](https://github.com/seattlerb/minitest)
 * [Ruby Faker](https://github.com/stympy/faker)
 
-#### Tables, in their initial form
+## Tables, in their initial form
 
 * `users` table - Columns
   * id: integer
@@ -83,7 +83,7 @@ This is an RSS feed reader, with a social network integrated into it.
   * entry_id: integer 
   * vote: string (up or down, room for expansion)
 
-#### Models (not all are detailed here)
+## Models (not all are detailed here)
 
 * `User` model
   * Will contain some intricate has_manys
@@ -108,9 +108,9 @@ class Follow < ActiveRecord::Base
 end
 <%= ruby_end %>
 
-#### Testing
+## Testing
 
-##### General
+### General
 * Because the follow/follower/following is very confusing
 * Write tests to see that they work as you want
 * Note that you need to ensure that the RACK_ENV environment variable is set to test
@@ -119,7 +119,7 @@ end
 * Invoke pry with sinatra loaded: `pry -e "require_relative `./app,rb`"
 * Use `before do` to set up "test fixtures"
 
-##### Examples of additional tests to write
+### Examples of additional tests to write
 * If user a follows user b, 
   * then user b is a follower of a
   * also user a is a followed_user of user b
@@ -130,7 +130,7 @@ end
 * If user a attempts to follow user a
   * then an error occurs
 
-##### Sample tests
+### Sample tests
 * A very basic test to see if it works at all:
 
 <%= ruby_begin %>
@@ -152,7 +152,7 @@ end
 * But when we implement it properly we will touch on many of the representative challenges
 * As well as database/activerecord capabilities: caches, one-to-many, many-to-many, single-table-inheritance etc.
 
-#### How to think about services
+## How to think about services
 * Fundamentally this is a design challenge
 * There are different ways of attacking this
 * You can think of these questions:
@@ -161,7 +161,7 @@ end
   * Which joins will occur the most often? You will want to keep those tables together in the same service.
   * Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
 
-#### Start here
+## Start here
 * It is natural to begin with a monolithic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
 
 <img src="/content/topics/images/soa4.png" width="175" hspace="10" align="center">
@@ -172,7 +172,7 @@ end
 
 * This is just a start. We will build on this scheme and use this in Nanotwitter
 
-#### Deliverable
+## Deliverable
 * Build out the five tables and models
 * Do not design or implement the routing blocks or views
 * Do write unit tests, following my example to see that your models and associations work

@@ -2,12 +2,12 @@
 title: Git and Github
 desc: Tips and hints for working with Git. Lots of links too.
 ---
-#### What is git? What is github?
+## What is git? What is github?
 
 * Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on.
 * Github is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
 
-##### Terminiology
+### Terminiology
 * project directory: the directory that contains all the files of your project. It often contains other subdirectories. Different languages have different conventions for how to structure a project. Very often the toplevel contains a Readme file.
 * project root directory: the topmost directory of your project directory.
 * repository or repo: when a project directory is "packaged" up for Git
@@ -15,7 +15,7 @@ desc: Tips and hints for working with Git. Lots of links too.
 * (git) server: a server (separate from your own computer) that contains a snapshot of your repo
 * Github: the most well known, publically accessible git server
 
-##### Features
+### Features
 * Here are some features of Git:
    * Safely keep copies of all your source code and related files
    * Efficiently store the source code over time, maintianing all the old copies too
@@ -24,7 +24,7 @@ desc: Tips and hints for working with Git. Lots of links too.
    * Create parallel branches of work to allow divergent changes to be created without interference.
    * Different versions for development and deployment; the deployment version should be a stable one
 
-#### Top 5 commands
+## Top 5 commands
 
 * Commands done only from your top level "mydev" directory
     * git clone (create a new directory from a repo on github)
@@ -36,7 +36,7 @@ desc: Tips and hints for working with Git. Lots of links too.
     * git status (see where things stand)
 <%= callout("Important"," Don't do a git clone from 'inside' a local repo directory") %>
 
-#### Resources
+## Resources
 
 There are tons of online resources available for learning git. Below is a list of some that you may find useful:
 
@@ -53,7 +53,7 @@ There are tons of online resources available for learning git. Below is a list o
 
 <%= include_image "/content/topics/images/git_file_status_lifecycle.png" %>
 
-##### Discussion points
+### Discussion points
 
 * What are the main benefits of using GIT when developing a project by yourself?
 * What are the main benefits of using GIT when developing a project with a team of coders?
@@ -62,7 +62,7 @@ There are tons of online resources available for learning git. Below is a list o
 * What are the advantages to having a staging area?
 * After discussing these "big picture" ideas, we'll look at the internals to see what Git is actually doing when you branch, commit, etc.
 
-##### Some of the basic skills you'll need are
+### Some of the basic skills you'll need are
 
 * create a local repository (git init)
 * create a github repository and push your local repo to github

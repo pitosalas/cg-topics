@@ -1,7 +1,7 @@
 ---
 title: PA Rails 1
 ---
-#### Intro
+## Intro
 
 This assignment introduces the MVC architecture of Rails as you design a Web app in which users can select university classes. The data you need is available at [This Google Drive folder](https://drive.google.com/a/brandeis.edu/folderview?id=0B0RwSGontLyAcG82akRlTjZZUGc&usp=sharing). The folder has 3 JSON files, each is a JSON array. Note: If you are using or already loaded data from [the original URL](http://www.cs.brandeis.edu//~prakhar/dataset.json), then you'll need to iterate through each line of that file and parsing each line as JSON - The entire file is not JSON formatted, just individual lines. Also DO NOT use/load entries of type "section" - there are too many of these and you'll end up exceeding the 10K records for a free database on Heroku. Only use data of type **instructor, course and subject.**
 
@@ -9,7 +9,7 @@ The purpose of this assignment is for each student to independently practice the
 
 In the first part (of 3) you will build a basic rails application that imports and displays the data according to the instructions below.
 
-#### Part 1: Bootstrap UI, Import JSON files and Display data
+## Part 1: Bootstrap UI, Import JSON files and Display data
 1. Before creating your application: Since we will be deploying our app to Heroku, you MUST use PostgrSQL instead of sqlite because Heroku does not support sqlite. Follow [this comprehensive tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-ruby-on-rails-with-postgres) After following this tutorial you will have an app that’s up and running! Be sure to fully understand RORT chapters 1 & 2 before you follow this abridged tutorial.
 1. As chapter 2 suggests, I highly recommend you setup a (**private**) GitHub repo and automatic deployment to Heroku at this step. It is far simpler to deploy to Heroku now than later on in the assignment. This step is covered in the short tutorial above, but you must generate multiple scaffolds. 
 1. Use `rails generate scaffold` to generate appropriate models and views in order to represent the data for instructor, subject, and course.
@@ -25,12 +25,12 @@ In the first part (of 3) you will build a basic rails application that imports a
     * (If you are having trouble with setting up a home page with multiple tabs then re-read and re-do chapters 1-4)
 1. The final step of this assignment is to set up your application to use Bootstrap for the UI. This can be easily accomplished if you follow RORT chapter 5. Only do this step once you have finished all the other steps. **[NEW FOR 2021: Note that simply including the gem in the gem file is not enough. You need to at least demonstrate that you have looked at the bootstrap documentation and understood the very basics. You need to leverage bootstrap somehow. Most likely you might choose to use the `grid` to control the layout to some extent. In the end it requires just a few html changes. We’re not asking for a specific look just demonstrate that you made the effort to grasp how bootstrap works and fits in.]**
 
-#### Deliverables:
+## Deliverables:
 
 1. Write a readme.md for your app including link to a **private** GitHub repo and your link to Heroku.
 1. Submit to Latte a zipped up folder of your app.
 
-#### Timesaving Tips
+## Timesaving Tips
 * Check out these really useful gems
   * json to parse and process json files
   * activerecord-import to make loading lots of records faster and more efficient
@@ -44,9 +44,9 @@ gem "better_errors"
 gem "pry-rails"
 <%= ruby_end %>
 
-#### Useful Links
+## Useful Links
 * [ActiveRecord Import](https://github.com/zdennis/activerecord-import/wiki/Examples)
 * [Importing Large Datasets in Ruby on Rails](https://medium.com/@eric_lum/importing-large-datasets-in-ror-why-you-should-use-activerecord-import-26fc915e6fd0)
 
-#### Continue to next pa in this sequence
+## Continue to next pa in this sequence
 **Click here to continue to <%= link_to_topic :pa_rails_2 %>**

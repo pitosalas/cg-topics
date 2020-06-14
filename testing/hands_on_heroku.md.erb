@@ -1,22 +1,22 @@
 ---
 title: Hands On Heroku for Rails
 ---
-#### Introduction
+## Introduction
 In this hands on demo you will create a new minimal Rails app, and then configure it so that it uses Postgres for both development and production.
 
 **Here's the video: [Click here to view a video of this process](https://youtu.be/jlm4CxkguAc)**
 
-##### Notation
+### Notation
 * A line that starts with a $ means that the text following the $ should be typed into your shell (terminal)
 * **Remember not to type in the $ yourself!!!!**
 * Other lines are to be added to various files, and will be explained in context.
 
-##### Creating a minimal Rails app
+### Creating a minimal Rails app
 * `$ rails new -d=postgresql herokudemo`
 * `$ rails g resource solar_system name:text size:integer`
 * `$ rake db:migrate`
 
-#### Get Database going
+## Get Database going
 * Add to seeds.rb file: `SolarSystem.create(name: "Sol", size: 9)`
 * `rake db:seed`
 * `rails generate controller welcome index`
@@ -35,13 +35,13 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 
 * Add to routes.rb: `root 'welcome#index'`
 
-##### See if the app works
+### See if the app works
 * `$ rails c`
 * Type this into the console: `SolarSystem.all`
 * `$ rails server`
 * Now visit the home page in your browser, at http://0.0.0.0:3000
 
-#####  Set up heroku
+###  Set up heroku
 * Go to the heroku web site and create a free account on heroku
 * install heroku toolbelt (see: https://toolbelt.heroku.com)
 * check by typing `$ heroku`

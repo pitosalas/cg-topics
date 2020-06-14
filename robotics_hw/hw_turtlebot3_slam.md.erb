@@ -3,18 +3,18 @@ title: Running SLAM on Turtlebot3
 desc: Assignment for learning about SLAM and navigation
 ---
 
-#### Introduction
+## Introduction
 
 In robotics, SLAM (simultaneous localization and mapping) is a powerful algorithm for creating a map which can be used for autonomous navigation. When working with SLAM on the Turtlebot3, the `turtlebot3_slam` package provides a good starting point for creating a map. Although this package does provide preconfigured launch files for using SLAM, there are parameters that can be tuned in order to improve performance. This guide will explain how to tune these parameters and how to use SLAM on the Turtlebot3. This homework will give you your first experience with SLAM on the Turtlebot3
 
-#### Assignment
+## Assignment
 
 1. Each student should do this individually, although it is fine to consult with each other if you are having problems.
 2. I would like you to select an indoor place with a smooth surface to map. It should be bigger than a single office. For example it could be a quiet hallway, a space in the basement. I can help you find somewhere if you have trouble. Not too big, because the robot moves slowly. And not featureless because AMCL requires landmarks.
 3. Using a TB3, and following the hints and instructions here [Robotis Turtlebot3 Slam](http://emanual.robotis.com/docs/en/platform/turtlebot3/slam/#slam) and here [Robotis Turtlebot3 Navigation](http://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#navigation) create a map of that area, save it to disk and then demonstrate the robot navigating in a few scenarios.
 4. Keep in mind the limitations of LIDAR - the minimum and maximum distances
 
-#### Submission
+## Submission
 
 This will not require any coding. You should submit to Latte a video demonstrating success and a short lab report explaining what you had to do to get it to work.
 
@@ -28,7 +28,7 @@ This will not require any coding. You should submit to Latte a video demonstrati
 
 To work with SLAM, the `turtlebot3_slam` package is necessary. To prepare the robot for running SLAM, start up the Turtlebot3 with the `turtlebot3_robot.launch` file. There are a variety of methods that can be used with SLAM, and for this guide we will use `gmapping` to create our map.
 
-#### Tuning SLAM Parameters
+## Tuning SLAM Parameters
 
 To get the most out of `turtlebot3_slam`, some tuning of parameters in the launch file is required. To tune the parameters, open the `turtlebot3_gmapping.launch file` and modify it to look like the following:
 
@@ -36,7 +36,7 @@ To get the most out of `turtlebot3_slam`, some tuning of parameters in the launc
 
 The file above has taken the default configuration, but modified the `map_update_interval`, `linearUpdate`, and `angularUpdate` parameters. Although this may not be the optimal configuration, these parameter updates do significantly increase the map quality from the default launch file. Further expermimentation and tuning of the parameters can be done if results are not satisfactory, and a tuning guide can be found here: http://emanual.robotis.com/docs/en/platform/turtlebot3/slam/#slam
 
-#### Running SLAM
+## Running SLAM
 
 Now that the launch file parameters have been tuned and the Turtlebot3 is running, a map can be created with SLAM. In order to start running SLAM, the following command should be executed on the remote PC connected to roscore:
 
@@ -52,11 +52,11 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 Use the keyboard to drive the Turtlebot3 around the space. Once the area has been sufficiently mapped, the map can be saved for use in autonomously navigating.
 
-#### Saving The Map
+## Saving The Map
 
 Once the map has been created using SLAM, it can be saved using the `map_server` package. To save a map, use the command `$ rosrun map_server map_saver -f ~/map`. The `~/map` will save the map with the name `map` to the root directory, but this can be changed by modifying the path on the end of the command. Once this has been run, the map is saved and it can be used for autonomous navigation.
 
-#### Autonomously Navigating
+## Autonomously Navigating
 
 After the map has been successfully saved, the SLAM node which is running can be stopped and navigation can begin. The Turtlebot3 navigation stack contains many powerful navigation algorithms which can be used without any configuration, and we will use one here. To start the navigation node, run the command (with teh correct map file spec)
 

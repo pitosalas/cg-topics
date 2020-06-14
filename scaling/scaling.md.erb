@@ -1,9 +1,9 @@
 ---
 title: Scaling
 ---
-#### Scaling
+## Scaling
 
-##### Thought experiment
+### Thought experiment
 * Real world example:
 	* cafeteria flow chart
 	* Several failure modes
@@ -11,7 +11,7 @@ title: Scaling
 
 <%= callout "activity", " discuss with your neighbors: if you were the manager of this store, how would you address the problem?" %>
 
-##### Optimization:the search for bottlenecks.
+### Optimization:the search for bottlenecks.
 * What's a bottleneck? Refer back to the cafeteria example.
 * Moving target:
 	* When you eliminate/improve one bottleneck, it just reveals the next one.
@@ -19,7 +19,7 @@ title: Scaling
 * **Important:** Measurement
 * **Worse sin:** Optimizing early. Why?
 
-##### Performance
+### Performance
 * Performance is what what a user experiences as "slow" or "fast"
 * Response time to an operation initiated by the user
 * Perception!
@@ -28,7 +28,7 @@ title: Scaling
 	* Anticipation: start doing work before user requests it
 * Different (but intertwined with) scaling
 
-##### Scaling
+### Scaling
 * "How many X per minute can you do"
 	* (e.g. user log ins, page refreshes, notifications,...
 * How many (users, sessions, videos, pictures, etc) does the site need to support
@@ -42,7 +42,7 @@ title: Scaling
 	* database partitioning and sharding
 	* asynchronous processing
 
-##### Patterns of scaling problems and solutions
+### Patterns of scaling problems and solutions
 
 * "Clients" = web browsers accessing the site, mobile apps accessing the site, etc.
 * Load on the servers. Some scenarios, one or more of:

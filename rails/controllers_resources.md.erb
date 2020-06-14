@@ -1,7 +1,7 @@
 ---
 title: Demo of controllers and resources
 ---
-#### Setup
+## Setup
   * We're going to build a simple blogging system
   * Posts and comments
   * Do these commands in the shell
@@ -12,14 +12,14 @@ rails generate scaffold Comment body:text post_id:integer
 rake db:migrate
 <%= code_end %>
 
-#### Review
+## Review
 * Examine db/migrations/*
 * Examine app/models/*
 * Examine config/routes.rb
 * Examine app/controllers
 * Examine app/views
 
-#### Routes
+## Routes
 * Run `rake routes`
 <%= code_begin %>
       Prefix Verb   URI Pattern                  Controller#Action
@@ -40,7 +40,7 @@ edit_comment GET    /comments/:id/edit(.:format) comments#edit
              PUT    /posts/:id(.:format)         posts#update
              DELETE /posts/:id(.:format)         posts#destroy
 <%= code_end %>
-#### Play with the server
+## Play with the server
 * Run the rails server (`rails server`)
 * Access these urls from your browser observe error messages, and refer to rake routes above
   * http://0.0.0.0:3000/posts
@@ -49,7 +49,7 @@ edit_comment GET    /comments/:id/edit(.:format) comments#edit
   * http://0.0.0.0:3000/posts/1/comments/1
 * Note: no nesting!
 
-#### Nesting happens in routing
+## Nesting happens in routing
 * Before:
 <%= ruby_begin %>
 # config/routes.rb
@@ -66,10 +66,10 @@ edit_comment GET    /comments/:id/edit(.:format) comments#edit
 
 * Review `rake routes`
 
-#### Adjusting the Model
+## Adjusting the Model
 * Add belongs_to :post to Comment
 * Add has_many :comments to Post
 * Demonstrate that this works in Rails C
 
-#### Adjusting the controllers
+## Adjusting the controllers
 * Demonstrate what's happening by adding puts to the Post and Comment controllers

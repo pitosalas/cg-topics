@@ -3,7 +3,7 @@ title: Introduction to ActiveRecord
 ---
 ### Introduction to ActiveRecord programming
 
-#### Basics
+## Basics
 
 * An [ORM Framework](https://martinfowler.com/bliki/OrmHate.html)
 * Reference: [Active Record Basics Guide](http://guides.rubyonrails.org/active_record_basics.html)
@@ -16,7 +16,7 @@ title: Introduction to ActiveRecord
   * Abstraction over SQL, provides excellent optimization of SQL
   * Performance by caching, optimization
 
-#### Conventions
+## Conventions
 * Naming Conventions
   * Models
   * Tables
@@ -27,18 +27,18 @@ title: Introduction to ActiveRecord
   * Foreign keys are always called <other table>_id
   * Several other standard column names: created_at, updated_at, type, etc.
 
-#### Magic
+## Magic
 * Sequence of events when database is opened
 * Automatic creation of "attributes" based on column names
 
-#### Migrations
+## Migrations
 * Rails programmer utility
 * Automates the updating of schemas as the application evolves
 * Source of confusion often
 
-#### Examples
+## Examples
 
-##### Models and databases
+### Models and databases
 <%= ruby_begin %>
 
 # Build a quick and dirty Rails app

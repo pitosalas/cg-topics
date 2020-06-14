@@ -2,11 +2,11 @@
 title: (PA) Movies Part 1
 desc: Part one of the Movies programming assignment involves loading a big data file with movie data into a Ruby hash or array, and computing some simple statistics. The point of this is to check your learning of Ruby and to see the quality of your
 ---
-#### Overview
+## Overview
 
 Social networking-based webapps often collect huge amounts of information about members of the community.  One of the most exciting developments in the past decade has been the development of tools for analyzing this data to provide value for the community.  For this assignment, you are to write a ruby program that reads in a large data set and produces some analysis.
 
-#### Data
+## Data
 
 The data set, ml-100k, consists of 100,000 ratings of 1682 movies from 943 users and can be downloaded from one of these places:
 
@@ -22,7 +22,7 @@ The main data set u.data consists of 100,000 rows where each row has 4 tab-separ
 
 More information about the users and movies can be found in other files, but you don't need that info for this assignment.
 
-#### Program
+## Program
 
 Below is a suggested structure for the program. It's ok to include additional classes, methods or parameters if you feel it will make for a nicer design.
 
@@ -36,18 +36,18 @@ Class MovieData - will contain a sample of movie data from the data files. Here 
 * `MovieData#similarity(user1, user2)` - generates a number between 0 and 1 indicating the similarity in movie preferences between user1 and user2. 0 is no similarity.
 * `MovieData#most_similar(u)` - this return a list of users whose tastes are most similar to the tastes of user u
 
-##### Questions to think about (be prepared to discuss them ...)
+### Questions to think about (be prepared to discuss them ...)
 
 * Describe an algorithm to predict the ranking that a user U would give to a movie M assuming the user hasn't already ranked the movie in the dataset.
 * Does your algorithms scale? You dont have to make it scale alot, I just want to see that you have an awareness of whether it does or does not, and why,
 * What factors determine the execution time of your "most_similar" and "popularity_list" algorithms.
 
-##### Notes 
+### Notes 
 * It's ok to come up with a very simplistic approach based on the data. Please don't think I am expecting some fancy AI/machine learning/or other fancy thing. This is not the point of the assignment.
 * The point of the assignment is that you write a working Ruby program that is reasonably designed, clear to understand, that it "works". Focus on using ruby well, giving variables reasonable names, having methods not bee too long, using objects and classes if/when appropriate.
 * We won't grade based on how well you detect similarity. If one student says that user x and y are totally different and another say that they are exactly the same, no one will get points off.
 
-#### Deliverables
+## Deliverables
 1. the movie_data.rb source code, as clean and elegant as you can make it.
 1. a transcript of running your code and generating the first and last ten elements of popularity list and most_similar(1). In other words, run your code from the command line, and cut and paste the output into a text file, for example, as running_transcript.txt. This allows us to see the output of your program without us having to try and run it ourselves. So don't worry too much about the format as long as we can tell that the program worked.
 1. A readme file that describes your solution and also considers the questions posed above.

@@ -5,7 +5,7 @@ desc: Nodes, Topcis, Messages, Commands, Services
 
 A ROS system is made up of many different programs running simultaneously. Each program is called a _*node*_.  The nodes are communicating with one another with a peer-to-peer manner by passing _*messages*_.  That means messages are not passing through the *roscore* , each node just uses roscore to find each other.
 
-#### **Messages** are just data structures:
+## **Messages** are just data structures:
 
 <img src="https://lh3.googleusercontent.com/c8uLbDPLurDIuYd7_xHsp5d1RguPqD1mvvXI5lmwAGgfAAjWFV3-O58LvQjY3buM6R38LJaIFTEGSoRnhB8zsr0cJAlZrMgL-ms93LOPBROTi-YDRX64MuV56VFpBtMqCVfFsEHOicpfIFn6BUwKSo0BAJUdox0Q32t3_DlxDuYJNXpAebdB8cRvpITYfQocP0RYTJFzGmePFOFd4jMTdG7p6GoEJCfn07QF1B8WslS7U01oLH6zY8Rf0PiT025lGjKZPNEkP7QFSR9R6-bGRTNCZPcmFIh6If2_LEE11PqtqR6eJvLohgFDFoYMTlU3Sx90OlKrvh2iLbQl6tyDcC4FZIVW1WmUB3hr-8_2D9f5xRbI7NsCCbUWYQgoV3QHPrybPxk9Ef0hBnqd5IypuXC2-5igMvR15P00QUkV4SElu_kOSAO5Wtv4QVzP2-pF-5DFgEb3C23e8XRub3XHizqV2BFb4Ug5dYtglyeDIl8eJV0v4BX3ykcSYprCqOh9HUuFbBElTBu17vX6vwYDJSWLklenUriIQoft84DYYi9u5V7D6nOvFJ8loRX8TQ3UTQ-iDNJmtr-gPXHYxqsIY5k8PxCBN54Gyj_65bH_s20aXimrNfNqeA=w1304-h1002-no" width="600">
 
@@ -34,7 +34,7 @@ This will list all the topics that are currently existing in the system. What I 
 
   keep in mind these three commands, you will use them a lot.
 
-#### **Services**: synchronous remote procedure calls.
+## **Services**: synchronous remote procedure calls.
 
 For topics, subscribing and publishing are all happening on where the node is running. For services, after setting up the server, when you make a service call, the computation is sent to the server which is another node. A service call would look excactly like a normal function call, except the fact that it will wait for the result from server.
 
@@ -44,6 +44,6 @@ For topics, subscribing and publishing are all happening on where the node is ru
 
   The ROS system takes care of all the communication behind the scene. It's a good way to distribute the computation workload. Service calls are well suited to things that you only need to do **_occasionally_** and *that take a bounded time to complete*. For example, letting the robot navigate to a destination is not a well suited task for the service model, since you have no idea about when it can be done or if it can be done and you don't want to wait at the service call forever.
 
-#### **Actions** are designed to solve this problem:
+## **Actions** are designed to solve this problem:
 
 ROS actions are the best way to implement interfaces to time-extended, goal-oriented behaviors like navigation. This will be introduced more throughfully in the future talk - Navigation in ROS. An action is defined with three part: goal, result and feedback. Each of them is some kind of data structure. Usually, actions, services and topics uses the same set of data structure for a easy communication. For actions, it's like service model, you have to have a server which is another node. The server will take a goal, react accordingly and send back a result. Also, you can set up a feedback which will be sent back to the client.

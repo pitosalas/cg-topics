@@ -1,11 +1,11 @@
 ---
 title: HTML - Hypertext Markup Language
 ---
-#### Introduction
+## Introduction
 * Remember HTML is one of the core standards of the www: html, http, uri
 * HTML is a variant of XML. Many versions. Current/latest is html5
 
-##### Minimum Example
+### Minimum Example
 
 * General structure of all html files. They all have this.
 <%= code_begin %>
@@ -18,7 +18,7 @@ title: HTML - Hypertext Markup Language
 </html>
 <%= code_end %>
 
-#### Tags
+## Tags
 * Very common tags
   * `<h1>Largest header</h1>`
   * `<a href="http://www.google.com">Link tag</a>`
@@ -37,25 +37,25 @@ title: HTML - Hypertext Markup Language
   * `<body>...</body> Denotes the body, the visible stuff`
 * <%= discussion "What other tags would you say are 'very common'?" %>
 
-##### More about tags
+### More about tags
 * There are a lot lot lot of tags: [WWWSchools Tags](http://www.w3schools.com/tags/)
 * Expect to look up the not so common ones. Or [Play with them online](http://cssdesk.com)
 * There are many tools for 'experimenting': [Online Playgrounds for html css and js](http://designshack.net/articles/css/5-online-playgrounds-for-html-css-and-javascript-compared/)
 * Like in xml, html tags can and often do have attributes
 
-#### Most common attributes class= and id=
+## Most common attributes class= and id=
 * In the language of xml and html, these are attributes
   * e.g. `<h1 class="chapter">Chapter 1</h1>`
   * e.g. `<div class="subchapter supplement">Supplementary</div>`
   * e.g. `<p id="error">Please check the ignition</p>`
 
-##### *Important!*
+### *Important!*
 * These don't do anything **in html**. (<<- notice I said "IN HTML")
 * They just create names for elements of the page
 * Names are used in other contexts: css and javascript
 * They can be combined, e.g. `<p id="error urgent" class="homework">Please check the ignition</p>`
 
-#### Links and Forms and http
+## Links and Forms and http
 * Remember the HTTP verbs: GET, PUT, POST and DELETE (there are a few more)
 * When I type a URL into the browser, it generates an HTTP GET with that URL
 * When I click on a link (`<a href="http://varperrater.com/configuration/23-12-933">show config</a>`) the browser also generates an HTTP GET to that URL.

@@ -5,7 +5,7 @@ title: "Service API - 1: Cloud"
 <link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 
-#### What to submit
+## What to submit
 
 Answer these questions at the end and submit to latte as pdf:
 
@@ -14,7 +14,7 @@ Answer these questions at the end and submit to latte as pdf:
 3. What are the differences between a public and a private IP address?
 4. When setting up the database, why do we have to setup "Inbound Sources"?
 
-#### Prerequisites
+## Prerequisites
 
 * Read <%= link_to_topic :hw_service_api_0 %>
 * DigitalOcean account
@@ -25,7 +25,7 @@ Answer these questions at the end and submit to latte as pdf:
   * Install: [https://github.com/digitalocean/doctl#installing-doctl](https://github.com/digitalocean/doctl#installing-doctl)
 * Create a repo using this template: [https://github.com/xumr0x/service-api-example](https://github.com/xumr0x/service-api-example). This will create a repo in your account, following the template.
 
-#### Step 0 - Set your team's project as default for your account
+## Step 0 - Set your team's project as default for your account
 
 * Select your team -> Settings -> check "This is my default project" -> save.
 
@@ -33,7 +33,7 @@ Answer these questions at the end and submit to latte as pdf:
 
 * Authenticate yourself using your DO token: `doctl auth init`
 
-#### Step 1 - Create Resources on DigitalOcean
+## Step 1 - Create Resources on DigitalOcean
 
 * Create your front end droplet:
   * *Replace `$fingerprint` below with your "fingerprint"*
@@ -70,7 +70,7 @@ Go on your droplet's public IP with your browser, you should see something like 
 
 <%= include_image "/content/topics/images/rails.png", extra: "style=\"max-width: 145%;\"" %>
 
-#### Step 2 - Setup database on DigitalOcean
+## Step 2 - Setup database on DigitalOcean
 
 Now you need a Postgres database server or instance. This is equivalent to a computer running postgres. Remember that each team will share a single managed postgres cluster, so only one team member has to do the following step:
 
@@ -94,7 +94,7 @@ You also need an initial database called "postgres" which we now create
 <code class="language-bash">doctl database db create $ID postgres</code>
 </pre>
 
-#### Step 3 - Setup the connections between your droplets and database
+## Step 3 - Setup the connections between your droplets and database
 
 Go on [https://cloud.digitalocean.com/databases](https://cloud.digitalocean.com/databases) and click on the database you just created ("postgres-sinatra")
 
@@ -108,7 +108,7 @@ Then click "Allow these inbound sources only".
 
 Now you should be able to access your database from your droplets and your laptop!
 
-#### Step 4 - Connect to database from your laptop
+## Step 4 - Connect to database from your laptop
 
 Click "Connection details" then "Flags" to see the commands for connecting using `psql`
 
@@ -116,7 +116,7 @@ Click "Connection details" then "Flags" to see the commands for connecting using
 
 Run that command in terminal and you should be able to connect to the database.
 
-##### **Now your cloud architecture is all ready to go!** 🎉 Continue to next
+### **Now your cloud architecture is all ready to go!** 🎉 Continue to next
 * Next: <%= link_to_topic :hw_service_api_2 %>
 
 

@@ -17,7 +17,7 @@ desc: What are topics, how are they used. How do messages fit in
   * A message is a data structure with named and typed fields
   * A collection of messages already exists, e.g. Int32, which is message with one element, a 32 bit integer.
 
-#### Some details
+## Some details
 * Queues
   * When you define your node as a Publisher you need to supply a queue_size
   * Messages that are published are kept in the queue until all subscribers have received them
@@ -43,12 +43,12 @@ desc: What are topics, how are they used. How do messages fit in
     * `chmod +x filename`
     * Execute it from shell `$ ./filename`
 
-#### Useful references to look at
+## Useful references to look at
 * [Publishers and Subscribers](http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers)
 * [Defining Custom Messages](http://wiki.ros.org/ROS/Tutorials/DefiningCustomMessages)
 * [Creating a ROS msg and srv](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
 
-#### Publishing a topic
+## Publishing a topic
 
 * You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 * Use the ones in our github because they have been tested with TB3
@@ -67,7 +67,7 @@ $ rostopic list
 $ rostopic echo counter -n 5
 <%= code_end %>
 
-#### Subscribing to a topic
+## Subscribing to a topic
 * See $ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py
 * It defines and runs a node whch subscribes to the counter, and prints it
 
@@ -78,19 +78,19 @@ $ roscd prrexamples
 $ rosrun prrexamples topic_subscriber
 <%= code_end %>
 
-#### Examine what's going on
+## Examine what's going on
 * Make sure you can see that topics are being publsihed (see `rostopic`)
 * Make sure you can see that topics are being subscribed (see console output)
 * Try running `rqt_graph` to see the node charts
 
-#### Custom Message Types
+## Custom Message Types
 * First look if any of the standard message types can do the job for you
 * Here's a [List of standard message type](http://wiki.ros.org/std_msgs)
 * The procedure for defining a new message is easy but convoluted
 * This is because you define your message in a .msg file with a particular format
 * And then catkin_make uses that to generate appropriate C++ headers and Python libraries
 
-##### Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
+### Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package
 1. Update (if needed) the package.xml file to include two new commands to indicate dependencies ()
 1. Update your python program to import the messages

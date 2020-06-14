@@ -4,7 +4,7 @@ desc: Simulating behavior in simulation
 ---
 <%= callout("NOTE!", " All the book instructions make reference to \"turtlebot_xxx\". We will be using \"turtlebot3_xxx\"") %>
 
-#### Intro
+## Intro
 * We will modify the instructions from the book so follow along here!
 * Code will be part of `prrexamples` package which we have been using: [prrexamples](https://github.com/campusrover/prrexamples)
 * Setup the simulation packages for Turtlebot3 by following [11. Simulation](http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). In particular make sure you add the turtlebot3_simulations package, as follows:
@@ -15,7 +15,7 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 $ cd ~/catkin_ws && catkin_make
 <%= code_end %>
 
-#### Red Light/Green Light
+## Red Light/Green Light
 
 * Pretty trivial, toe in the water
   * Drive forward for a bit
@@ -29,7 +29,7 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ ./red_light_green_light.py
 <%= code_end %>
 
-#### Reading sensor data
+## Reading sensor data
 * TB3 has a lidar
 * Lidar returns and array of 360 doubles (and some other stuff)
 * 0 degrees is straight ahead
@@ -54,7 +54,7 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ rostopic echo scan
 <%= code_end %>
 
-#### Wander Bot
+## Wander Bot
 * Program will perform a pretty stupid trick
 * It will drive in a straight line for some seconds
 * Then it will spin in place for some more seconds
@@ -76,7 +76,7 @@ $ chmod +x  wander.py
 $ ./wander.py
 <%= code_end %>
 
-#### Summary
+## Summary
 * Logic in a .py program can estabish behaviors
 * All .py programs become nodes (almost)
 * Nodes can publish and subscribe, and do both at the same Time

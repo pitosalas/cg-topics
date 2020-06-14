@@ -1,7 +1,7 @@
 ---
 title: Path Planning
 ---
-#### Path Planning Conceptual overview
+## Path Planning Conceptual overview
 
 * Given an 'outside' command, make a robotic device move to a known destination
     * Robotic device: could be a land-based robot, a arial robot, a robot arm
@@ -18,14 +18,14 @@ title: Path Planning
     * Some notion of cost that is minimized
     * Time, power consumption
 
-##### Prerequisites - some or all
+### Prerequisites - some or all
 * We need coordinate systems within which to place the device and  obstacles
 * We need maps to show where the device can and cannot go
 * We need localization so that the robot can know where it is at any point
 * We need sensors to detect obstacles which may not be on the map
 * We need a way to propel and steer the device
 
-##### Maps
+### Maps
 
 <img src="/content/topics/images/subwaymap.png" class="img-responsive img-thumbnail" style="height: 300px;">
 
@@ -34,7 +34,7 @@ title: Path Planning
 * A "cost" to get from one location to the next
 * Information to allow navigating (driving) from one location to the next
 
-##### Topological Representation
+### Topological Representation
 
 <img src="/content/topics/images/graphmap.png" class="img-responsive img-thumbnail" style="height: 300px">
 
@@ -44,7 +44,7 @@ title: Path Planning
 * Works out in a scenario like a subway or road network
 * On the surface not so good for an open field of navigation
 
-##### metric representation
+### metric representation
 
 <img src="/content/topics/images/metricmap.png" class="img-responsive img-thumbnail" style="height: 300px;">
 
@@ -52,12 +52,12 @@ title: Path Planning
 * But takes up much more storage
 * Typical datastructure is an "occupancy map" 
 
-##### Creating the maps
+### Creating the maps
 * Often a map will be known (i.e. a floorplan)
 * Sometimes a map can be built by the robot (SLAM)
 * SLAM creates a "metric" representation
 
-##### Localization Theory
+### Localization Theory
 * Global
     * Location with respect to the world (coordinate system)
     * Example: GPS or WiFi hotspots
@@ -69,15 +69,15 @@ title: Path Planning
 
 * Note the role of filters such as Kalman filter to refine noisy sensor data
 
-#### ROS Navigation Stack
+## ROS Navigation Stack
 
-##### Path Planning
+### Path Planning
 
 * Using a topological Representation
 * Network search can find the best path through the network
 * You are optimizing relative to some parameter - distance, time, risk, etc.
 
-##### ROS Navigation Stack
+### ROS Navigation Stack
 
 * 2D navigation
 * Inputs
@@ -93,7 +93,7 @@ title: Path Planning
   * Requires a Lidar (or at least a node publishing /scan topics)
   * Needs a square or circular robot (base)
 
-##### Key Node: move_base
+### Key Node: move_base
 * Implements a ROS action (recall they are for longer term tasks)
 * Uses a global and local planner
 * Highly modular allowing different implementation and algorithms.

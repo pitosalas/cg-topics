@@ -1,20 +1,20 @@
 ---
 title: HTTP - Hypertext Transfer Protocol
 ---
-#### HTTP is a network protocol
+## HTTP is a network protocol
 * Mental model: calling a function across a network
     * Client is the caller
     * Server is where the function exists
     * Client receives the result
 
-##### Let's use telnet to make such a 'call'
+### Let's use telnet to make such a 'call'
 <%= code_begin %>
 $ telnet example.com 80
 $ GET / HTTP/1.1
 $ Host: example.com
 <%= code_end %>
 
-##### Deconstructing the call
+### Deconstructing the call
 * "Call" includes:
     * target host (example.com)
     * target port on the host (80)
@@ -24,7 +24,7 @@ $ Host: example.com
     * Datatype of required response (aka mime-type)
 * There are lots of other "parameters" that are allowed in this call
 
-##### Deconstructing the returned data from that call
+### Deconstructing the returned data from that call
 * (Reference: [HTTP Response Fields](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields))
 * "Response" includes:
     * Status code: 200 (see \[HTTP Status Codes(http://httpstatus.es)\])
@@ -41,12 +41,12 @@ $ Host: example.com
     * **Content-Length: 1270** (Content following this is 1270 bytes)
 * All this is followed by text that we know should be interpretted as text/html
 
-#### What are the HTTP Methods
+## What are the HTTP Methods
 * GET, PUT, POST, DELETE
 * Think of them like a reguired first argument to the call
 * The interpretation of the
 
-#### Simplified view of the world
+## Simplified view of the world
 
 * Think of the relationship between the client (the user in a browser) and the server (the rails server) as a program calling a function!
   * **Call:** CallUsingHTTP("GET", "www.brandeis.edu", "/index.html")

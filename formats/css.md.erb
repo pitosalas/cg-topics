@@ -1,11 +1,11 @@
 ---
 title: CSS (the good stuff)
 ---
-#### CSS - The Good Stuff
+## CSS - The Good Stuff
 
 <%= include_image "/content/topics/images/htmlhier.png" %>
 
-##### Intro
+### Intro
 * Setup: Please clone [cssdemo](https://github.com/pitosalas/public_samples/tree/master/cssdemo) and you can play around with code as we experiment together.
 * HTML is a hierarchy!
 * CSS stands for Cascading Style Sheets
@@ -17,18 +17,18 @@ title: CSS (the good stuff)
   * You can have css statements directly inside the `<head>` section of an html file
   * You can even have css statements attached directly to an html tag, e.g. `<p style="font-size:200%;">`
 
-##### Purpose
+### Purpose
 * CSS sole purpose is to add 'styling' to html pages
 * Styling: color, typography, spacing, positioning, animation, and so on
 * However it can sometimes look like it's adding major new functionality
 
 <%= discussion_box "CSS experts: are these statements 100% true? Can you find exceptions?" %>
 
-#### Syntax, in general
+## Syntax, in general
 * Syntax of css is very simple, yet *very* powerful. Behavior can be confusing.
 * How powerful: Look at [CSS Zen Garden](http://www.csszengarden.com)
 
-##### Example
+### Example
 <%= ruby_begin %>
   p {
     color: red;
@@ -41,7 +41,7 @@ title: CSS (the good stuff)
 * Don't forget the semicolon after the property:value (but not after the {})
 * Note: There are huge numbers of properties and values: [CSS Reference](http://www.w3schools.com/cssref/default.asp)
 
-##### CSS Selectors
+### CSS Selectors
 * Could write a whole course just on them (exagerating)
 * Building blocks:
   * tag itself, e.g. p, or li, or body etc. (see html doc)
@@ -65,7 +65,7 @@ Descendant|`.front-page p { font-style: bold; }`|
 {:.table}
 
 
-##### Example
+### Example
 <%= code_begin %>
 # myfile.css
 p.warning {
@@ -78,7 +78,7 @@ p.warning {
 <%= code_end %>
 * Notice that it's really hard to tell what CSS does without looking at the related html
 
-#### Box Model
+## Box Model
 <%= include_image "/content/topics/images/boxmodel.png" %>
 
 <br/>
@@ -92,7 +92,7 @@ p.warning {
 * Works different for Inline vs. Block elements
   * inline elements (e.g. `span` or `a`) can only have margin and padding applied left and right (not top and bottom!)
 
-#### Tools
+## Tools
 * "Web Inspector" in your browser (Chrome, Safari, Firefox)
 * Reference: [W3CSchools CSS Intro](http://www.w3schools.com/css/css_intro.asp)
 * Experiment: [CSS Desk](http://cssdesk.com)

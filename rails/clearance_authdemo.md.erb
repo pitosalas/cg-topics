@@ -10,7 +10,7 @@ of Devise.
 * Clearance is new so I can't vouch for it. You can read the doc here: [Clearance](https://github.com/thoughtbot/clearance).
 * Reference code: [Private Repository](https://github.com/pitosalas/clearancedemo)
 
-#### Create basic scaffolding
+## Create basic scaffolding
 
 <%= code_begin %>
 # Shell
@@ -30,12 +30,12 @@ bundle
 rails generate clearance:install`
 <%= code_end %>
 
-#### Add this to config/environments/{development,test}.rb:
+## Add this to config/environments/{development,test}.rb:
 <%= ruby_begin %>
 config.action_mailer.default_url_options = { host: 'localhost:3000' }
 <%= ruby_end %>
 
-#### Update views/layouts/application.html.erb
+## Update views/layouts/application.html.erb
 <%= ruby_begin %>
 <%% if signed_in? %>
   Signed in as: <%%= current_user.email %>
@@ -50,13 +50,13 @@ config.action_mailer.default_url_options = { host: 'localhost:3000' }
 </div>
 <%= ruby_end %>
 
-#### In the Shell
+## In the Shell
 <%= code_begin %>
 rails db:migrate
 rails generate scaffold course name:string number:string user_id:integer
 <%= code_end %>
 
-#### Update CoursesController
+## Update CoursesController
 Now we update CoursesController to take into account the login and also to only display courses owned by the looged on user.
 
 <%= ruby_begin %>
@@ -101,7 +101,7 @@ class CoursesController < ApplicationController
   end
 <%= ruby_end %>
 
-#### Finally
+## Finally
 * Add to model users.rb: `has_many :courses`
 * Add to model course.rb: `belongs_to :user`
 * Run in shell: `rails db:migrate; rails server`

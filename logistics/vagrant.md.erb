@@ -1,7 +1,7 @@
 ---
 title: Setting up Vagrant on Windows computers
 ---
-#### What is Vagrant?
+## What is Vagrant?
 
 This is from [Wikipedia](https://en.wikipedia.org/wiki/Vagrant_(software))
 
@@ -9,7 +9,7 @@ This is from [Wikipedia](https://en.wikipedia.org/wiki/Vagrant_(software))
 Vagrant is an open-source software product for building and maintaining portable virtual development environments. The core idea behind its creation lies in the fact that the environment maintenance becomes increasingly difficult in a large project with multiple technical stacks. Vagrant manages all the necessary configurations for the developers in order to avoid the unnecessary maintenance and setup time, and increases development productivity. Vagrant is written in the Ruby language, but its ecosystem supports development in almost all major languages.
 </blockquote>
 
-##### Installing vagrant on your Windows Computer
+### Installing vagrant on your Windows Computer
 
 1. Go to [Vagrant Downloads](https://www.vagrantup.com/downloads.html) and download Vagrant for your platform
 1. Install Vagrant. It’s just a simple wizard installation.
@@ -18,7 +18,7 @@ Vagrant is an open-source software product for building and maintaining portable
 1. `$cd` to your project folder.
 <%= callout("Shared Project Folder", " This is the folder that is shared between your OS and the Vagrant OS.** It allows you to work on your project in your favourite OS and run it in Vagrant OS.") %>
 
-##### Set up the vagrant virtual box
+### Set up the vagrant virtual box
 
 Run following commands
 <%= code_begin %>
@@ -27,7 +27,7 @@ $ vagrant up
 $ vagrant ssh
 <%= code_end %>
 
-##### Possible errors you may encounter when running these commands
+### Possible errors you may encounter when running these commands
 
 * Error: unknown encoding name - CP720 (ArgumentError)
   * Solution: run this command “$ chcp 1252”
@@ -51,7 +51,7 @@ Run "$ vagrant reload"
 Finally run “$ vagrant ssh” to connect to the guest OS
 <%= code_end %>
 
-#### Finally
+## Finally
 * Your project folder (Synced folder) is “/vagrant” in your vagrant OS
   * If `$ ls /vagrant” does not work add ‘config.vm.synced_folder ".", "/vagrant"` to your Vagrant file. You can find the Vagrantfile in your project folder. And then run “vagrant reload”. You can share other folders with your Vagrant OS in this way as well.
 * If you want to connect to your Vagrant OS through network the easiest way is port forwarding:
@@ -62,7 +62,7 @@ $ vagrant destroy
 $ vagrant up
 <%= code_end %>
 
-#### What is installed on this box:
+## What is installed on this box:
 * rbenv, ruby 2.3.1, bundler, rake, activerecord, sinatra-activerecord, sinatra-contrib, faker, byebug, sqlite3, rack-test, database_cleaner, pg, psql, puma, minitest
 * A running Postgres server with user “postgres” and password “postgres” and access to the database “development”
 More documentations on www.vagrantup.com

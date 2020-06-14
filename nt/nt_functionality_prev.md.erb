@@ -2,32 +2,32 @@
 title: nano Twitter Functionality (old version)
 desc: Details of the funtcionality (looking from the outside) that nanoTwitter requires
 ---
-#### General Notes
+## General Notes
 
 * NanoTwitter (nT) is a baby version of Twitter designed as a platform for experimentation with scaling issues.
 * The list of features and URLs is quite incomplete. It is meant to set the pattern for you to build upon.
 * All the URLs, both for the User Interface and for the Web Services API will attempt to follow REST design principles as far as possible.
 
-#### nT Functionality
+## nT Functionality
 
-##### Users
+### Users
 
 * can register for an account by supplying an email a name and a password
 * are never deleted
 * are assigned a numeric id (the record id)
 
-##### Logged in users:
+### Logged in users:
 
 * Can follow and unfollow other registered users
 * Can tweet
 * Can see the flow of the last n tweets by the users that they have followed
 
-##### Non-logged in users:
+### Non-logged in users:
 
 * Will not see anything on the root (home) page (e.g. nt.com/)
 * Will see a specific user's tweets on their page (e.g. nt.com/user/12)
 
-##### Tweets:
+### Tweets:
 
 * Consist of
   * a 280 characters of text
@@ -36,14 +36,14 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * Belong to one user
 * Can never be deleted
 
-#### Features
+## Features
 * Beyond the core CRUD features listed above
 * Login/Logout and a profile
 * Search
 * Mentions
 * Tags
 
-#### nT Web Services (REST) API
+## nT Web Services (REST) API
 <%= callout("URL", " APIs all start with /api/v1") %>
 
 * GET /tweets/23 - return tweet with id 23
@@ -53,11 +53,11 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
 * GET /users/23/tweets - return user 23's recent 50 tweets
 * POST /tweets/new - create a new tweet
 
-##### Notes
+### Notes
 * You need to figure out the other ones.
 * The objective is that someone can write, for example, an iPhone nanoTwitter client that would use this API to implement the functionality.
 
-##### JSON
+### JSON
 * API calls work with Values as JSON, as example:
   * Tweet:
 `{  "id": 123,
@@ -68,11 +68,11 @@ desc: Details of the funtcionality (looking from the outside) that nanoTwitter r
   * List of tweets: `[<tweet>, <tweet>,...]`
   * Follow list: `["user_id": 22, "user_id": 23, ...]`
 
-#### nT User Interface
+## nT User Interface
 * Basic bootstrappy html/css/javascript interface at minimum
 * Clean but doesn't have to be fancy
 
-##### Routes
+### Routes
 * Non-logged-in root page (/)
   * Login link
   * Sign up link

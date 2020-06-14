@@ -2,7 +2,7 @@
 title: Unix Shell
 desc: Mac and Linux programmers spend most of their time in the 'shell', where they type on the command line.
 ---
-#### What is Unix Shell?
+## What is Unix Shell?
 
 Unix shell is a command-line interface (shell) for Unix-like operating systems through which user enters commands as text. The command-line interpreter then executes the command and returns the results. The most common shells in Unix were Bourne shell and C shell, and then Bash (Bourne-Again Shell) was developed as the original Unix shell. 
 
@@ -19,21 +19,21 @@ And here are some great books:
 * [UNIX and Linux System Administration Handbook](http://www.amazon.com/Linux-System-Administration-Handbook-Edition/dp/0131480057/ref%3Dpd_sim_b_3): a comprehensive book for anyone who wants to know about Linux system administration   
 <br/>
 
-#### Unix File System
+## Unix File System
 
 File system is an essential part of every operating system, and Unix is no exception. Unix file system is a tree like structure that supports three kinds of files: regular files, directories and special files that are files like Unix sockets and symbolic links. Everything in Unix is considered a file if is not a process. Even physical drives are considered as files, which should be mounted by the operating system for read/write access. The root of this structure is '/', and each file under the root is identified by its path, name and a unique identifier (inode).
 
 Unix support file extensions (e.g. .txt or .png) and also hidden files as other operating systems. The difference is that names of the hidden files start with '.' and most of the times is used for configurations. For example, if you use git and you add global configurations, it will create a file named '.gitconfig' in your home directory, which is hidden and is used by git to store the user's configurations.   
 <br/>
 
-#### Shell Commands and Streams
+## Shell Commands and Streams
 
 Shell commands in Unix-like operating systems are executable through a command-line interface. They accept arguments and options, and the most obvious difference between them is that options start with '-'. For example, many commands has a help option which gives information about the command and its arguments and options, and is specified by '-h' or '--help'. 
 
 There are three kinds of streams that Bash commands work with: STDIN, STDOUT and STDERR. STDIN stands for 'standard input' and is the stream that a command accept to get input. It can be binary, text or even keyboard input. A command can write its outputs to STDOUT (standard output) which is the default stream that is printed out to the screen or STDERR (standard error), the error stream which is also printed to the screen by default.  
 <br/>
 
-####Most Useful Commands
+##Most Useful Commands
 
 * List files: **ls**  
 <pre>

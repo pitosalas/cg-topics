@@ -2,7 +2,7 @@
 title: "8: Teleop-bot"
 desc: Designing and implementing a slightly more complicated ROS program
 ---
-#### Intro
+## Intro
 
 * Teleop is a common term for "remote controlling" a robot
 * It's a perfectly respectable way go, and there are plenty of real world examples which are teleoperated
@@ -12,7 +12,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 * That tablet will be directly wired to the robot (as it is mounted!)
 * Notice that with a slightly more capable computer (processor, memory and storage) directly mounted on the robot it is perfectly possible to run roscore directly on the robot
 
-#### Twist Messages
+## Twist Messages
 
 * Recall that Topics are the names of the publish/subscribe "channels" and the content that is sent and received is a Message.
 * `/cmd_vel` messages tell a mobile robots 'base' to move in all the possible directions
@@ -27,14 +27,14 @@ desc: Designing and implementing a slightly more complicated ROS program
 <%= lab_note("Lab Instruction: rostopic and rosmsg")%>
 * Use `rostopic` and `rosmsg` to examine /cmd_vel topic and Twist message
 
-#### Structure of an "idiomatic" ROS program
+## Structure of an "idiomatic" ROS program
 
 * ROS is distributed, with nodes talking to each other
 * Nodes should be small and have one job
 * Make nodes small and simple
 * Use a `.launch` file to launch all the nodes at once.
 
-#### Teleop-bot
+## Teleop-bot
 
 * Node 1 - Keyboard Driver
   * listens to keystrokes, interprets them
@@ -74,7 +74,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Try running `$ rqt_plot` to view the information in a graph
 * Plot `cmd_vel/angular/z` and `cmd_vel/linear/x`
 
-#### Where we are
+## Where we are
 
 * Two nodes:
   * key_publisher: waits for user input and publishes the keys typed on topic `keys`
@@ -91,7 +91,7 @@ desc: Designing and implementing a slightly more complicated ROS program
     * backward = cmd_backward
   * The encoding could be part of a class.
 
-#### Parameters
+## Parameters
 
 * Being a distributed operating system means brings configuration hassles
 * Just about any code that is written will have some parameters, e.g. "how far from the wall should I get before trying to turn?"
@@ -99,7 +99,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Usual way of providing parameters is either command line arguments or Environment variables
 * Parameters are a ROS specific way, well adapted to the distributed nature
   
-##### Parameter Server
+### Parameter Server
 
 * Parameter server is 'built into' roscore and is a simple 'key/value' store
 * Private and Public Parameters
@@ -127,7 +127,7 @@ rospy.get_param('~linear_scale') => returns 0.5
 $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
 <%= code_end %>
 
-#### Velocity Ramps
+## Velocity Ramps
 
 * When a robot with mass is commanded to change speed or direction  too suddenly
 * Cant defy physics so you can see misbehavior: skidding, slipping, shuddering, even damaging the motor
@@ -146,7 +146,7 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 * If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
 * Dont forget that you need to have roscore running as well
 
-#### Using RViz
+## Using RViz
 
 * Unlike Gazebo, RViz is NOT a simulator
 * RViz == ROS Visualization
