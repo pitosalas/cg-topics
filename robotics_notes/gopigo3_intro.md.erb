@@ -1,0 +1,52 @@
+---
+title: GoPiGo3 Intro
+---
+## Introduction
+* [GoPiGo3](https://www.dexterindustries.com/gopigo3/) - Inexpensive Robot used this semester for Autonomous Robotics @ Home
+* Made by [Dexter Industries](https://www.dexterindustries.com)
+
+### Main Parts
+
+* GoPiGo3 Hardware Board - motor controllers and logic
+* Rasberry Pi - Runs Linux and ROS
+* Battery Pack
+* YdLidar LIDAR
+
+### GoPiGo3 Hardware Board
+* The GoPiGo3 hardware board contains an ATMEL ATMEGA328
+* The ATMEGA328 firmware is proprietary and no firmware documentation is released
+* The GoPiGo3 board receives commands from and returns data to the Raspberry Pi via SPI interface
+* The command set is enumerated in the SPI_MESSAGE_TYPE in gopigo3.py
+* The GoPiGo3 firmware monitors battery level, manages servo PWM, motor PID control, encoders
+* The GoPiGo3 board firmware manages the programmable “Grove” connectors
+    * Analog Input on pin A or B
+    * Digital Input or Output on pin A or B
+    * Software I2C clock and data
+
+### Rasberry Pi
+* The Raspberry Pi based user software and Dexter software
+* Dexter software consists of
+    * a large library of drivers / examples for 3rd party “Grove” Analog, Digital, and I2C based sensors
+    * drivers and examples for Dexter Industries sensors
+        * VL53L0X I2C Time Of Flight Distance Sensor
+        * BNO055 Inertial Measurement Sensor (Software I2C for clock stretching that RPi does not)
+        * Temp/Humidity/Pressure Sensor, light color sensor, line follower, …
+    * Phenomenal robot examples (/home/pi/Dexter/GoPiGo3/Projects)
+* Raspbian For Robots (Supports several DI products. Only listing GoPiGo3 stuff)
+    * service providing landing page to desktop and web based command shell
+    * power button handler (/home/pi/Dexter/GoPiGo3/install/gpg3_power.sh)
+    * GoPiGo3 Custom Desktop widgets
+        * Software Update
+        * Shutdown
+        * GoPiGo3 Control Panel
+        * Line Follower Calibration
+        * Scratch For Robots
+        * Advanced Communications applet
+        * GoPiGo3 Folder shortcut to docs, all software
+        * Version applet lists Raspbian For Robots version
+        * Test and Troubleshoot Applet
+    * Services
+        * Customized Apache server
+        * noVNC (in stretch version - I think real VNC in the buster version)
+        * antenna_wifi.service to manage the multi-color WiFi LED
+        * The schematic (and all software) is on github:

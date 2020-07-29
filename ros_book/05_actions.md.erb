@@ -1,11 +1,11 @@
 ---
 title: "5: Actions"
 desc: What are ROS actions and how do they relate to topics and services?
+slides: true
 ---
+## PRR Chapter 5: Actions
 
-### PRR Chapter 5: Actions
-
-## Review
+### Review
 * Nodes: all code written for ROS is a Node
   * A node is like a process
   * You run it with, e.g. `$ rosrun` or (later) `$ roslaunch`
@@ -18,7 +18,9 @@ desc: What are ROS actions and how do they relate to topics and services?
   * Ask and answer
   * Like a function call
 
-## Actions
+<slide_break></slide_break>
+
+### Actions
 * For long running activities, for example, navigate to somewhere
   * Activity is initiated
   * Activity announces that it has terminated (successfully or not.)
@@ -29,14 +31,18 @@ desc: What are ROS actions and how do they relate to topics and services?
   * Part3: the action is running (status update)
 * See [Github Code](http://www.github.com/campusrover/prrexamples)
 
+<slide_break></slide_break>
 
-## Creating an Action
+### Creating an Action
 * Analogous to topics and services
 * File now has three sections corresponding to the goal, result and feedback
 * Some tricky updates to CMakeList.txt and package.xml
 * `cm` for Catkin_make
 
-## Action Server (simple_action_server.py)
+<slide_break></slide_break>
+
+### Action Server (simple_action_server.py)
+
 * Handles the three submessages (see simple_action_server.py)
   1. Initialize node
   1. Declare that we want to serve action requests and start it
