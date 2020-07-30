@@ -1,0 +1,82 @@
+---
+title: "PA: Out and back using Timing"
+desc: "Robot drives out and returns by using elapsed time"
+---
+## Introduction
+* Introduction to explain the assignment as a whole
+
+### Purpose
+
+### Expected preparation
+* What do we assume that the students know
+
+### What I hope you will learn
+
+* Learn the basics of programming in ROS
+* Understand how to use the Gazebo simulator to run ROS programs
+* Learn how to use movement velocity commands and time in ROS
+
+### References and resources
+
+### Topics Used
+
+### Message Types used
+
+## Assignment
+
+* Publish movement commands to a robot in Gazebo simulation
+* Use ROS timing to command the robot to move forward X distance and backwards X distance so the robot stops at it's original position (do not worry about robot's final orientation)  
+* You can either modify existing code from the prrexamples repo or write your own python ROS node
+* The instructions will give you the pieces of code to get you started but the rest will be up to you
+
+### Deliverables
+
+* Commented Python source code file named "FirstnameLastname_PA#"
+* Video of your program running in gazebo 
+* Both submitted in Latte
+
+### Steps
+
+* Clone the prrexamples repo and copy & paste a rosnode from prrexamples/scripts/anyfile.py OR create a new python file (for now the directory where you create it doesn't matter but  I would suggest keeping it in prrexamples or another ros package repo)
+* The following modules/classes need to be imported. `rospy` provides an interface to the ROS system variables/methods and `Twist` is how we represent movement in ROS.
+
+<%= source_begin "language-python" %>import rospy
+from geometry_msgs.msg import Twist
+<%= source_end %>
+
+* You will need to publish velocity commands known as `cmd_vel`'s that has a linear and rotational velocity vector components. 
+* Do this by creating a publisher object:
+
+<%= source_begin "language-python"%>example_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
+<%= source_end %>
+
+* It is also necessary to declare this python program as a ROS node:
+
+<%= source_begin "language-python"%>rospy.init_node('node_name')
+<%= source_end %>
+
+* This is all the setup code we need to create a control loop that will loop while the node is still running. 
+* Here is an example control loop that publishes a `cmd_vel` to move the robot forward at a constant velocity. 
+
+<%= source_begin "language-python"%>while not rospy.is_shutdown():
+    twist = Twist()
+    twist.linear.x = 0.2
+    example_pub.publish(twist)
+<%= source_end %>
+* Use `rospy.Time` to get the current time.
+<%= source_begin "language-python"%>starting_time = rospy.Time.now()
+<%= source_end %>
+
+* This should be enough to get you started and for reference: 
+* `velocity * time = distance` and the units for `cmd_vel` are `linear: m/s angular: rad/sdon't forget:`
+
+* Launch the gazebo simulator:
+
+
+<%= source_begin "language-python"%>roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+<%= source_end %>
+
+* Navigate to the directory that contains your python ROS node and run:
+
+<%= source_begin "language-python"%>rosrun name_of_your+node.py
+<%= source_end %>

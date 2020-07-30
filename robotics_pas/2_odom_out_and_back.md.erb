@@ -1,0 +1,51 @@
+---
+title: "PA: Out and back using Odometry"
+desc: "Robot drives out and returns by using odometry"
+---
+## Introduction
+
+### Purpose
+
+### Expected preparation
+* What we expect you to know before doing this assignment
+
+### What I hope you will learn
+* Use odometry data for more precise movement
+* Learn how to subscribe to ROS topics
+
+### References and resources
+
+### Topics Used
+
+### Message Types used
+
+## Assignment
+* Same goal as PA1 but use odometry instead of timing to return to original pose
+
+
+### Deliverables
+* Commented Python source code file named "FirstnameLastname_PA#"
+* Video of your program running in gazebo 
+* Both submitted in Latte
+
+### Steps
+* Import Odometry from nav_msgs.msg
+
+<%= source_begin "language-python" %>import rospy
+from nav_msgs.msg import Odometry
+<%= source_end %>
+
+* Subscribe to odometry topic `odom` and create a callback function to use as an arg:
+
+<%= source_begin "language-python" %>example_sub = rospy.Subscriber('odometry', Odometry, <name of callback function>)`
+<%= source_end %>
+
+* Write a callback for the odometry topic and add a control loop
+* After starting a gazebo simulation and publishing some `cmd_vel`'s print out `odometry.pose` and `odometry.twist` so you can see what odometry data looks like
+* Write code in odometry callback and control loop to have the robot navigate > 2 meters away from it's origin and then return to as close to it's origin pose as possible using odometry information.
+
+### Hints
+* You can either modify existing code from the liprrexamples repo or write your own python ROS node
+* The instructions will give you the pieces of code to get you started but the rest will be up to you
+* Odometry message documentation (http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
+* Getting familiar with ROS documentation is a good idea
