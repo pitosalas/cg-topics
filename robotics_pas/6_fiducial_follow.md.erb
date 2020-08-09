@@ -2,38 +2,69 @@
 title: "PA: Fiducial Follow"
 desc: "Robot follows a path laid out by fiducials"
 ---
----
-title: "PA: Line Follower"
-desc: "Robot looks for line on the floor and follows it"
----
 ## Introduction
 
+* This assignment will teach you a new method of localization using fiducial tags
+* By placing fiducial tags (they look likeQR codes)  in simulation or your lab at home you can use the robots camera to find the relative positoin and orientation between the robot and the fiducial
+* With that information you can do SLAM and find the location of the tag relative to the global map using odometry
+* This is useful for multiple applications and we will use fiducials to follow a path defined by the tags in increasing order
+
 ### Purpose
-*set the context for the assignment*
+
+* Write a single node or multi-node program that allows your robot to navigate through a path of fiducials
+* There are many ways to solve this with the fiducial information and it is up to you to figure out what approach you want to take
+    * Use fiducial relative information and control techniques to follow the path 
+    * Use fiducial relative information and odometry to build a map of fiducial locations and publish a navigation command to the fiducial path locations on the global map
+    * Use fiducial relative location and camera vision information to control the movement of your robot to follow the path
+    * Find your own way using fiducials and whatever other sensory infomation you want
 
 ### Expected preparation
-*explains what we expect the stude4nt to know before tackling this assignment*
+
+* What a ROS tf (transform) is
+* Learn the basics of how fiducials work
 
 ### What I hope you will learn
-*self explanatory*
+
+* How to use fiducials in ROS
+* How to use transform information to influence robotic control
 
 ### References and resources
-*links to documentation, book chapters, papers or anything useful*
 
-### Topics Used
-* list of ROS topics that are used
+* Aruco Detect <http://wiki.ros.org/aruco_detect>
+* Fiducials <http://wiki.ros.org/fiducials>
+* Fiducial SLAM <http://wiki.ros.org/fiducial_slam>
+* ROS transforms <http://docs.ros.org/api/geometry_msgs/html/msg/Transform.html>
 
-### Message Types usedx
-* List of message types that are used
+### Topics and Message Types Used
+
+* fiducial_transforms [FiducialTransformArray](http://docs.ros.org/kinetic/api/fiducial_msgs/html/msg/FiducialTransformArray.html)
+* odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
+* scan [LaserScan](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
+* camera/image/compressed [CompressedImage](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/CompressedImage.html)
+* cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
 
 ## Assignment
-* explain the assignment at a high level
+
+* You are required to create your own fiducial path in gazebo or your lab at home by printing out or placing fiducials in gazebo
+* We will grade all assignments on the same set of fiducial paths in Gazebo 
 
 ### Deliverables
-* describe the deliverables specifically
+
+* Commented Python source code file named "FirstnameLastname_PA#"
+* Video of your program running in gazebo or your lab at home
+* Both submitted in Latte
 
 ### Steps
-* describe the steps at an appropriate level of detail
+
+* Write a ROS node that subscribes to `fiducial_transforms`
+* Place fiducials in Gazebo or your lab at home
+* Launch aruco_detect to get the published topics 
+* Print out the infomration from the `fiducial_transforms` topic and watch how it changes as your robot changes its position relative to the fiducial
+* Use that information along with geometry, trigonometry, etc. to control your robot to move towards the fiducials in an increasing order without going back to a previous fiducial
+* Keep following the path until your robot cannot find any more fiducials
 
 ### Hints
-* Any Hints
+
+* Use the ID of the fiducal to keep track of your progress along the path
+* It can save time to test in simulation before your lab at home
+* If you are getting unexpected results make sure your fiducials have the proper position/orientation

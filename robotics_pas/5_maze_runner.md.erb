@@ -11,33 +11,40 @@ Write a python script to control a robot running a maze. From anywhere in the ma
 
 You should write and test your code first on the simulator. This command will give you a pretty nice "built-in" sort-of-maze using Gazebo
 
-Remember it's worth trying to work in the simulator first. If your code works well in the simulator you know that your algorithm and logic are right. However, even though it works perfectly in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+Remember to try to work in the simulator first. If your code works well in the simulator you know that your algorithm and logic are right. However, even though it works perfectly in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
 
 The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well.
 
 You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas.
 
 ### What I hope you learn
-* Demonstrate ability to write a multi node ROS app
-* Learn how sensors work, especially the LIDAR
+
+* How to solve an opened ended robotics problem
+* Write a multi node ROS app
+* Learn more about how sensors work, especially the LIDAR
 * Learn how to leverage the simulators for testing and development in ROS
 * Research how to use raw LIDAR data to orient the robot in a maze
-* Learn how to actually deploy code to an TB3 and test it
-* working with and processing Lidar data
-* processing with and filtering sensor noise
-* using math (especially geometry) to solve real world robotics problems
-* construct a virtual world in gazebo
+* Learn how to actually deploy ROS code to an TB3 and test it
+* Work with and process Lidar data
+* Process and filter sensor noise
+* Construct a virtual world for testing in gazebo
+* Learn how to launch a multi-node program in ROS
   
-### ROS ropics
-- `/scan`
-- `/cmd_vel`
-- `/odom`
+### Topics and Message Types
 
-### ROS message types
-- [sensor_msgs/LaserScan Message](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
-- [geometry_msgs/Twist.msg](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
+* odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
+* camera/image/compressed [CompressedImage](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/CompressedImage.html)
+* scan [LaserScan](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
+* cmd_vel [Twist](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
 
-### What to submit
+## Assignment
+
+* Your team is responsible for creating mazes in simulation/lab at home to test your ROS program
+* However we will grade all of the teams assignments on the same set of mazes
+* It will be up to your team to decide to how split up the work
+* Please start development early so you still have time for testing
+
+### Deliverables
 
 * Team members submit the same:
     * The source code, including a readme explaining what it is, how to run it and any other reflections. This should be a nice ROS package directory structure as before.
@@ -46,13 +53,14 @@ You are free to refer to hints for inspiration, and are encouraged to experiment
     * Design note + personal reflection: topics such as: Problems you had in getting the program to work; What more you would do if you had more time; how working with a teammate felt; how effective it was
 
 ## Tasks
-1. Make sure you've read or looked at Chapters 1-7 of the book, or gotten the same background through your means
+
+1. Make sure you have read or looked at Chapters 1-7 of the book, or gotten the same background through your means
 1. Study Lessons 1-4 of [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821). Studying means actually doing the exercises and quizzes. Lessons 1 and 2 will give you a great intuitive and conceptual understanding of localization. Chapter 4 will teach you about Kalman filters. This is worth your time, you will learn a lot!
 1. write the maze_runner.py
 1. write a launch file for your program
 1. build a maze in gazebo
 1. test the algorithm in the virtual maze
-1/ test it on the actual robot
+1. test it on the actual robot
 1. Write the initial code (using Python) to start listening to the messages that the similator robot sensors are publishing.
 1. Figure out how to use that data (which is 360 degrees of distance data) to determine what the walls are the robot is confronting
 1. Use what you learned in the previous Maze assignent to implement a similar or identical algorithm, this time using LIDAR data
@@ -65,14 +73,7 @@ You are free to refer to hints for inspiration, and are encouraged to experiment
 There is a maze already set up next to the lab for you to practice on. You can change it if you want, but it doesnt need to be too complex.
 Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. 
   
-**NB**: When creating a maze, make sure that all of the walls are connected and has no cycles. If you were to draw your maze, you should be able to draw all lines without lifting your pen (you can trace over lines twice). This is important if you choose a wall following algorithm - the robot might get stuck in circles going around a disconnected wall!
-
-### References and resources
-
-* link to bashrc configuration and ssh troubleshoot
-* link to instruction write a launch file
-* link to chmod +x the python scripts and `catkin_make`
-* There are multiple turtlebot3_stages in Gazebo. Stage 4 is good to play with, but don't be afraid to try some other stages too. Once you think you have a good wall follower, see if it can do a lap around the outer wall of stage 4 (in the left hand menu of gazebo, use the pose fields under the turtlebot to alter it's initial position)
+**NOTE**: When creating a maze, make sure that all of the walls are connected and has no cycles. If you were to draw your maze, you should be able to draw all lines without lifting your pen (you can trace over lines twice). This is important if you choose a wall following algorithm - the robot might get stuck in circles going around a disconnected wall!
 
 ### Process
 This is a pair programming assignment. You've been assigned a teammate. It's fine to talk to everyone else, as well as google for ideas. Just  as long as the code is written and fully understood by both members of the team. You will submit one solution for each team (see below.)
@@ -80,6 +81,7 @@ This is a pair programming assignment. You've been assigned a teammate. It's fin
 Since this project requires collaberation, you may wish to start using Github to share code. Is it your first time using Git and Github? [Try this extremely basic guide to using Github](https://guides.github.com/activities/hello-world/) [And this is a handy guide to Git terminal commands](http://rogerdudler.github.io/git-guide/)
 
 ### Hints
+
 * You will **not** be using SLAM for this project. Instead you will use the Lidar to return to you distances to the next obstacle at different bearings. That way you can sense walls left, right and in front of you.
 * Notice that you will be writing and testing this algorithm in simulation mode with Gazebo. That stands for 
 * Once you have the algorithm working, we will go to the next big step which is to actually run on a physical robot!
@@ -89,7 +91,7 @@ Since this project requires collaberation, you may wish to start using Github to
 * Wall following is tricky because depending on how you do it, it might oscilate back and forth. Read up about PID below, it has some good but advanced ideas.
 * Note that as you are following a wall, you need to notice when the wall suddenly disappears and at that point you have to turn to keep following it.
 * Conversely the robot might be in the middle where all walls are far and as far from it, in which case you have to just drive until you get to the wall and then start following it
-* Feel free to google for wall following robot and be inspired by what you read. Just don't copy the code, please.
+* Feel free to google for wall following robot and be inspired by what you read. Do not copy the code, please.
 * Here are some solutions that might be helpful, but please do not limit to these.
   
 ### Wall Following Algorithms
@@ -100,7 +102,7 @@ For this assignment, you can choose to modify your wall following algorithm from
 * Your very own Algorithm: What other approach will you come up with? Don't be afraid to explore unchartered territory!
 
 ### Working with LaserScan data
-Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a subarray by using "range[index0:index1]"
+Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the `ranges`. You can access the reading of a specific angle by using `range[index]`, and access a subarray by using `range[index0:index1]`
 
 An infinite LIDAR value in a gazebo similation is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
 
