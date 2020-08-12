@@ -10,17 +10,25 @@ There are multiple different simulators in ROS. This homework uses STDR. Running
 
 ## 1: Introduction to STDR
 
+1. STDR Background: [This article](http://www.ros.org/news/2014/02/stdr-simulator-simple-two-dimensional-robot-simulator.html) discusses the introduction of STDR and the reasons behind its creation. Make sure you understand that STDR can be run without visualization.
 1. Installation and set-up: [Setup STDR Simulator](http://wiki.ros.org/action/fullsearch/stdr_simulator/Tutorials/Set%20up%20STDR%20Simulator)
 1. Basics, read tutorials and practice to learn how to:
-    1. Open STDR server, the GUI visualizer
-    1. Load a build-in/external map to server (see cheat sheet for instruction)
+    1. Open STDR server, the GUI visualizer (using one command)
+        1. Go through the "Running STDR Simulator" tutorial. Pay close attention to 0.0.2. You can launch rviz when running STDR for better visualization.
+    1. Load a build-in/external map to server
+        1. Go through the "How to Load a Map" tutorial. Note that when you load a map, whether you load a server with a map or without and load the map separately, you also need to run `roslaunch stdr_gui stdr_gui.launch`. This will launch the map in the GUI.
+        1. The previous tutorial shows how to load a map in the command line. To load a map in the GUI, launch the GUI - `roslaunch stdr_gui stdr_gui.launch` then complete the "Basic GUI Usage" Tutorial, part 0.1 - Load a map.
     1. Load robots using the given xml file
+        1. First, launch the GUI, then go through the "Load a Robot" part of the Basic GUI usage tutorial.
 1. Create robots using GUI (demo in class)
+* Hint: You might find the "Robot Creator" Tutorial to be helpful in learning how to create a customized robot.
 1. Advanced
-    1. Familiar with naming / topics / messages for STDR robots e.g. default topic for speed and laser sensor: ‘robot0/cmd_vel’, ‘robot0/laser_0’
+    1. Familiarize yourself with naming / namespaces / topics / messages for STDR robots e.g. default topic for speed and laser sensor: ‘robot0/cmd_vel’, ‘robot0/laser_0’
     * Hint: with STDR running with a spawned robot, use ‘rostopic list’, ‘rosmsg’etc.check see what’s new there? Also examine the topics, to see who is publishing/subscribing that topic, its msg types, etc.
+    * Hint: Refer to ROS Talks 2 on the course website for more information about namespaces.
 1. Learn to publish and subscribe to topics either via terminal commands or running python scripts to control the STDR robots
-1. Test your knowledge of how to use the STDR simulation tool at the most basic level: launch the GUI, load maps and spawn robots. Your learning in the Advanced part will be tested in the next assignment.
+* Hint: You can launch Rviz with STDR for a slightly better visualization. After you have the STDR server (and GUI if you want), run `roslaunch stdr_launchers rviz.launch`.
+1. Go through other tutorials you think would be useful, such as "Robot Manipulation," which is about manipulating robots using command line tools.
 
 **Tip**: the first robot loaded into the map becomes robot0, the second becomes robot1, the third becomes robot2... And the number will keep increasing even though you delete the previous robot(s). Keep in mind, publishing/subscribing to /cmd_vel and /robot0/cmd_vel is DIFFERENT! Try to explore why and how are they different from each other.
 
@@ -40,13 +48,14 @@ It should look like this when loaded into the map:
 
 <%= include_image "/content/topics/images/robotex1.png" %>
 
-Please submit one folder named STDR containing the following files: shot1.png, shot2.png, shot3.png, shot4.png (or .jpb) 
+Please submit one folder named STDR containing the following files: shot1.png, shot2.png, shot3.png, shot4.png (or .jpg) 
 
 ## 2: Sensors and motors
 
 ### Preparation:
 1. Use terminal to echo the values of the LIDAR. Submit a screenshot to prove it works.
 2. Publish a Twist message to make the robot move/turn/stop in STDR
+    1. Try and use teleop to control the robot. Try doing this with Rviz simultaneously as well.
 3. Create your own robot file. Your robot should contain 3 sonars, one in the front with a range of 30 degrees, and two on the side, each with a range of 20 degrees. (Please refer to Figure 1 in Assignment 1.2) Submit your xml file named as customized.xml
 
 ### Programming Assignment:
@@ -61,7 +70,7 @@ Write a python script, which should be able to achieve the following goals:
 
 <%= include_image "/content/topics/images/robotex2.png" %>
 
-(Figure 2) Initially, the robot will go straight forward (along the solid red arrow). When it detects an obstacle (e.g. wall), it will turn to the opening. In this case, there is a wall in the front, and another one on the left, so you should turn right (as showed by the dotted red line. The robot will keep following the wall through another turn, always turning right. Eventually, the robot will walk in a square in the given situation.
+(Figure 2) Initially, the robot will go straight forward (along the solid red arrow). When it detects an obstacle (e.g. wall), it will turn to the opening. In this case, there is a wall in the front, and another one on the left, so you should turn right (as shown by the dotted red line). The robot will keep following the wall through another turn, always turning right. Eventually, the robot will walk in a square in the given situation.
 
 ### NOTE
 
