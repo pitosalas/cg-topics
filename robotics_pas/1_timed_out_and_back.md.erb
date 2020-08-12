@@ -51,9 +51,8 @@ desc: "Robot drives out and returns by using elapsed time"
 * Clone the prrexamples repo and copy & paste a rosnode from prrexamples/scripts/anyfile.py OR create a new python file (for now the directory where you create it doesn't matter but  I would suggest keeping it in prrexamples or another ros package repo)
 * The following modules/classes need to be imported. `rospy` provides an interface to the ROS system variables/methods and `Twist` is how we represent movement in ROS.
 
-~~~~{.python}
-from geometry_msgs.msg import Twist
-~~~~
+<%= source_begin "language-python"%>from geometry_msgs.msg import Twist
+<%= source_end %>
 
 * You will need to publish velocity commands known as `cmd_vel`'s that has a linear and rotational velocity vector components. 
 * Do this by creating a publisher object
