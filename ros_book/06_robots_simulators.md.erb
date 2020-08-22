@@ -32,9 +32,10 @@ slides: true
 
 ## Sensors
 
-### Lidar
+### LiDAR
 * Rotates and uses a laser to measure distance to nearest obstacle
 * Returns a vector of values corresponding to the directions
+* LiDAR's can operate in 2d (scan) or 3d (point cloud), ours is 2d
 <%= callout("Limitation", " Operates in a plane, like a disk. Can't detect an obstacle above or below the plane!") %>
 
 <slide_break></slide_break>
@@ -51,8 +52,8 @@ slides: true
 
 ### Depth Cameras
 * Like a Microsoft Kinect
-* In addition to {r,g,b} also has distance
-* iPhoneX
+* In addition to {r,g,b} also has distance so we get {r,g,b,d}
+* Useful for getting range measurements of an object detected through camera
 
 <slide_break></slide_break>
 
@@ -76,10 +77,10 @@ slides: true
 * A series of nodes which:
   * publish topics that a robot would publish (e.g. /odom)
   * Subscribe to topics that a robot would (e.g. /cmd_vel)
-  * Use a "physics engine" to simulate what would happen in the real world
+  * Uses a "physics engine" to simulate what would happen in the real world
 * For example, simulator
-  * Maintains an imagenary x,y where the robot is right now
-  * Maintains a 3-d model of the robot
+  * Maintains an imaginary x,y where the robot is right now
+  * Uses 3-d dynamic model of the robot
   * Has 3-d models of obstacles like walls
   * Changes all these states based on motion commands it receives
   * Of course, much more complex

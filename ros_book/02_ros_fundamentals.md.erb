@@ -57,7 +57,7 @@ desc: Basic concepts of ROS
 * Message based
 * Most important model is "publish/subscribe"
 * publish a **topic**, subscribe to a **topic**
-* Many to many
+* Many to many (Nodes can publish to many topics and subscribe to many topics)
 * Topics have a name (e.g. /cmd_vel)
 * Topics have an associated message
 
@@ -160,16 +160,17 @@ $ ./image_view image:=right/image
 <%= source_end %>
 
 ## Frames (tf)
-* Essential concept
-* Complicated concept
-* High level: a way to quickly compute relative coordinate systems
+* Essential and complicated concept
+* Find the change in position and orientation between two coordinate frames
+* High level: a way to compute relative coordinate systems
 * If I know a position relative to the room, what is that position relative to the robot?
 
 ### pose
 * Handy and very common term to mean: 3d position and 3d orientation of something
 * (Not velocity, just the position)
+* Usually the transform between the robot coordinate frame and the maps coordinate frame
 
 ### Frames
 * Coordinate systems, which have an origin and an orientation
-* `tf` is a central package of ROS which computers transformations for Frames
+* `tf` is a central package of ROS which computes transformations for Frames
 * It is a complicated topic which we will come back to

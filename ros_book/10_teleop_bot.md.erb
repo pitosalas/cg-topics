@@ -143,6 +143,10 @@ $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
 <%= code_begin %>
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 <%= code_end %>
+* You can also specify a different turtlebot3 model to use
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch model:="NAME OF MODEL"
+<%= code_end %>
 * If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
 * Dont forget that you need to have roscore running as well
 
