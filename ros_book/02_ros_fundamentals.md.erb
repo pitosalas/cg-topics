@@ -10,8 +10,7 @@ desc: Basic concepts of ROS
 * A highly sophisticated concurrent distributed process management and communication framework (my own definition)
 
 ### ROS Fundamentals
-* A distributed operating system
-* Not really an operating system.
+* A distributed "operating system"
 * A process coordinator and an inter-process communications model
 * Different parts (nodes) can run on different computers
 * They all need to be connected by a LAN via TCP/IP
@@ -23,8 +22,8 @@ desc: Basic concepts of ROS
 * A real robot will have dozens to hundreds of nodes
 * You can write nodes in Python (we will do) or C++
 * Nodes talk top each other by publishing and subscribing to messages
-* Everything starts with the 'traffic-cop' roscore
-* Once ROSCore runs, additional nodes can run
+* Everything starts with the 'traffic-cop' `roscore`
+* Once `roscore` runs, additional nodes can run
 * Each node is essentially a serpate program, maybe even a single file
 * Can be written in Python or C++
 * We will use Python mostly
@@ -152,7 +151,7 @@ $ ./image_view image:=right/image
 * (And for many other reasons)
 * A .launch file contains instructios on what to launch and in what order
 
-<%= source_begin "language-xml" %>$ cs
+<%= source_begin "language-xml" %>
 &lt;launch&gt;
     &lt;node name="talker" pkg="rospy_tutorials" type="talker.py" output="screen" /&gt;
     &lt;node name="listener" pkg="rospy_tutorials" type="listener.py" output="screen" /&gt;

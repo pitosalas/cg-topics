@@ -34,9 +34,7 @@ slides: true
   * It's an old joke.
   * Here's what it looks like:
 
-<%= code_begin %>
-#!/usr/bin/env python
-<%= code_end %>
+<%= source_begin "language-bash" %>#!/usr/bin/env python<%= source_end %>
 
   * To make a text file executable on linux you do these things:
     * Put shebang line as line 1. It tells what the language of that text file
@@ -60,24 +58,22 @@ slides: true
   * to run `roscore` in another terminal
 * Run it and examine that it is publishing as expected, as follows:
 
-<%= code_begin %>
-$ roscd prrexamples
+<%= source_begin "language-bash" %>$ roscd prrexamples
 $ chmod +x scripts/topic_publisher.py
 $ rosrun prrexamples topic_publisher.py
 $ rostopic list
 $ rostopic echo counter -n 5
-<%= code_end %>
+<%= source_end %>
 
 ## Subscribing to a topic
 * See $ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py
 * It defines and runs a node whch subscribes to the counter, and prints it
 
-<%= code_begin %>
-# shell commands
-$ chmod +x topic_subscriber.py
+<%= source_begin "language-bash" %># shell commands
 $ roscd prrexamples
-$ rosrun prrexamples topic_subscriber
-<%= code_end %>
+$ chmod +x scripts/topic_subscriber.py
+$ rosrun prrexamples topic_subscriber.py
+<%= source_end %>
 
 ## Examine what's going on
 * Make sure you can see that topics are being publsihed (see `rostopic`)
