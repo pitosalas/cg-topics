@@ -1,11 +1,9 @@
 ---
 title: "3: Topics"
-desc: What are topics, how are they used. How do messages fit in
-slides: true
+desc: "PRR Chapter 3: Topics"
 ---
 
-## PRR Chapter 3: Topics
-
+## Introduction
 * Nodes talk to each other with Topics
 * A node can "publish" a topic
 * Another node can "subscribe" to a topic
@@ -18,7 +16,7 @@ slides: true
   * A message is a data structure with named and typed fields
   * A collection of messages already exists, e.g. Int32, which is message with one element, a 32 bit integer.
 
-## Some details
+### Some details
 * Queues
   * When you define your node as a Publisher you need to supply a queue_size
   * Messages that are published are kept in the queue until all subscribers have received them
@@ -47,8 +45,7 @@ slides: true
 * [Defining Custom Messages](http://wiki.ros.org/ROS/Tutorials/DefiningCustomMessages)
 * [Creating a ROS msg and srv](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
 
-## Publishing a topic
-
+## Publishing to a Topic
 * You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 * Use the ones in our github because they have been tested with TB3
 * If it's not there yet, clone it in your ~/catkin_ws/src directory
@@ -65,7 +62,12 @@ $ rostopic list
 $ rostopic echo counter -n 5
 <%= source_end %>
 
-## Subscribing to a topic
+### Checking That Everything Works as Expected
+* Make sure you can see that topics are being publsihed (see `rostopic`)
+* Make sure you can see that topics are being subscribed (see console output)
+* Try running `rqt_graph` to see the publisher/sucsriber relationships for node and topics
+
+## Subscribing to a Topic
 * See $ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py
 * It defines and runs a node whch subscribes to the counter, and prints it
 
@@ -75,12 +77,7 @@ $ chmod +x scripts/topic_subscriber.py
 $ rosrun prrexamples topic_subscriber.py
 <%= source_end %>
 
-## Examine what's going on
-* Make sure you can see that topics are being publsihed (see `rostopic`)
-* Make sure you can see that topics are being subscribed (see console output)
-* Try running `rqt_graph` to see the publisher/sucsriber relationships for node and topics
-
-## Custom Message Types
+## Defining Your Own Message Types
 * First look if any of the standard message types can do the job for you
 * Here's a [List of standard message type](http://wiki.ros.org/std_msgs)
 * The procedure for defining a new message is easy but convoluted
@@ -91,4 +88,4 @@ $ rosrun prrexamples topic_subscriber.py
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package
 1. Update (if needed) the package.xml file to include two new commands to indicate dependencies ()
 1. Update your python program to import the messages
-1. Update CMakeLists.txt 
+1. Update CMakeLists.txt
