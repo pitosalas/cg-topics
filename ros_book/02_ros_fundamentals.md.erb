@@ -1,45 +1,55 @@
 ---
 title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
+slides: true
 ---
 
 ## Introduction
+
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
 * Different parts (nodes) can run on different computers
 * They all need to be connected by a LAN via TCP/IP
 
+<slide_break></slide_break>
+
 ## The ROS Graph
+
+<slide_break></slide_break>
 
 ### Nodes
 * Fundamental concept in ROS
-* ROS runs a number of collaborating processes called "nodes"
+  * ROS runs a number of collaborating processes called "nodes"
 * Think of it as a program or a process which forms part of a system
-* A real robot will have dozens to hundreds of nodes
-* You can write nodes in Python (we will do) or C++
-* Nodes talk top each other by publishing and subscribing to messages
+  * A real robot will have dozens to hundreds of nodes
+  * You can write nodes in Python (we will do) or C++
+* Nodes talk to each other by publishing and subscribing to messages
 * Everything starts with the 'traffic-cop' `roscore`
-* Once `roscore` runs, additional nodes can run
-* Each node is essentially a serpate program, maybe even a single file
-* Can be written in Python or C++
-* We will use Python mostly
+  * Once `roscore` runs, additional nodes can run
+* Each node is essentially a separate program, maybe even a single file
+  * Can be written in Python or C++
+  * We will use Python mostly
 
-#### Odometry
+<slide_break></slide_break>
+
+### Odometry
 * Topics have a name and a message type
-* Twist message type is very very common.
-  * Expresses a velocity in linear and angular aspects
+* Twist message type is very very common
+* Expresses a velocity in linear and angular aspects
   * Note our robot can only move forward and backward (x axis)
   * And it can only rotate around (z axis)
   * Twist doesn't say anything about where the robot (thinks it) is
   * "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
 * Odometry
   * The Robot's "belief" of where it is, and what it is doing.
-  * Based on sensors in the base, including possibly the motors, a gps, a magnetometer etc.
+  * Based on sensors in the base, including possibly the motors, a GPS, a magnetometer etc.
   * Odometry is published as topic /odom and the message definition is called nav_msgs/Odometry
 * nav_msgs/Odometry
   * Header - standard header
   * pose - where does the robot thinks that it is (including Covariance - how sure is it?)
   * twist - how does it think it is moving (also with a covariance)
+
+<slide_break></slide_break>
 
 ## ROSCORE
 * Master coordinator of all the nodes
@@ -47,7 +57,10 @@ desc: "A quick flyby of the most important concepts of ROS"
 * Any other node will make contact with it to announce itself
 * When one node talks to another, roscore helps them find each other and then steps out of the way.
 
+<slide_break></slide_break>
+
 ### Communication model
+
 * Message based
 * Most important model is "publish/subscribe"
 * publish a **topic**, subscribe to a **topic**
@@ -55,14 +68,21 @@ desc: "A quick flyby of the most important concepts of ROS"
 * Topics have a name (e.g. /cmd_vel)
 * Topics have an associated message
 
+<slide_break></slide_break>
+
 ## catkin, Workspaces, and ROS Packages
+
+<slide_break></slide_break>
 
 ### catkin
 * catkin is the ROS build system
 * It's quite complicated and related to CMAKE
 * Treat it like a black box
 
+<slide_break></slide_break>
+
 ### Workspaces
+
 * A subdirectory in which you will be doing your ROS work
 * You need only one and it will be called catkin_ws/
 * You should already have it on your linux install, but here's how you would create it otherwise:
@@ -75,13 +95,20 @@ $ catkin_init_workspace
 * From time to time you have to build things, called "doing a build or make"
 * Use the alias `cm`
 
-#### .bashrc
+<slide_break></slide_break>
+
+### .bashrc
+
 * A "hidden" file in your home directory
 * Contains a series of shell commands that are executed each time you start a shell
-* It is populated with lots of useful stuff by the installation of ROS
+* It is `populated` with lots of useful stuff by the installation of ROS
 * Any commands you want run each time will be placed there
-* note: `source ~/.bashrc` command reads the file and exectutes it as if you typed it into bash
+* source `~/.bashrc command` reads the file and executes it as if you typed it into bash
 * Key environment variables have to be defined in .bashrc
+
+<slide_break></slide_break>
+
+### example
 
 <%= source_begin "language-bash" %>$ source ~/catkin_ws/devel/setup.bash
 $ export ROS_MASTER_URI=http://localhost:11311
@@ -90,43 +117,54 @@ $ export TB3_MODEL=burger
 $ export TURTLEBOT3_MODEL=burger
 <%= source_end %>
 
-### ROS Packages
-* A complete "application" or "tool"
-* Analogous to a gem in ruby, or a library in Java
-* Has a standardized layout:
+<slide_break></slide_break>
 
-<%= source_begin "language-bash" %>$ cs
+### ROS Packages
+
+* A complete "application" or "tool", stored as a directory tree in a standard layout
+* Analogous to a gem in ruby, or a library in Java
+* Can be created like this:
+
+<%= source_begin "language-bash" %>$ cd catkin_ws/src
 $ catkin_create_pkg my_new_package rospy
 <%= source_end %>
 
-* Contents of a package directory
-  * `package.xml` # describes all the things that are in the package
-  * `CMakeLists.txt` # describes how to "build" 
-  * `./messages` # descriptors of the messages
-  * `./scripts` # contains all the python source files
-  * `./launch` # contains all the .launch files
+<slide_break></slide_break>
 
-#### Synchronizing clocks
-* It is important that all computers that are in the ROS system (probably three - robot, roscore1 and your computer) have the same time. Note timeset is a bash function that is defined our class utilities directory, ./rosutils. which you should be calling from .bashrc (see above)
+### Contents of a package directory
 
-<%= source_begin "language-bash" %>$ cs
-$ settime
-<%= source_end %>
+* `package.xml` # describes all the things that are in the package
+* `CMakeLists.txt` # describes how to "build" 
+* `./messages` # descriptors of the messages
+* `./scripts` # contains all the python source files
+* `./launch` # contains all the .launch files
+
+<slide_break></slide_break>
 
 #### Python programs
+
 * Most of your python code will implement nodes
 * You should put them into the ./scripts directory
 * Name them *.py and give them execution file property: `chmod +x myfile.py`
 
-## rosrun
-<%= source_begin "language-bash" %>$ cs
-$ rosrun package program.py     # run a certain program from a certain package
-$ rqt_graph                     # display nodes and topics graphically
-$ roscd package                 # change directories to directory containing that package
-$ roslaunch package file.launch # "execute" that launch file
+<slide_break></slide_break>
+
+### rosrun and roslaunch
+
+<%= source_begin "language-bash" %>$cd catkin_ws
+
+# run a certain program from a certain package
+$ rosrun package program.py
+
+# "execute" that launch file
+$ roslaunch package file.launch 
+
 <%= source_end %>
 
+<slide_break></slide_break>
+
 ## Names, Namespaces and Remapping
+
 * Everything in the ros world has a name that looks like a file path
 * For example: `/cmd_vel` is a topic name
 * To allow flexibility,m you can remap a name to another name on the command line, e.g.
@@ -135,18 +173,17 @@ $ roslaunch package file.launch # "execute" that launch file
 $ ./image_view image:=right/image
 <%= source_end %>
 
+<slide_break></slide_break>
+
 ## roslaunch
+
 * Many real ROS applications have multiple nodes
 * To save time having to start each one separately
 * (And for many other reasons)
-* A .launch file contains instructios on what to launch and in what order
-
-<%= source_begin "language-xml" %>
-&lt;launch&gt;
-    &lt;node name="talker" pkg="rospy_tutorials" type="talker.py" output="screen" /&gt;
-    &lt;node name="listener" pkg="rospy_tutorials" type="listener.py" output="screen" /&gt;
-&lt;/launch&gt;
-<%= source_end %>
+* A .launch file contains instructions on what to launch and in what order
+* You run it with the `roslaunch` command. It will start `roscore` if necessary
+ 
+<slide_break></slide_break>
 
 ## tf: Coordinate Transforms
 * See [TF Tutorial](http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF)
@@ -156,10 +193,15 @@ $ ./image_view image:=right/image
 * tf system periodically broadcasts the current relationship between coordinate systems
 * Quaternions
 
+<slide_break></slide_break>
+
 ### Poses, Positions, and Orientations
+
 * Handy and very common term to mean: 3d position and 3d orientation of something
 * (Not velocity, just the position)
 * Usually the transform between the robot coordinate frame and the maps coordinate frame
+
+<slide_break></slide_break>
 
 ### tf
 * Frames: Essential and complicated concept
