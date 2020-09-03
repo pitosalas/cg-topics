@@ -3,9 +3,8 @@ title: "5: Actions"
 desc: What are ROS actions and how do they relate to topics and services?
 slides: true
 ---
-## PRR Chapter 5: Actions
 
-### Review
+## Review
 * Nodes: all code written for ROS is a Node
   * A node is like a process
   * You run it with, e.g. `$ rosrun` or (later) `$ roslaunch`
@@ -20,7 +19,7 @@ slides: true
 
 <slide_break></slide_break>
 
-### Actions
+## Defining an Action
 * For long running activities, for example, navigate to somewhere
   * Activity is initiated
   * Activity announces that it has terminated (successfully or not.)
@@ -41,9 +40,9 @@ slides: true
 
 <slide_break></slide_break>
 
-### Action Server (simple_action_server.py)
-
-* Handles the three submessages (see simple_action_server.py)
+## Implementing a Basic Action Server 
+* Action server `simple_action_server.py`
+* Handles the three submessages (see `simple_action_server.py`)
   1. Initialize node
   1. Declare that we want to serve action requests and start it
   1. Wait for callback to be called.
@@ -51,7 +50,8 @@ slides: true
   1. Notice that there are now 5 topics generated from that one Timer.action file. (`rosmsg list`)
   1. Notice that the messages associated with the actions also have had more information attached to them
 
-## Action Client (simple_action_client.py)
+## Using an Action
+* Action client `simple_action_client.py`
 * Node which will now ask request an action
   1. Initialize node
   1. Declare that we want to be an action client, and start it
@@ -60,7 +60,8 @@ slides: true
 * Run the client
   1. Notice that it displays the result of the fake action
 
-## Getting fancier - (fancy_action_server.py)
+## Implementing a More Sophisticated Action Server 
+* A fancier server `fancy_action_server.py`
 * Callback of the sever handles all three parts
 * First called when the goal is sent
   1. Check whether the goal is reasonable and abort if not.
@@ -69,12 +70,9 @@ slides: true
   1. Whenever desired, send a feedback message
   1. When done send completion message.
 
-## Getting fancier - (fancy_action_client.py)
+## Using the More Sophisticated Action
+* A fancier client `fancy_action_client.py`
 * Create node
 * Connect to action server
 * Send it the goal, while declaring handler for feedback calls
 * Wait for completion or abort.
-
-
-
-

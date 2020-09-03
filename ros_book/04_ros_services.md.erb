@@ -3,9 +3,9 @@ title: "4: Services"
 desc: "What are ROS services, and why do we need them? How are they different?"
 slides: true
 ---
-### PRR Chapter 4: Services
 
 ## What is a service?
+
 * Very related to a topic
 * Instead of "subscribing" and "publishing"
 * Services are a classic "client/server"
@@ -36,8 +36,10 @@ slides: true
 * Notice the two ways of returning the result
 * Everything else is plubming
 
-### Checking if it worked
-* Run the service with a standard rosrun command
+## Implementing a Service
+
+### Checking That Everything Works as Expected
+* Run the service with a standard `rosrun` command
 * Remember our package is called `prrexamples`
 * Remember that you must have `roscore` running!
 * `rosrun prrexamples service_server.py`
@@ -50,6 +52,3 @@ slides: true
 * It includes code to send a request to the service (ask it a question)
 * The code is more, but the effect is of a function call
 * Impressive because it is inter-process and even inter-host - i.e. can be over the internet
-
-
-
