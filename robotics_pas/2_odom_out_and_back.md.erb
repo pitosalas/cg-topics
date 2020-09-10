@@ -58,7 +58,7 @@ from nav_msgs.msg import Odometry
 * Subscribe to odometry topic `odom` and create a callback function to use as an arg:
 
 ~~~~{.python}
-example_sub = rospy.Subscriber('odometry', Odometry, <name of callback function>)`
+example_sub = rospy.Subscriber('odom', Odometry, <name of callback function>)`
 ~~~~
 
 * Write a callback for the odometry topic and add a control loop
