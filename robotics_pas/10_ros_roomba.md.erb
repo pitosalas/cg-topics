@@ -1,7 +1,6 @@
 ---
 title: ROS Roomba
 desc: Simple ROS program to run around a rectangular space, while avoiding walls.
-assigned: 10
 ---
 
 ### Learning goals
@@ -11,7 +10,7 @@ assigned: 10
 
 ### Background
 * This is a two part assignment. Each part is graded separately.
-* The iRobot ROOMBA is a vaccum cleaner ([video](https://www.youtube.com/watch?v=09Wc4Q_R3Ac)
+* The iRobot ROOMBA is a vacuum cleaner ([video](https://www.youtube.com/watch?v=09Wc4Q_R3Ac))
 * It moves in straight lines in a room until it comes to a wall or obstacle. At this point it stops and rotates in place for some number of degrees. And then it takes off again until it hits another obstacle. 
 * You will be writing a ROS node to exhibit this behavior
 * The challenge is first, just getting it to work. Remember that a node that works perfectly in simulation might not behave the same way in a real robot
@@ -21,7 +20,7 @@ assigned: 10
 
 ### Project
 * Use the one of the TurtleBot3 canned Gazebo environments or create your own
-* Write a new program which has a robot drive through a walled space, and act something like a variation on a roomba. The walled space can be as simple as a square or more complicated, up to you.
+* Write a new program which has a robot drive through a walled space, and act something like a variation on a Roomba. The walled space can be as simple as a square or more complicated, up to you.
 * It drives around until it comes close to an obstacle, rotates in place, and continues in a new direction.
 * It's not immediately clear how much to rotate: should it rotate some amount each time or should the amount of rotation vary randomly?
 * You can elaborate this any way you like. 
