@@ -20,7 +20,7 @@ desc: "Robot looks for nearest wall follows it"
 
 * Write ROS code that allows your robot to follow a wall or perimeter. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. 
     * Write ROS code to have the robot find a wall
-    * Drive up to 1.0 meters of it
+    * Drive up to 1.0 meters of it (you may choose a smaller number if you want)
     * Turn and start following it at that distance.
 * Challenge levels, starting from the easiest
     * Just following an infinite wall without a break or a corner
@@ -37,10 +37,10 @@ desc: "Robot looks for nearest wall follows it"
 
 * Publish movement commands to a robot in Gazebo simulation
 * Subscribe to the LiDAR scan topic to detect how far the robot is from the wall
-* Design your own algorithm or use a PID controller to move forward 1.0 meters parallel with the wall
+* Design your own algorithm or use a PID controller to move forward while staying parallel with the wall
 * This assignment may require more parameter tuning to achieve consistent results
 * Write a ROS node with publishers and subscribers for `cmd_vel` and `scan`
-* Test using any of the _stage_1, _2, _3 or _4 gazebo worlds
+* Test using any of the _stage_1, _2, or _4 gazebo worlds
 
 
 ### References and Resources
