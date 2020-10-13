@@ -1,7 +1,76 @@
 ---
 title: "11: Chess Bot"
-desc: "Next level of logic in the Chess Bot"
+desc: "How the robot is able to manipulate the world around it"
 ---
 
 ## Chess-Bot - Manipulation
-* We are skipping this chapter for now because it is not directly relevant to Campus Rover.
+
+* Robot Manipulators come in many shapes and sizes
+* Well known robot manipulators from videos of car factories
+* They are often "blind"
+
+<slide_break></slide_break>
+
+### Abstract definitions
+
+* A collection of joins held together by links
+* Revolute Joints (also rotary or pin joints)
+* Prismatic (also linear joints)
+* Links are stiff parts connecting joints together. ("bones")
+
+<slide_break></slide_break>
+
+### Kinematic Chains
+
+* A set of links and joints together form a *kinematic chain*
+* If one end is attached to something fixed (like the floor) it is "grounded"
+* The other end will usually have some kind of gripper, sensor, or effector
+* This system can be complex and can be analyzed mathematically
+
+<slide_break></slide_break>
+
+### Coordinate Frames
+
+* Ground based mobile robots have two important coordinate frames: the map and robot frames.
+* Robot arms have many more coordinate systems.
+* The links are fixed and of known length
+* The joints are all in a known position represented by one or more angles
+* Joint space and task space
+
+<slide_break></slide_break>
+
+### Forward Kinematics
+
+* If you set all the joint angles a certain way, where will the end be in space?
+* This has a single solution and is tractable
+
+### Reverse Kinematics
+
+* If you want the end to be in a certain location, what should the joint angles be?
+* This might have zero (out of reach), or more solutions
+
+## Coding
+
+### Install various needed ros packages
+
+<%= source_begin "language-bash" %>
+sudo apt-update
+sudo apt-get install ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-joint-trajectory-controller ros-melodic-moveit* ros-melodic-octomap* ros-melodic-object-recognition-*
+<%= source_end %>
+
+### Now install R2 stuff
+
+<%= source_begin "language-bash" %>
+$ cs # cd to catkin_ws/src
+$ mkdir -p chessbot/src
+$ cd chessbot/src
+$ git clone -b melodic https://github.com/plskeggs/nasa_r2_simulator.git
+$ git clone -b melodic https://github.com/plskeggs/nasa_r2_common.git
+$ cw # cd to catkin_ws
+$ cm # catkin_make
+$ roslaunch r2_gazebo r2_gazebo.launch
+<%= source_end %>
+
+
+
+
