@@ -45,17 +45,19 @@ desc: "Robot looks for line on the floor and follows it"
 ## Additional Challenges
 
 * Robot starts somewhere where the line is not immediately visible
-* Robot encounters a fork with one branch black and the other red. Follow the black
-* Robot uses Lidar (/scan) to detect an obstacle in the way. The obstacle is a red 10cm cube. Drive around it by taking a short right turn, going forward a short way and turn left and find the line again.
-
-
+* Robot is able to double back along the line allowing it to follow the line infinitely 
+* Robot uses Lidar (/scan) to detect an obstacle in the way. Place an object in gazebo of your choice to move around. The more "challenging" choice of obstacle(s) will mean more extra points awarded
 
 
 ### Deliverables
 
-* Commented Python source code file named "FirstnameLastname_PA#"
-* Video of your program running in gazebo or your lab at home 
-* Both submitted in Latte
+* A correctly structured ROS package including
+    * Nicely commented python source files
+    * Appropriate launch file
+    * Readme explaining how the code works
+* Video of your program running
+    * in gazebo or your lab at home
+    * Best to put the video on youtube and give the link
 
 ### Steps
 
@@ -63,7 +65,9 @@ desc: "Robot looks for line on the floor and follows it"
 * Convert the callback message compressed image to a opencv compatible image
 * Apply the image manipulation techniques to identify features of the line
 * Use the feature information to control the robots movement to keep following the line
+* Also it will be very helpful to find a way to debug your algorithms
 
 ### Hints
 
 * What information can you use about the location of your detected line to help control the robot?
+* How can you debug your computer vision algorithms in Rviz? 
