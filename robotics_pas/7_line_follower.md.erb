@@ -38,6 +38,11 @@ desc: "Robot looks for line on the floor and follows it"
 ## Assignment
 
 * You will provided with a basic gazebo world without any walls, and a single line.
+
+* To run the gazebo world: 
+<%= source_begin "language-python"%>roslaunch prrexamples linemission.launch model:=waffle
+<%= source_end %>
+
 * The robot will begin at a spot just before the line. 
 * Follow a distinct line on the ground/floor of your simulation/lab at home a set distance
 * It is your task to keep the robot as close to the line as possible for as much of the length of the path as possible

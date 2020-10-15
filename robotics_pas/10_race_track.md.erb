@@ -47,6 +47,10 @@ desc: "Robot starts on a race track and completes a lap"
 ## Assignment
 
 * You will provided with racetrack.launch which launches a gazebo world with a race track and a turtlebot3_waffle model.
+
+* To run the gazebo world: 
+<%= source_begin "language-python"%>roslaunch prrexamples racetrack.launch model:=waffle
+<%= source_end %>
 * The robot will begin right at the start of the race track.
 * Drive forwards around the track staying in bounds while also avoiding various obstacles using camera and LiDAR.
 * Complete the lap successfully for the base assignment.
