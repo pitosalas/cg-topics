@@ -44,36 +44,22 @@ desc: "How the robot is able to manipulate the world around it"
 * If you set all the joint angles a certain way, where will the end be in space?
 * This has a single solution and is tractable
 
+<slide_break></slide_break>
+
 ### Reverse Kinematics
 
 * If you want the end to be in a certain location, what should the joint angles be?
 * This might have zero (out of reach), or more solutions
 
-## Examples
+<slide_break></slide_break>
+
+## Demo 
 
 * This is from the [MoveIt Tutorial](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html)
 * Here's another example from [Gazebo](http://gazebosim.org/tutorials/?tut=ros_urdf)
-## Coding
 
-### Install various needed ros packages
 
-<%= source_begin "language-bash" %>
-sudo apt-update
-sudo apt-get install ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-joint-trajectory-controller ros-melodic-moveit* ros-melodic-octomap* ros-melodic-object-recognition-*
-<%= source_end %>
 
-### Now install R2 stuff
-
-<%= source_begin "language-bash" %>
-$ cs # cd to catkin_ws/src
-$ mkdir -p chessbot/src
-$ cd chessbot/src
-$ git clone -b melodic https://github.com/plskeggs/nasa_r2_simulator.git
-$ git clone -b melodic https://github.com/plskeggs/nasa_r2_common.git
-$ cw # cd to catkin_ws
-$ cm # catkin_make
-$ roslaunch r2_gazebo r2_gazebo.launch
-<%= source_end %>
 
 
 
