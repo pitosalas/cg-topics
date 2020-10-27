@@ -17,15 +17,10 @@ desc: "Robot starts on a race track and completes a lap"
 * You cannot have a cmd_vel.linear.x > 1 or cmd_vel.angular.z > pi/2
 * The robot cannot go out of bounds
 * The robot cannot hit an obstacle in or outside of the track
-* You cannot modify the timing.py ROS node
 
 ### Purpose
 
 * Write a program to complete a lap around the track as fast as possible. 
-
-### Expected preparation
-
-* Launch the aws-roborace
 
 ### What I hope you will learn
 
@@ -68,12 +63,17 @@ desc: "Robot starts on a race track and completes a lap"
     * Appropriate launch file
     * Readme explaining how the code works
 * Video of your program running
-    * in gazebo or your lab at home
     * Best to put the video on youtube and give the link
+    * Feel free to narrate to explain interesting things that are happening
+
+### For further fun
+* Make it around without crashing
+* Deal with obstacles that might be in the way
+* Make it go faster by being more efficient
 
 ### Suggested Steps
 
 * Subscribe to the compressed image topic for the camera and scan topic for LiDAR
-* Use teleop control to navitgate around the track to get an idea of what the robot will see along the track
+* Use teleop control to navigate around the track to get an idea of what the robot will see along the track
 * Think of novel LiDAR and camera algorithms we can use to influence the controls of the robot
 * Test and iterate
