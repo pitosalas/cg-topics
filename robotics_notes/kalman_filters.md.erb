@@ -15,6 +15,8 @@ title: Kalman Filters
 * And uncertain state information 
 * And uncertain action inputs
 * How do you get the best possible estimate of the state?
+* Well supported by math and statistical analysis
+* Key insight is: two inaccurate sensors can be combined into an estimate that is more accurate than either one alone.
 
 ### State
 
@@ -26,6 +28,7 @@ title: Kalman Filters
   * current altitude from the surface
 
 ### Estimation
+
 * Kalman filter is an iterative model
 * Each loop tries to make the state ESTIMATE more accurate
 * By processing data from SENSORS (which are statistically characterized
@@ -33,10 +36,27 @@ title: Kalman Filters
 * And unknown perturbations (which are statistically characterized
 * Producing an updated estimate ((which are statistically characterized)
 
+### Internal model
+
+* Based on what is known about the system being measured
+* We can make a first guess of how the old state would change each step
+* In other words, if I am at x=0 and I am moving at 1cm / second
+* Then 1 second later, I am at x=0.01
+* "all things being equal"
+
+### Control Model
+
+* Look beyond the internal of the system, what is telling it to change?
+* Control input: driver steps on break or accelarator
+* Gravity is pulling the ball downhill
+* cmd_vel is telling the robot to stop
+
 ### 1D Scenario: Weighing a block of gold
 
 * Using a scale with a known error rate
 * And multiple weight readings
+* You know that the weight won't change
+* What do you use? Average? Weighted Average? Or?
 
 ### 1D Scenario: Train
 
@@ -54,16 +74,22 @@ title: Kalman Filters
 ### 2d Scenario
 
 * An off-road robot moving around a field
-* Using GPS for localization
+* Using GPS for localization - which has a known inaccuracy on the order of 5-10 meters
+* The robot can be asked to move forward or turn at a specified speed
 
 * State: position and velocity
-
 
 ### Scenario I am coding
 
 * Not done yet
 * Detect the bearing (direction) and distance of the nearest obstacle
 * Create a smooth estimation based on the noisy lidar data and noisy cmd_vel inputs
+* Illustrate a few software engineering techniques
+  * Making your code visualize what is going on
+  * Modularity and reducing dependencies
+  * Test data
+  * Test harness
+
 
 ### How to understand
 
