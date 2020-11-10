@@ -9,6 +9,8 @@ title: Kalman Filters
 * But I really wanted to understand it so I spent many hours this week digging into it
 * This is my first time trying to teach it so bear with me!
 
+<slide_break></slide_break>
+
 ### What it does
 
 * Given uncertain sensor data 
@@ -18,14 +20,18 @@ title: Kalman Filters
 * Well supported by math and statistical analysis
 * Key insight is: two inaccurate sensors can be combined into an estimate that is more accurate than either one alone.
 
+<slide_break></slide_break>
+
 ### State
 
 * a vector (set) of numbers representing the state you are trying to measure
 * Usually denoted by X, containing numbers, here are a series of examples
-  * current x or y position
-  * current speed in the x or y direction
-  * current distance from obstacle
-  * current altitude from the surface
+  1. current x or y position
+  1. current speed in the x or y direction
+  1. current distance from obstacle
+  1. current altitude from the surface
+
+<slide_break></slide_break>
 
 ### Estimation
 
@@ -36,6 +42,8 @@ title: Kalman Filters
 * And unknown perturbations (which are statistically characterized
 * Producing an updated estimate ((which are statistically characterized)
 
+<slide_break></slide_break>
+
 ### Internal model
 
 * Based on what is known about the system being measured
@@ -44,12 +52,17 @@ title: Kalman Filters
 * Then 1 second later, I am at x=0.01
 * "all things being equal"
 
+<slide_break></slide_break>
+
 ### Control Model
 
 * Look beyond the internal of the system, what is telling it to change?
-* Control input: driver steps on break or accelarator
+* Control input: driver steps on break or accelerator
 * Gravity is pulling the ball downhill
 * cmd_vel is telling the robot to stop
+
+<slide_break></slide_break>
+
 
 ### 1D Scenario: Weighing a block of gold
 
@@ -58,6 +71,8 @@ title: Kalman Filters
 * You know that the weight won't change
 * What do you use? Average? Weighted Average? Or?
 
+<slide_break></slide_break>
+
 ### 1D Scenario: Train
 
 * A train is on a track and moving towards the terminator (which is a block)
@@ -65,19 +80,43 @@ title: Kalman Filters
 * The is reading the speed based on the rotation of the wheels
 * How does the train determine where it is?
 
+<slide_break></slide_break>
+
 ### 1D Scenario: Voltage reading
 
 * Make a reading per second on a voltage source that is meant to be constant
 * Display a graph of your best guess of the 'true' reading 
 * Noting that your measuring instrument also has a known error profile
 
+<slide_break></slide_break>
+
 ### 2d Scenario
 
 * An off-road robot moving around a field
 * Using GPS for localization - which has a known inaccuracy on the order of 5-10 meters
 * The robot can be asked to move forward or turn at a specified speed
-
 * State: position and velocity
+
+<slide_break></slide_break>
+
+### Abstraction of the Kalman Filter Equations
+
+<%= include_image "/content/topics/images/kalmansimple.gif" %>
+
+<slide_break></slide_break>
+
+### Diagram of Kalman Filter Equations
+
+<%= include_image "/content/topics/images/kalman.jpg" %>
+
+<slide_break></slide_break>
+
+### Kalman Gain
+
+* Where does the Kalman Gain come from?
+* It is computed... more next time
+
+<slide_break></slide_break>
 
 ### Scenario I am coding
 
@@ -91,6 +130,8 @@ title: Kalman Filters
   * Test harness
 
 
+<slide_break></slide_break>
+
 ### How to understand
 
 * Most examples you find will use linear algebra (not an expert) and store things in matrices
@@ -98,3 +139,12 @@ title: Kalman Filters
 * This simplifies the expression and calculation of the formulas but it is initially confusing
 * That is unless you are fluent in matrix and linear algebra which I am not
 
+<slide_break></slide_break>
+
+## Links for further study
+
+* [Detailed Youtube on Kalman FIlters](https://www.youtube.com/watch?v=u1QcZxWRYtg&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=10)
+* [How a Kalman Filter Works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
+* [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
+* [Kalman Filter for Dummies](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies)
+* [Kalman Filter: Predict, Measure, Repeat](https://medium.com/@tjosh.owoyemi/kalman-filter-predict-measure-update-repeat-20a5e618be66)
