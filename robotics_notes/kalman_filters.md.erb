@@ -3,3 +3,72 @@ title: Kalman Filters
 ---
 ## Kalman Filters
 
+* A really important, low-level algorithm
+* I admit I've known about it for years but never really understood it
+* And unless you are writing lower level support for new devices you probably won't use it
+* But I really wanted to understand it so I spent many hours this week digging into it
+* This is my first time trying to teach it so bear with me!
+
+### What it does
+
+* Given uncertain sensor data 
+* And uncertain state information 
+* And uncertain action inputs
+* How do you get the best possible estimate of the state?
+
+### State
+
+* a vector (set) of numbers representing the state you are trying to measure
+* Usually denoted by X, containing numbers, here are a series of examples
+  * current x or y position
+  * current speed in the x or y direction
+  * current distance from obstacle
+  * current altitude from the surface
+
+### Estimation
+* Kalman filter is an iterative model
+* Each loop tries to make the state ESTIMATE more accurate
+* By processing data from SENSORS (which are statistically characterized
+* And considering known control inputs (which are statistically characterized)
+* And unknown perturbations (which are statistically characterized
+* Producing an updated estimate ((which are statistically characterized)
+
+### 1D Scenario: Weighing a block of gold
+
+* Using a scale with a known error rate
+* And multiple weight readings
+
+### 1D Scenario: Train
+
+* A train is on a track and moving towards the terminator (which is a block)
+* Train has a lidar sensing the wall
+* The is reading the speed based on the rotation of the wheels
+* How does the train determine where it is?
+
+### 1D Scenario: Voltage reading
+
+* Make a reading per second on a voltage source that is meant to be constant
+* Display a graph of your best guess of the 'true' reading 
+* Noting that your measuring instrument also has a known error profile
+
+### 2d Scenario
+
+* An off-road robot moving around a field
+* Using GPS for localization
+
+* State: position and velocity
+
+
+### Scenario I am coding
+
+* Not done yet
+* Detect the bearing (direction) and distance of the nearest obstacle
+* Create a smooth estimation based on the noisy lidar data and noisy cmd_vel inputs
+
+### How to understand
+
+* Most examples you find will use linear algebra (not an expert) and store things in matrices
+* If the `state` is location and velocity in the x direction (a falling ball) that is stored in a 1x2 matrix
+* This simplifies the expression and calculation of the formulas but it is initially confusing
+* That is unless you are fluent in matrix and linear algebra which I am not
+
