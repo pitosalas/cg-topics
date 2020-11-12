@@ -8,6 +8,7 @@ title: Kalman Filters
 * And unless you are writing lower level support for new devices you probably won't use it
 * But I really wanted to understand it so I spent many hours this week digging into it
 * This is my first time trying to teach it so bear with me!
+* Disclaimer - IANOM - I am not a mathematician
 
 <slide_break></slide_break>
 
@@ -15,21 +16,20 @@ title: Kalman Filters
 
 * Given uncertain sensor data 
 * And uncertain state information 
-* And uncertain action inputs
+* And uncertain control inputs
+* And uncertain measurements
 * How do you get the best possible estimate of the state?
 * Well supported by math and statistical analysis
-* Key insight is: two inaccurate sensors can be combined into an estimate that is more accurate than either one alone.
+* One key insight two inaccurate readings can be combined into an estimate that is more accurate than either one alone.
 
 <slide_break></slide_break>
 
-### State
+### Learning about Kalman Filters
 
-* a vector (set) of numbers representing the state you are trying to measure
-* Usually denoted by X, containing numbers, here are a series of examples
-  1. current x or y position
-  1. current speed in the x or y direction
-  1. current distance from obstacle
-  1. current altitude from the surface
+* There is a lot written about it
+* Because it is difficult and important
+* The explanations are not consistent and don't use consistent nomenclature
+
 
 <slide_break></slide_break>
 
@@ -37,20 +37,60 @@ title: Kalman Filters
 
 * Kalman filter is an iterative model
 * Each loop tries to make the state ESTIMATE more accurate
-* By processing data from SENSORS (which are statistically characterized
+* By processing data from SENSORS (which are statistically characterized)
 * And considering known control inputs (which are statistically characterized)
-* And unknown perturbations (which are statistically characterized
-* Producing an updated estimate ((which are statistically characterized)
+* And unknown perturbations (which are statistically characterized)
+* Producing an updated estimate (which is statistically characterized)
+* The loops happen at intervals that correspond to the rates that sensors are read
 
 <slide_break></slide_break>
 
-### Internal model
+### Scenario
 
-* Based on what is known about the system being measured
+* An off-road robot moving around a field
+* Using GPS for localization - which has a known inaccuracy on the order of 5-10 meters
+* The robot can be asked to move forward or turn at a specified speed or be stationary
+* State: position and velocity
+* Control: motion commands
+* Sensors: GPS ... odometry?
+
+<slide_break></slide_break>
+
+<%= include_image "/content/topics/images/gpsrobot.png" %>
+
+<slide_break></slide_break>
+
+### System
+
+* Kalman filter looks at a "system" which has a "state"
+* The system may change over time
+* Based on it's own internal operation
+* Based on "control" input from the outside
+* We gain information about the "system"
+* By sensing data which allow us to infer system changes
+
+<slide_break></slide_break>
+
+### State model
+
+* Based on what is known about the system
 * We can make a first guess of how the old state would change each step
 * In other words, if I am at x=0 and I am moving at 1cm / second
 * Then 1 second later, I am at x=0.01
 * "all things being equal"
+
+<slide_break></slide_break>
+
+### State
+
+* a vector (set) of numbers representing the state you are trying to measure
+* Vector/Matrix representation is for ease of calculation
+* But it can also make things look more complicated (for some people)
+* Usually denoted by X, containing numbers, here are a series of examples
+  1. current x or y position
+  1. current speed in the x or y direction
+  1. current distance from obstacle
+  1. current altitude from the surface
 
 <slide_break></slide_break>
 
@@ -63,13 +103,25 @@ title: Kalman Filters
 
 <slide_break></slide_break>
 
+### Sensor Model
+* Given a measurement from the outside world
+* How does the state model change
 
-### 1D Scenario: Weighing a block of gold
+<slide_break></slide_break>
+
+## Video Interlude
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCcOwJPytQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<slide_break></slide_break>
+
+### 1D Scenario: bathroom scale
 
 * Using a scale with a known error rate
-* And multiple weight readings
+* Sensor generates 10 readings per second
 * You know that the weight won't change
 * What do you use? Average? Weighted Average? Or?
+* What if you have thousands of measurements (10 per second, like a bathroom scale)
 
 <slide_break></slide_break>
 
@@ -82,6 +134,10 @@ title: Kalman Filters
 
 <slide_break></slide_break>
 
+<%= include_image "/content/topics/images/kalmantrain.jpg" %>
+
+<slide_break></slide_break>
+
 ### 1D Scenario: Voltage reading
 
 * Make a reading per second on a voltage source that is meant to be constant
@@ -90,14 +146,7 @@ title: Kalman Filters
 
 <slide_break></slide_break>
 
-### 2d Scenario
 
-* An off-road robot moving around a field
-* Using GPS for localization - which has a known inaccuracy on the order of 5-10 meters
-* The robot can be asked to move forward or turn at a specified speed
-* State: position and velocity
-
-<slide_break></slide_break>
 
 ### Abstraction of the Kalman Filter Equations
 
@@ -114,13 +163,13 @@ title: Kalman Filters
 ### Kalman Gain
 
 * Where does the Kalman Gain come from?
-* It is computed... more next time
+* There are complex equations which use the covariance matrix with the estimates to compute a Kalman Gain
+* But I've seen examples that skip that and use a constant
 
 <slide_break></slide_break>
 
 ### Scenario I am coding
 
-* Not done yet
 * Detect the bearing (direction) and distance of the nearest obstacle
 * Create a smooth estimation based on the noisy lidar data and noisy cmd_vel inputs
 * Illustrate a few software engineering techniques
@@ -131,7 +180,6 @@ title: Kalman Filters
 
 
 <slide_break></slide_break>
-
 ### How to understand
 
 * Most examples you find will use linear algebra (not an expert) and store things in matrices
@@ -144,6 +192,7 @@ title: Kalman Filters
 ## Links for further study
 
 * [Detailed Youtube on Kalman FIlters](https://www.youtube.com/watch?v=u1QcZxWRYtg&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=10)
+* [Kalman Filter In Depth](https://www.kalmanfilter.net/kalman1d.html)
 * [How a Kalman Filter Works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 * [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
 * [Kalman Filter for Dummies](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies)
