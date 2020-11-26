@@ -2,62 +2,68 @@
 title: "PA: Wall Follower"
 desc: "Robot looks for nearest wall follows it"
 ---
-## Introduction
+## Purpose
 
-* This assignment will get you comfortable using the LiDAR 
+* This assignment will get you using the LiDAR in more sophisticated ways
 * You will also learn how to control the robots movement for a more complex task
-
-### Purpose
-
-* Write ROS code that allows your robot to follow a wall or perimeter. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. Write ROS code to have the robot find a wall, drive up to 1.5 meters of it, then turn and start following it at that distance.
-
-### Expected preparation
-
-* Learn about what a PID controller is
-* Learn what odometry is and how it is represented in ROS
-* Think about some other approaches to following the wall using the LiDAR scan
 
 ### What I hope you will learn
 
-* Work with and process LiDAR data
+* Get more sophisticated in working with LiDAR data
 * Process and filtering sensor noise
 * Using math (especially geometry) to solve real world robotics problems
 * Use PID processing to make the robot behave reasonably
 * Simple state management to control the behavior of the robot
 
-### References and Resources
-
-* Use the PRRExamples library! 
-* Launch gazebo simulation <https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/>
-* Turtlebot3 LiDAR <https://emanual.robotis.com/docs/en/platform/turtlebot3/appendix_lds_01/>
-* Learn PID <https://en.wikipedia.org/wiki/PID_controller>
-
-### Topics and Message Types
-
-* scan [LaserScan](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
-* cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
 
 ## Assignment
 
-* Publish movement commands to a robot in Gazebo simulation
-* Subscribe to the LiDAR scan topic to detect how far the robot is from the wall
-* Design your own algorithm or use a PID controller to move forward 1.5 meters parallel with the wall
-* This assignment may require more parameter tuning to achieve consistent results
+* Write ROS code that allows your robot to follow a wall or perimeter. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. 
+    * Write ROS code to have the robot find a wall
+    * Drive up to 1.0 meters of it (you may choose a smaller number if you want)
+    * Turn and start following it at that distance.
+* Challenge levels, starting from the easiest
+    * Just following an infinite wall without a break or a corner
+    * Follow a wall to a right turn and make the turn until the next right turn
+    * Follow a wall to a dead end so the only way out is to turn in place and drive back
+    * Follow a wall that goes into a narrower and narrower space until it has to turn back
+    * Follow a wall with turns that are not corners but round
+* Other alternatives
+    * Use P or PI or PID
+    * Figure out a way to follow a wall that more robust in difficult cases
+    
 
-### Deliverables
-
-* Commented Python source code file named "FirstnameLastname_PA#"
-* Video of your program running in gazebo or your lab at home
-* Both submitted in Latte
-  
 ### Steps
 
+* Publish movement commands to a robot in Gazebo simulation
+* Subscribe to the LiDAR scan topic to detect how far the robot is from the wall
+* Design your own algorithm or use a PID controller to move forward while staying parallel with the wall
+* This assignment may require more parameter tuning to achieve consistent results
 * Write a ROS node with publishers and subscribers for `cmd_vel` and `scan`
-* In your lab at home in simulation create a wall to try to follow
-* Test with an actual robot or in simulation
+* Test using any of the _stage_1, _2, or _4 gazebo worlds
+
+
+### References and Resources
+
+* Use the PRRExamples library! 
+* Learn PID <https://en.wikipedia.org/wiki/PID_controller>
+
 
 ### Hints
 
+* Learn about what a PID controller is
+* Learn what odometry is and how it is represented in ROS
+* Think about some other approaches to following the wall using the LiDAR scan
 * The robot should be able to detect which side the wall is located
 * Consider the multiple cases when the robot might need to turn
 * Beware of invalid data from the lidar and look closely at how the data relates to the environment
+
+### Deliverables
+
+* ROS Package with
+    * Commented Python source code file
+    * README with specific instructions on how to run it
+    * Correct package.xml CMakeLists.txt
+* Video of your program running in gazebo or your lab at home
+* Both submitted in Latte
+  

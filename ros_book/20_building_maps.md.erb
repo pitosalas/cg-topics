@@ -1,51 +1,75 @@
 ---
 title: "9: Building Maps"
 desc: "What is a map, how to build one"
+slides: true
 ---
 ## Maps in ROS
+
 * Our focus is mobile, ground based robots
 * In ROS maps are represented as a 2d grid
-* Each dot in the grid corresponds to a square in the real world (based on the resulution of the map)
+* Each dot in the grid corresponds to a square in the real world (based on the resolution of the map)
   * Black dots: walls (not passable)
   * White dots: open space (passable)
   * Grey dots: Unknown
+
+<slide_break></slide_break>
+
 * Maps in fact are stored as images - .png, .jpg, .pgm
-* You can edit them in any appropraite image editing tool
+* You can edit them in any appropriate image editing tool
 * Accompanying YAML file defines mapping between image and real world
 * Map = *.png + *.yaml
 * example:
 
-<%= code_begin %>
+<%= source_begin "language-yaml"%>
+# contents of mymap.yaml
+
 image: map.pgm
 resolution: 0.1
 origin: [0.0, 0.0, 0.0]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 1
-<%= code_end %>
+<%= source_end %>
 
-* Definitions:
-  * image: filename
-  * resolution: in meters, how large a square in the real world does one pixel represent 
-  * origin: What is the real world coordinate of the pixel in the [0,0] position
-  * occupied_thresh: pixels with color value greater than this number are considered occupied
-  * free_thresh: pixels with color value less than this number are considered free. (Values in between are considered unknown)
-  * negate: Depending on whether black is 1 or black is 0 in the image representation, it might have to be negated
+<slide_break></slide_break>
 
-## rosbag
+### Definitions
+
+* image: filename
+* resolution: in meters, how large a square in the real world does one pixel represent 
+* origin: What is the real world coordinate of the pixel in the [0,0] position
+* occupied_thresh: pixels with color value greater than this number are considered occupied
+* free_thresh: pixels with color value less than this number are considered free. (Values in between are considered unknown)
+* negate: Depending on whether black is 1 or black is 0 in the image representation, it might have to be negated
+
+<slide_break></slide_break>
+
+### rosbag
 
 * A tool to record messages (some or all) and replay them later
 * Allows you to try another algorithm on the exact same sensor data 
 * Example: record all `scan` and `tf` messafes
-<%= code_begin %>
+
+<%= source_begin ("language-bash") %>
 $ rosbag record scan tf # record to standard file name YYYY-MM-DD-HH-mm-ss.bag
 $ rosbag record -a # record all messages, but generates a LOT of data
-<%= code_end %>
+<%= source_end %>
+
 * And then play them back with a parallel command:
-<%= code_begin %>
+
+<%= source_begin ("language-bash") %>
 $ rosbag play --clock foo.bag
-<%= code_end %>
+<%= source_end %>
+
 * The --clock flag is interesting. rosbag play will set and publish the clock. Be careful that nothing else (e.g. gazebo) is publishing the clock at the same time because this will mess things up!
+
+<slide_break></slide_break>
+
+## Video Interlude
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Pd32zlTzmCw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<slide_break></slide_break>
 
 ## Building Maps
 
@@ -56,8 +80,9 @@ $ rosbag play --clock foo.bag
 * Collect sensor data in a bag
 * Then generate a map from it
 
-### Phase 1: Simulated Robot
+<slide_break></slide_break>
 
+### Phase 1: Simulated Robot
 
 * As we are working with a simulated robot (not a physical one) we need a simulator
 * Gazebo is the app that both creates a complete simulation and renders it graphically
@@ -66,62 +91,59 @@ $ rosbag play --clock foo.bag
 * It has a simulated lidar which will generate /scan topics
 * It has a simulated base and wheels which will respond to /cmd_vel topics
 * And the simulated base also generates /odom topics
-* The obstacales are simulated so that they bounce the simulated lidar
+* The obstacles are simulated so that they bounce the simulated lidar
 * And they also are solid so that the simulated robot will not drive 'through' them!
 
-<%= lab_note("Lab instructions: Launch and capture data in a bag") %>
+<slide_break></slide_break>
 
+* Lab instructions: Launch and capture data in a bag
 * Launch Gazebo simulator with a basic Turtlebot3 World
 
-<%= callout("NB", " In my experience, Gazebo will not run properly on a VM. You must be running on native Ubuntu")%>
-
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
-<%= code_end %>
+<%= source_end %>
 
 <%= include_image "/content/topics/images/rosbag3.png" %>
 
-<%= lab_note("Lab Instruction: Save all the messages") %>
-
+* Lab Instruction: Save all the messages
 * We are going to save all the topics published by the simulated robot. plus a timestamp
 * With that we will be able to run other nodes and algorithms against the exact same experience
 * If we ran the simulation over and over again, it would be different and not a good baseline
 * We use rosbag to save all /odom, /tf and /scan messages
 * We don't need to save /cmd_vel (why?)
 
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ rosbag record -O data.bag /scan /tf /odom
-<%= code_end %>
+<%= source_end %>
 
-<%= lab_note("Lab instructions: Teleop through the space") %>
-
+* Lab instructions: Teleop through the space
 * Help the robot 'see' the whole space
 * As long as we are recording a rosbag and the simulation (gazebo) is running, all messages are saved
 * Use teleop to visit enough of the space so that all surfaces to be mapped are within unobstructed view
 * Exit with ^c 
 
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-<%= code_end %>
+<%= source_end %>
 
-<%= lab_note("Lab Instruction: Save and inspect the rosbag") %>
-
+* Lab Instruction: Save and inspect the rosbag
 * Once you are satisfied you have visited the whole space
 * Click ^c to stop saving topics to the bag and close the file
 * Inspect the file and see if it looks reasoble
 
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ rosbag info data.bag
-<%= code_end %>
+<%= source_end %>
 
-## Introduction to SLAM using the saved map
+<slide_break></slide_break>
 
-<%= lab_note "Lab Instruction: Use collected data to run SLAM and build a map "%>
+### Introduction to SLAM using the saved map
 
+* Lab Instruction: Use collected data to run SLAM and build a map
 * We run the (one of several) map making modules, gmapping
 * The map making module conceptually is monitoring the messages and figuring out a map of the space
 * In our case, the messages are being generated by "playing" the bag
-* What about 'time'? Instead of the wallclock, ROS will now get time from the bag too
+* What about 'time'? Instead of the wall clock, ROS will now get time from the bag too
 * So there are three steps:
   1. Run roscore
   1. Change the time source to the simulation
@@ -130,16 +152,15 @@ $ rosbag info data.bag
 
 <%= callout("NB", " Check that you've killed all ROS-related processes.") %>
 
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ roscore
 $ rosparam set use_sim_time true
 $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 $ rosbag play --clock data.bag
-<%= code_end %>
+<%= source_end %>
 <%= include_image "/content/topics/images/rosbag1.png" %>
 
-<%= lab_note "Lab Instruction: Save and look at the map "%>
-
+* Lab Instruction: Save and look at the map
 * Once the rosbag has been fully played, you should see the constructed map
 * The map is still just in memory
 * If you ^c gmapping right now, the map would be lost
@@ -150,16 +171,16 @@ $ rosbag play --clock data.bag
   1. Serve up the newly created map with map_server
   1. Inspect the map with rviz. 
   1. Important: once in rviz you need to app a Map pane, and set the map topic to /maps
-<%= code_begin %>
+<%= source_begin ("language-bash") %>
 $ rosrun map_server map_saver -f stage3
 $ rosparam set use_sim_time false
 $ rosrun map_server map_server stage3.yaml
 $ rosrun rviz rviz
-<%= code_end %>
+<%= source_end %>
 
 <%= include_image "/content/topics/images/rosbag2.png" %>
 
-## Summary and Conclusion
+### Summary and Conclusion
 
 * Used slam_gmapping package to create a map of a simulated world
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes
