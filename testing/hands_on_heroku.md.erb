@@ -41,9 +41,17 @@ In this hands on demo you will create a new minimal Rails app, and then configur
 * `$ rails server`
 * Now visit the home page in your browser, at http://0.0.0.0:3000
 
+### Installation for webpacker 
+* If there is error reporting missing webpacker config when running `$ rails server` , please try to make sure the device have the yarn installed in the os.
+* Try to do the following:
+ * make sure yarn is installed. Instructions: https://classic.yarnpkg.com/en/docs/install#mac-stable
+ * set it up by running `$ rails webpacker:install`
+ * make sure all files are up-to-date `$ yarn install --check-files`
+ * run `$ rails server` again
+
 ###  Set up heroku
 * Go to the heroku web site and create a free account on heroku
-* install heroku toolbelt (see: https://toolbelt.heroku.com)
+* install heroku cli (see: https://devcenter.heroku.com/articles/heroku-cli)
 * check by typing `$ heroku`
 * Log into your account, by typing `$ heroku login` and supplying your email and password
 
