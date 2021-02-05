@@ -13,41 +13,40 @@ slides: true
 
 <slide_break></slide_break>
 
-## The ROS Graph
+## The ROS Graph - Nodes
 
-<slide_break></slide_break>
-
-### Nodes
 * Fundamental concept in ROS
-  * ROS runs a number of collaborating processes called "nodes"
+* ROS runs a number of collaborating processes called "nodes"
 * Think of it as a program or a process which forms part of a system
-  * A real robot will have dozens to hundreds of nodes
-  * You can write nodes in Python (we will do) or C++
+  1. A real robot will have dozens to hundreds of nodes
+  1. You can write nodes in Python (we will do) or C++
 * Nodes talk to each other by publishing and subscribing to messages
 * Everything starts with the 'traffic-cop' `roscore`
-  * Once `roscore` runs, additional nodes can run
+  1. Once `roscore` runs, additional nodes can run
 * Each node is essentially a separate program, maybe even a single file
-  * Can be written in Python or C++
-  * We will use Python mostly
+  1. Can be written in Python or C++
+  1. We will use Python mostly
 
 <slide_break></slide_break>
 
-### Odometry
+## Topics
+
 * Topics have a name and a message type
-* Twist message type is very very common
+* Two of the most common basic ones: `Twist` and `Odom`
+* `Twist` message type is very very common
 * Expresses a velocity in linear and angular aspects
-  * Note our robot can only move forward and backward (x axis)
-  * And it can only rotate around (z axis)
-  * Twist doesn't say anything about where the robot (thinks it) is
-  * "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
+  1. Note our robot can only move forward and backward (x axis)
+  1. And it can only rotate around (z axis)
+  1. Twist doesn't say anything about where the robot (thinks it) is
+  1. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
 * Odometry
-  * The Robot's "belief" of where it is, and what it is doing.
-  * Based on sensors in the base, including possibly the motors, a GPS, a magnetometer etc.
-  * Odometry is published as topic /odom and the message definition is called nav_msgs/Odometry
+  1. The Robot's "belief" of where it is, and what it is doing.
+  1. Based on sensors in the base, including possibly the motors, a GPS, a magnetometer etc.
+  1. Odometry is published as topic /odom and the message definition is called nav_msgs/Odometry
 * nav_msgs/Odometry
-  * Header - standard header
-  * pose - where does the robot thinks that it is (including Covariance - how sure is it?)
-  * twist - how does it think it is moving (also with a covariance)
+  1. Header - standard header
+  1. pose - where does the robot thinks that it is (including Covariance - how sure is it?)
+  1. twist - how does it think it is moving (also with a covariance)
 
 <slide_break></slide_break>
 
@@ -72,9 +71,8 @@ slides: true
 
 ## catkin, Workspaces, and ROS Packages
 
-<slide_break></slide_break>
-
 ### catkin
+
 * catkin is the ROS build system
 * It's quite complicated and related to CMAKE
 * Treat it like a black box
