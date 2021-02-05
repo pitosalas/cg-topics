@@ -33,25 +33,14 @@ slides: true
   * New subscribers to a latched topic automatically get the last published message for that topic
   * Useful for topics which change rarely
 
-* Shebang line.
-  * Ignore why its called shebang.
-  * pronounced shuh-bang
-  * It's an old joke.
-  * Here's what it looks like
-  * To make a text file executable on linux you do these things:
-    * Put shebang line as line 1. It tells what the language of that text file
-    * Change the file mode to have "executable priviliges"
-    * `chmod +x filename`
-    * Execute it from shell `$ ./filename` 
-
-<%= source_begin "language-bash" %>#!/usr/bin/env python<%= source_end %>
-
 <slide_break></slide_break>
 
-## Publishing to a Topic
+## Live Coding
+
+### Publishing to a Topic
 
 * You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
-* Use the ones in our github because they have been tested with TB3
+* Use the ones in our GitHub because they have been tested with TB3
 * If it's not there yet, clone it in your ~/catkin_ws/src directory
 * See `~/catkin_ws/src/prrexamples/scripts/topic_publisher.py`
   * Remember:
@@ -79,6 +68,7 @@ $ rostopic echo counter -n 5
 <slide_break></slide_break>
 
 ## Subscribing to a Topic
+
 * See $ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py
 * It defines and runs a node whch subscribes to the counter, and prints it
 
@@ -94,6 +84,7 @@ $ rosrun prrexamples topic_subscriber.py
 <slide_break></slide_break>
 
 ## Defining Your Own Message Types
+
 * First look if any of the standard message types can do the job for you
 * Here's a [List of standard message type](http://wiki.ros.org/std_msgs)
 * The procedure for defining a new message is easy but convoluted
@@ -105,6 +96,6 @@ $ rosrun prrexamples topic_subscriber.py
 ### Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
 
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package
-1. Update (if needed) the package.xml file to include two new commands to indicate dependencies ()
+1. Update (if needed) the package.xml file to include two new commands to indicate dependencies
 1. Update your python program to import the messages
 1. Update CMakeLists.txt
