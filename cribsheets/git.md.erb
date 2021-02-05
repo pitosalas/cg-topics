@@ -1,55 +1,58 @@
 ---
-title: Git and Github
+title: Git and GitHub
 desc: Tips and hints for working with Git. Lots of links too.
 ---
-## What is git? What is github?
+## What is git? What is GitHub?
 
 * Git is a [version control system](http://git-scm.com/book/en/Getting-Started-About-Version-Control) that keeps track of changes to files, so that you can have a history of all the changes made to a file and you can revert to a specific version later on.
-* Github is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [GitLab](http://www.gitlab.com), [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
+* GitHub is a web application that provides hosted version control services using Git. You can sign up and create public repositories for free, but you should pay to create private repositories. There are other similiar services among which are [GitLab](http://www.gitlab.com), [BitBucket](http://bitbucket.org) and [Gitent](https://gitent-scm.com).
 
-### Terminiology
+### Terminology
+
 * project directory: the directory that contains all the files of your project. It often contains other subdirectories. Different languages have different conventions for how to structure a project. Very often the toplevel contains a Readme file.
 * project root directory: the topmost directory of your project directory.
 * repository or repo: when a project directory is "packaged" up for Git
 * commit: one snapshot in time of the state of all the files in your project directory. Each commit is derived from an older one, it's parent. Still you can safely act as if the commit contains every single file in your project directory
 * (git) server: a server (separate from your own computer) that contains a snapshot of your repo
-* Github: the most well known, publically accessible git server
+* GitHub: the most well known, publicly accessible git server
 
 ### Features
-* Here are some features of Git:
-   * Safely keep copies of all your source code and related files
-   * Efficiently store the source code over time, maintianing all the old copies too
-   * Allow multiple teams or people to safely collaborate in a distributed environment
-   * When necessary allow the developer to recover an older version of a file for some reason (bug, typo, accidental deletion etc.)
-   * Create parallel branches of work to allow divergent changes to be created without interference.
-   * Different versions for development and deployment; the deployment version should be a stable one
+
+* Safely keep copies of all your source code and related files
+* Efficiently store the source code over time, maintaining all the old copies too
+* Allow multiple teams or people to safely collaborate in a distributed environment
+* When necessary allow the developer to recover an older version of a file for some reason (bug, typo, accidental deletion etc.)
+* Create parallel branches of work to allow divergent changes to be created without interference.
+* Different versions for development and deployment; the deployment version should be a stable one
 
 ## Top 5 commands
 
-* Commands done only from your top level "mydev" directory
-    * git clone (create a new directory from a repo on github)
+* Commands done only from your top level "source code directory"
+  * git clone (create a new directory from a repo on GitHub)
+
 * Commands done from inside an individual repos local directory
-    * git add --all (add all changed files to staging)
-    * git commit -m "message" (create a "commit" with all staged files)
-    * git push (push all local commits up to github)
-    * git pull (pull any changes made from github to look at it locally)
-    * git status (see where things stand)
-<%= callout("Important"," Don't do a git clone from 'inside' a local repo directory") %>
+  * git add --all (add all changed files to staging)
+  * git commit -m "message" (create a "commit" with all staged files)
+  * git push (push all local commits up to GitHub)
+  * git pull (pull any changes made from GitHub to look at it locally)
+  * git status (see where things stand)
+
+<%= callout("Important"," Don't do a git clone from 'inside' a local repo directory!", :small) %>
 
 ## Resources
 
 There are tons of online resources available for learning git. Below is a list of some that you may find useful:
 
 * [The Git Book](http://git-scm.com/book)
-* [Easy Git](http://rogerdudler.github.io/git-guide/)
-* Github's own Help to [Set up Git](https://help.github.com/articles/set-up-git/) is quite good.
-* Also good is: [Easy Git](http://rogerdudler.github.io/git-guide/)
+* [Easy Git](http://rogerdudler.GitHub.io/git-guide/)
+* GitHub's own Help to [Set up Git](https://help.GitHub.com/articles/set-up-git/) is quite good.
+* Also good is: [Easy Git](http://rogerdudler.GitHub.io/git-guide/)
 * [Understanding Git Conceptually](http://www.sbf5.com/~cduan/technical/git/) (intermediate)
 * And maybe: [A practical Git introduction](http://mrchlblng.me/2014/09/practical-git-introduction/)
-* [A practical Git introduction](http://mrchlblng.me/2014/09/practical-git-introduction/)* [try.github.com](http://try.github.com/) (beginner)
+* [A practical Git introduction](http://mrchlblng.me/2014/09/practical-git-introduction/)* [try.GitHub.com](http://try.GitHub.com/) (beginner)
 * [Git Tutorial](http://www.ralfebert.de/tutorials/git/) (beginner)
 * [Git Ready](http://gitready.com/) (from beginner to advanced)
-* [Learn Git Branching](http://pcottle.github.io/learnGitBranching/) (beginner/intermediate)
+* [Learn Git Branching](http://pcottle.GitHub.io/learnGitBranching/) (beginner/intermediate)
 
 <%= include_image "/content/topics/images/git_file_status_lifecycle.png" %>
 
@@ -58,15 +61,15 @@ There are tons of online resources available for learning git. Below is a list o
 * What are the main benefits of using GIT when developing a project by yourself?
 * What are the main benefits of using GIT when developing a project with a team of coders?
 * What are the reasons to create a branch?
-* When several team members commit different changes on their local repositories, how do the reconcile their different changes in the main github repository?
+* When several team members commit different changes on their local repositories, how do the reconcile their different changes in the main GitHub repository?
 * What are the advantages to having a staging area?
 * After discussing these "big picture" ideas, we'll look at the internals to see what Git is actually doing when you branch, commit, etc.
 
 ### Some of the basic skills you'll need are
 
 * create a local repository (git init)
-* create a github repository and push your local repo to github
-* clone a github repository
+* create a GitHub repository and push your local repo to GitHub
+* clone a GitHub repository
 * create a temporary branch, make some edits, do some tests, merge it into your main branch, merge it into the team main branch
 * interrupt the work flow above to fix a critical bug by stashing your current work, checking out the main branch, creating a temp branch with the fix, merging it into main, switching back to your branch and applying your stashed work to get you back to where you were
 * pulling down someone else's committed changes and resolving the inevitable conflicts that have arisen (by deleting theirs and using yours!) then pushing
