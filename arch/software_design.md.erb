@@ -1,7 +1,9 @@
 ---
 title: Four Rules of Simple Design
 ---
+
 ## What is software design?
+
 * In software, "arranging code in a particular way"
   * Context matters: Are you writing throwaway code or software that someone will rely on?
   * What is "good design"? It's an aesthetic judgement, in a way
@@ -18,24 +20,3 @@ title: Four Rules of Simple Design
 * Even for tiny programs?
   * Usually its as easy to write a well designed program vs a poorly designed one
   * Finding the balance: effort and care proportional to cost over time!
-
-### Sandi Metz on Good Design
-* **Transparent:** The opposite of "clever". Is it easy to understand? Can a programmer anticipate the consquences of a change?
-* **Reasonable:** How easy is it to make a simple change? Do you have to rewrite a whole class? Simple changes should be simple, and deeper changes should be possible.
-* **Usable:** One sign of good design is if it shows itself to be usable in new ways for new purposes that were not necessarily apparent originally.
-* **Exemplary:** Are you proud to show it off? Would you want someone to use your code as an example?
-
-### Corey Haines on Simple Design
-
-* Tests Pass:
-  * Yes, you have to learn how to write tests and make it part of your practice
-  * Doesn't have to be test-driven design
-* Expresses Intent:
-  * Yes, naming matters a lot.
-  * Often as or more important than documentation
-* No Duplication (DRY)
-  * In the simplest sense, no textual duplication of lines of code
-  * More important: No duplication of concepts or knowledge
-* Small
-  * Partly YAGNI
-  * But also: remove code paths, classes, test data, examples, abstractions that are no longer used.

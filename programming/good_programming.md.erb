@@ -1,36 +1,31 @@
 ---
 title: Good programming
 ---
+### What is "disposable code"?
 
-## Good Programming
-* What is "disposable code"?
-  * Not designed
-  * Incomprehensible 1 year, 1 month, 1 week later
-  * Just barely works, no idea why
-  * "write-only"
-  * Long, ugly methods
-  * Bad or meaningless naming
+* Not designed
+* Incomprehensible 1 year, 1 month, 1 week later
+* Just barely works, no idea why
+* "write-only"
+* Long, ugly methods
+* Bad or meaningless naming
 
-## Rules and Slogans
+<slide_break></slide_break>
 
-<%= callout("QUOTE", " Know the rules well, so you can break them effectively. (Dalai Lama)") %>
+### Handy Shorthand
 
-* Slogans
-  * DRY: "Do Not Repeat Yourself".
-  * YAGNI: "You're Not Gonna Need It"
-  * NIH: "Not Invented Here"
-  * BUFD: "Big Up Front Design "
+Summarize a very important principle 
+
+* DRY: "Do Not Repeat Yourself".
+* YAGNI: "You're Not Gonna Need It"
+* NIH: "Not Invented Here"
+* BUFD: "Big Up Front Design "
+
+<slide_break></slide_break>
+
+### Discussion
 
 * Discussion about hard and fast rules
-* Tools to automatically check: <%= link_to_topic :code_analysis %>
-
-* Other basic hygene
-  * What's the right amount of code commenting?
-  * How important is proper formatting?
-  * Why is naming important and what is it's connection to commenting?
-
-* ['Sandy Metz' Rules](http://robots.thoughtbot.com/sandi-metz-rules-for-developers)
-  * Classes can be no longer than 100 lines of code
-  * Methods can be no longer than five lines of code
-  * Pass no more than four parameters into a method
-  * Controllers (Rails) can insantiate only one object. Therefore views can only know about one instance variable, and only send methods to that object. (@view_presenter.user.username is not allowed)
+* What's the right amount of code commenting?
+* How important is proper formatting?
+* Why is naming important and what is it's connection to commenting?
