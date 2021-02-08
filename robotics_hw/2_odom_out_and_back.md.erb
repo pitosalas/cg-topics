@@ -1,0 +1,57 @@
+---
+title: "PA: Out and back using Odometry"
+desc: "Robot drives out and returns by using odometry"
+---
+## Introduction
+
+This assignment will teach you how to write a ROS node that subscribes and publishes to topics, and uses odometry to control movement precisely. You will make the robot drive in an exact straight line or other shapes.
+
+### Purpose
+
+* Learn how to subscribe to ROS topics 
+* Learn about how a single node can both subscribe and publish
+* Learn about localization in ROS
+* Understand odometry data
+* Use odometry data for more precise movement
+
+## Assignment
+
+Use Odometry to drive in a  straight line for 1 meter, then turn around and drive back and end up in the same spot. Do your best to make the path straight and not wavy, wobbly or zig-zaggy.
+
+### Fun ways to extend the basics
+
+1. In addition to a straight line, also do other shapes, like a rectangle, or triangle or ... a circle!
+1. Look up  `PID controls` and see if you can use that algorithm to smoothen out your route
+
+### Deliverables
+
+* Commented Python source code file(s)
+* A readme.md file explaining the design of your code and anything else interesting or relevant
+* Video of your program running in gazebo or your lab at home 
+* Both submitted in Latte
+
+### Steps
+
+1. Import Odometry messages into python, e.g.  `from nav_msgs.msg import Odometry`
+1. Subscribe to odometry topic `odom` and create a callback function to use as an argument, e.g.`example_sub = rospy.Subscriber('odom', Odometry, <name of callback function>)`
+1. Write a callback for the odometry topic and add a control loop
+1. After starting a gazebo simulation and publishing some `cmd_vel`'s print out `odometry.pose` and `odometry.twist` so you can see what odometry data looks like
+1. You can choose to write the code in the odometry callback or in the main loop. There are advantages and disadvantages in both scenarios.
+
+## Hints
+
+* You can either modify existing code from the prrexamples repo or write your own python ROS node
+* The instructions will give you the pieces of code to get you started but the rest will be up to you
+* Getting familiar with ROS documentation is a good idea
+
+### References and resources
+
+* Use the PRRExamples library
+* Launch gazebo simulation <https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/>
+* Python ROS node reference <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29>
+* Subscribe to the odometry topic <https://answers.ros.org/question/10697/how-to-subscribe-to-odom-properly-in-python/>
+
+### Topics Used
+
+* cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
+* odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)

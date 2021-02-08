@@ -1,57 +1,59 @@
 ---
 title: "PA: ROS Roomba"
-desc: Simple ROS program to run around a rectangular space, while avoiding walls.
+desc: Robot acts like a Roomba vacuum cleaner without vacuum 
 ---
 ## Assignment
+
+You will write ROS code to make a robot act in ways that are reminiscent of a [Roomba vacuum](https://www.youtube.com/watch?v=09Wc4Q_R3Ac). It will traverse a space in a random pattern, avoiding obstacles using Lidar. Once the room is "clean" it will return to where it started in a straight line.
 
 ### Learning goals
 
 * Learn and practice Python
 * Learn and practice ROS Concepts
 * Experience the fact that there's noise in the sensors
-
-### Background
-
-* This is a two part assignment. Each part is graded separately.
-* The iRobot ROOMBA is a vacuum cleaner ([video](https://www.youtube.com/watch?v=09Wc4Q_R3Ac))
-* It moves in straight lines in a room until it comes to a wall or obstacle. At this point it stops and rotates in place for some number of degrees. And then it takes off again until it hits another obstacle. 
-* You will be writing a ROS node to exhibit this behavior
-* The challenge is first, just getting it to work. Remember that a node that works perfectly in simulation might not behave the same way in a real robot
-* For example, the Lidar data will probably look a little different.
-* Initially write and test in simulation (using Gazebo). 
+* Write a more complicated behavior which has multiple modes
 
 ## Steps
 
-* Use the one of the TurtleBot3 canned Gazebo environments or create your own
-* Write a new program which has a robot drive through a walled space, and act something like a variation on a Roomba. The walled space can be as simple as a square or more complicated, up to you.
-* It drives around until it comes close to an obstacle, rotates in place, and continues in a new direction.
-* It's not immediately clear how much to rotate: should it rotate some amount each time or should the amount of rotation vary randomly?
-* You can elaborate this any way you like. 
-* The challenge beyond just getting it to work, is to make sure it doesn't get stuck somewhere. See how robust you can make it
+* Start with a basic turtlebot3 gazebo space: `roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch`
+* Write a new program which has a robot drive through a walled space, and act something like a variation on a Roomba.
+* In the first stage (patrolling) the robot drives around randomly
+* It drives straight, until it comes close to an wall, rotates in place, and continues in a new direction.
+  * It's not immediately clear how much to rotate.
+  * Should it rotate some amount each time or should the amount of rotation vary randomly?
+* The second stage (return to base) Begins after 60 seconds.
+* Now the robot drives in a straight line to whatever coordinate it started at
+  * Make the line as straight, non-wavy, as you can
+  * Stop when you are back where you started
+
+### Ideas on making it more interesting
+
+* Use a more complicated space like stage_2 or stage_4 which will contain obstacles
+* Allow for the case that the obstacle is in the first stage (patrolling)
+* Allow for the case that the obstacle is in the second stage (return to base)
+* Instead of simply waiting 60 seconds, come up with another way to decide that the room is clean
 
 ## Deliverables
 
-### Part 1 Deliverables
-<%= callout("NB", " While you are welcome to look at code from examples you need to write this from scratch! (We will check!") %>
-* Partial implementation, no source code deliverable
-* A video showing it run in the simulator
-* The robot should move and turn for at least 30 seconds before something goes wrong
-* Longer is better of course
-* You can narrate to explain what is happening
+<%= callout("NB", " While you are welcome to look at code from examples you need to write this from scratch! (We will check!", :small) %>
 
-### Part 2 Deliverables
-* Source code for your solution, zipped up
-* Nice package directory
-* Readme file with substance. Explain your approach, and why you used it and any known failure modes
-* Credit for using more than just a rectangle
-* Video of the robot running for 60 seconds in simulation without a problem
+* Directory with your solution, zipped up
+  * Source files of all kinds
+  * A readme explaining the structure, interesting algorithm, and any other relevant information
+  * Link to a video showing your solution run in the simulator
+
+* Video
+  * Don't worry about production values as long as we can understand what we are seeing
+  * Imagine giving Pito a demo as you explain what you were showing
+  * There needs to be casual narration
+
 
 ### Tips
+
 1. The Lidar data comes via a subscription to `/scan` topic with message type [`LaserScan.msg`](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html). In Python it will be delivered to you as an object of class `LaserScan`
 1. `LaserScan` has lots of fields, see if you can understand them. A key one is `.ranges`/
 1. `ranges` in a python list structure and can be easily manipulated as any other list. you can break the data down into relevant chunks (front view, rear view, etc). for more information, try googling: python list slicing, list comprehension, list basics, could be a few staring points.
 1. Notice that the in `ranges` is a little noisy. Before you use it, you need to do some filtering. You will find a min_value in the `LaserScan`. Check each value you get and if it's less than the min_value or if its equal to `inf` consider it to be zero.
 1. Consider writing a separate filter node which takes "raw" Lidar data (subscribes to /scan) and publishes "cleaned up" Lidar data (publishes for example to /scan/clean). A related approach is to subscribe to /scan and publish something like /scan/semantic that instead of just cleaning up the data also computes some mins and maxes in different directions of interest.
 1. When you pick a turning method, reason with yourself why you are choosing your method example: "I am choosing to make the robot turn exactly 90 degrees every turn because most corners are 90 degrees and most walls are flat, so one or two 90 degree turns should always get a robot unstuck" Then, think of all the ways your turning method could fail - sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist (you may lose points for this) B: add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method
-1. I recommend that you use roslaunch turtlebot3_gazebo turtlebo3_world.launch
 1. Get code to run in simulation before real life. Make note of sensor readings- like lidar (using rostopic in the command line). Then, run the exact same code on a real robot. How does the behavior change? Maybe go back and forth a 1 or 2 times without changing anything, just observe and begin to form hypotheses. does the sensor data look different? Add to your code to account for real world inconsistencies that are not present in simulation. 
