@@ -15,30 +15,30 @@ slides: true
 * They are *synchronous* whereas topics are *asynchronous*
 * Another way to think of a service is as a "Remote Procedure Call"
 
-## Defining a Service
+## Defining a Service inputs and outputs
 
-### Defining the inputs and outputs
 * Analogous to defining the "method signature" of the service
 * Very reminiscent of how Topic messages were defined
 * You will find this example in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 
 ### Example: WordCount.srv
+
 * WordCount.srv shows that it will take one input (string) and give one output (uint32)
 * Notice some hairy tweaks of both CMakeLists.txt and package.xml
 * Once done run catkin make (`$ cm`) to process and do the code generation
 * You will immediately be able to see the service declared with `$ rossrv show WordCount`
 
 ### Defining the logic
+
 * It looks a lot like a node subscribing to a topic
 * Big difference is that it has a 'return' statement
 * In this example, it returns an integer equal to the number of words
 * The money quote: `return len(request.words.split())`
 * Notice the two ways of returning the result
-* Everything else is plubming
+* Everything else is plumbing
 
 ## Implementing a Service
 
-### Checking That Everything Works as Expected
 * Run the service with a standard `rosrun` command
 * Remember our package is called `prrexamples`
 * Remember that you must have `roscore` running!
@@ -48,6 +48,7 @@ slides: true
   1. It shows up in `$ rosservice info word_count`
 
 ### A client Node
+
 * It's a normal node (nothing magic about it)
 * It includes code to send a request to the service (ask it a question)
 * The code is more, but the effect is of a function call

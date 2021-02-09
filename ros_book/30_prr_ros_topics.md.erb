@@ -42,16 +42,16 @@ slides: true
 * You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 * Use the ones in our GitHub because they have been tested with TB3
 * If it's not there yet, clone it in your ~/catkin_ws/src directory
-* See `~/catkin_ws/src/prrexamples/scripts/topic_publisher.py`
+* See `~/catkin_ws/src/prrexamples/src/topic_publisher.py`
   * Remember:
-  * to do the necessary code gen and compilation you must run `catkin_make`
+  * to do the necessary code generation and compilation you must run `catkin_make`
   * to run `roscore` in another terminal
 * Run it and examine that it is publishing as expected, as follows:
 
 <slide_break></slide_break>
 
 <%= source_begin "language-bash" %>$ roscd prrexamples
-$ chmod +x scripts/topic_publisher.py
+$ chmod +x src/topic_publisher.py
 $ rosrun prrexamples topic_publisher.py
 $ rostopic list
 $ rostopic echo counter -n 5

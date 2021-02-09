@@ -2,26 +2,30 @@
 title: HTTP - Hypertext Transfer Protocol
 ---
 ## HTTP is a network protocol
-* Mental model: calling a function across a network
-    * Client is the caller
-    * Server is where the function exists
-    * Client receives the result
 
+* Mental model: calling a function across a network
+  1. Client is the caller
+  1. Server is where the function exists
+  1. Client receives the result
 ### Let's use telnet to make such a 'call'
-<%= code_begin %>
+
+<%= source_begin "language-bash" %>
 $ telnet example.com 80
 $ GET / HTTP/1.1
 $ Host: example.com
-<%= code_end %>
+<%= source_end %>
+
+<slide_break></slide_break>
 
 ### Deconstructing the call
+
 * "Call" includes:
-    * target host (example.com)
-    * target port on the host (80)
-    * HTTP verb: "GET" (a.k.a. method) (ref: [HTTP Method Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html))
-    * address: (the path or "/")
-    * Version of HTTP protocol (1.1)
-    * Datatype of required response (aka mime-type)
+  1. target host (example.com)
+  1. target port on the host (80)
+  1. HTTP verb: "GET" (a.k.a. method) (ref: [HTTP Method Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html))
+  1. address: (the path or "/")
+  1. Version of HTTP protocol (1.1)
+  1.Datatype of required response (aka mime-type)
 * There are lots of other "parameters" that are allowed in this call
 
 ### Deconstructing the returned data from that call
