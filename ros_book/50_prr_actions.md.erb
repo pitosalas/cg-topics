@@ -3,15 +3,17 @@ title: "5: Actions"
 desc: What are ROS actions and how do they relate to topics and services?
 slides: true
 ---
+### Review
 
-## Review
 * Nodes: all code written for ROS is a Node
   * A node is like a process
   * You run it with, e.g. `$ rosrun` or (later) `$ roslaunch`
+
 * Topics: the fundamental way nodes communicate with each other
   * Topic names
   * Publishers and Subscribers
   * Message with data types
+
 * Services: Synchronous communication
   * Client/Server
   * Ask and answer
@@ -19,20 +21,24 @@ slides: true
 
 <slide_break></slide_break>
 
-## Defining an Action
+### Defining an Action
+
 * For long running activities, for example, navigate to somewhere
   * Activity is initiated
   * Activity announces that it has terminated (successfully or not.)
   * From time to time it reports its progress
+
 * When defined as an action, this corresponds to three submessages
   * Part1: the goal (initiate the request)
   * Part2: the result (report completion)
   * Part3: the action is running (status update)
+
 * See [Github Code](http://www.github.com/campusrover/prrexamples)
 
 <slide_break></slide_break>
 
 ### Creating an Action
+
 * Analogous to topics and services
 * File now has three sections corresponding to the goal, result and feedback
 * Some tricky updates to CMakeList.txt and package.xml
@@ -40,7 +46,8 @@ slides: true
 
 <slide_break></slide_break>
 
-## Implementing a Basic Action Server 
+## Implementing a Basic Action Server
+
 * Action server `simple_action_server.py`
 * Handles the three submessages (see `simple_action_server.py`)
   1. Initialize node
@@ -51,6 +58,7 @@ slides: true
   1. Notice that the messages associated with the actions also have had more information attached to them
 
 ## Using an Action
+
 * Action client `simple_action_client.py`
 * Node which will now ask request an action
   1. Initialize node
@@ -60,17 +68,19 @@ slides: true
 * Run the client
   1. Notice that it displays the result of the fake action
 
-## Implementing a More Sophisticated Action Server 
+## Implementing a More Sophisticated Action Server
+
 * A fancier server `fancy_action_server.py`
 * Callback of the sever handles all three parts
 * First called when the goal is sent
   1. Check whether the goal is reasonable and abort if not.
   1. Begin performing the action.
-  1. Reguarly check whether preemption was requested
+  1. Regularly check whether preemption was requested
   1. Whenever desired, send a feedback message
   1. When done send completion message.
 
 ## Using the More Sophisticated Action
+
 * A fancier client `fancy_action_client.py`
 * Create node
 * Connect to action server
