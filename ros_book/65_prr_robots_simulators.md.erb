@@ -1,0 +1,34 @@
+---
+title: "6a: Simulators"
+desc: Looking more widely now at the world of robotics
+slides: true
+---
+### Simulators
+
+* Software to allow work even without actual robots
+
+* For ROS they implement a series of nodes that pretend to be a robot
+  * publish topics that a robot would publish (e.g. /odom)
+  * Subscribe to topics that a robot would (e.g. /cmd_vel)
+  * Uses a "physics engine" to simulate what would happen in the real world
+
+* Simulator creates the 3d world
+
+  * Maintains an imaginary x,y where the robot is right now
+  * Uses 3-d dynamic model of the robot
+  * Has 3-d models of obstacles like walls
+  * Changes all these states based on motion commands it receives
+  * Of course, much more complex
+
+* Gazebo is a complete simulation environment
+  * Really sophisticated 3d simulator plus visualization
+  * Can simulate all kinds of things not just our robots
+  * I have seen Gazebo models of a complete Amazon Warehouse Floor
+  * With multiple Robots running around
+
+* RViz can only visualize data in 3D but it is not the source of the data
+  * While it looks similar, it is not a simulator
+  * It "simply" visualizes topics that it subscribes
+  * In a 3-d space
+
+<%= callout("NB", " We will NOT be using simulators called STAGE or STDR") %>
