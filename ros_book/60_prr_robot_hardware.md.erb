@@ -38,6 +38,28 @@ slides: true
 
 <slide_break></slide_break>
 
+## Case: Differential drive
+
+### Lower Level
+
+* Subscribes to `cmd_vel`
+  * Desired translation and rotation speeds
+  * Reverse kinematics tells us desired rotations per second for each wheel
+* Publishes to `odom`
+  * Forward kinematics tells us estimated actual motion (position and speed)
+  * 'Dead Reckoning'
+
+### Supporting hardware
+
+* Two wheels + 1 or 2 casters
+* Each wheel has motor and encoder
+* Motor will go "faster" when given more current
+* Encoder counts up for each rotation
+
+### Algorithm
+
+* PID control to minimize delta between desired and actual
+
 ## Sensors
 
 ### LiDAR
