@@ -11,32 +11,38 @@ desc: A more advanced variant of the teleop utility
 1. Learn rqt_plot and how to use it
 1. Learn how to show off your code on a live robot.
 
-## Steps
+### Steps
 
-1. Write a program similar to one of the teleop programs but with some interesting new wrinkles. Here is handy starter code if you want to use it: [starter_code_dance_pa.py](https://raw.githubusercontent.com/campusrover/prrexamples/master/src/pa_starters/starter_code_dance_pa_py.py)
+1. Write a program similar to one of the teleop programs but with some interesting new wrinkles. Here is handy starter code if you want to use it: [starter_code_dance_pa.py](https://github.com/campusrover/prrexamples/blob/master/src/pa_starters/dance_pa_starter.py)
 1. You will be changing the command letters and adding a few:
     1. l: rotate left
     1. r: rotate right
     1. f: move forward
     1. b: move backward
     1. h: halt all motion
-    1. s: spiraling motion
+    1. s: spiraling motion (like a curl or a spring)
     1. z: zigzag motion
 
 1. As these motions are executed, you are also following the /scan topic. If the robot comes within 0.2 meters from any wall it halts (i.e. the equivalent of an 'h' command)
 1. Constantly display the current speed and location of the robot (numerically, i.e. with print statements)
-1. Come up with one or two interesting elaborations to this basic assignment to get a full 100!
 
-## Background and tips
+### If you want an extra challenge
+
+* Make your solution modular using a python class
+* Invent additional commands that do other motions
+* Have a nicer interface than printing in a rapid loop
+* Have a second simulated robot doing the same motions so they move together
+* Use the marker feature in RViz to have the robot leave a trail of dots where it's travelled (see [Rviz Display Types Markers](http://wiki.ros.org/rviz/DisplayTypes/Marker))
+
+### Background and tips
 
 * The loop keeps a few variables indicating the desired speed and rotation and the actual speed and rotation and sends /cmd_vels to get it closer to the desired speed and rotation
 * You can choose to subscribe to /odom also to see what it thinks about the current speed and rotation (as well as location!)
 * in order to handle the sensing of an obstacle, it also has to subscribe to /scan and figure out what the nearest obstacle is and whether it's necessary to set the desired speed and rotation to zero.
 * Each time the loop goes around you can print the current target and actual speeds and rotations
-* You can elaborate this by inventing additional commands that do other motions; or to have a nicer interface than printing in a rapid loop; or to do something interesting with /odom; or something completely different.
 
 ## Deliverables
-1. The python code with [standard ROS package structure](http://wiki.ros.org/Packages)
+
+1. The python code, organized in a  [standard ROS package structure](http://wiki.ros.org/Packages)
 1. A readme which explains your code and also reflects on how it was to write it
 1. A demonstration (video or live) of you running it in a simulator
-1. A demonstration (video or live) of you running it on an actual TB3
