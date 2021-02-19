@@ -1,0 +1,48 @@
+---
+title: Working with radians, Multiple Robots and Custom Messages
+due: February 19, 2021
+---
+## Plan for today
+
+* This lab will be a guided team programming session. You will be in a breakout room with your teammates and collaborate on the solutions.
+* Please do the following during lab while we are around to help everyone solve their problems.
+* The goal is that it takes 90 minutes but if you need the extra 30 minutes we will stick around
+
+<%= callout("NB", " After completing each section, invite a TA into your breakout room so they can sign off", :small) %>
+
+### Sections
+
+1. Write this function, and write test cases for it.
+
+<%= source_begin "language-python" %>
+
+def best_turn_direction(current, target):
+  """Given a current orientation and a target orientation, return optimal
+     direction to turn.
+
+     current -- current orientation in radians (positive or negative)
+     target -- target orientation in radians (positive or negative)
+
+     Returns:
+     +1 if it's best to turn counterclockwise
+     -1 if it's best to turn clockwise
+     0 if no turn is required
+
+     Examples:
+
+     best_turn_direction(0, PI/2) => +1
+     best_turn_direction(PI/2, 0) => -1
+     best_turn_direction(PI/2, -PI/2) => -1
+     best_turn_direction(-PI/2, PI/2) => +1
+     (but there are much trickier cases)
+  """
+<%= source_end %>
+
+{:start="2"}
+
+
+
+1. Create a Gazebo world with three simulated robots in it, and write a very simple ROS program ti make them move. The simplest is if they all just respond to cmd_vels identically. So if they start next to each other, in theory they would all move together. Here is a page out of our [Lab notebook](https://campus-rover.gitbook.io/lab-notebook/faq/spawn_multiple_robots#author-belle-scott) which in turn has two further links.
+
+2. Define a custom message (.msg), make the appropriate updates to CMakeFile and Package.xml. Write a trivial script that includes it so you can show the the python builds: Here's one reference, but there are many more: [Defining Custom Messages](http://wiki.ros.org/ROS/Tutorials/DefiningCustomMessages)
+
