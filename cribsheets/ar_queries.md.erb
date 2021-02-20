@@ -4,7 +4,7 @@ desc: Some of the basic ways to use ActiveRecord to find
 ---
 ### Queries using ActiveRecord
 
-<%= ruby_begin %>
+<%= source_begin "language-ruby" %>
 
 # Simple queries return collections of instances
 	Product.all
@@ -24,4 +24,4 @@ Product = Product.comments.where(author: 'georg')
 # What is the sql for a certain query?
 Product.sample.to_sql
 
-<%= ruby_end %>
+<%= source_end %>

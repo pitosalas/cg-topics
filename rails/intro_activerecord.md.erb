@@ -1,22 +1,21 @@
 ---
 title: Introduction to ActiveRecord
 ---
-### Introduction to ActiveRecord programming
 
-## Basics
+### What is ActiveRecord?
 
 * An [ORM Framework](https://martinfowler.com/bliki/OrmHate.html)
 * Reference: [Active Record Basics Guide](http://guides.rubyonrails.org/active_record_basics.html)
-
 * What are Models? Very important to understand this!
-* Jobs that AR does
+* Jobs that ActiveRecord does
   * Representations for models and their data
   * Representation of associations / relationships between models
   * Declarative validations of models
   * Abstraction over SQL, provides excellent optimization of SQL
   * Performance by caching, optimization
 
-## Conventions
+### Conventions
+
 * Naming Conventions
   * Models
   * Tables
@@ -27,44 +26,22 @@ title: Introduction to ActiveRecord
   * Foreign keys are always called <other table>_id
   * Several other standard column names: created_at, updated_at, type, etc.
 
-## Magic
+### Magic
+
 * Sequence of events when database is opened
 * Automatic creation of "attributes" based on column names
 
-## Migrations
+### Migrations
+
 * Rails programmer utility
 * Automates the updating of schemas as the application evolves
 * Source of confusion often
 
+<slides_break></slides_break>
+
 ## Examples
 
-### Models and databases
-<%= ruby_begin %>
-
-# Build a quick and dirty Rails app
-$ rails new product_demo
-$ cd product_demo
-$ rails generate scaffold Product name:string
-$ rails db:create
-$ rails db:migrate
-$ rails console
-
-# Modify the Product model
-
-class Product < ApplicationRecord
-  validates :name, presence: true
-end
-
-# Access the database
-# Create a new valid record
-p = Product.new
-p.name = "Some Book"
-p.save!
-puts p.name # "Some Book"
-
-# Try to create a new record, invalid:
-p = Product.new
-p.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
-<%= ruby_end %>
-
-<%= include_topic :ar_queries %>
+* <%= link_to_topic :ar_simple_example %>
+* <%= link_to_topic :ar_queries %>
+* <%= link_to_topic :hands_on_tiny_rails_demo %>
+* <%= link_to_topic :hands_on_rails_ar %>

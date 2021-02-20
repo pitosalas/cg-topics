@@ -1,0 +1,34 @@
+---
+title: Simple ActiveRecord example
+---
+
+<%= source_begin "language-ruby" %>
+
+# Build a quick and dirty Rails app
+
+$ rails new product_demo
+$ cd product_demo
+$ rails generate scaffold Product name:string
+$ rails db:create
+$ rails db:migrate
+$ rails console
+
+# Modify the Product model
+
+class Product < ApplicationRecord
+  validates :name, presence: true
+end
+
+# Access the database
+# Create a new valid record
+p = Product.new
+p.name = "Some Book"
+p.save!
+puts p.name # "Some Book"
+
+# Try to create a new record, invalid:
+
+p = Product.new
+p.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+
+<%= source_end %>

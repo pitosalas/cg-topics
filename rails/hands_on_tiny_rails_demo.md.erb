@@ -2,11 +2,13 @@
 title: Hands On Tiny Rails Demo
 ---
 ## Basic Example
-* Basic example of rails, minitest and activerecord
+
+* Basic example of rails, minitest and ActiveRecord
 * Code for this example is [rails-faker-minitest-tiny-demo](https://github.com/pitosalas/rails-faker-minitest-tiny-demo)
 
 ### Setup
-~~~
+
+<%= source_begin "language-ruby" %>
 rails new demo_tiny_rails
 cd demo_tiny_rails
 code .
@@ -18,16 +20,15 @@ gem 'pry-byebug'
 gem 'hirb'
 bundle
 
-~~~
+# Setup Models and Databases
 
-### Setup Models and Databases
-~~~~
 rails generate scaffold course number:integer name:string desc:string prof:string
 
 rails db:create
 rails db:migrate
 
 # seeds.rb
+
 25.times do
   Course.create(number: Faker::Number.number(digits:4), 
                 name: Faker::Company.catch_phrase,
@@ -35,11 +36,10 @@ rails db:migrate
                 prof: Faker::Name.name)
 
 end
-~~~~
 
-### Setup rudimentary tests
-~~~
-# \[test/fixtures/courses.yml\]
+# Setup rudimentary tests
+
+# test/fixtures/courses.yml
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
@@ -54,7 +54,7 @@ two:
   desc: The how and the why
   prof: Mr. James
 
-#\[test/models/course_test.rb\]
+# [test/models/course_test.rb]
 require 'test_helper'
 
 class CourseTest < ActiveSupport::TestCase
@@ -70,20 +70,15 @@ class CourseTest < ActiveSupport::TestCase
     assert Course.where(number: 167).size == 1
   end
 end
-~~~
 
-### See that app runs and tests run.
+# See that app runs and tests run.
 
-~~~~
 rails test
-~~~~
+# Play with Rails console
 
-
-### Play with Rails console
-
-~~~~
 rails db:seed
 rails console
 Hirb.enable
 Course.all
-~~~~
+
+<%= source_end %>
