@@ -1,27 +1,22 @@
 ---
 title: Model View Controller - review
 ---
-## Model-View-Controller Review
-
-### http://www.brandeis.edu/index.html
-
 <%= include_image "/content/topics/images/mvc_detailed.png" %>
 
-* Reminder:
-	* Basic Client <-> Server structure
-	* MVC is a general pattern
-	* Here we are applying it to a web (http) **server**
+* Basic Client <-> Server structure
+* MVC is a general pattern
+* Here we are applying it to a web (http) **server**
 * The Models: contains the application 'state'
-	* Think of it as what you want preserved if your app (i.e. the server in our case) has to be restarted
-	* Think of your user's reasonable expectations
-	* Discussion
+  * Think of it as what you want preserved if your app (i.e. the server in our case) has to be restarted
+  * Think of your user's reasonable expectations
+  * Discussion
 * The Controllers: master control switch
-	* Sees requests from the outside world
-	* Asks the models for data, sometimes updates the data
-	* Asks the views for new pages or results
-	* Responds to the request
-	* (Note: this parallels the HTTP protocol exactly!)
+  * Sees requests from the outside world
+  * Asks the models for data, sometimes updates the data
+  * Asks the views for new pages or results
+  * Responds to the request
+  * (Note: this parallels the HTTP protocol exactly!)
 * The Views
-	* Use data (given by the controller)
-	* To create and assemble responses to be sent
-	* Responses are html, but may be other formats too
+  * Use data (given by the controller)
+  * To create and assemble responses to be sent
+  * Responses are html, but may be other formats too
