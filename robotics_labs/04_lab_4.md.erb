@@ -1,0 +1,24 @@
+---
+title: "Mini PA: Filter Scan"
+due: February 26, 2021
+---
+## Plan for today
+
+* This lab will be a guided team programming session.
+* Work on it with your Teammate
+* You can use a breakout room for privacy
+* Invite one of us over to help if needed
+* Call us in when you are done
+
+## Mini-PA: Filter Scan
+
+1. Write a node that subscribes to /scan and publishes a new topic /lidar
+1. /lidar's message is a custom message called "Lidar.msg"
+1. The data from /scan is cleaned and filtered mapped based on parameters
+1. And published as /Lidar
+1. Parameter is: NUM_SLICES: how many slices you want in the result
+1. Lidar.msg will contain an array NUM_SLICES with that many slices
+1. And the filtered and cleaned "average" distance in the direction of the slice
+1. Tricky: It would be nice if Slice 0 always is "forward" 
+1. Figure out a way to visualize the result
+
