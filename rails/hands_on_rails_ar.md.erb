@@ -15,6 +15,8 @@ Registrations(human_id, event_id, status, comment)
 
 <%= source_begin "language-ruby" %>
 rails new handson --database=postgresql
+cd handson
+bundle lock --add-platform x86_64-linux --add-platform ruby
 <%= source_end %>
 
 ### Gemfile
@@ -32,7 +34,7 @@ gem 'hirb'
 <%= source_begin "language-ruby" %>
 rails generate resource Human name:string dob:date gender:string zipcode:string
 rails generate resource Event name:string event_date:date event_time:time
-rails generate model Registration humans:integer events:integer
+rails generate model Registration human_id:integer event_id:integer status:string comment:string
 <%= source_end %>
 
 ### Define sample data in seeds.rb
@@ -54,7 +56,7 @@ end
 end
 
 10.times do
-  r = Registration.create(: Human.all.sample.id, event_id: Event.all.sample.id)
+  r = Registration.create(human_id: Human.all.sample.id, event_id: Event.all.sample.id, status: "OK", comment: "Wonderful!")
 end
 <%= source_end %>
 
@@ -88,16 +90,16 @@ p.delete
 
 ### Associations, declared in models
 <%= source_begin "language-ruby" %>
-class Human < ActiveRecord::Base
+class Human < ApplicationRecord
   has_many :registrations
   has_many :events, through: :registrations
 end
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   has_many :registrations
-  has_many :humans, through: :registrations
+  has_many :humen, through: :registrations
 end
-class Registration < ActiveRecord::Base
-  belongs_to :Human
+class Registration < ApplicationRecord
+  belongs_to :human
   belongs_to :event
 end
 <%= source_end %>
@@ -106,7 +108,7 @@ end
 <%= source_begin "language-ruby" %>
 Human.find(1).registrations
 Human.where(name: "Angelo Smith").first.registrations
-Event.find(1).humans
+Event.find(1).humen
 <%= source_end %>
 
 #### Validations
@@ -114,7 +116,7 @@ Event.find(1).humans
 <%= source_begin "language-ruby" %>
 validates :zipcode, length: { is: 5}    # declared in model
 
-p = Human.find(1)
+p = Human.first
 p.zipcode = 1                           # invalid value
 p.valid?                                # explicit check
 p.save                                  # Is not permitted

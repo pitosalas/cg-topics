@@ -13,12 +13,19 @@ due: February 26, 2021
 ## Mini-PA: Filter Scan
 
 1. Write a node that subscribes to /scan and publishes a new topic /lidar
-1. /lidar's message is a custom message called "Lidar.msg"
+1. /lidar's message is a custom message called "ScanFiltered.msg"
 1. The data from /scan is cleaned and filtered mapped based on parameters
-1. And published as /Lidar
+1. And published as /scan_filtered
 1. Parameter is: NUM_SLICES: how many slices you want in the result
 1. Lidar.msg will contain an array NUM_SLICES with that many slices
 1. And the filtered and cleaned "average" distance in the direction of the slice
 1. Tricky: It would be nice if Slice 0 always is "forward" 
 1. Figure out a way to visualize the result
+
+### Tips
+
+* Here's a [tutorial on creating a custom message](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)
+* In your code, you will need to create a node, a subscriber to /scan and a publisher to /scan_filtered
+* You don't need a main loop, just a call to rospy.spin()
+
 
