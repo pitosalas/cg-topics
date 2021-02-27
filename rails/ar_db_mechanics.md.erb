@@ -2,67 +2,77 @@
 title: ActiveRecord Mechanics
 ---
 
-## ActiveRecord DB Mechanics
+$$SLIDE_TITLE ActiveRecord DB Mechanics
 
 <%= callout("NB", " If you don't know the schema of your app, you don't know your app!") %>
 
 * Take a look at this active_record example: [AR Example](https://github.com/pitosalas/rails_examples/tree/master/ar_associations)
 
-* Concepts
-	* Object Relational Mapper
-	* Model class
-  * ORM means we have to keep the database and the Objects "in sync"
+$$SLIDE_TITLE Concepts
+
+* Object Relational Mapper
+* Model class
+* ORM means we have to keep the database and the Objects "in sync"
 * Rails/Sinatra server "modes" (technically they are `environments`)
-	* `rails server -e production` (for Rails)
-	* `set :environment, :development (for Sinatra)
-	* Actually these modes are ActiveRecord modes!
-	* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
-		* `development` - working on your own computer, developing
-		* `test` - running tests
-		* `production` - working on Heroku for example
-* ActiveRecord
-	* Library from Ruby on Rails which is the connection between the rails application and the underlying database
-	* For advanced designs, there are options other than ActiveRecord
-	* ActiveRecord is also often used by itself, especially in Sinatra
+* `rails server -e production` (for Rails)
+* `set :environment, :development (for Sinatra)
+* Actually these modes are ActiveRecord modes!
+* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
+  * `development` - working on your own computer, developing
+  * `test` - running tests
+  * `production` - working on Heroku for example
+
+$$SLIDE_TITLE ActiveRecord
+
+* Library from Ruby on Rails which is the connection between the rails application and the underlying database
+* For advanced designs, there are options other than ActiveRecord
+* ActiveRecord is also often used by itself, especially in Sinatra
 * Naming
-	* Model.rb file is named singular, e.g. User
-	* Corresponding db table is plural and lower case, e.g. users
+  * Model.rb file is named singular, e.g. User
+  * Corresponding db table is plural and lower case, e.g. users
 * Correspondences
-	* Each instance of the class (e.g. User) corresponds to a single record in the database
-	* When a query returns a bunch of records, you get a collection of instances of the class
-	* (this is classic Active Record model)
+  * Each instance of the class (e.g. User) corresponds to a single record in the database
+  * When a query returns a bunch of records, you get a collection of instances of the class
+  * (this is classic Active Record model)
+
+$$SLIDE_TITLE ActiveRecord model classes and instances
+
 * Attributes
-	* Rails will automagically create the methods to access each field (column) of the record in the database
+  * Rails will automagically create the methods to access each field (column) of the record in the database
 * Two copies!
-	*	Instance of the class, in memory
-	* Corresponding record in database
-	* One or the other or both may exist!
-	* Need to save, need to query, etc.
+  *	Instance of the class, in memory
+  * Corresponding record in database
+  * One or the other or both may exist!
+  * Need to save, need to query, etc.
 * Datatypes supported by ActiveRecord
-	* <%= link_to_topic :ar_db_types %>
-	* <%= link_to_topic :ar_migrations %>
-* CRUD: Reading and Writing Data
-	* NB: memory vs. persisted copy of the object
-	* Create: create record and persist it
-	* New: create model object without persisting it
+  * <%= link_to_topic :ar_db_types %>
+  * <%= link_to_topic :ar_migrations %>
+
+$$SLIDE_TITLE CRUD: Reading and Writing Data
+
+* NB: memory vs. persisted copy of the object
+* Create: create record and persist it
+* New: create model object without persisting it
 * Queries and other ways to access the database
   * <%= link_to_topic :ar_queries %>
   * [ActiveRecord Guide for Queries](http://guides.rubyonrails.org/active_record_querying.html)
 * Updating
-	* Retrieve the object (.where etc), modify the attribute, and save it
+  * Retrieve the object (.where etc), modify the attribute, and save it
 * Deleting
-	* Retrieve the object and .destroy (also class method .destroy_all)
+  * Retrieve the object and .destroy (also class method .destroy_all)
 * Validations
-	* [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
-* Different database 'servers'
-	* Sqllite - local database, no need for a server
-	* MySql - Standard industrial strength database, free
-	* Postgress - Becoming very popular with Rails community
-* Tools and notes
-	* Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
-	* Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
-	* On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
-	* Handy Rails Info: <%= link_to_topic :rake_commands %>
+  * [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
 
-* References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
+$$SLIDE_TITLE Different database 'servers'
+
+* Sqllite - local database, no need for a server
+* MySql - Standard industrial strength database, free
+* Postgress - Becoming very popular with Rails community
+
+* Tools and notes
+  * Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
+  * Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
+  * On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
+  * Handy Rails Info: <%= link_to_topic :rake_commands %>
+  * References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
 
