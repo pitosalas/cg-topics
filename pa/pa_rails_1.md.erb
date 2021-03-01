@@ -54,4 +54,11 @@ gem "pry-rails"
 ## Deliverables:
 
 1. Write a readme.md for your app including link to a **private** GitHub repo and your link to Heroku.
-1. Submit to Latte a zipped up folder of your app.
+1. Submit to Latte a zipped up folder of your app. You can zip this up by deleting your `node_modules` and `vendor` folders in your Rails app, and then zip up the entire file to ensure it is below 20mb for Latte.
+
+Assuming we have a folder called `test_app` for our Rails app, we can remove those folders and zip it using the following commands in our terminal, and replace `<submission-name>.zip` with the name we want our zip to be (i.e. `PitoSalas_PARails1.zip`.
+
+<%= ruby_begin %>
+rm -rf test_app/node_modules test_app/vendor
+zip -r <submission-name>.zip test_app
+<%= ruby_end %>
