@@ -2,13 +2,10 @@
 title: ActiveRecord Mechanics
 ---
 
-$$SLIDE_TITLE ActiveRecord DB Mechanics
+:slide_title ActiveRecord DB Mechanics
 
 <%= callout("NB", " If you don't know the schema of your app, you don't know your app!", :small) %>
 
-* Take a look at this active_record example: [AR Example](https://github.com/pitosalas/public_samples/tree/master/rails/ar_associations)
-
-$$SLIDE_TITLE Concepts
 * Object Relational Mapper
 * Model class
 * ORM means we have to keep the database and the Objects "in sync"
@@ -21,7 +18,7 @@ $$SLIDE_TITLE Concepts
   * `test` - running tests
   * `production` - working on Heroku for example
 
-$$SLIDE_TITLE ActiveRecord
+:slide_title ActiveRecord
 
 * Library from Ruby on Rails which is the connection between the rails application and the underlying database
 * For advanced designs, there are options other than ActiveRecord
@@ -34,7 +31,7 @@ $$SLIDE_TITLE ActiveRecord
   * When a query returns a bunch of records, you get a collection of instances of the class
   * (this is classic Active Record model)
 
-$$SLIDE_TITLE ActiveRecord model classes and instances
+:slide_title ActiveRecord model classes and instances
 
 * Attributes
   * Rails will automagically create the methods to access each field (column) of the record in the database
@@ -47,7 +44,7 @@ $$SLIDE_TITLE ActiveRecord model classes and instances
   * <%= link_to_topic :ar_db_types %>
   * <%= link_to_topic :ar_migrations %>
 
-$$SLIDE_TITLE CRUD: Reading and Writing Data
+:slide_title CRUD: Reading and Writing Data
 
 * NB: memory vs. persisted copy of the object
 * Create: create record and persist it
@@ -62,16 +59,17 @@ $$SLIDE_TITLE CRUD: Reading and Writing Data
 * Validations
   * [Rails Guide on ActiveRecord Validations](http://guides.rubyonrails.org/active_record_validations.html)
 
-$$SLIDE_TITLE Different database 'servers'
+:slide_title Different database 'servers'
 
 * [SQLite](https://www.sqlite.org/index.html) - local database, no need for a server
 * [MySQL](https://www.mysql.com/) - Standard industrial strength database, free
 * [PostgreSQL](https://www.postgresql.org/) - Becoming very popular with Rails community
 
-* Tools and notes
-  * Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
-  * Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
-  * On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
-  * Handy Rails Info: <%= link_to_topic :rake_commands %>
-  * References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
+:slide_title Tools and Notes
+
+* Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
+* Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
+* On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
+* Handy Rails Info: <%= link_to_topic :rake_commands %>
+* References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
 
