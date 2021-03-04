@@ -3,7 +3,7 @@ title: "9: Building Maps"
 desc: "What is a map, how to build one"
 slides: true
 ---
-## Maps in ROS
+:h3 Maps in ROS
 
 * Our focus is mobile, ground based robots
 * In ROS maps are represented as a 2d grid
@@ -11,8 +11,6 @@ slides: true
   * Black dots: walls (not passable)
   * White dots: open space (passable)
   * Grey dots: Unknown
-
-<slide_break></slide_break>
 
 * Maps in fact are stored as images - .png, .jpg, .pgm
 * You can edit them in any appropriate image editing tool
@@ -31,9 +29,7 @@ free_thresh: 0.196
 negate: 1
 <%= source_end %>
 
-<slide_break></slide_break>
-
-### Definitions
+:slide_title Definitions
 
 * image: filename
 * resolution: in meters, how large a square in the real world does one pixel represent 
@@ -42,30 +38,8 @@ negate: 1
 * free_thresh: pixels with color value less than this number are considered free. (Values in between are considered unknown)
 * negate: Depending on whether black is 1 or black is 0 in the image representation, it might have to be negated
 
-<slide_break></slide_break>
 
-### rosbag
-
-* A tool to record messages (some or all) and replay them later
-* Allows you to try another algorithm on the exact same sensor data 
-* Example: record all `scan` and `tf` messafes
-
-<%= source_begin ("language-bash") %>
-$ rosbag record scan tf # record to standard file name YYYY-MM-DD-HH-mm-ss.bag
-$ rosbag record -a # record all messages, but generates a LOT of data
-<%= source_end %>
-
-* And then play them back with a parallel command:
-
-<%= source_begin ("language-bash") %>
-$ rosbag play --clock foo.bag
-<%= source_end %>
-
-* The --clock flag is interesting. rosbag play will set and publish the clock. Be careful that nothing else (e.g. gazebo) is publishing the clock at the same time because this will mess things up!
-
-<slide_break></slide_break>
-
-## Building Maps
+:slide_title Building Maps
 
 * Maps that are made via Lidar or other sensors will be somewhat rough
 * Walls may not be exactly straight and will be blocky
@@ -74,9 +48,7 @@ $ rosbag play --clock foo.bag
 * Collect sensor data in a bag
 * Then generate a map from it
 
-<slide_break></slide_break>
-
-### Phase 1: Simulated Robot
+:slide_title Phase 1: Simulated Robot
 
 * As we are working with a simulated robot (not a physical one) we need a simulator
 * Gazebo is the app that both creates a complete simulation and renders it graphically
@@ -88,7 +60,7 @@ $ rosbag play --clock foo.bag
 * The obstacles are simulated so that they bounce the simulated lidar
 * And they also are solid so that the simulated robot will not drive 'through' them!
 
-<slide_break></slide_break>
+:slide_break
 
 * Lab instructions: Launch and capture data in a bag
 * Launch Gazebo simulator with a basic Turtlebot3 World
@@ -129,9 +101,7 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 $ rosbag info data.bag
 <%= source_end %>
 
-<slide_break></slide_break>
-
-### Introduction to SLAM using the saved map
+:slide_title Introduction to SLAM using the saved map
 
 * Lab Instruction: Use collected data to run SLAM and build a map
 * We run the (one of several) map making modules, gmapping
