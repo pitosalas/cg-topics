@@ -1,0 +1,52 @@
+---
+title: More practice with Rails DBs
+---
+
+### Objective
+
+The objective of this lab is to create a simple Rails application with two models which have a many-to-many relationship.
+For example, `Students` may have many `Classes` and `Classes` may have many `Students`.
+
+**You should come up with your own models for this exercise!**
+
+Here is what you should do at a high level:
+
+1. Create a new Rails application with models and basic page views using the `rails generate scaffold` command.
+2. Use Faker to populate your database. You can use the `sample` method to create random relationships between models.
+3. Push your application to Heroku!
+
+### Create rails app
+
+<%= source_begin "language-ruby" %>
+rails new many_to_many --database=postgresql
+cd many_to_many
+bundle lock --add-platform x86_64-linux --add-platform ruby
+<%= source_end %>
+
+### Gemfile
+
+<%= source_begin "language-ruby" %>
+gem 'pry-byebug'
+gem 'better_errors'
+gem 'awesome_print'
+gem 'faker'
+gem 'hirb'
+<%= source_end %>
+
+### Commands relating to seeding
+<%= source_begin "language-ruby" %>
+rails db:create  # creates the database for the current env
+rails db:migrate # Run latest migrations
+rails db:seed    # (only) runs the db/seed.rb file
+rails db:setup   # runs db:schema:load, db:seed
+<%= source_end %>
+
+
+### References
+
+* [Seeding a has_many :through in Rails](https://stackoverflow.com/questions/31364265/proper-way-to-seed-has-many-through-relationships-in-rails)
+* [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+* [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)
+* [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
+* [Ruby Faker](https://github.com/faker-ruby/faker)
+* [Rails Generate Pluralization Cheatsheet](https://dev.to/scrabill/singular-or-plural-a-cheatsheet-for-ruby-on-rails-generators-4cb8)
