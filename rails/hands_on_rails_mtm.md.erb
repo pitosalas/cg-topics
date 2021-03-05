@@ -2,7 +2,7 @@
 title: More practice with Rails DBs
 ---
 
-### Objective
+:h2 Objective
 
 The objective of this lab is to create a simple Rails application with two models which have a many-to-many relationship.
 For example, `Students` may have many `Classes` and `Classes` may have many `Students`.
@@ -14,10 +14,11 @@ Here is what you should do at a high level:
 1. Create a new Rails application with models and basic page views using the `rails generate scaffold` command.
 2. Use Faker to populate your database. You can use the `sample` method to create random relationships between models.
 3. Push your application to Heroku!
+4. Summon a TA to show them a few examples of the app working and the many to many relationships
 
-### Create rails app
+:h2 Create rails app
 
-<%= source_begin "language-ruby" %>
+<%= source_begin "language-bash" %>
 rails new many_to_many --database=postgresql
 cd many_to_many
 bundle lock --add-platform x86_64-linux --add-platform ruby
@@ -34,7 +35,8 @@ gem 'hirb'
 <%= source_end %>
 
 ### Commands relating to seeding
-<%= source_begin "language-ruby" %>
+
+<%= source_begin "language-bash" %>
 rails db:create  # creates the database for the current env
 rails db:migrate # Run latest migrations
 rails db:seed    # (only) runs the db/seed.rb file
