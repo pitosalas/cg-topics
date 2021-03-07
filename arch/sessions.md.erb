@@ -1,35 +1,39 @@
 ---
-title: Sesions
+title: Sessions
+slides: true
 ---
-## Sessions
+:slide_title Sessions
 
 <%= include_image "/content/topics/images/how_cookies_work.jpg", extra: "style=\"max-width: 145%;\"" %>
 
-* Sessions
-  * User "state" across requests
-  * May store, for example, whether they are logged in, what's in their shopping cart, what their access level is, etc.
-* Web Server is stateless
-	* <%= discussion "What does that mean exactly?" %>
-	* Sessions: a general concept tying 'state' from one request to the next
-	* Examples: who is logged in, what is in their cart, what product they want, etc.
-	* A set of name-value pairs, whatever you need them to be
-* Where is session stored?
-	* Cookies
-		* Fast and simple
-		* Limit on size
-	* On server
-		* Still requires a 'session_id' of some kind
-		* Indexed into a database of session state
-* What should be stored in a session?
-	* Anything. But remember it's just a bit of text!
-	* Don't store objects. Store ids.
-* Security
-	* Session hijack attack
-	* Decrypting cookies
+:slide_title Sessions
+* User "state" across requests
+* May store, for example, whether they are logged in, what's in their shopping cart, what their access level is, etc.
+
+:slide_title Web Server is stateless
+
+* <%= discussion "What does that mean exactly?" %>
+* Sessions: a general concept tying 'state' from one request to the next
+* Examples: who is logged in, what is in their cart, what product they want, etc.
+* A set of name-value pairs, whatever you need them to be
+
+:slide_title Where is session stored?
+
+* Cookies
+  * Fast and simple
+  * Limit on size
+* On server
+  * Still requires a 'session_id' of some kind
+  * Indexed into a database of session state
+
+:slide_title What should be stored in a session?
+
+* Anything. But remember it's just a bit of text!
+* Don't store objects. Store ids.
+* Session hijack attack
+* Decrypting cookies
+
 * Rails options
-	* `session_store = :cookie_store`
-	* `session_store = :active_record_store`
-	* `session_store = :mem_cache_store`
-
-
-
+  1. `session_store = :cookie_store`
+  1. `session_store = :active_record_store`
+  1. `session_store = :mem_cache_store`

@@ -1,8 +1,10 @@
 ---
 title: Authentication and Authorization in Rails
+slides: true
 ---
 
-### Complications that have to be considered
+:h3 Complications that have to be considered
+
 * What does the product do when user is not logged in?
   * Sometimes you have an artificial ("seed") user to be the non-logged-in user
 * How to store the password
@@ -14,12 +16,14 @@ title: Authentication and Authorization in Rails
 * What to use for user id
   * A made up id (pitosalas) or just an email (pitosalas@gmail.com)
   
-### Possible implementation strategies in Rails
+:slide_title Possible implementation strategies in Rails
+
 1. Roll your own, using simple authentication. My preferred approach for this course.
 1. Look at other options: [Clearance](https://github.com/thoughtbot/clearance) or [Sorcery]( https://github.com/Sorcery/sorcery),  [Authlogic](http://www.rubydoc.info/github/binarylogic/authlogic), or [Devise](https://github.com/plataformatec/devise)
 1. Look at GoRails, they have several relevant lessons: [GoRails Authentication](https://gorails.com/episodes/omniauth-twitter-sign-in?autoplay=1)
 
 
 ## Demos
+
 * <%= link_to_topic :basic_authentication %>
 * <%= link_to_topic :clearance_authdemo %>

@@ -18,30 +18,30 @@ Here is what you should do at a high level:
 
 :h2 Create rails app
 
-<%= source_begin "language-bash" %>
+:source_begin :bash
 rails new many_to_many --database=postgresql
 cd many_to_many
 bundle lock --add-platform x86_64-linux --add-platform ruby
-<%= source_end %>
+:source_end
 
-### Gemfile
+:h3 Gemfile
 
-<%= source_begin "language-ruby" %>
+:source_begin :ruby
 gem 'pry-byebug'
 gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
 gem 'hirb'
-<%= source_end %>
+:source_end
 
-### Commands relating to seeding
+:h3 Commands relating to seeding
 
-<%= source_begin "language-bash" %>
+:source_begin :bash
 rails db:create  # creates the database for the current env
 rails db:migrate # Run latest migrations
 rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
-<%= source_end %>
+:source_end
 
 
 ### References
