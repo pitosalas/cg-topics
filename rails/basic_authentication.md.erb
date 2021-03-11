@@ -1,58 +1,88 @@
 ---
 title: Adding basic authentication
 ---
-## Rails Details for Authentication
+:h2 Rails Details for Authentication
 
-### References
+:h3 References
+
 * Reference: [Ruby on Rails Tutorial](https://www.railstutorial.org/book/modeling_users) - Chapters 6,7 and 8
 * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
 * Reference: [Simple Authentication Tutorial](https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8)
 
-<%= callout("NB", " Use Rails 6! These instructiosn won't work fully in earlier versions.") %>
-
-### Intro
+:slide_title Intro
 
 * There are several popular gems to implement authentication
 * Beware that the fact that there is a gem does not mean that it's trivial
 * You need to understand what's going on.
+
+:slide_title Create minimal Rails app
+
+:source_begin :ruby
+$ rails new basic_auth_demo --database=postgresql
+$ cd basic_auth_demo
+$ rails generate scaffold users name:string
+$ rails db:create db:migrate
+
+# add standard gems to Gemfile
+gem 'better_errors'
+gem 'faker'
+gem 'pry-byebug'
+gem 'hirb'
+
+$ bundle
+
+$ rails console
+require faker
+100.times { User.create name:Faker::Name.name }:source_end
+
+:slide_title Life without authentication
+
+* Notice anyone can look at any user!
+* Anyone can modify and delete any user!
+* No authentication
+
+:slide_title has_secure_password
+
 * Advice: Avoid getting fancy with initially, with devise, clearance, oauth, etc.
 * Start with a simple password
-
-### Create minimal Rails app
-<pre><code class="language-ruby">rails new basic_auth_demo
-cd basic_auth_demo
-rails generate scaffold users name:string
-rails db:create db:migrate</code></pre>
-
-### has_secure_password
-* Line added to top of the model representing what is logging in
+* Line added to top of the model representing what who is logging in
 * Might be Users, or Accounts, or whatever. The thing that logs in.
 * Makes base assumptions about that model
 * Database contains a field called password_digest (and does NOT contain a field called password)
 * Implements various aspects of the authentication model
-* Steps
-  1. Add (uncomment) bcrypt gem to Gemfile; bundle update
-  1. Add field `password_digest:string` to your User table
-  1. Add this to the model User
 
-<%= source_begin("language-ruby") %># add this to models/user.rb
+:source_begin :ruby
+$ rails db:drop
+$ rails destroy scaffold users
+$ rails generate scaffold users name:string password_digest:string
+$ rails db:create db:migrate
+# Add (uncomment) bcrypt gem to Gemfile; bundle update
+
+# add this to models/user.rb
 include ActiveModel::SecurePassword
 has_secure_password
-<%= source_end %>
 
-### Test out in the console
-* See: * Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
+# Add User records again (because we dropped the database to add the column)
+$ rails console
+100.times { User.create!(name: Faker::Name.name, password:"pass", password_confirmation: "pass")}^[
+:source_end
 
-### password_digest, password, password_confirmation
+* See Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
+
+:slide_title password_digest, password, password_confirmation
+
 * Database only stores password_digest
 * Model logic supplied by has_secure_password
   * Computed a cryptographic hash (digest)
   * And store as password_digest
 
-<%= source_begin("language-ruby") %>User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
-User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
+:source_begin :ruby
+User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
+User.where(email: "tim@brandeis.edu").first.authenticate("abc")
+:source_end
 
-### Sessions Controller
+:slide_title Sessions Controller
+
 * Tricky: Session is not a model!
 * Session controller maps a url (route) to some code
 * Specifically code to execute when loging in and out
@@ -60,7 +90,8 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")<%= source_end %>
 * session#create: try validate password and save "logged in status"
 * session#destroy: reset logged_in_status
 
-<%= source_begin("language-ruby") %>rails g controller sessions new create login welcome 
+:source_begin :ruby
+rails g controller sessions new create login welcome 
 
 # Add this to routes.rb
 get 'login', to: 'sessions#new'
@@ -84,9 +115,11 @@ get 'logout', to: 'sessions#destroy'
 # Modify this line in users_controller.rb#user_params
 params.require(:user).permit(:name, :email, :password, :password_confirmation)
 
-<%= source_end %>
+:source_end
 
-### Adding actual authentication
+
+:slide_title Adding actual authentication
+
 * Try this command `rails routes` to see how Rails is interpreting your `routes.rb` specification
 * We now know how to manage users and passwords. Now lets check them.
 * Session[] is used to store the user_id of logged in user
@@ -122,6 +155,6 @@ end
 # and add this to ApplicationController
 include SessionsHelper
 
-# Now start requiring log in (authorizatoin)
+# Now start requiring log in (autorization)
 
-<%= source_end %>
+:source_end
