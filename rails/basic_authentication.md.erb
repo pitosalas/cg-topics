@@ -23,7 +23,8 @@ $ cd basic_auth_demo
 $ rails generate scaffold users name:string
 $ rails db:create db:migrate
 
-# add standard gems to Gemfile
+# add standard gems to the end of Gemfile
+
 gem 'better_errors'
 gem 'faker'
 gem 'pry-byebug'
@@ -64,7 +65,7 @@ has_secure_password
 
 # Add User records again (because we dropped the database to add the column)
 $ rails console
-100.times { User.create!(name: Faker::Name.name, password:"pass", password_confirmation: "pass")}^[
+100.times { User.create!(name: Faker::Name.name, password:"pass", password_confirmation: "pass")}
 :source_end
 
 * See Reference: [Ruby Guides on Active Model](https://guides.rubyonrails.org/active_model_basics.html)
@@ -77,13 +78,14 @@ $ rails console
   * And store as password_digest
 
 :source_begin :ruby
-User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
-User.where(email: "tim@brandeis.edu").first.authenticate("abc")
+User.create(name: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
+User.where(name: "tim@brandeis.edu").first.authenticate("abc")
+User.where(name: "tim@brandeis.edu").first.authenticate("wrong password will fail")
 :source_end
 
 :slide_title Sessions Controller
 
-* Tricky: Session is not a model!
+* Tricky: Session is not a table in the database nor is it a model. We are just using controllers!
 * Session controller maps a url (route) to some code
 * Specifically code to execute when loging in and out
 * session#new: display login box
@@ -93,30 +95,41 @@ User.where(email: "tim@brandeis.edu").first.authenticate("abc")
 :source_begin :ruby
 rails g controller sessions new create login welcome 
 
-# Add this to routes.rb
+#Add this to routes.rb
 get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 get 'welcome', to: 'sessions#welcome'
 get 'logout', to: 'sessions#destroy'
+root to: 'sessions#welcome'
 
-# Add this to views/sessions/welcome.html.erb
+#Add this to views/sessions/welcome.html.erb
 <%%= button_to "Login", '/login', method: :get%>
 <%%= button_to "Sign Up", '/users/new', method: :get%>
 
-# Add this to views/users/_form.html.erb
-<%%= form_for @user do |f|%>
-  <%%= f.label :name%>
-  <%%= f.text_field :name%>
-  <%%= f.label :password%>
-  <%%= f.password_field :password%>
-  <%%= f.submit %>
-<%% end %>
+#Add this to views/users/_form.html.erb
 
-# Modify this line in users_controller.rb#user_params
-params.require(:user).permit(:name, :email, :password, :password_confirmation)
+<%%= form_with model: @user do |f|%>
+  <%%= f.label :username%><br>
+  <%%= f.text_field :name%><br>
+  <%%= f.label :password%><br>
+  <%%= f.password_field :password%><br>
+  <%%= f.submit %>
+<%%end%>
+
+#Modify the first line of UsersController#create to be:
+@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
+
+#Add this to views/sessions/new.html.erb
+<%%= form_tag '/login' do %>
+   <%%= label_tag :name%>
+   <%%= text_field_tag :name %>
+   <%%= label_tag :password%>
+   <%%= password_field_tag :password%>
+   <%%= submit_tag "Login"%>
+<%% end%>
+
 
 :source_end
-
 
 :slide_title Adding actual authentication
 
@@ -129,6 +142,7 @@ params.require(:user).permit(:name, :email, :password, :password_confirmation)
   1. And check whether someone is logged in
 
 <%= source_begin "language-ruby" %>
+# Add this to helpers/session_helper
 module SessionsHelper
   # Logs in the given user.
   def log_in(user)
