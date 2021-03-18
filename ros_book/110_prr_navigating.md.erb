@@ -2,22 +2,24 @@
 title: "10 part2: Navigating"
 desc: How does the robot get from here to there, iven a map and AMCL localization
 ---
-## Navigation
+
+:h2 Navigation
 
 * Continuing from where we left off
 * We have created a map using slam
 * How do we use it for navigation?
 
-### SLAM
-* Simultanuous Localiation and Mapping
+:slide_title SLAM
+
+* Simultaneous Localization and Mapping
 * We will localize the robot on a map that is incomplete
 * When it leaves the map it is able to extend it with the same algorithm
 
-## Reconstruct where we left off
+:slide_title Reconstruct where we left off
 
-<%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!") %>
+<%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!", :small) %>
 
-<%= code_begin %>
+:source_begin :bash
 # create the simulated environment called stage_4
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 
@@ -30,26 +32,29 @@ $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 # After the map looks done, save it into a map file for later.
 $ cd ~
 $ rosrun map_server map_saver -f stage4
-<%= code_end %>
+
+:source_end
+
+:slide_break
 
 <%= include_image "/content/topics/images/book10stage4.png" %>
 
-## Navigating
+:slide_title Navigating
+:slide_title Demo
 
-### Demo
+:source_begin :bash
 
-<%= code_begin %>
 # Now, close all the exiting ROS nodes down and next run this. Be careful with the
 # file names because the yaml file contains a file name too and it is easy to 
 # get things misaligned. 
-# <filemname> will be something like /home/youraccount/stage4.yaml but check to make sure.
+# {filemname} will be something like /home/youraccount/stage4.yaml but check to make sure.
 
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
-$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=<filename>
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filename}
 
-<%= code_end %>
+:source_end
 
-
+:slide_title Navigate 
 <%= include_image "/content/topics/images/book10path.png" %>
 
 * Give the robot an estimated position
