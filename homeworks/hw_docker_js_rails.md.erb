@@ -1,0 +1,36 @@
+---
+title: Simple JavaScript Practice
+---
+
+:h3 Goal
+
+* Understand more deeply how the browser and server work together
+* Understand more deeply how javascript fits in
+
+:h3 What you will learn
+
+* Where forms are defined in rails
+* How forms are executed and begin to understand remote processing
+
+:h3 Steps
+
+* Option 1 Create a new empty rails app with our new template
+  * Use our new docker-rails-package to quickly set a new rails app
+  * Go to [ruby-on-rails-pg-container](https://github.com/hojulian/ruby-on-rails-pg-devcontainer)
+  * Read the instructions and use it as a template to create a new rails app
+  * Remember to `bundle`
+* Option 2 Create a new empty rails app
+  * Create a new rails app in a new directory
+* Add a scaffold
+  * Add a very simple scaffold, one table, one field would be enough
+  * Make sure it runs properly and that you can access it
+* Read: [Working with JavaScript in Rails](http://guides.rubyonrails.org/working_with_javascript_in_rails.html)
+* Experiment
+  * Create a new record, and press the create button
+  * Look closely at the server transcript (where you did `rails server`)
+  * Look for the line that comes up as a result of the `POST` and the next line which will indicate whether html or json was returned
+  * If html was returned then we are not using javascript. If JS was returned then we are using Javascript
+  * You can choose the mode you want by adding local:true or local:false on the `form_with` line in the view
+  * Determine by experimentation whether the default for local is true or false
+
+:deliverable Explain what you did, what you think the default is, and how you figured that out.
