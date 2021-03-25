@@ -1,0 +1,46 @@
+---
+title: ROS Best Practices and Patterns
+---
+:h3 Python 
+
+* Ros Melodic relies on Python 2.7 and the next (and final) ROS1 version Neotic relies on Python 3.x
+* You can chose to use classes or just top level functions
+* If you find yourself using `global` often that's a smell and a hint that you should be using a classes
+
+:h3 ROS Nodes, Topics, Messages
+
+* There’s rarely a need to design a custom message (.msg) If you need one it’s ok but you should try and avoid it if possible.
+* As a general rule if you can organize your functionality into multiple separate ROS nodes you will get better modularity and reusability.
+* As a general rule you can get nicer ROS code if you break the functionality into ROS classes and in separate files (packages) This works especially well if you can identify bits functionality that may be reused in other applications
+* Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. Even in our simple case, the YDLidar Driver we use seems to have 720 items, that is ½ degree entries. If you get that wrong your code just won’t work. You can use len(msg.ranges) to figure out the actual number you have.
+* Topics vs. Services vs. Actions. Topics are almost always the right communications abstraction. Use a service when you want the requested to BLOCK execution until the request is done - noting that this is only suitable for very fast operations. Actions are useful in very specific situations where there is a longish running request where interim progress reports are useful. It is possible to use just topics to accomplish the same thing (I think!)
+
+:h3 TFs (transforms)
+
+* There are conventional names for TFs: (https://www.ros.org/reps/rep-0105.html)
+* base_link for the “center” of the robot. You get to pick it but it should make some intuitive sense. All other parts of the robot are below base_link
+* Sometimes it’s useful to have another TF which is the center of the footprint of the robot, meaning, a TF projected straight down from base_link and intersecting with the ground plane wherever that is.
+* odom for the odometry created TF
+* map for the TF of a map built by hand or through slam
+* TFs follow a typical hierarchy as follows: map -> odom -> base_link
+
+:h3 Package Structure
+
+* Create properly structured packages so they can easily be added to other workspaces.
+* Name the directory with the programs `src`
+* Other directories should be present only if you use them
+* Include a package.xml and CMakeFile.txt
+* Use the create_package utility to create a correct package
+
+:h3 Documentation
+
+* It's a good idea to include a readme.md
+* It's a good idea to include a license.md
+
+:h3 Sources and references
+
+* [ROS Best Practices](http://wiki.ros.org/Tutorials/Best%20Practices)
+* [ROS Patterns](http://wiki.ros.org/ROS/Patterns)
+* [More ROS Best Practices](http://wiki.ros.org/BestPractices)
+* [More ROS Best Practices](https://github.com/leggedrobotics/ros_best_practices/wiki)
+* [Python Code Smells](https://towardsdatascience.com/5-python-code-smells-you-should-be-wary-of-c48cc0eb9d8b)
