@@ -2,12 +2,13 @@
 title: JSON (and XML and YAML)
 ---
 
-## Introduction
+:h2 Introduction
+
 * Very very similar to YAML (see [this](http://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other) and [this](http://yaml.org/spec/1.2/spec.html#id2759572))
 * JSON stands for "javascript object notation" and YAML stands for "yet another markup language"
 * Used in similar applications as xml. Were born because XML was considered too verbose or rich for many more limited applications. Json is much better known at this point.
 
-## Example
+:slide_title Example
 
 <%= code_begin %>
 "menu": {
@@ -23,7 +24,7 @@ title: JSON (and XML and YAML)
 }
 <%= code_end %>
 
-The same text expressed as XML:
+:slide_title The same text expressed as XML:
 
 <%= code_begin %>
 <menu id="file" value="File">
@@ -36,6 +37,4 @@ The same text expressed as XML:
 <%= code_end %>
 
 ## Live coding
-<%= include_ruby "jsonexample" %>
-
-<%= include_ruby "json_xml_ruby" %>
+* See [Cosi166b public samples](https://github.com/pitosalas/public_samples/tree/master/ruby/json)
