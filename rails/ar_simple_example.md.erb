@@ -2,7 +2,7 @@
 title: Simple ActiveRecord example
 ---
 
-<%= source_begin "language-ruby" %>
+:source_begin :ruby
 
 # Build a quick and dirty Rails app
 
@@ -31,4 +31,4 @@ puts p.name # "Some Book"
 p = Product.new
 p.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
 
-<%= source_end %>
+:source_end

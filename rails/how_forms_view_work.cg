@@ -1,53 +1,56 @@
 ---
 title: How do forms and views work?
 ---
-## How Forms and Views Work
 
-### Conceptual
 * You need a form whenever the browser needs to send data to the server
 * `<form>` tag begins the group of fields. It declares the URL that payload is sent to
-  * There are zero or more fields
-  * There's always a "submit" link or button that triggers the sending
-  * `</form>` terminates the group
+  1. There are zero or more fields
+  1. There's always a "submit" link or button that triggers the sending
+  1. &lt;form> terminates the group
 * Sending always is done via some kind of HTTP request
-  * Payload is always name=value pairs, value is always text over the wire
-  * Request is usually **POST** if the form is creating something.
-  * In the case of, e.g. a **search** form, a **GET** is more appropriate.
-  * See [HTTP Methods: GET vs POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
+  1. Payload is always name=value pairs, value is always text over the wire
+  1. Request is usually **POST** if the form is creating something.
+  1. In the case of, e.g. a **search** form, a **GET** is more appropriate.
+  1. See [HTTP Methods: GET vs POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
-### Rails
+:slide_title Rails
+
 * There are always TWO controller actions:
-  * one to display the form
-  * one to accept the data from the form
-  * Where can I find them for items?
-  * Two controller actions means TWO urls!
+  1. one to display the form
+  1. one to accept the data from the form
+  1. Where can I find them for items?
+  1. Two controller actions means TWO urls!
 * Display the form
-  * Let's look at what the HTML should look like
-  * Difference between `form_tag` and `form_with`: let's look at two examples (p.s. `form_for` is deprecated)
-  * Why is there an Item.new in the form display action (new)?
+  1. Let's look at what the HTML should look like
+  1. Difference between `form_tag` and `form_with`: let's look at two examples (p.s. `form_for` is deprecated)
+  1. Why is there an Item.new in the form display action (new)?
 * Accept data from the form
-  * What URL is requested to send the data? What http verb? Why?
-  * How does the data come back from the form?
-  * What can the controller do with that data?
+  1.What URL is requested to send the data? What http verb? Why?
+  1.How does the data come back from the form?
+  1.What can the controller do with that data?
 * Security issues
-  * What if the form payload is not coming from your form?
-  * What if your form has been modified inside the browser?
-  * Explain params.require()
-  * Explain injection attacks
+  1. What if the form payload is not coming from your form?
+  1. What if your form has been modified inside the browser?
+  1. Explain params.require()
+  1. Explain injection attacks
 
-### More complicated case
+:slide_title More complicated case
+
 * Nested resources
 * Routes automatically create a set of helpers
 * `resource` routes create a complete set of CRUD helpers
 * Consider difference between:
-<%= source_begin "language-ruby" %># /items, /items/3, /items/3/comments, /items/3/comments/5
+
+:source_begin :ruby
+# /items, /items/3, /items/3/comments, /items/3/comments/5
 resources :items do
   resources :comments
 end
 
 # /items, /items/5, /comments, /comments/4
 resources :items
-resources :comments<%= source_end %>
+resources :comments
+:source_end
 
 * Different URLS have varied impact
 * Is it meaningful to specify, e.g. /comments/44 ?
@@ -60,11 +63,13 @@ resources :comments<%= source_end %>
 * How do you create a nested resource, i.e. a comment for item 3?
 
 ### Making Views DRY
+
 * When you see yourself writing the same html over and over again
 * write a helper: let's do an example!
 * write a partial: And let's do another example!
 
 ### Summary
+
 * Routes
   * Understand the urls and verbs and how they map to controller actions
   * Use rake routes to verify your understanding
@@ -76,5 +81,5 @@ resources :comments<%= source_end %>
   * Forms for nested resources
 * Other tools
   * helpers to generate repetitive html
-  * parials to build repetitive html
+  * partials to build repetitive html
   * rake db:migrate:reset and rake db:seeds

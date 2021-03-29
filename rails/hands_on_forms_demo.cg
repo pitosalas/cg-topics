@@ -1,0 +1,225 @@
+---
+title: Hands On Forms Demo
+---
+:slide_title Set up and modify gem file
+
+:source_begin :ruby
+
+rails new formsdemo
+
+gem 'awesome_print'
+gem 'better_errors'
+gem 'hirb'
+
+bundle
+
+:source_end
+
+:slide_title Make models and define associations
+
+:source_begin :ruby
+rails generate scaffold items title:string  description:string owner:text category_id:integer
+rails generate scaffold categories title:string description:string
+rails generate scaffold comments from:string message:string item_id:integer
+:source_end
+
+:slide_title Model changes
+
+:source_begin :ruby
+
+# category.rb
+has_many :items
+
+# item.rb
+belongs_to :category
+has_many :comments
+:source_end
+
+:slide_title Create seed data (seeds.rb)
+* Notice an interesting way to create test data
+
+:source_begin :ruby
+
+# db/seeds.rb
+puts "creating categories"
+Category.destroy_all
+
+books = Category.create(title: "book", description: "Books, Magazines etc.")
+electronics = Category.create(title: "electronics", description: "Computer, Cellphone, etc")
+clothing = Category.create(title: "clothing", description: "Shoes, Jackets, Belts, etc")
+jewelry = Category.create(title: "jewelry", description: "Rings, watches, necklaces, etc")
+
+owners = ["Jane Smith", "Ira Levin", "George Benson"]
+colors = ["red", "brown", "green", "white", "tiny"]
+clothingnames = ["shoes", "wallet", "belt"]
+adjective = ["My favorite", "The perfect", "A great"]
+categories = [books, electronics, clothing, jewelry]
+
+puts "creating sample items"
+50.times do
+  title = colors.sample + " " + clothingnames.sample
+  description = adjective.sample + " " + title
+  Item.create(title: title, description: description, owner: owners.sample, category: categories.sample)
+end
+:source_end
+
+:slide_title Create dbs and add seed data
+
+:source_begin :ruby
+rails db:create
+rails db:migrate
+rails db:seed
+:source_end
+
+:slide_title Add Bootstrap
+
+* Notice not using a gem, to keep it simple
+* Update views/layouts/application.html.erb
+
+:slide_title Update the routes
+
+* Notice: how the categories resource stays flat
+* Notice how items > comments is a nested resource
+* Notice how the collection is set up
+* Perform a `rails routes` after you edit routes.rb to see what it created
+
+:source_begin :ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  resources :categories
+  resources :items do
+    collection do
+      get 'search'
+      get 'do_search'
+    end
+    resources :comments, only: [:index, :create]
+  end
+  root 'items#index'
+end
+:source_end
+
+:slide_title Define the search form:
+
+:source_begin :ruby
+
+# views/items/search.html.erb
+&lt;div>
+  &lt;h1>Search&lt;/h1>
+    &lt;%%= form_tag(do_search_items_path, method: "get") do %>
+      &lt;div>
+        &lt;label>Title&lt;/label>
+        &lt;%%= text_field_tag(:title, "") %>
+      &lt;/div>
+
+      &lt;%%= submit_tag("Search") %>
+    &lt;%% end %>
+&lt;/div>
+:source_end
+
+:slide_title And it's corresponding actions
+
+* Why does search have two actions?
+* What controller do these actions go in?
+* Notice how to do "like" in order to allow close matches
+* Notice how we factor out the index page so we get a parital
+
+:source_begin :ruby
+
+#/controllers/items_controller.rb
+
+  def search
+  end
+
+  def do_search
+    @items = Item.where("title LIKE ?", "%#{params\[:title\]}%")
+  end
+
+# views/items/_index.html.erb
+&lt;table>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Title&lt;/th>
+      &lt;th>Description&lt;/th>
+      &lt;th>Owner&lt;/th>
+      &lt;th>Category&lt;/th>
+      &lt;th colspan="3">&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+
+  &lt;tbody>
+    &lt;%% @items.each do |item| %>
+      &lt;tr>
+        &lt;td>&lt;%%= item.title %>&lt;/td>
+        &lt;td>&lt;%%= item.description %>&lt;/td>
+        &lt;td>&lt;%%= item.owner %>&lt;/td>
+        &lt;td>&lt;%%= item.category_id %>&lt;/td>
+        &lt;td>&lt;%%= link_to 'Show', item %>&lt;/td>
+        &lt;td>&lt;%%= link_to 'Edit', edit_item_path(item) %>&lt;/td>
+        &lt;td>&lt;%%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>&lt;/td>
+      &lt;/tr>
+    &lt;%% end %>
+  &lt;/tbody>
+&lt;/table>
+:source_end
+
+:slide_title Let's add some Bootstrap
+
+* Bootstrap is already "included" in layouts/application.html.erb
+* We bring it to life by adding classes to strategic spots
+
+:source_begin :ruby
+
+# views/items/index.html.erb
+&lt;h1>Listing items&lt;/h1>
+
+&lt;%%= render "index" %>
+&lt;br>
+&lt;div class=btn-group %>
+  &lt;%%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
+  &lt;%%= link_to 'Search', search_items_path, class: "btn btn-default" %>
+&lt;/div>
+
+# search.html.erb
+&lt;div class="col-md-md-offset-1 col-md-md-4">
+  &lt;h1>Search&lt;/h1>
+    &lt;%%= form_tag(do_search_items_path, method: "get", class: "form") do %>
+
+      &lt;div class="form-group">
+        &lt;label>Title&lt;/label>
+        &lt;%%= text_field_tag(:title, "", class: "form-control") %>
+      &lt;/div>
+
+      &lt;%%= submit_tag("Search", class: "btn btn-default") %>
+    &lt;%% end %>
+&lt;/div>
+:source_end
+
+:slide_title Now lets add some additional controls
+
+* A drop down control which will allow user to pick search options
+* Notice also that now we use the _index.html.erb partial to display an index right along with the search result
+* This is pointing the way to AJAX!
+
+:source_begin :ruby
+
+# views/items/search.html.erb
+    &lt;div class="form-group">
+      &lt;label>Return matching or non-matching items&lt;/label>
+      &lt;%%= select_tag(:match_no_match,
+            options_for_select(
+            [['only matching', "match"\],
+             ['only non matching', "nomatch"\]
+            ]), class: "form-control") %>
+    &lt;/div>
+    &lt;%%= render "index" %>
+
+# controllers/items_controller.rb, in do_search
+def do_search
+  match_no_match = params.fetch(:match_no_match)
+  negation = match_no_match == "match" ? "" : " NOT "
+  query_string = negation + "title LIKE ?"
+  @items = Item.where(query_string, "%#{params[:title]}%")
+  render "search"
+end
+:source_end
