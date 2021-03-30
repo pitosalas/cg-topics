@@ -2,78 +2,82 @@
 title: "PA: Race Track"
 desc: "Robot starts on a race track and completes a lap"
 ---
-## Introduction
+:h2 Introduction
 
 * This assignment contains many open-ended problems in perception, planning, and controls.
 * It is a group project based on the groups you are in. 
 * Only one team member needs to submit it, Latte will copy it to the others
 * Remember to `cd ~/catkin_ws/src/prrexamples; git pull`
 
-## Rules
+:h3 Rules
 
 * You group must write all of your own code
 * You cannot "hard code" a solution by following a predetermined path
 * You cannot "hard code" state changes based on time/position if you use a FSM to determine controls
-* You cannot have a cmd_vel.linear.x > 1 or cmd_vel.angular.z > pi/2
+* You cannot have a cmd_vel.linear.x > 2 or cmd_vel.angular.z > pi/2
 * The robot cannot go out of bounds
 * The robot cannot hit an obstacle in or outside of the track
 
-### Purpose
+:h3 Purpose
 
-* Write a program to complete a lap around the track as fast as possible. 
+* Write a program to complete at least half a lap around the track as fast as possible. 
 
-### What I hope you will learn
+:h3 What I hope you will learn
 
 * How to solve an open-ended problem in robotics using any/all tools at your disposal
 * How to use LiDAR and camera for obstacle avoidance in a unknown enviorment
 
-### References and resources
-
-* OpenCV <https://docs.opencv.org/master/d6/d00/tutorial_py_root.html>
-* OpenCV to ROS compatible image bridge <http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython>
-* Contouring <https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html>
-* Line recognition <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html>
-
-### Topics and Message Types
+:h3 Topics and Message Types
 
 * cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
 * odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
 * scan [LaserScan](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
 * camera/image/compressed [CompressedImage](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/CompressedImage.html)
+* camera/image [Image](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Image.html)
 
-## Assignment
+:h2 Assignment
 
 * You will provided with racetrack.launch which launches a gazebo world with a race track and a turtlebot3_waffle model.
 
 * To run the gazebo world: 
-<%= source_begin "language-python"%>roslaunch prrexamples racetrack.launch model:=waffle
-<%= source_end %>
+:source_begin :python
+roslaunch prrexamples racetrack.launch
+:source_end
 * The robot will begin right at the start of the race track.
 * Drive forwards around the track staying in bounds while also avoiding various obstacles using camera and LiDAR.
-* Complete the lap successfully for the base assignment.
+* Complete at least a half lap successfully for the base assignment.
 
-## Additional Challenges
+:h3 Additional Challenges
 
 * Complete the track in a faster time than before
+* Add in obstacles that will be in the robots path
+* You can also try adding in a dense configuration of obstacles for even more of a challenge
 
 ### Deliverables
 
 * A correctly structured ROS package including
-    * Nicely commented python source files
-    * Appropriate launch file
-    * Readme explaining how the code works
+  * Nicely commented python source files
+  * Appropriate launch file
+  * Readme explaining how the code works
 * Video of your program running
-    * Best to put the video on youtube and give the link
-    * Feel free to narrate to explain interesting things that are happening
+  * Best to put the video on youtube and give the link
+  * Feel free to narrate to explain interesting things that are happening
 
-### For further fun
-* Make it around without crashing
-* Deal with obstacles that might be in the way
-* Make it go faster by being more efficient
+:h3 further fun
 
-### Suggested Steps
+:h3 Suggested Steps
 
-* Subscribe to the compressed image topic for the camera and scan topic for LiDAR
+* Subscribe to the compressed image ore regular image topic for the camera and scan topic for LiDAR
 * Use teleop control to navigate around the track to get an idea of what the robot will see along the track
-* Think of novel LiDAR and camera algorithms we can use to influence the controls of the robot
+* Think of novel LiDAR and camera perception algorithms that can be used to navigate the robot
 * Test and iterate
+* Try additional challenges
+
+:h3 References and resources
+
+* OpenCV <https://docs.opencv.org/master/d6/d00/tutorial_py_root.html>
+* OpenCV to ROS compatible image bridge <http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython>
+* Contours <https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html>
+* Line recognition <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html>
+* Image segmentation <https://docs.opencv.org/3.4/da/d97/tutorial_threshold_inRange.html>
+
