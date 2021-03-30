@@ -78,11 +78,6 @@ rails db:seed
 
 :slide_title Update the routes
 
-* Notice: how the categories resource stays flat
-* Notice how items > comments is a nested resource
-* Notice how the collection is set up
-* Perform a `rails routes` after you edit routes.rb to see what it created
-
 :source_begin :ruby
 # config/routes.rb
 
@@ -93,12 +88,17 @@ Rails.application.routes.draw do
       get 'search'
       get 'do_search'
     end
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create, :new]
   end
   root 'items#index'
 end
 :source_end
 
+* Notice: how the categories resource stays flat
+* Notice how items > comments is a nested resource
+* Notice how the collection is set up
+* Perform a `rails routes` after you edit routes.rb to see what it created
+s
 :slide_title Define the search form:
 
 :source_begin :ruby
