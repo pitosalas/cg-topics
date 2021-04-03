@@ -5,7 +5,7 @@ desc: "Robot starts on a race track and completes a lap"
 :h2 Introduction
 
 * This assignment contains many open-ended problems in perception, planning, and controls.
-* It is a group project based on the groups you are in. 
+* It is a group project based on the groups you are in.
 * Only one team member needs to submit it, Latte will copy it to the others
 * Remember to `cd ~/catkin_ws/src/prrexamples; git pull`
 
@@ -20,12 +20,12 @@ desc: "Robot starts on a race track and completes a lap"
 
 :h3 Purpose
 
-* Write a program to complete at least half a lap around the track as fast as possible. 
+* Write a program to complete at least half a lap around the track as fast as possible.
 
 :h3 What I hope you will learn
 
 * How to solve an open-ended problem in robotics using any/all tools at your disposal
-* How to use LiDAR and camera for obstacle avoidance in a unknown enviorment
+* How to use LiDAR and camera for obstacle avoidance in a unknown environment
 
 :h3 Topics and Message Types
 
@@ -38,8 +38,8 @@ desc: "Robot starts on a race track and completes a lap"
 :h2 Assignment
 
 * You will provided with racetrack.launch which launches a gazebo world with a race track and a turtlebot3_waffle model.
-* **Make sure you clone [aws-robo-maker](https://github.com/aws-robotics/aws-robomaker-racetrack-world.git) into the directory `catkin_ws/src`** (don't forget to `catkin_make`)
-* To run the gazebo world: 
+* **Make sure you clone [aws-robomaker](https://github.com/aws-robotics/aws-robomaker-racetrack-world.git) into the directory `catkin_ws/src`** (don't forget to `catkin_make`)
+* To run the gazebo world:
 :source_begin :python
 roslaunch prrexamples racetrack.launch
 :source_end
@@ -52,16 +52,6 @@ roslaunch prrexamples racetrack.launch
 * Complete the track in a faster time than before
 * Add in obstacles that will be in the robots path
 * You can also try adding in a dense configuration of obstacles for even more of a challenge
-
-### Deliverables
-
-* A correctly structured ROS package including
-  * Nicely commented python source files
-  * Appropriate launch file
-  * Readme explaining how the code works
-* Video of your program running
-  * Best to put the video on youtube and give the link
-  * Feel free to narrate to explain interesting things that are happening
 
 :h3 Suggested Steps
 
@@ -78,5 +68,21 @@ roslaunch prrexamples racetrack.launch
 * Contours <https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html>
 * Line recognition <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html>
 * Image segmentation <https://docs.opencv.org/3.4/da/d97/tutorial_threshold_inRange.html>
-* AWS Robomaker github <https://github.com/aws-robotics/aws-robomaker-racetrack-world.git>
+* AWS Robomaker GitHub <https://github.com/aws-robotics/aws-robomaker-racetrack-world.git>
+
+:h3 Deliverables
+
+* This assignment is for teams of 2 (or 3) students, which are created just for this assignment
+* Each member of the team will submit an original reflections
+* Both members of the team will submit the same ROS package and videos
+
+#### ROS Package and videos
+
+* A correctly structured ROS package including
+  * Nicely commented python source files
+  * Appropriate launch file
+  * Readme explaining how the code works
+* Video of your program running
+  * Best to put the video on youtube and give the link
+  * Feel free to narrate to explain interesting things that are happening
 
