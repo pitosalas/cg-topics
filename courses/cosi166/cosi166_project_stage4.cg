@@ -1,0 +1,48 @@
+---
+title: "Term Project Stage 4: Launch"
+---
+:topic_link :cosi166_project_stage3 <=> :topic_link :cosi166_final_deliverables
+
+:h2 Goals
+
+1. Fully complete your product
+1. Remove remnants of features you never got around to
+1. Include sufficient automated testing
+1. Review your code for code smells, bad design, and other uglyness
+
+:h2 What you will learn
+
+1. Time Management: To be successful the team needs to be very focused on time Management
+1. Parallel Work: To be successful each team member needs to be working on different parts, and work needs to make progress on multiple fronts at once.
+1. How to cut features: To be successful the team needs to be hard-nosed about cutting features or ideas that aren't going to make it, instead of wasting time on them and then having them be incomplete at the end
+1. Demo planning: Having a demo script or plan and then ensuring that the required product features are there.
+
+:h2 Steps
+
+* Re-read :topic_link :good_166_product
+* Re-read :topic_link :cosi166_final_deliverables
+
+* Make a final list of features that you will need for the demo
+    * Consider carefully :good_166_product, especially the "beyond the basics" technologies
+    * Implement their routes, controllers, and views
+* Build up some interesting demonstration data to show off your product
+    * A demo is 10x more effective if it has plausible content. 
+    * It helps the viewer understand and appreciate what you have.
+    * Once you have the viewer they will fill in blanks and imagine features that you don't even have (yet)
+* Implement the remaining features
+    * Focus on the ones that are the most important
+    * Be ruthless in deferring features which don't contribute to your goals
+* Write more tests
+    * As we have discussed, unit tests are the easiest
+    * Also include some more non-unit tests
+* Implement continuous integration and/or deployment
+    * Using Heroku deploy
+    * Make sure that whenever you push to your repo, the tests and run and if successful, the site is updated
+* Make it pretty
+    * Finally it's the time to really worry about aesthetics
+    * We are looking for a professional, craftperson-like appearance (More like github.com and trello.com than like canva.com or icloud.com)
+* Final touches, prepare presentations
+
+## Deliverables
+
+1. 

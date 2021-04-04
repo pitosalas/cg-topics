@@ -4,19 +4,20 @@ title: Cosi 166 Final Deliverables
 
 :topic_link :cosi166_project_stage4 <=
 
-## Final Deliverables and Zoom Final Meeting
-* Yes, this year is different!
-* Will be scheduled the same way as the mid-semester review
-* 30 Minute zoom meeting with Pito and one of the TAs and one guest
+:h2 Final Presentations
 
-### What to put into LATTE
+* I am still deciding how the final zoom meeting will be organized
+
+:h2 What to put into LATTE
+
 * Presentation Slides (Powerpoint or similar) (not a link)
 * Final Report (PDF) (not a link)
 * Link to your team GitHub dir
 * Link to your app running on Heroku
 * Brandeis Project Text File
 
-### About the zoom meeting
+:h2 About the zoom meeting
+
 * All team members must be there
 * It will be semi-formal
 * Team does the presentation
@@ -28,16 +29,17 @@ title: Cosi 166 Final Deliverables
     * about how the work was divided
     * Look at the code too
 
-### About the presentation
+:h2 About the presentation
+
 * You will no more than 10 minutes to present
 * It is not required that every team member speak
 * You should have powerpoint or similar slides
 * This is more of a technical presentation, not a marketing or selling pitch
-* N.B.
-  * This is not a rubric or a checklist
-  * You may add whatever you think is important to know
+* N.B. This is not a rubric or a checklist
+* You may add whatever you think is important to know
 
-<hr/>
+:h3 Slide sequence suggestions
+
 * An opening slide
 * One or more slides about the functionality
     * What user problem your product is meant to address
