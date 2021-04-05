@@ -4,17 +4,34 @@ title: Cosi 166 Final Deliverables
 
 :topic_link :cosi166_project_stage4 <=
 
-:h2 Final Presentations
+:h2 Individual Team Demos + Presentations
+* Will be over zoom. 
+* Over 3 days, there will be a 20 minute blocks so each team can find a good time
+* **All team members** Must be present unless formally excused by me
+* Use this [Calendly Link](https://calendly.com/pitosalas/capstone).
+* **One team member signs up** and adds the others as "guests"
 
-* I am still deciding how the final zoom meeting will be organized
+:h3 List of deliverables (all detailed below)
+1. Github repo with all the code, documentation, pages, presentations
+1. Deployed to Heroku
+1. A detailed readme.md
+1. A Final Report as GitHub pages
+1. Preparation for a demo and presentation
+1. PDF of presentation
+1. Brandeis Projects Text File
+
 
 :h2 What to put into LATTE
 
-* Presentation Slides (Powerpoint or similar) (not a link)
-* Final Report (PDF) (not a link)
-* Link to your team GitHub dir
-* Link to your app running on Heroku
-* Brandeis Project Text File
+* Link to your GitHub repo (accessible by TA and Pito)
+* Link to your running application on Heroku
+* Everything else will be in your GitHub repo
+
+:h3 In your GitHub repo
+
+* Your project report in the form of [Github Pages](https://pages.github.com)
+* Presentation Slides as a pdf (see below)
+* Brandeis Project Text File (see below)
 
 :h2 About the zoom meeting
 
@@ -58,36 +75,42 @@ title: Cosi 166 Final Deliverables
     * What did you learn about working on a team?
 * A closing
 
-### The product demo
+:h2 The product demo
+
 * Take no more than 10 minutes to demo your product. 
 * By now, you should be able to demonstrate your product!
 * You do need to work on a demo 'script'
 * The best demo scripts tell a bit of a story where you try to 'hook' the listener with a scenario that they recognize
 
-### Final Report
-* Purpose: explain what you did, how you did it, why you did it that way, what the challenges were, and what you would do next
+:h2 Final Report as Github Pages 
+* The GH pages are part of your one and only GitHub repo
+* The purpose of this report is to explain what you did, how you did it, why you did it that way, what the challenges were, and what you would do next
 
-* Structure: 
-  * Submit a PDF of around 5-15 pages, no more. 
-  * Use as many pages as are needed. 5 is likely too little and 15 is likely too much, with appropriate fonts, size, margins and spacing. 
-  * Regarding citations: don't force it. If there's something specific that would add value then make a citation. No specific type of citation is prescribed. 
+:h3 Structure: 
 
-* Stylistic advice
-  * Quality of an academic report or paper
-  * This is a technical description of the product and project
-  * We are looking for a well organized document describing the product and project
-  * Check your English language writing, and use the Writing Center if needed
-  * Watch out for run-on sentences that sound like transcribed spoken language which is not appropriate in a written report.
-* Content advice
-  * What the purpose of the product is, what kind of user would want it.
-  * Summarize the functionality, but don't write a detailed page by page user guide.
-  * Summarize the schema but don't go table by table, field by field in the narrative.
-  * Technologies used, beyond just RoR. What new and unusual tools, services, languages, and so on.
-  * Interesting Engineering, how did you go beyond a vanilla web app and have to confront some engineering challenges
-  * Development, deployment and testing methodologies and results.
-  * Inlude at least one screenshot and also a diagram of the architecture
-  * Include names and emails of the team members
+* Use as many pages as are needed
+* 5 is likely too little and 15 is likely too much, with appropriate fonts, size, margins and spacing. 
+* Regarding citations: don't force it. If there's something specific that would add value then make a citation. No specific type of citation is prescribed. 
 
-### Markdown file describing the project,
-* Just following these simpleinstructions: <%= link_to_topic :brandeisprojects_listing %>.
+:h3 Stylistic advice
+
+* Quality of an academic report or technical paper
+* This is a technical description of the product and project
+* We are looking for a well organized document describing the product and project
+* Check your English language writing, and use the Writing Center if needed
+* Watch out for run-on sentences that sound like transcribed spoken language which is not appropriate in a written report.
+
+:h3 Content advice
+* What the purpose of the product is, what kind of user would want it.
+* Summarize the functionality, but don't write a detailed page by page user guide.
+* Summarize the schema but don't go table by table, field by field in the narrative.
+* Technologies used, beyond just RoR. What new and unusual tools, services, languages, and so on.
+* Interesting Engineering, how did you go beyond a vanilla web app and have to confront some engineering challenges
+* Development, deployment and testing methodologies and results.
+* Include at least one screenshot and also a diagram of the architecture
+* Include names and emails of the team members
+
+:h2 Brandeis Projects Text File
+* Markdown file describing the project,
+* Just following these simple instructions: :topic_link :brandeisprojects_listing
 * This will create the entry for your project in [BrandeisProjects](http://pitosalas.github.io/brandeisprojects/)

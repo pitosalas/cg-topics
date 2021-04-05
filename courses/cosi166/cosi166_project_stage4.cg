@@ -21,7 +21,10 @@ title: "Term Project Stage 4: Launch"
 
 * Re-read :topic_link :good_166_product
 * Re-read :topic_link :cosi166_final_deliverables
-
+* Plan out your final demo (which will be around 5 minutes in length)
+    * Demos work best that are not just a list of features
+    * Instead think of a scenario that you can use as a way to visit your key features
+    * If appropriate and there are multiple "roles", then have different students play those
 * Make a final list of features that you will need for the demo
     * Consider carefully :good_166_product, especially the "beyond the basics" technologies
     * Implement their routes, controllers, and views
@@ -31,6 +34,7 @@ title: "Term Project Stage 4: Launch"
     * Once you have the viewer they will fill in blanks and imagine features that you don't even have (yet)
 * Implement the remaining features
     * Focus on the ones that are the most important
+    * Make sure that you are going beyond the basics
     * Be ruthless in deferring features which don't contribute to your goals
 * Write more tests
     * As we have discussed, unit tests are the easiest
@@ -39,10 +43,15 @@ title: "Term Project Stage 4: Launch"
     * Using Heroku deploy
     * Make sure that whenever you push to your repo, the tests and run and if successful, the site is updated
 * Make it pretty
-    * Finally it's the time to really worry about aesthetics
-    * We are looking for a professional, craftperson-like appearance (More like github.com and trello.com than like canva.com or icloud.com)
-* Final touches, prepare presentations
+    * Finally it's the time to really worry about aesthetics of the UI
+    * We are looking for a professional, craftperson-like appearance (More like trello.com than like canva.com)
+    * Also focus on the quality of the code you are delivering
+    * Get rid of old left over files, make sure your readme is updated
+    * Look at code style, use some tool to analyze quality of the code so you can update it.
 
-## Deliverables
+:h2 Deliverables :teambadge
 
-1. 
+* Link to your shared Github repo. 
+    * Please make sure you set up Mitchell and your team TA as collaborators!
+    * And make sure that we are able to find all the parts of the deliverable (e.g. by mentioning them in the readme.md)
+* Link to deployed version of your application
