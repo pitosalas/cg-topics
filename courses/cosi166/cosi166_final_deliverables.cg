@@ -12,14 +12,14 @@ title: Cosi 166 Final Deliverables
 * **One team member signs up** and adds the others as "guests"
 
 :h3 List of deliverables (all detailed below)
+
 1. Github repo with all the code, documentation, pages, presentations
 1. Deployed to Heroku
 1. A detailed readme.md
-1. A Final Report as GitHub pages
+1. A Final Report in the form of [Github Pages](https://pages.github.com)
 1. Preparation for a demo and presentation
 1. PDF of presentation
 1. Brandeis Projects Text File
-
 
 :h2 What to put into LATTE
 
@@ -39,7 +39,7 @@ title: Cosi 166 Final Deliverables
 * It will be semi-formal
 * Team does the presentation
 * Team does the demo
-* Here are some general <%= link_to_topic :cosi166b_presentation_tips %>
+* Here are some general :topic_link :cosi166b_presentation_tips
 * Pito and TA will save questions to the end:
     * about the presentation
     * about the implementation
@@ -83,8 +83,13 @@ title: Cosi 166 Final Deliverables
 * The best demo scripts tell a bit of a story where you try to 'hook' the listener with a scenario that they recognize
 
 :h2 Final Report as Github Pages 
-* The GH pages are part of your one and only GitHub repo
-* The purpose of this report is to explain what you did, how you did it, why you did it that way, what the challenges were, and what you would do next
+
+* [Github Pages](https://pages.github.com)
+    * A feature in GitHub that you definitely need to know about
+    * Allows you to build a static set of web pages, with links, all in markdown
+    * All the cool kids use it
+* The [Github Pages](https://pages.github.com) pages are part of your one and only GitHub repo
+* The purpose of this Final report is to explain what you did, how you did it, why you did it that way, what the challenges were, and what you would do next
 
 :h3 Structure: 
 
@@ -111,6 +116,6 @@ title: Cosi 166 Final Deliverables
 * Include names and emails of the team members
 
 :h2 Brandeis Projects Text File
-* Markdown file describing the project,
+* Markdown file describing the project
 * Just following these simple instructions: :topic_link :brandeisprojects_listing
 * This will create the entry for your project in [BrandeisProjects](http://pitosalas.github.io/brandeisprojects/)
