@@ -87,14 +87,14 @@ title: Cosi 166 Final Deliverables
 * [Github Pages](https://pages.github.com)
     * A feature in GitHub that you definitely need to know about
     * Allows you to build a static set of web pages, with links, all in markdown
+    * The result is a small, static, "web site", attached directly to your GitHub repo.
     * All the cool kids use it
 * The [Github Pages](https://pages.github.com) pages are part of your one and only GitHub repo
 * The purpose of this Final report is to explain what you did, how you did it, why you did it that way, what the challenges were, and what you would do next
 
 :h3 Structure: 
 
-* Use as many pages as are needed
-* 5 is likely too little and 15 is likely too much, with appropriate fonts, size, margins and spacing. 
+* Use as many [Github Pages](https://pages.github.com) (`gh-pages`) as you need. You can have many smaller ones, or fewer longer ones. Just focus on the content.
 * Regarding citations: don't force it. If there's something specific that would add value then make a citation. No specific type of citation is prescribed. 
 
 :h3 Stylistic advice
