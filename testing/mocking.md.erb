@@ -1,34 +1,38 @@
 ---
 title: Mocking
+slides: true
 ---
-### Overview
+:h3 Overview
+
 * SUT ("System under test")
 * Collaborators (other objects needed to test SUT)
 * Decoupling is a major goal
 
-### What is a Mock?
+:slide_title What is a Mock?
+
 * An object that stands in for another object during testing
 * Make sure that only the right methods are called
 * Related terms: Test Doubles, stubs, and others. Don't get confused.
 * More distinctions
-	* Broadest term: Test Double. They are all part of this category
-	* Test Dummy: An object that stands in for another, that has no methods. Not very useful.
-	* Stub: Responds to the key methods that are required for the test but the return values are fixed.
-	* Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
+    1. Broadest term: Test Double. They are all part of this category
+    1. Test Dummy: An object that stands in for another, that has no methods. Not very useful.
+    1. Stub: Responds to the key methods that are required for the test but the return values are fixed.
+    1. Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
 
-### Advantages and Disadvantages
+:slide_title Advantages and Disadvantages
+
 * Decoupling is always a good thing.
-	* Performance
-	* Maintainability
-	* Testability
+    1. Performance
+    1. Maintainability
+    1. Testability
 * If you introduce a bug in a class
-	* Only the tests that are testing that class will fail
-	* So, fewer false positives
+    1. Only the tests that are testing that class will fail
+    1. So, fewer false positives
 * Disadvantages
-	* Need to maintain to consistency between the mock and the class-being-mocked
-	* Otherwise you may be testing somethingn that doesn't even exist
+    1. Need to maintain to consistency between the mock and the class-being-mocked
+    1. Otherwise you may be testing somethingn that doesn't even exist
 * Real world example:
-	* Let's look at some of the code that runs this web site.
-	* Note slightly different syntax because of RSpec vs. minitest/spec
-	* [citem_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/citem_spec.rb)
-	* [toc_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/toc_spec.rb)
+    1. Let's look at some of the code that runs this web site.
+    1. Note slightly different syntax because of RSpec vs. minitest/spec
+    1. [citem_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/citem_spec.rb)
+    1. [toc_spec.rb](https://github.com/pitosalas/coursegen/blob/master/spec/toc_spec.rb)
