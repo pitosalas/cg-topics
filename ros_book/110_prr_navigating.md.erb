@@ -66,12 +66,12 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filena
 
 * The ROS **nav stack** is another complex bit of computer science, mathematics, and engineering
 * For now we are going to just scratch the surface
-* Inputs are a map, an estimated current position, scanner inforamtion, and a destination
+* Inputs are a map, an estimated current position, scanner information, and a destination
 * Behavior is to generate a path and steer the robot to it
 * Avoiding obstacles
 * Roughly:
     1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
-    1. Nav stack uses a path-planning algorithm in the *global plannner* to create shortest path route
+    1. Nav stack uses a path-planning algorithm in the *global planner* to create shortest path route
     1. Local planner drives along that path, while using sensor information to aboid obstacles.
     1. When the robot arrives at the goal pose the action terminates.
 * Lets try it!
@@ -83,46 +83,10 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filena
 * The green arrows are the pose estimates from `amcl`
 * Tell `amcl` that the robot is somewhere else, and you see it do its best on guessing the pose
 * Do this with the *2d pose estimate* command
-* Turn on the Lasert Scan display
+* Turn on the Laser Scan display
 * Play with the *2d pose estimate* command and observe how the map becomes aligned
 * Also with `/initialpose` topic (which is how, perhaps, we tell AMCL about a fiducial that has been identified.)
 
 <%= include_image "/content/topics/images/book10amcl.png" %>
 
-### Behind the scenes
-
-* amcl subscribes to a topic `geometry_msgs/PoseWith`
-* rviz command *2d pose estimate* publishes the new proposed pose on that topic
-* When amcl receives that message it resets its collection of candidate poses
-
-### Going inside the Nav Stack
-
-* Global planner: works out best path assuming map is accurate
-    **global costmap**: How safe or unsafe is each spot on the map
-    * Published on /move_base/global_costmap/costmap
-    * Planner view shows what the planned path to the nav goal is
-* Local Planner: 
-    * Adjusts the global plan based on newly detected obstacles
-    * Map shows square area around robot with further analysis
-    * Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
-
-### Navigating in code
-
-* Look at [patrol.py](https://raw.githubusercontent.com/campusrover/rosbook/master/scripts/patrol.py)
-* It is a `SimpleActionClient` which sends a repeating sequence of two Action Goals to `move_base`
-* There's nothing tricky about itself.
-* The challenge might be getting all the other bits set up so that it will work correctly
-
-## Summary
-
-* How robots move around the world
-* Building maps
-* Using maps
-* `move_base` takes action goals to move to somewhere else
-* Importance of coordinate systems
-* Some more references:
-    * [Navigation Wiki Page](http://wiki.ros.org/navigation)
-    * [move_base Wiki Page](http://wiki.ros.org/move_base)
-    * [Video about navstack](https://vimeo.com/106994708)
-    * [Paper: Layered Costmaps for Context Sensitive Navigation](http://wustl.probablydavid.com/publications/IROS2014.pdf)
-
+:topic_include :prr_move_base
