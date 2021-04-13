@@ -34,8 +34,7 @@ slides: true
 
 :callout :small, "Not a toy", " JavaScript is a serious and very important language"
 
-:slide_title It might be the most important language right now
-* Why?
+* Might be the most important language right now... Why?
 * Has nothing to do with Java!
 * Name is strictly political (back in the 80's I think)
 * Browser DOM :: HTML :: CSS :: JavaScript are interlocking partners that work together
