@@ -1,0 +1,25 @@
+---
+title: REST and APIs
+---
+:h2 3. Experiment with API and REST
+
+Here are some references about REST and APIs to supplement our work in class:
+
+* Read this article: [RESTFUl Web Services: A Tutorial](http://www.drdobbs.com/web-development/restful-web-services-a-tutorial/240169069)
+* Look over this tutorial: [Build a Restful JSON APil with Rails 5](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one). I haven't tested it but it should still work. 
+* Download and install this [WebService Demo Code](https://github.com/pitosalas/webservicedemo) to your computer. Look at all the examples and get them to work. Understand what they are doing.
+* Download and install a REST Client app. There are many to choose from. I use [Insomnia](https://insomnia.rest) Others are [rest-client](https://code.google.com/p/rest-client/) or [Chrome Advanced Rest Client](https://chrome.google.com/webstore/detail/advanced-rest-client/)
+* Familiarize yourself with one or two real Web Services (also called Web APIs or APIs). Here are some interesting starting points:
+
+1. APIs of cooking recipes: [Yummly](https://developer.yummly.com/documentation.html)
+1. [Covid Data from NYT](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv)
+1. [Reddit API](https://github.com/reddit/reddit/wiki/API)
+1. [US Census Bureau](http://www.census.gov/developers/)
+1. Directory of other Web Services: [Programmable Web](http://www.programmableweb.com)
+1. New: [A curated list of 100 cool web services](https://medium.com/better-programming/a-curated-list-of-100-cool-and-fun-public-apis-to-inspire-your-next-project-7600ce3e9b3)
+* Most web services (APIs) need an API-key of some kind (free). Get one
+* Experiment with the REST client and one of the Web services described above
+* Using the REST client app above: try some calls and get them to work
+
+:deliverable What was your experience? What did you learn? What api you tried and what you learned. And describing one specific way in which your product could use a Web Service API
+
