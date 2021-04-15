@@ -1,0 +1,105 @@
+---
+title: GraphQL
+---
+:slide_title GraphQL
+
+* New kid on the block
+* Not clear yet whether it will become a standard
+* Addresses the case of "multi-model" APIs
+* Instead of having a bunch of "dumb" REST endpoints, have a single "smart" endpoint
+* Inputs are simple, JSON 'query' structures, and outputs are JSON result structures
+* Handled via a "resolver" that you write
+* It is its own *service* and does not have to be tied to your schema, or even whether you have a schema!
+
+:slide_title GraphQL better than REST?
+
+* Replace the whole or part of your REST API with a single GraphQL resolver
+* The resulting APIs need to be sufficient to write a simple nanoTwitter client (say on iOS)
+* Why?
+  * No Scaling advantage
+  * Possibly less work to do (not sure ahead of time)
+  * Learn GraphQL
+  * Learn a new architectural pattern
+
+:slide_title Input to Github's GraphQL endpoint
+
+* Play here: https://developer.github.com/v4/explorer/
+
+:source_begin :ruby
+query {
+  user(login: "pitosalas") {
+    repositories(first:10 ) {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+:source_end
+
+:slide_title Output from Github GraphQL endpoint
+
+:source_begin :ruby
+{
+  "data": {
+    "user": {
+      "repositories": {
+        "edges": [
+          {
+            "node": {
+              "name": "blogbridge"
+            }
+          },
+          {
+            "node": {
+              "name": "blogbridge-utils"
+            }
+          },
+          {
+            "node": {
+              "name": "govsdk"
+            }
+          },
+          {
+            "node": {
+              "name": "opmlassist"
+            }
+          },
+          {
+            "node": {
+              "name": "gopml"
+            }
+          },
+          {
+            "node": {
+              "name": "Tabulator-v1"
+            }
+          },
+          {
+            "node": {
+              "name": "brandeis-cosci"
+            }
+          },
+          {
+            "node": {
+              "name": "ilab"
+            }
+          },
+          {
+            "node": {
+              "name": "DCdigitalVBM"
+            }
+          },
+          {
+            "node": {
+              "name": "tictactoe"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+:source_end
