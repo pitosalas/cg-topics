@@ -1,7 +1,7 @@
 ---
 title: Kalman Filters
 ---
-## Kalman Filters
+:slide_title Kalman Filters
 
 * A really important, low-level algorithm
 * I admit I've known about it for years but never really understood it
@@ -10,9 +10,7 @@ title: Kalman Filters
 * This is my first time trying to teach it so bear with me!
 * Disclaimer - IANOM - I am not a mathematician
 
-<slide_break></slide_break>
-
-### What it does
+:slide_title What it does
 
 * Given uncertain sensor data 
 * And uncertain state information 
@@ -22,18 +20,13 @@ title: Kalman Filters
 * Well supported by math and statistical analysis
 * One key insight two inaccurate readings can be combined into an estimate that is more accurate than either one alone.
 
-<slide_break></slide_break>
-
-### Learning about Kalman Filters
+:slide_title Learning about Kalman Filters
 
 * There is a lot written about it
 * Because it is difficult and important
 * The explanations are not consistent and don't use consistent nomenclature
 
-
-<slide_break></slide_break>
-
-### Estimation
+:slide_title Estimation
 
 * Kalman filter is an iterative model
 * Each loop tries to make the state ESTIMATE more accurate
@@ -43,9 +36,7 @@ title: Kalman Filters
 * Producing an updated estimate (which is statistically characterized)
 * The loops happen at intervals that correspond to the rates that sensors are read
 
-<slide_break></slide_break>
-
-### Scenario
+:slide_title Scenario
 
 * An off-road robot moving around a field
 * Using GPS for localization - which has a known inaccuracy on the order of 5-10 meters
@@ -54,13 +45,11 @@ title: Kalman Filters
 * Control: motion commands
 * Sensors: GPS ... odometry?
 
-<slide_break></slide_break>
+:slide_title Kalman estimate
 
-<%= include_image "/content/topics/images/gpsrobot.png" %>
+:image :gpsrobot
 
-<slide_break></slide_break>
-
-### System
+:slide_title System
 
 * Kalman filter looks at a "system" which has a "state"
 * The system may change over time
@@ -69,9 +58,7 @@ title: Kalman Filters
 * We gain information about the "system"
 * By sensing data which allow us to infer system changes
 
-<slide_break></slide_break>
-
-### State model
+:slide_title State model
 
 * Based on what is known about the system
 * We can make a first guess of how the old state would change each step
@@ -79,9 +66,7 @@ title: Kalman Filters
 * Then 1 second later, I am at x=0.01
 * "all things being equal"
 
-<slide_break></slide_break>
-
-### State
+:slide_title State
 
 * a vector (set) of numbers representing the state you are trying to measure
 * Vector/Matrix representation is for ease of calculation
@@ -92,30 +77,23 @@ title: Kalman Filters
   1. current distance from obstacle
   1. current altitude from the surface
 
-<slide_break></slide_break>
-
-### Control Model
+:slide_title Control Model
 
 * Look beyond the internal of the system, what is telling it to change?
 * Control input: driver steps on break or accelerator
 * Gravity is pulling the ball downhill
 * cmd_vel is telling the robot to stop
 
-<slide_break></slide_break>
+:slide_title  Sensor Model
 
-### Sensor Model
 * Given a measurement from the outside world
 * How does the state model change
 
-<slide_break></slide_break>
+:slide_title Video Interlude
 
-## Video Interlude
+:youtube "https://www.youtube.com/embed/CaCcOwJPytQ"
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCcOwJPytQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<slide_break></slide_break>
-
-### 1D Scenario: bathroom scale
+:slide_title 1D Scenario: bathroom scale
 
 * Using a scale with a known error rate
 * Sensor generates 10 readings per second
@@ -123,73 +101,55 @@ title: Kalman Filters
 * What do you use? Average? Weighted Average? Or?
 * What if you have thousands of measurements (10 per second, like a bathroom scale)
 
-<slide_break></slide_break>
-
-### 1D Scenario: Train
+:slide_title 1D Scenario: Train
 
 * A train is on a track and moving towards the terminator (which is a block)
 * Train has a lidar sensing the wall
 * The is reading the speed based on the rotation of the wheels
 * How does the train determine where it is?
 
-<slide_break></slide_break>
+:slide_title Kalman Train
 
-<%= include_image "/content/topics/images/kalmantrain.jpg" %>
+:image :600, :kalmantrain
 
-<slide_break></slide_break>
-
-### 1D Scenario: Voltage reading
+:slide_title 1D Scenario: Voltage reading
 
 * Make a reading per second on a voltage source that is meant to be constant
 * Display a graph of your best guess of the 'true' reading 
 * Noting that your measuring instrument also has a known error profile
 
-<slide_break></slide_break>
+:slide_title Abstraction of the Kalman Filter Equations
 
+:image :kalmansimple
 
+:slide_title Diagram of Kalman Filter Equations
 
-### Abstraction of the Kalman Filter Equations
+:image :kalman
 
-<%= include_image "/content/topics/images/kalmansimple.gif" %>
-
-<slide_break></slide_break>
-
-### Diagram of Kalman Filter Equations
-
-<%= include_image "/content/topics/images/kalman.jpg" %>
-
-<slide_break></slide_break>
-
-### Kalman Gain
+:slide_title Kalman Gain
 
 * Where does the Kalman Gain come from?
 * There are complex equations which use the covariance matrix with the estimates to compute a Kalman Gain
 * But I've seen examples that skip that and use a constant
 
-<slide_break></slide_break>
-
-### Scenario I am coding
+:slide_title Scenario I am coding
 
 * Detect the bearing (direction) and distance of the nearest obstacle
 * Create a smooth estimation based on the noisy lidar data and noisy cmd_vel inputs
 * Illustrate a few software engineering techniques
-  * Making your code visualize what is going on
-  * Modularity and reducing dependencies
-  * Test data
-  * Test harness
+    * Making your code visualize what is going on
+    * Modularity and reducing dependencies
+    * Test data
+    * Test harness
 
-
-<slide_break></slide_break>
-### How to understand
+:slide_break How to understand
 
 * Most examples you find will use linear algebra (not an expert) and store things in matrices
 * If the `state` is location and velocity in the x direction (a falling ball) that is stored in a 1x2 matrix
 * This simplifies the expression and calculation of the formulas but it is initially confusing
 * That is unless you are fluent in matrix and linear algebra which I am not
 
-<slide_break></slide_break>
-
-## Links for further study
+:slide_break Links for further study
 
 * [Detailed Youtube on Kalman FIlters](https://www.youtube.com/watch?v=u1QcZxWRYtg&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=10)
 * [Kalman Filter In Depth](https://www.kalmanfilter.net/kalman1d.html)
