@@ -1,7 +1,9 @@
 ---
 title: REST and Web Services
+slides: true
 ---
-:slide_bigtitle REST and Web services
+
+:h3 REST and Web APIs
 
 * What is a web site?
 * It can be more than a url for people to access information
@@ -32,9 +34,11 @@ title: REST and Web Services
     * XMLRPC: [XML-RPC](http://en.wikipedia.org/wiki/XML-RPC)
     * REST: [Representational State Transfer](http://en.wikipedia.org/wiki/Representational_state_transfer) -- our focus
 
-: discussion_box "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?"
+:slide_break
 
-:slide_title  Pause to look at the big picture
+:discussion_box "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?"
+
+:slide_title  Pause to look at the big picture!
 
 * Servers on the internet, anywhere, can be called as objects and methods
 * Resources of all kinds can be offered to clients with no coordination
@@ -45,7 +49,7 @@ title: REST and Web Services
 * Imagine a procedure (method): `get_horoscope(date, sign) => String`
 * So for example: `get_horoscope("march 22, 2015", "aries")` which returns a sentence of text (not html!)
     * I could use it to improve my calendar app to optionally display the user's horoscope
-    * Or, I could use it to create a twitter "robot" to answer a tweet with my horosc
+    * Or, I could use it to create a twitter "robot" to answer a tweet with my horoscope
 * What would it mean to call it between two computers?
 * What would it mean to call it between two computers over the internet?
 * How would you approach it?
