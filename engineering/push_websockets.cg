@@ -40,8 +40,9 @@ slides: true
 * Still pretty complex
 * Libraries are built to make it easier!
 
-:slide_title Rails Action Cable
+:slide_title Using Websockets with Rails
 
+* Rails Action Cable
 * Javascript code libraries
 * Rails feature to allow WebSockets connections
 * Fairly intricate to wire up
