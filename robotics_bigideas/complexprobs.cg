@@ -1,0 +1,24 @@
+---
+title: How can robots exhibit complex behavior?
+---
+:ul_begin :postit
+:h5 How can robots exhibit complex behavior?
+  :ul_begin
+  :li Big Idea: Robots only seem to be intelligent
+  :li Underlying technologies
+    :ul_begin
+    :li AI Inspired algorithms
+    :li Computer Gaming inspired algorithms
+    :ul_end
+  :li Learning goals: Students will understand:
+    :ul_begin
+    :li Finite State machines
+    :li Behavior Trees
+    :ul_end
+  :li Students will be able to:
+    :ul_begin
+    :li How to design a FSM or BT based behavior
+    :li How to connect it to the rest of the Robot softeware stack
+    :ul_end
+  :ul_end
+:ul_end
