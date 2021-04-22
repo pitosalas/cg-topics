@@ -24,8 +24,12 @@ title: Round Robin Papers
 :slide_title Suggested Presentation Format
 
 * Title
-* Problem that the paper is trying to address
-* Interesting other solutions to the problem, or previous work
-* Relationship if any to class material and/or project
+* Context/background (what do we need to know in order to understand the paper)
+* Problem definition (what problem is the paper trying to solve)
+* Relationship (if any) to class material and/or project
 * Core: Explanation of the key argument of the paper
+* Solution (how did they solve the problem)
+* Results (what did the paper authors achieve)
 * Reflection from presenters about the work
+
+
