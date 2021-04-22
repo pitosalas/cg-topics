@@ -85,12 +85,8 @@ slides: true
 
 :slide_title Example!
 
-* Here's the web site for [Fortunes](https://rpsfortune.herokuapp.com)
+* Here's the web site for [Fortunes](https://pitofortune.herokuapp.com)
 * Here's the code for it [Fortunes RAILS Source code](https://github.com/pitosalas/restapidemo)
-
-* Fortune API deployed on Heroku
-  * Visit the fortune_api: [Fortune API on Heroku](https://rpsfortune.herokuapp.com/fortune/random)
-  * Let's take a look at the code [Restapidemo](https://github.com/pitosalas/restapidemo)
 
 :slide_title Accessing a web service
 

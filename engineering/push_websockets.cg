@@ -47,7 +47,6 @@ slides: true
 * Rails feature to allow WebSockets connections
 * Fairly intricate to wire up
 * But not hard once you understand it
-* Let's look at the code: [rails_actioncable_demo](https://github.com/pitosalas/rails_actioncable_demo)
 * Other options is [Pusher.com](https://pusher.com)
 
 
