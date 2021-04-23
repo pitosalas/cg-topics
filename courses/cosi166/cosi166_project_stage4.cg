@@ -26,7 +26,7 @@ title: "Term Project Stage 4: Launch"
     * Instead think of a scenario that you can use as a way to visit your key features
     * If appropriate and there are multiple "roles", then have different students play those
 * Make a final list of features that you will need for the demo
-    * Consider carefully :good_166_product, especially the "beyond the basics" technologies
+    * Consider carefully :topic_link :good_166_product , especially the "beyond the basics" technologies
     * Implement their routes, controllers, and views
 * Build up some interesting demonstration data to show off your product
     * A demo is 10x more effective if it has plausible content. 

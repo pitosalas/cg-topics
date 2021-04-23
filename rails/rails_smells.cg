@@ -1,0 +1,24 @@
+---
+title: Rails Smells
+---
+
+:slide_bigtitle Code Smells
+
+:topic_include :code_smells
+
+:slide_title Rails Smells
+
+1. Models with more than 50-100 lines of ruby code
+1. Controller actions with more than around 20 lines
+1. Too many migration files
+1. Ruby code in view.html.erb files
+1. No non-Rails classes used at all
+
+:slide_title Finding and Removing Code Smells
+
+1. Install two gems: `reek` and `rubocop`. Read their web sites to get an idea of how to run each against your code base.
+1. Also look at each of the categories of Rails Smells above
+1. Try to find one or two of the worse offenders in your application
+1. Refactor the code so as to remove or at least reduce the smell.
+
+:topic_include :refactoring
