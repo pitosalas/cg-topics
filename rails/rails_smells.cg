@@ -2,8 +2,6 @@
 title: Rails Smells
 ---
 
-:slide_bigtitle Code Smells
-
 :topic_include :code_smells
 
 :slide_title Rails Smells

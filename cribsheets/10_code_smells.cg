@@ -1,21 +1,22 @@
 ---
 title: Code Smells
 ---
-* What are code smells?
-    * Signs that your code can be made better
-    * Things you should look for when doing a code review
-    * Learned from practical experience
-    * There are many lists, this is mine of the top ones
-    * They are not hard-and fast
+:slide_title What are code smells?
+* Signs that your code can be made better
+* Things you should look for when doing a code review
+* Learned from practical experience
+* There are many lists, this is mine of the top ones
+* They are not hard-and fast
 
-* General Smells
-    * Copied / Duplicated code (DRY violations)
-    * Large class: Class longer than 100 or so lines
-    * Large method: Method longer than 10 lines or so
-    * Long parameter list: methods with 4 or more parameters
-    * Global variables: Almost always a very bad sign
-    * Bad Name: Non descriptive or very short variable names
-    * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
-    * Single Responsiblity Violations: Class, methods should do one thing
+:slide_title General Smells
+
+* Copied / Duplicated code (DRY violations)
+* Large class: Class longer than 100 or so lines
+* Large method: Method longer than 10 lines or so
+* Long parameter list: methods with 4 or more parameters
+* Global variables: Almost always a very bad sign
+* Bad Name: Non descriptive or very short variable names
+* Unnecessary complexity: Nested conditionals (ifs and case) are questionable
+* Single Responsiblity Violations: Class, methods should do one thing
 
 :callout :small, "Note", " Smells can be ambiguous or language dependent"
