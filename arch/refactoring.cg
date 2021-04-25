@@ -4,7 +4,7 @@ title: Refactoring
 
 :slide_title What is Refactoring?
 
-:callout :small, "definition", " "a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior""
+:callout :small, "definition", ""a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior""
 
 * Don Roberts’ Rule of Three: “the first time you do something, you just do it.  Second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway.  The third time you do something similar, you refactor.
 * The Process
@@ -29,3 +29,4 @@ title: Refactoring
 
 * [Refactoring Techiniques](http://www.integralist.co.uk/posts/refactoring-techniques.html): The problem with this article is that it tries to explain too many patterns. You don't need them all to begin refactoring. Start with the most common case, ["extract Method"](http://www.integralist.co.uk/posts/refactoring-techniques.html#13) and build up your toolbox accordingly.
 * Here's a catalog of the classic [Refactoring](https://sourcemaking.com/refactoring) patterns.
+* A pretty good tutorial covering some of the [Ruby/Rails Code Smells Basics](https://code.tutsplus.com/series/ruby-rails-code-smell-basics--cms-960)

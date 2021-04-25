@@ -1,0 +1,23 @@
+---
+title: Mobile - architectural considerations
+---
+slide_title Mobile: Architectural Considerations
+
+* Practically all mobile apps are backed by a server
+* Do you own it or does it belong to a third party?
+* Can you change the API? Can the API change from under you?
+* What kind of information needs to be sent between mobile app and server?
+
+:slide_title How to think about this information
+
+* How much data are we talking about?
+* What are user expectations of perforamnce and latency?
+* What should the app do when there's no network?
+
+:slide_title Networking
+
+* Are there likely to be firewalls in the way?
+* Does the client have to reach the server, or vice versa or both?
+* Commonplace today is "REST" over "HTTP".
+* But all is changing all the time!
+* Security: Authentication and Authorization

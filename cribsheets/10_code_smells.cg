@@ -19,4 +19,4 @@ title: Code Smells
 * Unnecessary complexity: Nested conditionals (ifs and case) are questionable
 * Single Responsiblity Violations: Class, methods should do one thing
 
-:callout :small, "Note", " Smells can be ambiguous or language dependent"
+:callout :small, "Note", "Smells can be ambiguous or language dependent"
