@@ -16,8 +16,6 @@ title: Refactoring
 * Technical Debt
     * What it is; when to accumulate it; when to pay it off
     * Learn your code smells because they often point you to what needs refactoring
-* Refactoring Patterns
-    * [Quick Summary of Martin Fowler's "Refactoring"](https://github.com/HugoMatilla/Refactoring-Summary)
 
 :slide_title My goals for you
 
