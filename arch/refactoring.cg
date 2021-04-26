@@ -24,9 +24,3 @@ title: Refactoring
 * Feel the difference between just hacking at your code and being methodical at your refactoring
 * Feel the difference between adding functionality (don't refactor) and refactoring (don't add functionality)
 * The feeling of confidence when you have a safety net of tests
-
-:slide_title References
-
-* [Refactoring Techiniques](http://www.integralist.co.uk/posts/refactoring-techniques.html): The problem with this article is that it tries to explain too many patterns. You don't need them all to begin refactoring. Start with the most common case, ["extract Method"](http://www.integralist.co.uk/posts/refactoring-techniques.html#13) and build up your toolbox accordingly.
-* Here's a catalog of the classic [Refactoring](https://sourcemaking.com/refactoring) patterns.
-* A pretty good tutorial covering some of the [Ruby/Rails Code Smells Basics](https://code.tutsplus.com/series/ruby-rails-code-smell-basics--cms-960)
