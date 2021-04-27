@@ -2,7 +2,7 @@
 title: Rails Smells
 ---
 
-:slide_title Rails Smells
+:slide_bigtitle Rails Smells
 
 1. Models with more than 50-100 lines of ruby code
 1. Controller actions with more than around 20 lines
@@ -16,3 +16,8 @@ title: Rails Smells
 1. Also look at each of the categories of Rails Smells above
 1. Try to find one or two of the worse offenders in your application
 1. Refactor the code so as to remove or at least reduce the smell.
+
+:slide_title Some Rails references I like
+
+* Tutorial covering [Ruby/Rails Code Smells Basics](https://code.tutsplus.com/series/ruby-rails-code-smell-basics--cms-960)
+* On the importance of [Decoupling Rails Componenets](https://www.toptal.com/ruby-on-rails/decoupling-rails-components?utm_campaign=blog_post_decoupling_rails_components)

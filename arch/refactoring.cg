@@ -2,23 +2,30 @@
 title: Refactoring
 ---
 
-:slide_title What is Refactoring?
+:slide_bigtitle What is Refactoring?
 
 :callout :small, "definition", ""a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior""
 
 * Don Roberts’ Rule of Three: “the first time you do something, you just do it.  Second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway.  The third time you do something similar, you refactor.
 * The Process
-    * Make sure you have a solid test suite (safety net)
-    * Make it easy/cheap to run your test suite
-    * Do it in small steps, and run tests in between
-    * Before adding functionality (not *while*)
-    * Sometimes it's easier/better to fully rewrite
+    1. Make sure you have a solid test suite (safety net)
+    1. Make it easy/cheap to run your test suite
+    1. Do it in small steps, and run tests in between
+    1. Before adding functionality (not *while*)
+    1. Sometimes it's easier/better to fully rewrite
 * Technical Debt
-    * What it is; when to accumulate it; when to pay it off
-    * Learn your code smells because they often point you to what needs refactoring
+    1. What it is; when to accumulate it; when to pay it off
+    1. Learn your code smells because they often point you to what needs refactoring
 
 :slide_title My goals for you
 
 * Feel the difference between just hacking at your code and being methodical at your refactoring
 * Feel the difference between adding functionality (don't refactor) and refactoring (don't add functionality)
 * The feeling of confidence when you have a safety net of tests
+
+:slide_title Some refactoring references that I recommend
+
+* [Refactoring Techiniques](http://www.integralist.co.uk/posts/refactoring-techniques.html): The problem with this article is that it tries to explain too many patterns.
+* You don't need them all to begin refactoring. Start with the most common case, ["extract Method"](http://www.integralist.co.uk/posts/refactoring-techniques.html#13) and build up your toolbox accordingly.
+* [Quick Summary of Martin Fowler's "Refactoring"](https://github.com/HugoMatilla/Refactoring-Summary)
+* Here's a catalog of the classic [Refactoring](https://sourcemaking.com/refactoring) patterns.

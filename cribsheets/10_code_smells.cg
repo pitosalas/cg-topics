@@ -1,7 +1,8 @@
 ---
 title: Code Smells
 ---
-:slide_title What are code smells?
+:slide_bigtitle What are code smells?
+
 * Signs that your code can be made better
 * Things you should look for when doing a code review
 * Learned from practical experience
@@ -10,7 +11,7 @@ title: Code Smells
 
 :slide_title General Smells
 
-* Copied / Duplicated code (DRY violations)
+* DRY Violation: Copied / Duplicated / Highly repetitive code 
 * Large class: Class longer than 100 or so lines
 * Large method: Method longer than 10 lines or so
 * Long parameter list: methods with 4 or more parameters
@@ -20,3 +21,8 @@ title: Code Smells
 * Single Responsiblity Violations: Class, methods should do one thing
 
 :callout :small, "Note", "Smells can be ambiguous or language dependent"
+
+:slide_title General Links that I recommend
+
+* :topic_link :se_rules_of_thumb
+
