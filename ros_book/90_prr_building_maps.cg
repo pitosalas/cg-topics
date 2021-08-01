@@ -18,7 +18,7 @@ slides: true
 * Map = *.png + *.yaml
 * example:
 
-<%= source_begin "language-yaml"%>
+:source_begin :yaml
 # contents of mymap.yaml
 
 image: map.pgm
@@ -27,7 +27,7 @@ origin: [0.0, 0.0, 0.0]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 1
-<%= source_end %>
+:source_end
 
 :slide_title Definitions
 
@@ -65,11 +65,11 @@ negate: 1
 * Lab instructions: Launch and capture data in a bag
 * Launch Gazebo simulator with a basic Turtlebot3 World
 
-<%= source_begin ("language-bash") %>
+:source_begin :bash
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
-<%= source_end %>
+:source_end
 
-<%= include_image "/content/topics/images/rosbag3.png" %>
+:image_include :rosbag3
 
 * Lab Instruction: Save all the messages
 * We are going to save all the topics published by the simulated robot. plus a timestamp
@@ -78,9 +78,9 @@ $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 * We use rosbag to save all /odom, /tf and /scan messages
 * We don't need to save /cmd_vel (why?)
 
-<%= source_begin ("language-bash") %>
+:source_begin :bash
 $ rosbag record -O data.bag /scan /tf /odom
-<%= source_end %>
+:source_end
 
 * Lab instructions: Teleop through the space
 * Help the robot 'see' the whole space
@@ -88,18 +88,18 @@ $ rosbag record -O data.bag /scan /tf /odom
 * Use teleop to visit enough of the space so that all surfaces to be mapped are within unobstructed view
 * Exit with ^c 
 
-<%= source_begin ("language-bash") %>
+:source_begin :bash
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-<%= source_end %>
+:source_end
 
 * Lab Instruction: Save and inspect the rosbag
 * Once you are satisfied you have visited the whole space
 * Click ^c to stop saving topics to the bag and close the file
 * Inspect the file and see if it looks reasoble
 
-<%= source_begin ("language-bash") %>
+:source_begin :bash
 $ rosbag info data.bag
-<%= source_end %>
+:source_end
 
 :slide_title Introduction to SLAM using the saved map
 
@@ -116,13 +116,14 @@ $ rosbag info data.bag
 
 <%= callout("NB", " Check that you've killed all ROS-related processes.") %>
 
-<%= source_begin ("language-bash") %>
+:source_begin :bash
 $ roscore
 $ rosparam set use_sim_time true
 $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 $ rosbag play --clock data.bag
-<%= source_end %>
-<%= include_image "/content/topics/images/rosbag1.png" %>
+:source_end
+
+:image :rosbag1
 
 * Lab Instruction: Save and look at the map
 * Once the rosbag has been fully played, you should see the constructed map
@@ -135,16 +136,17 @@ $ rosbag play --clock data.bag
   1. Serve up the newly created map with map_server
   1. Inspect the map with rviz. 
   1. Important: once in rviz you need to app a Map pane, and set the map topic to /maps
-<%= source_begin ("language-bash") %>
+
+:source_begin :bash
 $ rosrun map_server map_saver -f stage3
 $ rosparam set use_sim_time false
 $ rosrun map_server map_server stage3.yaml
 $ rosrun rviz rviz
-<%= source_end %>
+:source_end
 
-<%= include_image "/content/topics/images/rosbag2.png" %>
+:image :rosbag2
 
-### Summary and Conclusion
+:slide_title Summary and Conclusion
 
 * Used slam_gmapping package to create a map of a simulated world
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes

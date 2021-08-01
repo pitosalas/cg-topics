@@ -2,15 +2,13 @@
 title: Good Programming Style
 desc: An opinionated set if rules and guidelines
 ---
-## Good Programming Style Checklist
+:h2 Good Programming Style Checklist
 
 * Like good writing style, good programming style is important, subtle, nuanced, and often a matter of opinion
 * Yet over the years we have learned many fundamental guidelines and rules which most everyone agrees makes for good style.
 * While that might make interesting and valuable reading, here I give my own much briefer set of rules of thumb.
 
-<slide_break></slide_break>
-
-### Conventions
+:slide_title Conventions
 
 * Each language has conventions about how to do certain things.
   1. What case to use for identifiers
@@ -18,33 +16,25 @@ desc: An opinionated set if rules and guidelines
   1. How to structure a package and so on
 * You need to be aware of them and follow them.
 
-<slide_break></slide_break>
-
-### Idiomatic Code
+:slide_title Idiomatic Code
 
 * It is also useful to become familiar with so-called "idiomatic" code.
 * Most languages have more than one way to do something, all valid
 * Programmers experienced in the language always pick one over the other.
 
-<slide_break></slide_break>
-
-### Short Methods
+:slide_title Short Methods
 
 * Try hard not to exceed about 15 lines in a method.
 * If it feels like you can't make it shorter, look for a set of statements in the method which do some sub-step and break them into another method.
 
-<slide_break></slide_break>
-
-### Short Classes
+:slide_title Short Classes
 
 * A corollary of the previous is to try and keep your classes to 100 lines or less.
 * This one might be more difficult to follow because often its a matter of design.
 * With the right abstractions and classes and seeing how a class is doing more than one job.
 * You will get get better as you get more practice.
 
-<slide_break></slide_break>
-
-### DRY
+:slide_title DRY
 
 * DRY is a software engineering slogan meaning "Do Not Repeat Yourself".
 * It means, in the simplest sense, no textual duplication of lines of code.
@@ -52,17 +42,13 @@ desc: An opinionated set if rules and guidelines
 * This is an opportunity to create a new method, with a good name, and call it from both the places.
 * In a more advanced sense it means that you should not duplicate concepts or knowledge.
 
-<slide_break></slide_break>
-
-### Intention Revealing Names
+:slide_title Intention Revealing Names
 
 * You have to make up names for variables, methods, classes, packages, parameters, files and more.
 * Whether the name you pick is "good" is kind of a matter of taste
 * An excellent guideline is to use a name which describes what the thing represents
 
-<slide_break></slide_break>
-
-### Whitespace
+:slide_title Whitespace
 
 * Most programming languages (python is a notable exception) totally ignore whitespace.
 * You can put in extra spaces, tabs and newlines just about anywhere without changing what the program does.
@@ -70,9 +56,7 @@ desc: An opinionated set if rules and guidelines
 *. Indentation should match the nesting structure of your program.
 *. There should be an empty line before and after each method definition.
 
-<slide_break></slide_break>
-
-### Commenting
+:slide_title Commenting
 
 * Don't comment too much or too little. Ok that's not so helpful.
 * But really you should add comments only when the code doesn't speak for itself.
