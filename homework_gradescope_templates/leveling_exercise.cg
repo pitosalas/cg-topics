@@ -1,0 +1,59 @@
+---
+title: Leveling exercise
+desc: We want to see where you are in terms of basic programming 
+---
+:h2 Notes
+1. We will not be "running" these exercises, just reading them. Don't waste too much time on tiny syntax questions
+2. Use any language that you know well. We are looking to see how you think about solving programming challenges
+3. A good developer knows to read the specification closely. Don't skim past details!
+
+:h2 Problem 1
+
+Write a short program that prints out all even numbers between 20 and 100 that are divisible by 3
+
+:h2 Problem 2
+
+Write a program that is given an array of integers and returns the indices of the two numbers whose sum is equal to a given target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+:h2 Problem 3
+
+Please write a simple program to show off your knowledge of classes and objects. You may use any language you like, or even a pseudo language. The program will not be compiled, just read. We want to see how you think about Object Oriented Design.
+
+* You may use any language including a pseudo code to write this
+* If you write by hand, please make sure it is LEGIBLE. Pay attention to white space!
+* I am not going to try and compile this, I just want to see your thought process
+
+**Overview - A mini game**
+
+There there are parking garages where vehicles are parked. We want to represent this mini-universe.
+
+1. There are parking garages. Each parking garage can have 1 or more levels. 
+2. There are levels. Each level can hold zero or more vehicles. Each level has a fixed number of spots numbered 1..100
+3. There are two types of vehicle, with slightly different properties:
+
+**Definitions**
+
+* car:
+    * height and width in centimeters
+
+* police car:
+    * height and width in centimeters
+    *on_emergency: [boolean] default is false
+
+The Garage class should include methods as follows:
+
+* add_level() - allocates a level. Happens only once when the garage is first created.
+* car_arrives(vehicle, floor, time, spot) - adds a vehicle to the specified floor
+* car_departs(vehicle) - removes a vehicle from the garage (assuming the car is there)
+* print_report() - shows how many floors the garage has and how many vehicles of what kind are on each level
+
+All the classes may have constructors and other methods if needed to satisfy the assignment.
+
+**Write a main program that**
+
+* Creates a garage with two levels
+* Creates 3 cars and one police car with different properties
+* Records the arrival of all four vehicles (make up the parameters)
+* Prints a report of the current status of the garage (for each level, what cars are parked, etc.)
+* Records the departure of all four vehicles
+* Prints a report of the current status of the garage

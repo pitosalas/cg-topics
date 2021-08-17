@@ -1,0 +1,16 @@
+---
+title: Read Ruby on Rails Tutorial Chapter 3
+cat: read
+due: TBD
+desc: Starting with a simple web site with static pages
+---
+## **RORT:** Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) Chapter 3.
+
+While we are working towards having a web site with dynamically generated web pages, a good place to start is with static pages, which is what this chapter is about. As you recall, at the most basic level, a web server receives an http request including a URL, and responds with html which is then displayed in the browser. Also we are first introduced to writing unit tests. There is a lot to learn in this chapter so take your time, and ideally type in the examples and get them to work! Take your time and see if you can make it all the way to the end and get it all to work. You will hit snags. Use your resources: the TAs the class mailing list, stack overflow, google and push through to success!
+
+When you are done, answer these warmup questions:
+
+* In the context of this chapter, what is a static page, and what is a dynamic page?
+* What does the statement "render html: "Hello world" do? (Listing 3.4 of the chapter)
+* How would you modify the sample app from the chapter, to have one more page, which would be "FAQ" page?
+* Are there one or two things you are still confused by? If not, what one or two things were the most memorable about your reading?

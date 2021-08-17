@@ -1,7 +1,12 @@
 ---
 title: Good programming
 ---
-### What is "disposable code"?
+* What is Software Design?
+* What is Object Oriented Design?
+* Why should we care especially with Ruby and Rails?
+* How does it apply to the work we are doing right now?
+
+:slide_title What is "disposable code"?
 
 * Not designed
 * Incomprehensible 1 year, 1 month, 1 week later
@@ -10,9 +15,7 @@ title: Good programming
 * Long, ugly methods
 * Bad or meaningless naming
 
-<slide_break></slide_break>
-
-### Handy Shorthand
+:slide_title Handy Shorthand
 
 * Each summarizes a very important principle 
 

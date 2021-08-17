@@ -2,8 +2,6 @@
 title: Good Programming Style
 desc: An opinionated set if rules and guidelines
 ---
-:h2 Good Programming Style Checklist
-
 * Like good writing style, good programming style is important, subtle, nuanced, and often a matter of opinion
 * Yet over the years we have learned many fundamental guidelines and rules which most everyone agrees makes for good style.
 * While that might make interesting and valuable reading, here I give my own much briefer set of rules of thumb.
