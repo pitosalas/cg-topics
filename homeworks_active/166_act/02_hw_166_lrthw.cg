@@ -1,0 +1,12 @@
+---
+title: 'Do "Learn Ruby The Hard Way" up to lesson 45'
+cat: activity
+due: 2-sep-2021
+desc: You probably don't know Ruby. it's similar to Python and Java in many ways. You should not have too much trouble learning it!
+---
+:h2 Learn Ruby using Ruby The Hard Way
+
+* As you know this course is taught in Ruby and Rails. This is not a hard language to learn given your previous experience. There are many ways of learning a language. For us I am assigning this quick and simple sequence of exercises. As you see there are a series of lessons. The first few are really trivial. They get harder and harder as you progress. Once you complete the assignment you will be prepared for what comes next. 
+
+* Your assignment is to do lessons 1-45. Locate and begin or continue going through [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/).
+

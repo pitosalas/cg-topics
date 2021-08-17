@@ -1,0 +1,13 @@
+---
+title: Read Ruby on Rails Tutorial Chapter 4
+desc: A much easier chapter about some ruby topics
+due: TBD
+cat: read
+---
+## Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning##cha-beginning) Ch 4, "Rails Flavored Ruby"
+
+This is an easier chapter, reviewing a variety of Ruby topics that are extended in Rails. This is possible by the way because Ruby as a programming language is very extensible, and Rails takes advantage of this. It has not been unusual to notice features invented by the Rails team which over time get moved into Ruby core. This chapter is an excellent review of Ruby as well. As usual I really encourage and ask you to go through the code samples and actually type them in. You will see that it really helps your understanding and will assure your success in this course! Use your resources: the TAs, the class mailing list, stack overflow, google and push through to success! When you are done, go to Latte and answer these warmup questions:
+
+* Give me your explanation of what a symbol is in Ruby. Write a very brief few lines of Ruby to illustrate.
+* What is meant by the idea that Ruby classes can be "opened up" or "reopened"?
+* What is the difference between 'require' and 'require_relative' in Ruby?

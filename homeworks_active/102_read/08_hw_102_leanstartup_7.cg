@@ -1,0 +1,15 @@
+---
+title: Read The Lean Startup Chapter 7
+desc: More about the lean startup
+cat: read
+---
+## 2. Read LS Chapter 7 - Measure <%= partbadge %>
+
+This chapter begins the justification and explanation of the importance of measurement. Here are some warmup questions:
+
+* The chapter talks a lot about "the engine of growth". Explain the concept in one paragraph so that someone who is not familiar with Lean Startup could understand it.
+* What is Lazy Registration? Describe the reason why Grockit implemented it originally, how they tested its effectiveness and what they concluded about Lazy Registration at Grockit.
+* Thinking about your pilot project, what would an example be of a "vanity" metric and what of an "actionable" metric? In what way is that  vanity metric?
+* Checkin: What 1 or 2 important things from the reading did you not understand? And if you understood it all, then what 1 or 2 important things were most insightful/useful/valuable to you. Please make sure I can tell which is which!
+* <%= deliverable "Write your responses to these as a post in the participation blog" %>
+
