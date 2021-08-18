@@ -1,7 +1,7 @@
 ---
 title: 'Do "Learn Ruby The Hard Way" up to lesson 45'
-cat: activity
-due: 2-sep-2021
+cat: act
+due: 9/2/21
 desc: You probably don't know Ruby. it's similar to Python and Java in many ways. You should not have too much trouble learning it!
 ---
 :h2 Learn Ruby using Ruby The Hard Way

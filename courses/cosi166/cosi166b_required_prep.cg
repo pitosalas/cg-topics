@@ -1,3 +1,4 @@
+
 ---
 title: Required Preparation
 desc: The course starts fast so you absolutely have to prepare ahead of time!
@@ -28,7 +29,15 @@ Here is what you will have:
 
 1. Install `git` (which you will need to use `GitHub`), explained as part of the tutorial links above.
 
-## 2. Learn Ruby
+## 2. Sign up for free accounts
+
+There are two excellent resources that we've arranged for you. You need to sign up to both in order to succeed in this course.
+
+* [The Ruby on Rails Tutorial](https://www.learnenough.com/scholarship) is the main `textbook` for this course. To get access to it, you need to apply for a scholarship to `Learn Enough`. State something along these lines: "I am a student in Professor Pito Salas' Software Engineering Capstone course at Brandeis University and was asked to use this form to apply for a scholarship. Thanks!". You should receive the scholarship more or less right away.
+
+* [Go Rails](https://gorails.com) is another amazing resource that is I can't recommend strongly enough. Email Chris Oliver at chris at gorails.com and state something along the lines of: "I am a student in Professor Pito Salas' Software Engineering Capstone course at Brandeis University and was asked to email you to request access to GoRails. Thanks". You should get access right away!
+
+## 3. Learn Ruby
 
 In the first week of the course we will fly through an introduction to Ruby programming. If you already know Ruby then you are probably all set. If you know Python well then you're in good shape.
 
@@ -40,7 +49,7 @@ Depending on how you best learn there are several approaches to take for learnin
 
 Our self-study site is [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/preface.html). Students have had good success with it. Go through all the lessons up to 40. The first dozen or so are trivial, but soon it will get hard. It will pay off, believe me!
 
-## 3. Learn the (Unix) Shell (Command Line)
+## 4. Learn the (Unix) Shell (Command Line)
 Throughout the course we are going to use the Unix command line extensively. If you are on a Mac, this is what you use in `terminal`. You may have to use it a lot more than you have in the past. Here are a couple of resources:
 
 * [Mastering Bash and Terminal](https://www.blockloop.io/mastering-bash-and-terminal?utm_source=hackernewsletter&utm_medium=email&utm_term=fav)
