@@ -1,10 +1,8 @@
 ---
 title: Read Ruby on Rails Tutorial Chapter 1
 desc: Starting at the beginning, learn or review some basics
-due: 9/2/21
 cat: read
 ---
-
 :callout :small, "NB", " The Tutorial directs you to use Cloud9. In this course, you should NOT use Cloud9. Install things on your own laptop."
 
 ## Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) - Chapter 1 
