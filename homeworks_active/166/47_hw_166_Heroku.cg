@@ -1,0 +1,15 @@
+---
+title: Heroku
+desc: Getting started with Platform as a Service
+cat: act
+---
+## Heroku scaffolding
+
+:topic_include :heroku
+
+We will be using Heroku throughout. This tutorial will take you through the mechanics of creating a template or scaffolding application for heroku. Heroku requires that you use the Postgres database (and not mysql)
+
+Follow [this comprehensive tutorial](https://devcenter.heroku.com/articles/getting-started-with-rails6) After following this tutorial you will have an app that’s up and running! Be sure to fully understand RORT chapters 1 & 2 before you follow this abridged tutorial.
+
+You will use this work when you embark on PA Rails #1 next week.
+

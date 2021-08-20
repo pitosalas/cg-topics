@@ -1,0 +1,83 @@
+---
+title: PA Rails 1
+---
+## Intro PA Rails 1
+
+This assignment uses the MVC architecture of Rails as you design a Web app in which users can select university classes. It is a difficult assignment. The instructions are detailed but there is no starter code. You have to get it all from Rails or from yourself. In the first part (of 3) you will build a basic rails application that imports and displays the data according to the instructions below.
+
+:callout :small, "NB", "I strongly recommend that you read all these instructions before starting the assignment and try your best to understand them.
+
+## Preconditions
+
+* You successfully did the Heroku assignment
+* You have a github account and know the rudiments of using it
+* You have read and followed examples from chapters 1-4 of Ruby on Rails Tutorial
+* You need to be comfortable installing a gem by listing it in the Gemfile
+* You can figure out JSON
+* You know how to use hashes and arrays in ruby
+
+### Purpose 
+
+The purpose of this assignment is for each student to independently practice their knowledge of the material separate from the team work. What you learn and practice here will definitely contribute to your work on the team project. You will be using a lot of what you are learning in class and in the RORT. You might have to read ahead a little.
+
+### Data
+
+The data you need is available in this zip file: [PA_RAILS_JSON.zip](/content/topics/documents/PA_RAILS_JSON.zip). The zip file contains has 3 JSON files, each is a JSON array. Note: If you are using or already loaded data from [the original URL](http://www.cs.brandeis.edu//~prakhar/dataset.json), then you'll need to iterate through each line of that file and parsing each line as JSON - The entire file is not JSON formatted, just individual lines. 
+
+Also DO NOT use/load entries of type "section" - there are too many of these and you'll end up exceeding the 10K records for a free database on Heroku. Only use data of type **instructor, course and subject.**
+
+### Design 
+
+You will be writing a rails application that enables a user to view  course and instructor data in a convenient display.
+
+## Part 1: Bootstrap UI, Import JSON files and Display data
+
+1. You should start with the code you wrote for the Heroku assignment. Please make sure that the github repo is private.
+
+1. The university data is formatted in JSON in the provided zip file. Create a new directory called, e.g. `data` and expand the zip file into three .json files and take a look at them. There are many tools to look at JSON. I suggest using and learning [jq](https://stedolan.github.io/jq/). It is very rich but for now you can use it to look at the data. Here are [5 Useful jq commands to Parse JSON on the CLI](https://www.fabian-keller.de/blog/5-useful-jq-commands-parse-json-cli/). For example, you can use `cat course.json| jq '.[20]` to see course information for a single course. Take your time to understand each file and the data it contains/how it is organized. You need to look at the JSON files to see what the fields are that will be available. For example, courses have a field listing the subjects that the course belongs to using an array including subject ids. For now, it’s ok if you just display the ids.
+
+1. Use `rails generate scaffold` to generate appropriate models and views in order to represent the data for instructor and course. You can use jq commands (see previous step) to see what columns you will need for each.
+
+1. Once you have created the above scaffolds, play with it to get a feel for what you have, using `rails server` to see what you have so far. 
+
+1. You will need the JSON gem to read the files in. Inspect the files to see what the fields are you will need for your database tables. Instructions to read JSON files can be found here: [Read JSON files with Ruby](https://rubyinrails.com/2014/04/20/ruby-read-json-file-to-hash/).
+
+1. Load the data into your database tables. **You don’t need to store every field/attribute, just the ones you would need and like to include in your app.** The logical place for that code is in the db/seeds.rb file. There are several ways to code the import. Here's a good article about [Importing Large Datasets in Ruby on Rails](https://medium.com/@eric_lum/importing-large-datasets-in-ror-why-you-should-use-activerecord-import-26fc915e6fd0). Note that the instructions in the article are not meant to be copied verbatim! However, they are very similar to what you will need to do. Carefully examine the code in the instructions and modify it to fit our app. You will need to do some more digging around the web to get this done, but this is a very clear and ambiguous task.
+
+1. If you followed the RORT chapters, by this point you should know how to set up a home page. 
+
+1. The home page of the application should display two tabs, as follows. 
+    * Courses - Displays all the courses from the database
+    * Instructors - Displays all the instructors from the database
+    * (If you are having trouble with setting up a home page with multiple tabs then re-read and re-do chapters 1-4)
+
+1. The final step of this assignment is to set up your application to use Bootstrap for the UI. This can be easily accomplished by following the [Bootstrap steps here](https://getbootstrap.com/docs/5.1/getting-started/introduction/). Don't do the first paragraph labeled "Quickstart", just copy the css and js lines. You need to demonstrate that you have looked at the bootstrap documentation and understood the very basics. You need to leverage bootstrap somehow. Most likely you might choose to use the `grid` to control the layout to some extent. In the end it requires just a few html changes. We’re not asking for a specific look just demonstrate that you made the effort to grasp how bootstrap works and fits in.]
+
+## Timesaving Tips
+
+* Look into the Hash#except and Hash#slice methods to help with cleaning up your imported data
+* Check out these really useful gems:
+
+:source_begin :ruby
+# Gemfile
+gem 'better_errors' # more legible error messages from Rails
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Debugging
+gem "activerecord-import" # Much faster bulk importing
+:source_end
+
+## Useful Links
+
+* [ActiveRecord Import](https://github.com/zdennis/activerecord-import/wiki/Examples)
+* [Importing Large Datasets in Ruby on Rails](https://medium.com/@eric_lum/importing-large-datasets-in-ror-why-you-should-use-activerecord-import-26fc915e6fd0)
+
+## Deliverables:
+
+1. Write a readme.md for your app including link to a **private** GitHub repo and your link to Heroku.
+1. Submit a zipped up folder of your app. You can zip this up by deleting your `node_modules` and `vendor` folders in your Rails app, and then zip up the entire file to ensure it isnt too large. Here's how:
+
+Assuming we have a folder called `test_app` for our Rails app, we can remove those folders and zip it using the following commands in our terminal, and replace `<submission-name>.zip` with the name we want our zip to be (i.e. `PitoSalas_PARails1.zip`.
+
+:source_begin
+rm -rf test_app/node_modules test_app/vendor
+zip -r <submission-name>.zip test_app
+:source_end
