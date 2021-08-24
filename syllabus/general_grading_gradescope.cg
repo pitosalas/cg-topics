@@ -19,4 +19,4 @@ Throughout the semester, there will be homeworks, assignments, presentations, qu
 * All assignments have a due date.
 * Written homeworks must all be in pdf form with your name and homework number at the top.
 
-<%= callout("NOTE:", " You have a maximum 3 weeks after a mark has been posted to call our attention to a possible error, oversight or misunderstanding. That is your responsibility. After that, the mark as recorded in Latte will not be changed.") %>
+:callout :small, "NOTE:", " You have a maximum 3 weeks after a mark has been posted to call our attention to a possible error, oversight or misunderstanding. That is your responsibility. After that, the mark as recorded in Latte will not be changed."

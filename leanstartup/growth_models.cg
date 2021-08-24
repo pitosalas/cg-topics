@@ -1,11 +1,9 @@
 ---
 title: Growth Models
 ---
-<%= callout("Kesy to Engines of Growth", "Growth models explain how actions of past customers generate new customers.") %>
+:callout :small, "Keys", "Growth models explain how actions of past customers generate new customers."
 
-<slide_break></slide_break>
-
-### Principles
+:slide_title Principles
 
 * Excludes one-time campaigns and actions
 * Systematic: built into the product's usage
@@ -17,9 +15,7 @@ title: Growth Models
   1. Subscription (or need to re-buy) (access charges, periodicals, expiration or consumption.)
   1. Funded advertising (When advertising gets more users, and is funded from revenue from users.)
 
-<slide_break></slide_break>
-
-### Engines of Growth
+:slide_title Engines of Growth
 
 * We know that without growth we don't have a business
 * Engine of Growth is a way to reason and organize thinking around this
@@ -27,9 +23,7 @@ title: Growth Models
 * The focus of the analysis is around the *metrics* that are necessary
 * The Metrics not only tell you whether you will grow but guides to where to invest to grow
 
-<slide_break></slide_break>
-
-### Sticky Engine of Growth
+:slide_title Sticky Engine of Growth
 
 * Concept: A subscription model that needs to be renewed
 
@@ -40,9 +34,7 @@ title: Growth Models
 
 * Rule: Rate of new customer acquisition exceeds the churn rate then the company will growth
 
-<slide_break></slide_break>
-
-### Sticky Engine of Growth
+:slide_title Sticky Engine of Growth
 
 * Focus
   1. Attracting new customers and retaining the ones you have
@@ -53,9 +45,7 @@ title: Growth Models
   1. Inherent in the service is that the house will need cleaning periodically
   1.The service is inherently sticky
 
-<slide_break></slide_break>
-
-### Viral Engine of Growth
+:slide_title Viral Engine of Growth
 
 * Concept
   1. Simple normal use of the product leads to new sales
@@ -65,9 +55,7 @@ title: Growth Models
   1. "Viral Coefficient" - how many new customers a single customer brings in, and over what period
   1. Viral coefficient should be > 1 to get exponential growth
 
-<slide_break></slide_break>
-
-### Viral Engine
+:slide_title Viral Engine
 
 * Focus
   1. Increase the viral coefficient
@@ -76,9 +64,7 @@ title: Growth Models
   1. Dropbox: strong incentive of a new user to invite additional users
   1. Users were given an incentive to do this, more free disk space
 
-<slide_break></slide_break>
-
-## Paid Engine of Growth
+:slide_title Paid Engine of Growth!
 
 * Concept
   1. Simple paid product
@@ -89,9 +75,7 @@ title: Growth Models
   1. Customer Acquisition Cost (CPA): How much (in sales costs, advertisting, etc.) does it cost to acquire a single customer
   1. Growth depends on the simple ratio of customer acquisition cost vs. per customer earnings
 
-<slide_break></slide_break>
-
-### Paid Engine of Growth
+:slide_title Paid Engine of Growth!
 
 * Focus
   1. LTV of a customer tells you how much you can spend on customer acquisition

@@ -1,30 +1,27 @@
 ---
 title: Brainstorm in Teams
 ---
+:h2 Brainstorm new product or service ideas - 30 minutes
 
-## Brainstorm new product or service ideas - 30 minutes
+:slide_title Purpose
 
-### Purpose
 * You continue to practice thinking critically about new business possibilities
 * Rehearse explaining and testing an idea orally so that it is understood
 * Rehearse being an effective teammate even with people you just met
 * Rehearse listening openly and giving valid and valuable feedback
 
-<slide_break></slide_break>
+:slide_title Activities
 
-### Activities
-* We will break into random groups of 6
+* We will break into groups of 6
 * Choose someone to take meeting notes in a text file
   * Include the names of the participants
   * Include some of the best ideas
-* Watch this together: https://youtu.be/bsi6-QkGr0A
+* Watch [this video of my talking head](https://youtu.be/bsi6-QkGr0A) together: 
   * Discuss the video with each other
-  * Together and separately look through <%= link_to_topic :product_inspirations %>
+  * Together and separately look through :topic_link :product_inspirations
 * Talk about ideas you see that look good and play with them from the perspective of:
   1. What "job" does the product do for the customer?
   1. What domain expertise can you bring to bear?
   1. How big a pain does the product relieve?
   1. Can the product or service make money?
   1. Is there a way to reach these customers?
-
-* <%= deliverable("Post the meeting notes to the participation blog") %>
