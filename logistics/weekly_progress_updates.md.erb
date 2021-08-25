@@ -20,7 +20,7 @@ Every team will submit a PDF to LATTE every week with:
 * URL to their GitHub repo
 * and a chart similar to this example:
 
-<% tbh = TableHelper.new(:normal, :bordered) %>
+<% tbh = TableHelper.new("") %>
 <% tbh.headers("Who", "Completed", "In Progress", "Slowed/Blocked") %>
 <% tbh.row("Chris", "Create paper prototypes","Update cohort analysis", "Mark Zuckerberg is not returning my calls.") %>
 <% tbh.row("Charlie", "Set up GitHub repo and Heroku app<br>Implement account creation page", "Overall UI design <ul><li>Built paper prototypes</li><li>Working on writing the stylesheets</li></ul>Implement responsive buttons via Ajax", "") %>

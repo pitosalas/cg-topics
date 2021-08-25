@@ -1,0 +1,19 @@
+---
+title: Find Code Smells Exercise
+---
+:slide_bigtitle Exercise
+
+:callout :small, "NB", "You might feel that you just heard these principles for the first time, and you don't really know Ruby that well yet. There's no great time to share this with you, it's either too early or too late. But don't worry, you'll get the hang of it soon enough. You can always come back and review these principles later."
+
+* Groups of 2 students
+* Review the supplied program.rb
+* See all the ways that it can be improved according to what we learned today
+* Edit the program and add the names of the two students in a comment at the top
+* Submit your updated program.rb to Latte
+
+:slide_title Discussion
+
+* Discussion about hard and fast rules
+* What's the right amount of code commenting?
+* How important is proper formatting?
+* Why is naming important and what is it's connection to commenting?
