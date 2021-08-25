@@ -3,6 +3,4 @@ title: Preparation
 cat: sub
 desc: No Kidding! This prep is required and end up wasting a lot of time!
 ---
-## [Submit in gradescope!](https://www.gradescope.com/courses/285232/assignments/1413134)
-
-### :topic_link :cosi166b_required_prep
+:topic_include :cosi166b_required_prep
