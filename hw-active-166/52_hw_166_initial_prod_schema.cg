@@ -3,12 +3,14 @@ title: Propose schema
 desc: Apply data modeling to your product and propose a schema
 cat: sub
 ---
-:h2 Develop an initial schema for your product.
+## Purpose
+
+A necessary early step in creating an application is to think about the database schema. A friend once said: "If you don't know your schema, you don't know your application" and it's true. This assignment gets you thinking about schema design and applying some concepts and techniques that we will review in class.
+
+## What to do
 
 Read [Basics of good database design in Web Development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/). You might google around for other sources if you like. You need to think clearly about the functionality that your system will support. You also need to think carefully about relationships.
 
-For example, let's say I have a Student entity and I have a Course entity. Is there exactly one student for every course (1 to 1). Are there many students for any one course (many to 1) or perhaps does one student have many courses (1 to many), or maybe even a combination - one student can have many courses, and one course can have many students - (many to many). Don't even start worrying about designing your database until you have questions like that clear in your mind!
+For example, let's say I have a Student entity and I have a Course entity. Is there exactly one student for every course (1 to 1). Are there many students for any one course (many to 1) or perhaps does one student have many courses (1 to many), or maybe even a combination - one student can have many courses, and one course can have many students - (many to many). Don't even start worrying about designing your database until you have questions like that clear in your mind! 
 
-Using all that background, develop initial schema for your product. Each team member work separately so you can then compare and contrast what you came up with. So this is an individual assignment! Include table names, field or attribute names, and relations or joins. **Please use this exact format: :topic_link :simple_schema_notation**
-
-:deliverable "Initial schema for your product. Use the required format!"
+Using all that background, develop initial schema for your product.  Each team member work separately so you can then compare and contrast what you came up with. You should consider the features of your product concept and design a schema, individually. Write it up using this [Simple Schema Notation](http://cosi166r.s3-website-us-east-1.amazonaws.com/content/topics/engineering/simple_schema_notation.md/)

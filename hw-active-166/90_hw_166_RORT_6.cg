@@ -1,0 +1,11 @@
+---
+title: Read RORT Chapter 6
+desc: Actually start working with the database and models
+---
+:h2 Read [Ruby on Rails Tutorial Chapter 6](https://www.railstutorial.org/book/beginning##cha-beginning) 
+
+Here we see are learning how to create validations for models. As usual I really encourage and ask you to go through the code samples and actually type them in. You will see that it really helps your understanding and will assure your success in this course! Use your resources: the TAs, the class mailing list, stack overflow, google and push through to success! When you are done, go to Latte and answer these warmup questions:
+
+* Give me your explanation for what `validates :name, presence: true` does in the User model.
+* What is TDD? When and why might you use it?
+* What is a hash function, and why should you hash passwords/other forms of confidential data in your database?

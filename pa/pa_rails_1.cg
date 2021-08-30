@@ -53,6 +53,12 @@ You will be writing a rails application that enables a user to view  course and 
 
 1. The final step of this assignment is to set up your application to use Bootstrap for the UI. This can be easily accomplished by following the [Bootstrap steps here](https://getbootstrap.com/docs/5.1/getting-started/introduction/). Don't do the first paragraph labeled "Quickstart", just copy the css and js lines. You need to demonstrate that you have looked at the bootstrap documentation and understood the very basics. You need to leverage bootstrap somehow. Most likely you might choose to use the `grid` to control the layout to some extent. In the end it requires just a few html changes. We’re not asking for a specific look just demonstrate that you made the effort to grasp how bootstrap works and fits in.]
 
+1. Heroku stores the database separately so when you push your code up to heroku, make sure you also run the commands to set up the database. (Note: make sure you do this after you push up to GitHub and heroku)  
+
+```
+heroku run rake db:migrate
+heroku run rake db:seed
+```
 ## Timesaving Tips
 
 * Look into the Hash#except and Hash#slice methods to help with cleaning up your imported data
