@@ -9,7 +9,7 @@ What is the shell command that lists all files in the current directory?
 What is the shell command that lets you go into a sub-directory? For example, I am in the folder called 'parent' and I would like to go into a sub-directory called 'child'.
 
 :h3 What is the shell command to do this? 
- What is the shell command that you use to delete a file?
+ What is the shell command that you use to delete a file, for example `readme.md`?
 
 :h3 What is the shell command to do this? 
 What shell command do you use to delete a folder and its contents?
