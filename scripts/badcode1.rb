@@ -4,22 +4,22 @@
 class BadCode
 
   def method1()
-    firstthing = "I'm a calculator"
-    uselessvariable = "im never used"
-    uselessvariable2 = "im also never used"
-    uselessvariable3 = method3()
+    firstthing = "I'm a calculator";
+    string22 = "im never used";
+    s2 = "im also never used";
+    s3 = method3();
 
 
 
 
     puts(firstthing)
-    puts("Enter a number")
+    puts("Enter a number");
     first = gets.chomp.to_i
-    puts("Enter an operator")
+    puts("Enter an operator");
     second = gets.chomp
     puts("Enter a number")
     third = gets.chomp.to_i
-    print("Your result is ")
+    print("Your result is ");
     if second == "+"
       fourth = first+third
         puts(fourth)
@@ -88,8 +88,13 @@ class BadCode
   def method3()
 
 
-    string1 = "i never get used so you wont see me anyway"
+    string1 = "i never get used so you wont see me anyway"; 
 
+  end
+
+  def method5(a, v)
+    i = 1..100
+    puts i*3
   end
 end
 
