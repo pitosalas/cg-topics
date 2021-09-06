@@ -5,6 +5,7 @@ desc: An opinionated set if rules and guidelines
 * Like good writing style, good programming style is important, subtle, nuanced, and often a matter of opinion
 * Yet over the years we have learned many fundamental guidelines and rules which most everyone agrees makes for good style.
 * While that might make interesting and valuable reading, here I give my own much briefer set of rules of thumb.
+* Take a look at :topic_link :badcode1 and :topic_link :badcode2 as we work through the rules and guidelines
 
 :slide_title Conventions
 

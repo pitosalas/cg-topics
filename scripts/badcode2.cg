@@ -1,3 +1,7 @@
+---
+title: Bad Code Example 2
+---
+:source_begin :ruby
 #fibonacci series between c and d
 def fibarray(c,d)
   arr= []
@@ -55,3 +59,4 @@ puts ("Sum of missing numbers: #{sum}")
 multiple = 2;
 missing_sum = checkmultiple(sum, multiple)
 puts ("is missing sum a multiple of #{ multiple}? #{missing_sum}")
+:source_end

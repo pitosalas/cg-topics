@@ -1,3 +1,4 @@
+~~~ ruby
 class Person
   # their name
 end
@@ -22,3 +23,4 @@ puts a.inspect
 
 class Brain
 end
+~~~

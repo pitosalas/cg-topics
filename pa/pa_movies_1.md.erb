@@ -4,7 +4,7 @@ desc: Part one of the Movies programming assignment involves loading a big data 
 ---
 ## Overview
 
-Social networking-based webapps often collect huge amounts of information about members of the community.  One of the most exciting developments in the past decade has been the development of tools for analyzing this data to provide value for the community.  For this assignment, you are to write a ruby program that reads in a large data set and produces some analysis.
+Social networking-based web applications often collect huge amounts of information about members of the community.  One of the most exciting developments in the past decade has been the development of tools for analyzing this data to provide value for the community.  For this assignment, you are to write a ruby program that reads in a large data set and produces some analysis.
 
 ## Data
 
@@ -20,7 +20,7 @@ The main data set u.data consists of 100,000 rows where each row has 4 tab-separ
 * rating
 * timestamp
 
-More information about the users and movies can be found in other files, but you don't need that info for this assignment.
+`u.data` is sufficient for this assignment. While you can find more information about the users and movies in other files you are not required to use them.
 
 ## Program
 
@@ -45,8 +45,8 @@ Class MovieData - will contain a sample of movie data from the data files. Here 
 ### Notes
 * It's ok to come up with a very simplistic approach based on the data. Please don't think I am expecting some fancy AI/machine learning/or other fancy thing. This is not the point of the assignment.
 * The point of the assignment is that you write a working Ruby program that is reasonably designed, clear to understand, that it "works". Focus on using ruby well, giving variables reasonable names, having methods not bee too long, using objects and classes if/when appropriate.
-* We won't grade based on how well you detect similarity. If one student says that user x and y are totally different and another say that they are exactly the same, no one will get points off..
----
+* We won't grade based on how well you detect similarity. If one student says that user x and y are totally different and another say that they are exactly the same, no one will get points off.
+* If you care about submitting well designed clean code, refer to :topic_link :programming_style. Also consider using the `rubocop` gem to get style hints 
 
 ## Submission: Upload the following **three** files with the specified names!
 
@@ -54,6 +54,6 @@ Class MovieData - will contain a sample of movie data from the data files. Here 
 |files|
 ---
 
-1. `movie_data.rb`: the working source code, as clean and elegant as you can make it.
+1. `movie_data.rb`: the working source code, as clean and elegant as you can make it. Refer to :topic_link :programming_style guidance.
 1. `transcript.txt`: Run the code from your shell and have it generate the first and last ten elements of popularity list and most_similar(1). In other words, run your code from the command line, and cut and paste the output into a text file called `transcript.txt` This allows us to review your code without us having to try and run it ourselves. So don't worry too much about the format as long as we can tell that the program worked.
 1. `README.md`: A file that describes in English your solution and also considers the questions posed above.
