@@ -5,7 +5,7 @@ cat: read
 ---
 ## Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) Chapter 2. 
 
-This is going to be another exciting chapter. Don't worry if a lot of things seem "magic", as the classes continue it will all become crystal clear to you! For this chapter you are going to create a toy application.
+This is going to be another exciting chapter. Don't worry if a lot of things seem "magic", as the classes continue it will all become crystal clear to you! For this chapter you are going to create a toy application. It is a long chapter. You should reserve multiple hours and really try to follow along!
 
 Make sure you understand what the app is trying to do and actually follow along. I strongly recommend that you type in the code just like what he says in the book because from my experience you will learn a lot more that way. You will use the `rails` command and for the first time start the process of understanding really how a web server actually works! 
 
@@ -16,7 +16,48 @@ Take your time and see if you can make it all the way to the end and get it all 
 * Complete this sentence: "Rails is ..."
 * The chapter talks about "deploying" the rails application. What do you think that means?
 
+---
+Ruby on Rails Tutorial, Chapter 2:
+
 (X) Haven't started
 (X) Skimmed all of it
 (X) Read all of it
+(X) Read and tried to run some of it!
 
+What is the standard way to install gems for Rails applications?
+
+( ) `bundle install`
+(X) `bundle update`
+(X) `bundle`
+( ) `gem install some_gem`
+( ) Any of these will work
+( ) None of these will work
+
+What is the name of the view file for the user edit page?
+
+( ) `app/controllers/users_controller.rb`
+(X) `app/views/users/edit.html.erb`
+( ) `app/models/user.rb`
+( ) None of the above
+( ) It can be anything `*.rb`
+
+Referring to the example in the very first part of section 2.1 (before 2.1.1): When you visit the application web site directly, i.e. at the root, it displays `hello world`. In general, where would you look in a rails application to determine what page is displayed at the root (`/`) path?
+
+( ) `app/controllers/application_controller.rb`
+(X) `config/routes.rb`
+( ) `Gemfile.lock`
+( ) The specific file would depend on the name of the view
+
+What happens if you try to create a user with a name but no email address?
+
+( ) No problem. It works fine.
+(X) You get a specific error saying that an email is required
+( ) You get a page that says something vague
+( ) The save link is greyed out
+
+What is the most important reason that we use `git` and `GitHub` to manage our source code?
+
+( ) It protects me in case I delete a file by accident; I can get it back from git.
+( ) It automatically checks that our syntax is correct and reports to us if there is a problem
+(X) It allows two people to work together on the same application without risking accidentally overwriting work
+( ) It is the standard convention in the industry
