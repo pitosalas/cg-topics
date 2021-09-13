@@ -1,8 +1,7 @@
 ---
 title: "Term Project Stage 4: Launch"
+desc: You need to complete the finishing touches
 ---
-:topic_link :cosi166_project_stage3 <=> :topic_link :cosi166_final_deliverables
-
 :h2 Goals
 
 1. Fully complete your product
@@ -20,7 +19,7 @@ title: "Term Project Stage 4: Launch"
 :h2 Steps
 
 * Re-read :topic_link :good_166_product
-* Re-read :topic_link :cosi166_final_deliverables
+* Re-read :topic_link :hw_166_final_deliverables
 * Plan out your final demo (which will be around 5 minutes in length)
     * Demos work best that are not just a list of features
     * Instead think of a scenario that you can use as a way to visit your key features
