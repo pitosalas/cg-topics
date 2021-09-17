@@ -27,6 +27,9 @@ gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
 gem 'hirb'
+
+# remember to
+bundle update
 <%= source_end %>
 
 ### Create the database tables
@@ -87,7 +90,7 @@ p = Human.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
 p.delete
 <%= source_end %>
 
-### Associations, declared in models
+### Associations, declared in `app/models/model_name.rb`
 <%= source_begin "language-ruby" %>
 class Human < ApplicationRecord
   has_many :registrations
@@ -106,6 +109,7 @@ end
 ### Association, used
 
 <%= source_begin "language-ruby" %>
+$ rails console
 Human.first.registrations
 Human.where(gender: "f").first.registrations
 Event.first.humen
@@ -115,8 +119,12 @@ Event.first.humen
 
 *Validations are applied by ActiveRecord, NOT the database*
 <%= source_begin "language-ruby" %>
+
+# add this to the /app/models/human.rb file
 validates :zipcode, length: { is: 5}    # declared in model
 
+# then in shell:
+$ rails console 
 p = Human.first
 p.zipcode = 1                           # invalid value
 p.valid?                                # explicit check
