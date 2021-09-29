@@ -29,7 +29,7 @@ Perform the tasks below and produce, with the team, a 3-5 page report, which sho
 
 1. **Hypotheses and MVPs:** The most important ongoing work will be your hypotheses and the MVPs you run to test them. You might want to create a separate document to maintain your ongoing list. Categorize the hypotheses according to the various types you've learned about. You should expect to keep these up to date as you progress through the semester.
 
-1. **Get out of the building:** And right along with that, start a continuing process of experimentation by getting out of the building. Refer to <%= link_to_topic :mvp_taxonomy %> for a reminder of the tools you have in your arsenal. Use as many of them as needed. Guard against subjective "gut level" opinion. However also allow common sense to play a part. No need to test something that everyone agrees is **really** self evident.
+1. **Get out of the building:** And right along with that, start a continuing process of experimentation by getting out of the building. Refer to :topic_link :mvp_taxonomy for a reminder of the tools you have in your arsenal. Use as many of them as needed. Guard against subjective "gut level" opinion. However also allow common sense to play a part. No need to test something that everyone agrees is **really** self evident.
 
 :slide_title What's in the report
 
@@ -37,7 +37,7 @@ Perform the tasks below and produce, with the team, a 3-5 page report, which sho
 
     1. Introduction
     1. Vision. Based on your brainstorming what is a succinct explanation of the vision for your product or business? You will be stating this again in Phase 2 and Phase 3, and it likely will change.
-    1. Hypotheses. Prioritized and classified by type. Including whether they've been tested and what the results were. Obviously you will not have tested all of them yet, and some you may never test
+    1. Hypotheses. Prioritized and classified by type. Including whether they've been tested and what the results were. Obviously you will not have tested all of them yet, and some you may never test. You should have at least five plausible hypotheses.
     1. Test at least 2 hypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
     1. Markets and Customers. List of customer categories or types, and an explanation of their role in your startup. Be specific about why each customer type makes sense for your business.
     1. Meeting Notes. List of dates and times and attending student of each team meeting with a 1 paragraph summary of results.

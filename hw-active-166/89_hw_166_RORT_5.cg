@@ -1,0 +1,18 @@
+---
+title: Read RORT Chapter 5
+desc: All about creating and editing Views in Rails
+---
+### Purpose of this assignment
+
+In this chapter, we see how to create views, and start seeing a lot of HTML and getting into routing at a greater level of detail.
+
+### Do this
+
+Read [Ruby on Rails Tutorial Chapter 5](https://www.railstutorial.org/book/beginning##cha-beginning) <%= partbadge %> <%= pdfbadge %>
+
+### Answer these questions
+
+* Give me your explanation on what `link_to` is and does. As specific as you can.
+* When and why would you use a partial?
+* What does he mean (in conclusion) by a custom routing rule?
+* Are there one or two things you are still confused by? If not, what one or two things were the most memorable about your reading?
