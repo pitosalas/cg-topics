@@ -1,0 +1,7 @@
+---
+title: ActiveRecord associations
+due: 10/1/2021
+---
+:h2 Welcome to Lab
+
+:topic_include :hands_on_rails_mtm
