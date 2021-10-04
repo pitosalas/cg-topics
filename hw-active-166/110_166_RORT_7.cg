@@ -1,0 +1,22 @@
+---
+title: Read RORT Chapter 7
+desc: Start learning about forms and signing up!
+---
+
+### Purpose 
+
+This chapter covers routes, controllers and actions, reviewing what was demoed in class last week. You will encounter the vaunted `form_with` again. And you will for the first time you will see the routes "resources" line. You will finally deploy what you have so far onto Heroku.
+
+### Do this
+
+* Read [Ruby on Rails Tutorial](https://www.learnenough.com/ruby-on-rails-6th-edition-tutorial/sign_up) Chapter 7, "Sign Up"
+
+### Answer these questions
+
+* What things do the different rails environments  (develop, test, production) affect? I would like to see at least two beyond the choice of database. And an explanation of each of the two, not just a paraphrase of what's in the book!
+* What are all the effects that you can find that the "resources" line does in the routes.rb file?
+* What's a gravatar? Are you going to use them in your product? How does it work?
+* On figure 7.18 (and many others) you see "the form contains 3 errors" and a list of errors. Exactly what lines of the view are causing that text to show up on the form? Can you explain how that works?
+* Are there one or two things you are still confused by? If not, what one or two things were the most memorable about your reading? 
+
+:deliverable Submit your answers as a pdf to latte..

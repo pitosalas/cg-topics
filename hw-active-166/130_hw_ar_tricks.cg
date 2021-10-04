@@ -1,0 +1,16 @@
+---
+title: ActiveRecord Tricks
+desc: Get used to active record by practicing
+---
+### Purpose
+This short video introduces you to some handy tools and techniques. It will strengthen and deepen your understanding of ORMs in general and AR in particular.
+
+### Do this
+
+Study this video. You will learn a lot about ActiveRecord! [ActiveRecord Tricks](https://www.driftingruby.com/episodes/activerecord-tricks).
+
+You can find his source code in my [public_samples](https://github.com/pitosalas/public_samples) repository under `ar-tricks-from-video`. After you clone and pull the repo, cd to the `ar-tricks-from-video` directory, delete gemfiles.lock and `bundle install`. After that rails db:create db:migrate db:seed should all work and you can follow along the video.
+
+### Make notes
+
+Please share one or two things you learned.
