@@ -1,0 +1,17 @@
+---
+title: Read RORT Chapter 8
+desc: How does login actually work?
+---
+## Purpose
+
+This chapter covers routes, controllers and actions, reviewing what was demoed in class last week. You will encounter the vaunted `form_for` again. Notice that `form_for` and `form_tag` are still supported but as of Rails 5.1, there's a new `form_with` which will replace both eventually. And you will see for the first time in this tutorial, the routes "resources" line. You will finally deploy what you have so far onto Heroku.
+
+## Do This
+
+Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning##cha-beginning) Chapter 8, "Basic Login" 
+
+* What does it mean when we say that the HTTP protocol is "stateless." Why does this pose a challenge for processing authentication?
+* The `log_in` method has this line: `session[:user_id] = user.id`. Explain it.
+* How is a logout achieved?
+* Are there one or two things you are still confused by? If not, what one or two things were the most memorable about your reading? 
+

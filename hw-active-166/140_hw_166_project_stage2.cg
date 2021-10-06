@@ -18,7 +18,7 @@ desc: Starting to actually build your application!
 
 :h3 Steps
 
-1. Decide the attributes (or properties or columns) are of the first few models. Figure out what the schema will be and how the associations run. Just think in terms of the schema or structure and decide as a team. Keep it simple at this point with no more than 5 (but more likely 3) tables.
+1. Decide the attributes (or properties or columns) are of the first few models. Figure out what the schema will be and how the associations run. Just think in terms of the schema or structure and decide as a team. Keep it simple at this point with no more than 5 (but more likely 3) tables with relevant associations.
 
 1. Create stories in Trello for each table and try to have more than one teammate be involved in actually building the code.
 
@@ -34,6 +34,6 @@ desc: Starting to actually build your application!
 
 :h3 Deliverables
 
-1. Link to your shared Github repo. Please make sure you set up Mitchell and your team TA as collaborators!
+1. Link to your shared Github repo. It's ok to make it public.
 2. Link to deployed version of your application
 3. A 1 paragraph write-up of what the goals are for this week and what each team member thinks they will work on.
