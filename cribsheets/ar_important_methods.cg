@@ -1,0 +1,33 @@
+---
+title: Important ActiveRecord methods
+desc: Where we delve into some corners of AR that are important to know about
+slides: true
+---
+
+:slide_bigtitle Tour of some interesting AR methods
+
+:slide_title References
+
+* [5 must know AR methods](https://medium.com/swlh/5-must-know-active-record-methods-7475b1578270)
+
+
+:slide_title  Methods (using Hydra)
+
+:source_begin :ruby
+
+Movie.order(:title)
+
+Movie.order(title: :desc)
+
+Movie.select(:title, :director)
+
+Movie.select(:title).distinct
+
+Movie.group(:release_date)
+
+Movie.pluck(:title, :release_date)
+
+:source_end
+
+:slide_title More Methods (using ar-tricks-from-video)
+
