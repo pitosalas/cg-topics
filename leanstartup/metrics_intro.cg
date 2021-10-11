@@ -9,7 +9,7 @@ slides: true
 * You can't manage what you don't measure
 * What gets measured gets managed
 * Standard accounting metrics don't work - there's no revenue yet!
-* Look here for lots of details: <%= link_to_topic :ch7%>
+* Look here for lots of details: :topic_link :ch7
 
 :slide_title Vanity vs. Actionable metrics
 * Having more users today than I did last week is not enough
