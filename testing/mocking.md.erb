@@ -8,6 +8,48 @@ slides: true
 * Collaborators (other objects needed to test SUT)
 * Decoupling is a major goal
 
+:slide_title example
+
+:source_begin :ruby
+# code sketch, not valid code!
+
+class Car
+   def make
+   def electric?
+   def weight
+   def image
+   def current_price
+end
+
+class Garage
+   def find_parking_space(car)
+   def park_car(car, space)
+   def contains_space(space)
+end
+
+class Space
+    def is_free?
+    def occupied?
+    def charging_station?
+    def occupying_car
+end
+
+#test
+    c = Car.new(...)
+    g = Garage.new(....)
+    space = g.find_parking_space(c)
+    assert space != nil
+    g.park_car(c, space)
+    assert space.occupied?
+
+    1..10.times do
+      car = Car.new(...)
+      space = g.find_parking_space(car)
+      g.park_car(car, space)
+    end
+
+:source_end
+
 :slide_title What is a Mock?
 
 * An object that stands in for another object during testing
@@ -18,6 +60,13 @@ slides: true
     1. Test Dummy: An object that stands in for another, that has no methods. Not very useful.
     1. Stub: Responds to the key methods that are required for the test but the return values are fixed.
     1. Spy: Like a Stub, except it "remembers" what calls were made so it can verify that the expected calls were indeed made.
+
+:source_begin :ruby
+
+    mock = Minitest::Mock.new
+    mock.expect :apply, true
+
+:source_end
 
 :slide_title Advantages and Disadvantages
 
