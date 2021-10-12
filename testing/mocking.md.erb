@@ -13,15 +13,29 @@ slides: true
 :source_begin :ruby
 # code sketch, not valid code!
 
+#
+# This car class has many methods which would call an API to retrieve information,
+# For example, whether a car is electric is retrieved from the make, model and year.
+#
 class Car
    def make
+   def model
+   def year
    def electric?
-   def weight
-   def image
+   def suv?
    def current_price
+   def to_html # this method would be used to render the car on a web pagte
 end
 
+# The Garage and Space classes need to work with Car. But, all they 
+# need is whether the car is electric or whether it is an suv. That is enough
+# to choose the best space for the car.
+
 class Garage
+   # Allocates an array of floors, containing arrays of spaces
+   def initialize(floors, spaces_per_floor)
+
+   # Given the 
    def find_parking_space(car)
    def park_car(car, space)
    def contains_space(space)
@@ -30,20 +44,21 @@ end
 class Space
     def is_free?
     def occupied?
+    def fits_suv?
     def charging_station?
-    def occupying_car
+    def occupying_car # returns the car occupying the space
 end
 
-#test
-    c = Car.new(...)
-    g = Garage.new(....)
+# sketch of test
+    c = Car.new(year: 2021, model: "Sierra", make: "Toyota")
+    g = Garage.new(floors: 3,   spaces_per_floor: 10)
     space = g.find_parking_space(c)
-    assert space != nil
+    assert_nill space
     g.park_car(c, space)
     assert space.occupied?
 
     1..10.times do
-      car = Car.new(...)
+      car = Car.new(...) # How do we deal with the database calls and the API calls?
       space = g.find_parking_space(car)
       g.park_car(car, space)
     end
@@ -63,8 +78,8 @@ end
 
 :source_begin :ruby
 
-    mock = Minitest::Mock.new
-    mock.expect :apply, true
+    car1 = Minitest::Mock.new
+    mock.expect :electric, false
 
 :source_end
 

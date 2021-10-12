@@ -1,0 +1,45 @@
+---
+title: Why does testing matter?
+desc: Conceptual Arguments for Testing
+slides: true
+---
+:slide_bigtitle Arguments for Automated Testing
+
+* Credit: Some of this is directly quoting [POODR](http://www.poodr.com)
+
+:slide_title Testing and Agile
+* Notion of a 'release' is gone
+* Notion of a 'spec' is gone
+* Cycles are much faster
+* Automation becomes a requirement
+
+:slide_title Testing and Design
+* TDD supports design
+* Insist on looking at the class/module/unit first as a black box that delivers services
+* Good design delays all decisions that can be delayed until further requirements are nailed down.
+* Refactoring is how new requirements are incorporated
+* Good test suites is what gives you the confidence to refactor
+
+:slide_title Testing and Refactoring:
+
+* Recall: *Refactoring is a controlled technique for improving the design of an existing code base. Its essence is applying a series of small behavior-preserving transformations, each of which 'too small to be worth doing'*
+* So you always should have solid tests before you start refactoring
+* Each small change is verified to not have changed behavior
+
+:slide_bigtitle Good Testing/Quality/Testability
+
+:slide_title Fundamental motivation for testing: reduce costs
+* Writing tests should over the lifetime of the code cost less
+* Otherwise it's not worth doing
+
+:discussion_box "How does it reduce costs?"
+
+:slide_title Breaking it down: Why Test?
+
+* Finding bugs early
+* Reducing errors
+* Making assumptions explicit - documenting code with code \[how do test do that?\]
+* Make refactoring possible and safe \[how safe?\]
+* Driving design decisions (TDD?)
+* Discover bad design decisions \[how?\]
+
