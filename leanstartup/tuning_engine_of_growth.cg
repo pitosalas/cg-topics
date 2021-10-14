@@ -1,9 +1,10 @@
 ---
 title: Tuning the Engine of Growth
 ---
-## Tuning the Engine of growth
+:slide_bigtitle Tuning the Engine of growth
 
 * What is _an engine of growth_? It's A metaphor and a financial model
+
 * Approach
 	1. Identify key stages of relationship with customer
 	1. Measure customers at each stage
@@ -12,9 +13,7 @@ title: Tuning the Engine of Growth
 
 * Lets look at this [Simple Financial Forecast](https://docs.google.com/spreadsheets/d/1wp0ZDl65VlQPoAHj_EKUswuRmWW_ux3AVMmjQGw2wOA/edit?usp=sharing)
 
-<slide_break></slide_break>
-
-### Key stages (don't use all of them!)
+:slide_title Key stages (don't use all of them!)
 
 * Visit: users come to the site from various channels
 * Repeat: come back to the site because they liked it.
@@ -26,18 +25,14 @@ title: Tuning the Engine of Growth
 * Abandon: Don't log in again after X days
 * Cancel: Actually cancel their account
 
-<slide_break></slide_break>
-
-### Measure
+:slide_title Measure
 
 * Which stage can you actually measure in your product or service?
 * Be very precise about the ones you decide to measure
 * You can't/shouldn't measure all of them
 * The ones that matter to you are the ones that tie in with your engine of growth
 
-<slide_break></slide_break>
-
-### Model
+:slide_title Model
 * How do you plan to make money or achieve your objectives?
 * Remember the different types of engines of growth
 	1. Sticky Engine of Growth (subscription)
@@ -45,9 +40,7 @@ title: Tuning the Engine of Growth
 	1. Paid (simple purchase, one shot)
 	1. Accessory (in product purchases)
 
-<slide_break></slide_break>
-
-### Tune: Make changes, see the impact
+:slide_title Tune: Make changes, see the impact
 
 * Now that you know what you're optimizing for
 * And you have a way to see before and after

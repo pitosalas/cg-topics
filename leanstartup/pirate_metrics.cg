@@ -2,8 +2,8 @@
 title: Pirate Metrics
 slides: true
 ---
+:slide_title Pirate Metrics
 
-## Pirate Metrics
 * AARRR!
 * Customer Lifecycle
 * Where did they come from?
@@ -18,11 +18,9 @@ slides: true
 * Conversion: Getting a specific user from one to the next stage
 * See: [Example Conversion Metrics](https://docs.google.com/a/brandeis.edu/spreadsheets/d/1HCOLcjFBO5sjhuwd1iICwGZ9rIzHxAENENfgExUYDjw/edit?usp=sharing)
 
-## Stages
+:slide_bigtitle Stages - Acquisition
 
-### Acquisition
-
-What are the different ways in which you can get a potential customer's initial attention?
+:h4 What are the different ways in which you can get a potential customer's initial attention?
 
 * SEO - Search Engine Optimization
 * Widgets
@@ -33,9 +31,9 @@ What are the different ways in which you can get a potential customer's initial 
 * **Goals:** Look for largest volume, lowest cost, best performing conversion (%)
 * **Result:** Users visit the web site
 
-### Activation
+:slide_title Activation
 
-* What are different ways in which you can convert this initial attention into some degree of engagement with your product or service? 
+:h4 What are different ways in which you can convert this initial attention into some degree of engagement with your product or service? 
 
 * Landing page
 * Home page
@@ -46,9 +44,9 @@ What are the different ways in which you can get a potential customer's initial 
 * **Define activation:** Vist 10-30 seconds, view 2-3pages, click 3-5 times, use 1 feature?
 * **Result:** Users decide later to come back
 
-### Retention
+:slide_title Retention
 
-What are ways in which you can make them get attached to your site and want to learn more, tell others, etc?
+:h4 What are ways in which you can make them get attached to your site and want to learn more, tell others, etc?
 
 * Emails and alerts: automated, life cycle emails
 * Updated content
@@ -57,9 +55,9 @@ What are ways in which you can make them get attached to your site and want to l
 * **Techniques:** lifecycle emails, weekly/monthly status emails, event based emails
 * **Result:** Users want to invite others
 
-### Referral
+:slide_title Referral
 
-What are the ways we can convince our prospective customers to actually help us recruit others to go to the site and look at your product or service?
+:h4 What are the ways we can convince our prospective customers to actually help us recruit others to go to the site and look at your product or service?
 
 * **Don't do this until your product actually works and doesn't suck.**
 * Viral marketing
@@ -69,9 +67,9 @@ What are the ways we can convince our prospective customers to actually help us 
 * **Techniques:** Only encourage users after they have activation (happy experience)
 * **Result:** More users are acquired
 
-### Revenue
+:slide_title Revenue
 
-Finally what are some ways to convert these prospects into paying customers or users?
+:h4 Finally what are some ways to convert these prospects into paying customers or users?
 
 * Pricing models
 * Visits lead to ad views lead to revenue
