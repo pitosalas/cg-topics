@@ -1,0 +1,17 @@
+---
+title: (P) Read RORT Chapter 10
+desc: Authorization and Authentication
+---
+:h4 Context
+
+**YES: We skipped a chapter.** In this chapter we continue developing the big example, by adding logic to update users. Now we gradually move from authentication to authorization, which in a way is much simpler.
+
+:h4 Do this
+
+Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning##cha-beginning) Chapter 10
+
+* As usual I really encourage and ask you to go through the code samples and actually type them in. You will see that it really helps your understanding and will assure your success in this course! Use your resources: the TAs, the class mailing list, stack overflow, google and push through to success! 
+
+* What is a before_action? Try to be precise (but the answer can be expressed in two sentences.)
+* What does this css selector do: `.users { ...`
+* What are "strong parameters" and what is their purpose? What security risk are they meant to combat?

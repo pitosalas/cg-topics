@@ -4,11 +4,11 @@ slides: true
 ---
 :h3 Underlying Concepts
 
-<%= callout("Beware", " This is hairy stuff!", :small) %>
+:callout :small, "Beware", " This is hairy stuff!"
 
 1. Authentication: As an app runs, need to know "who is logged in"
 1. Authorization: For anyone who is logged in: What is s/he allowed to do
-1. Cryptographical one-way hash
+1. Cryptographic one-way hash
 1. Statelessness of http, statefulness and sessions
 
 :topic_include :sessions
