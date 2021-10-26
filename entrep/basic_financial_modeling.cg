@@ -2,36 +2,39 @@
 title: Basic Financial Modeling
 desc: Fundamentals of the financial plan
 ---
-## Money
+## Financial Planning and Modeling
 
 * Life blood of a business are resources
 * You consume resources and you generate value
 * Remember Gazintas > Gazoutas
 * Quick review of very basic financial modeling
 
-<slide_break></slide_break>
 
-### Basic terms
+:slide_title Why do we do this? 
+
+* To understand where we are spending our money
+* To match our spending with our objectives
+* To make sure we don't 'run out of gas'
+* Or, to start looking for a gas station before its too late
+* Examples of what the CFO does
+
+:slide_title Basic terms
+
 * Costs
 * Revenues
-* Profits
+* Profits (aka earnings)
 
-<slide_break></slide_break>
-
-### Core calculation:
+:slide_title Core calculation:
 
 * Profits = Revenues - Costs
 
-<slide_break></slide_break>
+:slide_title Types of costs
 
-### Types of costs
 * Fixed -- Cost you have to get to the first 'thing'
 * Variable -- Relative to some independent variable
 * Division is not always clear cut
 
-<slide_break></slide_break>
-
-### Fixed Costs
+:slide_title Fixed Costs
 
 * First release? First sale? First Orange Juice Sold?
 * Rent
@@ -39,18 +42,14 @@ desc: Fundamentals of the financial plan
 * Equipment
 * Salaries?
 
-<slide_break></slide_break>
-
-### Variable Costs
+:slide_title Variable Costs
 
 * Relative to what independent variable?
 * Marketing expenses
 * Salaries (how do number of people correspond to units sold?)
 * Raw Materials
 
-<slide_break></slide_break>
-
-### Independent variables
+:slide_title Independent variables
 
 * Units sold
 * Units manufactured?
@@ -63,7 +62,7 @@ desc: Fundamentals of the financial plan
 ### 'Programming'
 
 * Learn to be very comfortable with a spreadsheet
-* Google Sheets is fine, excel is fancier
+* Google Sheets is fine
 * Download and take a look at [this simple financial model spreadsheet](/content/topics/documents/simple_financial_model.xlsx)
 * Simplistic Paid Engine of Growth
 * More complicated: Sticky Engine of Growth
