@@ -15,7 +15,7 @@ title: Modeling a Lemonade Stand
 * What is minimum initial investment to avoid going out of business
 * With what assumptions, and are they realistic?
 
-### Parameters for your business
+:slide_title Parameters for your business
 
 * How many staff
 * Product mix (types of drink, sizes of cups, etc)
@@ -24,7 +24,7 @@ title: Modeling a Lemonade Stand
 * Hourly wage for staff
 * How much to spend on advertising or marketing
 
-### Research reasonable numbers for: 
+":slide_title Research reasonable numbers for: 
 
 * Cost for a paper cup
 * Cost for drink ingredients for different types
