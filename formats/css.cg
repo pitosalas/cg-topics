@@ -2,11 +2,10 @@
 title: CSS (the good stuff)
 slides: true
 ---
-:slide_break 
 
-:h2 CSS - The Good Stuff
+:slide_bigtitle  CSS - The Good Stuff
 
-<%= include_image "/content/topics/images/htmlhier.png" %>
+:image :htmlhier
 
 :slide_title Intro
 
@@ -27,7 +26,7 @@ slides: true
 * Styling: color, typography, spacing, positioning, animation, and so on
 * However it can sometimes look like it's adding major new functionality
 
-<%= discussion "CSS experts: are these statements 100% true? Can you find exceptions?" %>
+:discussion_box "CSS experts: are these statements 100% true? Can you find exceptions?"
 
 :slide_title Syntax, in general
 
@@ -36,12 +35,14 @@ slides: true
 
 :slide_title Example
 
-<%= ruby_begin %>
+:source_begin :css
+
   p {
     color: red;
     text-align: center;
   }
-<%= ruby_end %>
+
+:source_end
 * `p` is the selector. Indicates what tag(s) we want to add the style to
 * `{}` enumerates the styles
 * `color: red;` parsed as `property : value`
@@ -51,7 +52,7 @@ slides: true
 
 :slide_title CSS Selectors
 
-* Could write a whole course just on them (exagerating)
+* Could write a whole course just on them (exaggerating)
 * Building blocks:
   * tag itself, e.g. p, or li, or body etc. (see html doc)
   * class which is decorated with a period, so, for examle, .chapter
@@ -77,23 +78,22 @@ Descendant|`.front-page p { font-style: bold; }`|
 
 :slide_title Example
 
-<%= code_begin %>
+:source_begin :css
 # myfile.css
 p.warning {
     color: red;
 }
 # myfile.html
-<p class="warning">
+&lt;p class="warning">
   It's important to remember to test the brakes!
-<p>
-<%= code_end %>
+&lt;p>
+:source_end
+
 * Notice that it's really hard to tell what CSS does without looking at the related html
 
-
 :slide_title Box Model
-<%= include_image "/content/topics/images/boxmodel.png" %>
 
-<br/>
+:image :boxmodel
 
 * Crucial to understand when working with spacing
   * `width:` applies to *content*

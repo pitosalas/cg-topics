@@ -2,7 +2,7 @@
 title: Bootstrap
 desc: The most popular and easy to use set of css and javascript to make your apps look professional.
 ---
-:slide_title Intro to Bootstrap
+:slide_bigtitle Intro to Bootstrap
 
 * If you haven't yet, clone Cosi166b [Public Samples repo](https://github.com/pitosalas/public_samples) and cd to public_samples/htmletc/bootstrap_demo
 * [Bootstrap](http://getbootstrap.com/) is an open source front-end framework
@@ -11,6 +11,7 @@ desc: The most popular and easy to use set of css and javascript to make your ap
 * You should use release 5 even though it's barely out of beta
 * There are various Gems to use Bootstrap with Rails
 
-* **I strongly recommended to just use the CDN** approach!
+:slide_title I strongly recommended to just use the CDN** approach!
+
 * However use with care, sometimes they create more problems than they solve.
 * Checkout [Bootsnipp.com](http://bootsnipp.com) for lots of ideas for bootstrap
