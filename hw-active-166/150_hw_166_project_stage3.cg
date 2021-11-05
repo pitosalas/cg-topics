@@ -36,7 +36,6 @@ desc: Here is where you build the core functionality of your app!
 1. Implement many of your forms and views. I STRONGLY ADVISE agains ajax, react, javascript, etc, at this point! We won't penalize you if you do use those; the advice is because sometimes those technologies are hard to get to work and all other progress screeches to a halt while students try to make it work "just so".
 1. User accounts: registration, login, logout, administration. Implement initial set of authentication and authorization views. Also the login and login links or buttons
 1. Basic unit tests of models and one or two integration tests
-1. Use [RailsAdmin](https://github.com/sferik/rails_admin) or [ActiveAdmin](https://activeadmin.info) or to quickly get an admin UI to all your data. They are very easy to add and give you a lot of benefit for minimal effort.
 1. Add one or two interesting gems to your application to create a cool feature outside of basic CRUD functionality.
     * Obviously they need to be relevant to your product. If you need assistance we will be glad to brainstorm with you.
     * [The Ruby Toolbox](https://www.ruby-toolbox.com): This is an awesome resource to look at everything that's available as tools and add-ons for ruby and rails.
