@@ -2,36 +2,28 @@
 title: Intellectual Property
 slides: true
 ---
-## Intellectual Property ("IP")
+:slide_title Intellectual Property ("IP")
 
-* Here's the <%= link_to_topic :eroom_story %>
+* Here's the :topic_link :eroom_story
 * "What is your protectable intellectual property?"
 * "How will you stop Microsoft from just ripping off your product?"
 
-<slide_break></slide_break>
-
-### What is IP?
+:slide_title  What is IP?
 
 * Many definitions (as usual) (See (as usual) [Wikipedia](https://en.wikipedia.org/wiki/Intellectual_property) )
 * Different in different countries.
 
-<slide_break></slide_break>
-
-### Intellectual Property
+:slide_title Intellectual Property
 
 "Intellectual property (IP) is a category of property that includes intangible creations of the human intellect. There are many types of intellectual property, and some countries recognize more than others. The most well-known types are copyrights, patents, trademarks, and trade secrets...(from [wikipedia](https://en.wikipedia.org/wiki/Intellectual_property))
 
-<slide_break></slide_break>
-
-### Features of IP
+:slide_title Features of IP
 
 * "Intangible?"
 * "Property?"
 * "Human Intellect?"
 
-<slide_break></slide_break>
-
-### USA: Mechanisms to IP?
+:slide_title USA: Mechanisms to IP?
 
 * Copyright
 * Trade Secret
