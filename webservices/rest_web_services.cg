@@ -3,7 +3,7 @@ title: REST and Web Services
 slides: true
 ---
 
-:h3 REST and Web APIs
+:slide_bigtitle REST and Web APIs
 
 * What is a web site?
 * It can be more than a url for people to access information
@@ -66,7 +66,7 @@ slides: true
 * Also consider nested or associated resources
     * `GET http://www.nanotwitter.com/user/pitosalas/tweets/10231`
 * Some things are harder to fit with the model
-  * What might a fortunecookie service look like as REST?
+  * What might a fortune cookie service look like as REST?
   * The 'resource' here is a single fortune
     * http://myfortunes.org/fortune/1
     * http://myfortunes.org/fortune
@@ -86,7 +86,7 @@ slides: true
 :slide_title Example!
 
 * Here's the web site for [Fortunes](https://pitofortune.herokuapp.com)
-* Here's the code for it [Fortunes RAILS Source code](https://github.com/pitosalas/restapidemo)
+* Here's the code for it [Fortunes RAILS Source code](https://github.com/pitosalas/public_samples/tree/master/rails/rails_restapi_demo)
 
 :slide_title Accessing a web service
 

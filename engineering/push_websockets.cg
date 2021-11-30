@@ -4,7 +4,7 @@ desc: Understanding web sockets and Rails Action Cable
 slides: true
 ---
 
-:h2 Push Processing
+:slide_bigtitle Push Processing
 
 * TCP/IP in the Browser
 * What is it?
