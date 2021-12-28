@@ -1,0 +1,26 @@
+---
+title: (P) Read PRR Chapters 1,2 and 3
+desc: Setting the foundations
+---
+
+### Purpose 
+
+We will follow along the reading of the textbook pretty closely and in so learn all about how ROS works. The warmup questions will help guide your reading and experimenting. *Remember* you can get it free of charge from the library here: [Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html)
+
+### What you will learn
+
+* What a topic is
+* What a Node is
+* What Odometry is
+* What a distributed operating system is
+
+### Tasks
+
+* Read PRR Chapters 1, 2 and 3. As you read, you will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/prrexamples) package. It is very important that you try to run some of them to get a feel for it. Use these chapter notes to add detail and make some corrections. Seriously there are details in these which are not in the book: <%= link_to_topic :prr_ros_intro %>, <%= link_to_topic :prr_ros_fundamentals %>, <%= link_to_topic :prr_ros_topics %>
+
+* After doing this please answer the following warmup questions:
+
+  * It is said that ROS nodes communicate peer to peer. What does this mean?
+  * If a ROS node is running on a robot and another one is running on my laptop, how do they even talk to each other?
+  * In what way is a robot `pose` different from its `position`?
+  * What one or two things are you still totally confused about in this reading? If its all clear, then what are your biggest takeaways from this reading?

@@ -1,0 +1,34 @@
+---
+title: Wall Following Paper, Intuition Question, Wall Following PA, Watch Video
+---
+
+## 1. Wall Following Paper <%= pdfbadge %>
+
+Practice reading academic papers and start seeing the subtlety of making robot do what is a trivial thing for a person to do
+
+1. Read: [Wall Following Algorithms Paper](https://github.com/ssscassio/ros-wall-follower-2-wheeled-robot/blob/master/report/Wall-following-algorithm-for-reactive%20autonomous-mobile-robot-with-laser-scanner-sensor.pdf).
+1. Write up what your major takeaways are from this paper.
+
+<%= deliverable "1 page max pdf writeup" %>
+
+## 2. LIDAR - Use your intuition! <%= pdfbadge %>
+
+I want you to use your intuition and your knowledge of geometry. Try to understand the data that comes from the LIDAR. You can think of them as "rays" that go in all directions. The data you get back is an array of distances to the first obstacle. Using words, diagrams and/or pseudo code, try and answer:
+
+* Given a single LIDAR sensor how would you reliably detect that you are about the crash into a wall?
+* How would you compute the angle at which you are approaching the wall?
+* How would you compute the angle to turn to start following the wall?
+
+<%= deliverable "Submit your response as a pdf. Points off for a superficial answer." %>
+
+## 3. PA Following walls. NOTE: **Due date pushed out to March 4**
+
+Please read the instructions and deliverables closely for this assignment: <%= link_to_topic :wall_follower %>
+
+## 4. Watch Video
+
+The purpose of this assignment is to give you an appreciation of how the high level motion commands (cmd_vel etc) are translated into low level commands to the motors to rotate at a certain Rotations Per Minute (RPM) to satisfy the high level commands. This is almost always built into the low level "firmware" for the robot so (unless you have to write that low level firmware) you don't have to worry about it. And even if you had to do so, there are multiple authoritative articles and books that will give you the calculations. Still, I think it's very useful to get that appreciation. As you can see, there are many videos about this. Please pick one and really try to understand. It's probably useful to watch it with a pen and paper in hand!
+
+[List of Videos about differential drive kinematics on Youtube](https://www.youtube.com/results?search_query=differential+drive+robot+kinematics+)
+
+<%= deliverable "NONE" %>

@@ -1,0 +1,19 @@
+---
+title: Prepare to present a paper
+---
+:h2 1. Read and present academic papers :teambadge
+
+* Working with your teammate, read and present a seminal or super interesting paper in Robotics
+* Choose a paper from this specific list: :section_link :background :key_papers
+* No two teams should present the same paper! Coordinate in Slack
+* Prepare a 7 minute max presentation with 3 minutes for questions, and submit it
+* Live presentation on April 29, organized as follows: :topic_link :roundrobin_papers
+
+:team_deliverable "April 26: Presentation as a pdf and prepare for live presentation"
+<break/>
+:team_deliverable "April 29: Preparation and delivery of live presentation"
+
+:h2 2. Self and Peer Assessments  (Due April 29 2021) :partbadge :pdfbadge
+
+:topic_include :hw_self_peer_assess_v3
+

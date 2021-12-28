@@ -16,4 +16,4 @@ title: Course Materials
 1. [Hands-on ROS for Robotics Programming](https://learning.oreilly.com/library/view/hands-on-ros-for/9781838551308/)   
     * This is a brand new book that is specifically about the GoPiGo3 Robot that we will be using for our Robotics Lab @ Home program.
 
-1. There is an option for students to buy a small robot for experimentation and learning from us. The robot is not required and you will be able to do well in the course without it. See <%= link_to_topic :gpg_purchase %> for details.
+1. There is an option for students to buy a small robot for experimentation and learning from us. The robot is not required and you will be able to do well in the course without it. See :topic_link :gpg_purchase for details.
