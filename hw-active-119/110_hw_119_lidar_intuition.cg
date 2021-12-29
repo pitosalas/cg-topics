@@ -1,0 +1,14 @@
+---
+title: (I) Use your intuition about Lidar
+desc: You will need to reason about the data you get back from Lidar
+---
+:h4 Purpose
+
+I want you to use your intuition and your knowledge of geometry. Try to understand the data that comes from the LIDAR. You can think of them as "rays" that go in all directions. The data you get back is an array of distances to the first obstacle. Using words, diagrams and/or pseudo code, try and answer:
+
+:h4 Answer these questions
+
+* Given a single LIDAR sensor how would you reliably detect that you are about the crash into a wall?
+* How would you compute the angle at which you are approaching the wall?
+* How would you compute the angle to turn to start following the wall?
+

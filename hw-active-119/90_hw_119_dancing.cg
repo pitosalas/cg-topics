@@ -1,0 +1,5 @@
+---
+title: (I) Teach your robot to dance!
+desc: A fun assignment to deepen your ROS abilities
+---
+:topic_include :teleop_plus

@@ -1,0 +1,12 @@
+---
+title: (P) Read PRR Chapter 8
+desc: More
+---
+:h4 Read Chapters 8 of PRR and remember to refer to (<%= link_to_topic :prr_teleop_bot %> Please respond to the following warmup questions:
+1. What features are added to produce key_to_twist_using_rate.py from the previous version, why would that be useful and what line in the program contains the key change?
+1. This will take a little research: on page 114 you see `rospy.Subscriber('keys', String, keys_cb, twist_pub)`. What does each parameter do?
+1. On page 124 you see `./keys_to_twist_with_ramps.py _linear_scale:=0.5 _angular_scale:=1.0 _linear_accel:=1.0 _angular_accel:=1.0`. What does the `:=` notation mean or do?
+1. Please write one or two things that are still confusing to you; if it's all clear, then please write one or two major takeaways.
+
+:deliverable "Respond to the questions, and respond to the post in the participation blog"
+

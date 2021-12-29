@@ -1,0 +1,10 @@
+---
+title: (P) Kinematics
+desc: An introduction to Kinematics
+---
+:h4 Purpose
+
+The purpose of this assignment is to give you an appreciation of how the high level motion commands (cmd_vel etc) are translated into low level commands to the motors to rotate at a certain Rotations Per Minute (RPM) to satisfy the high level commands. This is almost always built into the low level "firmware" for the robot so (unless you have to write that low level firmware) you don't have to worry about it. And even if you had to do so, there are multiple authoritative articles and books that will give you the calculations. Still, I think it's very useful to get that appreciation. As you can see, there are many videos about this. Please pick one and really try to understand. It's probably useful to watch it with a pen and paper in hand!
+
+[List of Videos about differential drive kinematics on Youtube](https://www.youtube.com/results?search_query=differential+drive+robot+kinematics+)
+

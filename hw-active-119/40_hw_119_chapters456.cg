@@ -1,0 +1,18 @@
+---
+title: (P) Read PRR Chapters 4, 5 and 6
+desc: Another big jump in understanding
+---
+* As you read, you can follow along the comments in :topic_link :prr_ros_services , :topic_link :prr_actions, :topic_link :prr_robot_hardware and :topic_link :prr_robots_simulators
+
+:h4 Once you've read and done the examples on your own computer, please answer these warmup questions.
+* List the differences between an topic and a service. Which one is in your opinion the most important difference?
+* Come up with your own original example of when you would use a service, and why you would not use a topic for that example.
+* Topics, Topic Names, Messages: What are they, what are the differences between them?
+* What one or two things are you still totally confused about in this reading? If its all clear, then what are your biggest takeaways from this reading?
+* How many degrees of freedom does our TurtleBot3 have and what are they?
+* If you wanted to have your TurtleBot3 drive one meter forwards and stop, take a guess at what you would publish
+* What would be an example of a *holonomic* robot or vehicle? Can you say what you think it means?
+* Please name any concepts, topics or words that you are still confused about, and what your major take-aways are from this reading.
+
+:deliverable "Write up your very brief answers to these questions and submit to the Participation blog! "%>
+

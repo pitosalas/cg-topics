@@ -1,0 +1,17 @@
+---
+title: (P) Read Real Robots Don't Drive Straight
+desc: I found this paper very enlightening when I first read it
+---
+:h4 Purpose
+
+The purpose of this is to help you really understand and appreciate the importance of learning with a physical robot. It will also give you a perspective on some of the challenges of teaching and learning robotics.
+
+:h4 Do this
+
+Read [Real Robots Don't Drive Straight.](https://www.aaai.org/Papers/Symposia/Spring/2007/SS-07-09/SS07-09-020.pdf). After reading the article try and answer the following warmup questions:
+
+1. In naval navigation there is a term *dead reckoning*. Explains what this means and how it relates if at all to the paper.
+1. So why then do real robots not drive straight?
+1. Please mention two concepts or topics or ideas that didn't make sense to you and your major take-away(s)
+
+:deliverable "Answer the warmups and submit to the participation blog"
