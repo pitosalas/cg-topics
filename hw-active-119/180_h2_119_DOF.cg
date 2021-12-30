@@ -1,0 +1,17 @@
+---
+title: (P) Learn about degrees of freedom
+desc: Seems like a simple idea, right?
+---
+:h4 Purpose
+
+The concept of DoF is intuitive, to an extent. A ground vehicle cannot move in the Z-direction and a differential drive robot can't move sideways. It is important for you to think and understand some of the subtleties around the concepts.
+
+:h4 Do this
+
+For valuable context of the full depth of the concept. watch this:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zI64DyaRUvQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:h4 Deliverable
+
+None.

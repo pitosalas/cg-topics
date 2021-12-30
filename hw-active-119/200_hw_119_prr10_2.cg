@@ -1,0 +1,18 @@
+---
+title: (P) Read PRR Chapter 10 Part 2
+desc: Continuing onto navigation
+---
+
+:h2 2. Read and do PRR Chapter 10 (part 2) :partbadge
+
+* Chapter 10 has a lot in it so I've divided it into two. This is part 2 so remember to refer to this (<%= link_to_topic :prr_navigating %> in parallel and use the code I provided!).
+* There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on. With that, answer the following questions:
+    1. How does move_base use the map, if at all?
+    1. Why is it necessary to give an "estimated position"?
+    1. What does amcl do during navigation, and why is that necessary?
+    1. Please write one or two things that are still confusing to you; if it's all clear, then please write one or two major takeaways.
+    1. <%= deliverable "Your responses to the above questions, in brief, in a pdf with your name and homework number at the top." %>
+
+:h2 3. Assignment Double Follow
+
+* :topic_link :double_tf2 . Follow the instructions and submit the requested deliverables.

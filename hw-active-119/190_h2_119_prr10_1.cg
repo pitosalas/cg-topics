@@ -1,0 +1,19 @@
+---
+title: (P) Read PRR Chapter 10
+desc: Part 1
+---
+:h4 Purpose
+
+We continue to reinforce the ideas of TFs or transforms. They are hard to follow but essential to understand. We will tackle this chapter in two parts.
+
+:h4 Do this
+
+Read Chapter 10 and as background refer to :topic_link :prr_localization in parallel (and use the code I provided!). Read the section called "Localizing" and we will get to "Navigating" later. There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on.
+
+:h4 Deliverables
+
+Please answer the following questions!
+
+1. Why is it important to get a good initial localization? Why is that needed at all? Could AMCL work without it?
+1. This one is a little tricky. When I am using AMCL and move_base, can I use teleop to cause the robot to crash into the wall. Give your reasoning! You might  need to try this to get a good answer. It will be a very interesting experiment.
+1. Please write one or two things that are still confusing to you; if it's all clear, then please write one or two major takeaways.
