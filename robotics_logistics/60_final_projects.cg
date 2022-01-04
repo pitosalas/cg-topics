@@ -1,0 +1,69 @@
+---
+title: Final Projects
+desc: Specifications for final deliverables
+slides: true
+---
+:h2 Term Projects - Proposal Stage
+
+* Each team submits a project proposal for their project: :topic_link :hw_119a_term_project_proposal
+* During the final 4-5 weeks of the course, working on the project will be the *only homework* (almost)
+* Given more than one person on the team, and the time, we have pretty high expectations for an interesting project
+* Pito and the TAs will be constantly available for help and advice
+
+:slide_title Schedule
+
+* All deliverables are due on the last day of class, May 4, 2021
+* We will also have a Zoom house/demo sometime that week as well
+
+:slide_break
+
+:h2 Deliverables for term project
+
+1. Source code
+1. Project Report
+1. Video demonstration
+1. Contributions to Lab Notebook
+
+**Note:** Your source code, project report, and video demonstration will be in a ROS package in a single repository that you will create in (or move to) the [Campus Rover GitHub organization](https://github.com/campusrover) and your lab contributions should be put in the [campusrover/labnotebook repo in the FAQ section](https://campus-rover.gitbook.io/lab-notebook/faq)
+
+:slide_title Source Code
+
+* High quality code, organized as ROS packages
+* Adhering to reasonable professional design, structure, documentation as outlined in :topic_link :programming_style
+* Including a readme.md. Use [How to write a quality readme](https://dev.to/coderarchive/writing-a-high-quality-readme-1k3j) as a guide.
+* It should be organized and not have any random left over files
+* It should be presentable as an interview artifact
+  
+:slide_title Project Report
+
+* As a set of web pages, created with [Github Pages](https://pages.github.com) (a.k.a `gh-pages`)
+    * `gh-pages` are a GitHub feature `to create a set of static web pages directly attached to your GitHub repo
+    * Use `gh-pages` to create your project report
+    * As a guide, if the web pages were printed out as a pdf it would be between 5 and 15 pages
+
+* The report should include:
+
+1. Introduction
+    1. Problem statement, including original objectives
+    1. Relevant literature
+1. What was created (**biggest section**)
+    1. Technical descriptions, illustrations
+    1. Discussion of interesting algorithms, modules, techniques
+    1. Problems that were solved, pivots that had to be taken
+1. Reflection of the project. 
+    1. How it unfolded, how the team worked together
+    1. Reflection on the project and working as a team
+
+:slide_title Video demonstration
+
+* 4 to 8 minutes in length
+* The quality should be comparable to if you were doing a live demo for, say, Tim Hickey
+* Better than Pito's home movies, but not as good as Bong Joon-ho
+* Show off your results, and explain and/or show the interesting computer science and engineering aspects
+
+
+:slide_title Contribution to Lab Notebook
+
+* Each student should make one Notebook contributions.
+* Think about a how-to, tutorial, explanation, concept, that you had to figure out yourselves that was difficult to track down and write it up for the next generation of students
+* Here are some examples: [Communicating with Rosserial](https://campus-rover.gitbook.io/lab-notebook/ros-tips/communicate-with-rosserial), [AWS RoboMaker](https://campus-rover.gitbook.io/lab-notebook/miscellaneous/aws-robomaker), [Alexa Voice Integration](https://campus-rover.gitbook.io/lab-notebook/cr-package/voice/voice)
