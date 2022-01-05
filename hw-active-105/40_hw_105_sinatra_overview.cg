@@ -1,0 +1,21 @@
+---
+title: (I) Learn Sinatra Basics
+desc: One of the many introductions to Sinatra
+---
+### Purpose
+
+We will be using Sinatra as our web framework. There are many, in fact every programming language has at least one. Many have many of them. Why? Because they are pretty simple to write!
+
+### Do this
+
+Sign up to Udacity and take this easy free course: [Udacity Dynamic Web Applications with Sinatra](https://www.udacity.com/course/dynamic-web-applications-with-sinatra--ud268). Take all the lessons and do all the assignments.
+
+
+### Deliverable
+
+Please answer these questions:
+
+* How is Routing in Sinatra different from Rails technique?
+* Where is the main program of Sinatra written? How does **it** get invoked?
+* How much time did doing the whole lesson take, and how useful was it?
+* These examples have no database. How would you introduce data from a database into a Sinatra App? Be detailed.
