@@ -1,12 +1,13 @@
 ---
 title: "Sinatra Series 3: Introduction to SOA"
+slides: true
 ---
 * Make sure first have done <%= link_to_topic :sinatra_series_2 %>
 * Next after this section is: <%= link_to_topic :sinatra_series_4 %>
 * Make sure you also understand <%= link_to_topic :www %> this well
 
-## Goal
-* Service Oriented Architecture
+:slide_title Service Oriented Architecture
+
 * Build a system from a collection of services
 * Services talk to each other over the internal network
 * REST or similar communications schemes
@@ -17,7 +18,7 @@ title: "Sinatra Series 3: Introduction to SOA"
 * What is the "right size"?
 * A very important pattern, but not uncontroversial
 
-## Benefits of SOA
+:slide_title Benefits of SOA
 * Isolation
   * Each service is its own code base, database, and team
   * Each can be tested separately
@@ -38,19 +39,20 @@ title: "Sinatra Series 3: Introduction to SOA"
   * There are services that different applications or products will require
   * Or a service designed by one group or company can be reused
 
-## Mechanics
+:slide_title Mechanics
+
 * Describe the "API" of the service
 * Usually an HTTP request and response
 * Long running services should be implemented as multiple calls
-  * One to initiate
-  * One to request results if any
-  * So as not to "block" the caller
-  * But then, what happens if the service has crashed or is hung?
+  1. One to initiate
+  2. One to request results if any
+  3. So as not to "block" the caller
+  4. But then, what happens if the service has crashed or is hung?
 * Synchronous calls need to be very fast
 * Another excellent way to communicate is with a queue
 * Sinatra is especially suited for SOA services because it is lightweight
 
-## Discussion Questions
+:slide_title Discussion Questions
 
 * How would you recognize a system that is designed in an Service Oriented Architecture?
 * What are some of the advantages and disadvantages of this approach?

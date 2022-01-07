@@ -1,11 +1,11 @@
 ---
 title: nT Test Interface
 ---
-## Test Interface
+:slide_bigtitle Test Interface
 
 The Test Interface essentially is a set of URLs which invoke special functionality that allows your nanoTwitter to be tested from a browser, and is the foundation of the scalability testing we will be doing.
 
-### The Test user
+:slide_title The Test user
 
 There's a user that we use as part of many of the tests. We refer to the user as "testuser". When you create that user use the following attributes:
 
@@ -13,22 +13,22 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * email: testuser@sample.com
 * password: "password"
 
-### Special url argument
+:slide_title Special url argument
 * To facilitate testing, any URL can have `?user_id=x` appended which will bypass the login and automatically make this NT session logged in as user x. For example:
 * `GET /?user_id=x` would show the homepage as if user_id x was logged in.
 
-### Test Data
+:slide_title Test Data
 * Url to reset and load the standard seed is: /test/reset/standard?tweets=n&users=u&follows=u
-* Dataset is the standard <%= link_to_topic :nt_seed_data %>
+* Dataset is the standard :topic_link :nt_seed_data /
 * If necessary, you may modify the creation dates of tweets, but all the other data should be intact
 * Our tests will require the complete set of records
 
-### Here are the URLs of the test interface
+:slide_title Here are the URLs of the test interface
 
 * `GET /test/reset?user_count=u`
   * Deletes all users, tweets and follows
   * Recreate TestUser
-  * Imports data from standard seed data, see: <%= link_to_topic :nt_seed_data %>
+  * Imports data from standard seed data, see: :topic_link :nt_seed_data /
     * ?user_count=n means to import n users from the seed data...
     * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users.
     * Also import the follows associated with the users
@@ -46,6 +46,5 @@ There's a user that we use as part of many of the tests. We refer to the user as
   * Returns 200 or 400
   * Example: `/test/status`
 
-### Validation API
-<%= include_topic :nt_validation_api %>
+:slide_title Validation API
 

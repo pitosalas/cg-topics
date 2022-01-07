@@ -1,41 +1,44 @@
 ---
 title: nano Twitter Functionality
 desc: Details of the functionality (looking from the outside) that nanoTwitter requires
+slides: true
 ---
-## General Notes
+:h2 General Notes
 
 * NanoTwitter (nT) is a baby version of Twitter designed as a platform for experimentation with scaling issues.
 * The list of features and URLs is quite incomplete. It is meant to set the pattern for you to build upon.
 * All the URLs, both for the User Interface and for the Web Services API will attempt to follow REST design principles as far as possible.
 
-## Minimum nT Functionality
+:slide_bigtitle Minimum nT Functionality
 
-### Users
+:slide_title Users
 
-* can register for an account by supplying an email, a name and a password
-* are never deleted
-* are assigned a numeric id (the record id)
+* Can register for an account by supplying at least an email and a password (plus confirmation password)
+* Can never deleted
+* Are assigned a numeric id (the primary key) which will be used in certain APIs
 
-### Authentication
-* All pages include login, logout and register links
-* If a user is logged in then the link says logout <username> and otherwise it will say login
+:slide_title Authentication
+
+* All pages include login/logout and register links
+* If a user is logged in then the ogin/logout link says logout <username> and otherwise it will say login
 * Authentication will use a simplistic hashed password in the User record
 * We will not be concerned for this exercise with having tight security
 
-### Non-logged in users:
+:slide_title Non-logged in users:
 
 * Will not be able to do anything other than register an account or log into an existing account
 
-### Logged in users:
+:slide_title Logged in users:
 
-* Can follow and unfollow other registered users
-* Can tweet
+* Can follow and un-follow other registered users
+* Can create Tweets
 * Can see the flow of the last 50 tweets by the users that they have followed
 * Can search for a phrase
-* Can see a list of users who are following them and who they are following
+* Can see a list of users who are following them 
+* Can see a list of the users that they are following
 * Can see a list of tweets referring to a particular "#tag"
 
-### Tweets:
+:slide_title Tweets:
 
 * Consist of
   * a 280 characters of text
@@ -45,17 +48,20 @@ desc: Details of the functionality (looking from the outside) that nanoTwitter r
 * Belong to one user
 * Can never be deleted
 
-### Search
-* A page with a search box
-* User can enter a phrase or a "@username" or a "#tag"
+:slide_title Search
+
+* A page with at least a search box
+* User can enter a phrase or a "@username" or a "#tag" or some combination
 * Result of matching is displayed
 * Top 50 are displayed with next and previous links
 
-### General User Interface
-* Basic bootstrappy html/css/javascript interface at minimum
+:slide_title General User Interface
+
+* Basic bootstrap html/css/javascript interface at minimum
 * Clean but doesn't have to be fancy
 
-### Routes
+:slide_title Routes
+
 * Home page page: `/`
 * Specific user's page: `/user/1234`
 * Search form: `/search`
@@ -64,6 +70,8 @@ desc: Details of the functionality (looking from the outside) that nanoTwitter r
 * Display user login prompt, and check for correct password: `/login`
 * Logout: `/logout`
 
-<%= include_topic :nt_test_interface %>
+:topic_include :nt_test_interface
 
-<%= include_topic :nt_scalability_testing_protocol %>
+:topic_include :nt_scalability_testing_protocol
+
+:topic_include :nt_validation_api
