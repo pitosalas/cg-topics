@@ -28,8 +28,8 @@ As these instructions have evolved over the years, there are sometimes inconsist
 <hr/>
 <hr/>
 
-* **\[UIDESIGN\]** Design and layout user interface of nT.  It's easiest if you immitate the real twitter, but it's not required. Just make sure that you support the User Interface functionality that is listed in <%= link_to_topic :nt_functionality %>. Develop it as a paper prototype and/or using Balsamiq.com. Start with a paper sketch for each page. Remember to note where there are links and buttons, and what the various text boxes are. Save a series of images or similar in a top level sub directory called design. I really recommend taking some time on this as it will save you a lot oftime later!
-* **\[ROUTES\]** Before coding up the sinatra app, sit down and design all urls that you will have to implement in the code. <%= link_to_topic :nt_functionality %> gives you the outline, but here you need to describe all of them. Do this before you code. Save this as a markdown file called routes.md in your doc sub directory.
+* **\[UIDESIGN\]** Design and layout user interface of nT.  It's easiest if you immitate the real twitter, but it's not required. Just make sure that you support the User Interface functionality that is listed in :topic_link :nt_functionality . Develop it as a paper prototype and/or using Balsamiq.com. Start with a paper sketch for each page. Remember to note where there are links and buttons, and what the various text boxes are. Save a series of images or similar in a top level sub directory called design. I really recommend taking some time on this as it will save you a lot oftime later!
+* **\[ROUTES\]** Before coding up the sinatra app, sit down and design all urls that you will have to implement in the code. :topic_link :nt_functionality  gives you the outline, but here you need to describe all of them. Do this before you code. Save this as a markdown file called routes.md in your doc sub directory.
 * **\[nanoTwitter 0.1\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
 ### nanoTwitter 0.2: MVP - First Minimal Implementation
@@ -42,20 +42,20 @@ As these instructions have evolved over the years, there are sometimes inconsist
 * **\[UNITTESTS\]** Write set of unit tests with MiniTest. (RSpec is also ok, but I recommend MiniTest. It will give you fewer headaches.) This is a good opportunity to look at your Sinatra application and try to break it down into several files/classes. Any non-trivial Sinatra based app defines some classes which work independently of the Sinatra framework. Try to figure out how to do that. You should have several unit and integration test.
 * **\[TESTINTERFACE\]** Begin implementing the test interface. Make sure it is modularized and not mixed in with the regular routes that will be used for the user pages. Implement all the `reset/*`, `/status` and `/users/create` test interace paths.
 * **\[CODESHIP\]** Set up Continuous Delivery using www.codeship.com. Each team should get a single Codeship account (free). Follow their instructions to set up automatic deployment of your code so that each time you push new sources to github, Codeship sees this and automatically runs your test suite to make sure verything still works.
-* **\[STANDARD SEEDS\]** Look at <%= link_to_topic :nt_seed_data %>. Fully implement the test interface API. Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
+* **\[STANDARD SEEDS\]** Look at :topic_link :nt_seed_data . Fully implement the test interface API. Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
 * **[AUTODEPLOY]** Configure Codeship for automatic deployment. Now, when you push to github, Codeship should automatically run all your tests, and if they all pass, then automatically deploy to Heroku. Make sure tests all this is happening.
 * **\[nanoTwitter 0.3\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
 ### nanoTwitter 0.4: Testing and Deployment
 
 * **\[MANUALTEST\]** Once nT is up on heroku, try having all three team members log into it at the same time and do some tweeting.
-* **\[TESTINTERFACE\]** Implement the complete test interface from the <%= link_to_topic :nt_functionality %>. Use TDD to do this.
+* **\[TESTINTERFACE\]** Implement the complete test interface from the :topic_link :nt_functionality . Use TDD to do this.
 * **\[LOADTEST\]** Use loader.io to generate some artificial loads. Configure Loader.io and your app so the load testing can work. And start playing around with different loads. Familiarlize yourself with Loader.io, it's options and what the functionality actually means.
 * **\[MORETESTS\]** With load testing it is typical to discover actual bugs in the code. When you find a bug, try hard to add one or more tests to your test suite that would have exposed the bug ahead of time. For example, if load testing reveals that adding a user with a duplicate name causes an exception, fix the bug, but then also add a new unit test that proves that the bug is fixed.
 * **\[nanoTwitter 0.4\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
 ### NanoTwitter 0.5: Inital Load Testing
-**Here are important instructions: <%= link_to_topic :nt_load_testing %>**
+**Here are important instructions: :topic_link :nt_load_testing **
 
 * **\[INSTRUMENT\]** Instrument your nanoTwitter to begin collecting internal performance and timing data. While there are lots of ways to do this, for now, we will use Paper Trail which is easiest available directly through Heroku. and get to know the options.
 * **\[RUNLOADEXPERIMENT\]** Get more scientific. Instead of randomly trying different things, design some specific experiments and start collecting repeatable data so you can see whether a change improves one thing but might harm something else. Keep up your notes in a text file inside your github repo so it becomes part of your work product.
@@ -66,7 +66,7 @@ As these instructions have evolved over the years, there are sometimes inconsist
 ### nanoTwitter 0.6: Advanced Scaling
 
 * **\[REDIS\]** Investigate and figure out how to setup a Redis Caching service. You will need to set it up locally on your computer, for testing, and also figure out how to configure it on Heroku.
-* **\[CACHING\]** Consider where to add caching and do some more experiments to see the affect. You will want to refer also to the way we will test your nanoTwitter with the standard test runs, which are explained in <%= link_to_topic :nt_functionality %>
+* **\[CACHING\]** Consider where to add caching and do some more experiments to see the affect. You will want to refer also to the way we will test your nanoTwitter with the standard test runs, which are explained in :topic_link :nt_functionality 
 * **\[SCALEEXPERIMENT\]** Design and execute scaling experiments and see the differences. Make sure you record the results carefully so you will be able to report on them in your final report!
 * **\[nanoTwitter 0.6\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
@@ -74,6 +74,6 @@ As these instructions have evolved over the years, there are sometimes inconsist
 * **\[MICROSERVICE\]**Based on our class discussions, refactor one bit of functionality from your main Sinatra app into a separate microservice. Determine how you will communicate between the two services. See how your scalability is affected, if at all.
 * **\[CODECLIMATE\]** Do a static code analysis by submitting your source code to [Code Climate](www.codeclimate.com). It will motivate you to clean up your code, remove code smells etc.
 * **\[CLEANUP\]** Do whatever cleanup of the UI or the code you want to get it as nice as you want and can.
-* **\[PREPARE\]** Prepare for the final <%= link_to_topic :scalability_runoff %> so that we will be able to examine the relative scale of each of the four teams.
+* **\[PREPARE\]** Prepare for the final :topic_link :scalability_runoff  so that we will be able to examine the relative scale of each of the four teams.
 * **\[FINAL REVIEW\]** Look at %= link_to_topic :final_105_deliverables %> to see that you've completed everything along the way.
 * **\[nanoTwitter 01.0\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
