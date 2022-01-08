@@ -23,7 +23,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * If necessary, you may modify the creation dates of tweets, but all the other data should be intact
 * Our tests will require the complete set of records
 
-:slide_title Here are the URLs of the test interface
+:slide_title Test Interface
 
 * `GET /test/reset?user_count=u`
   * Deletes all users, tweets and follows
@@ -46,5 +46,37 @@ There's a user that we use as part of many of the tests. We refer to the user as
   * Returns 200 or 400
   * Example: `/test/status`
 
-:slide_title Validation API
+* `GET /test/corrupted?user_count=u`
+  * A corruption checking algorithm is provided as a set of complementary methods
+  * These are not the model 
+  * On the User model: user.corrupted?()
+    * For this user,
+      * Check that each other user that it follows, has it as a followed
+      * Check that each tweet that the user issued is not corrupted
+  * On the Tweet model: tweet.corrupted?()
+    * For this Tweet
+      * Check that it has valid values in all the required fields
+  * The url will call the corrupted? method on `n` randomly chosen users
+  * Returns 200 or 400
+
+* `GET /test/stress?n=n&star=u1&fan=u2`
+  * Checks for valid processing of the app by stressing it
+  * The purpose to detect that the nt back end is faithfully storing and retrieving the data
+  * This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
+  * star and fan are existing users user_ids
+  * In one request, does the following process
+    * Make sure that user `fan` is following user `star` and if not, make it so
+    * Have user `star` create `n` tweets using faker.
+      * Don't just use Tweet.create; use the code that is actually executed when a user submits a tweet
+      * This will invoke whatever optimizations, follower handling which may include redis, queues, or other optimizations.
+    * Store the tweet ids and the content for later. 
+    * You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
+  * Once complete
+    * query the backend for those same ids
+      * Again don't just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
+      * Similarly, it will use whatever optimizations, redis, queues and so on.
+    * query the timeline of `fan` to make sure that the new tweets are listed
+      * Again, use the code that is used by the front end not just the low level code.
+  * Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
+  * Returns 200 or 400
 

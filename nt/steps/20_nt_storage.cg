@@ -1,0 +1,40 @@
+---
+title: Nt Storage
+desc: Persistent Storage
+---
+:h3 Purpose
+
+It is a good idea to start with the database before worrying about business logic. I assume you are using ActiveRecord but more adventurous students might decide to try a different storage strategy. I recommend ActiveRecord because it is known to work for this application, and you already know it from Cosi166 Capstone. Similarly, I recommend using Postgres. In any event, you will remain responsible for the same functionality and performance. If you plan to use other than ActiveRecord + Postgres, please talk to me first.
+
+:h3 Do this
+
+:h4 Create a Rudimentary Sinatra App
+
+* Create a skeleton Sinatra App as the start of your nanoTwitter implementation in your app directory. 
+* Use Postgres as your database. If you want to do something else, talk to me first.
+
+:h4 Create the models
+
+* From the previous stage you know what your schema is (but trust me, it will change as you understand things better.)
+* Create the Models and the Migrations. You will have four at the very least. But likely more.
+* Create the Associations (one to one, many to one, etc.)
+* Add ActiveRecord validations everywhere it makes sense
+
+:h4 Testing
+
+* Create Seed data for all the tables using Faker
+* Manually test your associations using the Sinatra Console
+* Write unit tests for all the models
+* Especially write unit tests to check the follow logic.
+
+:h4 Heroku
+
+* All your code should be in your single shared Github repo
+* Create a rudimentary Heroku application
+* Demonstrate that your tests run
+
+:h3 Deliverables
+
+* Your code uploaded to Github
+* Console output showing that the tests run
+

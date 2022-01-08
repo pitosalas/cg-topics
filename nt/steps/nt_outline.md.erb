@@ -21,7 +21,11 @@ As these instructions have evolved over the years, there are sometimes inconsist
 
 * **[DIR]**: Create your **PRIVATE** `nanotwitter` github repo and send the link to Pito and the TAs. Clone it to all team members computers. Create the standard files, license.txt, readme.md, version.rb. Google to find typical contents of those files.
 * **[DBSCHEMA]** Design relational database schema (i.e. one for the most of the app) after thinking about all the needed functionality. Decide what tables you will have, what the attributes (columns) are for each table, what the primary and foreign keys are, and what the associations are (i.e. one to many, many to one, many to many.) Using the same notation that you used in the previous data model schema, lay out the complete schema design, including table names, attributes, indicating primary and foreign keys, as well as associations (belongs_to, etc.) Save it as a markdown file called schema.md in a top level sub directory called doc.
+* **\[SINATRA\]**: Create a skeleton Sinatra App as the start of your nanoTwitter implementation in your app directory. Use Postgres as your database. If you want to do something else, talk to me first.
 
+* **\[MIGRATIONS\]** Write and validate the complete set of migrations for the schema you designed and documented above. You should have all the tables built in the database. You can use ActiveRecord Migrations with Sinatra. Some hints are here: [Using Migrations with Sinatra](http://www.sinatrarb.com/faq.html#ar-migrations)
+
+<hr/>
 <hr/>
 
 * **\[UIDESIGN\]** Design and layout user interface of nT.  It's easiest if you immitate the real twitter, but it's not required. Just make sure that you support the User Interface functionality that is listed in <%= link_to_topic :nt_functionality %>. Develop it as a paper prototype and/or using Balsamiq.com. Start with a paper sketch for each page. Remember to note where there are links and buttons, and what the various text boxes are. Save a series of images or similar in a top level sub directory called design. I really recommend taking some time on this as it will save you a lot oftime later!
@@ -29,8 +33,6 @@ As these instructions have evolved over the years, there are sometimes inconsist
 * **\[nanoTwitter 0.1\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
 ### nanoTwitter 0.2: MVP - First Minimal Implementation
-* **\[SINATRA\]**: Create a skeleton Sinatra App as the start of your nanoTwitter implementation in your app directory. Use Postgres as your database. If you want to do something else, talk to me first.
-* **\[MIGRATIONS\]** Write and validate the complete set of migrations for the schema you designed and documented above. You should have all the tables built in the database. You can use ActiveRecord Migrations with Sinatra. Some hints are here: [Using Migrations with Sinatra](http://www.sinatrarb.com/faq.html#ar-migrations)
 * **\[AUTHENTICATION\]**: Implement authentication, by implementing the /login and /logout urls. Use basic authentication and use Rack::Auth::Basic. **Rack::Auth::Basic** is a good starting point but you are welcome to do something a little more advanced. I do advice ***against*** using complicated gems like devise or Warden. They obscure what's going on and are not a good starting solution. You can refer to [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth), [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) for ideas and hints.
 * **\[DO\]** Pito will create a DO project for you. Create a droplet for your code. Later on you will be creating a second droplet for your microservice.  Create deploy your code to Digital Ocean. Ensure that it works.
 * **\[nanoTwitter 0.2\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
