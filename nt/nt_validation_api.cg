@@ -15,7 +15,7 @@ title: nanoTwitter Validation API
   * You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
 * Once complete
   * query the backend for those same ids
-    * Again dont just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
+    * Again don't just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
     * Similarly, it will use whatever optimizations, redis, queues and so on.
   * query the timeline of `fan` to make sure that the new tweets are listed
     * Again, use the code that is used by the front end not just the low level code.
