@@ -1,25 +1,25 @@
 ---
 title: "Sinatra Series: Case Study"
+desc: A level deeper into Sinatra
+slides: true
 ---
-* Make sure first have done <%= link_to_topic :sinatra_series_3 %>
-* Next after this section is: <%= link_to_topic :sinatra_series_5 %>
+:h3 Purpose
 
-## Goal
 * We will build a large fairly complicated example
 * To illustrate more principles of Service Oriented Architectures and Sinatra
 
-## Non SOA Approach to scaling
+:slide_title Non SOA Approach to scaling
 
-<img src="/content/topics/images/soa1.png" width="350" hspace="10">
+:image :soa1
 
 * A Web Server (aka App Server) runs your code. 
 * That server is connected by network to a database server.
 * There are background processes and they run on the same server
 * Scaling it follows a path of least resistance
 
-### Scaling
+:slide_title Scaling
 
-<img src="/content/topics/images/soa3.png" width="350" hspace="10">
+:image :soa3
 
 * As load becomes greater, capacity is added where it is needed
 * A "load balancer" sends traffic to different servers
@@ -30,12 +30,13 @@ title: "Sinatra Series: Case Study"
 * Managing the monolithic code base itself also becomes a problem
 * Test suites take longer to run.
 
-### Case Study: Social Application
+:slide_title Case Study: Social Application
+
 * To delve more into SOA we will be using a "Social Application"
 * Here are the basics: you should be writing this app as you read
 * It will be helpful with NanoTwitter
 
-## Features (long term)
+:slide_bigtitle Features (long term)
 
 This is an RSS feed reader, with a social network integrated into it.
 
@@ -46,17 +47,13 @@ This is an RSS feed reader, with a social network integrated into it.
 * Votes: Any user can vote up or down a feed entry, whether it's one they are following themselves, or another user's
 * Notifications: A user can request to be notified when someone votes on a feed item from one of their own feeds, when someone starts following them, and so on.
 
-## Overview
+:slide_bigtitle Overview
+
 * Users can follow other users
 * A user can follow 0 or more users, and be followed by zero or more users
 * A user cannot follow itself
 
-## Useful links
-* [Ruby Toolbox](https://www.ruby-toolbox.com/categories)
-* [Minitest Spec](https://github.com/seattlerb/minitest)
-* [Ruby Faker](https://github.com/stympy/faker)
-
-## Tables, in their initial form
+:slide_title Tables (in their initial form)
 
 * `users` table - Columns
   * id: integer
@@ -83,34 +80,26 @@ This is an RSS feed reader, with a social network integrated into it.
   * entry_id: integer 
   * vote: string (up or down, room for expansion)
 
-## Models (not all are detailed here)
+:slide_title Models (not all are detailed here)
 
-* `User` model
-  * Will contain some intricate has_manys
-  * Along these lines
+:source_begin :ruby
 
-<%= ruby_begin %>
+# I think the terms "hero" and "fan" make it easy to reason about (jn English :)
 class User < ActiveRecord::Base
   has_many :follows
-  has_many :followed_users, ...
+  has_many :heroes, ...
   has_many :followings, ...
-  has_many :followers ...
+  has_many :fans ...
 end
-<%= ruby_end %>
 
-* `Follow` model
-* Is a lot simpler structurally but really confusing semantically!. Here is one way to do it
-
-<%= ruby_begin %>
 class Follow < ActiveRecord::Base
   belongs_to :user
   belongs_to :followed_user, class_name: "User"
 end
-<%= ruby_end %>
+:source_end
 
-## Testing
+:slide_bigtitle Testing
 
-### General
 * Because the follow/follower/following is very confusing
 * Write tests to see that they work as you want
 * Note that you need to ensure that the RACK_ENV environment variable is set to test
@@ -119,7 +108,8 @@ end
 * Invoke pry with sinatra loaded: `pry -e "require_relative `./app,rb`"
 * Use `before do` to set up "test fixtures"
 
-### Examples of additional tests to write
+:slide_title Examples of additional tests to write
+
 * If user a follows user b, 
   * then user b is a follower of a
   * also user a is a followed_user of user b
@@ -130,10 +120,10 @@ end
 * If user a attempts to follow user a
   * then an error occurs
 
-### Sample tests
+:slide_title Sample tests
 * A very basic test to see if it works at all:
 
-<%= ruby_begin %>
+:source_begin :ruby
 describe 'associations' do
   before do
     @p = User.create(name: "Pito")
@@ -144,35 +134,40 @@ describe 'associations' do
     @cc.followings.length.must_equal 1
   end
 end
-<%= ruby_end %>
+:source_end
 
-### Partitioning into services
+:slide_title Partitioning into services
 * At a high level this service is pretty simple
 * There are just a few tables... but the semantics are tricky
 * But when we implement it properly we will touch on many of the representative challenges
 * As well as database/activerecord capabilities: caches, one-to-many, many-to-many, single-table-inheritance etc.
 
-## How to think about services
+:slide_title How to think about services
+
 * Fundamentally this is a design challenge
 * There are different ways of attacking this
 * You can think of these questions:
-  * Which information is read often but updated much more rarely? This will help determine which models can be in a different service
-  * Which is written and updated frequently? You will want to possibly put the updating in a separate service so that the main threads are not delayed
-  * Which joins will occur the most often? You will want to keep those tables together in the same service.
-  * Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
+* Which information is read often but updated much more rarely? This will help determine which models can be in a different service
+* Which is written and updated frequently? You will want to possibly put the updating in a separate service so that the main threads are not delayed
+* Which joins will occur the most often? You will want to keep those tables together in the same service.
+* Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
 
-## Start here
+:slide_title Start here
+
 * It is natural to begin with a monolithic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
 
-<img src="/content/topics/images/soa4.png" width="175" hspace="10" align="center">
+:image :soa4
+
+:slide_title Continue here
 
 * Some or all the models could be broken off into services, one model per service, or more likely, several models in one service.
 
-<img src="/content/topics/images/soa5.png" width="275" hspace="10" align="center">
+:image :soa5
 
-* This is just a start. We will build on this scheme and use this in Nanotwitter
+* This is just a start. We will build on this scheme and use this in NanoTwitter
 
-## Deliverable
+:slide_title Deliverable
+
 * Build out the five tables and models
 * Do not design or implement the routing blocks or views
 * Do write unit tests, following my example to see that your models and associations work
@@ -180,23 +175,3 @@ end
 * Include a readme explaining what you did and any interesting insights or obstacles you hit.
 * A zipped up sinatra app with tests according to the above suggestions
 * A readme explaining what is going on
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
