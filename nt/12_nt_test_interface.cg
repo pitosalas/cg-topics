@@ -3,7 +3,11 @@ title: nT Test Interface
 ---
 :slide_bigtitle Test Interface
 
-The Test Interface essentially is a set of URLs which invoke special functionality that allows your nanoTwitter to be tested from a browser, and is the foundation of the scalability testing we will be doing.
+The Test Interface essentially is a set of URLs which invoke special functionality that allows your nanoTwitter to be tested from a browser, and is the foundation of the scalability testing we will be doing. 
+
+It works by implementing some special routes (that all start /test/xxxx) that do operations which a normal user would never do. Because of this, when this was really deployed, you would protect those routes through the firewall to make sure that no-one but the developers could access them.
+
+These routes will be used during the load testing to reset the server, create lots of fake users, measure performance and so on. It's analogous to the [Onboard Diagnostics Interface](https://en.wikipedia.org/wiki/On-board_diagnostics) that all cars have. There's a plug near the steering wheel that you probably never noticed, where the mechanic (or you) can plug an instrument to inspect the internal condition of the car.
 
 :slide_title The Test user
 

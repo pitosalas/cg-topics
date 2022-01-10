@@ -25,8 +25,6 @@ As these instructions have evolved over the years, there are sometimes inconsist
 
 * **\[MIGRATIONS\]** Write and validate the complete set of migrations for the schema you designed and documented above. You should have all the tables built in the database. You can use ActiveRecord Migrations with Sinatra. Some hints are here: [Using Migrations with Sinatra](http://www.sinatrarb.com/faq.html#ar-migrations)
 
-<hr/>
-<hr/>
 
 * **\[UIDESIGN\]** Design and layout user interface of nT.  It's easiest if you immitate the real twitter, but it's not required. Just make sure that you support the User Interface functionality that is listed in :topic_link :nt_functionality . Develop it as a paper prototype and/or using Balsamiq.com. Start with a paper sketch for each page. Remember to note where there are links and buttons, and what the various text boxes are. Save a series of images or similar in a top level sub directory called design. I really recommend taking some time on this as it will save you a lot oftime later!
 * **\[ROUTES\]** Before coding up the sinatra app, sit down and design all urls that you will have to implement in the code. :topic_link :nt_functionality  gives you the outline, but here you need to describe all of them. Do this before you code. Save this as a markdown file called routes.md in your doc sub directory.
@@ -34,15 +32,24 @@ As these instructions have evolved over the years, there are sometimes inconsist
 
 ### nanoTwitter 0.2: MVP - First Minimal Implementation
 * **\[AUTHENTICATION\]**: Implement authentication, by implementing the /login and /logout urls. Use basic authentication and use Rack::Auth::Basic. **Rack::Auth::Basic** is a good starting point but you are welcome to do something a little more advanced. I do advice ***against*** using complicated gems like devise or Warden. They obscure what's going on and are not a good starting solution. You can refer to [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth), [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) for ideas and hints.
+
 * **\[DO\]** Pito will create a DO project for you. Create a droplet for your code. Later on you will be creating a second droplet for your microservice.  Create deploy your code to Digital Ocean. Ensure that it works.
 * **\[nanoTwitter 0.2\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 
+* **\[UNITTESTS\]** Write set of unit tests with MiniTest. (RSpec is also ok, but I recommend MiniTest. It will give you fewer headaches.) This is a good opportunity to look at your Sinatra application and try to break it down into several files/classes. Any non-trivial Sinatra based app defines some classes which work independently of the Sinatra framework. Try to figure out how to do that. You should have several unit and integration test.
+
+* **\[TESTINTERFACE\]** Begin implementing the test interface. Make sure it is modularized and not mixed in with the regular routes that will be used for the user pages. Implement all the `reset/*`, `/status` and `/users/create` test interace paths.
+
+* **\[STANDARD SEEDS\]** Look at :topic_link :nt_seed_data . Fully implement the test interface API. Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
+
+
+<hr/>
+<hr/>
+
+
 ### nanoTwitter 0.3: Core functionality
 
-* **\[UNITTESTS\]** Write set of unit tests with MiniTest. (RSpec is also ok, but I recommend MiniTest. It will give you fewer headaches.) This is a good opportunity to look at your Sinatra application and try to break it down into several files/classes. Any non-trivial Sinatra based app defines some classes which work independently of the Sinatra framework. Try to figure out how to do that. You should have several unit and integration test.
-* **\[TESTINTERFACE\]** Begin implementing the test interface. Make sure it is modularized and not mixed in with the regular routes that will be used for the user pages. Implement all the `reset/*`, `/status` and `/users/create` test interace paths.
 * **\[CODESHIP\]** Set up Continuous Delivery using www.codeship.com. Each team should get a single Codeship account (free). Follow their instructions to set up automatic deployment of your code so that each time you push new sources to github, Codeship sees this and automatically runs your test suite to make sure verything still works.
-* **\[STANDARD SEEDS\]** Look at :topic_link :nt_seed_data . Fully implement the test interface API. Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
 * **[AUTODEPLOY]** Configure Codeship for automatic deployment. Now, when you push to github, Codeship should automatically run all your tests, and if they all pass, then automatically deploy to Heroku. Make sure tests all this is happening.
 * **\[nanoTwitter 0.3\]** Clean up the directory to get rid of any random files. Update readme.md in the root directory as explained above. Update your repo  with your latest and tag the release.
 

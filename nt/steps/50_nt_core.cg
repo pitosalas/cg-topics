@@ -1,0 +1,33 @@
+---
+title: "NanoTwitter Stage 5: Core"
+desc: Finally implement core functionality and tests
+---
+:h3 Purpose
+
+Now that you've built the skeleton or scaffold for NanoTwitter, it's time to start building the real functionality. I know that you might have started doing this already and that's fine. In this stage you will complete the core features, both front end and back end.
+
+:h3 Do this
+
+:h4 Functionality
+
+1. Implement the Logged in User Page - The page that is displayed once the user is logged in. You can design this page however you like. In a way this is the home page and it contains a lot of information and commands:
+    * A search box where they can search - for tweets, but maybe other things as well. The results of the search are displayed on a separate search results page.
+    * List of 50 most recent tweets by users that they follow.
+    * List of users who they are following. Next to an individual User there's a button or link to follow or unfollow them
+    * List of users that are following them. Next to an individual User there's a button or link to follow or unfollow them
+    * Button or link to create a new tweet
+    * Next to an individual Tweet there might be a "like" or "reply" button or link
+1. Implement the Tweet Command - Display the Tweet form, with whatever fields you have and a button to submit the tweet or cancel it
+1. Implement the Search command - Allow searching at least by the text of tweets. But there are many other things that you could decide to search for. 
+
+:h4 Testing
+
+1. Write set of unit tests with MiniTest. (RSpec is also ok, but I recommend MiniTest. It will give you fewer headaches.) This is a good opportunity to look at your Sinatra application and try to break it down into several files/classes. Any non-trivial Sinatra based app defines some classes which work independently of the Sinatra framework. Try to figure out how to do that. You should have several unit and integration test.
+
+:h3 Deliverable
+
+We will review the code to make sure that you implemented at least what was required. We will look at the cleanliness of the code, whether the readme was updated, whether there are bugs. We will also try the heroku link to see if the functionality is there.
+
+1. Your github repo which we will look at
+1. Your heroku url to demonstrate that you've gotten it all up into the cloud
+
