@@ -1,8 +1,6 @@
 ---
-title: Sinatra Series 5 - Service and API Design
+title: Service and API Design"
 ---
-* Make sure first have done <%= link_to_topic :sinatra_series_4 %>
-
 ## Deliverables
 * Please answer these warmup questions:
   * In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
@@ -17,7 +15,7 @@ title: Sinatra Series 5 - Service and API Design
 * Designing the API itself
 * Difficult question and doesn't have one correct solution
 * Usual advice is to build it as a monolith and then "peel off" services
-* Read: [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+* Read: [How to break a Monolith into MicroServices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
 * Read [Why you shouldn't start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
 
 ## Four Different Strategies to consider
@@ -159,6 +157,7 @@ title: Sinatra Series 5 - Service and API Design
   * When those needs arise it is time to create a new API which returns specific combined results on a case by case basis, for example `/APIV1/tweets?id=22,32,55,2&includeuserinfo=name
 
 ### Summary
+
 * Partitioning an application into services is a serious design challenge
 * Its YAGNI vs. Performance
 * The general advice is to start with a monolith and break into services only when it's clearly required

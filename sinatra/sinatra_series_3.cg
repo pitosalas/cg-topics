@@ -1,60 +1,177 @@
 ---
-title: "Sinatra Series 3: Introduction to SOA"
+title: "Sinatra Series 3: Case Study"
+desc: A level deeper into Sinatra
 slides: true
 ---
-* Make sure first have done <%= link_to_topic :sinatra_series_2 %>
-* Next after this section is: <%= link_to_topic :sinatra_series_4 %>
-* Make sure you also understand <%= link_to_topic :www %> this well
+:h3 Purpose
 
-:slide_title Service Oriented Architecture
+* We will build a large fairly complicated example
+* To illustrate more principles of Service Oriented Architectures and Sinatra
 
-* Build a system from a collection of services
-* Services talk to each other over the internal network
-* REST or similar communications schemes
-* Services that are internal to the system
-* Not designed as an external API but as a way to structure a system
-* Contrast with Rails "Majestic Monolith" approaches
-* Big design and architecture question is how many services to have
-* What is the "right size"?
-* A very important pattern, but not uncontroversial
+:slide_title Non SOA Approach to scaling
 
-:slide_title Benefits of SOA
-* Isolation
-  * Each service is its own code base, database, and team
-  * Each can be tested separately
-  * Makes "scaling out" more possible
-* Robustness
-  * If one service fails or errors out, it shouldn't affect the others
-  * Analogous to encapsulation in OOP
-* Scalability
-  * Services become the unit of scalability
-  * We can run 1,2,3 or more of the same service
-  * A service can be moved to another server
-* Flexibility and Interoperability
-  * No service can know or depend on how another service is implemented
-  * Services will interoperate without worrying about the language or platform
-  * Or it could be reimplemented in another language or another platform
-* Reuse
-  * A service that is well designed can be reused in different contexts
-  * There are services that different applications or products will require
-  * Or a service designed by one group or company can be reused
+:image :soa1
 
-:slide_title Mechanics
+* A Web Server (aka App Server) runs your code. 
+* That server is connected by network to a database server.
+* There are background processes and they run on the same server
+* Scaling it follows a path of least resistance
 
-* Describe the "API" of the service
-* Usually an HTTP request and response
-* Long running services should be implemented as multiple calls
-  1. One to initiate
-  2. One to request results if any
-  3. So as not to "block" the caller
-  4. But then, what happens if the service has crashed or is hung?
-* Synchronous calls need to be very fast
-* Another excellent way to communicate is with a queue
-* Sinatra is especially suited for SOA services because it is lightweight
+:slide_title Scaling
 
-:slide_title Discussion Questions
+:image :soa3
 
-* How would you recognize a system that is designed in an Service Oriented Architecture?
-* What are some of the advantages and disadvantages of this approach?
-* What is in an http response? And what would be somewhat different about the http response produced from an SOA system?
+* As load becomes greater, capacity is added where it is needed
+* A "load balancer" sends traffic to different servers
+* A "cache service" like Redis reduces the number of requests to the database
+* And background processes are also replicated over multiple servers
+* This kind of configuration is typical of many sites
+* But what happens when the database cannot carry the load by itself?
+* Managing the monolithic code base itself also becomes a problem
+* Test suites take longer to run.
 
+:slide_title Case Study: Social Application
+
+* To delve more into SOA we will be using a "Social Application"
+* Here are the basics: you should be writing this app as you read
+* It will be helpful with NanoTwitter
+
+:slide_bigtitle Features (long term)
+
+This is an RSS feed reader, with a social network integrated into it.
+
+* A user indicates that they are interested in a certain RSS feed, and they are imported into the app to allow the user to read it comfortably. Furthermore, users can follow each other so that user1 can follow along and see user2's feeds (say they share an interest.)
+* And if user1 sees a feed entry that they think is great they can vote it up.
+* User Profiles and Following: basic profile information, user name, password, and who is following whom
+* Feeds: Each user can make feed entries, which are collected into their feed
+* Votes: Any user can vote up or down a feed entry, whether it's one they are following themselves, or another user's
+* Notifications: A user can request to be notified when someone votes on a feed item from one of their own feeds, when someone starts following them, and so on.
+
+:slide_bigtitle Overview
+
+* Users can follow other users
+* A user can follow 0 or more users, and be followed by zero or more users
+* A user cannot follow itself
+
+:slide_title Tables (in their initial form)
+
+* `users` table - Columns
+  * id: integer
+  * name: string
+  * email: string
+  * bio: string
+
+* `follows` table - columns
+  * id: integer
+  * user_id: integer
+  * followed_user_id: integer
+
+* `feed` table - columns
+  * id: integer
+  * user_id: user who owns the feed
+
+* `feed_entry` table - columns
+  * id: integer
+  * feed_id: feed to whom this entry belongs
+  * body: text field contained
+
+* `vote` table - columns
+  * id: integer
+  * entry_id: integer 
+  * vote: string (up or down, room for expansion)
+
+:slide_title Models (not all are detailed here)
+
+:source_begin :ruby
+
+# I think the terms "hero" and "fan" make it easy to reason about (jn English :)
+class User < ActiveRecord::Base
+  has_many :follows
+  has_many :heroes, ...
+  has_many :followings, ...
+  has_many :fans ...
+end
+
+class Follow < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :followed_user, class_name: "User"
+end
+:source_end
+
+:slide_bigtitle Testing
+
+* Because the follow/follower/following is very confusing
+* Write tests to see that they work as you want
+* Note that you need to ensure that the RACK_ENV environment variable is set to test
+* Create the test database with, e.g., `rake db:drop db:migrate db:seed RACK_ENV=test`
+* Invoke pry with the environment variable set: `RACK_ENV=test pry` (note `fish shell` is a little different)
+* Invoke pry with sinatra loaded: `pry -e "require_relative `./app,rb`"
+* Use `before do` to set up "test fixtures"
+
+:slide_title Examples of additional tests to write
+
+* If user a follows user b, 
+  * then user b is a follower of a
+  * also user a is a followed_user of user b
+* if user a is followed by b,c and d
+  * then user a has three followers
+  * also user b is a follower of a
+  * user a is a followed_user if user a
+* If user a attempts to follow user a
+  * then an error occurs
+
+:slide_title Sample tests
+* A very basic test to see if it works at all:
+
+:source_begin :ruby
+describe 'associations' do
+  before do
+    @p = User.create(name: "Pito")
+    @cc = User.create(name: "Chris")
+    @f = Follow.create(user: @p, followed_user_id: @cc.id)
+  end
+  it "can tell how many people are following me" do
+    @cc.followings.length.must_equal 1
+  end
+end
+:source_end
+
+:slide_title Partitioning into services
+* At a high level this service is pretty simple
+* There are just a few tables... but the semantics are tricky
+* But when we implement it properly we will touch on many of the representative challenges
+* As well as database/activerecord capabilities: caches, one-to-many, many-to-many, single-table-inheritance etc.
+
+:slide_title How to think about services
+
+* Fundamentally this is a design challenge
+* There are different ways of attacking this
+* You can think of these questions:
+* Which information is read often but updated much more rarely? This will help determine which models can be in a different service
+* Which is written and updated frequently? You will want to possibly put the updating in a separate service so that the main threads are not delayed
+* Which joins will occur the most often? You will want to keep those tables together in the same service.
+* Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
+
+:slide_title Start here
+
+* It is natural to begin with a monolithic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
+
+:image :soa4
+
+:slide_title Continue here
+
+* Some or all the models could be broken off into services, one model per service, or more likely, several models in one service.
+
+:image :soa5
+
+* This is just a start. We will build on this scheme and use this in NanoTwitter
+
+:slide_title Deliverable
+
+* Build out the five tables and models
+* Do not design or implement the routing blocks or views
+* Do write unit tests, following my example to see that your models and associations work
+* This is an individual assignment not a team assignment.
+* Include a readme explaining what you did and any interesting insights or obstacles you hit.
+* A zipped up sinatra app with tests according to the above suggestions
+* A readme explaining what is going on

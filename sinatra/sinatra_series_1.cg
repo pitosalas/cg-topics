@@ -1,11 +1,9 @@
 ---
 title: "Sinatra Series 1: Basic Plumbing"
 ---
-
-Next after this section is: :topic_link :sinatra_series_2
-
 :h2 Purpose
-* This is the start of a multi-part series of Sinatra introductory lectures. While Sinatra is far simpler than Rails, and easier to understand, it still is a new framework. These series will introduce you step by step to Sinatra and in particular the aspects that are related to Scaling.
+
+This is the start of a multi-part series of Sinatra introductory lectures. While Sinatra is far simpler than Rails, and easier to understand, it still is a new framework. These series will introduce you step by step to Sinatra and in particular the aspects that are related to Scaling.
 
 :h2 Some valuable links:
 * [Minitest/Spec](https://github.com/seattlerb/minitest)
@@ -37,29 +35,27 @@ Next after this section is: :topic_link :sinatra_series_2
 :h2 Setting Up Sinatra
 
 * Make sure you have the following installed:
-  * rbenv 1.1+ [install instructions](https://github.com/rbenv/rbenv)
-  * ruby 2.6.5 **use rbenv commands to install 2.6.5 as your "global" ruby**
-  * git 2+ [install instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * postgres [install instructions](https://www.postgresql.org/)
+  * rbenv (1.2.0 = latest) [install instructions](https://github.com/rbenv/rbenv)
+  * ruby 3.1.0 **use rbenv commands to install 3.1.0 as your "global" ruby**
+  * git 2+ [install instructions](https://github.com/git-guides/install-git)
+  * postgres [install instructions](https://www.postgresql.org/download/)
 
 :h3 Checking your installation
 
 Don't worry if you don't have precisely the same version number. Ask if you're not sure
 
 :source_begin :bash
-$ rbenv -v
-rbenv 1.1.2
-$ ruby -v
-ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin19]
-$ git --version
-git version 2.22.0
-$ psql --version
-psql (PostgreSQL) 12.1
+rbenv -v; ruby -v; git --version; psql --version
+rbenv 1.2.0
+ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [x86_64-darwin21]
+git version 2.28.0
+psql (PostgreSQL) 13.3
+:source_end
 
-*** LOCAL GEMS ***
-
-sinatra (2.0.8.1)
-sinatra-activerecord (2.0.14)
+:h3 Ensure you have these gems
+:source_begin :bash
+sinatra (2.1.0)
+sinatra-activerecord (2.0.25)
 :source_end
 
 ## Recommended directory structure
@@ -68,7 +64,6 @@ sinatra-activerecord (2.0.14)
 * The reason it looks a tiny bit like Rails is because it accommodates ActiveRecord most easily that way
 
 :source_begin :bash
-
 /config
   database.yml
 /db
@@ -85,7 +80,6 @@ config.ru
 Gemfile
 app.rb
 Rakefile
-
 :source_end
 
 :h3 Key files
@@ -98,6 +92,7 @@ gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
+gem "rack-test"
 
 # Rakefile
 require './app'
@@ -140,6 +135,7 @@ production:
 :source_end
 
 :h2 Using Rack::Test to do TDD
+
 * Add `gem rack-test` to Gemfile, `bundle`
 * Notice that all your server does so far is to return `hello sinatra` when it receives a `GET` at root
 * Lets test that
@@ -165,7 +161,7 @@ describe 'The HelloWorld App' do
   it "says hello" do
     get '/'
     last_response.ok?
-    last_response.body.must_equal 'Hello Sinatra!'
+    assert_equal last_response.body, 'Hello Sinatra!'
   end
 end
 
@@ -173,8 +169,3 @@ end
 
 * When you run this program (`ruby test/root_test.rb`) it will run the test and it should succeed
 * This is the basic pattern we will use for testing.
-
-:h2 Continues
-* Next section will be assigned separately: :topic_link :sinatra_series_2
-
-  

@@ -1,9 +1,6 @@
 ---
 title: "Sinatra Series 2: A Basic Service"
 ---
-* Make sure first have done <%= link_to_topic :sinatra_series_1 %>
-* Next after this section is: <%= link_to_topic :sinatra_series_3 %>
-
 ## Goal
 * A Web service to access a database
 * A REST API
@@ -80,5 +77,3 @@ Write the following additional APIs (which are not in the sample code) and add t
     * Update the stated parameters
     * In the test case, verify that the update actually occurred.
 
-## Continues
-* Next section will be assigned separately: <%= link_to_topic :sinatra_series_3 %>
