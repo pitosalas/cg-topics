@@ -1,59 +1,82 @@
 ---
 title: "Sinatra Series 2: A Basic Service"
 ---
-## Goal
+:h2 Purpose
+
+This assignment will familiarize you with the basic mechanics of creating a Sinatra application. By going beyond reading to actually writing working code you will further cement your understanding.
+
+:h3 Features that you will be creating 
+
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
 
-## Initial API Spec
+:h3 Initial API Spec
+
 * `GET /api/users/paul` => JSON result
 * Properly withhold password
 * Properly return key information
 
-## TDD
-* Look at <%= link_to_topic :sinatra_series_api_test_tut %>
+:h2 Do this
+
+* Look at :topic_link sinatra_series_api_test_tut
 * Test is for a set of specific API calls, not of the database or other internals of the service
 * And before the test runs, it creates a `test fixture` the particular user being looked up
 * For the test to run there has to be a database (ActiveRecord) which is not yet set up
 
-## Database
+:h3 Database
+
+* Make sure you have rake installed: `gem install rake`
 * Create a migration `rake db:create_migration NAME=create_users`
 * Add to the name, password, email and bio fields to the migration
+* `rake db:create`
 * Create the corresponding ActiveRecord model in model/user.rb
 * Create database and migrate, both development and test databases!
-* `rake db:create db:migrate RACK_ENV=development`
 
-## Implement GET
+:h3 Implement GET
+
 * `get '/api/users/:name' do`
 * Retrieve the parameter `:name` with `params[:name]`
 * Use normal `activerecord` features to retrieve database
 * Use `.to_json` to convert result to json
+* Use .slice to make sure that the `password` field is not returned
 
-## Extend TDD tests
+:h3 Extend TDD tests
+
 * Check that email, bio are also returned
 * Check that password is NOT returned
 * Add code to the User model so that password is not returned
 * And tests now pass
  
-## Continue to implement, as follows:
+:h3 Continue to implement, as follows:
+
 * Implement test cases (TDD), demonstrate that they fail
 * Implement the new APIs
 * Demonstrate the test cases succeed
 * Demonstrate operation of the server using an API testing client
   * Mac: Insomnia
-  * Chrome: Advanded Rest Client
+  * Chrome: Advanced Rest Client
   * Many many others!
-## Additional APIs
+
+:h3 Additional APIs
+
 * `POST /api/users`
   * Supply HTTP attributes: name, email, password and bio
   * Create a new user
   * Return the right status code.
+
 * `DELETE /api/users/:name`
   * Delete user with name :name
   * When user with valid :name, then return status OK
   * When user with invalid :name, then return status 404
+
+* `PUT /api/users/:id`
+    * Supply parameters name, email, password and bio (one or more of them)
+    * Return OK or 404 depending on whether the id is valid
+    * Update the stated parameters
+    * In the test case, verify that the update actually occurred.
+
 * `POST /api/users/:name/validate`
   * Validate that a certain user's credentials are correct
   * Supply parameter: :password (clear text)
@@ -62,18 +85,11 @@ title: "Sinatra Series 2: A Basic Service"
     * And name, email, bio and password of said user
   * When not, returns status 404
 
-## Exercises
+:h3 Submit this
+
 * Respond to the following warmup questions:
     * Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many?
     * Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
     * In what way is a relational database similar or reminiscent of a spreadsheet?
     * Please list two concepts from the reading that you don't understand, and if you feel you understand it well, then the two most important ideas of this reading.
-
-Write the following additional APIs (which are not in the sample code) and add the test cases as well!
-
-* `PUT /api/users/:id`
-    * Supply parameters name, email, password and bio (one or more of them)
-    * Return OK or 404 depending on whether the id is valid
-    * Update the stated parameters
-    * In the test case, verify that the update actually occurred.
 
