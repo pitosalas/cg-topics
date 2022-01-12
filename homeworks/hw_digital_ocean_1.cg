@@ -1,10 +1,6 @@
 ---
 title: "Service API - 1: Cloud"
 ---
-
-<link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
-
 ## What to submit
 
 Answer these questions at the end and submit to latte as pdf:
@@ -16,7 +12,7 @@ Answer these questions at the end and submit to latte as pdf:
 
 ## Prerequisites
 
-* Read <%= link_to_topic :hw_digital_ocean_0 %>
+* Read :topic_link :hw_digital_ocean_0 
 * DigitalOcean account
   * Signup and get an API key: [https://cloud.digitalocean.com/account/api/](https://cloud.digitalocean.com/account/api/) -> "Generate New Token". **Write down the token**
 * SSH key on DigitalOcean
@@ -117,6 +113,6 @@ Click "Connection details" then "Flags" to see the commands for connecting using
 Run that command in terminal and you should be able to connect to the database.
 
 ### **Now your cloud architecture is all ready to go!** 🎉 Continue to next
-* Next: <%= link_to_topic :hw_digital_ocean_2 %>
+* Next: :topic_link :hw_digital_ocean_2 
 
 

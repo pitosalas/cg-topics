@@ -14,19 +14,23 @@ title: Hands On Heroku for Sinatra
 * Note, you will need to make a few small changes to ready it for Heroku
 
 :h3 Setup
+
 * Go to [Heroku](https://www.heroku.com)
 * Create a new user account (free)
 * Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for your platform
 
 :h3  Prepare your sinatra app
+
 * go to your local directory containing the sinatra app
 * Use Heroku command line to create a new
 * The name of your app is assigned automatically and printed out once you do `heroku create`
 
 :h3 Prepare your application
+
 * Configure it for rack: make sure you have a config.ru
 
 :h3 Create it on Heroku
+
 :source_begin :bash
 heroku create
 git push heroku master

@@ -8,28 +8,6 @@ slides: true
 * We will build a large fairly complicated example
 * To illustrate more principles of Service Oriented Architectures and Sinatra
 
-:slide_title Non SOA Approach to scaling
-
-:image :soa1
-
-* A Web Server (aka App Server) runs your code. 
-* That server is connected by network to a database server.
-* There are background processes and they run on the same server
-* Scaling it follows a path of least resistance
-
-:slide_title Scaling
-
-:image :soa3
-
-* As load becomes greater, capacity is added where it is needed
-* A "load balancer" sends traffic to different servers
-* A "cache service" like Redis reduces the number of requests to the database
-* And background processes are also replicated over multiple servers
-* This kind of configuration is typical of many sites
-* But what happens when the database cannot carry the load by itself?
-* Managing the monolithic code base itself also becomes a problem
-* Test suites take longer to run.
-
 :slide_title Case Study: Social Application
 
 * To delve more into SOA we will be using a "Social Application"
@@ -121,6 +99,7 @@ end
   * then an error occurs
 
 :slide_title Sample tests
+
 * A very basic test to see if it works at all:
 
 :source_begin :ruby
@@ -152,20 +131,6 @@ end
 * Which is written and updated frequently? You will want to possibly put the updating in a separate service so that the main threads are not delayed
 * Which joins will occur the most often? You will want to keep those tables together in the same service.
 * Which parts of the system are clearly defined and have good requirements? If the requirements are still in flux you may not want to make them into a service but keep them as a conventional MVC app
-
-:slide_title Start here
-
-* It is natural to begin with a monolithic MVC design. This is true if you are implementing in Ruby/Sinatra, Ruby on Rails, Node or any other language.
-
-:image :soa4
-
-:slide_title Continue here
-
-* Some or all the models could be broken off into services, one model per service, or more likely, several models in one service.
-
-:image :soa5
-
-* This is just a start. We will build on this scheme and use this in NanoTwitter
 
 :slide_title Deliverable
 

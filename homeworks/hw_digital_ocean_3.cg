@@ -13,7 +13,7 @@ title: "Service API - 3: CI/CD"
 
 ### Prerequisites
 
-* You must complete <%= link_to_topic :hw_digital_ocean_1 %> and <%= link_to_topic :hw_digital_ocean_2 %> first, with 2 droplets and a database up and running on DO
+* You must complete :topic_link :hw_digital_ocean_1  and <%= link_to_topic :hw_digital_ocean_2 %> first, with 2 droplets and a database up and running on DO
 
 ### Deliverables
 * Your deliverable for this step is to answer these warmup questions. Keep your code clean though because at the end of the series we will ask you to submit your code!
