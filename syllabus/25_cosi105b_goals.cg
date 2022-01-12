@@ -5,9 +5,7 @@ title: Learning Objectives
 
 * **Applied Software Engineering**: Use what you learn in a real-world team based development project. Starting from scratch, with a team of other students, you will design, implement, test, and deploy your own version of Twitter. You will be asked to load it up with users, measure its performance and then using techniques learned here to improve its performance and scalability.
 
-#### Some specific topics
-
-##### Learn: Scalable Architecture
+:slide_title Knowledge Gained
 * Protocols and formats: http, html, urls
 * How web servers work
 * Architectural concepts for scale
@@ -22,7 +20,7 @@ title: Learning Objectives
 * Load testing
 * Application performance analysis
 
-##### Do: Applied Software Engineering
+:slide_title Skills Acquired
 
 * Write excellent software
 * Write and deploy a Sinatra application

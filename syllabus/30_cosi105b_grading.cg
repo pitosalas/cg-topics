@@ -1,0 +1,13 @@
+---
+title: Grading
+---
+:topic_include :general_grading_gradescope
+
+:slide_title Weighting of marks
+
+* **Class Participation: ~20%**: Do you show up on time (or let the teachers know ahead of time if you cannot?) Do you ask good questions, and contribute to the discussion? Do you keep up with homework? Do you make a good faith effort at responding to all "Participation Only" work?
+
+* **Individual Assignments: ~40%**: Does the program work as required? Does it use language, platform and framework features in a good way? Is it well designed? Does it follow good object oriented practices? Does it avoid code smells? Has testing been considered? Has performance been considered? For non coding assignments, I will pay attention to whether you are just  regurgitating the reading or really engaging with it. So, give a personal perspective or insight, make connections with other readings, your other classes, your own reading and research. Have an interesting point of view. Pay attention to writing good, professional English. Many students find that they benefit from using the [Brandeis Writing Center](http://www.brandeis.edu/writingprogram/writingcenter/) to review first drafts.
+
+* **Team nT Deliverables: ~40%**: Did all the specified functionalities get implemented? Are there complete unit tests, and are they being run? Does the code reflect good coding practices? Where possible is there good OO design? Did you measure performance and properly interpret the findings? What was done to address scaling problems, what tools, techniques and creativity?  In the end, how well does nT scale and how do you know? How professional and attractive is UI, how is the fit and finish? How narrowly did you read the requirements, or did you go beyond them? Can you explain how it works?
+
