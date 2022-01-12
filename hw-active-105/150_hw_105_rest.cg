@@ -1,0 +1,19 @@
+---
+title: (I) Designing REST APIs
+desc: The most common structure for APIs for web applications
+---
+:h3 Purpose
+
+When we want to have one application exchange information or functionality with another web application, we need an API or Application Programming Interface. While the essence is the same, there are multiple different approaches that are used. One of the most common and popular ones is so-called REST. The purpose of this work is to have you start thinking about how they work and how to design them.
+
+:h3 Do this
+
+* Read this article. It's long but important: [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api). 
+
+:h3 Deliverable
+
+Please respond to these questions:
+
+* The PUT http verb and the POST http verb sound very similar. Can you explain the difference? Include an example from nanoTwitter of where each would be appropriate, and explain why. (Beware this is a question that trips up even experienced web engineers!)
+* What are CRUD operations? You know that REST APIs follow the patterns of the CRUD operations. But what do you do when you need an action that doesn't fit? Give an example from nanoTwitter that fits within CRUD and one that does not.
+* In the context of REST APIs, what is pagination? Why would you say that pagination is a concern, and can you give some scenarios where it becomes a concern?

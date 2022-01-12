@@ -104,7 +104,7 @@ end
 * Write tests to see that they work as you want
 * Note that you need to ensure that the RACK_ENV environment variable is set to test
 * Create the test database with, e.g., `rake db:drop db:migrate db:seed RACK_ENV=test`
-* Invoke pry with the environment variable set: `RACK_ENV=test pry` (note `fish shell` is a little different)
+* Invoke pry with the environment variable set: `RACK_ENV=test pry` 
 * Invoke pry with sinatra loaded: `pry -e "require_relative `./app,rb`"
 * Use `before do` to set up "test fixtures"
 
@@ -137,6 +137,7 @@ end
 :source_end
 
 :slide_title Partitioning into services
+
 * At a high level this service is pretty simple
 * There are just a few tables... but the semantics are tricky
 * But when we implement it properly we will touch on many of the representative challenges

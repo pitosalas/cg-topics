@@ -5,11 +5,11 @@ title: "Service API - 0: Introduction"
 
 * Read the overview below
 
-* **Setting up your cloud architecture - <%= link_to_topic :hw_service_api_1 %>**
+* **Setting up your cloud architecture - <%= link_to_topic :hw_digital_ocean_1 %>**
 
-* **Setting up your Sinatra app - <%= link_to_topic :hw_service_api_2 %>**
+* **Setting up your Sinatra app - <%= link_to_topic :hw_digital_ocean_2 %>**
 
-* **Setting up CI/CD - <%= link_to_topic :hw_service_api_3 %>**
+* **Setting up CI/CD - <%= link_to_topic :hw_digital_ocean_3 %>**
 
 ## Overall Objective
 
@@ -19,7 +19,7 @@ In this homework, we will create a multi-server architecture for making a simple
 
 ## Architecture
 
-* The structure of your final resilt will include multiple droplets
+* The structure of your final result will include multiple droplets
 * The logic of each will be trivial. 
 * Our objective here is to practice creating a multi-node architecture and deploying it
 

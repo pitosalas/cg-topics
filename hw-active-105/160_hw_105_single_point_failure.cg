@@ -1,0 +1,16 @@
+---
+title: (P) Single Point of Failure
+desc: How to make sure your system stays up!
+---
+:h3 Purpose
+
+:h3 Do this
+* Watch [Development Decisions and Architecture](https://brandeis.box.com/s/0b85lgfmzn380vsejkdr724a292dg26w)
+
+:h3 Deliverable
+
+Please respond to the following questions:
+
+* What is a single point of failure and why is this good or bad? Is it something that you should avoid at all costs?
+* What is a CDN? What are the considerations for using one?
+* Is this video about scaling up or scaling out?
