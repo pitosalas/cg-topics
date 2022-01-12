@@ -12,7 +12,7 @@ I promise that if you read these closely it will come in very useful in your pro
 
 * Read Accessing Activerecord using the [Sinatra ActiveRecord Extension](https://github.com/janko-m/sinatra-activerecord)
 * Follow this example Tutorial: [Simple Database Driven Website with Heroku](https://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)
-* Read this great resource: [Sinatra Readme](http://www.sinatrarb.com/intro.Basics of networking and hte web
+* Read this great resource: [Sinatra Readme](http://www.sinatrarb.com/intro)
 * We will be emphasizing testing, so also read this introduction to [Sinatra Testing](http://sinatrarb.com/testing.html)
 
 :h3 Deliverables

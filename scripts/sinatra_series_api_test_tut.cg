@@ -1,3 +1,9 @@
+---
+title: Sinatra Series API Test Example
+---
+**NOTE: THIS NEEDS TO BE UPDATED**
+
+:source_begin :ruby
 ENV['APP_ENV'] = 'test'
 
 require_relative '../app.rb'
@@ -67,3 +73,4 @@ describe "POST on /api/users" do
     attributes["bio"].must_equal "Lotus CEO"
   end
 end
+:source_end
