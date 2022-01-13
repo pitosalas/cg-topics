@@ -1,0 +1,16 @@
+---
+title: Pre-work and Expectations
+---
+## Before the first day of class
+
+We are going to jump right in so it is crucial that you invest time so that you are at the same level as your classmates and we can begin productive work right away. Here are the three important steps:
+
+2. **Python** Learn Python. All our programming will be done in Python. It is really important that you come to the first day of class with having written at least one 100 line Python program. Don't take a shortcut, it's important!
+
+    If you don't already know it, you will find it pretty easy and fun to learn. You can find a tutorial or video online to learn Python. By the way if you are new to Python, you will hear about Python 2 and 3. They are more similar than different, so whichever you know or learn is fine. It's hard to recommend one because there are so many. Here is one: [Python Tutorial from TutorialsPoint](https://www.tutorialspoint.com/python/). **Note: We will be using Python 3**
+
+3. **Linux**: All programming and robotic software we will use in this class will run on Ubuntu Linux. Don't feat though, we are providing you a personal Ubuntu environment so you don't have to install or reinstall anything. But you will need to learn Linux and the Linux shell. You need to be comfortable with all the basic commands, such as md, cd, rm, mv, ls, ln You should have a clear understanding of how the Linux directory structure, file specifications. You should also know your way around Linux, booting, shutdown, installing software, running a shell, etc.
+
+    * [Mastering Bash and Terminal](https://www.blockloop.io/mastering-bash-and-terminal?utm_source=hackernewsletter&utm_medium=email&utm_term=fav)
+    * [Learn Enough Command Line to be Dangerous](https://www.learnenough.com/command-line-tutorial) seems to be a very nice resource.
+
