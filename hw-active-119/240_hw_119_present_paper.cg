@@ -7,7 +7,7 @@ desc: We share learnings from key papers in Robotics
 :h3 Do this
 
 * Working with your teammate, read and present a seminal or super interesting paper in Robotics
-* Choose a paper from this specific list: :section_link :background :key_papers
+* Choose a paper from this specific list: :topic_link :key_papers
 * No two teams should present the same paper! Coordinate in Slack
 * Prepare a 7 minute max presentation with 3 minutes for questions, and submit it
 * Presentations will be organized as as follows: :topic_link :roundrobin_papers

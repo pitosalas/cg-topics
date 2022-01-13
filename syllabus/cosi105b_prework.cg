@@ -1,0 +1,51 @@
+---
+title: Cosi105b Required Preparation
+desc: The course starts fast so you absolutely have to prepare ahead of time!
+slides: true
+---
+This course builds on Cosi166b (Capstone) that you will have completed. However depending on how long ago that was you might very well need to review some of the material. Also of course you may have a new or changed computer.
+
+:callout :small, "READ THIS", " I am serious when I recommend strongly that you invest a few hours before the first day of class. You will have a better time, learn more, and have more fun."
+
+:slide_bigtitle Install Ruby, Sinatra and required other software on your computer
+
+Save yourself and the TAs headaches by installing exactly these versions!
+
+* rbenv (1.2.0 = latest) [install instructions](https://github.com/rbenv/rbenv)
+* ruby 3.0.3 **use rbenv commands to install 3.0.3 as your "global" ruby**
+* git 2+ [install instructions](https://github.com/git-guides/install-git)
+* postgres [install instructions](https://www.postgresql.org/download/)
+
+:h3 Checking your installation
+
+Versions must match in the first two numbers, but it's ok if they don't match 100%. So if I ask for 3.0.3 and you install 3.0.4 that's ok, but 2.7.0 is not ok. Here's how you check but your specific numbers may be different as long as they match the versions above.
+
+:source_begin :bash
+rbenv -v; ruby -v; git --version; psql --version
+rbenv 1.2.0
+ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [x86_64-darwin21]
+git version 2.28.0
+psql (PostgreSQL) 13.3
+:source_end
+
+:h3 Ensure you have these gems
+:source_begin :bash
+sinatra (2.1.0)
+sinatra-activerecord (2.0.25)
+:source_end
+
+## 2. Review Ruby
+
+Because you've taken Cosi166 Capstone, you know that ruby is a very cool language with basic and advanced features. You will be doing a lot of Ruby programming so if you came to this class without knowing Ruby, you need learn it on your own, before class begins..
+
+Depending on how you best learn there are several approaches to take for learning Ruby. You can of course just use google to find resources and tutorials.
+
+Our self-study site is [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/preface.html). Students have had good success with it. Go through all the lessons up to 40. The first dozen or so are trivial, but soon it will get hard. It will pay off, believe me!
+
+## 3. Learn the (Unix) Shell (Command Line)
+
+Throughout the course we are going to use the Unix command line extensively. If you are on a Mac, this is what you use in `terminal`. You may have to use it a lot more than you have in the past. Here are a couple of resources:
+
+* [Mastering Bash and Terminal](https://www.blockloop.io/mastering-bash-and-terminal?utm_source=hackernewsletter&utm_medium=email&utm_term=fav)
+* [Learn Enough Command Line to be Dangerous](https://www.learnenough.com/command-line-tutorial) seems to be a very nice resource.
+
