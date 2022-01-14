@@ -1,7 +1,7 @@
 ---
 title: General Grading Info
 ---
-## General Policies related to grades and grading
+:slide_title General Policies related to grades and grading
 
 The final grade in this course will reflect my assessment of your performance in the course. This includes your participation; your mastery of the key learning objectives; your demonstration this both in written form and in code (if applicable); your application of what you've learned to working on a team; building an interesting product; and communicating what you achieved at the end of the semester.
 
@@ -12,7 +12,7 @@ Individual assignments are scored and weighted (see below), and used to determin
 * C -> Satisfactory
 * D -> Passing, but Unsatisfactory
 
-### Marks for assignments
+:slide_title Marks for assignments
 
 Throughout the semester, there will be homeworks, assignments, presentations, quizzes etc., small and large. Those assignments are all given a 0-100 mark. We use [Gradescope](https://www.gradescope.com) for all assignments.
 
