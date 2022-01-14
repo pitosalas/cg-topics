@@ -1,19 +1,4 @@
 ---
 title: Course Materials
 ---
-### Course Materials
-
-* Luckily both these books are available to you free via the Brandeis Library and the O'Reilly Safari Online Library. 
-* In addition to the books I mention here, you will find multiple other great books about Robotics and ROS in the O'Reilly Safari library.
-
-<slide_break></slide_break>
-
-#### Books and Robot
-
-1. [Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html) 
-    * This is an excellent book that introduces ROS from the bottom up. You should get a copy. Beware, ROS is pretty complicated. We will be using this book as the primary textbook. **Make very very sure that:** As you read the book, follow along the <%= link_to_topic :rosbooktoc %> for clarifications and corrections. If you ignore them you will get into trouble!
-
-1. [Hands-on ROS for Robotics Programming](https://learning.oreilly.com/library/view/hands-on-ros-for/9781838551308/)   
-    * This is a brand new book that is specifically about the GoPiGo3 Robot that we will be using for our Robotics Lab @ Home program.
-
-1. There is an option for students to buy a small robot for experimentation and learning from us. The robot is not required and you will be able to do well in the course without it. See :topic_link :gpg_purchase for details.
+[Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html). This is an excellent book that introduces ROS from the bottom up. You should get a copy. Beware, ROS is pretty complicated. We will be using this book as the primary textbook. As you read the book, follow along the :topic_link :rosbooktoc for clarifications and corrections. ROS has evolved since the book was written and the examples printed don't work as expected.
