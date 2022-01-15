@@ -2,20 +2,20 @@
 title: (P) Read PRR Chapter 7
 desc: Another great chapter
 ---
-### Purpose
+:slide_title Purpose
 
 * We continue laying the foundations of learning ROS
 * We learn how to use sensors and motors to control the robots basic behaviors
 * I realize this is difficult and things don't always just work the way you expect.
 
-### Activities
+:slide_title Activities
 
 * Please read these chapters to try to really understand how things work
 * Remember to refer to the relevant links of Chapter Supplements as indicated below
 * And you really need to try to run some of the examples to see that you are starting to understand
 * Respond to the requested warmup questions for each chapter
 
-:h4 Read Chapter 7 of PRR and remember to refer to <%= link_to_topic :prr_wander_bot %>. Consider the following warmup questions:
+:h4 Read Chapter 7 of PRR and remember to refer to :topic_link :prr_wander_bot . Consider the following warmup questions:
 
 1. As we are talking about sensors, think about this: In the Red Light! Green Light! program what plays the role of a sensor?
 1. This is tricky: the formula on page 104: `bearing = msg.angle_min + i * msg.angle_max / len(msg.ranges)` is incorrect (i.e. it's an error in the book!) What is the correct formula, or what is the error?

@@ -4,7 +4,7 @@ desc: By the end of the semester you will be living and breathing TOPICS!"
 slides: true
 ---
 
-## Introduction to Topics
+:h3 Introduction to Topics
 
 * Nodes talk to each other with Topics
 * A node can "publish" a topic
@@ -19,9 +19,7 @@ slides: true
   * A message is a data structure with named and typed fields
   * A collection of messages already exists, e.g. Int32, which is message with one element, a 32 bit integer.
 
-<slide_break></slide_break>
-
-### Some details
+:slide_title Some details
 
 * Queues
   * When you define your node as a Publisher you need to supply a queue_size
@@ -33,11 +31,7 @@ slides: true
   * New subscribers to a latched topic automatically get the last published message for that topic
   * Useful for topics which change rarely
 
-<slide_break></slide_break>
-
-## Live Coding
-
-### Publishing to a Topic
+:slide_title Publishing to a Topic
 
 * You will find all the book's examples in the [prrexamples github package](https://github.com/campusrover/prrexamples)
 * Use the ones in our GitHub because they have been tested with TB3
@@ -48,35 +42,28 @@ slides: true
   * to run `roscore` in another terminal
 * Run it and examine that it is publishing as expected, as follows:
 
-<slide_break></slide_break>
-
-<%= source_begin "language-bash" %>$ roscd prrexamples
+:source_begin :language-bash
+$ roscd prrexamples
 $ chmod +x src/topic_publisher.py
 $ rosrun prrexamples topic_publisher.py
 $ rostopic list
 $ rostopic echo counter -n 5
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
-
-### Checking That Everything Works as Expected
+:slide_title Checking That Everything Works as Expected
 
 * Make sure you can see that topics are being published (see `rostopic`)
 * Make sure you can see that topics are being subscribed (see console output)
 * Try running `rqt_graph` to see the publisher/subscriber relationships for node and topics
 
-<slide_break></slide_break>
-
-### Subscribing to a Topic
+:slide_title Subscribing to a Topic
 
 * See `$ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py`
 * It defines and runs a node whch subscribes to the counter, and prints it
 
-<slide_break></slide_break>
-
-<%= source_begin "language-bash" %># shell commands
-
+:source_begin :language-bash
+# shell commands
 $ roscd prrexamples
 $ chmod +x scripts/topic_subscriber.py
 $ rosrun prrexamples topic_subscriber.py
-<%= source_end %>
+:source_end

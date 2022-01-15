@@ -3,31 +3,27 @@ title: "2A: Workspaces and packages"
 desc: "ROS modularity"
 slides: true
 ---
-### catkin
+:slide_title catkin
 
 * catkin is the ROS build system
 * It's quite complicated and related to CMAKE
 * Treat it like a black box
 
-<slide_break></slide_break>
-
-### Workspaces
+:slide_title Workspaces
 
 * A subdirectory in which you will be doing your ROS work
 * You need only one and it will be called catkin_ws/
 * You should already have it on your linux install, but here's how you would create it otherwise:
 
-<%= source_begin "language-bash" %>$ mkdir -p ~/catkin_ws/src
+:source_begin :language-bash$ mkdir -p ~/catkin_ws/src
 $ cs
 $ catkin_init_workspace
-<%= source_end %>
+:source_end
 
 * From time to time you have to build things, called "doing a build or make"
 * Use the alias `cm`
 
-<slide_break></slide_break>
-
-### .bashrc
+:slide_title .bashrc
 
 * A "hidden" file in your home directory
 * Contains a series of shell commands that are executed each time you start a shell
@@ -36,32 +32,31 @@ $ catkin_init_workspace
 * source `~/.bashrc command` reads the file and executes it as if you typed it into bash
 * Key environment variables have to be defined in .bashrc
 
-<slide_break></slide_break>
+:slide_title example
 
-### example
-
-<%= source_begin "language-bash" %>$ source ~/catkin_ws/devel/setup.bash
+:source_begin :language-bash
+$ source ~/catkin_ws/devel/setup.bash
 $ export ROS_MASTER_URI=http://localhost:11311
 $ export ROS_HOSTNAME=localhost
 $ export TB3_MODEL=burger
 $ export TURTLEBOT3_MODEL=burger
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
 
-### ROS Packages
+
+:slide_title ROS Packages
 
 * A complete "application" or "tool", stored as a directory tree in a standard layout
 * Analogous to a gem in ruby, or a library in Java
 * Can be created like this:
 
-<%= source_begin "language-bash" %>$ cd catkin_ws/src
+:source_begin :language-bash$ cd catkin_ws/src
 $ catkin_create_pkg my_new_package rospy
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
 
-### Contents of a package directory
+
+:slide_title Contents of a package directory
 
 * `package.xml` # describes all the things that are in the package
 * `CMakeLists.txt` # describes how to "build" 
@@ -69,19 +64,19 @@ $ catkin_create_pkg my_new_package rospy
 * `./scripts` # contains all the python source files
 * `./launch` # contains all the .launch files
 
-<slide_break></slide_break>
 
-#### Python programs
+
+#:slide_title Python programs
 
 * Most of your python code will implement nodes
 * You should put them into the ./scripts directory
 * Name them *.py and give them execution file property: `chmod +x myfile.py`
 
-<slide_break></slide_break>
 
-### rosrun and roslaunch
 
-<%= source_begin "language-bash" %>$cd catkin_ws
+:slide_title rosrun and roslaunch
+
+:source_begin :language-bash$cd catkin_ws
 
 # run a certain program from a certain package
 $ rosrun package program.py
@@ -89,23 +84,19 @@ $ rosrun package program.py
 # "execute" that launch file
 $ roslaunch package file.launch 
 
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
-
-## Names, Namespaces and Remapping
+:slide_title Names, Namespaces and Remapping
 
 * Everything in the ros world has a name that looks like a file path
 * For example: `/cmd_vel` is a topic name
 * To allow flexibility,m you can remap a name to another name on the command line, e.g.
 
-<%= source_begin "language-bash" %>$ cs
+:source_begin :language-bash$ cs
 $ ./image_view image:=right/image
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
-
-## roslaunch
+:slide_title roslaunch
 
 * Many real ROS applications have multiple nodes
 * To save time having to start each one separately
@@ -113,9 +104,7 @@ $ ./image_view image:=right/image
 * A .launch file contains instructions on what to launch and in what order
 * You run it with the `roslaunch` command. It will start `roscore` if necessary
  
-<slide_break></slide_break>
-
-## tf: Coordinate Transforms
+:slide_title tf: Coordinate Transforms
 * See [TF Tutorial](http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF)
 * Coordinate system
 * There will/can be many
@@ -123,17 +112,17 @@ $ ./image_view image:=right/image
 * tf system periodically broadcasts the current relationship between coordinate systems
 * Quaternions
 
-<slide_break></slide_break>
 
-### Poses, Positions, and Orientations
+
+:slide_title Poses, Positions, and Orientations
 
 * Handy and very common term to mean: 3d position and 3d orientation of something
 * (Not velocity, just the position)
 * Usually the transform between the robot coordinate frame and the maps coordinate frame
 
-<slide_break></slide_break>
 
-### tf
+
+:slide_title tf
 * Frames: Essential and complicated concept
 * Find the change in position and orientation between two coordinate frames
 * High level: a way to compute relative coordinate systems

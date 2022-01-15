@@ -1,0 +1,35 @@
+---
+title: (P) Read PRR Chapters 1 and 2
+desc: Setting the foundations
+---
+
+:slide_title Purpose 
+
+We will follow along the reading of the textbook pretty closely and in so learn all about how ROS works. The warmup questions will help guide your reading and experimenting. *Remember* you can get it free of charge from the Brandeis library here. 
+
+:slide_title What you will learn
+
+* What a topic is
+* What a Node is
+* What Odometry is
+* What a distributed operating system is
+
+:slide_title Do This
+
+* First google 'brandeis safari' to find the link in the Brandeis web site for the Safari library. Next look for the specific book: [Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html)
+
+:callout :small, "ALERT", "You have to be logged in to Brandeis in order to access the book!"
+
+* Read PRR Chapter 1. This is a pretty general chapter so it will be easy to read.
+* Read PRR Chapter 2. This is a very meaty chapter which gives the 10,000 foot view of the whole world of ROS. Expect to find it a bit confusing. It would be great if you tried using your ROS environment to try and do the code examples. It is very important that you try to run some of them to get a feel for it. 
+
+:callout :small, "ALERT", "We have provided 'corrected' versions of the source code"
+
+You will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/prrexamples) package. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_intro, :topic_link :prr_ros_fundamentals and :topic_link :prr_ros_fundamentals_additional.
+
+* After doing this please answer the following warmup questions:
+
+  * It is said that ROS nodes communicate peer to peer. What does this mean?
+  * If a ROS node is running on a robot and another one is running on my laptop, how do they even talk to each other?
+  * In what way is a robot `pose` different from its `position`?
+  * What one or two things are you still totally confused about in this reading? If its all clear, then what are your biggest takeaways from this reading?

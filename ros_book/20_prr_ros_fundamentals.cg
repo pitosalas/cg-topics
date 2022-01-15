@@ -3,17 +3,14 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
-
-## Introduction
+:h3 Introduction
 
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
 * Different parts (nodes) can run on different computers
 * They all need to be connected by a LAN via TCP/IP
 
-<slide_break></slide_break>
-
-## The ROS Graph - Nodes, Topics and Messages
+:slide_title The ROS Graph - Nodes, Topics and Messages
 
 * Fundamental concept in ROS
 * ROS runs a number of collaborating processes called "nodes"
@@ -22,11 +19,9 @@ slides: true
   1. You can write nodes in Python (we will do) or C++
 * Nodes talk to each other by publishing and subscribing to messages
 
-<slide_break></slide_break>
+:slide_title Example of a very simple node
 
-### Example of a very simple node
-
-<%= source_begin "language-python" %>
+:source_begin :language-python
 #!/usr/bin/env python
 # Don't forget to chmod +x topic_publisher.py
 
@@ -49,11 +44,9 @@ while not rospy.is_shutdown():
     count += 1
     rate.sleep()
 
-<%= source_end %>
+:source_end
 
-<slide_break></slide_break>
-
-### ROSCORE
+:slide_title ROSCORE
 
 * Program that acts as global coordinator of all the nodes
 * It is run once at a known ip address or domain name
@@ -65,9 +58,7 @@ while not rospy.is_shutdown():
   1. A node can be written in Python or C++ (or really technically any language)
   1. We will use Python mostly
 
-<slide_break></slide_break>
-
-### Communication model
+:slide_title Communication model
 
 * Message based
 * Most important model is "publish/subscribe"
@@ -78,11 +69,7 @@ while not rospy.is_shutdown():
 * Important to understand the difference between Topics and Messages
 * Think of the topic as a function name, and the Message as argument list.
 
-
-
-<slide_break></slide_break>
-
-### Topics
+:slide_title Topics
 
 * Topics have a name and a message type
 * Two of the most common basic ones: `/cmd_vel` and `/odom`
@@ -91,9 +78,7 @@ while not rospy.is_shutdown():
 * `cmd/vel`: sent to a robot to command it to move (locomotion)
 * `odom`:  received from a robot to report where (it thinks) it is
 
-<slide_break></slide_break>
-
-### Message Types
+:slide_title Message Types
 
 * `Twist` message is used for `cmd_vel`
 * Expresses a velocity in linear and angular aspects
@@ -102,7 +87,7 @@ while not rospy.is_shutdown():
   1. Twist doesn't say anything about where the robot (thinks it) is
   1. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
 
-<slide_break></slide_break>
+:slide_title Odometry 
 
 * `Odometry` message  is used for `/odom` topic.
   1. The Robot's "belief" of where it is, and what it is doing.
