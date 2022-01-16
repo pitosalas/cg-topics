@@ -1,0 +1,30 @@
+---
+title: "4: Services"
+desc: "What are ROS services, and why do we need them? How are they different?"
+slides: true
+---
+* Very related to a topic
+* Instead of "subscribing" and "publishing"
+* Services are a classic "client/server"
+* Client Node "C" asks a question of Service "S" and blocks awaiting the response
+* Service "S" responds immediately with a result, allowing "C" to continue
+* Services are good for questions that have immediate answers
+* They are *synchronous* whereas topics are *asynchronous*
+* Another way to think of a service is as a "Remote Procedure Call"
+
+:slide_title The Service Node
+* Declares its existence and it's name
+* Goes into a wait state for another node to request the service
+
+:slide_title A client Node
+
+* It's a normal node (nothing magic about it)
+* It includes code to send a request to the service (ask it a question)
+* The code is more, but the effect is of a function call
+* Impressive because it is inter-process and even inter-host - i.e. can be over the internet
+
+:slide_title Defining a Service inputs and outputs
+
+* Analogous to defining the "method signature" of the service
+* Very reminiscent of how Topic messages were defined
+* You will find this example in the [prrexamples github package](https://github.com/campusrover/prrexamples)

@@ -12,13 +12,13 @@ slides: true
 <%= source_begin ("language-bash") %>
 $ rosbag record scan tf # record to standard file name YYYY-MM-DD-HH-mm-ss.bag
 $ rosbag record -a # record all messages, but generates a LOT of data
-<%= source_end %>
+:source_end
 
 * And then play them back with a parallel command:
 
 <%= source_begin ("language-bash") %>
 $ rosbag play --clock foo.bag
-<%= source_end %>
+:source_end
 
 * The --clock flag is interesting. rosbag play will set and publish the clock. Be careful that nothing else (e.g. gazebo) is publishing the clock at the same time because this will mess things up!
 

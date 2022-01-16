@@ -27,7 +27,7 @@ $ rostopic list | grep /camera
 * `../compressed` is good for sending the images over wifi
 * `../theora` applies even more compression
 
-### Look at image
+:slide_title Look at image
 
 * Lets visualize the image
 * Choose from each of the topics relating to the camera
@@ -37,7 +37,7 @@ $ rostopic list | grep /camera
 $ rqt_image_view
 <%= code_end %>
 
-### Run the simplest program
+:slide_title Run the simplest program
 
 <%= code_begin %>
 $ rosrun prrexamples follower.py
@@ -90,7 +90,7 @@ average rate: 10.204
 * Which is why my computer is so slow :)
 
 ## Race Course
-<%= callout("NB", " We diverge from the book a little. Note different roslaunch") %>
+:callout :small, "NB", " We diverge from the book a little. Note different roslaunch"/
 
 * Kill everything from before
 * Load a new world into gazebo
@@ -118,7 +118,7 @@ $ rosrun prrexamples follower_opencv.py
 * Simple program captures each image from camera
 * Gives it to OpenCV to display in a window
 
-### Detecting the yellow line
+:slide_title Detecting the yellow line
 
 * Image and Pattern Recognition is arbitrarily complex
 * Here we will take a simplistic approach
@@ -133,7 +133,7 @@ $ rosrun prrexamples follower_color_filter.py
 * Will display three windows: the original image, the mask and the original as masked
 * We will really only need the masked image
 
-### Now, use yellow line to pick a direction
+:slide_title Now, use yellow line to pick a direction
 
 * First we take a 20 pixel slice near the bottom of the filtered image, which contains ony the yellow line
 * We process the image further to locate the ["centroid"](https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/)
@@ -144,7 +144,7 @@ $ rosrun prrexamples follower_color_filter.py
 $ rosrun prrexamples follower_line_finder.py
 ```
 
-### Actually following the line
+:slide_title Actually following the line
 * We will use the location of the centroid
 * We offset it because the yellow line is not in the middle of the road
 * We move the robot forward and give it a little turn

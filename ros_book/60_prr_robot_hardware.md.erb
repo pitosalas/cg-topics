@@ -11,9 +11,9 @@ slides: true
 * Sensing (e.g. cameras)
 * Computing (e.g. brains)
 
-<slide_break></slide_break>
 
-### Concepts in Actuation
+
+:slide_title Concepts in Actuation
 
 * 2 Wheel scenario
   * Differential drive: Turtlebot3
@@ -36,11 +36,11 @@ slides: true
   * Gait - trot, gallop, etc
   * Sensing vs. Non Sensing issues
 
-<slide_break></slide_break>
+
 
 ## Case: Differential drive
 
-### Lower Level
+:slide_title Lower Level
 
 * Subscribes to `cmd_vel`
   * Desired translation and rotation speeds
@@ -49,30 +49,26 @@ slides: true
   * Forward kinematics tells us estimated actual motion (position and speed)
   * 'Dead Reckoning'
 
-### Supporting hardware
+:slide_title Supporting hardware
 
 * Two wheels + 1 or 2 casters
 * Each wheel has motor and encoder
 * Motor will go "faster" when given more current
 * Encoder counts up for each rotation
 
-### Algorithm
-
+:slide_title Algorithm
 * PID control to minimize delta between desired and actual
 
 ## Sensors
 
-### LiDAR
-
+:slide_title LiDAR
 * Rotates and uses a laser to measure distance to nearest obstacle
 * Returns a vector of values corresponding to the directions
 * LiDAR's can operate in 2d (scan) or 3d (point cloud), ours is 2d
 
-<%= callout("Limitation", " Operates in a plane, like a disk. Can't detect an obstacle above or below the plane!") %>
+:callout :small, "Limitation", " Operates in a plane, like a disk. Can't detect an obstacle above or below the plane!"
 
-<slide_break></slide_break>
-
-### Visual Cameras
+:slide_title Visual Cameras
 
 * Webcam sees a color picture
 * Matrix of dots, each dot has a color
@@ -81,15 +77,15 @@ slides: true
 * A lot of data and a lot of processing
 * Bandwidth limits
 
-<slide_break></slide_break>
 
-### Depth Cameras
+
+:slide_title Depth Cameras
 
 * Like a Microsoft Kinect
 * In addition to `{r,g,b}` also has distance so we get `{r,g,b,d}`
 * Useful for getting range measurements of an object detected through camera
 
-<slide_break></slide_break>
+
 
 ## Computation
 
@@ -101,10 +97,9 @@ slides: true
 * Eventually we may have to have a much beefier computer running all three
 * This would make the robot much more independent
 
-<slide_break></slide_break>
-
-### Actual Robots
-
-* Our minRovers have:
-  1. Arduino to control the motor. Also with various sensors, lights, and i/o ports. Board is from Robotis and is called OpenCR
-  1. Raspberry Pi which runs Ubuntu Mate and ROS
+:slide_title Our actual Robots
+1. Differential Drive - 2 powered wheels and one (or two) casters
+1. Arduino or Arduino-like computer to control the motor.
+1. Motor Controller and IMU directly connected to Arduino
+1. Raspberry Pi which runs Ubuntu and ROS, connected to Arduino via a USB cable
+1. Lidar connected to Raspberry Pi connected via USB cable

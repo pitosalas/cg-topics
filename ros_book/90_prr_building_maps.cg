@@ -114,7 +114,7 @@ $ rosbag info data.bag
   1. Run the map maker package
   1. Play the messages that we recorded before
 
-<%= callout("NB", " Check that you've killed all ROS-related processes.") %>
+:callout :small, "NB", " Check that you've killed all ROS-related processes."/
 
 :source_begin :bash
 $ roscore

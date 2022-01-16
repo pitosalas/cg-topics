@@ -1,0 +1,31 @@
+---
+title: "4a: Services - example"
+desc: "WordCount.srv in a little detail"
+slides: true
+---
+:slide_title Example: WordCount.srv
+
+* WordCount.srv shows that it will take one input (string) and give one output (uint32)
+* Notice some hairy tweaks of both CMakeLists.txt and package.xml
+* Once done run catkin make (`$ cm`) to process and do the code generation
+* You will immediately be able to see the service declared with `$ rossrv show WordCount`
+
+:slide_title Defining the logic
+
+* It looks a lot like a node subscribing to a topic
+* Big difference is that it has a 'return' statement
+* In this example, it returns an integer equal to the number of words
+* The money quote: `return len(request.words.split())`
+* Notice the two ways of returning the result
+* Everything else is plumbing
+
+:slide_title Implementing a Service
+
+* Run the service with a standard `rosrun` command
+* Remember our package is called `prrexamples`
+* Remember that you must have `roscore` running!
+* `rosrun prrexamples service_server.py`
+* You can tell that it worked:
+  1. It shows up in `$ rosservice list`
+  1. It shows up in `$ rosservice info word_count`
+

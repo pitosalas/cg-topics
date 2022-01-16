@@ -14,13 +14,13 @@ desc: Designing and implementing a slightly more complicated ROS program
 
 ## Development Pattern
 
-### Structure of an "idiomatic" ROS program
+:slide_title Structure of an "idiomatic" ROS program
 * ROS is distributed, with nodes talking to each other
 * Nodes should be small and have one job
 * Make nodes small and simple
 * Use a `.launch` file to launch all the nodes at once.
 
-### Twist Messages
+:slide_title Twist Messages
 
 * Recall that Topics are the names of the publish/subscribe "channels" and the content that is sent and received is a Message.
 * `/cmd_vel` messages tell a mobile robots 'base' to move in all the possible directions
@@ -100,7 +100,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Usual way of providing parameters is either command line arguments or Environment variables
 * Parameters are a ROS specific way, well adapted to the distributed nature
   
-### Parameter Server
+:slide_title Parameter Server
 
 * Parameter server is 'built into' `roscore` and is a simple 'key/value' store
 * Private and Public Parameters
@@ -111,10 +111,10 @@ desc: Designing and implementing a slightly more complicated ROS program
   * They will be known as `keys_to_twist/linear_scale` and `keys_to_twist/angular_scale` with values of 0.5 and 0.4 respectively
   * The values can be accessed from the code as follows:
 
-<%= source_begin "language-python" %>
+:source_begin :language-python
 rospy.has_param('~linear_scale') # => returns True or false
 rospy.get_param('~linear_scale') # => returns 0.5
-<%= source_end %>
+:source_end
 
 * The `~` tilde preceding the parameter name means that the parameter is "private", which means that it is prepended with the node's name
 * Oddly enough, the `-` hyphen preceding the parameter in the command line argument, means the same thing!
@@ -124,9 +124,9 @@ rospy.get_param('~linear_scale') # => returns 0.5
 
 * It is possible to set parameters directly from the command line
 
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
-<%= source_end %>
+:source_end
 
 ## Velocity Ramps
 
@@ -141,13 +141,13 @@ $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
 * Gazebo is a simulator which can simulate physical things with 3d rendering and realistic physics
 * In our case we configure it to simulate a tb3 and reasonable surroundings.
 * Note that I have not gotten gazebo to run with any stability on VMWare
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
-<%= source_end %>
+:source_end
 * You can also specify a different turtlebot3 model to use
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch model:="NAME OF MODEL"
-<%= source_end %>
+:source_end
 * If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
 * Don't forget that you need to have roscore running as well
 
@@ -162,15 +162,15 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch model:="NAME OF MODEL"
 <%= lab_note("Lab Instruction: Running RViz") %>
 
 * You run rviz as follows with the fake robot. It comes up with a fake robot and the landscape
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 $ roslaunch turtlebot3_fake turtlebot3_fake.launch
-<%= source_end %>
+:source_end
 * You can zoom and rotate and move around that world
 * In order to run rviz with your actual robot you need two commands:
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 # In a terminal window:
 $ roslaunch turtlebot3_bringup turtlebot3_remote.launch
 
 # In a second separate terminal window:
 $ rosrun rviz -d `rospack find turtlebot3_description`/rviz/model.rviz
-<%= source_end %>
+:source_end

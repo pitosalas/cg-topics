@@ -6,7 +6,7 @@ slides: true
 
 ## Some extra details
 
-### Defining Your Own Message Types
+:slide_title Defining Your Own Message Types
 
 * First look if any of the standard message types can do the job for you
 * Here's a [List of standard message type](http://wiki.ros.org/std_msgs)
@@ -14,9 +14,9 @@ slides: true
 * This is because you define your message in a .msg file with a particular format
 * And then catkin_make uses that to generate appropriate C++ headers and Python libraries
 
-<slide_break></slide_break>
 
-### Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
+
+:slide_title Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
 
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package
 1. Update (if needed) the package.xml file to include two new commands to indicate dependencies
