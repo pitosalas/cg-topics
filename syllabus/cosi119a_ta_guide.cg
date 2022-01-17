@@ -1,0 +1,44 @@
+---
+title: Teaching Assistant Guide - Cosi 119a
+desc: Things to be aware of as a TA, roles and responsibilities, other hints
+slides: true
+---
+If you're a TA in Cosi119a you may be wondering what the duties and expectations are. I wrote this to help you understand not only the hard requirements, but also the softer aspects. 
+
+:slide_title Specific Priorities
+
+1. TA Partner for Final Projects - this is the most important specific responsibility for you. Somewhere along the middle of the semester I will designate you as **TA Partner** for several final project teams. You will discretely monitor and help the team through the project, for example, helping them with resources or solving problems, encouraging course corrections if they are trying for something too hard, or if there are team dynamics issues.
+
+1. Slack, Office hours and Email support - this is a difficult course that covers a lot of new ground. We want to be as encouraging as we can be in supporting, helping solve problems and answering questions from students as they do their reading or homework. I will expect you to be proactive and very responsive to student queries and cries for help. Some students are reluctant or nervous to reach out so you have to meet them where they are.
+
+1. Course content, programming assignments. Grading - While I will be doing all actual grading, I will be asking you to pre-grade work according to rubrics. Also from time to time I will ask you to help me review or rewrite or create some part of the course content. Lectures, programming assignments, and so on.
+
+:slide_title General Goals
+
+* **Proactive**: I am really counting on your proactive involvement to help me make this course work. We are all here for the students, yes trite but true. Our goal is that students feel that their hard work will pay off and be worthwhile for their time and efforts.
+
+* **Student Frustration**: This is a difficult course for students, because they are working for the first time with a huge codebase (ROS) and also on hardware and software. Many of them have not used linux and have little experience with the shell. You need to be **devoted** to helping the students through these challenges. 
+
+* **You are our eyes, ears and voice with the students!** I hope you take this to heart and do what it takes to make this class and these students' experience a great one. 
+
+* **Changes** When and if you get to a point in the semester where you're just not into it anymore or are collapsing under time pressure and are phoning it in -- let us know and we will find another student to take your place with no hard feelings! Conversely if I determine that you are not engaged as a TA, not adding value, then I might be forced to find another student to take your place.
+
+* **Honesty:**: You should understand the [Academic Honesty](http://cosi12b.s3-website-us-west-2.amazonaws.com/content/resources/01_honesty.md/) standards and policies and be part of the early warning system if you feel that something is happening that is not right.
+
+* **Lead TA:** A few weeks into the semester I may appoint a lead TA. This is important so that I don't become a bottleneck. Many decisions that normally would come to me will go to the lead TA.
+
+## Expectations for Teaching Assistants
+
+* Plan on 2-10 hours a week
+
+* At least two TAs present and engaged in the Lab time.
+
+* Monitor slack and email at least twice a day, hopefully 3 or 4 times.
+
+## Additional expectations for Lead TA (if we have one) 
+
+The role of Lead TA in Cosi119a is to optimize communication. We may have two or even three TAs and this can create overhead. So here are some of ways I will depend on the lead TA:
+
+* I will send all student requests for homework extensions, grade questions, etc to the lead TA. 
+* The lead TA has authority to override any policy on a case by case basis.
+* The lead TA has to make sure office hours are happening, they are published, that each lab is staffed by at least one student

@@ -1,4 +1,6 @@
 ---
 title: Course Materials
 ---
+:slide_title Course Materials
+
 [Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html). This is an excellent book that introduces ROS from the bottom up. You should get a copy. Beware, ROS is pretty complicated. We will be using this book as the primary textbook. As you read the book, follow along the :topic_link :rosbooktoc for clarifications and corrections. ROS has evolved since the book was written and the examples printed don't work as expected.
