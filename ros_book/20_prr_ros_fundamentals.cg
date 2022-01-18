@@ -86,15 +86,3 @@ while not rospy.is_shutdown():
   1. And it can only rotate around (z axis)
   1. Twist doesn't say anything about where the robot (thinks it) is
   1. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
-
-:slide_title Odometry 
-
-* `Odometry` message  is used for `/odom` topic.
-  1. The Robot's "belief" of where it is, and what it is doing.
-  1. Based on sensors in the base, including possibly the motors, a GPS, a magnetometer etc.
-  1. Odometry is published as topic /odom and the message definition is called nav_msgs/Odometry
-* nav_msgs/Odometry
-  1. Header - standard header
-  1. pose - where does the robot thinks that it is (including Covariance - how sure is it?)
-  1. twist - how does it think it is moving (also with a covariance)
-

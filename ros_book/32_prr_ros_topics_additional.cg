@@ -14,8 +14,6 @@ slides: true
 * This is because you define your message in a .msg file with a particular format
 * And then catkin_make uses that to generate appropriate C++ headers and Python libraries
 
-
-
 :slide_title Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
 
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package

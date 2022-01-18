@@ -3,23 +3,9 @@ title: "3: Topics"
 desc: By the end of the semester you will be living and breathing TOPICS!"
 slides: true
 ---
+:topic_include :intro_nodes_topics
 
-:h3 Introduction to Topics
-
-* Nodes talk to each other with Topics
-* A node can "publish" a topic
-* Another node can "subscribe" to a topic
-  * The two nodes don't know about each other
-  * A node can subscribe to a topic that no one is publishing
-  * Two nodes can publish the same topic with no one subscribing
-  * etc. etc. etc.
-
-* What is being published and subscribed?
-  * messages
-  * A message is a data structure with named and typed fields
-  * A collection of messages already exists, e.g. Int32, which is message with one element, a 32 bit integer.
-
-:slide_title Some details
+:slide_title Some Further details
 
 * Queues
   * When you define your node as a Publisher you need to supply a queue_size

@@ -3,6 +3,17 @@ title: "2A: Workspaces and packages"
 desc: "ROS modularity"
 slides: true
 ---
+:slide_title Odometry 
+
+* `Odometry` message  is used for `/odom` topic.
+  1. The Robot's "belief" of where it is, and what it is doing.
+  1. Based on sensors in the base, including possibly the motors, a GPS, a magnetometer etc.
+  1. Odometry is published as topic /odom and the message definition is called nav_msgs/Odometry
+* nav_msgs/Odometry
+  1. Header - standard header
+  1. pose - where does the robot thinks that it is (including Covariance - how sure is it?)
+  1. twist - how does it think it is moving (also with a covariance)
+
 :slide_title catkin
 
 * catkin is the ROS build system

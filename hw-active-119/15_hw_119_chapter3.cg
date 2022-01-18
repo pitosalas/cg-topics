@@ -10,11 +10,11 @@ It's important now to delve into much greater detail on what Topics are. They ar
 
 * Read PRR Chapter 3, which you can find in the Brandeis Safari Library. 
 You will learn about how to publish a topic, how to subscriber to one, how to use the command line as well as your Python scripts to work with them. As mentioned above, Topics are the key to ROS. Try to really get your head around them!
-* You will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/prrexamples) package. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_topics.
+* You will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/prrexamples) package. We also provide additional chapter notes to add detail and make some corrections, see: :topic_link :prr_ros_topics and :topic_link :prr_ros_topics_additional
 
 ### Deliverable
 
-* After doing this please answer the following warmup questions:
+After doing this please answer the following warmup questions:
 
 * There are two ways to `publish a topic`. What are they?
 * Explain the difference between a topic's name (e.g. `/counter`) and a topic's message (e.g. `Int32`)
