@@ -8,9 +8,34 @@ slides: true
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
 * Different parts (nodes) can run on different computers
-* They all need to be connected by a LAN via TCP/IP
+* They all need to be connected by a network via TCP/IP
 
-:slide_title The ROS Graph - Nodes, Topics and Messages
+:slide_title Connecting via Network
+
+* It could be a wired or wireless network
+* Each participating computer must have an IP address
+* An IP address can be represented as a subdomain name, e.g. robb.dyn.brandeis.edu
+* And all participants must be "visible" to each other on the network
+
+:slide_title What are the possible participants?
+
+* Computers (running any OS potentially)
+  1. The robot itself
+  1. Your or my laptop
+  1. Your or my ROS environment
+* Of course they need to be on the/a network
+* EDUROAM or some other network.
+* Somehow they need to know about each other
+* Virtual Private Network
+
+:slide_title Writing ROS software
+
+* Can be written in Python or C++ (or any other language)
+* Built up from multiple independent programs called Nodes
+* Each node is implemented as a separate program
+* It can use all the features, classes, multiple packages, importing other packages. There are no limits
+
+:slide_title ROS Nodes - the basic unit
 
 * Fundamental concept in ROS
 * ROS runs a number of collaborating processes called "nodes"
@@ -18,6 +43,8 @@ slides: true
   1. A real robot will have dozens to hundreds of nodes
   1. You can write nodes in Python (we will do) or C++
 * Nodes talk to each other by publishing and subscribing to messages
+
+
 
 :slide_title Example of a very simple node
 
@@ -58,31 +85,47 @@ while not rospy.is_shutdown():
   1. A node can be written in Python or C++ (or really technically any language)
   1. We will use Python mostly
 
-:slide_title Communication model
+:slide_title "Running" a ROS application
 
-* Message based
-* Most important model is "publish/subscribe"
-* publish a **topic**, subscribe to a **topic**
-* Many to many (Nodes can publish to many topics and subscribe to many topics)
-* Topics have a name (e.g. /cmd_vel)
-* Topics have an associated message
-* Important to understand the difference between Topics and Messages
-* Think of the topic as a function name, and the Message as argument list.
+* Consists of several fairly independent nodes
+* They all have to be launched
+* Together they form the whole ROS application
 
-:slide_title Topics
+:slide_title ROS shell commands
 
-* Topics have a name and a message type
-* Two of the most common basic ones: `/cmd_vel` and `/odom`
-* Topics can be published and subscribed
-* Which sends a receives messages of a certain message type
-* `cmd/vel`: sent to a robot to command it to move (locomotion)
-* `odom`:  received from a robot to report where (it thinks) it is
+* Also known as the ROS `CLI` - command line interface
+* They take care of setting up the environment
+* Here are the ones you **must** learn and get used to 
+  1. `rosrun` - runs a single ROS node
+  1. `roslaunch` - launches a sequence of ROS Nodes
+  1. `rostopic` - Inspect ROS topics
+  1. `roscd` - change directory to a ROS package
+  1. `catkin_make` (alias `cm`)
+:callout :small, "ALERT", " The most common explanation for weird result is that your environment variables are not set up"
+* Reset environment: `source ~/catkin_ws/devel/setup.bash`
 
-:slide_title Message Types
+:slide_title ROS Directory Structure
+* This is the standard directory structure
+:source_begin :bash
+# top level directories. Once per system. This will already exist.
+./catkin_ws
+  /devel
+  /build
+  /src
+ 
+ # inside ./src there are directories each with a ROS package.
+ # They all have a standard shape as well and can be nested inside each other.
+ # Here is an example
+ ./turtlebot3_gazebo
+  /launch
+    turtlebot3_stage_1.launch
+    .
+    .
+  /src
+    run_world.py
+    turtlebot3_drive.cpp
+  ... and other directories
+  CMAkeLists.txt
+  package.xml
+:source_end
 
-* `Twist` message is used for `cmd_vel`
-* Expresses a velocity in linear and angular aspects
-  1. Note our robot can only move forward and backward (x axis)
-  1. And it can only rotate around (z axis)
-  1. Twist doesn't say anything about where the robot (thinks it) is
-  1. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
