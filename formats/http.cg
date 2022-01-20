@@ -1,16 +1,14 @@
 ---
 title: HTTP - Hypertext Transfer Protocol
 ---
-## HTTP is a network protocol
+:slide_title HTTP is a network protocol
 
 * Mental model: calling a function across a network
   1. Client is the caller
   1. Server is where the function exists
   1. Client receives the result
 
-<slide_break></slide_break>
-
-### Let's use telnet to make such a 'call'
+:slide_title Let's use telnet to make such a 'call'
 
 <%= source_begin "language-bash" %>
 $ telnet example.com 80
@@ -18,10 +16,19 @@ $ GET / HTTP/1.1
 $ Host: example.com
 <%= source_end %>
 
-<slide_break></slide_break>
+:slide_title Review: What does HTTP do?
 
-### Deconstructing the call
-
+* Expects a "request" message which is answered by a "response"
+* Request message
+  * Defines a "method"
+  * Defines the "path"
+  * Supplies information about the format and lots of other stuff
+* Response message
+  * Defines a status code
+  * Defines format of the response
+  * Defines the response body
+  
+:slide_title Deconstructing the call
 * "Call" includes:
   1. target host (example.com)
   1. target port on the host (80)
@@ -31,9 +38,7 @@ $ Host: example.com
   1.Datatype of required response (aka mime-type)
 * There are lots of other "parameters" that are allowed in this call
 
-<slide_break></slide_break>
-
-### Deconstructing the returned data from that call
+:slide_title Deconstructing the returned data from that call
 
 * (Reference: [HTTP Response Fields](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields))
 * "Response" includes:
@@ -52,17 +57,13 @@ $ Host: example.com
   * x-ec-custom-error: 1 (There was no error in the cache)
 * All this is followed by data that we know should be interpreted as the Content-Type.
 
-<slide_break></slide_break>
-
-## What are the HTTP Methods
+:slide_title What are the HTTP Methods
 
 * GET, PUT, POST, DELETE (there are more, those are the most common ones)
 * Think of them like a required first argument to the call
 * The interpretation of the
 
-<slide_break></slide_break>
-
-## Simplified view of the world
+:slide_title Simplified view of the world
 
 * Think of the relationship between the client (the user in a browser) and the server (the rails server) as a program calling a function!
   1. **Call:** CallUsingHTTP("GET", "www.brandeis.edu", "/index.html")

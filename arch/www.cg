@@ -2,33 +2,34 @@
 title: World Wide Web
 desc: Review of the building blocks of the web
 ---
-## What does TCP/IP do?
+:h3 What does TCP/IP do?
 * Sends a 'message' from one computer to another (often message is text)
 * Destination computer is designated by a host or domain name
 * Destination within the computer is designated by a port number
 * The format or Interpretation of the 'message' is determined by the port
 * Usually port 80 messages are interpreted as HTTP
 
-### Use Telnet to experiment with TCP/IP
+:slide_title Use Telnet to experiment with TCP/IP
 * TCP/IP sends and receives 'text' protocols
 * Telnet utility
   * command line indicates the target host and port
   * Then you can type in the messages
   * What happens if I don't specify port 80?
 
-<%= code_begin %>
+:source_begin :bash
 telnet example.com 80
 GET /index.html HTTP/1.1
 Host: www.example.com
-<%= code_end %>
+:source_end
 
-## Formats and protocols
+:slide_title Formats and protocols
+
 * What do those words mean?
   * A convention
   * Gives meaning to "bits on the wire"
   * Example:
 * 3 critical protocols or formats
-  * HTTP - Hyptertext Transfer ProtocolP
+  * HTTP - Hypertext Transfer ProtocolP
   * URI - Universal Resource Identifier
   * HTML - Hypertext Markup Language
 
@@ -48,47 +49,7 @@ Host: www.example.com
   * Path
   * Parameters
 
-
-### Review: What does HTTP do?
-* Expects a "request" message which is answered by a "response"
-* Request message
-  * Defines a "method"
-  * Defines the "path"
-  * Supplies information about the format and lots of other stuff
-* Response message
-  * Defines a status code
-  * Defines format of the response
-  * Defines the response body
-
-### HTTP Protocol
-* Client makes a request (a packet is sent)
-* Server Responds to the request (a packet is sent back)
-* URL is on the "envelope" of the request
-* Stateless
-
-* HTTP Requests contain:
-  * Request "method"
-  * URL
-    * Host name
-    * Path
-    * Parameters
-  * Request Headers
-  * Methods:
-    * GET, HEAD, POST, PUT, DELETE, a few others
-
-* HTTP Responses contain
-  * Status code
-  * Response headers:
-    * Content-type
-    * Content-length
-    * Lots of other stuff
-
-### Use an app to visualize HTTP
-* Mac only: [Rested](http://www.helloresolven.com/portfolio/rested/)
-* Other platforms: [rest-client](https://code.google.com/p/rest-client/)
-* Mac version of [rest-client](https://github.com/mmattozzi/cocoa-rest-client)
-
-### Review: How is the URL processed?
+### Review: How is the URI processed?
 
 * URL: http://www.salas.com:80/toplevel?catalog=cosi goes:
   * http -> use http protocol
@@ -98,3 +59,5 @@ Host: www.example.com
   * /toplevel -> the path
   * Params ->
     * catalog = "cosi"
+
+* :topic_link :http
