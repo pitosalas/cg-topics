@@ -2,11 +2,11 @@
 title: (I) Sinatra Readings
 desc: Level up on Sinatra tools and techniques
 ---
-:h3 Purpose
+### Purpose
 
 While none of this is too hard, it's useful to get a leg up by reading about some of the basic tools and techniques. It will help you especially as you think about using Sinatra with Activerecord, and what the differences are between Sinatra and Rails.
 
-:h3 Read and do
+### Read and do
 
 I promise that if you read these closely it will come in very useful in your projects!
 
@@ -15,6 +15,6 @@ I promise that if you read these closely it will come in very useful in your pro
 * Read this great resource: [Sinatra Readme](http://www.sinatrarb.com/intro)
 * We will be emphasizing testing, so also read this introduction to [Sinatra Testing](http://sinatrarb.com/testing.html)
 
-:h3 Deliverables
+### Deliverables
 
-**NONE**
+* What did you read and what are some of the things you learned?

@@ -1,0 +1,27 @@
+---
+title: Modularity and Scale Reading
+desc: Some of the literature
+---
+### Purpose
+
+Performance, correctness and scale have always been a theme in Computer Science. Computers were far slower, far more expensive, and had far fewer resources (to waste) these were as if not more important than today. At the same time, the "art" of software development was in it's very earliest  stages and many basic ideas that we almost take for granted today were still controversial. These readings will help give you a perspective.
+
+### Do this
+
+Read these three interesting papers. 
+
+1. First, this classic paper by David Parnas about modularity: [Information distribution aspects of design methodology](https://pdfs.semanticscholar.org/17f0/6e0b0f9d3abcf5771957246e8de847d39b49.pdf). It's so old that you can see it was written with a typewriter. Can you imagine? As you read, think of *modules of a system* as meaning *microservice*. 
+
+1. Next read ["Introduction to Architecting Systems for Scale](http://lethain.com/introduction-to-architecting-systems-for-scale/) 
+
+1. Finally read this review article about [Microservices](http://martinfowler.com/articles/microservices.html).
+
+### What to submit
+
+As you read these articles and papers reflect on these questions:
+
+* Modularity (a characteristic that comes in different guises) is a central concept in software design, Microservices are one way to achieve modularity. Think of some of the others?
+
+* What would you say is the central characteristic of a microservice that distinguishes it from an other kind of modularity.
+
+* Draw an analogy between the present paper and Parnas' paper above.
