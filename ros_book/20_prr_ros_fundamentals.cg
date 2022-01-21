@@ -3,7 +3,7 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
-:h3 Introduction
+:slide_title Introduction
 
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
@@ -101,12 +101,20 @@ while not rospy.is_shutdown():
   1. `rostopic` - Inspect ROS topics
   1. `roscd` - change directory to a ROS package
   1. `catkin_make` (alias `cm`)
+
+:slide_title Our built-in aliases
 :callout :small, "ALERT", " The most common explanation for weird result is that your environment variables are not set up"
-* Reset environment: `source ~/catkin_ws/devel/setup.bash`
+  * Reset environment: `cs`
+  * Rebuild `cm`
+  * My own IP address: `myip`
+  * My own vpn IP address `myvpnip`
+
 
 :slide_title ROS Directory Structure
+
 * This is the standard directory structure
-:source_begin :bash
+
+:source_begin :lanugage-bash
 # top level directories. Once per system. This will already exist.
 ./catkin_ws
   /devel
