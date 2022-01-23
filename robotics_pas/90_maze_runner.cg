@@ -1,0 +1,129 @@
+---
+title: "PA: Maze Runner"
+desc: "Robot finds its way out of a maze"
+slides: true
+---
+## Purpose
+
+This is one of the most challenging programming assignments in this course. It will touch on most of the basics that we've covered so far and it will give you a real chance to show off what you've learned. It is designed to be completed purely in simulation (for covid days) or with a real Robot. You will get more credit for attempting it with a physical robot.
+
+### What I hope you learn
+
+You will learn, some or all of these ideas and skills:
+
+* How to solve an opened ended robotics problem
+* Construct a virtual world for testing in gazebo
+* Write a multi node ROS app, and launch it 
+* Learn more about how sensors work, especially the LIDAR
+* Learn how to leverage the simulators for testing and development in ROS
+* Research how to use raw LIDAR data to orient the robot in a maze
+* Work with and process Lidar data. Process and filter sensor noise
+
+## Do this
+
+### Goal
+
+Program a robot to autonomously navigate a maze. Come up with the algorithm, implement it in Python as one or more ROS nodes. Iterate and test it until it is reliable and robust. Focus first on repeatability. Then you can focus on more complex mazes or focus on how fast you can solve a maze.
+
+### Solving
+
+All the corners in the maze are 90 degrees. The lanes are about 3 robot widths wide. I will allow two definitions of solving the maze:
+
+1. Go from the single entrance and find the single exit
+1. Go from any location in the maze and find the one and only exit
+
+### Sim vs. Real
+
+A simulation solution will require that you learn how to define a maze in Gazebo. You may use any simulated robot (although they will not be that different from each other, so probably a simulated TurtleBot3 is the logical choice.) A real solution will require that you construct a real maze out of the Red Blocks and choose what real robot you want to use.
+
+Even if you are going for the Real solution, remember to try to work in the simulator first. If your code works well in the simulator you know that your algorithm and logic are right. However, even though it works perfectly in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
+
+```
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+```
+There are multiple turtlebot3_stages in Gazebo. Stage 4 is good to play with, but don't be afraid to try some other stages too. Once you think you have a good wall follower, see if it can do a lap around the outer wall of stage 4 (in the left hand menu of gazebo, use the pose fields under the turtlebot to alter it's initial position)
+
+## Techniques
+
+### Design Notes
+
+Break the problem down into smaller parts. This is standard programming practice. Think about situations that robot may find itself in, and how it should behave given that circumstance. Note that as you are following a wall, you need to notice when the wall suddenly disappears and at that point you have to turn to keep following it. Conversely the robot might be in the middle where all walls are far and as far from it, in which case you have to just drive until you get to the wall and then start following it.
+
+### Wall Following
+
+The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas.
+
+Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control to smooth out the behavior.
+
+* [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
+* [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)
+
+For this assignment, you can choose to modify your wall following algorithm from the previous assignment to run the maze. Keep in mind the width of the corridor when you make your adjustment. Some of the places which the algorithm might struggle can be: corners, dead-ends and invalid lidar reading when the robot is too close to the wall.
+
+* One of the most successful approach from the students of previous years is the 'longest distance algorithm', which looks for the longest unobstructed distance using the lidar and solve the maze by repeatedly finding and moving to the location where the distance between the robot and the location is the longest.
+
+### Solving the maze
+
+Once you have a handle on following the wall, you next have to consider how to use that to solve the maze. The obvious approach is the "right hand rule". Put your hand on the wall on the right and walk, never let go and eventually you will come out - as long there are no walls:slide_title Right hand Rule. But there are other less general solutions which might work too and be more efficient.
+
+:image :600, :pa2samplesolutions
+
+### Right Hand Rule
+
+[https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) - For this assignment, you can choose either one from Right-Hand Rule (which means you will turn to the rightmost route whenever possible) and Left-hand Rule (which means you will turn left whenever possible). Here are some examples for what you should expect when using Right-hand Rule:
+
+:image :300, :pa2righthandrule
+
+### Other sensors
+
+You may find that the /odom topic has some useful information to help solve this problem. Odometery is not required to solve this problem, but it could lead to a more robust solution if used correctly. 
+
+A totally different option which has never been attempted is to use the robots camera to help find the way. In this solution it would be allowed to ensure that the floor has a totally different color from the walls by using colored paper.
+
+### Creating a Maze IRL
+
+Each team can create their own maze as long as it is similarly complex as the one in this diagram. **Remember:** the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
+
+**NB**: When creating a maze, make sure that all of the walls are connected and has no cycles. If you were to draw your maze, you should be able to draw all lines without lifting your pen (you can trace over lines twice). This is important if you choose a wall following algorithm - the robot might get stuck in circles going around a disconnected wall!
+
+###  Working with Lidar Data
+
+Beware of invalid data from the lidar. the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and maximum distance is 3.5 meters. ### Working with LaserScan data
+
+Lidar data is published as a `/scan` topic with `/LaserScan` messages. Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a sub-array by using "range[index0:index1]"
+
+An infinite LIDAR value in a gazebo simulation is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
+
+### Process 
+
+This is a pair programming assignment. You've been assigned a teammate. It's fine to talk to everyone else, as well as google for ideas. Just  as long as the code is written and fully understood by both members of the team. You will submit one solution for each team (see below.)
+
+Since this project requires collaboration, you may wish to start using Github to share code. Is it your first time using Git and Github? [Try this extremely basic guide to using Github](https://guides.github.com/activities/hello-world/) [And this is a handy guide to Git terminal commands](http://rogerdudler.github.io/git-guide/)
+
+Your team is responsible for creating mazes in simulation/lab at home to test your ROS program. We may decide to grade all of the teams assignments on the same set of mazes.  It will be up to your team to decide to how split up the work
+
+#### Possible guide to Tasks
+
+1. Make sure you have read or looked at Chapters 1-7 of the book, or gotten the same background through your means
+1. Study Lessons 1-4 of [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821). Studying means actually doing the exercises and quizzes. Lessons 1 and 2 will give you a great intuitive and conceptual understanding of localization. Chapter 4 will teach you about Kalman filters. This is worth your time, you will learn a lot!
+1. write the maze_runner.py
+1. write a launch file for your program
+1. build a maze in gazebo
+1. test the algorithm in the virtual maze
+1. test it on the actual robot
+1. Write the initial code (using Python) to start listening to the messages that the simulator robot sensors are publishing.
+1. Figure out how to use that data (which is 360 degrees of distance data) to determine what the walls are the robot is confronting
+1. Use what you learned in the previous Maze assignment to implement a similar or identical algorithm, this time using LIDAR data
+1. Implement the complete Maze Solver and demonstrate it working in the simulator
+1. Learn how to deploy your code to a real TB3 and experiment a little
+1. Adapt your code (if necessary) to work as well in the live robot
+1. Demonstrate!  
+
+
+## Deliverables
+
+* Team members submit the same:
+    * The source code, including a readme explaining what it is, how to run it and any other reflections. This should be a nice ROS package directory structure as before.
+    * A video of the real robot running the maze successfully. This can be totally rough, unedited, with crazy laughing in the background. We just want to see that it worked.
+* Each team member submits their own:
+    * Design note + personal reflection: topics such as: Problems you had in getting the program to work; What more you would do if you had more time; how working with a teammate felt; how effective it was

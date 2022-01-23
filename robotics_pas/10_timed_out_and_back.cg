@@ -1,14 +1,15 @@
 ---
-title: "PA: Out and back using Timing"
-desc: "Robot drives out and returns by using elapsed time"
+title: "PA: Out and back with variations"
+desc: "Robot drives out and returns to its starting position."
 ---
 ## Introduction
 * This assignment is an introduction to robotic movement and publishing messages to ROS topics.
 
 ### Purpose
 
-* Publish velocity movement commands to a robot in Gazebo simulation
-* Use ROS timing in conjunction with velocity commands to move forward 1.5 meters, turn 180 degrees, and move back 1.5 meters to the same spot 
+* Write a ROS program that does something interesting
+* Get practice with publishing to topics
+* Get practice with using Timing to affect RObot behaviors
 
 ### Expected preparation
 * Fundamentals of Python
@@ -21,10 +22,6 @@ desc: "Robot drives out and returns by using elapsed time"
 * Understand how to use the Gazebo simulator to run ROS programs
 * Learn how to use movement velocity commands and time in ROS
 
-### Topics and Message Types Used
-
-* cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
-
 ## Assignment
 
 * Publish movement commands to a robot in Gazebo simulation
@@ -32,19 +29,15 @@ desc: "Robot drives out and returns by using elapsed time"
 * You can either modify existing code from the prrexamples repo or write your own python ROS node
 * The instructions will give you the pieces of code to get you started but the rest will be up to you
 
-### Deliverables
-
-* Commented Python source code file named "FirstnameLastname_PA#"
-* Video of your program running in gazebo or your lab at home 
-* Both submitted in Latte
-
 ### Steps
 
-* Clone the prrexamples repo and copy & paste a rosnode from prrexamples/scripts/anyfile.py OR create a new python file (for now the directory where you create it doesn't matter but  I would suggest keeping it in prrexamples or another ros package repo)
-* The following modules/classes need to be imported. `rospy` provides an interface to the ROS system variables/methods and `Twist` is how we represent movement in ROS.
+* Clone the prrexamples repo and copy & paste a ROS node from prrexamples/scripts/anyfile.py OR create a new python file (for now the directory where you create it doesn't matter but  I would suggest keeping it in prrexamples or another ros package repo)
+* The following modules/classes need to be imported. `rospy` provides an interface to the ROS system variables/methods and [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html) is how we represent movement in ROS.
 
-<%= source_begin "language-python"%>from geometry_msgs.msg import Twist
-<%= source_end %>
+
+~~~~{.python}
+from geometry_msgs.msg import Twist
+~~~~
 
 * You will need to publish velocity commands known as `cmd_vel`'s that has a linear and rotational velocity vector components. 
 * Do this by creating a publisher object
@@ -87,10 +80,30 @@ $ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
 $ rosrun name_of_your_node.py
 ~~~~
 
+### If you want an extra challenge for a higher grade
+
+* Make your solution modular using a python class
+* Use odometry to control out and back by distance - 1 meter out, 1 meter back
+* Use odometry to drive one meter out but in any direction not just forward and still return back to the starting point
+* Instead of out and back, drive four equal segments to form a square and see how close you can come to arriving in the same spot.
+
 ### References and Resources
 
 * Launch gazebo simulation <https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/>
 * Python ROS node reference <http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29>
 * Publishing velocity commands <http://wiki.ros.org/turtlesim/Tutorials/Moving%20in%20a%20Straight%20Line>
 * How to use ROS time <http://wiki.ros.org/rospy/Overview/Time>
+
+### Submit this through Gradescope
+
+* As always if you "meet" the requirements you would get an 85 +/-
+* Each "extra challenge" completed adds an automatic extra 3 points
+
+**Submit your commented Python source code file or files**
+|files|
+
+** Submit URL to Video of your program running in gazebo**
+[____](url to video)
+
+
 

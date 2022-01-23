@@ -1,0 +1,17 @@
+---
+title: (P) Read PRR 6
+desc: A tour of robots and simulators
+---
+### Purpose
+
+This is a pretty light chapter. You will get a bit of a tour of the different kinds of Robots (hardware) that are in our corner of the broad world of robotics. And similarly a tour of several different simulation environments and tools that you might come across. Please realize that inside this course we will only use the Gazebo simulator. 
+
+### Do this
+
+Please read PRR Chapter 6, Robots and Simulators. As you read, as usual, you can find supplementary information here: :topic_link :prr_robot_hardware and :topic_link :prr_robots_simulators. Remember that it's worth the effort to try and run and understand the examples that we have for you in [prr_examples](https://github.com/campusrover/prrexamples)
+
+### And here are some questions
+
+* Investigate our TurtleBot3 Robots Burgers (google). What sensors does it have? What Actuators does it have? What computation modules does it have?
+* What topics are associated with a camera? a LiDAR? a Motor?
+* What is a wheel encoder?

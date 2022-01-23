@@ -1,0 +1,21 @@
+---
+title: (P) Read PRR Chapter 4
+desc: Learning about services
+---
+### Purpose
+
+Continuing your understanding of how software can control robots by learning about ROS Services. They provide a distinctively different way of communicating between nodes compared with Topic publishing. 
+
+### Do this
+
+* Read PRR Chapter 4. Like before, I would like you to try and run the code from the chapter. We've provided the updated source code for you in the prr_examples package. 
+* As you read, you can follow along the comments in :topic_link :prr_ros_services
+
+### Deliverable
+
+Once you've read and done the examples on your own computer, please answer these warmup questions.
+
+* List the differences between an topic and a service. Which one is in your opinion the most important difference?
+* Come up with your own original example of when you would use a service, and why you would not use a topic for that example.
+* Topics, Topic Names, Messages: What are they, what are the differences between them?
+
