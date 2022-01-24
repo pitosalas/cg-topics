@@ -1,0 +1,61 @@
+---
+title: "PA: Wall Follower"
+desc: "Robot looks for nearest wall follows it"
+---
+## Purpose
+
+Wall Following happens to be one of the fundamental behaviors that have to be solved on your Robotics journey. This assignment will get you using the LiDAR in more sophisticated ways. You will also learn how to control the robots movement for a more complex task.
+
+### What I hope you will learn
+
+* Working with LIDAR data. Process and filtering sensor noise.
+* Using math (especially geometry) to solve real world robotics problems
+* Use PID processing to make the robot behave reasonably
+* Learn what odometry is and how it is represented in ROS
+* Learn how to think about a more complicated robot behavior, and how to use simple state management to control it
+
+### **Critical Techniques that will help you**
+
+* :topic_link :working_with_lidar_data
+* :topic_link :pid_control
+
+## Do this
+
+This not an easy assignment so don't wait until the last minute. Remember to also look at the PRRExamples repo that you have been provided.
+
+### Assignment Specifics
+
+* Write ROS code that allows your robot to follow a wall or perimeter. 
+* You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. 
+  * Write ROS code to have the robot find a wall
+  * Then drive up to 1.0 meters of it (you may choose a smaller number if you want)
+  * Turn and start following it at that distance.
+
+### Required Features for base grade
+
+* Publish movement commands to a robot in Gazebo simulation
+* Subscribe to the LiDAR scan topic to detect how far the robot is from the wall
+* Design your own algorithm or use a PID controller to move forward while staying parallel with the wall
+* Next have it follow a single wall, and make a u-turn to follow its other side
+* Next have it follow the "inside" of an L-Shaped Wall
+* Next have it follow  the "inside" of a rectangular wall
+* Write a ROS node with publishers and subscribers for `cmd_vel` and `scan`
+* Test using any of the _stage_1, _2, or _4 gazebo worlds
+
+### Extra Challenges for Extra Points
+
+* Follow a rectangular wall, on the outside
+* Make this work with a physical robot
+* Follow a corridor that is 2x the width of the robot
+* Follow such a corridor to a dead end and rotate in place
+
+## Deliverables submitted through Gradescope
+
+* ROS Package with
+  * Commented Python source code file
+  * README with specific instructions on how to run it
+  * Correct package.xml CMakeLists.txt
+* Video of your program running in gazebo or your lab at home
+
+
+  

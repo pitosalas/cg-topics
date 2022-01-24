@@ -86,13 +86,7 @@ Each team can create their own maze as long as it is similarly complex as the on
 
 **NB**: When creating a maze, make sure that all of the walls are connected and has no cycles. If you were to draw your maze, you should be able to draw all lines without lifting your pen (you can trace over lines twice). This is important if you choose a wall following algorithm - the robot might get stuck in circles going around a disconnected wall!
 
-###  Working with Lidar Data
-
-Beware of invalid data from the lidar. the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and maximum distance is 3.5 meters. ### Working with LaserScan data
-
-Lidar data is published as a `/scan` topic with `/LaserScan` messages. Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a sub-array by using "range[index0:index1]"
-
-An infinite LIDAR value in a gazebo simulation is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
+:topic_include :working_with_lidar_data
 
 ### Process 
 
