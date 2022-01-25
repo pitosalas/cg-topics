@@ -86,6 +86,7 @@ $ rosrun name_of_your_node.py
 * Use odometry to control out and back by distance - 1 meter out, 1 meter back
 * Use odometry to drive one meter out but in any direction not just forward and still return back to the starting point
 * Instead of out and back, drive four equal segments to form a square and see how close you can come to arriving in the same spot.
+* Demonstrate your solution on a real robot
 
 ### References and Resources
 
@@ -97,7 +98,7 @@ $ rosrun name_of_your_node.py
 ### Submit this through Gradescope
 
 * As always if you "meet" the requirements you would get an 85 +/-
-* Each "extra challenge" completed adds an automatic extra 3 points
+* Each "extra challenge" completed adds an automatic extra points
 
 **Submit your commented Python source code file or files**
 |files|

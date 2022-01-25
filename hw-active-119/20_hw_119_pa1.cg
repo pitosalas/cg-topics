@@ -2,5 +2,5 @@
 title: (I) First ROS PA1 - Basic motion, out and back
 desc: Write your first ROS program 
 ---
-:topic_include :timed_out_and_back
+:topic_include :out_and_back
 
