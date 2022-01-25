@@ -1,0 +1,7 @@
+---
+title: SOA Quiz Questions
+---
+* In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
+* Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interface (API) design of the service. What is the relationship with HTTP and the URI?
+* Can you come up with a nanoTwitter Service (API) which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
+* Please indicate any concepts ideas that you feel you don't understand, if any.

@@ -2,7 +2,7 @@
 title: "NanoTwitter Stage 1: Begin"
 desc: Kicking off your NanoTwitter
 ---
-:h3 Purpose
+## Purpose
 
 We are kicking off the Nano Twitter project. You are working on a team. In this initial step we set the stage for the work. There will be a series of assignments like this one that will lead you to the final deliverables.
 
@@ -10,25 +10,27 @@ Each step in this outline has a name which I use to refer to it elsewhere in thi
 
 This is all team work. The team members are responsible for dividing up the work, making sure that everyone is included and that everyone has an understanding of what's in the directory.
 
-:h4 General submission guidelines
+### General submission guidelines
 
 * All work should be done in a **PRIVATE** team github repo.  You can push as often as you like. The TAs and Professor should all be collaborators. (At the end of the course you will be asked to either delete or make that repo private. Note that when you write your "portfolio pages as a github page, those pages will be public even if the repo is private.
 * From the start, and going forward, there should be a readme.md file, including the usual info for a readme. For example, a guide to another developer joining your team, any special setup or deployment info, and anything else that you feel is appropriate.
 * For each and every stage, you need to update that readme file with a short "change history section" broken down by release number (e.g. nt0.2). It should describe the KEY additions and changes, including who are/is the main contributors to that change. Each team member can update that file, which we will use to determine your progress.
 * Please zip up the state of your repo's directory and submit that single comprehensive .zip file to latte.
 
-:h3 Do this
+## Do this
 
-:h4 Set up your github
+### Set up your github
 
 Create your **PRIVATE** `nanotwitter` github repo and send the link to Pito and the TAs. Clone it to all team members computers. Create the standard files, license.txt, readme.md, version.rb. Google to find typical contents of those files.
 
-:h4 Database Design
+### Database Design
 
 Design relational database schema (i.e. one for the most of the app) after thinking about all the needed functionality, as there is some flexibility.  Decide what tables you will have, what the attributes (columns) are for each table, what the primary and foreign keys are, and what the associations are (i.e. one to many, many to one, many to many.) Use this tool: [DB Diagram](https://dbdiagram.io/d/60e) to document your design. It is easy to use, free and helps you think about your DB design.
 
 There are several difficult aspects of this design that you should think about carefully. Especially how you represent Twitter's *following* functionality, and commenting and liking.
 
-:h3 Submit This
+## Submit This
 
-Submit a link to your design. We will look for correct relationships (1-1, 1-many, many-many), correct use of primary and foreign keys, what twitter functionality this initial schema is supporting and in general how thorough and careful job you do. 
+Submit a link to your design. We will look for correct relationships (1-1, 1-many, many-many), correct use of primary and foreign keys, what twitter functionality this initial schema is supporting and in general how thorough and careful job you do.
+
+Submit a link to your github repo. Make sure you make Pito, Susan and Bishal collaborators on your **PRIVATE** Github repo.

@@ -2,7 +2,7 @@
 title: Modularity and Scale Reading
 desc: Some of the literature
 ---
-### Purpose
+### (P) Purpose
 
 Performance, correctness and scale have always been a theme in Computer Science. Computers were far slower, far more expensive, and had far fewer resources (to waste) these were as if not more important than today. At the same time, the "art" of software development was in it's very earliest  stages and many basic ideas that we almost take for granted today were still controversial. These readings will help give you a perspective.
 

@@ -1,14 +1,9 @@
 ---
-title: Service and API Design"
+title: Service and API Design
 ---
-## Deliverables
-* Please answer these warmup questions:
-  * In this reading, and during the course so far, we talk about Services. They are the core concept of partitioning the workload into services. What exactly is meant by a 'service'. Why would you choose to partition it a certain way? For nanoTwitter give an example one bit of functionality that could be partitioned into a separate service and a reason why one would do this.
-  * Whatever the reason, once we decide to partition out some functionality as service, we need to design its implementation. Explain the what is meant by the Interface (API) design of the service. What is the relationship with HTTP and the URI?
-  * Can you come up with a nanoTwitter Service (API) which would require information from multiple models to be returned, and can you see why that might make sense. Think about information hiding, or efficiency, or isolation, or other considerations.
-  * Please indicate any concepts ideas that you feel you don't understand, if any.
 
 ## Partitioning into Services
+
 * Lets look deeper at SOA design
 * Samples, strategies for partitioning
 * Launching new services, upgrading existing ones
@@ -16,15 +11,17 @@ title: Service and API Design"
 * Difficult question and doesn't have one correct solution
 * Usual advice is to build it as a monolith and then "peel off" services
 * Read: [How to break a Monolith into MicroServices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
-* Read [Why you shouldn't start with a monolith](https://scotch.io/bar-talk/why-you-shouldnt-necessarily-start-with-a-monolith)
+* Read [Reminder to self: Always start with a monolith](https://medium.com/@obed.tandadjaja/reminder-to-self-always-start-with-a-monolith-e6dc1947982b)
 
 ## Four Different Strategies to consider
+
 * Partition based on iteration speed
 * Partition based on logical function
 * Partition based on read/write frequency
 * Partition based on Joins
 
 ### Iteration speed
+
 * Identify parts of the app which have stabilized and are not changing a lot
 * Versus the ones that are still being molded into final shape
 * It has to do also with whether they are at the "core"
@@ -32,6 +29,7 @@ title: Service and API Design"
 * Would it make sense to partition them out into a separate service?
 
 ### Logical Function
+
 * Intuitively partitioning based on logical function makes perfect sense
 * Especially if the logical function is distinct and separate from other parts of the product
 * In the social reader, the processes which follow RSS feeds and import them into feed items are very separate
@@ -40,6 +38,7 @@ title: Service and API Design"
 * Similarly, there will be functionality to send out notifications. This is a natural and classic kind of service.
 
 ### Read/Write frequencies
+
 * Directly out of the Baseball example we worked on
 * Data which is updated often and read much less often
 * Or, that is updated rarely but read extremely often
@@ -49,6 +48,7 @@ title: Service and API Design"
 * Or local versus cloud based
 
 ### Join Frequency
+
 * Tables that need to be joined most likely should stay in the same database and managed by the same service.
 * But most tables are joined to another table at one point or another
 * Which is a good reason to go slowly when deciding to split data between databases
@@ -64,12 +64,14 @@ title: Service and API Design"
 * When service X updates the API they can maintain both version 1 and 2 until service X is updated to Version 2.
 
 ### Version numbers
+
 * The system as a whole must decide on a version numbering scheme
 * A useful new standard for this is known as SemVer, [Semantic Versioning](https://semver.org/)
 * Within the codebase each service will include it's current latest version
 * Importantly, each client of the service will include the version of the service they are assuming
 
 ### What can be different?
+
 * New APIs can be added, old ones can be deprecated
 * APIs can get new arguments, or have the order of arguments, or the datatype change
 * The way arguments are supplied can change
@@ -77,6 +79,7 @@ title: Service and API Design"
 * The format or datatype of the result can change
 
 ### Caveat
+
 * Changing the API can be very disruptive to clients
 * It should be done very rarely
 * A *non-breaking change* is one that a client doesn't notice
@@ -89,6 +92,7 @@ title: Service and API Design"
 * The convention is then that without the version, the service uses the latest
 
 ### Version in the *Accept:* header of the HTTP request
+
 * A new *mime-type* is defined for the new version of the api
 * For example `Accept: application/edu.brandeis.nanotwitter-v2+json`
 * This would indicate that the request will accept results that are json and also application specific
@@ -96,6 +100,7 @@ title: Service and API Design"
 * While APIs in general operate over HTTP, there are different ways of structuring them
 
 ### URIs and interface design
+
 * The starting point in contemporary applications is often `REST` structured URIs, e.g.
   * GET /users
   * GET /user/1
@@ -107,6 +112,7 @@ title: Service and API Design"
 * `GET /user/1` requests, for example, an `html` or `json` representation of that user information
 
 ### [HTTP responses](https://httpstatuses.com/)
+
 * Recall a response consists of a status code, a body and a set of headers
 * The HTTP standard defines a large collection of standard status codes
 * These are used in any HTTP scenario, including APIs
@@ -117,6 +123,7 @@ title: Service and API Design"
 * The body of the response normally comes as <%= link_to_topic :json %>, and is totally application dependent.
 
 ### HTTP Caching
+
 * One of the advantages of REST structured APIs is that they benefit from system and network services
 * There are proxies and CDNs that will cache HTTP responses when conditions allow
 * The context is this:
@@ -129,6 +136,7 @@ title: Service and API Design"
   * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it again.
 
 ### Handling Joins
+
 * As an example:
   * it would be useful if an API that returns a Tweet also return information from the user record as well
   * This way just one API call would be needed to retrieve information that is displayed in the Twitter timeline

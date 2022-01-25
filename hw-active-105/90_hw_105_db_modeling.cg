@@ -2,22 +2,21 @@
 title: (I) DB modeling
 desc: Refresher on Database Modeling
 ---
-:h3 Purpose
+## Purpose
 
 One of the biggest contributors to scaling is a well designed database. This homework will remind you of the principles that you've learned and give you a chance to practice as well.
 
-:h3 Do this
+## Do this
 
 * Re-read :topic_link :data_modeling
 
 * Also Read and think about [Basics of Good Database Design in Web Development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/). 
 * Make sure you follow the link and also read: [One to Many](http://www.tekstenuitleg.net/en/articles/software/database-design-tutorial/one-to-many.html) and [Many to Many](http://www.tekstenuitleg.net/en/articles/software/database-design-tutorial/many-to-many.html). 
 
-:h3 Deliverable
+## Deliverable
 
 Once you've read that, please answer the following warmup questions:
-* Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many?
-* Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
-* In what way is a relational database similar or reminiscent of a spreadsheet?
-* Please list two concepts from the reading that you don't understand, and if you feel you understand it well, then the two most important ideas of this reading.
 
+1. Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many? Now give an example of a many to many relationship. 
+1. Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
+1. In what way is a relational database similar or reminiscent of a spreadsheet? And how is it different?
