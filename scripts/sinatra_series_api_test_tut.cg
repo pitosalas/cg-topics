@@ -36,7 +36,7 @@ describe "GET on /api/users/:id" do
 
 
 
-  it "Should retiurn user by name" do
+  it "Should return user by name" do
     get '/api/users/paul'
     last_response.ok?
     attributes = JSON.parse(last_response.body)
@@ -49,7 +49,7 @@ describe "GET on /api/users/:id" do
     attributes = JSON.parse(last_response.body)
     attributes["email"].must_equal "paul@gmail.com"
   end
-  it "Should retiurn user by name" do
+  it "Should return user by name" do
     get '/api/users/paul'
     last_response.ok?
     attributes = JSON.parse(last_response.body)

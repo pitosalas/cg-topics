@@ -1,0 +1,56 @@
+---
+title: What is Sinatra?
+---
+
+:slide_title What is Sinatra?
+* A ruby library
+* Easiest way to create a simple web server
+* Much smaller and easy to understand than rails (also less powerful)
+* What is Sinatra according to their own [Sinatra Intro](http://www.sinatrarb.com/intro.html)
+
+:slide_title The Sinatra app
+* Review Web Server (or http server) vs. Application Server
+* Single main ruby program
+* Filters (before, after)
+* Discuss the role of [Rack](https://github.com/rack/rack) and Rackup
+* Logging
+* Browser caching
+* Configuration
+* Running sinatra for different `environments`
+:source_begin :lanugage_ruby
+APP_ENV=production ruby my_app.rb
+:source_end
+* Testing - using minitest
+* Modular vs. Classic Style Apps
+
+
+:slide_title Routing
+* One method for each "route"
+* Rendering of Views
+* Routes with parameters
+* Routes with patterns
+* Sessions to cary information from one request to the next
+* Nice pattern matching to generalize similar routes
+* At the end of the method, either render html, json, or redirect
+* Passing parameters to view templates
+* Each of the route methods are "kind of like" a controller
+
+:slide_title Data
+* Sinatra doesn't do anything special about working with the database
+* Whatever database access you prefer will work
+* Our examples use ActiveRecord as a library to interface with the database
+* But there are other ones that work just as well
+* Typical design
+  1. encapsulates the data access in a class
+  1. one class for each table or entity
+  1. often referred to as a model class
+
+:slide_title Views
+
+* Erb is a very common templating language
+* Look at :topic_link :erb_crib
+* They are what is generated at the end of the route method
+* In addition to erb there are tons of others
+* What they have in common: they all generate data (in the end) that is returned as the result of an HTTP request
+
+  
