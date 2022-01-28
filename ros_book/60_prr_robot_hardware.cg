@@ -4,13 +4,13 @@ desc: Going through the hardware
 slides: true
 ---
 
-:h3 Robots are made up from many Subsystems
+:slide_title Robots are made up from many Subsystems
 
 * Subsystems are 'represented' in the software
 * Locomotion (e.g. wheels)
 * Actuation (e.g. arms)
 * Sensing (e.g. cameras, lidar, buttons, encoders)
-* Computing (e.g. cpu, microcontroller)
+* Computing (e.g. single-board computer SBC, microcontroller)
 
 :slide_bigtitle Concepts in Actuation
 
@@ -22,14 +22,15 @@ slides: true
 * Differential drive: Turtlebot3
 * Turning by different speed on two or more wheels
 * Sometimes there is a caster
-* Can only move forward and backward.
+* Can only move forward and backward or pivot in place
 
-:slide_title 4 Wheel Scenario
+:slide_title 4 Wheel scenario
 * Not up and down or (directly) sideways
 * With more than 2 wheels, or a track - skid steering
 * Cars have "Akkerman" steering (4 wheels, 2 that can steer)
 
 :slide_title Tracked Vehicles
+
 * Skid steering
 * Problem with odometry
   
