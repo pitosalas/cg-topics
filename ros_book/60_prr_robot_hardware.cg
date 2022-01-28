@@ -4,39 +4,45 @@ desc: Going through the hardware
 slides: true
 ---
 
-## Robots are made up from many Subsystems
+:h3 Robots are made up from many Subsystems
 
 * Subsystems are 'represented' in the software
-* Actuation (e.g. wheels)
-* Sensing (e.g. cameras)
-* Computing (e.g. brains)
+* Locomotion (e.g. wheels)
+* Actuation (e.g. arms)
+* Sensing (e.g. cameras, lidar, buttons, encoders)
+* Computing (e.g. cpu, microcontroller)
 
-:slide_title Concepts in Actuation
+:slide_bigtitle Concepts in Actuation
 
-* 2 Wheel scenario
-  * Differential drive: Turtlebot3
-  * Turning by different speed on two or more wheels
-  * Sometimes there is a caster
-  * Can only move forward and backward.
-* 4 Wheel Scenario
-  * Not up and down or (directly) sideways
-  * With more than 2 wheels, or a track - skid steering
-  * Cars have "Ackerman" steering (4 wheels, 2 that can steer)
-* Tracked Vehicles
-  * Skid steering
 * Holonomic - non-Holonomic
-  * Holonomic - can move in any direction
-* Manipulator Arms
-  * Degrees of freedom
-  * Coordinate transforms
-  * Forward and reverse Kinematics
-* Quadruped
-  * Gait - trot, gallop, etc
-  * Sensing vs. Non Sensing issues
+* Holonomic - can move in any direction
+* Degrees of freedom
 
+:slide_title 2 Wheel scenario
+* Differential drive: Turtlebot3
+* Turning by different speed on two or more wheels
+* Sometimes there is a caster
+* Can only move forward and backward.
 
+:slide_title 4 Wheel Scenario
+* Not up and down or (directly) sideways
+* With more than 2 wheels, or a track - skid steering
+* Cars have "Akkerman" steering (4 wheels, 2 that can steer)
 
-## Case: Differential drive
+:slide_title Tracked Vehicles
+* Skid steering
+* Problem with odometry
+  
+:slide_title Manipulator Arms
+* Degrees of freedom
+* Coordinate transforms
+* Forward and reverse Kinematics
+
+:slide_title Quadruped
+* Gait - trot, gallop, etc
+* Sensing vs. Non Sensing issues
+
+:slide_bigtitle Common case: Differential drive
 
 :slide_title Lower Level
 
@@ -48,6 +54,8 @@ slides: true
   * 'Dead Reckoning'
 
 :slide_title Supporting hardware
+
+:image :robot_pi_arduino
 
 * Two wheels + 1 or 2 casters
 * Each wheel has motor and encoder
@@ -75,15 +83,11 @@ slides: true
 * A lot of data and a lot of processing
 * Bandwidth limits
 
-
-
 :slide_title Depth Cameras
 
 * Like a Microsoft Kinect
 * In addition to `{r,g,b}` also has distance so we get `{r,g,b,d}`
 * Useful for getting range measurements of an object detected through camera
-
-
 
 ## Computation
 

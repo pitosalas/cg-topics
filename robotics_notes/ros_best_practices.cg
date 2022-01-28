@@ -1,9 +1,11 @@
 ---
 title: ROS Best Practices and Patterns
 ---
+:slide_bigtitle ROS Best Practices and Patterns
+
 :h3 Python 
 
-* Ros Melodic relies on Python 2.7 and the next (and final) ROS1 version Neotic relies on Python 3.x
+* We use ROS1 Noetic which requires Python 3.x
 * You can choose to use classes or just top level functions
 * If you find yourself using `global` often, that's a code smell and a hint that you should be using classes
 
