@@ -82,7 +82,7 @@ $ rosrun name_of_your_node.py
 
 ### If you want an extra challenge for a higher grade
 
-* Make your solution modular using a python class
+* Make your solution more modular by breaking it into separate functions, methods or classes.
 * Use odometry to control out and back by distance - 1 meter out, 1 meter back
 * Use odometry to drive one meter out but in any direction not just forward and still return back to the starting point
 * Instead of out and back, drive four equal segments to form a square and see how close you can come to arriving in the same spot.
