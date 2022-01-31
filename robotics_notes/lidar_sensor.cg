@@ -1,0 +1,66 @@
+---
+title: Lidar Sensor
+desc: Processing Lidar Data ftw
+slides: true
+---
+:slide_title Lidar Refresher
+
+* Rotating laser beam
+* "Time of Flight" Sensor
+* Key raw data is an array of numbers
+* Indexed by the bearing position of the lidar beam at that instance
+* Each cell is the distance in meters
+
+:slide_title Data from Sensors
+
+* Each sensor, each model and brand, has different specifications and characteristics
+* Like all other sensors, the data you get from a Lidar is `noisy`
+* Depending on the software you may have to 'clean' the data before you can make sense of it
+* Our mini rovers have a [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
+
+:slide_title `/scan` topic
+
+* Lidar data is published as a `/scan` topic with `/LaserScan` messages
+* The most important field that you need to understand is the "ranges". 
+* You can access the reading of a specific angle by using "range[index]", and access a sub-array by using "range[index0:index1]"
+
+:slide_title Raw sensor data
+
+* To study the Lidar data we can dump out the lidar data into a .csv file format
+
+:source_begin :language-bash
+rostopic echo /scan -w 4 -p -n 50 > ~/scan_data
+:source_end
+
+:slide_title Lidar data
+
+* As mentioned there are different model Lidars as well as the simulated Lidar in Gazebo
+* Here are some of the facts that are required
+* Some of them are present in the `/scan` message, others are not
+
+:slide_title Present in the `/scan` message
+1. How many "cells" are present in each frame
+1. What is the minimum and maximum bearing
+1. (From that you can compute how many radians each "cell" corresponds to)
+
+:slide_title Not present in the message
+1. Height of the Lidar from the floor
+1. Direction it is pointing
+1. Clockwise vs. counter clockwise
+1. (The last three are captured as the "coordinate system" of the Lidar or the `tf`)
+1. Unit of distance (almost always Meters)
+1. Closest and furthest valid distance
+1. "Invalid" value (0 or NaN or ?)
+    
+:slide_title Python
+
+* Subscribe to `/scan` topic 
+* Message type [`LaserScan.msg`](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
+* In Python it will be delivered to you as an object of class `LaserScan`.
+* Consider writing a separate filter node which takes "raw" LiDAR data (subscribes to /scan) and publishes "cleaned up" LiDAR data (publishes for example to /scan/clean). 
+* A related approach is to subscribe to /scan and publish something like /scan/semantic that instead of just cleaning up the data also computes some mins and maxes in different directions of interest.
+
+:slide_title Video Tutorials
+* [Udemy ROS Course](https://youtu.be/tEayzulupxE)
+* [Udemy ROS course](https://youtu.be/kze3Z8rTkZo)
+* [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) provides almost everything you need to understand to manipulate the LaserScan data
