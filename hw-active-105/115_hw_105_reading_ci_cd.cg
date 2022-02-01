@@ -1,0 +1,12 @@
+---
+title: (T) Continuous Integration
+desc: Reading about this important topics
+---
+## Purpose
+One of the key software engineering practices is Continuous integration, deployment and testing. These readings are a good way to see what the big ideas are in this area.
+
+## Do this
+**Read and Warmups**: Read this article by famous Software Engineering thinker [Martin Fowler](http://martinfowler.com): [Continuous Integration](http://martinfowler.com/articles/continuousIntegration.html).  
+
+## Submit
+Based on this reading how close are you with NanoTwitter on your team to implementing CI or CD? What is your plan to get there with your team?

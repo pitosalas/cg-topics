@@ -1,31 +1,31 @@
 ---
 title: "Sinatra Series 2: A Basic Service"
 ---
-:h2 Purpose
+## Purpose
 
 This assignment will familiarize you with the basic mechanics of creating a Sinatra application. By going beyond reading to actually writing working code you will further cement your understanding.
 
-:h3 Features that you will be creating 
+### Features that you will be creating 
 
 * A Web service to access a database
 * A REST API
 * A Test Suite, TDD
 * Sinatra + ActiveRecord
 
-:h3 Initial API Spec
+### Initial API Spec
 
 * `GET /api/users/paul` => JSON result
 * Properly withhold password
 * Properly return key information
 
-:h2 Do this
+## Do this
 
 * Look at :topic_link :sinatra_series_api_test_tut
 * Test is for a set of specific API calls, not of the database or other internals of the service
 * And before the test runs, it creates a `test fixture` the particular user being looked up
 * For the test to run there has to be a database (ActiveRecord) which is not yet set up
 
-:h3 Database
+### Database
 
 * Make sure you have rake installed: `gem install rake`
 * Create a migration `rake db:create_migration NAME=create_users`
@@ -34,7 +34,7 @@ This assignment will familiarize you with the basic mechanics of creating a Sina
 * Create the corresponding ActiveRecord model in model/user.rb
 * Create database and migrate, both development and test databases!
 
-:h3 Implement GET
+### Implement GET
 
 * `get '/api/users/:name' do`
 * Retrieve the parameter `:name` with `params[:name]`
@@ -42,14 +42,14 @@ This assignment will familiarize you with the basic mechanics of creating a Sina
 * Use `.to_json` to convert result to json
 * Use .slice to make sure that the `password` field is not returned
 
-:h3 Extend TDD tests
+### Extend TDD tests
 
 * Check that email, bio are also returned
 * Check that password is NOT returned
 * Add code to the User model so that password is not returned
 * And tests now pass
  
-:h3 Continue to implement, as follows:
+### Continue to implement, as follows:
 
 * Implement test cases (TDD), demonstrate that they fail
 * Implement the new APIs
@@ -59,7 +59,7 @@ This assignment will familiarize you with the basic mechanics of creating a Sina
   * Chrome: Advanced Rest Client
   * Many many others!
 
-:h3 Additional APIs
+### Additional APIs
 
 * `POST /api/users`
   * Supply HTTP attributes: name, email, password and bio
@@ -86,11 +86,7 @@ This assignment will familiarize you with the basic mechanics of creating a Sina
     * And name, email, bio and password of said user
   * When not, returns status 404
 
-:h3 Submit this
+## Submit this
 
-* Respond to the following warmup questions:
-    * Give an example that is not mentioned in the reading of a one to many relationship. Why is it one to many?
-    * Explain what a foreign key is and how it is used, exactly, to do a one to many relationship.
-    * In what way is a relational database similar or reminiscent of a spreadsheet?
-    * Please list two concepts from the reading that you don't understand, and if you feel you understand it well, then the two most important ideas of this reading.
-
+Zip file with your clean and commented source code
+|files|
