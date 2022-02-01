@@ -20,38 +20,22 @@ title: ROS Best Practices and Patterns
 * Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. Even in our simple case, the YDLidar Driver we use seems to have 720 items, that is ½ degree entries. If you get that wrong your code just won’t work. You can use len(msg.ranges) to figure out the actual number you have.
 * Don't ever use time.sleep() in a ROS callback. This will block the whole operation of ROS, causing other callbacks not to fire and other bad things.
 
-:h3 Defining TFs (transforms)
-
-* TFs have names which help you understand what physical component it is tied to
-* TFs for mobile robots follow a typical hierarchy as follows: map -> odom -> base_link
-* `base_link` for the “center” of the robot. You get to pick it but it should make some intuitive sense. All other parts of the robot are below base_link hierarchically in the tf tree
-* Sometimes it’s useful to have another TF which is the center of the footprint of the robot, meaning, a TF projected straight down from base_link and intersecting with the ground plane wherever that is. 
-* `odom` for the odometry created TF
-* `map `for the TF of a map built by hand or through slam
-* Conventional names and standards for TFs can be found here: (https://www.ros.org/reps/rep-0105.html) 
-
-:h3 Transforms (TFs)
-
-* TFs are fundamental to understanding anything relating to positions in ROS.
-* TFs are built on a hierarchical system of relative positions between different parts of a robot or different objects in the world.
-* The base_link is the “center” of the robot. You get to pick it but it should make some intuitive sense.
-* TFs allow all other parts of the robot to be described as a relative position to either the base_link directly or to other parts on the robot. For example a robots arm could be defined as a relative position to the base_link and a claw attached to the arm could be defined as a relative position to the arm. This hierarchy forms the TF tree of relative transforms between objects in the world.
-* Odometry is simply measuring the transform between the base_link and the origin point of your map (usually the position at which the robot started).
-* Continuing the example from before, lets say I need to know the relative positions of the hand on our robot and an lever in the world. The TF tree allow us to calculate this automatically, the hand position relative to the arm is know, the arm position relative to the base_link is known, the base_link position relative to the world or map is known through odometry, and the lever position relative to the world/map is know, problem solved.
-
-
 :h3 Package Structure
 
 * Create properly structured packages so they can easily be added to other workspaces.
 * Name the directory with the programs `src`
 * Other directories should be present only if you use them
-* Include a package.xml and CMakeFile.txt
+* Include a package.xml and CMakeFile.txt (these are tricky, but you have to learn them)
 * Use the create_package utility to create a correct package
-
-:h3 Documentation
-
 * It's a good idea to include a readme.md
 * It's a good idea to include a license.md
+
+:h3 Launch files
+* ... more to come
+
+:h3 Starter Code
+
+* Look at [node_template.py](https://github.com/campusrover/prrexamples/tree/master/src/pa_starters) for a nice general starting template. The prrexamples repo has lots of code for you to look at. *Beware that you should understand what it is that you're using!*
 
 :h3 Sources and references (quality varies a lot!)
 
