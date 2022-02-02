@@ -25,6 +25,7 @@ APP_ENV=production ruby my_app.rb
 
 
 :slide_title Routing
+
 * One method for each "route"
 * Rendering of Views
 * Routes with parameters
@@ -36,6 +37,7 @@ APP_ENV=production ruby my_app.rb
 * Each of the route methods are "kind of like" a controller
 
 :slide_title Data
+
 * Sinatra doesn't do anything special about working with the database
 * Whatever database access you prefer will work
 * Our examples use ActiveRecord as a library to interface with the database

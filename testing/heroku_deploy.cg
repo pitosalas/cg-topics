@@ -1,7 +1,7 @@
 ---
 title: Heroku Deploy setup
 ---
-## Introduction
+:slide_bigtitle Directly pushing from Github
 
 Heroku has built-in function for deploying changes directly from Github to your Heroku app. This tutorial will go through how to set it up.
 
@@ -9,7 +9,7 @@ Heroku has built-in function for deploying changes directly from Github to your 
 
 *Note: Skip this step if you already connected the Github repo to Heroku.*
 
-<%= include_image "/content/topics/images/connect_github.png" %>
+:image :connect_github
 
 Click "Connect to GitHub" using an account that either owns the project repo, or has contributor access to the repo.
 
@@ -17,7 +17,7 @@ Click "Connect to GitHub" using an account that either owns the project repo, or
 
 *Note: Skip this step if you already connected the Github repo to Heroku.*
 
-<%= include_image "/content/topics/images/connect_repo.png" %>
+:image :connect_repo
 
 Click "Connect" to the project repo. E.g. `hojulian/ruby-getting-started`.
 
@@ -25,7 +25,7 @@ Click "Connect" to the project repo. E.g. `hojulian/ruby-getting-started`.
 
 To tell Heroku to deploy on new code changes, enable "Automatic Deploys".
 
-<%= include_image "/content/topics/images/enable_auto_deploy.png" %>
+:image :enable_auto_deploy
 
 Choose the branch where the newest changes are located (this is usually `main`). And click "Enable Automatic Deploys".
 
@@ -37,7 +37,7 @@ This will enable automatic deployment on the Heroku side.
 
 Since your app is deployed yet, you will need to manually deploy it for the first time.
 
-<%= include_image "/content/topics/images/deploy_first_time.png" %>
+:image :deploy_first_time
 
 Click "Deploy Branch" and Heroku will pull the latest copy of your project and deploy it!
 

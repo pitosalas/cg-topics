@@ -1,35 +1,34 @@
 ---
 title: Hands On Heroku for Sinatra
 ---
-
-:h3 Introduction
+:slide_bigtitle Hands on Heroku for Sinatra
 
 * Heroku is one of many "cloud app platform"
 * We are going to deploy our app to Heroku
 
-:h3 Assumptions
+:slide_title Assumptions
 
 * You have a working Sinatra application
 * The code is in a PUBLIC github repository
 * Note, you will need to make a few small changes to ready it for Heroku
 
-:h3 Setup
+:slide_title Setup
 
 * Go to [Heroku](https://www.heroku.com)
 * Create a new user account (free)
 * Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for your platform
 
-:h3  Prepare your sinatra app
+:slide_title Prepare your sinatra app
 
 * go to your local directory containing the sinatra app
 * Use Heroku command line to create a new
 * The name of your app is assigned automatically and printed out once you do `heroku create`
 
-:h3 Prepare your application
+:slide_title Prepare your application
 
 * Configure it for rack: make sure you have a config.ru
 
-:h3 Create it on Heroku
+:slide_title Create it on Heroku
 
 :source_begin :bash
 heroku create
