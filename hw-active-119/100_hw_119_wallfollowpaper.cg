@@ -2,11 +2,15 @@
 title: (P) Read the Wall Following Paper
 desc: Learning how to read academic papers
 ---
-:h4 Purpose
+### Purpose
 
 Practice reading academic papers and start seeing the subtlety of making robot do what is a trivial thing for a person to do
 
-:h4 Do this
-Read: [Wall Following Algorithms Paper](https://github.com/ssscassio/ros-wall-follower-2-wheeled-robot/blob/master/report/Wall-following-algorithm-for-reactive%20autonomous-mobile-robot-with-laser-scanner-sensor.pdf).
+### Do this
 
-:deliverable "What are some of the key takeaways for you from this article?"
+1. Read: [Wall Following Algorithms Paper](https://github.com/ssscassio/ros-wall-follower-2-wheeled-robot/blob/master/report/Wall-following-algorithm-for-reactive%20autonomous-mobile-robot-with-laser-scanner-sensor.pdf).
+1. Google for another article or tutorial about wall following.
+
+### Submit this
+
+What were some of the key take aways for you from this article? What did your additional googling add to your understanding?

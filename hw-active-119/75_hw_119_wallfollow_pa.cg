@@ -2,4 +2,4 @@
 title: (I) Implement the wall follower
 desc: Wall following is one of the canonical robotics assignments
 ---
-:topic_incliude link_to_topic :wall_follower
+:topic_include :wall_follower

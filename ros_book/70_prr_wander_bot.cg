@@ -2,9 +2,10 @@
 title: "7: Wander Bot"
 desc: Simulating behavior in simulation
 ---
-:callout :small, "NOTE!", " All the book instructions make reference to \"turtlebot_xxx\". We will be using \"turtlebot3_xxx\""/
+:callout :small, "NOTE!", " All the book instructions make reference to turtlebot_xxx. We will be using turtlebot3_xxx"
 
 ## Intro
+
 * We will modify the instructions from the book so follow along here!
 * Code will be part of `prrexamples` package which we have been using: [prrexamples](https://github.com/campusrover/prrexamples)
 * Setup the simulation packages for Turtlebot3 by following [11. Simulation](http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). In particular make sure you add the turtlebot3_simulations package, as follows:

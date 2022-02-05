@@ -19,8 +19,8 @@ end
 describe 'The HelloWorld App' do
   it "says hello" do
     get '/'
-    last_response.ok?
-    last_response.body.must_equal 'Hello Sinatra!'
+    assert last_response.ok?
+    assert last_response.body == 'Hello Sinatra!'
   end
 end
 
@@ -38,22 +38,22 @@ describe "GET on /api/users/:id" do
 
   it "Should return user by name" do
     get '/api/users/paul'
-    last_response.ok?
+    assert last_response.ok?
     attributes = JSON.parse(last_response.body)
-    attributes["name"].must_equal "paul"
+    assert attributes["name"] == "paul"
   end
 
   it "Should return users email too" do
     get '/api/users/paul'
-    last_response.ok?
+    assert last_response.ok?
     attributes = JSON.parse(last_response.body)
-    attributes["email"].must_equal "paul@gmail.com"
+    assert attributes["email"] == "paul@gmail.com"
   end
   it "Should return user by name" do
     get '/api/users/paul'
-    last_response.ok?
+    assert last_response.ok?
     attributes = JSON.parse(last_response.body)
-    attributes.key?("password").must_equal false
+    assert !attributes.key?("password")
   end
 end
 
@@ -66,11 +66,11 @@ describe "POST on /api/users" do
       bio: "Lotus CEO"}.to_json
     last_response.ok?
     get '/api/users/manzi'
-    last_response.ok?
+    assert last_response.ok?
     attributes = JSON.parse(last_response.body)
-    attributes["email"].must_equal "manzi@gmail.com"
-    attributes["name"].must_equal "manzi"
-    attributes["bio"].must_equal "Lotus CEO"
+    assert_equal attributes["email"], "manzi@gmail.com"
+    assert_equal attributes["name"], "manzi"
+    assert_equal attributes["bio"], "Lotus CEO"
   end
 end
 :source_end

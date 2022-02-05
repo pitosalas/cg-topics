@@ -18,7 +18,26 @@ title: ROS Best Practices and Patterns
 * As a general rule you can get nicer ROS code if you break the functionality into python classes and in separate files (packages)
 * This works especially well if you can identify bits functionality that may be reused in other applications
 * Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. Even in our simple case, the YDLidar Driver we use seems to have 720 items, that is ½ degree entries. If you get that wrong your code just won’t work. You can use len(msg.ranges) to figure out the actual number you have.
-* Don't ever use time.sleep() in a ROS callback. This will block the whole operation of ROS, causing other callbacks not to fire and other bad things.
+
+:h3 Concurrency, threading, race conditions, etc
+:source_begin :python
+# (1) Don't ever use time.sleep() in a ROS node. It will block the whole operation of ROS, 
+# causing other callbacks not to fire and other bad things. instead use either
+rospy.sleep(n) # to sleep n seconds
+
+# (2) or
+rate = rospy.Rate(h) 
+rate.sleep() # to sleep for 1/h seconds - i.e. at a rate of h per second
+
+# (3) Allow ^c to kill your node
+while not rospy.is_shutdown():
+    # do stuff
+    rospy.sleep(0.2)
+
+# (3) If you want your node wait indefinitely for a ^c while allowing callbacks
+# Typically make this your last statement executed
+rospy.spin()
+:source_end
 
 :h3 Package Structure
 
@@ -45,3 +64,4 @@ title: ROS Best Practices and Patterns
 * [More ROS Best Practices](http://wiki.ros.org/BestPractices)
 * [Python Code Smells](https://towardsdatascience.com/5-python-code-smells-you-should-be-wary-of-c48cc0eb9d8b)
 * [Several Ways of Writing a ROS Node](https://yuzhangbit.github.io/tools/several-ways-of-writing-a-ros-node/)
+* [Threading in ROS](https://github.com/m-elwin/me495_threads)
