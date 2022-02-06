@@ -10,7 +10,9 @@ One of the biggest contributors to scaling is a well designed database. This hom
 
 * Re-read :topic_link :data_modeling
 * Also Read and think about [Basics of Good Database Design in Web Development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/) and also use the links in the article
-* Supplement your reading with your own research (google)
+* Review [Sinatra ActiveRecord Associations](https://learn.co/lessons/sinatra-activerecord-associations-join-tables)
+* Review [Many to Many Relationships](https://medium.com/@pk60905/many-to-many-relationship-in-rails-cf86e12db8b0)
+* Google has many more
 
 ## Deliverable
 
