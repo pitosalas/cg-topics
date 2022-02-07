@@ -69,7 +69,7 @@ negate: 1
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 :source_end
 
-:image_include :rosbag3
+:image :rosbag3
 
 * Lab Instruction: Save all the messages
 * We are going to save all the topics published by the simulated robot. plus a timestamp
@@ -114,7 +114,7 @@ $ rosbag info data.bag
   1. Run the map maker package
   1. Play the messages that we recorded before
 
-:callout :small, "NB", " Check that you've killed all ROS-related processes."/
+:callout :small, "NB", " Check that you've killed all ROS-related processes."
 
 :source_begin :bash
 $ roscore

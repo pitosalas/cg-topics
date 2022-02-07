@@ -4,9 +4,11 @@ desc: Controlling teleoperation
 ---
 ### Purpose
 
+You continue your tour of ROS and Robotic programming by focusing on how teleoperation is usually implemented, and also how you combine user input with the logic of a robot. And more broadly you will get exposed to another kind of ROS program.
+
 ### Do this
 
-Read Chapter 8 of PRR and remember to refer to (:topic_link :prr_teleop_bot)
+Read Chapter 8 of PRR and remember to refer to our extra [Notes for Chapter 8](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/80_prr_teleop_bot.md/) *To understand this you really need to run some code!*
 
 ### Submit this 
 
@@ -14,6 +16,12 @@ Please respond to the following warmup questions:
 
 1. What features are added to produce key_to_twist_using_rate.py from the previous version, why would that be useful and what line in the program contains the key change?
 
+|____|
+
 1. This will take a little research: on page 114 you see `rospy.Subscriber('keys', String, keys_cb, twist_pub)`. What does each parameter do?
 
+|____|
+
 1. On page 124 you see `./keys_to_twist_with_ramps.py _linear_scale:=0.5 _angular_scale:=1.0 _linear_accel:=1.0 _angular_accel:=1.0`. What does the `:=` notation mean or do?
+
+|____|
