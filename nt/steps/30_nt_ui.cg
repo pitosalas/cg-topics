@@ -2,36 +2,36 @@
 title: "NanoTwitter Stage 3: Design and Routes"
 desc: Now we turn to the front end
 ---
-:h3 Purpose
+## Purpose
 
 Now that you've had plenty of time to think about the back end functionality, it's a good time to get into the front end. This kind of partitioning of a project is useful because it gives you sold feedback on your understanding of where you are and where you are going. Another advantage is that both teammates get familiar with each part of the product.
 
-:h3 Do this
+## Do this
 
 This stage begins with two non-coding assignments. Trust me when I say that doing these on paper before you begin coding will save you a huge amount of work. As you discuss and think through what exactly is displayed on each page, and what links will get you to other pages, you will discover many details that will feed directly into the code.
 
-:h4 UI Design
+### UI Design
 
 * It's easiest if you imitate the real Twitter, but it's not required. Just make sure that you support the User Interface functionality that is listed in :topic_link :nt_functionality. 
 * Develop it as a paper prototype and/or using Balsamiq.com. Start with a paper sketch for each page. Remember to note where there are links and buttons, and what the various text boxes are. S
 * ave a series of images or similar in a top level sub directory called doc. I really recommend taking some time on this as it will save you a lot of time later!
 
-:h4 Routes
+### Routes
 
 * Before coding up the sinatra app, sit down and design all urls that you will have to implement in the code. 
 * :topic_link :nt_functionality gives you the outline, but here you need to describe all of them. D
 * o this before you code. Save this as a markdown file called routes.md in your doc sub directory.
 
-:h4 Code
+### Code
 
 * Now write the code to implement each of the routes and have them display initial or dummy versions of the relaxant pages. 
 * Please don't focus on how pretty it is right now, you will likely be wasting your time. These pages will change a lot and often between now and a few weeks from now!
 
-:h4 Cleanup and deploy
+### Cleanup and deploy
 
 * Last step is to tidy up your github repo, add details to your readme, and push to heroku.
 
-:h3 Deliverable
+## Deliverable
 
 1. Your github repo which we will look at
 1. Your heroku url to demonstrate that you've gotten it all up into the cloud
