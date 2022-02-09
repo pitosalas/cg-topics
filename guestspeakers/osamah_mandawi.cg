@@ -2,7 +2,10 @@
 title: Guest Speaker Osamah Mandawi
 desc: Hubspot
 ---
+We are lucky today to have a guest speaker from Hubspot, Osamah Mandawi. Osamah is a Brandeis Alum and software engineer at HubSpot, a Cambridge based internet company. He co-oped at HubSpot's Infrastructure Security team for 5 months, before joining the Framework Data Group full time in July of 2021. 
 
-We are lucky today to have a guest speaker from Hubspot, Osamah Mandawi. Osamah is a Brandeis Alum and software engineer at HubSpot, a Boston based internet company.
+The HubSpot Framework Data Group is responsible for building a customer data platform that allows customers to gain deep insight into their business data, and propel other HubSpot product teams forward. We have a highly visible impact on the continued growth for the entire HubSpot stack. When we make our systems more reliable, HubSpot is more stable. When we make our systems more performant, we make HubSpot faster. On top of that, any features we build unlocks functionality across the entire platform. Our work creates a consistent data experience for customers through the entire HubSpot product.
+
+HubSpot has thousands of microservices, primarily written in Java 13, and work with highly distributed systems that leverage and push on open source technologies such as HBase, Hadoop, Kafka, Spark, Memcached, MySQL, and ElasticSearch. These systems let our users store, automate, report on, and interact with their customers at scale. We deal with problems of scale on a daily basis, approaching big data concerns with pragmatic solutions.
 
 :image :osamah_mandawi_head
