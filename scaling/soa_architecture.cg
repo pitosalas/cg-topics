@@ -1,0 +1,43 @@
+---
+title: Introduction to SOA
+desc: Service Oriented Architectures
+---
+:slide_bigtitle Service Oriented Architectures
+
+* Divide a system into "services" that communicate with each other
+* Services can be implemented by one or multiple "servers"
+* If more than one, then requests get sent to them based on some algorithm
+
+:slide_title How does this communication work?
+
+* Almost always using tcp/ip (which requires an IP address)
+* Often http but not always (e.g. database servers typically don't use http)
+* Each service has a way that it expects to be called
+* This is called its "API"
+
+:slide_title APIs
+
+* Almost always there's a software library that encapsulates the API
+* This is often referred to as the "binding" for that API in a certain programming language
+* I.e. "Is there a python binding for MongoDB?"
+* The client uses the binding to call the server
+* Key parameter is the ip address or dns name of the server
+
+:slide_title Services
+
+* A computer (a host, a vm, a droplet, a dyno) responds to a request. Call that a "server"
+* You may have more than one of the same kind of server together responding to requests of that type
+* These are not public IP addresses. They are not accessible outside of the internal infrastructure
+* Still there are IP addresses and often dns names
+
+:slide_title Clients
+
+* How does the client know what dns name or ip address to use?
+* If there's only one instance ever, it could be put right into the code (MongoDb.open_database("ourdata", "12.32.33.44")
+* Even that is dangerous. If you need to upgrade or otherwise change your network organized, the ip might change
+* Github or other public repos
+* Be careful: never put any secret keys from AWS, Twitter, or anyone else in your code
+* Hackers constantly scan these public repos and find the keys and turn your account into a Bitcoin Mining Operation
+* Also don't include IP addresses
+* Many approaches to dealing with this
+* Simplest is Environment Variables
