@@ -7,7 +7,7 @@ title: "Service API - 2: Sinatra"
 
 ## Prerequisites
 
-* You must complete :topic_link :hw_digital_ocean_1 , with 2 droplets and a database up and running on DO
+* You must complete :topic_link :hw_105_digital_ocean_1 , with 2 droplets and a database up and running on DO
 
 ### What to submit
 
@@ -242,4 +242,4 @@ sudo systemctl restart rails.service
 
 ### **Now your app is live!**
 
-* Continue :topic_link :hw_digital_ocean_3 
+* Continue :topic_link :hw_105_digital_ocean_3 

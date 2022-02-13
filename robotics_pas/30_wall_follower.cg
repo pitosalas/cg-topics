@@ -44,8 +44,8 @@ This not an easy assignment so don't wait until the last minute. Remember to als
 
 ### Extra Challenges for Extra Points
 
-* Follow a rectangular wall, on the outside
 * Make this work with a physical robot
+* Follow a rectangular wall, on the outside
 * Follow a corridor that is 2x the width of the robot
 * Follow such a corridor to a dead end and rotate in place
 
@@ -55,7 +55,7 @@ This not an easy assignment so don't wait until the last minute. Remember to als
   * Commented Python source code file
   * README with specific instructions on how to run it
   * Correct package.xml CMakeLists.txt
-* Video of your program running in gazebo or your lab at home
+* Video of your program running in gazebo or the lab
 
 
   

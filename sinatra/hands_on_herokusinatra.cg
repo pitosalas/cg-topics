@@ -32,7 +32,7 @@ title: Hands On Heroku for Sinatra
 
 :source_begin :bash
 heroku create
-git push heroku master
+git push heroku main
 heroku run rake db:migrate
 heroku run rake db:seed
 heroku open
