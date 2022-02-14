@@ -1,14 +1,14 @@
 ---
-title: (P) Single Point of Failure
+title: (P) Scaling Architecture
 desc: How to make sure your system stays up
 ---
-:h3 Purpose
+### Purpose
 
-:h3 Do this
+### Do this
 
 * Watch [Development Decisions and Architecture](https://brandeis.box.com/s/0b85lgfmzn380vsejkdr724a292dg26w)
 
-:h3 Deliverable
+### Deliverable
 
 Please respond to the following questions:
 

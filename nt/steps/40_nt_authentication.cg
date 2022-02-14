@@ -2,11 +2,11 @@
 title: "NanoTwitter Stage 4: Authentication"
 desc: We implement the login/logout and related features
 ---
-:h3 Purpose
+### Purpose
 
 No web application is complete without authentication of course. Our purpose here is to create your complete authentication and authorization feature set for your NanoTwitter. This will allow you to learn how cookies work in Sinatra and also how to actually add automated testing for Authentication. Make sure you understand what authentication is and how it's different from authorization.
 
-:h3 Do this
+### Do this
 
 1. Study [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth), [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get an idea of how it works.
 
@@ -23,7 +23,7 @@ No web application is complete without authentication of course. Our purpose her
 
 4. Cleanup and deploy. Last step is to tidy up your github repo, add details to your readme, and push to heroku.
 
-:h3 Deliverable
+### Deliverable
 
 We will review the code to make sure that you implemented at least what was required. We will look at the cleanliness of the code, whether the readme was updated, whether there are bugs. We will also try the heroku link to see if the functionality is there.
 
