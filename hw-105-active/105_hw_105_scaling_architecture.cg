@@ -4,6 +4,9 @@ desc: How to make sure your system stays up
 ---
 ### Purpose
 
+Scaling and scalability are subtle topics. To learn to identify bottlenecks, failure points, and optimization
+opportunities it is very useful to see many examples with analysis and comments. 
+
 ### Do this
 
 * Watch [Development Decisions and Architecture](https://brandeis.box.com/s/0b85lgfmzn380vsejkdr724a292dg26w)
