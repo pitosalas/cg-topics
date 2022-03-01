@@ -4,19 +4,17 @@ desc: TF is tricky to understand but super important
 ---
 ### Purpose
 
+Understanding Transforms (TFs) is essential. We're talking about TFs in class and this tutorial is very helpful towards that goal. You will both develop your intuition as well as get familar with key APIs that relate to TFs.
+
 ### Do code from tutorial
 
-Read and implement examples in [TF2 Tutorials Sequence](http://wiki.ros.org/tf2/Tutorials). :partbadge
-
-There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on.
+Read and implement examples in [TF2 Tutorials Sequence](http://wiki.ros.org/tf2/Tutorials). There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on.
 
 ### Deliverable
 
 With that, answer the following questions about TF2:
 
 1. What is the TF tree? Where is it stored? (that may be a trick question!)
-1. In your own words, how does turtle_tf2_demo work?
+1. In your own words, how does turtle_tf2_demo work? Give approximately two paragraphs of detail.
 1. Please write one or two things that are still confusing to you; if it's all clear, then please write one or two major takeaways.
-
-:deliverable Your responses to the above questions, in brief, in a pdf with your name and homework number at the top.
 

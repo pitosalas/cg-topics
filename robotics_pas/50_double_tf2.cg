@@ -15,14 +15,16 @@ You can decide to have all the robots follow a single leader, or more fun, to ha
 
 You will need to understand how the robots are launched, and how tf is used to transform the location of the second robot into the world of the first one.
 
-### Ideas for going beyond this
+#### You may earn extra points by doing one or more of these:
+
 1. Have two turtles controlled by either side of the keyboard
 1. Have a robot turtles runs away from the controlled one instead of towards it
-1. Have two a chain where turtle3 goes after turtle2 and turtle2 after turtle1
+1. Have three or more in a chain where turtle3 goes after turtle2 and turtle2 after turtle1
 
 
-## Deliverable
+### Deliverable
+
 * Your working code as a clean package and a readme
-* A conceptual explanation of the way the app works, how it uses tf, to demonstrate your understanding
+* A conceptual explanation of the way the app works, how it uses tf, to demonstrate your understanding in the readme
 * A rough video (as usual) of the code running.
 

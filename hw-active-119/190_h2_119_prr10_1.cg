@@ -2,15 +2,15 @@
 title: (P) Read PRR Chapter 10
 desc: Part 1
 ---
-:h4 Purpose
+### Purpose
 
 We continue to reinforce the ideas of TFs or transforms. They are hard to follow but essential to understand. We will tackle this chapter in two parts.
 
-:h4 Do this
+### Do this
 
 Read Chapter 10 and as background refer to :topic_link :prr_localization in parallel (and use the code I provided!). Read the section called "Localizing" and we will get to "Navigating" later. There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on.
 
-:h4 Deliverables
+### Deliverables
 
 Please answer the following questions!
 
