@@ -1,6 +1,7 @@
 ---
 title: "12: Follow Bot"
 desc: "Adding perception to our robot algorithms"
+slides: true
 ---
 ## Introduction
 
@@ -10,6 +11,7 @@ desc: "Adding perception to our robot algorithms"
     * Steer the robot
 
 ## Acquiring Images
+
 * Message: `sensor_msgs/Image`
 * Run Gazebo to simulate a robot with a camera
 * Since the TB3 Waffle has a camera, we will use those models, and then run gazebo
@@ -33,13 +35,13 @@ $ rostopic list | grep /camera
 * Choose from each of the topics relating to the camera
 * Move the robot in Gazebo and watch the picture change
 
-<%= code_begin %>
+:source_begin :bash
 $ rqt_image_view
-<%= code_end %>
+:source_end 
 
 :slide_title Run the simplest program
 
-<%= code_begin %>
+:source_begin :bash
 $ rosrun prrexamples follower.py
 $ rosnode info follower
 --------------------------------------------------------------------------------
@@ -72,20 +74,22 @@ Connections:
     * direction: inbound
     * transport: TCPROS
 
-<%= code_end %>
+:source_end 
+
 * First section is information determined from roscore about what /follower is doing
 * Second section is information directly from the /follower node about it's connections
     * We see that it is publishing to /rosout
-    * And is subscribed to /clock (from gazebo)
-    * And /camera/rgb/image_raw (from gazebo too)
+    * And is subscribed to `/clock` (from gazebo)
+    * And `/camera/rgb/image_raw` (from gazebo too)
 * Lets find out the frame rate (simulated by gazebo)
-<%= code_begin %>
+
+:source_begin :bash
 rostopic hz /camera/rgb/image_raw
 subscribed to [/camera/rgb/image_raw]
 WARNING: may be using simulated time
 average rate: 10.204
 	min: 0.019s max: 0.131s std dev: 0.03037s window: 10
-<%= code_end %>
+:source_end
 * So, we are receiving about 10 images per second
 * Which is why my computer is so slow :)
 
@@ -123,7 +127,7 @@ $ rosrun prrexamples follower_opencv.py
 * Image and Pattern Recognition is arbitrarily complex
 * Here we will take a simplistic approach
 * An interesting relevant link: [Tracking Colored Objects](http://aishack.in/tutorials/tracking-colored-objects-opencv/)
-* Note that we customized the values to recognize yellow as HSV [40,0,0]:[120,255,255]
+* Note that we customized the values to recognize yellow as `HSV [40,0,0]:[120,255,255]`
 * These values are very rough and could be improved
 
 ```
@@ -154,9 +158,5 @@ $ rosrun prrexamples follower_line_finder.py
 ```
 $ rosrun prrexamples follower_p.py
 ```
-
-
-
-
 
 
