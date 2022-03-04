@@ -1,0 +1,60 @@
+---
+title: Scaling
+slides: true
+---
+:h2 Scaling
+
+:slide_title Thought experiment
+
+* Real world example
+* Covid Testing flow chart
+* Several failure modes
+* Question: how to solve these?
+
+:callout :small, "activity", " Practice identifying the patterns that reveal bottlenecks, discuss with your neighbors: if you were the manager, how would you address the problem, and why?"
+
+:slide_title Optimization:the search for bottlenecks.
+
+* What's a bottleneck? Refer back to the example.
+* Moving target:
+	1. When you eliminate/improve one bottleneck, it just reveals the next one.
+	1. You make starting the dashboard activity faster....so that now you can notice that drawing the map overlay is slow.
+* **Important:** Measurement
+* **Worse sin:** Optimizing early. Why?
+
+:slide_title Performance
+* Performance is what what a user experiences as "slow" or "fast"
+* Response time to an operation initiated by the user
+* Perception!
+	* Can you 'fool' the user into thinking the app is faster than it is?
+	* Feedback: spinners etc
+	* Anticipation: start doing work before user requests it
+* Different (but intertwined with) scaling
+
+:slide_title Scaling
+* "How many X per minute can you do"
+	* (e.g. user log ins, page refreshes, notifications,...
+* How many (users, sessions, videos, pictures, etc) does the site need to support
+* Different from response time: "How long does it take to accomplish Y?" Related but different
+* Scaling has to do with the load on the servers
+* Big challenge: how fast or slow will the site or app grow?
+* Architectural techniques apply equally
+	1. scaling up vs. scaling out
+	1. caching
+	1. load balancing
+	1. database partitioning and sharding
+	1. asynchronous processing
+
+:slide_title Patterns of scaling problems and solutions
+
+* "Clients" = web browsers accessing the site, mobile apps accessing the site, etc.
+* Load on the servers. Some scenarios, one or more of:
+	1. Too many clients asking the server to do operation O
+ 	1. Individual clients asking the server to do operation P too often
+	1. Operation Q is time consuming for the server to satisfy
+* Solutions can be
+	1. Add an identical server to handle operations O, P or Q
+	1. Send operation O to one server and operation P to another server
+	1. Why are so many clients asking for O? Can we reduce the number?
+	1. What's the reason why a client would ask for operation P so often? Can we reduce that?
+	1. Is there a way to make operation Q faster to satisfy?
