@@ -1,6 +1,8 @@
 ---
 title: Intro to Automated Testing
 ---
+:slide_title Intro to Automated Testing
+
 * Unit testing: test a small unit of code that has few side effects
 * Integration testing: test a subsystem that has many components
 * User interface testing: see if the right thing happens when the user takes an action.

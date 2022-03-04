@@ -1,23 +1,30 @@
 ### Purpose
 
-No web application is complete without authentication of course. Our purpose here is to create your complete authentication and authorization feature set for your NanoTwitter. This will allow you to learn how cookies work in Sinatra and also how to actually add automated testing for Authentication. Make sure you understand what authentication is and how it's different from authorization.
+No web application is complete without authentication of course. Our purpose here is to create your complete authentication and authorization feature set for your NanoTwitter. This will allow you to learn how cookies work in Sinatra and also how to actually add automated testing for Authentication. 
+
+### Background
+
+Make sure you understand what authentication is and how it's different from authorization; you can refresh your memory of it doing some googling. In brief, if you think about being carded in a restaurant. The first step is to show your ID, and have them check that the photo matches your face. This is authentication: is this person who they say they are? This step is the same for any place that wants to identify you. The second step is to decide whether to allow you to order a beer. This is specific: what beer is being ordered (alcoholic or non) and how old are you? Based on that they decide whether to allow the order. This is authorization. These are distinct steps.
 
 ### Do this
 
-1. Study [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth). Look at [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) but it's a little dated so the code may not work exactly but it will clarify your understanding. Finally look at [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get an idea of how it works.
+1. Look at [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html). It's an excellent step by step tutorial. it's a little dated so the code may not work exactly but it will clarify your understanding. You might find these links useful also: [User Authentication in Sinatra](https://mmusah1.medium.com/user-authentication-in-sinatra-5ab8e1a3d6b3Finally) for a briefer higher level overview; and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get additional background on bcrypt and how to use it in general.
 
 1. Every page of NanoTwitter will have links for login, logout, register, account (depending on whether the user is logged in the links will change of course.) You can decide what it looks like and what other extra features it could have, for example, a forgot password link, or the ability to log in with Brandeis credentials. The password of course cannot be stored in plaintext in your database.
 
-2. You will implement the suite of authorization functions. Typically they include
+1. Follow the tutorial. You will be using the brypt approach which is the bulk of the tutorial. The `get '/protected/?'` is meant to be an example of a route that can only be used by a logged in user. It is showing `authorization`! Most of your routes will look a little like that.
 
-    * `logged_in?` - returns true if someone is currently logged in
-    * `current_user` - returns the User object for the current user, or nil if no one is logged in
-    * `admin?` - returns true if admin account is logged in, false otherwise
-    * others as desired
+2. Implement the `authenticate!` method
+There are different ways you can use. The ones from the tutorial are a good way to go. `authenticate!` checks if the user is not logged in, it forces the user to log in. Notice that `session[:user]` represents the `:user` variable in your session.
 
-3. You will ensure that if a user is not logged in, all they can do is to either register an account or logged in.
+3. Create your User model (if you don't already have it)
+The example has a dummy version of the User model. It doesn't tie to a database. Obviously this won't work for nanoTwitter. In addition to the user's email and anything else you need, you have to add fields to the model in the migration. You `never` store the password in a database. Instead create a field called `password_hash`. Refer to the bcrypt documentation. 
 
-4. Cleanup and deploy. Last step is to tidy up your github repo, add details to your readme, and push to heroku.
+1. Implement the various `/signin/?`, `/signout` and `/register/?` routes
+
+1. You will ensure that if a user is not logged in, all they can do is to either register an account or logged in.
+
+1. Cleanup and deploy. Last step is to tidy up your github repo, add details to your readme, and push to heroku.
 
 ### Deliverable
 
