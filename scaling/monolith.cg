@@ -1,0 +1,51 @@
+---
+title: Monolith or Not?
+slides: true
+---
+
+:slide_title Monolith vs. Microservices
+
+* Opposite of Microservices
+* Monolith:
+  1. No "internal" services
+  1. A single code base (repo)
+* Actually it's a spectrum
+* Actually even a monolith is three tier
+* Monoliths are not `bad` and Microservices are not `good`
+
+:slide_title Pros and Cons
+* Monolith
+  1. Fewer API/Interfaces to design, test and deploy
+  1. One codebase is more efficient
+  1. Devops is far simpler
+  1. No extra network communications overhead
+  1. But: Overly-tight coupling
+  1. But: A bigger, single architecture is harder to understand
+* Microservices
+  1. Forces more modularity and better organization
+  1. Allows service reuse, and additional scaling options
+  1. Really isolated testing is possible
+  1. But: Extra work for cross cutting concerns (e.g. logging, authentication, monitoring etc.)
+  1. But: Far more complicated operations and devops
+
+:slide_title Microservices
+
+* This article lays out an approach to [Break a monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+* **STEP 1**: Start thinking about building Devops
+    1. Environment variables
+    1. Services mapped to hosts
+    1. Automation
+* **STEP 2**: First attack simple self-contained functionality
+    1. Either needs no database or has a table that no other part of the system uses
+    1. It should be easy to isolate with interface of a single class or a few methods
+    1. Preferably "functional", think amazon Lambda etc
+    1. Next create a think sinatra (or other) layer to accept requests as urls and paths and return results as http results. 
+    1. Demonstrate that it works by running automated deployment, installation, configuration, and service start, stop and restart operations
+* **STEP 3**: Next decouple a service which doesn't share data 
+  1. Again a service that needs no database or has a table that it fully controls
+  1. The goal again is to make the interface in the form of a class and/or a set of methods
+  1. Might need <%= link_to_topic :refactoring %> in order to remove or reduce dependencies
+  1. Then, continue as above
+
+
+

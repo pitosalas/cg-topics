@@ -3,7 +3,7 @@ title: Service and API Design
 slides: true
 ---
 
-## Partitioning into Services
+:slide_title Partitioning into Services
 
 * Lets look deeper at SOA design
 * Samples, strategies for partitioning
@@ -14,14 +14,14 @@ slides: true
 * Read: [How to break a Monolith into MicroServices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
 * Read [Reminder to self: Always start with a monolith](https://medium.com/@obed.tandadjaja/reminder-to-self-always-start-with-a-monolith-e6dc1947982b)
 
-## Four Different Strategies to consider
+:slide_title Four Different Strategies to consider
 
 * Partition based on iteration speed
 * Partition based on logical function
 * Partition based on read/write frequency
 * Partition based on Joins
 
-### Iteration speed
+:slide_title Iteration speed
 
 * Identify parts of the app which have stabilized and are not changing a lot
 * Versus the ones that are still being molded into final shape
@@ -29,7 +29,7 @@ slides: true
 * For example with SocialApp: are the feeds and feed entries pretty much a given?
 * Would it make sense to partition them out into a separate service?
 
-### Logical Function
+:slide_title Logical Function
 
 * Intuitively partitioning based on logical function makes perfect sense
 * Especially if the logical function is distinct and separate from other parts of the product
@@ -38,7 +38,7 @@ slides: true
 * If two users are reading the same feed (blog etc) this service would only need to import it once.
 * Similarly, there will be functionality to send out notifications. This is a natural and classic kind of service.
 
-### Read/Write frequencies
+:slide_title Read/Write frequencies
 
 * Directly out of the Baseball example we worked on
 * Data which is updated often and read much less often
@@ -48,7 +48,7 @@ slides: true
 * But using totally different kinds of storage, for example memory based and disk based
 * Or local versus cloud based
 
-### Join Frequency
+:slide_title Join Frequency
 
 * Tables that need to be joined most likely should stay in the same database and managed by the same service.
 * But most tables are joined to another table at one point or another
@@ -57,21 +57,21 @@ slides: true
 * Sometimes it makes sense to *denormalize*, that is, store the same data in more than one place. That is duplicate table X in two databases.
 * This introduces the risk of data inconsistency which would introduce its own complexities
 
-## Versioning
+:slide_title Versioning
 
 * Both external APIs and internal services should be kept as stable as possible
 * The reliance on an API is a kind of *coupling* which may bring about the very dependency which we are trying to guard against.
 * Service APIs should be *versioned* so that service A which accesses service X can specify that it is using version 1 of the API. 
 * When service X updates the API they can maintain both version 1 and 2 until service X is updated to Version 2.
 
-### Version numbers
+:slide_title Version numbers
 
 * The system as a whole must decide on a version numbering scheme
 * A useful new standard for this is known as SemVer, [Semantic Versioning](https://semver.org/)
 * Within the codebase each service will include it's current latest version
 * Importantly, each client of the service will include the version of the service they are assuming
 
-### What can be different?
+:slide_title What can be different?
 
 * New APIs can be added, old ones can be deprecated
 * APIs can get new arguments, or have the order of arguments, or the datatype change
@@ -79,7 +79,7 @@ slides: true
 * The semantic meaning of the API can change
 * The format or datatype of the result can change
 
-### Caveat
+:slide_title Caveat
 
 * Changing the API can be very disruptive to clients
 * It should be done very rarely
@@ -87,12 +87,12 @@ slides: true
 * A *Backward compatible change* is a change that allows a new client to still safely use an old client
 * A *Shim* or *Stub* is an API that is kept around to support old clients, but just calls the new API
 
-### Version in the URI
+:slide_title Version in the URI
 * Both `http://www.nanotwitter/api/12/user/1` and `http://www.nanotwitter/user/1?ver=12` are reasonable approaches
 * Using the URI query string has the advantage of making it optional
 * The convention is then that without the version, the service uses the latest
 
-### Version in the *Accept:* header of the HTTP request
+:slide_title Version in the *Accept:* header of the HTTP request
 
 * A new *mime-type* is defined for the new version of the api
 * For example `Accept: application/edu.brandeis.nanotwitter-v2+json`
@@ -100,7 +100,7 @@ slides: true
 * But this technique is not recommended
 * While APIs in general operate over HTTP, there are different ways of structuring them
 
-### URIs and interface design
+:slide_title URIs and interface design
 
 * The starting point in contemporary applications is often `REST` structured URIs, e.g.
   * GET /users
@@ -112,7 +112,7 @@ slides: true
 * Stored in an unknown format
 * `GET /user/1` requests, for example, an `html` or `json` representation of that user information
 
-### [HTTP responses](https://httpstatuses.com/)
+:slide_title [HTTP responses](https://httpstatuses.com/)
 
 * Recall a response consists of a status code, a body and a set of headers
 * The HTTP standard defines a large collection of standard status codes
@@ -123,7 +123,7 @@ slides: true
 * [The list is long](https://httpstatuses.com/) and use is not super consistent
 * The body of the response normally comes as <%= link_to_topic :json %>, and is totally application dependent.
 
-### HTTP Caching
+:slide_title HTTP Caching
 
 * One of the advantages of REST structured APIs is that they benefit from system and network services
 * There are proxies and CDNs that will cache HTTP responses when conditions allow
@@ -136,7 +136,7 @@ slides: true
   * `Expires: Wed, 02 Sep 2009 08:37:12 GMT` The content returned by the server is considered valid up to that date/time. It doesn't need to request it again until then.
   * `Last-Modified: Mon, 31 Aug 2009 12:48:02 GMT` Similarly, this indicates when the resource was last modified. If the server has a copy with the same last-modified date time then it has the latest and doesn't have to request it again.
 
-### Handling Joins
+:slide_title Handling Joins
 
 * As an example:
   * it would be useful if an API that returns a Tweet also return information from the user record as well
@@ -153,7 +153,7 @@ slides: true
   * There are techniques to overcome this guideline but they are complicated and are very situation dependent.
   * Sometimes considering a non-REST approach such as GraphQL makes sense.
 
-### Evolving an API
+:slide_title Evolving an API
 * Remember that an API exists to help the client
   * It is not at all unusual to add an API specifically to make a client operation more convenient or faster
   * APIs may be great places to handle errors, formatting, caching etc.
@@ -165,7 +165,7 @@ slides: true
   * This does not help with Joins. For example in the scenario above, how would the combined tweet/user API work?
   * When those needs arise it is time to create a new API which returns specific combined results on a case by case basis, for example `/APIV1/tweets?id=22,32,55,2&includeuserinfo=name
 
-### Summary
+:slide_title Summary
 
 * Partitioning an application into services is a serious design challenge
 * Its YAGNI vs. Performance
