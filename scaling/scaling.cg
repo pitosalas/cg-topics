@@ -1,20 +1,17 @@
 ---
 title: Scaling
-slides: true
 ---
-:h2 Scaling
+:slide_bigtitle Scaling
 
 :slide_title Thought experiment
+* Real world example:
+	1. Covid Test service in Shapiro
+	1. Several failure modes
+	1. Question: how to solve these?
 
-* Real world example
-* Covid Testing flow chart
-* Several failure modes
-* Question: how to solve these?
-
-:callout :small, "activity", " Practice identifying the patterns that reveal bottlenecks, discuss with your neighbors: if you were the manager, how would you address the problem, and why?"
+:callout :small, "activity", " discuss with your neighbors: if you were the manager, how would you address the problem?"
 
 :slide_title Optimization:the search for bottlenecks.
-
 * What's a bottleneck? Refer back to the example.
 * Moving target:
 	1. When you eliminate/improve one bottleneck, it just reveals the next one.
@@ -26,14 +23,13 @@ slides: true
 * Performance is what what a user experiences as "slow" or "fast"
 * Response time to an operation initiated by the user
 * Perception!
-	* Can you 'fool' the user into thinking the app is faster than it is?
-	* Feedback: spinners etc
-	* Anticipation: start doing work before user requests it
+	1. Can you 'fool' the user into thinking the app is faster than it is?
+	1. Feedback: spinners etc
+	1. Anticipation: start doing work before user requests it
 * Different (but intertwined with) scaling
 
 :slide_title Scaling
-* "How many X per minute can you do"
-	* (e.g. user log ins, page refreshes, notifications,...
+* "How many X per minute can you do" (e.g. user log ins, page refreshes, notifications,...
 * How many (users, sessions, videos, pictures, etc) does the site need to support
 * Different from response time: "How long does it take to accomplish Y?" Related but different
 * Scaling has to do with the load on the servers

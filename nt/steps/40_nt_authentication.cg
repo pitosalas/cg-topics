@@ -1,16 +1,12 @@
----
-title: "NanoTwitter Stage 4: Authentication"
-desc: We implement the login/logout and related features
----
 ### Purpose
 
 No web application is complete without authentication of course. Our purpose here is to create your complete authentication and authorization feature set for your NanoTwitter. This will allow you to learn how cookies work in Sinatra and also how to actually add automated testing for Authentication. Make sure you understand what authentication is and how it's different from authorization.
 
 ### Do this
 
-1. Study [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth), [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get an idea of how it works.
+1. Study [Sinatra Auth](http://www.sinatrarb.com/faq.html#auth). Look at [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html) but it's a little dated so the code may not work exactly but it will clarify your understanding. Finally look at [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get an idea of how it works.
 
-1. Every page will have links for login, logout, register, account (depending on whether the user is logged in the links will change of course.) You can decide what it looks like and what other extra features it could have, for example, a forgot password link, or the ability to log in with Brandeis credentials. The password of course cannot be stored in plaintext in your database.
+1. Every page of NanoTwitter will have links for login, logout, register, account (depending on whether the user is logged in the links will change of course.) You can decide what it looks like and what other extra features it could have, for example, a forgot password link, or the ability to log in with Brandeis credentials. The password of course cannot be stored in plaintext in your database.
 
 2. You will implement the suite of authorization functions. Typically they include
 
@@ -27,6 +23,8 @@ No web application is complete without authentication of course. Our purpose her
 
 We will review the code to make sure that you implemented at least what was required. We will look at the cleanliness of the code, whether the readme was updated, whether there are bugs. We will also try the heroku link to see if the functionality is there.
 
-1. Your github repo which we will look at
-1. Your heroku url to demonstrate that you've gotten it all up into the cloud
+1. URL to Your github repo which we will look at
+|____|
 
+1. Your heroku url to demonstrate that you've gotten it all up into the cloud
+|____|
