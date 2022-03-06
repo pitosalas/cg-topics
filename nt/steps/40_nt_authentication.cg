@@ -8,7 +8,7 @@ Make sure you understand what authentication is and how it's different from auth
 
 ### Do this
 
-1. Look at [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html). It's an excellent step by step tutorial. it's a little dated so the code may not work exactly but it will clarify your understanding. You might find these links useful also: [User Authentication in Sinatra](https://mmusah1.medium.com/user-authentication-in-sinatra-5ab8e1a3d6b3Finally) for a briefer higher level overview; and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get additional background on bcrypt and how to use it in general.
+1. Look at [Sinatra Authentication Example](https://sideprojectsoftware.com/blog/2015/02/22/sinatra-authentication.html). It's an excellent step by step tutorial. it's a little dated so the code may not work exactly but it will clarify your understanding. You might find these links useful also: [User Authentication in Sinatra](https://mmusah1.medium.com/user-authentication-in-sinatra-5ab8e1a3d6b3) Finally for a briefer higher level overview; and [BCrypt for Ruby](https://github.com/codahale/bcrypt-ruby) to get additional background on bcrypt and how to use it in general.
 
 1. Every page of NanoTwitter will have links for login, logout, register, account (depending on whether the user is logged in the links will change of course.) You can decide what it looks like and what other extra features it could have, for example, a forgot password link, or the ability to log in with Brandeis credentials. The password of course cannot be stored in plaintext in your database.
 
