@@ -34,10 +34,9 @@ desc: How does a Robot figure out where it is? Even if there's no map?
 
 <%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!", :small) %>
 
-
-
 :source_begin :bash
 
+# Make sure to install AMCL:  `sudo apt-get install ros-noetic-amcl` 
 # create the simulated environment called stage_4
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 
