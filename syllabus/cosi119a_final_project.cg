@@ -1,23 +1,26 @@
 ---
-title: Final Project Deliverables
+title: Final Projects
 ---
-## Summary
-1. Choosing and preparing a project proposal
+:slide_title Summary
+
+1. Deciding on the project (see :topic_link :project_selection)
 1. Pursuing the project (either alone or with a teammate)
-1. Preparing for the "Robotics Fair" on the final day (see below)
+1. Preparing for the "Autonomous Robotics Final Project Showcase" on the final day (see below)
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
 1. Demoing your project and poster on the final day, December 18 at 10:00am (see below.)
 
-## Final Deliverables
+:slide_title Final Deliverables
 
-* All deliverables: Due December 16 11:55pm (see below)
-* Robotics Fair: December 18 at 10:00am in the lab (see below)
+* All deliverables due: Fri May 6 at 11:50pm (see below)
+* Autonomous Robotics Final Project Showcase: May 12 2022 at 10:00am in the lab (see below)
 
-### What to submit to Latte (as a team)
+:slide_title What to submit
 
-* The pdf of your poster. Color PDF 27x36 inches landscape
-* Link to your final report as it appears in the Lab Notebook
-* Link to the code you wrote in a clean GitHub repo, including a Readme
+* Link  to yuour a clean GitHub repo, in the campusrover github organization
+* The repo should contain:
+    1. A readme with build and run instructions and a link to your final report in the Lab Notebook
+    1. Your application, as a legit ROS package
+    1. The pdf of your poster. Color PDF 27x36 inches landscape
 * Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was
 
 ### Grading
@@ -32,9 +35,8 @@ title: Final Project Deliverables
 
 * Report should be around 5, max 10 pages. 
 * We pay attention to appearance, quality of writing, "fit and finish". 
-* This is a piece of professional writing, a project report, and not like a scholarly paper.
 * You will add it to the appropriate section of the Lab Notebook.
-* Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/reports)
+* Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/gen4-reports)
 
 ### General outline of report
 1. Introduction
@@ -50,7 +52,7 @@ title: Final Project Deliverables
     1. problems that were solved, pivots that had to be taken
     1. Your own assessment
 
-## Robotics Fair
+## Autonomous Robotics Final Project Showcase
 
 * You (and your teammate) prepare to demonstrate your work in the best possible light
 * You also prepare a "poster" explaining your project

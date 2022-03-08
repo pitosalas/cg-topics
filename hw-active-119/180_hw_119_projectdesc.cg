@@ -1,0 +1,21 @@
+---
+title: (T) Project Description
+desc: Time to lock it in!
+---
+### Purpose
+The first step for a successful project is to align goals and commit to it. It's time. Challenge yourself but be realistic. Everything always takes more time than you expect, especially in robotics. 
+
+### Do this
+
+I'd like you to have the most minimal version of the project, in a real ROS package, demonstratable in 1 week. Very simplistic. We call that the "Hello Robot" version of your project.
+
+From then on, I'd like you to continue to be able to demonstrate it every week, a little bit better.
+
+Write a one page description of your project. Include:
+    1. What is your final project, what do you want to demo on showcase day?
+    1. What do you hope / expect to learn in doing this?
+    1. How would you like it to be evaluated?
+
+### Submit this
+
+Put your project as a repository in our Campus Rover Github organization and supply the URL here. Make sure that Pito and the TAs are all able to access the url.
