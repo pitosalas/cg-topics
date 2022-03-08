@@ -9,28 +9,44 @@ title: Testing Services
 * It's an extension of testing in general
 * Concurrent software is the most difficult kind to reason about
 
-:slide_title Internal vs. External API
-* We are focused here on *internal" service APIs
-* Since you control that the considerations are different
+:slide_title External APIs
 * External APIS - Web APIs provided to you by another company altogether
-  * You don't control it. The response time may vary dramatically from test to test
-  * You might need tokens or log ins. There may be quotas (maximum number of calls)
-  * The service may not be free
-  * You need to make sure that your code behaves correctly no matter what that service does
-  * You cannot fix bugs in the service, all you can do is respond in a safe way
-  * Here's a good article discussing a classic scenario and a typical conceuptual approach. In this example it is using a well known Ruby tool: [Learn How to Test Third Party Services With Minitest & VCR](https://blog.eduonix.com/web-programming-tutorials/learn-test-third-party-services-minitest-vcr/)
+* You don't control it. The response time may vary dramatically from test to test
+* You might need tokens or log ins. There may be quotas (maximum number of calls)
+* The service may not be free
+* You need to make sure that your code behaves correctly no matter what that service does
+* You cannot fix bugs in the service, all you can do is respond in a safe way
+* However: We are focused here on *internal" service APIs
+* Since you control that the considerations are different
 
 :slide_title How Services are put together
+
 * By definition what makes it a service is that is accessed over HTTP
 * The functionality is invoked via a URL (or queue -- for later) 
 * And it produces results by returning JSON (or XML -- for later)
 * We happen to be using Sinatra for dispatching HTTP routes and returning JSON
-
-:slide_title Unit Testing Services Components
+* Usually it's a good idea to provide a ruby library to invoke the service
 * Keep the app server aspect (e.g. `sinatra`) as thin as possible
 * Create your functionality from POROs (:topic_link :poro_service_objects)
 
-### Mechanics
-* Actually accessing urls etc from your test scripts
-* In Ruby, use `capybara` - [Capybara](https://github.com/teamcapybara/capybara#using-capybara-with-minitest)
+:slide_title Unit Testing Services directly
+* It's no different from any other automated test
+* Either it invokes the actual URL:
 
+:source_begin :ruby-lang
+require "faraday"
+require "json"
+
+url = "http://dummy.restapiexample.com/api/v1/employees"
+data = Faraday.get(url).body
+result = JSON.parse(data, symbolize_names: true)
+assert_equal :success, result[:status]
+:source_end
+
+* Or it uses your own provided API library
+
+:source_begin :ruby-lang
+require_relative xxx
+result = get_employees
+assert_equal :success, result[:status]
+:source_end
