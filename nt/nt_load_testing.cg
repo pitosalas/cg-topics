@@ -1,41 +1,44 @@
 ---
 title: Load Testing nanoTwitter
 ---
-## Load Testing
+:slide_bigtitle Load Testing
+
 * Testing a product to see how it performs under load
 * Obviously to do load testing, your app needs to be running on a server, separately from your own computer.
 * This could be any server, even your neighbor's laptop.
 * For our purposes, it needs to be on one of the cloud services like Digital Ocean or Heroku
-  * We are all using Digital Ocean
-  * if you are adventurous you could deploy it elsewhere too.
-  * But then we won't really be able to give you too much help
-* Cloud deployment implies that there is a well known 'fixed' domain name
-  * (e.g. wild-mushroom-2312.herokuapp.com)
+  1. We are all using Heroku
+  1. if you are adventurous you could deploy it elsewhere too.
+  1. But then we won't really be able to give you too much help
+* Cloud deployment implies that there is a well known 'fixed' domain name (e.g. wild-mushroom-2312.herokuapp.com)
 
-## App functionality
+:slide_title App functionality
+
 * Each team has deployed nanoTwitter and has supplied us with the domain name
-* Each implementation of nanoTwitter follows the same spec (:topic_link :nt_functionality /) includeing the :topic_link :nt_test_interface /
+* Each implementation of nanoTwitter follows the same spec (:topic_link :nt_functionality) includeing the :topic_link :nt_test_interface
 * In particular, implement the url routes exactly as specified.
 * This allows a unified test to be run against all of the apps
-* To allow us to compare apples to apples we have :topic_link :nt_seed_data /
-* Adapt your code to use this :topic_link :nt_seed_data /
+* To allow us to compare apples to apples we have :topic_link :nt_seed_data
+* Adapt your code to use this :topic_link :nt_seed_data
 
-## Load Testing Tools
+:slide_title Load Testing Tools
+
 * There are numerous Load Testing tools. Here are two lists: [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use) and [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
 * We are using [loader.io](http://www.loader.io)
 * You need to understand the different [types of tests](https://support.loader.io/article/16-test-types)
 
-## How to deal with authentication
+:slide_title How to deal with authentication
+
 * The :topic_link :nt_test_interface / specifies an authentication bypass argument
 * All your urls will need to check for the special argument in the url: `?user_id=x`
 * If you see that argument, then you bypass the normal login sequence and instead set x as your currently logged in user by storing it in your session variable.
 
-## Reporting
+:slide_title Reporting
 * Keep a careful lab notebook!
 * Make note of configuration changes that you try
 * Collect data and try to interpret it
 
-## When your app is failing to scale
+:slide_title When your app is failing to scale
 * Think about what happens when your app response time is longer than
 the time between new connections. Requests will start to pile up.
 * If it takes too long for a request to reach the front of the line, it
@@ -47,22 +50,22 @@ sleep state. If your app is asleep, make sure to access it manually
 to wake it up before beginning a test. Waking up may take several
 seconds, which would influence your results.
 
-## Using Loader.io
+:slide_title Using Loader.io
 * Our goal is to see how well each of your servers survive the onslaught of traffic
 * Take a look at [Loader.io](http://support.loader.io/article/16-test-types)
 * Use the "maintain client load" option (at least to start.)
 
-## Test 1: Simple display of home page
+:slide_title Test 1: Simple display of home page
 
 * Visit your root page (which will display a set number of tweets)
 * Use Loader.io to hit that page using maintain client load
 * Collect and record data
 
-## Test 2: Display of a certain user's home page
+:slide_title Test 2: Display of a certain user's home page
 * Visit /user/1 to display User 1's home page
 * Visit /user/100 to display another home page
 * Collect and record data
 
-## Test 3: Do some analysis
+:slide_title Test 3: Do some analysis
 * Form some hypotheses about what is going on with your performance
 * Make a report correlating load to performance

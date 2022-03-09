@@ -1,3 +1,8 @@
+---
+title: "NanoTwitter Stage 4: Authentication"
+desc: Now we turn to the front end
+---
+
 ### Purpose
 
 No web application is complete without authentication of course. Our purpose here is to create your complete authentication and authorization feature set for your NanoTwitter. This will allow you to learn how cookies work in Sinatra and also how to actually add automated testing for Authentication. 

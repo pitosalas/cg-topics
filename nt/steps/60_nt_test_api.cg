@@ -1,24 +1,27 @@
 ---
-title: "NanoTwitter Stage 5: Testing Framework"
+title: "NanoTwitter Stage 6: Testing Framework"
 desc: Implement the tst interfaces
 ---
-:h3 Purpose
+### Purpose
 
 In order to make your NanoTwitter robust and scalable you will implement a test Framework which will assist in running full scale automated tests. We will explore and learn about the idea of having a way to control a server for the purposes of testing and scaling. In doing this you will also learn how to create an API.
 
-:h3 Do this
+### Do this
 
-:h4 Testing Interface
+#### Testing Interface
 
-* Read :topic_link :nt_test_interface. It should include sufficient detail to allow you to implement it. Read it closely and ask any questions that you have. 
-
+* Read [nt Test Interface](http://cosi105b.s3-website-us-west-2.amazonaws.com/content/topics/nt/12_nt_test_interface/)It should include sufficient detail to allow you to implement it. Read it closely and ask any questions that you have. 
 * Implement all the features of the test interface. Make sure as best you can to keep the support for this interface modularized and not mixed in with the regular routes that will be used for the user pages.
 
-:h4 Seed Data
+#### Seed Data
 
-* Read :topic_link :nt_seed_data. Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
+* Read [See Data](http://cosi105b.s3-website-us-west-2.amazonaws.com/content/topics/nt/30_nt_seed_data.md/) Note that you will hit a record limit of 10,000 on Heroku's postgres. You can either decide at this point to pay for a larger Postgres, or defer that by only actually loading a subset of the seed. By the time we start running comparative scale tests you will need to have the whole data set. We will reimburse you for the bigger database up to a total of $50 per team.
 
-:h3 Deliverable
+#### Unit tests
+
+* Write some unit tests for the [nt Test Interface](http://cosi105b.s3-website-us-west-2.amazonaws.com/content/topics/nt/12_nt_test_interface/)
+
+### Deliverable
 
 We will review the code to make sure that you implemented at least what was required. We will look at the cleanliness of the code, whether the readme was updated, whether there are bugs. We will also try the heroku link to see if the functionality is there.
 
