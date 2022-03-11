@@ -1,0 +1,26 @@
+---
+title: (T) Project Major Milestone
+desc: Prepare for a demo and presentation with Pito
+---
+### Purpose
+
+Setting a formal demo and presentation with your customer definitely helps with prirorities and focus. This will be a 30 minutute meeting with me, where we review your project plans, look at your code, and see it run. It is an important milestone.
+
+### Do this
+
+* Review your project plan and make a list of the key behaviors that you must have in order to deliver on your feature
+* Verify each one of them by either implementing them or testing enough to determine that they are possible.
+* Think through how you want to demonstrate this. What is the "script" for the demo. This will tell you clearly what you have to focus on.
+* At this point there is still time for a course correction but be very realistic and hardnosed about it.
+* Run through what you want to show, practice to try to make it somewhat reproducable and reliable.
+* Make a video of a good run through as a backup and a permanent record.
+* Create an informal writeup (1 page, kind of like an email, informal) where you describe what you did, how well it worked, how you divided the work between the teammates, how you need to change your plan based on this experience, and anything else you feel is relevant
+* Clean up your repo to make it presentable.
+
+### Submit this
+
+1. The url of your github repo
+2. The url of your video on youtube
+3. Your 1-oage informal writeup
+
+
