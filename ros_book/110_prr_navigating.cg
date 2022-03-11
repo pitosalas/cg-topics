@@ -1,9 +1,9 @@
 ---
 title: "10 part2: Navigating"
 desc: How does the robot get from here to there, iven a map and AMCL localization
+slides: true
 ---
-
-:h2 Navigation
+:slide_bigtitle Navigation
 
 * Continuing from where we left off
 * We have created a map using slam
@@ -17,7 +17,7 @@ desc: How does the robot get from here to there, iven a map and AMCL localizatio
 
 :slide_title Reconstruct where we left off
 
-<%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!", :small) %>
+:callout :small, "NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!"
 
 :source_begin :bash
 # create the simulated environment called stage_4
@@ -32,12 +32,11 @@ $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 # After the map looks done, save it into a map file for later.
 $ cd ~
 $ rosrun map_server map_saver -f stage4
-
 :source_end
 
 :slide_break
 
-<%= include_image "/content/topics/images/book10stage4.png" %>
+:image :book10stage4
 
 :slide_title Navigating
 
@@ -49,17 +48,17 @@ $ rosrun map_server map_saver -f stage4
 
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filename}
-
 :source_end
 
 :slide_title Navigate 
-<%= include_image "/content/topics/images/book10path.png" %>
+
+:image :book10path
 
 * Give the robot an estimated position
 * Give the robot a navigation goal by clicking the button in rviz
 * Play around and see the robot solve the simple maze navigation including places it can't 'see' from where it is
 
-<%= include_image "/content/topics/images/book10longrange.png" %>
+:image :book10longrange
 
 :slide_title Explanation
 
@@ -86,6 +85,4 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filena
 * Play with the *2d pose estimate* command and observe how the map becomes aligned
 * Also with `/initialpose` topic (which is how, perhaps, we tell AMCL about a fiducial that has been identified.)
 
-<%= include_image "/content/topics/images/book10amcl.png" %>
-
-:topic_include :prr_move_base
+:image :book10amcl

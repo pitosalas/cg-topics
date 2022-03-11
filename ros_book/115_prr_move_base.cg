@@ -13,13 +13,13 @@ desc: Looking inside move base
 :slide_title Going inside the Nav Stack
 
 * Global planner: works out best path assuming map is accurate
-    **global costmap**: How safe or unsafe is each spot on the map
-    * Published on /move_base/global_costmap/costmap
-    * Planner view shows what the planned path to the nav goal is
+    1. **global costmap**: How safe or unsafe is each spot on the map
+    1. Published on /move_base/global_costmap/costmap
+    1. Planner view shows what the planned path to the nav goal is
 * Local Planner: 
-    * Adjusts the global plan based on newly detected obstacles
-    * Map shows square area around robot with further analysis
-    * Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
+    1. Adjusts the global plan based on newly detected obstacles
+    1. Map shows square area around robot with further analysis
+    1 Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
 
 :slide_title Navigating in code
 
