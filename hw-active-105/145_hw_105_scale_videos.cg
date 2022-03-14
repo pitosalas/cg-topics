@@ -1,0 +1,17 @@
+---
+title: (T) Scaling Real World Twitter
+desc: Two fanstastic videos explain how twitter scaled
+---
+### Purpose
+Hearing and reading about what real world products had to do to scale is enormously beneficial. It will teach you the common patterns of scaling and show you how getting to scale is not just flipping a switch or calling the right API. It is a multi-faceted process that touches all parts of your system and often will require fundamental reworking and rearchitecting.
+
+### Do this
+
+1. View [Twitter: From Ruby on Rails to the JVM](http://youtu.be/ohHdZXnsNi8) AND [Real Time Delivery Architecture at Twitter](http://www.infoq.com/presentations/Real-Time-Delivery-Twitter).
+    
+* These two talks give you a preliminary sense of what a real-world scalable architecture looks like. Many of the concepts, optimizations, design choices will apply in many other scenarios. Beware, there is a lot of depth here. It will be easy to understand superficially and hard to really understand. As you read this, please draw a architectural diagram of Twitter as you understand it, with as much detail as you can. No more than 20 diagram boxes though. Add labels and comments as needed. You can draw neatly on paper, or use some tool to make a diagram, whatever you prefer.
+
+* The second talk includes an explanation of the design elements that support the display of a new tweet on following users' timelines. It also explains design elements that allow a new tweet to appear in a search result. They are fundamentally and subtlelly different. The difference is a key part of the scalability of Twitter. You may have to view key parts of the videos more than once to get a handle on it.
+
+### Deliverable 
+Based on your reading create a diagram of the twitter architecture. It is pretty complicated and making the diagram will help you make sure you really understand the significant aspects of the approach described. In addition, create a short writeup where you explain the difference in the way Twitter handles a new tweet that has to appear on the timeline versus a new tweet that has to appear in a search result. Submit both in a 2 page pdf, one with the diagram and one with the explanation. Note that if I cannot read the diagram I will not be able to give credit.

@@ -74,7 +74,6 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filena
     1. When the robot arrives at the goal pose the action terminates.
 * Lets try it!
 
-
 :slide_title AMCL
 
 * Uncheck everything except RobotModel, Map and ParticleCloud in rViz.
