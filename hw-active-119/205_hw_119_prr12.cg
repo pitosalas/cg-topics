@@ -1,0 +1,18 @@
+---
+title: (P) Read PRR Chapter 12 
+desc: Continuing onto navigation
+---
+### Purpose
+
+We talked about computer vision. Now with this homework you will get to try your hand at it. The chapter is about developing a robot called Follow-Bot. It may be your first exposure to computer vision. *I can't stress enough, as I have, that you can't just read this with your feet up. You have to study it.*
+
+### Do This
+
+Read Chapter 12 in Programming Robots with ROS. There are detailed instructions in the chapter. But you can find corrections to that for the current version of ROS here: [Chapter 12 Follow Bot](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/120_prr_follow_bot/). The source files are in rpsexamples so you don't have to type them in. **But you must get them to run!**
+
+### Please submit responses
+1. Which of the programs mentioned in the chapter did you try to run and did you succeed?
+1. Exactly what technically does this line in follower_line_finder.py do? `mask = cv2.inRange(hsv, lower_yellow, upper_yellow)`
+1. If the camera (robot) looses sight of the line, what will happen? How will it find the line again? If you think it would not, how would you modify the code so that it would find the line again?
+1. Please write one or two things that are still confusing to you; if it's all clear, then please write one or two major takeaways.
+1. Did you need help from anyone to understand this chapter and to run the programs? Who helped you and when?

@@ -16,13 +16,13 @@ slides: true
 * Run Gazebo to simulate a robot with a camera
 * Since the TB3 Waffle has a camera, we will use those models, and then run gazebo
 
-<%= code_begin %>
+:source_begin :bash
 # Set model to WAFFLE!!!
 $ export TURTLEBOT3_MODEL="waffle"
 $ export TB3_MODEL="waffle"
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ rostopic list | grep /camera
-<%= code_end %>
+:source_end
 
 * Note all the camera related topics being published
 * The image itself can be found under `/camera/rgb/image_raw`
@@ -94,20 +94,21 @@ average rate: 10.204
 * Which is why my computer is so slow :)
 
 ## Race Course
-:callout :small, "NB", " We diverge from the book a little. Note different roslaunch"/
+
+**NB: We diverge from the book a little. Note different roslaunch**
 
 * Kill everything from before
 * Load a new world into gazebo
 
-<%= code_begin %>
+:source_begin :bash
 $ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
-<%= code_end %>
+:source_end
 
 * You will see in gazebo, a TB3 Waffle on a little racetrack
 * Here's the track, and the view from the camera:
 
-<%= include_image "/content/topics/images/follow_camera.png" %>
-<%= include_image "/content/topics/images/follow_track.png" %>
+:image :follow_camera
+:image :follow_track
 
 ## Introducing OpenCV
 
