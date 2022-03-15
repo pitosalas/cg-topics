@@ -15,7 +15,7 @@ title: Load Testing nanoTwitter
 :slide_title App functionality
 
 * Each team has deployed nanoTwitter and has supplied us with the domain name
-* Each implementation of nanoTwitter follows the same spec (:topic_link :nt_functionality) includeing the :topic_link :nt_test_interface
+* Each implementation of nanoTwitter follows the same spec (:topic_link :nt_functionality) including the :topic_link :nt_test_interface
 * In particular, implement the url routes exactly as specified.
 * This allows a unified test to be run against all of the apps
 * To allow us to compare apples to apples we have :topic_link :nt_seed_data

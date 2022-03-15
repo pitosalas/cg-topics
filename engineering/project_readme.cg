@@ -1,0 +1,28 @@
+---
+title: Project readme.md
+---
+:slide_title Readme
+* An old traditional file name
+* Generally it was what it sounds like
+* What the developer would like you to read
+* Filenames can be README, readme, readme.first, readme.md
+* We use readme.md, which is markdown formatted
+
+:slide_title Contents
+* Minimal required contents. Specific assignment may ask for more
+* Key facts
+    1. Project name, and your names (in the case of a team project)
+    1. Last edit date
+    1. How to build and/or run
+    1. Relevant other urls, e.g. heroku
+* Description and explanations
+    1. Key algorithms
+    1. Key data structures
+    1. Key libraries used
+    1. Key issues
+* Change History for each major change committed
+    1. Title and date
+    1. Brief Description
+    1. Main contributor (student name)
+
+
