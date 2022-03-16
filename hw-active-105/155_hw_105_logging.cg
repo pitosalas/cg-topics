@@ -1,0 +1,21 @@
+---
+title: Logging
+desc: The boring thing that will save your bacon
+---
+### Purpose
+Logging is not glamorous and it is not cool. But it is an absolutely essential part of building a system that will scale big time. It is fundamentally different from putting a lot of print statements in your code. 
+
+### Do this
+
+* Read: [How to save hours of debugging with logs](https://medium.freecodecamp.org/how-to-save-hours-of-debugging-with-logs-6989cc533370)
+* Read: [Log Everything All The Time](http://highscalability.com/log-everything-all-time)
+* Implement a few logging statements in your actual nanotwitter (each student on the team does their own)
+
+### Please submit this
+
+Please think about and answer these questions:
+
+1. In what ways is actual logging (using any of the tools around, for example [Papertrail](https://www.papertrail.com)) better than putting simple print statements in your code? Or is it no different?
+
+1. Show the lines of code you added to nanoTwitter to do some logging (each student on the team should do their own.)
+
