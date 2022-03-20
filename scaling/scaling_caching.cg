@@ -1,0 +1,69 @@
+---
+title: Scaling by Caching
+---
+:slide_bigtitle Scalability Pattern: General Caching
+
+:slide_title What is caching?
+
+* Save the result of a request with a given set of parameters.
+* In a future request with the same parameter (maybe) return the same result
+* System level caching. Storage:
+  1. In 'local' memory
+  1. In 'remote' memory
+  1. In database
+  1. In Cloud
+
+:slide_title Review of storage system architectural hierarchy
+* Processor
+  1. Cores
+  1. Caches
+  1. On board memory
+* Offboard Memory
+  1. Very different speeds depending on cost
+  1. On a special very fast connection (`bus`)
+* External local storage
+  1. USB connected SSD
+* Ethernet Connected storage
+  1. On local LAN
+* Ethernet connected storage
+  1. On separate network (internet/cloud)
+
+:slide_title Cost of operations
+
+* Awareness of order of magnitude speed of operations:
+* Access registers inside CPU
+* Access CPU caches
+* Access standard RAM
+* Access local disk
+  1. Access files
+  1. Access local database
+* Access over network
+  1. To a nearby server
+  1. To a nearby database server
+* Access over the internet
+  1. To a remote server
+  1. To a remote database server
+  1. To a remote Web Service
+
+:slide_title Memoization:
+* caching applied to an individual method
+* A basic programming technique
+* Simple
+
+:slide_title Name-value databases
+* Very fast searches and lookups
+* Distributed searches and distributed databases
+* Robust across system and application failures
+
+:slide_title Database Caching
+* To a certaine extent, it's what databases do
+* Caching both at the server (postgres itself)
+* And at the client (the postgres and activerecord subsystems)
+* Yet a lot more can be done
+
+:slide_title HTML page caching
+* Done at the web server
+* Don't regenerate the page if it's requested again
+* As long as you know it hasn't changed
+* Page fragment caching, including "russian doll caching"
+* A key feature of good frameworks

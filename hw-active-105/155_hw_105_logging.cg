@@ -1,8 +1,9 @@
 ---
-title: Logging
+title: (I) Logging
 desc: The boring thing that will save your bacon
 ---
 ### Purpose
+
 Logging is not glamorous and it is not cool. But it is an absolutely essential part of building a system that will scale big time. It is fundamentally different from putting a lot of print statements in your code. 
 
 ### Do this
