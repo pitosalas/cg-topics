@@ -34,8 +34,7 @@ There's a user that we use as part of many of the tests. We refer to the user as
   * Recreate TestUser
   * Imports data from standard seed data, see: :topic_link :nt_seed_data /
     * ?user_count=n means to import n users from the seed data...
-    * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users.
-    * Also import the follows associated with the users
+    * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users. But just go one deep.
   * Example: `/test/reset?user_count=10` means to import 10 users from the seed data plus their tweets and follows. 
   * Returns 200 or 400
 * `GET /test/tweet?tweet_user=x&tweet_count=y`
