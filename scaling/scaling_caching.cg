@@ -62,6 +62,7 @@ title: Scaling by Caching
 * Yet a lot more can be done
 
 :slide_title HTML page caching
+
 * Done at the web server
 * Don't regenerate the page if it's requested again
 * As long as you know it hasn't changed
