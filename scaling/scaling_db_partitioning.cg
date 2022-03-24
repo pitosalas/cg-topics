@@ -1,0 +1,75 @@
+---
+title: Scaling by Database Partitioning
+---
+
+:slide_bigtitle Scalability Pattern: Database Partitioning
+* Advanced and central technique to deal with database scaling
+* It can be performance (how long does an operation take)
+* Or throughput (how many operations can be done per second)
+* Or both
+
+:slide_title Conflicting definitions - Partitioning and Sharding
+* When you divide a big database into several smaller ones
+* Partitioning: Horizontal and Vertical
+* Sharding; Horizontal Partitioning
+
+:slide_title What's the problem?
+* When the database is the bottleneck
+* Add a second database server
+* What to do with the data?
+
+:slide_title Some options
+* Replication: Put a complete copy of the data on the second db server
+* Pay attention to read vs. write
+* What to do about data consistency?
+* Parition
+
+:slide_title Scenario
+* User Database
+  1. Happens to often be a monster
+  1. Lots of records
+  1. Each record with lots of information
+  1. Accessed a lot
+* Schema
+  1. User: (id, name, email, biography, hobbies, college, last_login, encrypted_pw, profile_photo_jpg, ...)
+
+:slide_title Vertical partition
+* Often associated with an SOA
+* Divide the User table into three different database servers:
+  1. User: (id, name, biography, email)
+  1. Autentication: (id, last_login, encrypted_pw)
+  1. Photos: (id, profile_photo_jpg)
+* How it changes your application
+* Pretty basic rearchitecture into separate services
+
+:slide_title Sharding (Horizontal partition)
+* "buckets" of users (== shards)
+* How? Create multiple database servers with
+  1. the same schema
+  1. different subset or clump of records
+* Need a way to direct requests to the right "shard"
+  1. inspect something about the record
+  1. determine what shard to look in
+
+:slide_title Three common algorithms to decide what bucket gets a record
+* Range Based: Range of some scalar value (record id, first letter of name, etc.)
+* List Based: Take some other property (e.g. zipcode, department)
+* Hash Based: Compute a hash on some value
+* How it changes your application
+  1. Whenever you either read, write, or search
+  1. Require to include enough information to pick the right shard
+
+:slide_title Pros and Cons
+* Joins become a problem
+  1. What was once one db is now spread over more than one db
+  1. Can lead to denormalization
+* Data Integrity
+  1. Foreign keys might now point to another database
+  1. Databases can get out of sync
+
+:callout :small, "NB", "Both kinds of sharding are advanced techniques and you should only use them when you have quantitative reasons to believe they will improve a measured performance issue."
+
+:slide_title NB!
+
+
+:callout :small, "Teams", "Work out a plan for sharding your databases. What would you shard, why and how?"

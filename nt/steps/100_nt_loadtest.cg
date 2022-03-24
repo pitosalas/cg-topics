@@ -9,13 +9,16 @@ We are now crossing into scalability testing. You should have the majority of yo
 ### Do this
 
 * Now that nT is up on heroku, try having all three team members log into it at the same time and do some tweeting. Make sure it works, that the right tweets are displayed to followers. Fix any bugs you find along the way.
-* Review :topic_link :nt_load_testing for useful background on how to proceed.
+* Review [NanoTwitter Load Testing](http://cosi105b.s3-website-us-west-2.amazonaws.com/content/topics/nt/nt_load_testing/) for useful background on how to proceed.
 * Use loader.io to generate some artificial loads. Configure Loader.io and your app so the load testing can work. And start playing around with different loads. Familiarlize yourself with Loader.io, it's options and what the functionality actually means.
 * With load testing it is typical to discover actual bugs in the code. When you find a bug, try hard to add one or more tests to your test suite that would have exposed the bug ahead of time. For example, if load testing reveals that adding a user with a duplicate name causes an exception, fix the bug, but then also add a new unit test that proves that the bug is fixed.
 
 ### Deliverable
 
-We will review the code to make sure that you implemented at least what was required. We will look at the cleanliness of the code, whether the readme was updated, whether there are bugs. We will also try the heroku link to see if the functionality is there.
+1. Provide Your github repo which we will look at and your heroku url to demonstrate that you've gotten it all up into the cloud
 
-1. Your github repo which we will look at
-1. Your heroku url to demonstrate that you've gotten it all up into the cloud
+|____|
+
+3. Please write a short report about what you tried with the loader.io test. Did you get it to work? Did you find a bug? How did the experience feel? Include some screenshots from loader.io that are particulary interesting.
+
+|files|

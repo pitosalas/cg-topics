@@ -1,0 +1,27 @@
+---
+title: (I) Caching
+desc: Caching and redis
+---
+### Purpose of this work
+
+In preparation for starting to think about how to apply caching throughout your nanoTwitter, in this work you will be reading and thinking about some of the classic issues and patterns involved. While there are other system wide caches out there, we will be using [Redis](http://redis.io). The good news is that they are all fundamentally pretty similar.
+
+### Do This
+
+1. Start by reading and trying to understand this blog post: [Introduction to Caching and Redis](https://www.codementor.io/brainyfarm/introduction-to-caching-and-redis-h6o16p4qx)
+
+1. Next look at this [Redis Tutorial](https://try.redis.io). You have to follow the tutorial all the way through.
+
+1. You can get a free Redis server on Heroku. It's called [Redis to Go](https://elements.heroku.com/addons/redistogo).  On your Heroku control panel add the "redis-to-go" add-on in the free tier. This will give you (among many other things) a public URL to a redis instance that you can use!
+
+1. Using your free Redis service, write a simple program using the [redis gem](https://github.com/redis/redis-rb). It can do anything as long as it opens the database and sets and then reads simple variables. For example you could generate variables called "square-of-n" whose values are "n^2". That's just one idea, there are other possibilities.
+
+1. Earn additional points by going beyond the minimum. Here are some ideas:
+a. Use more than just the simplest `redis` data types, for example stacks, sets and so on, to do something meaningful.
+b. Propose and incorporate some use of Redis into your team's NanoTwitter.
+
+### Submit this
+a. You can submit just the ruby file(s). Make sure the code is clean and professional and appropriately commented.
+b. In the case of changes to your nanoTwitter, submit the file(s) where you added use of twitter. Make sure again that you explain your use of Redis. You don't need to prove that performance or scale would be improved.
+
+|files|
