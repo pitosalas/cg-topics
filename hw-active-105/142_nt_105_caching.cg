@@ -12,7 +12,7 @@ Start by reading and trying to understand this blog post: [Introduction to Cachi
 
 Next look at this (Redis Tutorial)[https://try.redis.io]. You have to follow the tutorial all the way through.
 
-You can get a free Redis server on Heroku. But if you want to test your program on your own computer you will need access to a Redis server (or run your own.) I think the easiest is to get a free "developer cloud" account from: [Redis.com](https://developer.redis.com/create/rediscloud/). Once you have the free account you will get a url for your personal redis database in the cloud. 
+You can get a free Redis server on Heroku. On your Heroku control panel add the "redis-to-go" add-on in the free tier. This will give you (among many other things) a public URL to a redis instance that you can use!
 
 
 ### Submit this
