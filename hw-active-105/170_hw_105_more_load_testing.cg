@@ -1,0 +1,23 @@
+---
+title: (T) Continued Load Testing
+desc: Now start following the scalability test plans
+---
+### Purpose
+
+Continuing to stress your NanoTwitter, we now start using your nt Test Interface for real and begin getting a feel for how well things are working. This should be fun and exciting to see your work coming to fruition!
+
+### Do this
+
+* Review this again: :topic_link :nt_load_testing. For this assignment you will need to begin the process of load testing according to the link above. Here are the required steps:
+* Make sure you have implemented `GET /test/reset?user_count=u` from :topic_link :nt_test_interface
+* Run it to load 1000 users, their tweets and follows
+* If you haven't yet, get a free account on Loader.io, and configure your nTwitter for loader.io
+* Load test your simple home page `GET /user_id=123` (using a real user_id) with loads of 10, 100 and 250, 1000, and 2000 concurrent users
+
+### Please submit this
+
+Write up a short report with summary of the test results including at least one graph:
+
+
+
+
