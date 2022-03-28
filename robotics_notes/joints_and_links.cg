@@ -3,10 +3,9 @@ title: Joints and Links
 desc: "How the robot is able to manipulate the world around it"
 slides: true
 ---
-:slide_title URDF
+:slide_title What is URDF?
 
-:image :jointslinks
-
+* Uniform Robot Definition Format
 * Defines a collection of links held together by joints
 * Joints
     1. Are not "visible" - all they do is to show how two links move relative to each other
@@ -14,6 +13,8 @@ slides: true
 * Links
     1. Are "visible"
     1. Can have many other properties
+
+:image :jointslinks
 
 :slide_title URDF Example 
 
@@ -32,18 +33,18 @@ slides: true
 
 :image :urdf_launch
 
-:h4 URDF Roles
+:slide_title URDF Roles
 
 * Describes geometry of a robot
 * Names various links
 * There are others
 
-:h4 robot_state_publisher
+:slide_title robot_state_publisher
 
 * Looks at the urdf and publishes all the tfs which are statically tied to the base_link
 * Using urdf, publishes `static_tf`
 
-:h4 joint_state_publisher
+:slide_title joint_state_publisher
 
 * Looks at dynamic links (those that can move) and updates the tf as they move
 * What would cause them to move?
