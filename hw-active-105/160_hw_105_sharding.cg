@@ -1,0 +1,23 @@
+---
+title: (I) Database partitioning
+desc: Vertical, Horizontal and more!
+---
+### Purpose
+
+Database Partitioning is a fundamental approach to dealing with extremely large databases. Like all techniques to improve scale, you apply these techniques only once your measurements point the finger at your databases as the bottleneck. The articles below provide great explanations of the topic, from different angles to fit your own learning style.
+
+### Do This
+
+I have found some fantastic articles and videos to quickly immerse you in scaling your database. The articles and videos are really dense with ideas and knowledge.
+
+1. Watch this video: [Basics of Database Sharding](https://youtu.be/hdxdhCpgYo8). The word 'sharding' is sometimes used to refer only to 'vertical' partitioning. But in this video, it is used to mean both 'vertical' and 'horizontal' partitionig. 
+1. Read this article: [5 Early Lessons from Rapid High Availability Scaling](http://mikepackdev.com/blog_posts/40-5-early-lessons-from-rapid-high-availability-scaling-with-rails). Don't be concerned that Rails is mentioned, the concepts and principles are fundamental. 
+1. Read these ,ore detailed views on sharting in this article: [Sharding Your Database](http://www.craigkerstiens.com/2012/11/30/sharding-your-database/)
+1. Finally learn about how to [Diagnosing Common Database Problems](https://www.infoq.com/articles/Diagnosing-Common-Java-Database-Performance-Hotspots)
+
+### Please Submit
+Please consider the anwers to these warmup questions:
+
+* What is meant by "denormalization" and what does it have to do with scalability?
+* In your measurements you notice database accesses are slow. Not that there are too many but that certain ones are slow. What would be the first, second, third and forth thing you would do to address this problem?
+* Lets say your customer database has gotten extremely large. You have 1 billion user, growing by 20,000 every day. Your database is getting slow. Would you use horizontal or vertical partitioning? What would be a way to decide what partition (Px) customer X is stored?

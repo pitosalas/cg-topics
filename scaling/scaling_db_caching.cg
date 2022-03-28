@@ -1,0 +1,48 @@
+---
+title: Scaling by Database Caching
+---
+:slide_bigtitle Scalability Pattern: Database Caching
+* Using caching (e.g. redis) to reduce db access
+
+:slide_title Example: Social Graph
+* Schema (like all of you have)
+  1. User(id, name)
+  1. Follow(id, follower_id, following_id)
+  1. Content(id, author_id)
+* Nicely normalized
+  1. First, Second and Third Normal form
+  1. Origins of the relational database
+* Queries like:
+  1. How many people are following user X?
+  1. Who is following user Y?
+  1. What are the most recent "n" posts (i.e. content) for user "u"?
+  1. What are the most recent "n" posts for users that "u" is following?
+* But to display each and every user, a join is needed!
+
+:slide_title Measurement
+* Ask database system to analyze SQL queries that are slow
+  1. Discover that the social graph access was very slow
+* Discussion
+  1. Have you started using redis yet in your projects?
+  1. What do your redis keys look like?
+  1. How do you compute your cache key?
+
+:slide_title DB: Caching
+* Use Network scale caching (Redis) to store and share across servers
+  1. `count:followers:u = number`
+  1. `count:following:u = number`
+* How to maintain this number?
+* How important is it that it is correct?
+* What might make it incorrect?
+
+:slide_title Add APIs
+
+* get_follower_count(user), get_following_count(user), incr_follower_count(user), decr_follower_count(user), incr_following_count(user), decr_following_count(user)
+* What class has those methods?
+* Where are they invoked?
+* Result of queries?
+* Result of search?
+* Creating the cache key
+* What do you store in the cache?
+
+:callout :small, "Teams", " Discuss and design how you would incorporate this idea in your specific nanoTwitter"

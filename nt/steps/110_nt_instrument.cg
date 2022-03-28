@@ -1,0 +1,20 @@
+---
+title: "NanoTwitter Stage 8: Instrumentation and Load Testing"
+---
+### Purpose
+Learn to get more methodical about testing. It becomes a little like the "scientific method". You measure, form hypotheses, and try to prove them right or wrong. Don't get too carried away by this analogy. It is helpful to remind you to try and change just one variable at a time so you have a chance to know, and then writing down the results so you can rememnber!
+
+### Do This
+You have looked before at this, but you will want to refer to these instructions again: :topic_link :nt_load_testing
+
+1. Instrument your nanoTwitter to begin collecting internal performance and timing data. While there are lots of ways to do this. You are welcome to google for techniques. One basic one is to capture the time before and after an operation, and report the difference as a log entry. Use PaperTrail as a way to handle the large amoung of logging. It is the easiest available directly through Heroku. and get to know the options.
+1. Get more scientific. Instead of randomly trying different things, design some specific experiments and start collecting repeatable data so you can see whether a change improves one thing but might harm something else. Keep up your notes in a text file inside your github repo so it becomes part of your work product. You will be submitting these notes.
+1. See if switching web servers for your application helps (e.g. puma, webbrick, etc). See whether configuration parameters of that web server makes a difference. 
+1. See if updating your schema to put indeces and other enhancements has an effect on performance and scaling.
+
+### Please submit this
+
+1. Provide Your github repo which we will look at and your heroku url to demonstrate that you've gotten it all up into the cloud so we can play with it.
+1. Write a short report based on the notes you took as you were conducting various experiments. What you noticed, what you thought might help, could you determine whether it helped.
+
+
