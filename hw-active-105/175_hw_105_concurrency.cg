@@ -1,0 +1,21 @@
+---
+title: (I) Concurrency
+desc: Introduction to concepts in Concurrency
+---
+### Purpose
+
+Concurrency is a fundamental fundamentall concept in Computer Science and Software Engineering. It is all about how to have computers do more than one thing at a time. Or seem to be doing more than one thing at a time. Or maybe they are, or are they really? And when it comes to scale, it's all about concurrency. Up to now, concurrency happened simply because you were using a multi threaded or processed web service, or other services like Postgres and Redis. But sometimes you need implement your own threads to allow even more concurrency. This homework will get you thinking about this more deeply!
+
+### Do this
+
+Carefully read this article: [Ruby Concurrency and Parllelism: A Practical Tutorial](http://www.toptal.com/ruby/ruby-concurrency-and-parallelism-a-practical-primer). It contains lots of code too which I need you to try running. It's a little complicated. 
+
+### Submit this
+
+Please consider these questions and write up responses:
+
+* What code did you try to run and what did you notice?
+* What are the critical differences, or what is the most critical difference between threads and processes?
+* In the article they explain that thread pools are a way around a problems and errors which arise when a program just creates a bunch of new threads to do the work. Can you explain why?
+* The article describes how to threads and processes to achieve concurrency as part of a design, but also introducing Background jobs as an alternative. Can you explain the difference between using threads or processes and using a background job?
+
