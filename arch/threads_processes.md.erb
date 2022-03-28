@@ -1,21 +1,20 @@
 ---
 title: Threads and Processes
 ---
-### Processes and Threads - General
-* Key Operating System facility for concurrency
-* Processes ("forking")
-  * Use more memory (new VM for each process)
-    * for the data + the program + everything
-    * "Copy on write"
-  * If parent dies before children, they can become "zombie" processes
-  * Context switching very expensive
-  * Communication expensive (IPC or file system)
-  * Slower to create and destroy
-  * Less hard to program and debug (not easy!)
-* Threads
-  * Use less memory (Shared memory space)
-  * All threads die when oricess dies
-  * Context switching cheap
-  * Communication cheap (via queues and shared memory)
-  * Fast to create and destroy
-  * Harder to program and debug
+:slide_title Processes ("forking")
+* Use more memory (new VM for each process)
+* for the data + the program + everything
+* "Copy on write"
+* If parent dies before children, they can become "zombie" processes
+* Context switching very expensive
+* Communication expensive (IPC or file system)
+* Slower to create and destroy
+* Less hard to program and debug (not easy!)
+
+:slide_title Threads
+* Use less memory (Shared memory space)
+* All threads die when oricess dies
+* Context switching cheap
+* Communication cheap (via queues and shared memory)
+* Fast to create and destroy
+* Harder to program and debug

@@ -1,0 +1,57 @@
+---
+title: Scaling with Concurrency
+slides: true
+---
+:slide_title Scalability Pattern: Concurrency
+
+* Do more with the available resources
+* Do more things at the same time
+* Resource idle time is your enemy
+  1. CPU
+  1. Network
+  1. Disk
+  1. Database
+
+:slide_title Scenarios when concurrency is an option
+
+* Users can ask for a detailed report about their twitter traffic
+  1. It can be a one shot, or regenerated at midnight
+  1. It can be displayed on the screen or emailed
+  1. Inline is no good because of computational cost and error handling
+* User enters a new value in a spreadsheet
+  1. The cell can update immediately
+  1. The recalculation can be done concurrently (asynchronously)
+* Note: AJAX uses a very common form of concurrency
+* Note: Count the users' own computer as one of the processors!
+
+:slide_title Scaling pattern: concurrency on a single computer
+
+* Difference between syncrhonous and asynchronous
+* Difference between concurrent and parallel
+
+:topic_include :threads_processes
+
+:slide_title Ruby-related issues
+
+* Ruby and Pyton "GIL"
+  1. Global interpretter lock
+  1. Essentially they become single threaded
+  1. Except for asynchrony provded by OS via IO operations
+  1. "It's complicated"
+* Ruby libraries that use processes
+  1. Resque - background processing framework
+  1. Unicordn - http server 
+* Ruby Libraries that use Threads
+  1. Sidekiq - background processing framework
+  1. Puma - http server
+  1. Thin - http server
+
+:slide_title Thread-safe
+
+* A property of software, or a routine or a class
+* Does it behave 'well' when running in a thread (sharing memory)
+* Deadlock ("deadly embrace")
+  1. Example with two people and two tools
+* Race Condition
+  1. When the results vary due to
+  1. How to avoid: using semaphors, queues, and other techniques

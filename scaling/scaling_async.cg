@@ -1,0 +1,43 @@
+---
+title: Scaling with Asynchronous processing
+---
+
+:slide_title Scaling Pattern: Asycnhronous processing
+* Real examples
+  1.  Account registraton confirmation emails (actually all emails)
+  1. Daily (periodic or episodic) notification emails
+  1. Automatic backups or archiving
+  1. Image Resizing
+  1. Spam checking
+* Synchronous: Caller **waits** for response
+* Asynchronous: Request returns immediately, but result comes later
+* Web server mainly responds to http requests!
+* Background processing happens even if no requests!
+
+:slide_title How do processes work in a modern Operating System?
+
+* Scheduler part of the OS
+* Processes can be fairly heavy weight
+* Let's estimate how many background processs you would need
+* How would you handle processes that:
+  1. Were taking too long?
+  1. Had crashed?
+  1. Needed to be restarted?
+  1. Or what if the server crashes as a whole?
+  1. It's a mess. Need abstractions!
+
+:slide_title Case 1: Schedule based
+
+* "CRON jobs": Most elementary. Require "privileges"
+* Alternative: Native "scheduler" application (e.g. Heroku Simple Job Scheduler)
+
+:slide_title Case 2: Request based
+
+* Request handled 'asynchronously' of course
+* By local server, in a separate process
+* By a remote server
+* Request queueing
+  1. What happens when requests come faster than we can handle them
+  1. How do we add more performance in handling request
+* SOA API
+  1. Make sure the API returns right away and requestor has a way to check status
