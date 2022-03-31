@@ -55,3 +55,8 @@ slides: true
 * Race Condition
   1. When the results vary due to
   1. How to avoid: using semaphors, queues, and other techniques
+
+:slide_title
+
+* Let's take a look at [Multithreaded Ruby](https://betterprogramming.pub/multithreaded-ruby-synchronization-race-conditions-and-deadlocks-f1f1a7cddcea)
+* Let's take a look at [Introduction to Concurrency Models in RUby](https://engineering.universe.com/introduction-to-concurrency-models-with-ruby-part-i-550d0dbb970)
