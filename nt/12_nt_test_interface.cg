@@ -18,68 +18,99 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * password: "password"
 
 :slide_title Special url argument
+
 * To facilitate testing, any URL can have `?user_id=x` appended which will bypass the login and automatically make this NT session logged in as user x. For example:
 * `GET /?user_id=x` would show the homepage as if user_id x was logged in.
 
 :slide_title Test Data
+
 * Url to reset and load the standard seed is: /test/reset/standard?tweets=n&users=u&follows=u
 * Dataset is the standard :topic_link :nt_seed_data /
 * If necessary, you may modify the creation dates of tweets, but all the other data should be intact
 * Our tests will require the complete set of records
 
-:slide_title Test Interface
+:slide_bigtitle Test Interface
 
-* `GET /test/reset?user_count=u`
-  * Deletes all users, tweets and follows
-  * Recreate TestUser
-  * Imports data from standard seed data, see: :topic_link :nt_seed_data /
-    * ?user_count=n means to import n users from the seed data...
-    * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users. But just go one deep.
-  * Example: `/test/reset?user_count=10` means to import 10 users from the seed data plus their tweets and follows. 
-  * Returns 200 or 400
-* `GET /test/tweet?tweet_user=x&tweet_count=y`
-  * {x} is the user id of some user
-  * n is how many randomly generated tweets are submitted on that users behalf
-  * Example `GET ../test?tweet_user=123&tweet_count=22` will generate 22 random tweets for user 123
-  * Returns 200 or 400
-* `GET /test/status`
-  * One page "report":
-    * How many users, follows, and tweets are there
-    * What is the TestUser's id
-  * Returns 200 or 400
-  * Example: `/test/status`
+:slide_title `GET /test/reset?user_count=u`
 
-* `GET /test/corrupted?user_count=u`
-  * A corruption checking algorithm is provided as a set of complementary methods
-  * These are not the model 
-  * On the User model: user.corrupted?()
-    * For this user,
-      * Check that each other user that it follows, has it as a followed
-      * Check that each tweet that the user issued is not corrupted
-  * On the Tweet model: tweet.corrupted?()
-    * For this Tweet
-      * Check that it has valid values in all the required fields
-  * The url will call the corrupted? method on `n` randomly chosen users
-  * Returns 200 or 400
+* Deletes all users, tweets and follows
+* Recreate TestUser
+* Imports data from standard seed data, see: :topic_link :nt_seed_data /
+  * ?user_count=n means to import n users from the seed data...
+  * Including all the related follows. The user mentioned in the follow also gets imported which means you end up with more than n users. But just go one deep.
+* Example: `/test/reset?user_count=10` means to import 10 users from the seed data plus their tweets and follows. 
+* Returns 200 or 400
 
-* `GET /test/stress?n=n&star=u1&fan=u2`
-  * Checks for valid processing of the app by stressing it
-  * The purpose to detect that the nt back end is faithfully storing and retrieving the data
-  * This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
-  * star and fan are existing users user_ids
-  * In one request, does the following process
-    * Make sure that user `fan` is following user `star` and if not, make it so
-    * Have user `star` create `n` tweets using faker.
-      * Don't just use Tweet.create; use the code that is actually executed when a user submits a tweet
-      * This will invoke whatever optimizations, follower handling which may include redis, queues, or other optimizations.
-    * Store the tweet ids and the content for later. 
-    * You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
-  * Once complete
-    * query the backend for those same ids
-      * Again don't just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
-      * Similarly, it will use whatever optimizations, redis, queues and so on.
-    * query the timeline of `fan` to make sure that the new tweets are listed
-      * Again, use the code that is used by the front end not just the low level code.
-  * Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
-  * Returns 200 or 400
+:slide_title `GET /test/tweet?tweet_user=x&tweet_count=y`
+
+* {x} is the user id of some user
+* n is how many randomly generated tweets are submitted on that users behalf
+* Example `GET ../test?tweet_user=123&tweet_count=22` will generate 22 random tweets for user 123
+* Returns 200 or 400
+
+:slide_title `GET /test/status`
+
+* One page "report":
+  * How many users, follows, and tweets are there
+  * What is the TestUser's id
+* Returns 200 or 400
+* Example: `/test/status`
+
+:slide_title `GET /test/validate?n=n&star=u1&fan=u2`
+
+* Checks for valid processing of the app
+* The purpose to detect that the nt back end is faithfully storing and retrieving the data
+* This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
+* star and fan are existing users user_ids
+* In one request, does the following process
+  1. Make sure that user `fan` is following user `star` and if not, make it so
+  1. Have user `star` create `n` tweets using faker.
+    1. Don't just use Tweet.create; use the code that is actually executed when a user submits a tweet
+    1. This will invoke whatever optimizations, follower handling which may include redis, queues, or other optimizations.
+  1. Store the tweet ids and the content for later. 
+  1. You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
+* Once complete query the backend for those same ids
+  1. Again don't just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
+  1. Similarly, it will use whatever optimizations, redis, queues and so on.
+* Query the timeline of `fan` to make sure that the new tweets are listed
+    1. Again, use the code that is used by the front end not just the low level code.
+* Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
+* Returns 200 or 400
+
+:slide_title `GET /test/corrupted?user_count=u`
+
+* A corruption checking algorithm is provided as a set of complementary methods
+* The url will call the corrupted? method on `n` randomly chosen users
+* Returns 200 or 400
+
+:slide_title Corruption Checks on User and Tweet
+* On the User model: user.corrupted?()
+* For this user,
+  1. Check that each other user that it follows, has it as a followed
+  1. Check that each tweet that the user issued is not corrupted
+* On the Tweet model: tweet.corrupted?()
+* For this Tweet
+  1. Check that it has valid values in all the required fields
+
+:slide_title `GET /test/stress?n=n&star=u1&fan=u2`
+
+* Checks for valid processing of the app by stressing it
+* The purpose to detect that the nt back end is faithfully storing and retrieving the data
+* This is not necessarily so because a very easy kind of concurrency bug leads to cache mistakes
+* star and fan are existing users user_ids
+* In one request, does the following process
+  1. Make sure that user `fan` is following user `star` and if not, make it so
+  1. Have user `star` create `n` tweets using faker.
+    1. Don't just use Tweet.create; use the code that is actually executed when a user submits a tweet
+    1. This will invoke whatever optimizations, follower handling which may include redis, queues, or other optimizations.
+  1. Store the tweet ids and the content for later. 
+  1. You can simply use two arrays, one of the faker text for each tweet and one of the resultant id of the tweet
+* Once complete
+  1. query the backend for those same ids
+    1. Again don't just use Tweet.find; use the code that is actually executed when displaying a tweet in the ui
+    1. Similarly, it will use whatever optimizations, redis, queues and so on.
+  1. query the timeline of `fan` to make sure that the new tweets are listed
+    1. Again, use the code that is used by the front end not just the low level code.
+* Note: this is not checking HTML it is bypassing that and using the lower level internal methods (you can decide.)
+* Returns 200 or 400
 
