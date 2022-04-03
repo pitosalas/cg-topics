@@ -1,44 +1,61 @@
 ---
-title: Final Projects
+title: Robotics Term Projects
+slides: true
 ---
-:slide_title Summary
+:slide_bigtitle Overall Process
 
 1. Deciding on the project (see :topic_link :project_selection)
 1. Pursuing the project (either alone or with a teammate)
-1. Preparing for the "Autonomous Robotics Final Project Showcase" on the final day (see below)
+1. Preparing for the "Autonomous Robotics Final Project Showcase"
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
-1. Demoing your project and poster on the final day, December 18 at 10:00am (see below.)
+1. Demoing your project and poster on Showcase Day
 
-:slide_title Final Deliverables
+:slide_title Key Dates
 
-* All deliverables due: Fri May 6 at 11:50pm (see below)
+* All deliverables due: Tue May 3 at 11:50pm (see below)
 * Autonomous Robotics Final Project Showcase: May 12 2022 at 10:00am in the lab (see below)
 
 :slide_title What to submit
 
 * Link  to yuour a clean GitHub repo, in the campusrover github organization
-* The repo should contain:
-    1. A readme with build and run instructions and a link to your final report in the Lab Notebook
-    1. Your application, as a legit ROS package
-    1. The pdf of your poster. Color PDF 27x36 inches landscape
+* Each team member contributes one item to the Labnotebook
+* A Project Report in the Labnotebook
+* A poster describing the project to people at the showdcase
 * Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was
 
-### Grading
+:slide_title Autonomous Robotics Final Project Showcase
+
+* You (and your teammates) prepare to demonstrate your work in the best possible light
+* You also prepare a "poster" explaining your project
+* The teaching staff plus at least one outside robotics expert will visit and hear your presentation and ask you questions
+
+
+:slide_title Grading
 
 * The project as a whole is graded. All aspects of the work and deliverables are considered.
 * In the case of team, we grade the work of the team as a whole
 * Each team member however will be assigned a grade reflecting their level of participation and contribution to the group work. 
 * In other words, you might not get the full project grade if you didn't participate fully in the project. 
-* This grade will count for 45% of your final grade.
+* This grade will count for 40% of your final grade.
 
-## Final Project report
+:slide_bigtitle Details
+
+:slide_title Github Repo
+
+* The code should be clean and well structured, and organized as a working ROS package. 
+* It should not have any random left over files so that you would be proud to put the link on your resume
+* It should include the pdf of your poster (Color, 27x36 inches landscape)
+* It should include a readme.md including links to the labnotebook Project Report (check [How to write a quality readme](https://dev.to/coderarchive/writing-a-high-quality-readme-1k3j) for ideas)
+
+:slide_title Final Project report
 
 * Report should be around 5, max 10 pages. 
 * We pay attention to appearance, quality of writing, "fit and finish". 
 * You will add it to the appropriate section of the Lab Notebook.
 * Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/gen4-reports)
 
-### General outline of report
+:slide_title Rough outline of report
+
 1. Introduction
     1. Problem statement, including original objectives
     1. Relevant literature
@@ -52,13 +69,8 @@ title: Final Projects
     1. problems that were solved, pivots that had to be taken
     1. Your own assessment
 
-## Autonomous Robotics Final Project Showcase
 
-* You (and your teammate) prepare to demonstrate your work in the best possible light
-* You also prepare a "poster" explaining your project
-* The teaching staff plus at least one outside robotics expert will visit and hear your presentation and ask you questions
-
-### Presenting and Explaining Your Project
+:slide_title Presenting and Explaining Your Project
 
 * Show case what you've learned and what you built in the best possible light
 * Come up with a cool and interesting demo
@@ -66,7 +78,7 @@ title: Final Projects
 * If you want to share a demo with another team that's fine
 * But the assessment will be individual
 
-### Posters
+:slide_title Posters
 
 * Make a classic "Poster" describing your project
 * Format: pdf size: 27x36 inches (landscape)
@@ -76,4 +88,8 @@ title: Final Projects
 * Team members, dates
 * Make it look pretty! Don't have too many words. Have some diagrams or pictures
 
+:slide_title Contribution to Lab Notebook
 
+* Each student should make one Notebook contributions.
+* Think about a how-to, tutorial, explanation, concept, that you had to figure out yourselves that was difficult to track down and write it up for the next generation of students
+* Here are some examples: [Communicating with Rosserial](https://campus-rover.gitbook.io/lab-notebook/ros-tips/communicate-with-rosserial), [AWS RoboMaker](https://campus-rover.gitbook.io/lab-notebook/miscellaneous/aws-robomaker), [Alexa Voice Integration](https://campus-rover.gitbook.io/lab-notebook/cr-package/voice/voice)

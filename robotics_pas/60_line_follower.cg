@@ -2,59 +2,59 @@
 title: "PA: Line Follower"
 desc: "Robot looks for line on the floor and follows it"
 ---
-:h2 Introduction
+### Purpose
 
-* This assignment will introduce you to the basics of image processing and computer vision in robotics
+* This small but tricky assignment pulls together many of the strands of robotics engineering that we've been covering
+* You will work with basic image processing and computer vision, PID control, and more complex behaviors
 * This will not require any machine learning but feel free to use it yourself
+* You will Write a program to follow a distinct line on the ground using the robots camera
 
-:h3 Purpose
+### Expected preparation
 
-* Write a program to follow a distinct line on the ground using the robots camera
-
-:h3 Expected preparation
-
-* (Re-) read Chapter 12 of PRR (<%= link_to_topic :prr_follow_bot %>)
+* (Re-) read [Chapter 12 of PRR](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/120_prr_follow_bot/)
 * Learn how to use openCV in ROS
 * Learn how to subscribe and use the camera image topics
 * Understand the RGB representation of an image
 
-:h3 What I hope you will learn
+### What I hope you will learn
 
 * Work with and process camera RGB data
 * How to use line detection, image filtering, and contour detection to identify already known features
 
-:h3 References and resources
+### References and resources
 
 * OpenCV <https://docs.opencv.org/master/d6/d00/tutorial_py_root.html>
 * OpenCV to ROS compatible image bridge <http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython>
 * Contouring <https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html>
 * Line recognition <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html>
 
-:h3 Topics and Message Types
+### Topics and Message Types
 
 * cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
 * camera/image/compressed [CompressedImage](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/CompressedImage.html)
 
-:h3 Assignment
+### Do this
 
 * You will provided with a basic gazebo world without any walls, and a single line.
 
 * To run the gazebo world:
-:source_begin :bash
+
+```
 roslaunch prrexamples linemission.launch model:=waffle
-:source_end
+```
 
 * The robot will begin at a spot just before the line.
 * Follow a distinct line on the ground/floor of your simulation/lab at home a set distance
 * It is your task to keep the robot as close to the line as possible for as much of the length of the path as possible
+* Much of this comes out of the book, but make sure you understand it
 
-:h3 Additional Challenges
+### Additional Challenges for additional credit
 
 * Robot starts somewhere where the line is not immediately visible
 * Robot is able to double back along the line allowing it to follow the line infinitely
 * Robot uses Lidar (/scan) to detect an obstacle in the way. Place an object in gazebo of your choice to move around. The more "challenging" choice of obstacle(s) will mean more extra points awarded
 
-:h3 Deliverables
+### Deliverables
 
 * A correctly structured ROS package including
   * Nicely commented python source files
@@ -64,15 +64,12 @@ roslaunch prrexamples linemission.launch model:=waffle
   * in gazebo or your lab at home
   * Best to put the video on youtube and give the link
 
-:h3 Steps
+### Hints
 
 * Subscribe to the compressed image topic
 * Convert the callback message compressed image to a opencv compatible image
 * Apply the image manipulation techniques to identify features of the line
 * Use the feature information to control the robots movement to keep following the line
 * Also it will be very helpful to find a way to debug your algorithms
-
-:h3 Hints
-
-* What information can you use about the location of your detected line to help control the robot?
-* How can you debug your computer vision algorithms in Rviz?
+* Think: What information can you use about the location of your detected line to help control the robot?
+* Think: How can you debug your computer vision algorithms in Rviz?

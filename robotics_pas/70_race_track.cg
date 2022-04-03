@@ -2,7 +2,7 @@
 title: "PA: Race Track"
 desc: "Robot starts on a race track and completes a lap"
 ---
-:h2 Introduction
+:h2 Purpose
 
 * This assignment contains many open-ended problems in perception, planning, and controls.
 * It is a group project based on the groups you are in.
@@ -40,9 +40,11 @@ desc: "Robot starts on a race track and completes a lap"
 * You will provided with racetrack.launch which launches a gazebo world with a race track and a turtlebot3_waffle model.
 * **Make sure you clone [aws-robomaker](https://github.com/aws-robotics/aws-robomaker-racetrack-world.git) into the directory `catkin_ws/src`** (don't forget to `catkin_make`)
 * To run the gazebo world:
+
 :source_begin :python
 roslaunch prrexamples racetrack.launch
 :source_end
+
 * The robot will begin right at the start of the race track.
 * Drive forwards around the track staying in bounds while also avoiding various obstacles using camera and LiDAR.
 * Complete at least a half lap successfully for the base assignment.

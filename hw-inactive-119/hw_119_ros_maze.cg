@@ -3,31 +3,31 @@ title: "Programming Assignment: Robot Maze Runner"
 desc: Programming a more serious ROS  application
 ---
 
-## Assignment
+:h2 Assignment
 
 Write a python script to control a robot running a maze from a starting point to an ending point. For our purposes the ending point is when you stop the script, or pick up the robot. In other words for the moment your robot does not need to detect the end of the maze itself.
 
 You should write and test your code first on the simulator. This command will give you a pretty nice "built-in" maze using Gazebo, but remember that Gazebo doesn't work well in VMs at all. It usually crashes :)
 
-<%= code_begin %>
+:source_begin :bash
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch 
-<%= code_end %>
+:source_end
 
 Remember it's worth trying to work in the simulator first. If your code works well in the simulator you know that your algorithm and logic are right. However, even though it works perfect in the simulator, it might encounter unexpected problems in the real world. The physical robot will behave a lot differently than the simulated one. Take that into account.
 
 The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well.
 
-## The Maze
+:h3 The Maze
 
 Each team can create their own maze as long as it is simuilarly complex as the one in this diagram. **Remember:** the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and max is 3.5 M, which is about  3.5M which is a little over 11 feet. So factoring in the size of the robot, the narrowest passage that we should ask it to navigate is 12 + 12 + 20 = 44cm = 1.5 feet.
 
-<%= callout("Maze!", " There is a maze already set up next to the lab for you to practice on. You can change it if you want, but it doesnt need to be too complex.") %> 
+:callout :small, "Maze!", " There is a maze already set up next to the lab for you to practice on. You can change it if you want, but it doesnt need to be too complex.")
 
 ## Process
 
 This is a pair programming assignment. Students should self select into teams of two students. It's fine to talk to everyone else, as well as google for ideas. Just  as long as the code is written and fully understood by both members of the team. You will submit one solution for each team (see below.) 
 
-## What to submit
+:h3 What to submit
 The submission to Latte:
 
 1. Both students submit the same:
@@ -42,13 +42,14 @@ The submission to Latte:
 * Conversely the robot might be in the middle where all walls are far and as far from it, in which case you have to just drive until you get to the wall and then start following it
 * Feel free to google for wall following robot and be inspired by what you read. Just don't copy the code, please.
 * Here are some solutions that might be helpful, but please do not limit to these.
-<%= include_image "/content/topics/images/pa2samplesolutions.png" %>
+
+:image "pa2samplesolutions"
 
 ### Right hand Rule
 
 [https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) - For this assignment, you can choose either one from Right-Hand Rule (which means you will turn to the rightmost route whenever possible) and Left-hand Rule (which means you will turn left whenever possible). Here are some examples for what you should expect when using Right-hand Rule:
 
-<%= include_image "/content/topics/images/pa2righthandrule.png" %>
+:image "pa2righthandrule"
 
 ### Working with LaserScan data
 
@@ -66,4 +67,4 @@ Here are some great links. You will be amazed at how well this works.
 * [ROS PID Package ](http://wiki.ros.org/pid)
 * [PID Control from Lets Make RObots](https://www.robotshop.com/letsmakerobots/pid-control)
 
-<%= include_image "/content/topics/images/pa2pidgraph.png" %>
+:image "pa2pidgraph.png"
