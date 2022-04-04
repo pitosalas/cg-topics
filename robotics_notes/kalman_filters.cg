@@ -137,16 +137,6 @@ Why do we care? Sensors are everywhere in robotics. Sensors are known to be inac
 * There are complex equations which use the covariance matrix with the estimates to compute a Kalman Gain
 * But I've seen examples that skip that and use a constant
 
-:slide_title Scenario I am coding
-
-* Detect the bearing (direction) and distance of the nearest obstacle
-* Create a smooth estimation based on the noisy lidar data and noisy cmd_vel inputs
-* Illustrate a few software engineering techniques
-    * Making your code visualize what is going on
-    * Modularity and reducing dependencies
-    * Test data
-    * Test harness
-
 :slide_title How to understand
 
 * Most examples you find will use linear algebra (not an expert) and store things in matrices
