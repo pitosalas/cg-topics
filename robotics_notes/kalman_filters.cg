@@ -1,16 +1,7 @@
 ---
 title: Kalman Filters
 ---
-:slide_title Kalman Filters
-
-* A really important, low-level algorithm
-* I admit I've known about it for years but never really understood it
-* And unless you are writing lower level support for new devices you probably won't use it
-* But I really wanted to understand it so I spent many hours this week digging into it
-* This is my first time trying to teach it so bear with me!
-* Disclaimer - IANOM - I am not a mathematician
-
-:slide_title What it does
+:slide_title What is a Kalman Filter?
 
 * Given uncertain sensor data 
 * And uncertain state information 
@@ -49,14 +40,23 @@ title: Kalman Filters
 
 :image :gpsrobot
 
+:slide_title Why care?
+
+Why do we care? Sensors are everywhere in robotics. Sensors are known to be inaccurate. Kalman filters are a family of algorithms that give us more accurate estimates by combining readings with known error rates
+
 :slide_title System
 
 * Kalman filter looks at a "system" which has a "state"
 * The system may change over time
 * Based on it's own internal operation
 * Based on "control" input from the outside
+* Based on "sensor" readings
 * We gain information about the "system"
 * By sensing data which allow us to infer system changes
+
+:slide_title Kalman Filter
+
+:image :500, :kalmanmodel
 
 :slide_title State model
 
@@ -100,23 +100,28 @@ title: Kalman Filters
 * You know that the weight won't change
 * What do you use? Average? Weighted Average? Or?
 * What if you have thousands of measurements (10 per second, like a bathroom scale)
+* Models:
+  1. State: unchanging (objects weight is  not expected to change)
+  1. Control Inputs: (is an outside agent acting to change) None
+  1. Measurement Model: (how accurate is the sensor)
+  1. Update: What is the weight estimate now?
+
 
 :slide_title 1D Scenario: Train
 
 * A train is on a track and moving towards the terminator (which is a block)
 * Train has a lidar sensing the wall
-* The is reading the speed based on the rotation of the wheels
+* We have a reading the speed based on the rotation of the wheels
 * How does the train determine where it is?
+* Models:
+  1. State: Location and Velocity. Location changes a known amount each T
+  1. Control Inputs: (is the driver stepping on the gas): No expected change
+  1. Measurement model: (How accurate is the Lidar supposed to be)
+  1. Update: What will be the new location and velocity estimate?
 
 :slide_title Kalman Train
 
 :image :600, :kalmantrain
-
-:slide_title 1D Scenario: Voltage reading
-
-* Make a reading per second on a voltage source that is meant to be constant
-* Display a graph of your best guess of the 'true' reading 
-* Noting that your measuring instrument also has a known error profile
 
 :slide_title Abstraction of the Kalman Filter Equations
 
@@ -142,7 +147,7 @@ title: Kalman Filters
     * Test data
     * Test harness
 
-:slide_break How to understand
+:slide_title How to understand
 
 * Most examples you find will use linear algebra (not an expert) and store things in matrices
 * If the `state` is location and velocity in the x direction (a falling ball) that is stored in a 1x2 matrix
