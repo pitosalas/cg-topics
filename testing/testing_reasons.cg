@@ -32,7 +32,7 @@ slides: true
 * Writing tests should over the lifetime of the code cost less
 * Otherwise it's not worth doing
 
-:discussion_box "How does it reduce costs?"
+:discussion "How does it reduce costs?"
 
 :slide_title Breaking it down: Why Test?
 

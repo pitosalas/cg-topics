@@ -26,7 +26,7 @@ slides: true
 * Styling: color, typography, spacing, positioning, animation, and so on
 * However it can sometimes look like it's adding major new functionality
 
-:discussion_box "CSS experts: are these statements 100% true? Can you find exceptions?"
+:discussion "CSS experts: are these statements 100% true? Can you find exceptions?"
 
 :slide_title Syntax, in general
 

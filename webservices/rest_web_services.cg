@@ -36,7 +36,7 @@ slides: true
 
 :slide_break
 
-:discussion_box "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?"
+:discussion "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?"
 
 :slide_title  Pause to look at the big picture!
 
