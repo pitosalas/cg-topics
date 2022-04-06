@@ -1,0 +1,20 @@
+---
+title: (P) Queueing
+desc: Learn about how queuing and messages can alleviate scaling problems
+---
+### Purpose
+
+One very important pattern that is used to achieve scale is using queues to connect different services together. This allows decoupling of the client from the service so that each can work at their own pace. These two articles are great to introduce you to how queueing works in our scenarios.
+
+### Do This
+
+* Read [Queues Don't Fix Overload](http://ferd.ca/queues-don-t-fix-overload.html) and [Architecting Rails as Microservice Applications](http://blog.codeship.com/architecting-rails-apps-as-microservices/?utm_source=rubyweekly&utm_medium=email) carefully. Don't worry that the article references Rails, most of the principles are general. 
+
+### Submit your responses to these questions
+
+1. When a service uses queueing (or "a queue") to receive requests, what are some of the places where that queue could be stored? Can you see any tradocfs?
+1. Explain "back pressure" as used in the first article
+1. There are many considerations in deciding whether to use a Service Oriented Architecture, and further, to deciding what services to factor out. Why would it matter how your actual programmers are organized into teams?
+1. When your system is designed using services (or microservices), they have to communicate with each other. If service one needs an email sent out, and asks service two to do so, somehow that has to be passed from one to two. What are some of the common ways to do this?
+
+|____|
