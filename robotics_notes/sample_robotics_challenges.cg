@@ -1,0 +1,21 @@
+---
+title: Some sample challenges
+desc: Lets discuss how you would approach each
+---
+:slide_title One Robot Following Another
+
+* Goal: Have a certain robot follow another one
+* They can be close or far from each other
+
+:slide_title Multiple Robots Emergent Behavior
+
+* Goal each Robot has a certain "personality"
+* Robot Personalities are customizable
+
+:slide_title Robots follow a road made from Orange Conses
+
+* If the path is super clear cut
+* If the path is subjective
+
+
+

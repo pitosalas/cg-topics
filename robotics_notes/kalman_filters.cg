@@ -147,6 +147,7 @@ Why do we care? Sensors are everywhere in robotics. Sensors are known to be inac
 :slide_break Links for further study
 
 * [Detailed Youtube on Kalman FIlters](https://www.youtube.com/watch?v=u1QcZxWRYtg&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=10)
+* Learning Kalman Filters: [The Extended Kalman Filter, an interactive tutorial](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
 * [Kalman Filter In Depth](https://www.kalmanfilter.net/kalman1d.html)
 * [How a Kalman Filter Works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 * [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
