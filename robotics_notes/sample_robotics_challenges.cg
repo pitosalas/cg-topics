@@ -14,10 +14,21 @@ desc: Lets discuss how you would approach each
 * Goal each Robot has a certain "personality"
 * Robot Personalities are customizable
 
-:slide_title Robots follow a road made from Orange Conses
+:slide_title Robots follow a road made from Orange Cones
 
 * If the path is super clear cut
 * If the path is subjective
+
+:slide_title Robot Soccer
+
+* Two Robots per team?
+* How does Robot kick?
+* How does the Robot track the ball?
+
+:slide_title Robot Playing Wordle
+
+* Where would the wordle board be?
+* How would the robot show its move?
 
 
 
