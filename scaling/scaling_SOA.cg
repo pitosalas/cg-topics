@@ -6,7 +6,7 @@ slides: true
 
 * Build a system from a collection of services
 * Services talk to each other over the internal network
-* REST or similar communications schemes
+* http, queueing, REST, or similar communications schemes
 * Services that are internal to the system
 * Not designed as an external API but as a way to structure a system
 * Contrast with Rails "Majestic Monolith" approaches
@@ -14,7 +14,12 @@ slides: true
 * What is the "right size"?
 * A very important pattern, but not uncontroversial
 
+:slide_title SOA vs Monolith
+
+:image :soa_diag_1
+
 :slide_title Benefits of SOA
+
 * Isolation
   * Each service is its own code base, database, and team
   * Each can be tested separately
