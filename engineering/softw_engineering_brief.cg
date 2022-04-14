@@ -2,82 +2,74 @@
 title: Software Engineering
 slides: true
 ---
+:h3 Questions we want to answer
 
-## Questions we want to answer
-  * what is software engineering?
-  * how is it different from computer science?
-  * why does it matter in general
-  * how to excel as a software engineer
+* what is software engineering?
+* how is it different from computer science?
+* why does it matter in general
+* how to excel as a software engineer
 
-### Making distinctions
+:slide_title Making distinctions
 
 * From [“Can practitioners neglect theory and theoreticians neglect practice?"](http://disciplinas.stoa.usp.br/pluginfile.php/17266/mod_resource/content/1/ieee_computer_mbroy.pdf)
-])
 * Craft
-  * Applies traditional techniques to produce goods and provide services
-  * Examples: Cabinet making, Sewing, Teaching?
+  1. Applies traditional techniques to produce goods and provide services
+  1. Examples: Cabinet making, Sewing, Teaching?
 * Science
-  * Aims to gather, verify and document knowledge and insight through research
-  * Examples: Physics, Biology, Computer Science
+  1. Aims to gather, verify and document knowledge and insight through research
+  1. Examples: Physics, Biology, Computer Science
 * Engineering
-  * Applies both knowledge and scientifically analyzed and justified methods to develop and produce technical products
+  1. Applies both knowledge and scientifically analyzed and justified methods to develop and produce technical products
 
-#### There has always been creative tension between theory and practice:
+:slide_title There has always been creative tension between theory and practice
+
 * "Well, it may be all right in practice, but it will never work in theory." -- Warren Buffett on how the academic community regards his investment approach
 * "In theory, there is no difference between theory and practice. But, in practice, there is." -- Jan L.A. van de Snepscheut and/or Yogi Berra
 * "In theory, the difference between theory and practice is small. In practice, the difference between theory and practice is large."
 * "Beware of bugs in the above code; I have only proved it correct, not tried it." -- Donald Knuth
 
-### What is Software Engineering?
+:slide_title What is Software Engineering?
 * Engineering
-  * The creative application of scientific principles to design or develop structures, machines
-  * To construct or operate the same with full cognizance of their design;
-  * To forecast their behavior under specific operating conditions; 
-  * Respecting an intended function, economics of operation or safety to life and property
+  1. The creative application of scientific principles to design or develop structures, machines
+  1. To construct or operate the same with full cognizance of their design;
+  1. To forecast their behavior under specific operating conditions; 
+  1. Respecting an intended function, economics of operation or safety to life and property
 * Software Engineering
   1. People processes required to build working, deployed, software based systems
   1. Development methodology to deal with extreme complexity
   1. Primacy of deployed systems, used in the world, having real impact on people
   1. Triad of Money, Time and Quality
 
-### How is it different from Computer Science?
+:slide_title How is it different from Computer Science?
 * Science (from [Is Mathematics a Science?](http://www.arachnoid.com/is_math_a_science/)):
   1. Evidence gathered in experiments and observations.
   1. Theories about the evidence, theories that move from the particular to the general.
   1. The requirement that contradicting evidence falsify a theory.
 
-### Experimental Computer Science?
+:slide_title Experimental Computer Science?
+
 * We have many many beliefs (or debates) (in engineering and computer science) which are not based on evidence
 * So there is certainly experimental computer science to answer, for example: 
-  * Are static or dynamic types more productive? 
-  * Are 2 or 4 week sprints better? 
-  * Is deeply commented code more maintainable? 
-  * Are languages with 2 dimensional arrays better? 
-  * Does multiple-inheritance reduce programmer productivity?
-  * Is there a 100:1 productivity ratio between the best and worse programmers?
+  1. Are static or dynamic types more productive? 
+  1. Are 2 or 4 week sprints better? 
+  1. Is deeply commented code more maintainable? 
+  1. Should array indexes start at 0 or 1? 
+  1. Does multiple-inheritance reduce programmer productivity?
+  1. Is there a 10:1 productivity ratio between the best and worse programmers? (The '10x' programmer)
 
-### Why does Software Engineering matter in general
+:slide_title Why does Software Engineering matter in general
 * Is it fundamentally different from "programming"? How?
 * Do you want to be a Computer Scientist or a Software Engineer?
 * Ok, but what is my degree in?
 
-### Three legs of the stool
+:slide_title Three legs of the stool
 * Craft or Art: applies traditional techniques to produce goods and provide services
 * Science: Aims to gather, verify and document knowledge and insight through research
 * Engineering: Applies both knowledge and scientifically analyzed and justified methods to develop and produce technical products
 
-## Things I look for in a "software engineer"
+:slide_title Things I look for in a "software engineer"
 * Focus on design not just "coding"
 * Focus on longevity, maintainability, reusability, sharing (repositories, version management)
 * Focus on quality, fit and finish, and testing of all kinds at all levels
 * Focus on cost, time, schedule, delivery
-* See my own <%= link_to_topic :se_rules_of_thumb %>
-
-## References
-* \[1\] [“Software Engineering: An Idea whose time has come and gone?](http://www.systemsguild.com/pdfs/tdmsoftwaresummer2009.pdf)
-* \[2\] [“Can practitioners neglect theory and theoreticians neglect practice?"](http://disciplinas.stoa.usp.br/pluginfile.php/17266/mod_resource/content/1/ieee_computer_mbroy.pdf)
-* \[3\] <%= link_to_topic :se_rules_of_thumb %>
-* \[4\] [What is Computer Science?](http://www.cs.mtu.edu/~john/whatiscs.html)
-* \[5\] [Is Computer Science Science?](http://www.cs.mtu.edu/~john/jenning.pdf)
-* \[6\] [Is Mathematics a Science?](http://www.arachnoid.com/is_math_a_science/) 
-
+* See my own :topic_link :se_rules_of_thumb

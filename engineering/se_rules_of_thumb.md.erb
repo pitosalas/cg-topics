@@ -1,57 +1,153 @@
 ---
 title: Software Engineering Rules of Thumb
+slides: true
 ---
 
-## Programming Rules of Thumb
+:h2 Programming Rules of Thumb (Pito)
 
-1. **You must use a source control system.** It's your safety net. This is especially true when working with other programmers. Learn your tool so you are never reluctant to use it. GIT can be hard to master, but take the time to do so!
+:slide_title DRY
 
-1. **Don't go beyond the immediate requirement.** Write only the code you need to solve the problem RIGHT now. You might think that this class clearly will need all this methods even though no one is calling them yet. This almost never works out. Don't spend time to set things up for what you'll need in a month. You're usually wrong. This is  known as YAGNI - You aren't gonna need it!
+*Don't cut and Paste code.*
 
-1. **When your program blows up you should stop and read the error messages.** Catch yourself jumpint to conclusions or seeing what's not there. Fight the impulse that you know what must have failed. Often the right answer is right there in the error message. It might be buried in the middle of a lot of noisy trace output, but discipline yourself to actually read it. This is sometimes known as RTFM.
+* DRY is a law. If you see any duplicated code it is almost always a bad thing. Look for it and kill it. Duplicated code is the mark of an amateur programmer. 
+* There are several problems that it creates. First, if you have a bug in the code, you will have to fix it in several different places. Second if you improve the algorithm or approach, you have to do so in several places. Non-DRY code harms the maintainability and quality of your code.
 
-1. **Catch yourself engaging in magical thinking.** If it worked yesterday, and not today, then *something changed.* Similar story as "It worked on my machine, why doestn't it work in production?" Both of these are a symptom of magical engineering thinking. It's just a computer. If the behavior changed, then something cause that change in the behavior. Methodically go through each thing that might be different and, like a scientist (or Sherlock) figure out what it was.
+:slide_title SCS (or VCS)
 
-1. **Don't be satisfied with blind luck** Copying some code without knowing what is going on is not a good idea. Eventually it will come back to haunt you. Be really curious!. If a certain change fixed the problem, investigate until you understand how it fixed the problem.
+*You must use a source control system.*
 
-1. **Learn to Debug** Debugging is a craft in itself. Approach it like a scientist. Don't poke blindly at the code, or solve the problem just by thinking about it. Have hypotheses to test. Do experiments.
+* It's your safety net. This is especially true when working with other programmers. 
+* Learn your tool so you are never reluctant to use it. GIT can be hard to master, but take the time to do so!
 
-1. **Don't optimize early** Optimizing too early is one of the cardinal sins of programming. You never know where the bottleneck will be, The thing you think will be slow, will be fast, and vice-versa. Actually you might end up ripping it out anyway!
+:slide_title YAGNI
 
-1. **Keep a list of 'technical debt' items** These are coding chores, cleanups, fill ins, removal of dead wood, that you purposely put off, even though you know you will have to come back to them. Later, when you want a change of pace in your coding, you can look at that list for some easy pickings!
+*Don't go beyond the immediate requirement.*
 
-1. **If you think you spot a code smell you should come back and eradicate it** Train yourself to recognize (and HATE) code smells. Like nails on a blackboard, badly designed code should make your stomach turn or your skin crawl.
+* Write only the code you need to solve the problem RIGHT now. You might think that this class clearly will need all this methods even though no one is calling them yet. This almost never works out. Don't spend time to set things up for what you'll need in a month. You're usually wrong. 
+* This is  known as YAGNI - You aren't gonna need it!
 
-1. **Don't cut and Paste code.** DRY is a law. If you see any duplicated code it is almost always a bad thing. Look for it and kill it.
+:slide_title NIH
 
-1. **Learn how to Refactor.** This is a fundamental coding skill. When you see non-dry code or other violations, refactor ruthlessly.
+*Avoid the "Not Invented Here" plague.*
 
-1. **Don't leave dead code behind. Delete it.**
+* As engineers and computer scientists we often think we can invent something new. Or that something is easy so we might as well write it ourselves. This is wrong for several reasons. 
+* First, you would be doing work that someone else has already done thereby wasting time and resources. 
+* Second, it's very likely that you can find a solution that is written by someone with great specialized expertise. Learn to search, google, and ask, before you decide to write it yourself.
 
-1. **Keep your files, methods and functions short** Depending on the language and the program, the right number may vary. But a method that has more than 20 lines is almost always a serious code smell. A guideline would be 10 lines. A class that is more than 100 lines is a likely code smell.
+:slide_title RTFM 
 
-1. **When designing software, you should keep concerns as separate as possible.** Design for loose coupling. Pay attention to the Single Responsibility principle. Whether it's a single class or function, a subsystem or module, or a whole system, minimize dependencies. Learn about dependency injection and other techniques for decoupling.
+*When your program blows up you should stop and read the error messages.*
 
-1. **When doing object oriented programming you should avoid using class inheritance** While tempting, it is almost always better to avoid using inheritance in your class design. It brings undesirable coupling with little benefit that could be had in a simpler way.
+* Catch yourself jumpint to conclusions or seeing what's not there. Fight the impulse that you know what must have failed. Often the right answer is right there in the error message. 
+* It might be buried in the middle of a lot of noisy trace output, but discipline yourself to actually read it. 
+* This is sometimes known as RTFM.
 
-1. **When programming you should use 'intention revealing names'** Choosing the right names for classes, variables, methods is one of the best ways to 'document' your code. Follow your language's naming conventions closely and then create names that reveal your intention. Name things after what they do, not after how they work! Also make sure names are internally consistent. (Ref: [Intention Revealing Names](http://c2.com/cgi/wiki?IntentionRevealingNames))
+:slide_title Smelling like a rose
 
-1. **When programming, you should comment your code, but not too much.** The exact line is a matter of (fervent) debate but it is almost universally accepted that having no comments is a bad idea and that its easy to have too many comments. Keep your comments at the start of each source file, and at the start of each method. Occasionally you might want to put a few lines of comments inline. But that desire often alerts you to a refactoring opportunity.
+*If you think you spot a code smell you should come back and eradicate it*
 
-1. **When you are posting on a technical forum, you should formulate the question carefully.** Here are the best practices:
-	* Explain precisely what you are trying to accomplish
-	* Give a step by step explanation of what you've tried and the result.
-	* Give code samples, links to GitHub accounts, and so on. If the code samples are not brief, create a [gist](https://gist.github.com) and put the link in the post.
-	* Include listings of the relevant data, file names, console logs, and versions of various software you use.
+* Train yourself to recognize (and HATE) code smells. 
+* Like nails on a blackboard, badly designed code should make your stomach turn or your skin crawl.
 
-1. **When you have to write up a design or a spec, you should keep it to a few pages.** Prefer writing short 'stories' over writing long 'specifications. There is no requirements 'phase' to a project any more. Write many short stories and prioritize them relentlessly. If the story is more effort to write than the code, you should be writing the code!.
+:slide_title Overcome your resistance to posting questions
 
-<%= include_topic :effectiveness_rules_of_thumb %>
+*When you are posting on a technical forum, you should formulate the question carefully.* 
 
+1. Explain precisely what you are trying to accomplish
+1. Give a step by step explanation of what you've tried and the result.
+1. Give code samples, links to GitHub accounts, and so on. If the code samples are not brief, create a [gist](https://gist.github.com) and put the link in the post.
+1. Include listings of the relevant data, file names, console logs, and versions of various software you use.
 
-## Credits
+:slide_title No Magic
 
-Many of these are from books, blogs and my own experience. I will list all the credits that I can identify but I think in some cases these rules are so deeply embedded that I cannot recall where I got them from. If you see sonething that you think you came up with, I appologize!
+*Catch yourself engaging in magical thinking.*
+
+* If it worked yesterday, and not today, then *something changed.* 
+* Similar story as "It worked on my machine, why doestn't it work in production?" Both of these are a symptom of magical engineering thinking. It's just a computer. 
+* If the behavior changed, then something cause that change in the behavior. Methodically go through each thing that might be different and, like a scientist (or Sherlock) figure out what it was.
+
+:slide_title Curious
+
+**Don't be satisfied with blind luck** Copying some code without knowing what is going on is not a good idea. Eventually it will come back to haunt you. Be really curious!. If a certain change fixed the problem, investigate until you understand how it fixed the problem.
+
+:slide_title Debug
+
+*Learn to Debug* 
+
+* Debugging is a craft in itself. Approach it like a scientist. 
+* Don't poke blindly at the code, or solve the problem just by thinking about it. 
+* Have hypotheses to test. Do experiments. Learn your debugger and learn how to be effective with it.
+
+:slide_title The Root of All Evil
+
+**Don't optimize early** Optimizing too early is one of the cardinal sins of programming. You never know where the bottleneck will be, The thing you think will be slow, will be fast, and vice-versa. Actually you might end up ripping it out anyway!
+
+:slide_title Technical debt
+
+*Keep a list of 'technical debt' items*
+* These are coding chores, cleanups, fill ins, removal of dead wood, that you purposely put off, even though you know you will have to come back to them. 
+* Later, when you want a change of pace in your coding, you can look at that list for some easy pickings!
+* Like your credit card, if you don't pay it off it just grows and grows until you have to declare bankruptcy.
+
+:slide_title Refactor
+
+*Learn how to Refactor.* This is a fundamental coding skill. When you see non-dry code or other violations, refactor ruthlessly.
+
+:slide_title Delete it
+
+*Don't leave dead code behind. Delete it.*
+
+:slide_title Brevity is the soul of wit I
+
+*Keep your files, methods and functions short*
+
+* Depending on the language and the program, the right number may vary. 
+* But a method that has more than 20 lines is almost always a serious code smell. 
+* A guideline would be 15 lines. A class that is more than 100 lines is a likely code smell.
+
+:slide_title Brevity is the soul of wit II
+
+*When you have to write up a design or a spec, keep it to a few pages.* 
+
+1. Prefer writing short 'stories' over writing long 'specifications. 
+1. There is no requirements 'phase' to a project any more. Write many short stories and prioritize them relentlessly.
+1. If the story is more effort to write than the code, you should be writing the code!.
+
+:slide_title Separate Concerns
+
+*When designing software, you should keep concerns as separate as possible.*
+
+* Design for loose coupling. Pay attention to the Single Responsibility principle. 
+* Whether it's a single class or function, a subsystem or module, or a whole system, minimize dependencies. 
+* Learn about dependency injection and other techniques for decoupling.
+
+:slide_title Avoid Inheritance
+
+*When doing object oriented programming you should avoid using class inheritance* 
+
+* While tempting, it is almost always better to avoid using inheritance in your class design. 
+* It brings undesirable coupling with little benefit that could be had in a simpler way.
+
+:slide_title Show your intentions
+
+*When programming you should use 'intention revealing names'* 
+
+1. Choosing the right names for classes, variables, methods is one of the best ways to 'document' your code.
+1.  Follow your language's naming conventions closely and then create names that reveal your intention. 
+1. Name things after what they do, not after how they work! 
+1. Also make sure names are internally consistent. (Ref: [Intention Revealing Names](http://c2.com/cgi/wiki?IntentionRevealingNames))
+
+:slide_title Comment, but not too much
+
+*Make sure your comments add value* 
+
+* The exact line is a matter of (fervent) debate but t is almost universally accepted that having no comments is a bad idea and that its easy to have too many comments. 
+* Keep your comments at the start of each source file, and at the start of each method. 
+* Occasionally you might want to put a few lines of comments inline. But that desire often alerts you to a refactoring opportunity.
+
+:slide_title Credits
+
+Many of these are from books, blogs and my own experience. I will list all the credits that I can identify but I think in some cases these rules are so deeply embedded that I cannot recall where I got them from. If you see something that you think you came up with, I appologize!
 
 * [Practices of a Professional Developer](http://www.khebbie.dk/gist/9719703) by Klaus Hebsgaard
 * [Practical Object Oriented Design in Ruby](http://www.poodr.com) by Sandy Metz
