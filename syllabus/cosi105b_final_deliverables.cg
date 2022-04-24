@@ -1,41 +1,51 @@
 ---
 title: Cosi 105 Final Deliverables
 ---
+### Purpose
+
+We would like you to have a complete and comprehensive way to demonstrate and appreciate your work this semester. Also we would like you to have a way to share your work with your peers. These two deliverables are designed to highlight for us and for yourself what you have achieved.
+
 ### What to subkit to Latte
 * nanoTwitter Github Repo(s) - Zipped up
 * Final Report (See below)
 
 ### Events
 * We will have scalability runoffs on the last two days of class
-* Each team is require to attend to a Zoom final demo meeting with Pito and Julian
+* Each team is required to attend to a Zoom final demo meeting with Pito
 
 ### Important Links
-* Link to the rules and process for <%= link_to_topic :scalability_runoff %> 
-* Link as a reminder of the required <%= link_to_topic :nt_test_interface %>
+* Link to the rules and process for :topic_link :scalability_runoff
+* Link as a reminder of the required :topic_link :nt_test_interface
 
 ## The final demo meeting
-* We will ask you to demonstrate your nanoTwitter running on Digital Ocean. 
+* I will ask you to demonstrate your nanoTwitter running on Digital Ocean. 
 * This will be a demo not a scalability challenge. 
 * During the demo we will both be able to ask the team members questions about your demo and your report. 
-* The meeting is scheduled for 45 minutes but will probably run less.
+* The meeting is scheduled for 30 minutes but will probably run less.
+* Use [this link](https://calendly.com/pitosalas/project-review)
 
 ## How nanoTwitter will be evaluated
-* Functionality
+* Checklist
+	* Use this as a [helpful checklist](https://docs.google.com/spreadsheets/d/1o53139Doy1xbQN_RwsfSZgDTUikK7vgXTEwN_FYlvPw/edit#gid=0)
+	* Has most of the functionality as defined in :topic_link :nt_outline implemented. 
+	* You won't get dinged for little oversights or divergence. 
+	* If you have a specific reason why in your approach, certain functionality didn't make sense, make sure you tell us
+* Crucial Functionality
 	* Login, Logout, Register
 	* Tweet, Follow
 	* Hashtags
 	* Search
 	* Test API
 	* Validation API
-	* Has most of the functionality as defined in <%= link_to_topic :nt_outline %> implemented. You won't get dinged for little oversights or divergence. If you have a specific reason why in your approach, certain functionality didn't make sense, make sure you tell us
 * Quality of the engineering.
 	* How is the design, is it broken down into some classes?
-	* Is there attention to single responsibility principle and other good design practices?
-	* Are the classes and methods reasonably brief. How does the code look?
+	* Are the classes and methods reasonably brief. 
+	* How does the code look?
 	* Are there tests and are they being run automatically?
 * Quality of the Scalability.
 	* How well does the nT perform under load from loader.io using the specific testing rules that we described.
 	* What steps did you take to help it scale better?
+	* Which of the patterns and concepts that we learned in class did you use?
 	* And what is final result?
 * Bugs
 	* When under load, does it keep "working"? 
@@ -44,10 +54,9 @@ title: Cosi 105 Final Deliverables
 	* Does the final product look professional and clean? Did you read the requirements (from me) broadly and go beyond the very minimum? Or did you just barely get it to work? Does it look good and show pride of work?
 * Github + Readme
 	* You will be submitting the github directory with the code in it
-	* Include important parts of your design and architecture
 	* Include detailed instructions on how to run it
 	* Include all the relevant URLs (Github, Digital Ocean, Heroku or others)
-	* Make sure to include a "CodeClimate" badge in your readme.
+	* Mention important parts of your design and architecture
 	* For submission, zip up your github repo and submit to Latte
 
 ## Final Report
@@ -60,6 +69,7 @@ title: Cosi 105 Final Deliverables
 * Content
   * Remember that this course is about **Scalability**
   * Describe key architecture, both basic and specifically appealing to scalability
+  * Scaling techniques applied
   * Key concepts, abstractions, services
   * Include what you are especially proud of
   * Team members, dates

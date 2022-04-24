@@ -14,4 +14,4 @@ title: Scalability Runoff
 * But it all has to be at the $0 tier (except for db if you need it)
 * No paying for extra powerful services!
 
-<%= include_topic :nt_scalability_testing_protocol %>
+:topic_include :nt_scalability_testing_protocol

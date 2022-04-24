@@ -1,0 +1,32 @@
+---
+title: (T) Prepare for Scalability Runoff
+desc: We will do this until each team has gotten usable results
+---
+### Purpose
+
+It's not over till it's over. It's important when building software to not slow down when you are almost done. They say that after the first 90% is done, all you still have to do is the second 90%. Haha. Our purpose with having the runoff is to have what would be the equivalent of your product launch day when you enable your site and all the first users show up. You want to be know how to get ready!
+
+The Runoff will go over two days because there will be hiccups and bug fixes throughout. We will try and keep track of everything but there will be a little bit of chaos. There will be time during the runoff to quickly fix bugs and try again!
+
+This homework is to remind you of the preparations that you need to do.
+
+* Reminder of the :topic_link :scalability_runoff
+
+### Do this
+
+* Make sure you have the latest best version of your nanotwitter up on Heroku all set up and tuned the way you want it.
+* Test these (noting that you need to substitute real user ids in various places)
+
+1. http://<your app>/test/reset?user_count=500
+1. http://<your app>/test/tweet?tweet_user=25&tweet_count=5
+1. http://<your app>/test/status
+1. http://<your app>/test/reset?user_count=500
+1. http://<your app>/test/stress?star=22&fan=25
+1. http://<your app>/?user_id=101
+1. http://<your app>/search?phrase=battery
+1. http://<your app>/test/user/tweet?user_id=x&tweet_count=y
+
+### Provide this
+
+* The URL of your nanotwiter
+* How did each of the above URLs do?
