@@ -18,7 +18,7 @@ This homework is to remind you of the preparations that you need to do.
 * Test these (noting that you need to substitute real user ids in various places)
 
 1. http://<your app>/test/reset?user_count=500
-1. http://<your app>/test/tweet?tweet_user=25&tweet_count=5
+1. http://<your app>/test/tweet?user_id=25&tweet_count=5
 1. http://<your app>/test/status
 1. http://<your app>/test/reset?user_count=500
 1. http://<your app>/test/stress?star=22&fan=25

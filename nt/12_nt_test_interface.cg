@@ -41,11 +41,11 @@ There's a user that we use as part of many of the tests. We refer to the user as
 * Example: `/test/reset?user_count=10` means to import 10 users from the seed data plus their tweets and follows. 
 * Returns 200 or 400
 
-:slide_title `GET /test/tweet?tweet_user=x&tweet_count=y`
+:slide_title `GET /test/tweet?user_id=x&tweet_count=y`
 
 * {x} is the user id of some user
 * n is how many randomly generated tweets are submitted on that users behalf
-* Example `GET ../test?tweet_user=123&tweet_count=22` will generate 22 random tweets for user 123
+* Example `GET ../test?user_id=123&tweet_count=22` will generate 22 random tweets for user 123
 * Returns 200 or 400
 
 :slide_title `GET /test/status`
