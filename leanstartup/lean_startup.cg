@@ -9,6 +9,7 @@ slides: true
 * Some key characteristics of "lean or agile"
 
 :slide_title Appear in Lean Manufacturing
+
 * Small Batches vs. Large Batches
 * Minimize WIP
 * Changes in plan are expected and embraced
@@ -16,10 +17,12 @@ slides: true
 * Small self-managed teams
 
 :slide_title Appear in Agile Software Development
+
 * Also based on the same principles
 * And with the same objectives
 
 :slide_title So what's the big deal about it? Lean Startup
+
 * Yes, just another buzzword
 * Some might say "there's nothing new under the sun"
 * Realize there are several 'methodologies' that people push
@@ -27,18 +30,3 @@ slides: true
 * Don't try to plan everything from day one
 * Instead, Iterate, iterate, iterate!
 
-:slide_title My own experience with the idea of Lean Startup
-* Where did it come from
-* Is it just Eric Ries self promotion?
-* Why do I think it's a good approach
-* "Scientific method?"
-
-:slide_title Some ideas that we'll explore more in the next few weeks
-* Validated Learning
-* Build/Measure/Learn
-* Hypotheses and assumptions
-* Minimum Viable Product
-* Customer Development
-* Pivoting
-* Metrics and real-world data
-* Innovation accounting
