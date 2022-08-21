@@ -21,6 +21,14 @@ desc: An opinionated set if rules and guidelines
 * Most languages have more than one way to do something, all valid
 * Programmers experienced in the language always pick one over the other.
 
+:slide_title Well Tested
+
+* There will always be bugs.
+* Implement automated tests and run them constantly
+* Your work will be judged by its quality
+* If commands fail, give the wrong answers, or look ugly, these are all bugs
+* Lear about Code Smells
+
 :slide_title Short Methods
 
 * Try hard not to exceed about 15 lines in a method.
