@@ -9,12 +9,9 @@ This is going to be another exciting chapter. Don't worry if a lot of things see
 
 Make sure you understand what the app is trying to do and actually follow along. I strongly recommend that you type in the code just like what he says in the book because from my experience you will learn a lot more that way. You will use the `rails` command and for the first time start the process of understanding really how a web server actually works! 
 
-Take your time and see if you can make it all the way to the end and get it all to work. You will hit snags. Use your resources: the TAs the class mailing list, stack overflow, google and push through to success! When you are done, see if you can answer these questions for yourself:
+Take your time and see if you can make it all the way to the end and get it all to work. You will hit snags. Use your resources: the TAs the class mailing list, stack overflow, google and push through to success!
 
-* What is a url and what role does it play in the MVC architecture and the basic operation of a web server?
-* What job does a `view` and a `model` do in the MVC architecture?
-* Complete this sentence: "Rails is ..."
-* The chapter talks about "deploying" the rails application. What do you think that means?
+Do at least one of the exercises at the end of the chapter
 
 ---
 Ruby on Rails Tutorial, Chapter 2:
@@ -22,7 +19,23 @@ Ruby on Rails Tutorial, Chapter 2:
 (X) Haven't started
 (X) Skimmed all of it
 (X) Read all of it
-(X) Read and tried to run some of it!
+(X) Read and coded all of it!
+
+* What is a url and what role does it play in the MVC architecture and the basic operation of a web server?
+
+|____|
+
+* What job does a `view` and a `model` do in the MVC architecture?
+
+|____|
+
+* Complete this sentence: "Rails is ..."
+
+|____|
+
+* The chapter talks about "deploying" the rails application. What do you think that means?
+
+|____|
 
 What is the standard way to install gems for Rails applications?
 
@@ -61,3 +74,7 @@ What is the most important reason that we use `git` and `GitHub` to manage our s
 ( ) It automatically checks that our syntax is correct and reports to us if there is a problem
 (X) It allows two people to work together on the same application without risking accidentally overwriting work
 ( ) It is the standard convention in the industry
+
+* TA who looked at and signed off
+
+|____|

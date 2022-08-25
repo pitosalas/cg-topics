@@ -2,7 +2,6 @@
 title: "Term Project Stage 2: Hello World"
 desc: Starting to actually build your application!
 ---
-
 :h3 Goal
 
 1. Get a basic implementation of your application running
@@ -25,6 +24,8 @@ desc: Starting to actually build your application!
 1. Create your models  using scaffolding using `rails generate`. For this you will be using one or more `rails generate resource` commands. This should come right out of the Rails Tutorial you've been reading. Note, you might be tempted to use `rails generate scaffold` but as you learn more you will better understand why we use `rails generate resource` here.
 
 1. Create Seed data, which means data which is not from real users but used to "seed" the database. There are many reasons for Seed data: to allow you to test, to allow you to see your UI better, and sometimes  because there are some bits of data that are built into the system. Seed data will be stored in the database just like live data and Rails provides you nice tools more managing and working with seed data. There is a very neat package to create fun fake names, addresses and all kinds of other information. It's very popular and is called [Faker](https://github.com/faker-ruby/faker). This is a pretty reasonable guide (I looked around) to get you started: [Seeding a database using the Rails command line](https://davidmles.com/seeding-database-rails/)
+
+1. Write tests. For all your generated models, write additional tests. Make sure that `rails test` works and reports correctly what the bugs are. We are going for very high test coverate so all functionality eventually will have a test for it. We will also be automating the running of tests.
 
 1. Now get the server running on each individual students' computer. Don't skip this step, do it on your own computer too! Get it running on your personal computers, all based on your one single Github repo. Make sure that all students have the latest code from GitHub on your computers. Make sure that you are all tied to the Postgres database running on your own computers. Don't let the code get skewed.
 

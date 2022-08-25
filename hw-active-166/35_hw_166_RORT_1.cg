@@ -3,13 +3,31 @@ title: Read Ruby on Rails Tutorial Chapter 1
 desc: Starting at the beginning, learn or review some basics
 cat: read
 ---
-:callout :small, "NB", " The Tutorial directs you to use Cloud9. In this course, you should NOT use Cloud9. Install things on your own laptop."
+## Read [Ruby on Rails Tutorial]
+(https://www.railstutorial.org/book/beginning#cha-beginning) - Chapter 1 
 
-## Read [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) - Chapter 1 
+**<IMPORTANT_NOTE>**
+You have all already gotten your environment set up on your own computers. You should ignore the sections that talk about setting up the environment on `Cloud9`. You should also ignore the sections that talk about `mysql` because we are using the more convenient alternative of `postgres`. So keep your eyes open!
+**</IMPORTANT_NOTE>**
 
-It's a long chapter but you will learn A LOT! It has lots of useful information that you will use now or refer to in the future. You should do the steps that he shows in the chapter yourself. You will hit snags, but push forward until you get it all done. Now go to Latte and answer these warmup questions:
+It's a good idea to really try to do the steps described in the book. You will learn much much more. After reading and understanding the chapter you should be able to answer these questions:
 
 * Can you come up with an original example of when you would use a git branch?
+
+|____|
+
 * What is the difference between git and GitHub?
+
+|____|
+
 * What is the difference between Heroku and Github?
+
+|____|
+
 * What problem does bundler solve?
+
+|____|
+
+* TA who looked at and signed off
+
+|____|
