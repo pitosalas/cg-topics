@@ -5,19 +5,15 @@ title: What makes a good product for Cosi166
 
 While we don't have a fixed rubric for what we consider to be an excellent Cosi166 Term project deliverable, here are some of the things we look at:
 
-* This course is about Software Engineering, not business. You don't need to concern yourself at all with whether your product would sell well or make money. 
+* This course is about Software Engineering, not business. You don't need to concern yourself at all with whether your product would sell well or make money. We want to practice good software engineering. Which means we are not just going to code up a solution, we are going to test it well, we will use continuous integration and deployment.
 
-* The "Ruby on Rails Tutorial" gives a detailed example of a kind of a social network. Your product should not be simply another social network. In other words don't just take the code from the tutorial and do some renaming and reorganization.
+* The "Ruby on Rails Tutorial" gives a detailed example of a kind of a social network. Your product should not be simply another social network. In other words don't just take the code from the tutorial and do some renaming and reorganization. There are numerous ways to go beyond the Rails basics. We are looking for you to push the envelope in this way. We want your product to be interesting from a technology perspective. On the other hand don't put in features or fancy javascript, animation and what not if the price is lack of quality.
 
-* There are numerous ways to go beyond the Rails basics. We are looking for you to push the envelope in this way. We want your product to be interesting from a technology perspective.
+* At the end of the semester, it should be well tested, and it should work. Does it do what is supposed to do? When I click on a button does it work? This is totally app dependent but in general this will come out in a demo. Are you showing you a lot or very little. Is there some real functionality? 
 
-* It should work. It should do what it is supposed to do? When I click on a button does it work? This is totally app dependent but in general this will come out in a demo. Are you showing you a lot or very little. Is there some real functionality? 
+* You should be using good Software Engineering and design practices. Views and Controllers should not have much logic in them. You classes and methods should be relatively short, so refactor them if they exceed around 100 and 20 lines respectively. You should be following the Rails conventions and not bypass or circumvent the core rails components. However it shows good design if you have factored out some logic into a PORO (Plain Old Ruby Object) and place it in a app/lib directory (for example.)
 
-* You should be using good Software Engineering and design practices. Views and Controllers should not have much logic in them. You classes and methods should be relatively short, so refactor them if they exceed around 100 and 20 lines respectively.
-
-* You should be following the Rails conventions and not bypass or circumvent the core rails components. However it shows good design if you have factored out some logic into a PORO (Plain Old Ruby Object) and place it in a app/lib directory (for example.)
-
-* We look for you to follow professional software engineering practices. You should have some amount of automated testing built into your app so that the `rails test` command runs those tests. And then you should have set up including: automated testing amd continuous testing and deployment using CodeShip or some similar capability. And you should show that you are automatically deploying to Heroku only when tests pass.
+* We look for you to follow professional software engineering practices. You should have thorough automated testing built into your app so that the `rails test` command runs those tests. And then you should have set up including: automated testing amd continuous testing and deployment using CodeShip or some similar capability. And you should show that you are automatically deploying to Heroku only when tests pass.
 
 * We don't expect your app to win design awards. But the user interface should be show pride in your craft. It should be professional and clean. The important features should be finable. The layout and graphic design should follow basic design rules of thumb.
 
