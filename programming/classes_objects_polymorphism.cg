@@ -1,7 +1,7 @@
 ---
 title: "Coding Pattern: Classes and Objects"
 ---
-## Classes, Objects and Inheritance
+:h4 Classes, Objects and Inheritance
 
 * Classes: How do you decide what a class is and what it is not?
 * What is the domain or the problem space or the problem domain?
@@ -9,37 +9,30 @@ title: "Coding Pattern: Classes and Objects"
 * Remember SRP: Single Responsibility Principle (see [Single Responsibility Principle](https://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
 * Ask yourself: "What does this class represent/do?"
 
-<slide_break></slide_break>
-
-## Objects
+:slide_bigtitle Objects
 
 * Classes and objects are different!
 * Instance variables
 * Constructor (no destructor in Ruby!)
 * Methods: private/public
 
-<slide_break></slide_break>
-
-## Polymorphism
+:slide_bigtitle Polymorphism
 
 * When the same interface can be used with objects of different classes
   1. Example: In ruby, message #to_s can be sent to objects of different classes
   1. Why is it useful?
 
-<slide_break></slide_break>
+:slide_title Ways to achieve this:
+1. Inheritance
+1. "Duck" Typing
+1. Delegation
 
-* Ways to achieve this:
-  1. Inheritance
-  1. "Duck" Typing
-  1. Delegation
 
-<slide_break></slide_break>
+:slide_title "Duck" typing.
+1. Don't rely on the class/type of a thing to know what it can do
+1. Reverse it: based on what it can do, you can tell the type of a thing.
+1. How is duck typing is an alternative/complement to inheritance?
+1. And what about Java interfaces?
+1. Consider a method like #talk in a gaming application
 
-* "Duck" typing.
-  1. Don't rely on the class/type of a thing to know what it can do
-  1. Reverse it: based on what it can do, you can tell the type of a thing.
-  1. How is duck typing is an alternative/complement to inheritance?
-  1. And what about Java interfaces?
-  1. Consider a method like #talk in a gaming application
-
-* <%= link_to_topic :duck_typing %>
+:topic_link :duck_typing

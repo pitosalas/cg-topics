@@ -9,15 +9,16 @@ title: Good programming
 :slide_title What is "disposable code"?
 
 * Not designed
-* Incomprehensible 1 year, 1 month, 1 week later
+* Not tested
 * Just barely works, no idea why
+* Incomprehensible 1 year, 1 month, 1 week later
 * "write-only"
 * Long, ugly methods
 * Bad or meaningless naming
 
 :slide_title Handy Shorthand
 
-* Each summarizes a very important principle 
+Each summarizes a very important principle. We will learn more about each one.
 
 * DRY: "Do Not Repeat Yourself".
 * YAGNI: "You're Not Gonna Need It"
