@@ -5,7 +5,7 @@ desc: An opinionated set if rules and guidelines
 * Like good writing style, good programming style is important, subtle, nuanced, and often a matter of opinion
 * Yet over the years we have learned many fundamental guidelines and rules which most everyone agrees makes for good style.
 * While that might make interesting and valuable reading, here I give my own much briefer set of rules of thumb.
-* Take a look at :topic_link :badcode1 and :topic_link :badcode2 as we work through the rules and guidelines
+* I will use :topic_link :badcode1 and :topic_link :badcode2 as we work through the rules and guidelines to try and demonstrate the principles.
 
 :slide_title Conventions
 
@@ -14,12 +14,14 @@ desc: An opinionated set if rules and guidelines
   1. What order to put things in a source file
   1. How to structure a package and so on
 * You need to be aware of them and follow them.
+* How do you learn this: Use a code style checker like Rubocop
 
 :slide_title Idiomatic Code
 
 * It is also useful to become familiar with so-called "idiomatic" code.
 * Most languages have more than one way to do something, all valid
 * Programmers experienced in the language always pick one over the other.
+* How do you learn this? By reading other people's code
 
 :slide_title Well Tested
 
@@ -27,7 +29,9 @@ desc: An opinionated set if rules and guidelines
 * Implement automated tests and run them constantly
 * Your work will be judged by its quality
 * If commands fail, give the wrong answers, or look ugly, these are all bugs
-* Lear about Code Smells
+* How do you learn about this? See :topic_link :code_smells
+* Some people like to check for [test coverage](https://github.com/simplecov-ruby/simplecov)
+
 
 :slide_title Short Methods
 
