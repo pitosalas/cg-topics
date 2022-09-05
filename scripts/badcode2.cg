@@ -1,7 +1,8 @@
 ---
 title: Bad Code Example 2
 ---
-:source_begin :ruby
+:source_begin :ruby-lang
+
 #fibonacci series between c and d
 def fibarray(c,d)
   arr= []
