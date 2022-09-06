@@ -1,38 +1,7 @@
 ---
 title: Case Studies from The Lean Startup
 ---
-:slide_title HP Case
-
-* 300,000 employees, may volunteer 4 hrs / month
-* Instead of having lots of focus groups to try to figure out what to do…
-* Start small: formulate hypotheses and test them.
-* So in this scenario, what is the product?
-* Value hypotheses: Does this product or service provide value to users
-* Growth hypotheses: Will usage, purchase, deployment, adoption of the product grow?
-* Concierge MVP could be used to simulate the service and measure referrals (see Zappos)
-* The essence: experimentation, produce data, and interpret it to see what it means
-
-:slide_title Kodak case
-
-* Don't skip right to #4!!
-* When building a very bare-bones product: if customers don't complain about a missing feature, it may well not be needed!
-* A sequence of experiments any few of which can branch off and suggest a few more experiments"
-* In each case you are creating more MVPs each time closer to a real offering. Kind of a branching tree/network
-
-:slide_title Village Laundry Service Case
-
-* Again, rapid cycles
-* Creating simulations of parts of the product experience
-* Collect metrics and try again
-
-:slide_title Food on the Table
-* I thought it an odd idea: delivering customized recipes based on specials in the local grocery store. 
-* An extended scenario of an MVP is described. Lessons:
-
-:slide_title Aardvark
-* Wizard of oz testing" which to me sounds just like concierge!
-
-:slide_title IMVU
+:slide_title Ch1 - IMVU
 
 * Do not always assume that if metrics are not good, solution is adding or fixing features 
 * Learned to use Cohort analysis to be able to connect changes made to the effects on metrics 
@@ -47,6 +16,44 @@ title: Case Studies from The Lean Startup
 * Decision to pivot here is very confusing
     * Even once you realize the problem
     * Not at all clear what to do about it/
+:slide_title Ch4 - Zappos
+* Selling shoes online
+* Hypothesis was that customers would buy shoes from a nice web site (value hypothesis)
+* Getting info about shoes - models, brands, photos, prices, was a major `schelp`
+* Simple experiment yielded great information about customers, value and actual names
+
+:slide_title Ch4 - Hewlet Packard
+
+* 300,000 employees, may volunteer 4 hrs / month
+* Instead of having lots of focus groups to try to figure out what to do
+* Start small: formulate hypotheses and test them.
+* So in this scenario, what is the product?
+* Value hypotheses: Does this product or service provide value to users
+* Growth hypotheses: Will usage, purchase, deployment, adoption of the product grow?
+* *Concierge MVP* could be used to simulate the service and measure referrals (see Zappos)
+* The essence: experimentation, produce data, and interpret it to see what it means
+
+:slide_title Ch4 - Village Laundry Service Case
+
+* Rapid cycles, in the field, fast feedback
+* Creating simulations of parts of the product experience
+* Collect metrics and try again
+
+:slide_title Kodak case
+
+* Don't skip right to #4!!
+* When building a very bare-bones product: if customers don't complain about a missing feature, it may well not be needed!
+* A sequence of experiments any few of which can branch off and suggest a few more experiments"
+* In each case you are creating more MVPs each time closer to a real offering. Kind of a branching tree/network
+
+:slide_title Food on the Table
+* I thought it an odd idea: delivering customized recipes based on specials in the local grocery store. 
+* An extended scenario of an MVP is described. Lessons:
+
+:slide_title Aardvark
+* Wizard of oz testing" which to me sounds just like concierge!
+
+
 
 :slide_title Votizen
 
