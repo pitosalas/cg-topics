@@ -1,7 +1,7 @@
 ---
 title: HTTP - Hypertext Transfer Protocol
 ---
-:slide_title HTTP is a network protocol
+:slide_bigtitle HTTP is a network protocol
 
 * Mental model: calling a function across a network
   1. Client is the caller
@@ -10,11 +10,11 @@ title: HTTP - Hypertext Transfer Protocol
 
 :slide_title Let's use telnet to make such a 'call'
 
-<%= source_begin "language-bash" %>
+:source_begin :language-bash
 $ telnet example.com 80
 $ GET / HTTP/1.1
 $ Host: example.com
-<%= source_end %>
+:source_end
 
 :slide_title Review: What does HTTP do?
 
