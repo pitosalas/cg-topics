@@ -2,13 +2,15 @@
 title: Hypotheses
 ---
 
-:slide_bigtitle The Lean Startup notion of hypotheses
+:slide_bigtitle The Lean Startup notion of `hypothesis`
 
 * Also 'assumptions', but I like the term hypothesis better because it emphasizes that we don't take a side as to whether it is true or not. We specifically want to generate evidence that will either prove or disprove it.
 * Testable: You need to know how you would test it
 * Explicit: You need to be able to state it succinctly (on a post-it note)
 
-### Types of Hypothesis - there are lots
+### Types of Hypothesis
+
+*The point is, don't get too hung up on classifications. What is important is the idea of formulating testable hypotheses, running experiments, and updating your plans accordingly.*
 
 * Customer: Who is the customer? Where would you find them?
 * Problem: What is their pain? What is the 'job' they are 'hiring' a product to do?
@@ -19,7 +21,6 @@ title: Hypotheses
 * Growth Hypothesis: what ways will new customers discover the product? Why will they keep using it?
 * Value Hypothesis: Assuming use, in what ways is the idea delivering value to the customer?
 
-*The point is, don't get too hung up on classifications. What is important is the idea of formulating testable hypotheses, running experiments, and updating your plans accordingly.*
 
 :slide_title Some case studies
 

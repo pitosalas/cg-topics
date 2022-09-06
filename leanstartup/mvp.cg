@@ -1,12 +1,15 @@
 ---
 title: Minimum Viable Product
 ---
-## The MVP or Minimum Viable Product
+:slide_title The MVP or Minimum Viable Product
+
 * "It's not necessarily minimal nor a product nor viable!"
 * MVP is not a perfectly descriptive term
-* "An experiment is a product" (From TLS book)
-* Smallest increment of work that will test a hypothesis
-* What forms can it take?
+* Smallest increment of work that will *test a hypothesis* (or more than one)
+* You need to be able to say what hypothesis it will test and how you will judge the result.
+
+:slide_title What forms can it take?
+
 * The key is that it is *MINIMUM!*
 * MVP is always always related to a hypothesis (or more than one)
 * Who and where do you show your MVP?
