@@ -10,11 +10,65 @@ desc: An opinionated set if rules and guidelines
 :slide_title Conventions
 
 * Each language has conventions about how to do certain things.
-  1. What case to use for identifiers
-  1. What order to put things in a source file
-  1. How to structure a package and so on
 * You need to be aware of them and follow them.
 * How do you learn this: Use a code style checker like Rubocop
+
+:slide_title Ruby naming conventions
+
+* classes `CamelCase`
+* variable names `snake_case`
+* file names `snake_case` (based on the name of the included class)
+
+:slide_title File organization
+
+:source_begin :ruby
+# filename: snake_case name after the class that is defined in the file (if any)
+#
+# next come the includes (if any)
+include "nanoc"
+include_relative "nanoc_customized"
+#
+# next come the single class definiton (one per file)
+#
+class MyNanocCustomizer
+.
+end
+#
+# If the file is meant to be a top level executable then those lines come at the end
+#
+my_customizer = MyNanocCustomizer.new("Begin")
+my_customizer.print_all
+:source_end
+
+:slide_title Directory Structure
+
+* There are various conventions, none of them "official"
+* If you are using Rails, it will determine your directory structure
+* (for non-rails, the command `bundle gem my_app` will generate a comprehensive starting point)
+
+
+:source_begin :bash
+
+├── app
+│   ├── assets
+│   ├── channels
+│   ├── controllers
+│   ├── helpers
+│   ├── jobs
+│   ├── mailers
+│   ├── models
+│   └── views
+├── config
+│   ├── environments
+│   ├── initializers
+│   └── locales
+├── db
+│   └── migrate
+├── log
+├── public
+└── test
+
+:source_end
 
 :slide_title Idiomatic Code
 
@@ -31,7 +85,6 @@ desc: An opinionated set if rules and guidelines
 * If commands fail, give the wrong answers, or look ugly, these are all bugs
 * How do you learn about this? See :topic_link :code_smells
 * Some people like to check for [test coverage](https://github.com/simplecov-ruby/simplecov)
-
 
 :slide_title Short Methods
 
