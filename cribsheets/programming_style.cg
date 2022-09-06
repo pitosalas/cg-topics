@@ -46,7 +46,6 @@ my_customizer.print_all
 * If you are using Rails, it will determine your directory structure
 * (for non-rails, the command `bundle gem my_app` will generate a comprehensive starting point)
 
-
 :source_begin :bash
 
 ├── app
@@ -70,12 +69,19 @@ my_customizer.print_all
 
 :source_end
 
-:slide_title Idiomatic Code
+:slide_title Intention Revealing Names
 
-* It is also useful to become familiar with so-called "idiomatic" code.
-* Most languages have more than one way to do something, all valid
-* Programmers experienced in the language always pick one over the other.
-* How do you learn this? By reading other people's code
+* You have to make up names for variables, methods, classes, packages, parameters, files and more.
+* Whether the name you pick is "good" is kind of a matter of taste
+* An excellent guideline is to use a name which describes what the thing represents
+
+:slide_title DRY
+
+* DRY is a software engineering slogan meaning "Do Not Repeat Yourself".
+* It means, in the simplest sense, no textual duplication of lines of code.
+* If you find yourself cutting and pasting some lines of code from one place to another, your code is not DRY.
+* This is an opportunity to create a new method, with a good name, and call it from both the places.
+* In a more advanced sense it means that you should not duplicate concepts or knowledge.
 
 :slide_title Well Tested
 
@@ -98,20 +104,6 @@ my_customizer.print_all
 * With the right abstractions and classes and seeing how a class is doing more than one job.
 * You will get get better as you get more practice.
 
-:slide_title DRY
-
-* DRY is a software engineering slogan meaning "Do Not Repeat Yourself".
-* It means, in the simplest sense, no textual duplication of lines of code.
-* If you find yourself cutting and pasting some lines of code from one place to another, your code is not DRY.
-* This is an opportunity to create a new method, with a good name, and call it from both the places.
-* In a more advanced sense it means that you should not duplicate concepts or knowledge.
-
-:slide_title Intention Revealing Names
-
-* You have to make up names for variables, methods, classes, packages, parameters, files and more.
-* Whether the name you pick is "good" is kind of a matter of taste
-* An excellent guideline is to use a name which describes what the thing represents
-
 :slide_title Whitespace
 
 * Most programming languages (python is a notable exception) totally ignore whitespace.
@@ -119,6 +111,13 @@ my_customizer.print_all
 * But you can hugely change how readable it is.
 *. Indentation should match the nesting structure of your program.
 *. There should be an empty line before and after each method definition.
+
+:slide_title Idiomatic Code
+
+* It is also useful to become familiar with so-called "idiomatic" code.
+* Most languages have more than one way to do something, all valid
+* Programmers experienced in the language always pick one over the other.
+* How do you learn this? By reading other people's code
 
 :slide_title Commenting
 
