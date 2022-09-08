@@ -44,10 +44,9 @@ my_customizer.print_all
 
 * There are various conventions, none of them "official"
 * If you are using Rails, it will determine your directory structure
-* (for non-rails, the command `bundle gem my_app` will generate a comprehensive starting point)
 
 :source_begin :bash
-
+# Rails directory structure
 ├── app
 │   ├── assets
 │   ├── channels
@@ -66,7 +65,19 @@ my_customizer.print_all
 ├── log
 ├── public
 └── test
+:source_end
 
+* For non-rails, there is no "standard" ruby directory structure. Here's a [template that might be useful](https://github.com/pitosalas/rubytemplate)
+
+:source_begin :bash
+├── README.md
+├── lib
+│   ├── app
+│   │   └── class_1.rb
+│   └── main.rb
+└── test
+    ├── test_file1.rb
+    └── test_helper.rb
 :source_end
 
 :slide_title Intention Revealing Names
