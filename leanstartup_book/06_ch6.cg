@@ -5,10 +5,11 @@ slides: true
 ---
 :slide_bigtitle Takeaways from Chapter 6 - Test
 
-* Minimum Viable Product - goal is to test articulated hypotheses
+* **BIG IDEA**: The Minimum Viable Product
+
+* Goal is to test articulated hypotheses
 * MVP different from a prototype, beta test, mockup because of it's explicit purpose
 * Many types of MVP: video, concierge, 
 * Visionaries or early adopters accept expect a product that is incomplete. They want to be ahead
 * Early adopters want to feel special: be the first one on the block with a product, or have an unfair advantage over other companies.
 * If you leave out features, customer often fills in the blanks which may suggest missing features
-* See :topic_link :tls_case_summaries

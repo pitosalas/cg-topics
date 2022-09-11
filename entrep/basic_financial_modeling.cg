@@ -9,7 +9,6 @@ desc: Fundamentals of the financial plan
 * Remember Gazintas > Gazoutas
 * Quick review of very basic financial modeling
 
-
 :slide_title Why do we do this? 
 
 * To understand where we are spending our money
@@ -23,24 +22,19 @@ desc: Fundamentals of the financial plan
 * Costs
 * Revenues
 * Profits (aka earnings)
-
-:slide_title Core calculation:
-
 * Profits = Revenues - Costs
 
 :slide_title Types of costs
 
 * Fixed -- Cost you have to get to the first 'thing'
 * Variable -- Relative to some independent variable
-* Division is not always clear cut
+* Division is not always clear cut, it depends 
 
 :slide_title Fixed Costs
 
-* First release? First sale? First Orange Juice Sold?
+* People/Salaries are often the top costs in our world
 * Rent
-* Internet
-* Equipment
-* Salaries?
+* Equipment/Services etc
 
 :slide_title Variable Costs
 
@@ -49,21 +43,41 @@ desc: Fundamentals of the financial plan
 * Salaries (how do number of people correspond to units sold?)
 * Raw Materials
 
-:slide_title Independent variables
+:slide_bigtitle Operating Model for your business
 
-* Units sold
-* Units manufactured?
-* Number of employees?
-* Number of customers?
-* Target new customers per month
+* The core model (spreadsheet) that pulls it all together
+* Goal is to bring out the Key Metrics and Key Assumptions 
+* Download and take a look at [this sample financial model spreadsheet](/content/topics/documents/simple_financial_model.xlsx)
 
-<slide_break></slide_break>
+:slide_title Overview
 
-### 'Programming'
+* Information is organized logically into several sheets
+* Columns are units of time - quarters, year
+* Overall span is 1-3 years
+* Rows are variables of various kinds
 
-* Learn to be very comfortable with a spreadsheet
-* Google Sheets is fine
-* Download and take a look at [this simple financial model spreadsheet](/content/topics/documents/simple_financial_model.xlsx)
-* Simplistic Paid Engine of Growth
-* More complicated: Sticky Engine of Growth
-* Jeffrey Beir's: [Your Financial Model](https://docs.google.com/spreadsheets/d/13-rKC4tQaIUBfRDjC1GZT1qK3sT2uXWluY_BXG15FZQ/edit#gid=5)
+:slide_title Key Metrics
+
+* **Note** All this information is assembled from the other sheets
+
+* Bookings (what you have sold)
+* Revenue (what you actually have taken in)
+* Cost of Goods Sold (What can be ascribed to a specific unit sold)
+* Gross Margin (Revenue - COGS)
+* Total OPEX (All the other operating expenses)
+* Financing (Money that investors put in)
+* Cash ("checking account")
+* Headcount (Number of employees)
+
+:slide_title Bookings/Revenue
+
+* **Note** This sheet models how many customers/units we sell and how that changes over time
+
+:slide_title Payroll
+
+* **Note** This sheet models People, when they start and what we pay them
+
+:slide_title Operating expenses
+
+* **Note ** This sheet models all the ways we spend money
+
