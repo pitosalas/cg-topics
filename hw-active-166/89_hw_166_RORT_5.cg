@@ -2,17 +2,33 @@
 title: Read RORT Chapter 5
 desc: All about creating and editing Views in Rails
 ---
-### Purpose of this assignment
+## Read [Ruby on Rails Tutorial Chapter 5](https://www.railstutorial.org/book/beginning##cha-beginning)
 
-In this chapter, we see how to create views, and start seeing a lot of HTML and getting into routing at a greater level of detail.
+Here we see how to create views, and start seeing a lot of HTML and getting into routing at a greater level of detail. As usual I really encourage and ask you to go through the code samples and actually type them in. You will see that it really helps your understanding and will assure your success in this course! Use your resources: the TAs, the class mailing list, stack overflow, google and push through to success! 
 
-### Do this
+Take your time and see if you can make it all the way to the end and get it all to work. You will hit snags. Use your resources: the TAs the class mailing list, stack overflow, google and push through to success!
 
-Read [Ruby on Rails Tutorial Chapter 5](https://www.railstutorial.org/book/beginning##cha-beginning) <%= partbadge %> <%= pdfbadge %>
+Do at least one of the exercises at the end of the chapter
 
-### Answer these questions
+When you are done, try and answer these questions for yourself:
 
-* Give me your explanation on what `link_to` is and does. As specific as you can.
-* When and why would you use a partial?
-* What does he mean (in conclusion) by a custom routing rule?
-* Are there one or two things you are still confused by? If not, what one or two things were the most memorable about your reading?
+Figure out what `link_to` is and does. As specific as you can.
+ 
+|____|
+
+
+When and why would you use a partial?
+
+|____|
+
+What does he mean (in conclusion) by a custom routing rule?
+
+|____|
+
+What if any problems did you have completing this chapter?
+
+|____|
+
+Please supply the github and heroku urls:
+
+|____|
