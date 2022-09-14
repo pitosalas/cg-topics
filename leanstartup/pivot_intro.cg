@@ -1,7 +1,7 @@
 ---
 title: The Pivot
 ---
-## Review Pivots
+
 * What's a Pivot? Why do we do a pivot?
 * What are the signs that one should be contemplated?
 * How is it different from just an adjustment based on a failed hypothesis?
@@ -11,6 +11,4 @@ title: The Pivot
 	* When it's a change to a 'article of faith' assumption?
 * Depending on the reason of the pivot, you will consider ways in which to change plans
 
-<slide_break></slide_break>
-
-<%= include_image "/content/topics/images/pivot_diagram.png" %>
+:image :600, :pivot_diagram
