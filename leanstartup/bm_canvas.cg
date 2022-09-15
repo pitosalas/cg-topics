@@ -30,9 +30,8 @@ title: Business Model Canvas
   * More common is that there's the old way, and then there's our improvement on it
   * Examples: performance, customization, convenience, price, status, safety, etc.
 
-<slide_break></slide_break>
 
-<%= discussion_box "What new insights did you derive from the Value Proposition Canvas, today's homework? Think about it by yourself for a few minutes. Next, we will go into breakout rooms 5 minutes to prepare to summarize what a few big things you took away. Make notes to be able to share with the class" %>
+:discussion "What new insights did you derive from the Value Proposition Canvas", today's homework? Think about it by yourself for a few minutes. Next, we will go into breakout rooms 5 minutes to prepare to summarize what a few big things you took away. Make notes to be able to share with the class"
 
 :slide_title Revenue Streams (or pricing model)
 
