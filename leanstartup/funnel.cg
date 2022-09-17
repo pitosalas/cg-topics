@@ -1,15 +1,15 @@
 ---
-title: Customer Stages
+title: Funnel
 ---
-:slide_bigtitle Customer Stages
+:slide_bigtitle The Funnel
 
-* Sometimes called "customer journey"
-* An analytical tool for analyzing your business processes
-* Identify the key 'stages' in users' interaction with the product.
+* Getting from random to a paying customer
+* Metaphor useful for modeling, planning and execution
+* Identify the key 'stages' in relationship between prospect and business
 * Each stage needs to be somehow measurable!
-* This framework will inform the metrics you collect, your decisions around a pivot and even how your operating model is designed.
+* This framework will inform the metrics you collect, your decisions around a pivot and even how your operating model is designed
 
-:slide_title AARRR Stages
+:slide_title AARRR Stages (one example)
 
 1. Acquisition (or awareness). A potential customer has found out about our product or web site
 1. Activation. They have taken the "action that we want them to"
@@ -17,12 +17,12 @@ title: Customer Stages
 1. Referral – They are telling others about our product, sending them referral links, actively recruiting them
 1. Revenue - They are paying
 
-:slide_title Where we use the stages
+:slide_title Applications
 
 * Makes us really think about what the key metrics are to collect
 * In helps us identify our engine of growth
 * Measuring the metrics in cohorts informs the tuning of the engine 
-* Permis the modeling (prediction) of how many at each stage
+* Permits the modeling (prediction) of how many at each stage
 * Based on marketing and other investments
 
 
