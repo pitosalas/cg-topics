@@ -1,0 +1,33 @@
+---
+title: Technology Hypotheses
+desc: Technology Hypotheses
+---
+
+* These form hypotheses like any other solution hypothesis
+* For example
+	* Can it be built? ("the api is rich enough to allow this product to be built")
+	* How long will it take? ("the product can be built to release 1 in 3 months")
+	* Will it perform? ("the product will be able to support 10,000 users in the first release")
+	* Should we use Android or iPhone, etc.  ("it is safe to ignore the iPhone platform")
+	* What would it cost to manufacture?  ("The first 100 units can be manufactured for $10 per")
+	* ... etc.
+* These kinds of hypotheses need to be answered from a technical/technologoical perspective
+* How would you test the hypothesis?
+	* Check with some experts to corroborate your hypothesis
+	* Show them your design concept
+	* Build a prototype/experiment/mvp to validate *that assumption* specifically
+* For example distinguish between:
+	* Customers will require that we support both iPhone and Android
+	* Our architecture can work on iPhone and Android
+	* Different questions, requiring different experiments to check
+* Common Fundamental Architectural and Technology questions
+	* Scale: How do we support the required number of users
+	* Deployment vehicle: Cloud, Web, Mobile or Device
+	* <%= discussion "Did I leave any out?" %>
+* What about the 'secret sauce?'
+	* Your app may or may not require some
+	* You might consider it your competitive advantage and even patent it
+	* Most of your work (80% overall) will not be advanced computer science or new invention
+	* For a real commercial product, most of the work will be hard engineering
+
+:topic_include :innovators_dilemma

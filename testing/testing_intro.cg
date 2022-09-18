@@ -24,3 +24,14 @@ title: Intro to Automated Testing
 * A good test suite can act as a detailed spec
 * A good test suite protects you from regressions
 * It is faster to write code with tests than without it
+
+:slide_title Discussion
+
+* Let's take a look at: [Dumb Factorial Implementation](https://raw.githubusercontent.com/pitosalas/public_samples/master/ruby/tdd_demo0/dumb_factorial.rb)
+* What other tests can we do to test this Factorial class?
+
+:slide_title Tools
+
+* There are a huge variety of tools and techniques to avoid repetitious coding
+* We will be using the built-in unit testing framework called "minitest"
+* For this course focus ONLY on unit testing

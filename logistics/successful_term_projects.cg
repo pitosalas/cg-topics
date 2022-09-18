@@ -1,0 +1,36 @@
+---
+title: Successful Term Projects
+slides: true
+---
+:slide_title Term Projects Discussion
+
+* Let's take a look at previous years': [Brandeis Cosi Projects](http://pitosalas.github.io/brandeisprojects/)
+* What will it take to have a great term project?
+  1. Look closely at :topic_link :hw_166_project_stage4 and :topic_link :hw_166_final_deliverables
+  1. Work in parallel with other team members
+  1. Make sure you have 100% alignment with what specifically each team member is working on
+  1. Invest the time!
+
+:slide_title Advice from previous years' Cosi166 Students 
+
+:h4 Communication
+
+* Always make sure team communication is effective, and overly communicate to your teammates about your progress/problems encountered to get help. 
+* At each meeting, each person should describe verbally what they did, what they're stuck on, and what they are going to do. 
+* Have a group chat going on whatever platform is most comfy for the group (they can figure that out in the first meeting too). Slack, discord, whatever, what matters is that everyone will remember to check it regularly.
+* Maybe find a time that works for everyone to stay on zoom and implement something together or do pair programming? 
+
+:h4 Alignment
+
+* Make sure you and your team are all on the same page. 
+* If they're not sure what they should be doing, that needs to be fixed asap or it gets awkward for everyone
+* That way things that need to get done get done and things aren't forgotten or overlooked.
+
+:h4 Scheduling
+
+* Don't wait till last minute, make a schedule of what needs to be done and stick with it (this has been reiterated probably thousands of times, but people tend to procrastinate.
+* Prioritize the necessary parts of the project first.
+* It is ok to fall behind the schedule once or twice but it's not great if you fall behind for more than two weeks)
+* Keep the functionalities simple and easy to implement in the beginning and well tested before you move on (don't wait to test in the end because everything is going to break at the same time, and it's hard to locate where the problem is)
+* Continuous Integration/Deployment is a crucial step in industry so it is important to setup and include this step from the beginning 
+* At each meeting, schedule the next one (preferably not at the very end of the meeting)
