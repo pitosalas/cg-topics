@@ -24,7 +24,7 @@ slides: true
 
 1. Setup a single GitHub repo for our team. Be careful: Create it on GitHub, giving it a name corresponding to your project. Then, clone it onto each team member's computer. Make the repo private and make each team member a collaborator. Go through the trouble of learning what ssh is and setting it up because your life will be much more pleasant. 
 
-1. Setup Trello and begin using it to keep track of tasks and commitments. Include the link to your Trello in your readme for your project. Invite Pito and the TAs all to be able to view your Trello. You can use [Miniscrum, our version of scrum](http://cosi166r.s3-website-us-east-1.amazonaws.com/content/topics/logistics/mini_scrum.md/) as a guide to how to use Trello.
+1. Setup Trello and begin using it to keep track of tasks and commitments. Include the link to your Trello in your readme for your project. Invite Pito and the TAs all to be able to view your Trello. You will be using [Miniscrum, our version of scrum](http://cosi166r.s3-website-us-east-1.amazonaws.com/content/topics/logistics/mini_scrum.md/). You can refer to [Trello Instrcutions](http://cosi166r.s3-website-us-east-1.amazonaws.com/content/topics/logistics/cosi166_trello_instructions/)
 
 1. Decide informally as a team what you want to do as the "hello world" version. Typical would be to have a very simple page layout with a title and a single list.
 
@@ -39,7 +39,7 @@ slides: true
 
 ----
 
-:h3 Team Deliverable
+### Team Deliverable
 
 Zip up your repository and submit it here.
 

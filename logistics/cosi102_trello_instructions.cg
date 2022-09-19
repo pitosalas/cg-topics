@@ -1,0 +1,17 @@
+---
+titie: Trello Instrcutions
+slide: true
+---
+:h3 How to use Trello in Cosi102!
+
+As you know we are following :topic_link :mini_scrum. By default we will use Trello as a shared to do list. Here is some guidance on what I've come to believe is the best practice for this course:
+
+* Share the board, not the workspace.
+* Make all team members collaborators, and invite Pito and the TAs as read-only so we can read your content. 
+* For Pito, use rpsalas@brandeis.edu
+* Call it “cs102a: <your project name>
+* Give it the following columns: Backlog, To Do, Done, Archive
+* Backlog is the list of every single thing you as a team said “we should remember to do X”
+* To Do: Are items usually moved from Backlog, that a team member has accepted as their deliverable. That team member’s name is added to it. Sometimes a due date is useful too.
+* Done: Usually moved from Todo by the responsible party.
+* Archive: Inevitably, some tickets become meaningless. out of date, superseded. Put them here instead of deleting them that way you can always find them again.

@@ -1,0 +1,19 @@
+---
+title: Trello use for Cosi166
+slides: true
+---
+:h3 How to use Trello in Cosi166
+
+As you know we are following :topic_link :mini_scrum. By default we will use Trello to track our stories. Here is some guidance on what I've come to believe is the best practice for this course:
+
+1. Share the board, not the workspace.
+1. For Pito, use rpsalas@brandeis.edu
+1. Call it “cs166: <your project name>
+1. Give it the following columns: Backlog, Current, Done, Archive
+1. We will try to follow :topic_link :mini_scrum as best we can. The cards in Trello are your stories.
+1. Backlog is the list of every single idea (or feature) you as a team came up with . Written as a “story” and prioritized as a team.
+1. Current:  Are stories usually moved from Backlog, that a team member has accepted as their deliverable for the current iteration. That team member’s name is added to it. Sometimes a due date is useful too.
+1. Done: Usually moved from Todo by the responsible party at the current iteration.
+Note that if a story is not done during the current iteration, we move it back to Backlog for prioritization. Also not unusual when this happens is that the story gets refactored into two or more stories, one moved to Done and the other back to backlog.
+1. Archive: Inevitably, some stories become meaningless. out of date, superseded. Put them here instead of deleting them that way you can always find them again.
+
