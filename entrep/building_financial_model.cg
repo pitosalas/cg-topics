@@ -1,9 +1,15 @@
 ---
-title: How to build a financial model
+title: Financial model
 slides: true
 ---
 
-## How to build a financial model
+:slide_title Financial model
+
+* A model is a simulation of the future
+* It is not the same as an analysis of the past
+* Although they are closely related 
+
+:slide_title Building a financial model
 
 * Not a universal recipe (none can exist!)
 * These notes provide one set of guidelines and rules of thumb
@@ -11,9 +17,7 @@ slides: true
 * Use common sense in your thinking.
 * You are not google or facebook so your model should reflect that.
 
-<slide_break></slide_break>
-
-### What do you want out of the model?
+:slide_title What do you want out of the model?
 
 * You can think of your financial model as an MVP
 * What are the hypotheses that are being tested?
@@ -21,29 +25,36 @@ slides: true
 * How many people do we need, and when?
 * How many customers do we need, and when?
 
-<slide_break></slide_break>
-
-### General Structure
+:slide_bigtitle General Structure
 
 * Use google sheets (excel is ok too)
-* Columns will be time. Generally months for the first year (and maybe throughout)
+* Columns will be time. 
+* It depends, but a good start is Q-Q-Q-Q | Y-Y
 * Rows will be various kinds of metrics
 * Rows should follow a rough order
 * Customer, Revenue, Costs, Profits
 
-<slide_break></slide_break>
+:slide_title Cells: Types of information
 
-### Assumptions
-
-* There will be lots of assumptions. You should include the source, justification, or reasoning
-* Generally assumptions are fixed, or change specifically from stage to stage
+* Some are inputs to the model ("assumptions) and some are outputs ("results")
 * Don't be uncomfortable about very broad generalizations for your assumptions (mere guesses)
 * Most of the time the best you can do is an educated guess
-* Assumptions should be in a separate area, or a separate sheet
+* Assumptions should be clearly set off
 
-<slide_break></slide_break>
+:slide_title Assumptions - Input parameters or independent variable
 
-### Customers or units and the Growth Engine
+* Input to the model (e.g. Cost to make one unit)
+* Basis of testing scenarios
+* Sometimes an input parameter is a number, a percentage, an amount of money
+* Sometimes its a varies over time (i.e. Number of employees in Q1, Q2, Q3, Q4)
+* The key is that it is not computed by the model, it is supplied by you
+
+:slide_title Output parameters, dependent variables or results
+
+* Output from the model (e.g. Operating Profit in Q2)
+* There will be lots of assumptions.
+
+:slide_title ustomers or units and the Growth Engine
 
 * A very typical "driver" for your model will be the number of customers served or units sold
 * Your assumptions there will have a big effect on the overall model
@@ -51,34 +62,26 @@ slides: true
 * Is it through search in which case you will spend money on google or facebook ads?
 * Is it inherent in the use of the product, then you should be able to explain how that would work
 
-<slide_break></slide_break>
-
-### Pricing
+:slide_title Pricing
 
 * As you know, pricing models can become complicated
 * You need to make a judgement call about how much of it you try to model at this stage
 * Annual vs. Monthly subscription
 * Single purchase (what about repeat purchase?)
 
-<slide_break></slide_break>
-
-### People Costs
+:slide_title People Costs
 
 * It is very common that salaries and overhead are the biggest costs for a startup
 * You can choose to enter number of people "by hand" for each month
 * Or make it a function of something else, like units sold or number of customers
 
-<slide_break></slide_break>
-
-### Stages
+:slide_title Stages
 
 * Most startups go through a few phases from Day 1 to having customers and/or having funding
 * E.g. Pre-revenue, Post-revenue, Pre-Funding, Post-funding
 * It is useful to build your model with that in mind
 
-<slide_break></slide_break>
-
-### Charts
+:slide_title Charts
 
 * The classic chart shows time in months (like the model) against:
 * Money in the bank
