@@ -1,0 +1,23 @@
+---
+title: Weekly Progress Updates
+cat: logistics
+desc: Motivation and structure of weekly updates
+slides: true
+---
+### Purpose
+
+This recurring assignment will require you to produce weekly status reports on your project, similar to what professional software engineering teams do on a far more frequent basis. It is an informal update. Note that it is graded as participation, which means 100 points for a "good faith effort". 
+
+:slide_title What to put in the update
+
+Every team will submit a single PDF every week with:
+
+* Team number, name and date
+* URL to your GitHub repo and your deployed Heroku app
+* For each team member: 
+    * name
+    * What you worked on last week (1 sentence)
+    * What you plan to work on next week (1 sentence)
+    * Any blocking issues (0 to 1 sentence)
+
+As you can tell, each week's report can start by copying last week's. But "good faith effort" does mean that at least the date is updated.
