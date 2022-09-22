@@ -15,7 +15,7 @@ title: Growth Models
 1. Side Effect of Usage (people see you using and want to use it too. Or in order to benefit you have to invite.)
 1. In-product purchases (part of the experience of the product requires you to spend money inside it.)
 1. Subscription (or need to re-buy) (access charges, periodicals, expiration or consumption.)
-1. Funded advertising (When advertising gets more users, and is funded from revenue from users.)
+1. Funded marketing (When marketing erfforts get more users, and is funded from revenue from users.)
 
 :slide_title Engines of Growth
 
@@ -25,9 +25,12 @@ title: Growth Models
 * The focus of the analysis is around the *metrics* that are necessary
 * The Metrics not only tell you whether you will grow but guides to where to invest to grow
 
-:slide_title Sticky Engine of Growth
+:slide_title "Sticky Engine of Growth"
 
-* Concept: A subscription model that needs to be renewed
+* Concept
+  1. A subscription model that needs to be renewed
+  1. Customers are acquired through marketing (e.g. advertising)
+  1. Customers are retained by customer satisfaction and value
 
 * Key Metrics
   1. Customer acquisition rate (new customers per unit time)
@@ -45,10 +48,11 @@ title: Growth Models
   1. Inherent in the service is that the house will need cleaning periodically
   1.The service is inherently sticky
 
-:slide_title Viral Engine of Growth
+:slide_title "Viral Engine of Growth"
 
 * Concept
-  1. Simple normal use of the product leads to new sales
+  1. Customers are acquired  through marketing (e.g. advertising)
+  1. Simple normal use of the product leads to additional sales
   1. Powered by a "viral loop"
 
 * Key Metrics
@@ -62,11 +66,12 @@ title: Growth Models
   1. Dropbox: strong incentive of a new user to invite additional users
   1. Users were given an incentive to do this, more free disk space
 
-:slide_title Paid Engine of Growth!
+:slide_title "Paid Engine of Growth"
 
 * Concept
   1. Simple paid product
-  1. Still need to pay attention to metrics!
+  1. Customers are acquired primarily through marketing (e.g. advertising)
+  1. Still need to pay attention to metrics
 
 * Key Metrics
   1. Customer Lifetime Value (LTV): How much does a single customer bring in over their lifetime (as long as they use the product)
