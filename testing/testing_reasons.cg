@@ -3,6 +3,50 @@ title: Why does testing matter?
 desc: Conceptual Arguments for Testing
 slides: true
 ---
+:slide_bigtitle Why Test?
+
+* Tests demonstrate that your code actually works!
+* The mental habits needed to write tests parallel exactly those needed to design
+* Testing and developing in parallel tends to surface more bugs early int he development
+* Earlier fix is always cheaper
+* A good test suite can act as a detailed spec
+* A good test suite protects you from regressions
+* It is faster to write code with tests than without it
+
+:slide_title Intro to Automated Testing
+
+* Unit testing: test a small unit of code that has few side effects
+* Integration testing: test a subsystem that has many components
+* User interface testing: see if the right thing happens when the user takes an action.
+* End-to-end testing: test the complete system from top to bottom
+* Code Coverage: Seeing how much of your actual code is run during a test or production
+* Performance testing: Checking the speed of your code
+
+:callout :small, "NB", "The Ruby community is especially focused on quality and testing"
+
+
+:slide_bigtitle What to Test
+
+* Testing is not free!
+* Tests have to be written, debugged and run
+* Tests have to be maintained
+* interfaces change
+* The code changes in two places: implementation and test
+* Sometimes more: test fixtures, database schemas
+* More is not necessarily better
+
+:slide_title What not to test
+
+* Try not to test the same thing in more than one place
+* Try not to test a library which is itself well tests
+* Try not to test something that is self-evidently trivial (eye of the beholder)
+
+:slide_title What to test
+
+* Try to test code which is prone to off-by-one errors
+* Try to test code with intricate algorithms
+* Try to test to verify assumption
+
 :slide_bigtitle Arguments for Automated Testing
 
 * Credit: Some of this is directly quoting [POODR](http://www.poodr.com)
