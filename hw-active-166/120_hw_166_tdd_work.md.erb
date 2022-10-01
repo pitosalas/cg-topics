@@ -1,0 +1,58 @@
+---
+title: TDD homework
+desc: A simple example to practice and understand TDD
+---
+### Purpose
+
+Test driven development is a paradigm for testing that is quite popular and interesting. It is a way to write tests before writing the code that they test. This homework is meant to allow you to do some hands-on practice and experience TDD for yourself to form your own opinion on how TDD works.
+
+### Review this
+
+Please look over **all** the linked resources: 
+
+1. [RailsGirls Guide to Test Driven Development](http://guides.railsgirls.com/test-driven-development), 
+1. [Rails Guide for Testing](https://edgeguides.rubyonrails.org/testing.html)
+1. [Minitest Quick Reference](http://mattsears.com/articles/2011/12/10/minitest-quick-reference)
+1. [MiniTest::Spec tutorial](http://www.rubyinside.com/a-minitestspec-tutorial-elegant-spec-style-testing-that-comes-with-ruby-5354.html). 
+
+### General
+
+* Don't use inheritance!
+* Test ALL the methods (including initialize if applicable)
+* Here's an [example that gives the whole thing away](https://github.com/pitosalas/tdd_demo)
+
+### Instructions
+
+* Develop the following simple program using Test Driven Development
+* Meaning, write the tests FIRST and then write the classes
+* In other words, for example:
+  * Write a test that creates a new Rectangle without actually writing the Rectangle class
+  * That will fail, of course. Now, in a separate file, write the minimal amount to make that test pass. That would be a class called Rectangle, with no methods.
+  * Now in your test, create a Rectangle, and call a method on it, checking that it returns the right result.
+  * That will fail too. Go back to the class, and write the minimal code to make the test pass.
+  * Rinse and repeat.
+
+### Specifics - what you will need
+
+1. Create a "standard" ruby directory structure. Actually there isn't an agreed upon standard structure. Here's a [template that might be useful](https://github.com/pitosalas/rubytemplate)
+
+#### Classes
+* A class called Point to represent a point on a plane (i.e. x and y coordinates, floats, representing meters from the origin)
+* A class called Rectangle that represents a rectangle with two points
+  * Rectangle#area (in square meters)
+* A class called Triangle that represents a triange with three points.
+  * Triangle#area (in square meters)
+* A class called Circle that represents a circle by a point and a radius (float)
+  * Circle#area (in square meters)
+* A class called Scene that represents a scene consisting of one or more rectangles, circles and triangles.
+  * Scene#shape_count (how many shapes there are)
+  * Scene#total_area (sum of all the areas even if they overlap; don't worry about computing intersections.)
+  * Scene#add_shape (adds a shape to the scene)
+  * Scene#remove_shape (removes a shape from the scene)
+
+### Submit 
+
+Zip up your progam directory structure and submit it here:
+
+|files|
+

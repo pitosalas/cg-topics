@@ -5,7 +5,7 @@ cat: sub
 ---
 ## Purpose
 
-A necessary early step in creating an application is to think about the database schema. A friend once said: "If you don't know your schema, you don't know your application" and it's true. This assignment gets you thinking about schema design and applying some concepts and techniques that we will review in class.
+A necessary step in creating an application is to think about the database schema. A friend once said: "If you don't know your schema, you don't know your application" and it's true. This assignment gets you thinking about schema design and applying the concepts and techniques that have covered in class. It is an individual assignment; we'd like to be able to compare (later) different concepts you each came up with.
 
 ## What to do
 
@@ -13,4 +13,4 @@ Read [Basics of good database design in Web Development](http://www.onextrapixel
 
 For example, let's say I have a Student entity and I have a Course entity. Is there exactly one student for every course (1 to 1). Are there many students for any one course (many to 1) or perhaps does one student have many courses (1 to many), or maybe even a combination - one student can have many courses, and one course can have many students - (many to many). Don't even start worrying about designing your database until you have questions like that clear in your mind! 
 
-Using all that background, develop initial schema for your product.  Each team member work separately so you can then compare and contrast what you came up with. You should consider the features of your product concept and design a schema, individually. Write it up using this [Simple Schema Notation](http://cosi166r.s3-website-us-east-1.amazonaws.com/content/topics/engineering/simple_schema_notation.md/)
+Using all that background, propose the full schema for your product.  Each team member work separately so you can then compare and contrast what you came up with. You should consider the features of your product concept and design a schema, individually. Use this [Schema Design Tool](https://dbdiagram.io/home) and submit the URL to your design.
