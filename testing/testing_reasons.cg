@@ -5,35 +5,30 @@ slides: true
 ---
 :slide_bigtitle Why Test?
 
-* Tests demonstrate that your code actually works!
 * The mental habits needed to write tests parallel exactly those needed to design
-* Testing and developing in parallel tends to surface more bugs early int he development
-* Earlier fix is always cheaper
+* Insist on looking at the class/module/unit first as a black box that delivers services
+* Good design delays all decisions that can be delayed until further requirements are nailed down.
 * A good test suite can act as a detailed spec
+* Testing and developing in parallel tends to surface more bugs early int development
+* Tests demonstrate that your code actually works!
 * A good test suite protects you from regressions
-* It is faster to write code with tests than without it
+* Make refactoring possible and safe \[how safe?\]
 
 :slide_title Intro to Automated Testing
 
 * Unit testing: test a small unit of code that has few side effects
 * Integration testing: test a subsystem that has many components
-* User interface testing: see if the right thing happens when the user takes an action.
-* End-to-end testing: test the complete system from top to bottom
+* System testing: test the complete system from top to bottom
 * Code Coverage: Seeing how much of your actual code is run during a test or production
 * Performance testing: Checking the speed of your code
 
-:callout :small, "NB", "The Ruby community is especially focused on quality and testing"
-
-
-:slide_bigtitle What to Test
+:slide_bigtitle Can you test too much?
 
 * Testing is not free!
 * Tests have to be written, debugged and run
 * Tests have to be maintained
-* interfaces change
 * The code changes in two places: implementation and test
 * Sometimes more: test fixtures, database schemas
-* More is not necessarily better
 
 :slide_title What not to test
 
@@ -47,43 +42,4 @@ slides: true
 * Try to test code with intricate algorithms
 * Try to test to verify assumption
 
-:slide_bigtitle Arguments for Automated Testing
-
-* Credit: Some of this is directly quoting [POODR](http://www.poodr.com)
-
-:slide_title Testing and Agile
-* Notion of a 'release' is gone
-* Notion of a 'spec' is gone
-* Cycles are much faster
-* Automation becomes a requirement
-
-:slide_title Testing and Design
-* TDD supports design
-* Insist on looking at the class/module/unit first as a black box that delivers services
-* Good design delays all decisions that can be delayed until further requirements are nailed down.
-* Refactoring is how new requirements are incorporated
-* Good test suites is what gives you the confidence to refactor
-
-:slide_title Testing and Refactoring:
-
-* Recall: *Refactoring is a controlled technique for improving the design of an existing code base. Its essence is applying a series of small behavior-preserving transformations, each of which 'too small to be worth doing'*
-* So you always should have solid tests before you start refactoring
-* Each small change is verified to not have changed behavior
-
-:slide_bigtitle Good Testing/Quality/Testability
-
-:slide_title Fundamental motivation for testing: reduce costs
-* Writing tests should over the lifetime of the code cost less
-* Otherwise it's not worth doing
-
-:discussion "How does it reduce costs?"
-
-:slide_title Breaking it down: Why Test?
-
-* Finding bugs early
-* Reducing errors
-* Making assumptions explicit - documenting code with code \[how do test do that?\]
-* Make refactoring possible and safe \[how safe?\]
-* Driving design decisions (TDD?)
-* Discover bad design decisions \[how?\]
 
