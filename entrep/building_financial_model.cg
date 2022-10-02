@@ -1,5 +1,6 @@
 ---
 title: Financial model
+desc: Steps to building your financial model
 slides: true
 ---
 
@@ -29,7 +30,7 @@ slides: true
 
 * Use google sheets (excel is ok too)
 * Columns will be time. 
-* It depends, but a good start is Q-Q-Q-Q | Y-Y
+* It depends, but a good start is to have 1 year in months (and perhaps additinal years in quarters)
 * Rows will be various kinds of metrics
 * Rows should follow a rough order
 * Customer, Revenue, Costs, Profits
@@ -75,13 +76,13 @@ slides: true
 * You can choose to enter number of people "by hand" for each month
 * Or make it a function of something else, like units sold or number of customers
 
-:slide_title Stages
+:slide_title Milesones
 
 * Most startups go through a few phases from Day 1 to having customers and/or having funding
 * E.g. Pre-revenue, Post-revenue, Pre-Funding, Post-funding
 * It is useful to build your model with that in mind
 
-:slide_title Charts
+:slide_title Charts (graphs)
 
 * The classic chart shows time in months (like the model) against:
 * Money in the bank

@@ -21,8 +21,7 @@ desc: Fundamentals of the financial plan
 
 * Costs
 * Revenues
-* Profits (aka earnings)
-* Profits = Revenues - Costs
+* Margin (profits, earnings)
 
 :slide_title Types of costs
 
@@ -47,37 +46,25 @@ desc: Fundamentals of the financial plan
 
 * The core model (spreadsheet) that pulls it all together
 * Goal is to bring out the Key Metrics and Key Assumptions 
-* Download and take a look at [this sample financial model spreadsheet](/content/topics/documents/simple_financial_model.xlsx)
+* [Examples of different growth models](https://docs.google.com/spreadsheets/d/1dLQWhfuQCiGa7nYHdHX9zI8r-X9JVPbhlLmXN4X7BZY/edit#gid=657268627)
 
 :slide_title Overview
 
 * Information is organized logically into several sheets
-* Columns are units of time - quarters, year
-* Overall span is 1-3 years
+* Columns are units of time - usually months
+* Overall span is 1 (or more) years
 * Rows are variables of various kinds
+* Use color to distnguish between input vs computed cells
 
 :slide_title Key Metrics
-
-* **Note** All this information is assembled from the other sheets
 
 * Bookings (what you have sold)
 * Revenue (what you actually have taken in)
 * Cost of Goods Sold (What can be ascribed to a specific unit sold)
 * Gross Margin (Revenue - COGS)
 * Total OPEX (All the other operating expenses)
+* Operating Margin (profits)
 * Financing (Money that investors put in)
 * Cash ("checking account")
-* Headcount (Number of employees)
-
-:slide_title Bookings/Revenue
-
-* **Note** This sheet models how many customers/units we sell and how that changes over time
-
-:slide_title Payroll
-
-* **Note** This sheet models People, when they start and what we pay them
-
-:slide_title Operating expenses
-
-* **Note ** This sheet models all the ways we spend money
+* People (sometimes by category)
 
