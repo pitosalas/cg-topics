@@ -1,35 +1,33 @@
 ---
 title: ActiveRecord Mechanics
 ---
-
-:slide_title ActiveRecord DB Mechanics
+:slide_bigtitle ActiveRecord DB Mechanics
 
 <%= callout("NB", " If you don't know the schema of your app, you don't know your app!", :small) %>
+
+:slide_title  Rails `environments`
+* Rails server "modes" (technically they are `environments`)
+* `rails server -e production` (for Rails)
+* Note that on Heroku deployment the environment is automatically set to `production`
+
+:slide_title What does the choice of environment affect?
+
+* WHich of the actual databases are used (see config/database.yml)
+* `development` - working on your own computer, developing
+* `test` - running tests
+* `production` - working on Heroku for example
+* Gemfile - which gems are installed
+* Various caching settings
+* And more
+
+:slide_title Going Deeper on ActiveRecord
 
 * Object Relational Mapper
 * Model class
 * ORM means we have to keep the database and the Objects "in sync"
-* Rails/Sinatra server "modes" (technically they are `environments`)
-* `rails server -e production` (for Rails)
-* `set :environment, :development (for Sinatra)
-* Actually these modes are ActiveRecord modes!
-* Modes will affect what database to use, whether caching is enabled or not, and numerous other things
-  * `development` - working on your own computer, developing
-  * `test` - running tests
-  * `production` - working on Heroku for example
-
-:slide_title ActiveRecord
-
 * Library from Ruby on Rails which is the connection between the rails application and the underlying database
 * For advanced designs, there are options other than ActiveRecord
 * ActiveRecord is also often used by itself, especially in Sinatra
-* Naming
-  * Model.rb file is named singular, e.g. User
-  * Corresponding db table is plural and lower case, e.g. users
-* Correspondences
-  * Each instance of the class (e.g. User) corresponds to a single record in the database
-  * When a query returns a bunch of records, you get a collection of instances of the class
-  * (this is classic Active Record model)
 
 :slide_title ActiveRecord model classes and instances
 
@@ -44,13 +42,38 @@ title: ActiveRecord Mechanics
   * <%= link_to_topic :ar_db_types %>
   * <%= link_to_topic :ar_migrations %>
 
-:slide_title CRUD: Reading and Writing Data
+:slide_bigtitle Associations
+
+* While this is basic Rails it is also some of the more "magical" parts of Rails which can sometimes be confusing
+* You know that to create a one to many relationship you need a foreign key in the "many" table
+* That is a basic relational database concept
+* You access this in an OO way by also telling ActiveRecord
+* It seems redundant but they are separate
+* The [Rails Guide To Associations](https://edgeguides.rubyonrails.org/association_basics.html) is a good place to start
+
+:slide_title Updating the Model source files
+:source_begin :ruby
+* `has_many :comments`
+* `belongs_to :answer`
+
+class Answer < ApplicationRecord
+  belongs_to :question
+  has_many :comments
+end
+
+# allows the following
+q = Question.create(question: "What is the meaning of life?")
+a = q.answers.create(body: "42")
+a.comments.create(body: "I agree")
+:source_end
+
+:slide_bigtitle CRUD: Reading and Writing Data
 
 * NB: memory vs. persisted copy of the object
 * Create: create record and persist it
 * New: create model object without persisting it
 * Queries and other ways to access the database
-  * <%= link_to_topic :ar_queries %>
+  * :topic_link :ar_queries
   * [ActiveRecord Guide for Queries](http://guides.rubyonrails.org/active_record_querying.html)
 * Updating
   * Retrieve the object (.where etc), modify the attribute, and save it
@@ -70,6 +93,5 @@ title: ActiveRecord Mechanics
 * Check out [MesaSQLite](http://www.desertsandsoftware.com/?page_id=17)
 * Also check out [SQLPro for Postgres](https://macpostgresclient.com/#)
 * On Linux, checkout [SqliteMan](http://sqliteman.yarpen.cz/)
-* Handy Rails Info: <%= link_to_topic :rake_commands %>
 * References: [ActiveRecord Basics](https://edgeguides.rubyonrails.org/active_record_basics.html), [ActiveRecord Query Interface](https://edgeguides.rubyonrails.org/active_record_querying.html)
 
