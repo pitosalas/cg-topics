@@ -3,7 +3,7 @@ title: ActiveRecord Mechanics
 ---
 :slide_bigtitle ActiveRecord DB Mechanics
 
-<%= callout("NB", " If you don't know the schema of your app, you don't know your app!", :small) %>
+:callout :small, "NB", " If you don't know the schema of your app, you don't know your app!"
 
 :slide_title  Rails `environments`
 * Rails server "modes" (technically they are `environments`)
@@ -29,7 +29,7 @@ title: ActiveRecord Mechanics
 * For advanced designs, there are options other than ActiveRecord
 * ActiveRecord is also often used by itself, especially in Sinatra
 
-:slide_title ActiveRecord model classes and instances
+:slide_title ActiveRecord model classes and instances 
 
 * Attributes
   * Rails will automagically create the methods to access each field (column) of the record in the database
