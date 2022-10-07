@@ -2,7 +2,7 @@
 title: More practice with Rails DBs
 ---
 
-:h2 Objective
+:h3 Objective
 
 The objective of this lab is to create a simple Rails application with two models which have a many-to-many relationship.
 For example, `Students` may have many `Classes` and `Classes` may have many `Students`.
@@ -16,7 +16,7 @@ Here is what you should do at a high level:
 3. Push your application to Heroku!
 4. Summon a TA to show them a few examples of the app working and the many to many relationships
 
-:h2 Create rails app
+:h3 Create rails app
 
 :source_begin :bash
 rails new many_to_many --database=postgresql
@@ -24,31 +24,30 @@ cd many_to_many
 bundle lock --add-platform x86_64-linux --add-platform ruby
 :source_end
 
-:h3 Gemfile
-
-:source_begin :ruby
-gem 'pry-byebug'
-gem 'better_errors'
-gem 'awesome_print'
-gem 'faker'
-gem 'hirb'
-:source_end
-
-:h3 Commands relating to seeding
+:h3 Create the scaffold for your two or more models
 
 :source_begin :bash
+# relevant commands 
+rails generate scaffold Student name:string # etc
+rails generate scaffold Class name:string # etc
+:source_end
+
+:h3 Create the many to many relationship
+
+:source_begin :bash
+# relevant commands 
 rails db:create  # creates the database for the current env
 rails db:migrate # Run latest migrations
 rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
 :source_end
 
+:h3 
 
 ### References
 
 * [Seeding a has_many :through in Rails](https://stackoverflow.com/questions/31364265/proper-way-to-seed-has-many-through-relationships-in-rails)
 * [ActiveRecord Associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
 * [ActiveRecord Queries](http://guides.rubyonrails.org/active_record_querying.html)
-* [ActiveRecord Queries Cribsheet](http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/)
 * [Ruby Faker](https://github.com/faker-ruby/faker)
 * [Rails Generate Pluralization Cheatsheet](https://dev.to/scrabill/singular-or-plural-a-cheatsheet-for-ruby-on-rails-generators-4cb8)
