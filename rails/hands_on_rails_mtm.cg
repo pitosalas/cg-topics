@@ -11,10 +11,9 @@ For example, `Students` may have many `Classes` and `Classes` may have many `Stu
 
 Here is what you should do at a high level:
 
-1. Create a new Rails application with models and basic page views using the `rails generate scaffold` command.
-2. Use Faker to populate your database. You can use the `sample` method to create random relationships between models.
-3. Push your application to Heroku!
-4. Summon a TA to show them a few examples of the app working and the many to many relationships
+1. Create a new Rails application  with models and basic page views using the `rails generate resource` command.
+1. Create at least three models with a many-to-many relationship.
+2. Use Faker to populate your data base. You can use the `sample` method to create random relationships between models.
 
 :h3 Create rails app
 
@@ -28,11 +27,17 @@ bundle lock --add-platform x86_64-linux --add-platform ruby
 
 :source_begin :bash
 # relevant commands 
-rails generate scaffold Student name:string # etc
-rails generate scaffold Class name:string # etc
+rails generate resource Student name:string # etc
 :source_end
 
 :h3 Create the many to many relationship
+:source_begin :ruby
+student_ids = []
+10.times do
+    s = Student.create(name: Faker::Name.name)
+    student_ids << s.id
+end
+:source_end
 
 :source_begin :bash
 # relevant commands 
@@ -42,7 +47,7 @@ rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
 :source_end
 
-:h3 
+
 
 ### References
 
