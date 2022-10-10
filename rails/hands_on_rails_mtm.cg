@@ -27,7 +27,9 @@ bundle lock --add-platform x86_64-linux --add-platform ruby
 
 :source_begin :bash
 # relevant commands 
-rails generate resource Student name:string # etc
+rails generate scaffold Student name:string # etc
+rails generate scaffold Teacher name:string # etc
+rails generate scaffold AdvisorAssignment student:references teacher:references
 :source_end
 
 :h3 Create the many to many relationship
@@ -47,6 +49,25 @@ rails db:seed    # (only) runs the db/seed.rb file
 rails db:setup   # runs db:schema:load, db:seed
 :source_end
 
+:h3 Update the models
+:source_begin :ruby
+class Teacher < ApplicationRecord
+  has_many :advisor_assignments
+  has_many :advisees, through: :advisor_assignments, source: :student
+end
+
+class AdvisorAssignment < ApplicationRecord
+  belongs_to :student
+  belongs_to :teacher
+end
+:source_end
+
+:h3 Seeds
+:source_begin :ruby
+10.times do
+  AdvisorAssignment.create(student: Student.all.sample, teacher: Teacher.all.sample)
+end
+:source_end
 
 
 ### References
