@@ -2,40 +2,30 @@
 title: "Term Project Stage 3: Core"
 desc: Here is where you build the core functionality of your app!
 ---
-
-:h2 Goals
+### Goals
 
 1. Get to the point your project starts coming to life with real screens and real functionality
 1. Get to the point where you can do an elementary preliminary demo
 1. Go well beyond the minimal features that you would get from simply following the RORT tutorials
 
-:h2 What you will learn
+### What you will learn
 
 1. How to prioritize work
 1. Being realistic about what you can get done in a certain time window
 1. Ability to cut a feature you love because you will otherwise run out of time
 
-:h2 Steps
+### Steps
 
 1. Prepare a paper prototype of the key screens of your 1.0, plus UX flows. By doing this before trying to implement a lot of code in ruby you give yourself freedom to change things around based on your own testing as well as maybe showing it to others. You can use actual paper or a suitable tool.
 1. Elaborate the schema for your application. Remember, if you don't know your schema, you don't know your application! Still remember YAGNI. Don't get too far ahead of yourself in terms of features that you may never get to!
 1. Work out your URL scheme and build the routes.
     * This will follow reasonably directly from your schema and your paper prototype.
-    * Document all the routes in your readme.md. Here's a suggested format:
-        :source_begin :bash
-        Home page page: /
-        Users urls: /users, /users/new, /users/create, /users/delete, /users/1, /users/1/change, /users/1/update
-        Search form: /search
-        Display Full Text Search results /search?phrase=brandeis
-        Display the user registration page: /register
-        Display user login prompt, and check for correct password: /login
-        Logout: /logout
-        :source_end
+    * Document the key routes in your readme
 1. Identify and describe your key views and models. Use rails generators to generate scaffolding for your key models and views. At this point you should be getting close to something working a little bit. As soon as you start adding code to your controllers, models and views, it will get more difficult to run scaffold generation. But feel free to use a generated scaffold as sample code to remember the standard idioms
 1. Database up and running (focus on core views). Each of the core views identified at this point has corresponding database tables.
 1. Implement many of your forms and views. I STRONGLY ADVISE agains ajax, react, javascript, etc, at this point! We won't penalize you if you do use those; the advice is because sometimes those technologies are hard to get to work and all other progress screeches to a halt while students try to make it work "just so".
 1. User accounts: registration, login, logout, administration. Implement initial set of authentication and authorization views. Also the login and login links or buttons
-1. Basic unit tests of models and one or two integration tests
+1. Significant tests written. Typically, early in the project you might have more unit,model and small integration tests, as well as one or two system tests. And towards the end you will have more.
 1. Add one or two interesting gems to your application to create a cool feature outside of basic CRUD functionality.
     * Obviously they need to be relevant to your product. If you need assistance we will be glad to brainstorm with you.
     * [The Ruby Toolbox](https://www.ruby-toolbox.com): This is an awesome resource to look at everything that's available as tools and add-ons for ruby and rails.
@@ -46,9 +36,12 @@ desc: Here is where you build the core functionality of your app!
     * Enumerate your planned views, implemented or not
     * List of your dependencies on APIs, `gems`, libraries and so on
 
-:h2 Deliverables :teambadge
+### Deliverables
 
-* Link to your shared Github repo.
-    * Please make sure you set up Mitchell and your team TA as collaborators!
-    * And make sure that we are able to find all the parts of the deliverable (e.g. by mentioning them in the readme.md)
-* Link to deployed version of your application
+* Link to your shared Github repo and your deployed application on Heroku
+
+
+|____|
+
+* Please make sure it is accessible to the TAs
+* And make sure that we are able to find all the parts of the deliverable (e.g. by mentioning them in the readme.md)

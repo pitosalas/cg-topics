@@ -27,7 +27,7 @@ desc: Starting to actually build your application!
 
 1. Now get the server running on each individual students' computer. Don't skip this step, do it on your own computer too! Get it running on your personal computers, all based on your one single Github repo. Make sure that all students have the latest code from GitHub on your computers. Make sure that you are all tied to the Postgres database running on your own computers. Don't let the code get skewed.
 
-1. Now actually deploy your code so far into the cloud by deploying it on  Heroku (see <%= link_to_topic :hands_on_heroku %> )
+1. Now actually deploy your code so far into the cloud by deploying it on  Heroku (see :topic_link :hands_on_heroku). Make sure that you can see the data you seeded in the cloud. This is a good time to make sure that you have a good understanding of how to use the Rails console to interact with your data.
 
 1. Work as a team on a prioritized story list for your release 1.0. Add to Trello. This is expected to be maintained as the project continues.
 
