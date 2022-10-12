@@ -26,14 +26,31 @@ slides: true
 * How many people do we need, and when?
 * How many customers do we need, and when?
 
-:slide_bigtitle General Structure
+:slide_bigtitle General Structure of a Financial Model
 
 * Use google sheets (excel is ok too)
 * Columns will be time. 
 * It depends, but a good start is to have 1 year in months (and perhaps additinal years in quarters)
 * Rows will be various kinds of metrics
-* Rows should follow a rough order
-* Customer, Revenue, Costs, Profits
+* Order of rows should follow roughly the conventions of an Income Statement
+ 
+* Revenue related
+   * Revenue (what you actually have taken in)
+   * Bookings (what you have sold)
+* COGS related
+    * Cost of Goods Sold (What can be ascribed to a specific unit sold)
+    * Other Variable Expenses
+* Gross Margin related
+    * Operating Margin (profits)
+    * Gross Margin (Revenue - COGS)
+* OPEX Related (All the other operating expenses)
+    * Marketing Expense
+    * Salaries and Benefits
+    * Fixed Costs
+* Profit Related
+    * Financing (Money that investors put in)
+    * Net Income (Profit)
+    * Cash Balance
 
 :slide_title Cells: Types of information
 
@@ -41,6 +58,7 @@ slides: true
 * Don't be uncomfortable about very broad generalizations for your assumptions (mere guesses)
 * Most of the time the best you can do is an educated guess
 * Assumptions should be clearly set off
+* Color coding can be helpful
 
 :slide_title Assumptions - Input parameters or independent variable
 

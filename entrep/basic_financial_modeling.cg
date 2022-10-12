@@ -17,11 +17,27 @@ desc: Fundamentals of the financial plan
 * Or, to start looking for a gas station before its too late
 * Examples of what the CFO does
 
-:slide_title Basic terms
+:slide_title Basic terms and Metrics
 
-* Costs
-* Revenues
+* Revenue related
+   * Revenue (what you actually have taken in)
+   * Bookings (what you have sold)
+* COGS related
+    * Cost of Goods Sold (What can be ascribed to a specific unit sold)
+    * Other Variable Expenses
 * Margin (profits, earnings)
+    * Operating Margin (profits)
+    * Gross Margin (Revenue - COGS)
+* Total OPEX (All the other operating expenses)
+    * Marketing Expense
+    * Salaries and Benefits
+    * Fixed Costs
+* Cash
+    * Financing (Money that investors put in)
+    * Cash Balance
+* Unit
+    * Unit Sales Price
+    * Unit Product Cost
 
 :slide_title Types of costs
 
@@ -32,7 +48,8 @@ desc: Fundamentals of the financial plan
 :slide_title Fixed Costs
 
 * People/Salaries are often the top costs in our world
-* Rent
+* Rent, Utilities, Insurance, etc. are also fixed costs
+* Legal, Accounting, etc. are also fixed costs
 * Equipment/Services etc
 
 :slide_title Variable Costs
@@ -55,16 +72,4 @@ desc: Fundamentals of the financial plan
 * Overall span is 1 (or more) years
 * Rows are variables of various kinds
 * Use color to distnguish between input vs computed cells
-
-:slide_title Key Metrics
-
-* Bookings (what you have sold)
-* Revenue (what you actually have taken in)
-* Cost of Goods Sold (What can be ascribed to a specific unit sold)
-* Gross Margin (Revenue - COGS)
-* Total OPEX (All the other operating expenses)
-* Operating Margin (profits)
-* Financing (Money that investors put in)
-* Cash ("checking account")
-* People (sometimes by category)
 
