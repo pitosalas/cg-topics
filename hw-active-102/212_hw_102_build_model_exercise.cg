@@ -1,9 +1,6 @@
 ---
 title: (T) Build your financial model
 ---
----
-title: (T) Build your financial model
----
 ### Purpose
 
 It's show time. Using all that we've learned before, it's time to try your hand at building a financial operating plan for your business. This will allow you as a team to confront the financial viability of your business. It will set you up for the final presentation and the justification for the investment funds requested.
@@ -18,18 +15,20 @@ It's show time. Using all that we've learned before, it's time to try your hand 
 ### Structure of the spreadsheet
 
 **Tab 1: Text explanations (use the spreadsheet like a text editor)**
+
 1. Business name, names and emails of the team members, team nuber
 1. Succinct explanation of the business
 1. Succinct explanation of the business model
 1. Any additional comments and assumptions
 
-
 **Tab 2: Model**
+
 1. 12 month model including assumptions in a separate area.
 1. Data entry cells have a different background color
 1. Most cells have formulas
 
 **Tab 3: Graph showing key variables over 12 monnths**
+
 1. Cash balance
 1. Number of customers
 1. Revenue
