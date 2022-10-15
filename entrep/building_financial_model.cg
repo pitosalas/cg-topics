@@ -4,6 +4,21 @@ desc: Steps to building your financial model
 slides: true
 ---
 
+:slide_title Overview
+
+* Information is organized logically into several sheets
+* Columns are units of time - usually months
+* Overall span is 1 (or more) years
+* Rows are variables of various kinds
+* Use color to distnguish between input vs computed cells
+
+:slide_bigtitle Operating Model for your business
+
+* The core model (spreadsheet) that pulls it all together
+* Goal is to bring out the Key Metrics and Key Assumptions 
+* [Examples of different growth models](https://docs.google.com/spreadsheets/d/1dLQWhfuQCiGa7nYHdHX9zI8r-X9JVPbhlLmXN4X7BZY/edit#gid=657268627)
+
+
 :slide_title Financial model
 
 * A model is a simulation of the future
@@ -32,25 +47,6 @@ slides: true
 * Columns will be time. 
 * It depends, but a good start is to have 1 year in months (and perhaps additinal years in quarters)
 * Rows will be various kinds of metrics
-* Order of rows should follow roughly the conventions of an Income Statement
- 
-* Revenue related
-   * Revenue (what you actually have taken in)
-   * Bookings (what you have sold)
-* COGS related
-    * Cost of Goods Sold (What can be ascribed to a specific unit sold)
-    * Other Variable Expenses
-* Gross Margin related
-    * Operating Margin (profits)
-    * Gross Margin (Revenue - COGS)
-* OPEX Related (All the other operating expenses)
-    * Marketing Expense
-    * Salaries and Benefits
-    * Fixed Costs
-* Profit Related
-    * Financing (Money that investors put in)
-    * Net Income (Profit)
-    * Cash Balance
 
 :slide_title Cells: Types of information
 
@@ -73,7 +69,7 @@ slides: true
 * Output from the model (e.g. Operating Profit in Q2)
 * There will be lots of assumptions.
 
-:slide_title ustomers or units and the Growth Engine
+:slide_title Cstomers or units and the Growth Engine
 
 * A very typical "driver" for your model will be the number of customers served or units sold
 * Your assumptions there will have a big effect on the overall model

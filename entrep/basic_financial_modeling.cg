@@ -8,6 +8,7 @@ desc: Fundamentals of the financial plan
 * You consume resources and you generate value
 * Remember Gazintas > Gazoutas
 * Quick review of very basic financial modeling
+* Recall Marketing vs. Sales
 
 :slide_title Why do we do this? 
 
@@ -19,27 +20,45 @@ desc: Fundamentals of the financial plan
 
 :slide_title Basic terms and Metrics
 
+* Unit
+    * Unit Sales Price
+    * Unit Product Cost
+    * Units sold
 * Revenue related
-   * Revenue (what you actually have taken in)
-   * Bookings (what you have sold)
+    * Revenue (what you actually have taken in)
+    * Bookings (what you have sold)
 * COGS related
     * Cost of Goods Sold (What can be ascribed to a specific unit sold)
     * Other Variable Expenses
 * Margin (profits, earnings)
     * Operating Margin (profits)
     * Gross Margin (Revenue - COGS)
-* Total OPEX (All the other operating expenses)
+* OPEX Related (All the other operating expenses)
     * Marketing Expense
     * Salaries and Benefits
     * Fixed Costs
 * Cash
     * Financing (Money that investors put in)
     * Cash Balance
-* Unit
-    * Unit Sales Price
-    * Unit Product Cost
+* Profit Related
+    * Financing (Money that investors put in)
+    * Net Income (Profit)
+    * Cash Balance
+ 
+ :slide_bigtitle Units
 
-:slide_title Types of costs
+* How many `x` for every `y time`
+* Number of diners
+* Number of cars
+* Number of subscriptions
+
+:slide_bigtitle Revenue Related
+* Revenue vs. Bookings
+* Revenue: actual money collected
+* Bookings: contractually obligated, but not collected
+* Computed as units x price
+
+:slide_bigtitle Costs
 
 * Fixed -- Cost you have to get to the first 'thing'
 * Variable -- Relative to some independent variable
@@ -55,21 +74,32 @@ desc: Fundamentals of the financial plan
 :slide_title Variable Costs
 
 * Relative to what independent variable?
-* Marketing expenses
-* Salaries (how do number of people correspond to units sold?)
+* Sales Expense (salaries)
 * Raw Materials
+* Marketing expenses?
 
-:slide_bigtitle Operating Model for your business
+:slide_bigtitle COGS
 
-* The core model (spreadsheet) that pulls it all together
-* Goal is to bring out the Key Metrics and Key Assumptions 
-* [Examples of different growth models](https://docs.google.com/spreadsheets/d/1dLQWhfuQCiGa7nYHdHX9zI8r-X9JVPbhlLmXN4X7BZY/edit#gid=657268627)
+* Any costs that can reasoably be tied to the number of units sold
+* Sometimes crystal clear, sometimes not
 
-:slide_title Overview
+:slide_bigtitle Margin
 
-* Information is organized logically into several sheets
-* Columns are units of time - usually months
-* Overall span is 1 (or more) years
-* Rows are variables of various kinds
-* Use color to distnguish between input vs computed cells
+* Margin aka profit, earnings
+* Usually `profit = sales - costs`
+* Gross Profit Margin and Operating Profit Margin are two metrics used to measure a company's profitability. 
+* Gross profit margin only figures in the direct costs involved in production
+* Operating profit margin includes operating expenses like overhead.
 
+:slide_bigtitle OPEX
+
+* Operating expenses 
+* Overhead
+* Not directly related to units sold
+* Rent, HR staff, Legal staff, etc.
+
+:slide_bigtitle Cash
+* Incoming cash: invesstments, accounts receivables
+* Outgoing cash: accounts payables, interest payments etc
+* Cash Balance: actual cash on hand
+* **Cash is king**
