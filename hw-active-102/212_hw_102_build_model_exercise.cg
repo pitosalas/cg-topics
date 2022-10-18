@@ -1,17 +1,20 @@
 ---
 title: (T) Build your financial model
+desc: Using all we've learned, create a financial model for your business
 ---
 
 ### Purpose
 
-It's show time. Using all that we've learned before, it's time to try your hand at building a financial operating plan for your business. This will allow you as a team to confront the financial viability of your business. It will set you up for the final presentation and the justification for the investment funds requested.
+It's show time. Using all that we've learned before, it's time to try your hand at building a financial operating plan for your business. This will allow you as a team to confront the financial viability of your business. It will set you up for the final presentation and the financial justification for the investment funds requested.
 
 ###  Do this
 
-1. *Milestones:* There should be two milestones represented. Consider the evoliution of your idea. What is a reasonable number of months between when you receive funding and have revenue? What do your expenses look like during that time? Is there any revenue (other than the investment)? You might call this milestone "First Revenue". The second milestone is when you have achieved positive cashflow, meaning your cash balance finally is starting to go up. During this stage you are spending on marketing and/or sales, acquiring (and losing) customers, and generating revenue. You might call this milestone "Cashflow Positive".
-1. *Business Model*:  You will need to consider your business model ("engine of growth", "growth model"). In what ways will present customer activity (i.e. revenue) feed into acquiring more customers? Will the revenue fund more advertising? Will customers bring in new customers? And think about why you can make those claims
-1. *Assumptions and drivers*: Consider which "independent variables" are key in driving the model. Product price, cost of goods, sales person productivity, per employee overhead, are some of many possibilities.
-1. *Spreadsheet*: Use a google sheet to represent this.
+1. *Milestones:* There should be two milestones represented. Consider the evolution of your idea. What is a reasonable number of months between when you receive funding and have revenue? What do your expenses look like during that time? Is there any revenue and how do you achieve that revenue? You might call this milestone "First Revenue". The second milestone is when you have achieved positive cashflow, meaning your cash balance finally is starting to go up. During this stage you are spending on marketing and/or sales, acquiring (and losing) customers, and generating revenue. You might call this milestone "Cashflow Positive".
+1. *Business Model*:  You will need to consider your business model ("engine of growth", "growth model"). How do you get your first customers? In what ways will present customer activity (i.e. revenue) feed into acquiring more customers? Will the revenue fund more advertising? Will customers bring in new customers? Will you have to add sales reps? And think about why you can make those claims
+1. *Assumptions and drivers*: Consider which "independent variables" are key in driving the model. Product price, cost of goods, sales rep productivity, per employee overhead, are some of many possibilities.
+1. What other overhead expenses do you have, e.g. engineering, legal, accounting, executive salaries?
+1. All the above helps you determine how much investment you will need, and when. Show how cash decreases and then increases based on your expenses and revenue.
+1. *Spreadsheet*: Use a google sheet to represent this. Document it so that someone who doesn't know your business will understand your assumptions and plan. Format it so that it looks as professional as your deck!
 
 ### Structure of the spreadsheet
 
@@ -28,16 +31,16 @@ It's show time. Using all that we've learned before, it's time to try your hand 
 1. Data entry cells have a different background color
 1. Most cells have formulas
 
-**Tab 3: Graph showing key variables over 12 monnths**
+**Tab 3: Graph showing key variables over 12 months**
 
 1. Cash balance
 1. Number of customers
-1. Revenue
+1. Revenue and Net Profit
 1. Cost of goods
 
 ### Submit this
 
-This assignment will be given twice. This is the first time. Submit the URL to your spreadsheet, make sure that it is commentable by anyone with the URL. You will receive feedback from an expert. The second time you will submit it again with the comments addresssed. 
+This assignment will be given twice. This is the first time. Submit the URL to your spreadsheet, make sure that it is commentable by anyone with the URL. You will receive feedback from an expert. The second time you will submit it again with the comments addressed. 
 
 |____|
 
