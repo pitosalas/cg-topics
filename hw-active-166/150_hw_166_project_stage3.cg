@@ -13,6 +13,7 @@ desc: Here is where you build the core functionality of your app!
 1. How to prioritize work
 1. Being realistic about what you can get done in a certain time window
 1. Ability to cut a feature you love because you will otherwise run out of time
+1. How to be effective as a team, with everyone contributing in whatever areas they are comfortable with
 
 ### Steps
 
@@ -29,12 +30,15 @@ desc: Here is where you build the core functionality of your app!
 1. Add one or two interesting gems to your application to create a cool feature outside of basic CRUD functionality.
     * Obviously they need to be relevant to your product. If you need assistance we will be glad to brainstorm with you.
     * [The Ruby Toolbox](https://www.ruby-toolbox.com): This is an awesome resource to look at everything that's available as tools and add-ons for ruby and rails.
+1. There will need to be plenty of tests, not just unit tests. Test as much functionality you can. Make sure that each time you push to development that all the tests run and pass. I will not give a number because if I do then you will do exactly that many. Use your judgement. The code needs to be well tested.
 1. Write a detailed readme.md. Even though it is a subset of your eventual readme, it should be neat and professional. If you want some ideas on what makes a great readme, use google to search or for example see [Thoughtbot How To Write A Great README](https://thoughtbot.com/blog/how-to-write-a-great-readme). It should include, at least:
+    * Project name, team name, team number and team members
     * A very brief summary of your functionality. Make it a point to mention the specific bits of work you want to make sure I see.
     * Enumerate your URL patterns, what they look like and what they mean. This is related to the output from `rails routes`, but in English and not repetitive. Also there might be patterns in your design that you have not yet added to `rails routes`.
     * Include your db schema. (This doesn't have to be a diagram, just having it as a summary text is sufficient.)
     * Enumerate your planned views, implemented or not
     * List of your dependencies on APIs, `gems`, libraries and so on
+    * Instructions on how to run the tests, hopefully `rails test` and `rails test system` will do the trick.
 
 ### Deliverables
 
