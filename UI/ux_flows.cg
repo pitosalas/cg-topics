@@ -1,12 +1,17 @@
 ---
 title: User Experience Flows
 ---
-:slide_break
+:slide_title User Experience Flows
 
-:h2 User Experience Flows
+:image :uiflow
+:image :600, :uiflow2
 
-* A UX Flow is a simple extension of <%= link_to_topic :paper_prototyping %>
+:slide_title Details
+
+* A UX Flow is a simple extension of :topic_link :paper_prototyping
 * Instead of individual paper prototypes of individual page, we zoom out and view the product with a broader perspective
 * Each page is connected to one or more other with an arrow labeled with the that gesture, event or command, gets the user from one to the other (e.g. "user clicks 'resend password link'" or "email was successfully sent")
 * You need to be meticulous and try and cover all the cases BEFORE you start coding.
 * Neatness is not as important as careful thinking about how the user will experience the product
+
+

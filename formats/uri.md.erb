@@ -8,33 +8,37 @@ title: URI - Uniform Resource Identifier
   1. Because the resources were files on the disk of the server
 * And the URL's path was really a path!
 * Focus now on the 'path' part of the URI
-* e.g. some ugly examples
-  1. `http://roomscheduler.com/reserve/room/3`
-  1. `http://bookstore/gonewiththewind/order/3`
-  1. `http://nyt.com/latest-updates?year=2014`
-* e.g. some good examples
-  1. `http://roomscheduler.com/room/3/request`
-  1. `http://bookstore.com/book/412/price`
-  1. `http://tourmanager.com/city/boston/tour/tuesday/new`
-* There are many ways to structure a url
+:source_begin :ruby
+# don't do this
+
+http://roomscheduler.com/monday
+http://bookstore/gonewiththewind/order/3
+http://nyt.com/3332/2312/a
+
+# do this
+
+http://roomscheduler.com/calendar?day=monday
+http://bookstore/books/4931231/order?units=2
+http://nyt.com/issue/3332/article/2312/a
+:source_end
 
 :slide_title RESTful style of URI design
 
 * "Representational State Transfer" (See [Original REST Paper](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm))
 * Each URI denotes a specific 'resource'
-  1. 'room 3' or 'book 412' or 'Tuesday tours IN Boston city'
+  1. Displat calendar for Monday; create an order for book 4931231 or show NYT issue 332's article 2312, section a
   1. It is usually not a file but something generated 'on the fly'
   1. Still the same URI should yield the same resource every time (hand-wave)
 * Each URI is used in combination with an HTTP "method"
-  1. Get: retrieve the indicated "resource"
-  1. Put: update value of the indicated resource
-  1. Delete: delete the indicated resource
-  1. Post: Create a new instance of indicated resource
+  1. GET: retrieve the indicated "resource"
+  1. PUT: update value of the indicated resource
+  1. DELETE: delete the indicated resource
+  1. POST: Create a new instance of indicated resource
   1. (some other, less important ones)
 
 :slide_title One of the earliest design questions
 
-* What do the URLs for my app look like?
+* What do the URLs for my app look like?s
 * Conceptually, they are "directory structure-like" URLs
 * There is a coherent "syntax" about them, e.g.
   1. `http://www.myservice.org/discussion/topics/{topic}`
