@@ -19,7 +19,7 @@ slides: true
 
 * True of more or less any approach to authorization and authentication
 * User record
-  * There is some kind of User record corresponding to
+  * There is some kind of User record corresponding to each user (who can log in)
   * User is designated internally by a User (or Account, or similar concept)
 * A globally accessible method "current_user"
   * Can be called anywhere to see who is logged in
