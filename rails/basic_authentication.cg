@@ -24,18 +24,13 @@ $ cd basic_auth_demo
 $ rails generate scaffold users name:string
 $ rails db:create db:migrate
 
-# add standard gems to the end of Gemfile
-
-gem 'better_errors'
-gem 'faker'
-gem 'pry-byebug'
-gem 'hirb'
-
+# add gem "faker" to Gemfile and then ...
 $ bundle
 
 $ rails console
 require 'faker'
-100.times { User.create name:Faker::Name.name }:source_end
+100.times { User.create name:Faker::Name.name }
+:source_end
 
 :slide_title Life without authentication
 
@@ -104,8 +99,8 @@ get 'logout', to: 'sessions#destroy'
 root to: 'sessions#welcome'
 
 #Add this to views/sessions/welcome.html.erb
-<%%= button_to "Login", '/login', method: :get%>
-<%%= button_to "Sign Up", '/users/new', method: :get%>
+<%= button_to "Login", '/login', method: :get %>
+<%= button_to "Sign Up", '/users/new', method: :get %>
 
 #Add this to views/users/_form.html.erb
 
@@ -114,22 +109,22 @@ root to: 'sessions#welcome'
   <%= f.text_field :name %><br>
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
-  <%%= f.submit %>
-<%%end%>
+  <%= f.submit %>
+<% end %>
 
 #Modify the first line of UsersController#create to be:
 @user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
 
 #Add this to views/sessions/new.html.erb
-<%%= form_tag '/login' do %>
-   <%%= label_tag :name%>
-   <%%= text_field_tag :name %>
-   <%%= label_tag :password%>
-   <%%= password_field_tag :password%>
-   <%%= submit_tag "Login"%>
-<%% end%>
 
-
+<h1>Sign Up</h1>
+<%= form_for @user do |f|%>
+  <%= f.label :username%><br>
+  <%= f.text_field :username%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit %>
+<%end%>
 :source_end
 
 :slide_title Adding actual authentication
@@ -142,7 +137,7 @@ root to: 'sessions#welcome'
   1. remember who is logged in
   1. And check whether someone is logged in
 
-<%= source_begin "language-ruby" %>
+:source_begin :ruby
 # Add this to helpers/session_helper
 module SessionsHelper
   # Logs in the given user.
@@ -167,9 +162,35 @@ module SessionsHelper
   end
 end
 
-# and add this to ApplicationController
+# Add this to ApplicationController
 include SessionsHelper
-
-# Now start requiring log in (autorization)
-
 :source_end
+
+:slide_title Authentication UI
+* Lets look at the account creation and login UI
+:source_begin :ruby
+# UserController#create
+def create
+   @user = User.create(params.require(:user).permit(:username,        
+   :password))
+   session[:user_id] = @user.id
+   redirect_to '/welcome'
+end
+
+# and add to the Sessions#welcome view
+<h1>Welcome</h1>
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.username %></h1>
+<%end%>
+<%= button_to "Login", '/login', method: :get%>
+<%= button_to "Sign Up", '/users/new', method: :get%>
+
+
+:slide_title Authorization
+
+* So far, all we have is that a user is asked to log in
+* Their password is validated
+* But nothing has changed in terms of what they can do
+* But they should not be able to create a user right?
+
+

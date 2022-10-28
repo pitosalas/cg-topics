@@ -19,12 +19,13 @@ slides: true
 :slide_title Possible implementation strategies in Rails
 
 1. Roll your own, using simple authentication. My preferred approach for this course.
-1. Look at other options: [Clearance](https://github.com/thoughtbot/clearance) or [Sorcery]( https://github.com/Sorcery/sorcery),  [Authlogic](http://www.rubydoc.info/github/binarylogic/authlogic), or [Devise](https://github.com/plataformatec/devise)
 1. Look at GoRails, they have several relevant lessons: [GoRails Authentication](https://gorails.com/episodes/omniauth-twitter-sign-in?autoplay=1)
+1. [Devise](https://github.com/plataformatec/devise) is the most popular authentication package but I find it hard and overly complex.
+1. Look at other options: [Clearance](https://github.com/thoughtbot/clearance) or [Sorcery]( https://github.com/Sorcery/sorcery),  [Authlogic](http://www.rubydoc.info/github/binarylogic/authlogic). 
 
 
 ## Demos
 
 * [Building a Simple Session Based Authentication with Rails](https://hackernoon.com/building-a-simple-session-based-authentication-using-ruby-on-rails-9tah3y4j)
-* <%= link_to_topic :basic_authentication %>0
-* <%= link_to_topic :clearance_authdemo %>
+* :topic_link :basic_authentication
+* :topic_link :clearance_authdemo
