@@ -25,9 +25,9 @@ title: How do forms and views work?
   1. Difference between `form_tag` and `form_with`: let's look at two examples (p.s. `form_for` is deprecated)
   1. Why is there an Item.new in the form display action (new)?
 * Accept data from the form
-  1.What URL is requested to send the data? What http verb? Why?
-  1.How does the data come back from the form?
-  1.What can the controller do with that data?
+  1. What URL is requested to send the data? What http verb? Why?
+  1. How does the data come back from the form?
+  1. What can the controller do with that data?
 * Security issues
   1. What if the form payload is not coming from your form?
   1. What if your form has been modified inside the browser?

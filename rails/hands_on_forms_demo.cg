@@ -4,11 +4,7 @@ title: Hands On Forms Demo
 :slide_title Set up and modify gem file
 
 :source_begin :ruby
-rails new formsdemo
-
-gem 'awesome_print'
-gem 'better_errors'
-gem 'hirb'
+rails new formsdemo -d postgresql
 
 bundle
 :source_end
@@ -99,17 +95,17 @@ s
 
 :source_begin :ruby
 # views/items/search.html.erb
-&lt;div>
-  &lt;h1>Search&lt;/h1>
-    &lt;%= form_tag(do_search_items_path, method: "get") do %>
-      &lt;div>
-        &lt;label>Title&lt;/label>
-        &lt;%= text_field_tag(:title, "") %>
-      &lt;/div>
+<div>
+  <h1>Search</h1>
+    <%= form_tag(do_search_items_path, method: "get") do %>
+      <div>
+        <label>Title</label>
+        <%= text_field_tag(:title, "") %>
+      </div>
 
-      &lt;%= submit_tag("Search") %>
-    &lt;% end %>
-&lt;/div>
+      <%= submit_tag("Search") %>
+    <% end %>
+</div>
 :source_end
 
 :slide_title And it's corresponding actions
@@ -130,31 +126,31 @@ s
   end
 
 # views/items/_index.html.erb
-&lt;table>
-  &lt;thead>
-    &lt;tr>
-      &lt;th>Title&lt;/th>
-      &lt;th>Description&lt;/th>
-      &lt;th>Owner&lt;/th>
-      &lt;th>Category&lt;/th>
-      &lt;th colspan="3">&lt;/th>
-    &lt;/tr>
-  &lt;/thead>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-  &lt;tbody>
-    &lt;%% @items.each do |item| %>
-      &lt;tr>
-        &lt;td>&lt;%= item.title %>&lt;/td>
-        &lt;td>&lt;%= item.description %>&lt;/td>
-        &lt;td>&lt;%= item.owner %>&lt;/td>
-        &lt;td>&lt;%= item.category_id %>&lt;/td>
-        &lt;td>&lt;%= link_to 'Show', item %>&lt;/td>
-        &lt;td>&lt;%= link_to 'Edit', edit_item_path(item) %>&lt;/td>
-        &lt;td>&lt;%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>&lt;/td>
-      &lt;/tr>
-    &lt;%% end %>
-  &lt;/tbody>
-&lt;/table>
+  <tbody>
+    <%% @items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= item.owner %></td>
+        <td><%= item.category_id %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 :source_end
 
 :slide_title Let's add some Bootstrap
@@ -164,14 +160,14 @@ s
 
 :source_begin :ruby
 # views/items/index.html.erb
-&lt;h1>Listing items&lt;/h1>
+<h1>Listing items</h1>
 
-&lt;%= render "index" %>
-&lt;br>
-&lt;div class=btn-group %>
-  &lt;%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
-  &lt;%= link_to 'Search', search_items_path, class: "btn btn-default" %>
-&lt;/div>
+<%= render "index" %>
+<br>
+<div class=btn-group %>
+  <%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
+  <%= link_to 'Search', search_items_path, class: "btn btn-default" %>
+</div>
 :source_end
 
 :slide_title Now lets add some additional controls
@@ -181,30 +177,30 @@ s
 * This is pointing the way to AJAX!
 
 :source_begin :ruby
-&lt;h1>Search&lt;/h1>
-&lt;%= form_tag(do_search_items_path, method: "get", class: "form") do %>
-  &lt;div class="row tbalign-items-center bg-primary text-light p-2">
-    &lt;div class="col-sm-8">
-    &lt;div class="row">
-      &lt;div class="col">
-        &lt;%= text_field_tag(:title, "", class: "form-control-sm", placeholder: "search for") %>
-      &lt;/div>
-      &lt;div class="col pt-1">
-        &lt;label class="fg-light">Return: &lt;/label>
-        &lt;%= select_tag(:match_no_match,
+<h1>Search</h1>
+<%= form_tag(do_search_items_path, method: "get", class: "form") do %>
+  <div class="row tbalign-items-center bg-primary text-light p-2">
+    <div class="col-sm-8">
+    <div class="row">
+      <div class="col">
+        <%= text_field_tag(:title, "", class: "form-control-sm", placeholder: "search for") %>
+      </div>
+      <div class="col pt-1">
+        <label class="fg-light">Return: </label>
+        <%= select_tag(:match_no_match,
         options_for_select(
         [['only matching', "match"],
           ['only non matching', "nomatch"]
         ]), class: "form-control-sm") %>
-      &lt;/div>
-      &lt;div class="col">
-        &lt;%= submit_tag("Search", class: "btn btn-dark form-control-sm") %>
-      &lt;/div>
-    &lt;/div>
-    &lt;/div>
-  &lt;/div>
-&lt;% end %>
-&lt;%= render "index" %>
+      </div>
+      <div class="col">
+        <%= submit_tag("Search", class: "btn btn-dark form-control-sm") %>
+      </div>
+    </div>
+    </div>
+  </div>
+<% end %>
+<%= render "index" %>
 :source_end
 
 :source_begin :ruby
