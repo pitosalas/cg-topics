@@ -15,7 +15,7 @@ The purpose of the Term Project is to give you an open ended, but structured han
 
 <%= callout("Objective", " Propose a product and persuade yourselves and us that is will be a good business. In other words, that there are customers, that they are willing to pay, and that there's a prospect for growing.") %>
 
-As a team, you will be responsible at the end of the semester to describe this product. This will take the form of a series of well defined <%= link_to_topic :cosi165a_final_deliverables %>.
+As a team, you will be responsible at the end of the semester to describe this product. This will take the form of a series of well defined :topic_link :cosi102a_final_deliverables
 
 ### Measures of success
 1. Come up with a new ("technological") product or service, or an adaptation of some other product. It can be something never heard of before, or a refinement or variation, or combination of existing ideas or products. Describe it clearly so it can be understood, makes sense and can be visualized.
@@ -23,11 +23,11 @@ As a team, you will be responsible at the end of the semester to describe this p
 1. Model the revenue and growth of the business. Propose a business model and a growth model. Include that as well in your market validation when you talk to potential customers and users.
 1. Subject all of the above to all the techniques and concepts of Lean Startup. Formulate hypotheses and go out of the building to test them. Talk to real users not just to your team members. Don't trust intuition, find actual data.
 1. Perform all this work as a team where everyone contributes. Figure out how you will be effective and make decisions.
-1. Synthesize this and produce the <%= link_to_topic :cosi165a_final_deliverables %>.
+1. Synthesize this and produce the :topic_link :cosi102a_final_deliverables .
 
 ## Teams
 
-We will work in teams of 4 students. Each team, by the end of the term, will have defined a new product or service, at least up to a point of being ready to seek funding. See <%= link_to_topic :cosi165a_final_deliverables %>.
+We will work in teams of 4 students. Each team, by the end of the term, will have defined a new product or service, at least up to a point of being ready to seek funding. See :topic_link :cosi102a_final_deliverables .
 
 Here's how team selection works:
 
@@ -38,6 +38,6 @@ Here's how team selection works:
 1. We will have an open discussion where people might change their minds, changing their first and second choice
 1. Eventually this converges to 8 teams of 4 students each
 
-<%= callout("REMEMBER", " It this class we will design, mockup, test and  measure, but not actually implement the new product.") %>
+:callout :small, "REMEMBER", " It this class we will design, mockup, test and  measure, but not actually implement the new product."
 
-<%= include_topic :choose_product %>
+:topic_include :choose_product
