@@ -1,0 +1,33 @@
+---
+title: (P) Read RORT Chapter 13
+desc: Microposts
+---
+### Context For Chapter 13
+
+We finally create the models for the actual content of this mysterious system, the microposts. Why are they micro? I am not sure, but I guess he's trying to be modest. This is a big chapter with a lot of important new content and ideas. It will be a challenge but worth it. You will build things here that you will be able to use.
+
+### Do this
+
+Read [Ruby on Rails Tutorial](https://www.learnenough.com/course/ruby_on_rails_tutorial_7th_edition/user_microposts) Chapter 13
+
+
+* We use the rails generate model (not scaffold) this time which generates a little less than a scaffold. So you will be going without training wheels from now on! You will create validation rules, and various associations as well.
+
+* We use rails generate controller to create a default controller but with just a very simple case implemented, the case where we display a list of all the mifroposts.
+
+* We ensure that using and viewing Microposts require the user to log in. We allow images in the Microposts and even resizing of them!
+
+* **Are you still with me?** Try to keep motivated to study the code and actually get it to work! I promise that you will need all of it -- all of it -- in your project. Learning it carefully here will save you a ton of time later!
+
+* Make sure that you follow through and deploy what you created onto Heroku. 
+
+### Submit this
+
+I fully understand that you probably will not finish the whole chapter. Whatever you finish, deploy it to Heroku and provide the URL here. As usual, use all the resources -- Slack, TAs, Google, Stackoverflow and Pito -- if you get stuck.
+
+
+NOTE: TA Signoff Required You can submit before you receive the TA signoff. You are responsible for arranging the signoff. It can be done in a 5 minute zoom or in person meeting. You will receive 85 points for “doing” this assignment. This means answering the questions above and and attempting at least one of the exercises. You will receive an additional 15 points after the TA signoff. TA signoffs have to happen within a week and happen only on your initiative.
+
+Heroku and Github URL:
+
+|____|
