@@ -23,6 +23,13 @@ slides: true
 * **In Place Editing**: Forms that allow in place editing (instead of a big submit button)
 * **Server Push**: Browser update initiated by the server!
 
+:slide_title Javascript processing
+
+* JS is a general purpose language
+* Browser exposes the DOM as `document.`
+* Executing js can access and modify the DOM
+
+
 :slide_title How Ajax works
 
 1. Browser makes a 'background' http request
@@ -47,3 +54,4 @@ slides: true
 :slide_title Let's look at some JavaScript examples
 
 * [W3C JavaScript Examples](https://www.w3schools.com/js/js_examples.asp)
+* [My Public Sample of Ajax Demolets](https://github.com/pitosalas/public_samples/tree/master/htmletc/ajax_demo)
