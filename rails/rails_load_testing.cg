@@ -1,0 +1,51 @@
+---
+title: Load Testing Rails Apps
+---
+:slide_bigtitle Load Testing
+
+* Testing a product to see how it performs under load
+* Obviously to do load testing, your app needs to be running on a server, separately from your own computer.
+* This could be any server, even your neighbor's laptop.
+* For our purposes, it needs to be on one of the cloud services like Digital Ocean or Heroku
+  1. We are all using Heroku
+  1. if you are adventurous you could deploy it elsewhere too.
+  1. But then we won't really be able to give you too much help
+* Cloud deployment implies that there is a well known 'fixed' domain name (e.g. wild-mushroom-2312.herokuapp.com)
+
+:slide_title How to deal with authentication
+
+* In order to avoid requiring a login for the loadtest we create a secret back door
+* When this is appended to a url: `?magic=xxx` the app treats it as if it the user xxx is already logged in
+* This is required to allow reasonable load testing
+
+:slide_title Testing some App functionality
+
+* Select some operation that has a url to test
+* For example, create an event, display a trip, etc
+* The requirement is that you can express it in one url and append the ?magic=xxx to it
+* Now you are ready to test
+
+:slide_title Load Testing Tools
+
+* There are numerous Load Testing tools. Here are two lists: [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use) and [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
+* We are using [loader.io](http://www.loader.io)
+* You need to understand the different [types of tests](https://support.loader.io/article/16-test-types)
+
+:slide_title Perform the Test
+* Configured your app for testing
+* Try running the test with 10 users, then 50, then 100, then 1000
+* Save the charts from each one for your final report
+
+:slide_title When your app is failing to scale
+
+* Think about what happens when your app response time is longer than
+the time between new connections. Requests will start to pile up.
+* If it takes too long for a request to reach the front of the line, it
+will time out.
+* If your app is too overloaded, it may shut down entirely. Make sure
+to consult your Heroku logs after a test to identify this.
+* When an app hasn't been accessed for a while, Heroku will put it in a
+sleep state. If your app is asleep, make sure to access it manually
+to wake it up before beginning a test. Waking up may take several
+seconds, which would influence your results.
+

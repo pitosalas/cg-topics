@@ -12,6 +12,7 @@ title: Scaling
 :callout :small, "activity", " discuss with your neighbors: if you were the manager, how would you address the problem?"
 
 :slide_title Optimization:the search for bottlenecks.
+
 * What's a bottleneck? Refer back to the example.
 * Moving target:
 	1. When you eliminate/improve one bottleneck, it just reveals the next one.
