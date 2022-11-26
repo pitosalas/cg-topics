@@ -1,0 +1,37 @@
+---
+title: Final Presentation
+desc: How to create the final presnetation
+slides: True
+---
+:slide_bigtitle About the presentation
+
+* The combination of the demo and presentation should be no more than 10 minutes.
+* It is not required that every team member speak
+* You should have powerpoint or similar slides
+* This is more of a technical presentation, not a marketing or selling pitch
+* N.B. This is not a rubric or a checklist
+* You may add whatever you think is important to know
+
+:callout :small, "ALERT", "It is crucial that the reader/listener clearly understand what your product is trying to do and for who. More than once I've seen the audience puzzled about the basic question: what is this product and what does it do? Don't let that happen to you!"
+
+:slide_title Slide sequence suggestions
+
+* An opening slide
+* One or more slides about the functionality
+    * What user problem your product is meant to address
+    * Exactly what the product does currently and if you had more time
+* One or more slides about the technical side
+    * How does it work? What is the technical architecture of the product?
+    * A diagram of the architecture
+    * What parts of it were especially challenging
+    * Which ones go beyond the minimum Ruby on Rails
+    * Which gems or other outside libraries or services you used
+    * What interesting Cosi concepts or algorithms?
+* One or more slides about the non-coding parts
+    * What your approach was for testing and for continuous integration and deployment??
+    * What you are most proud of
+    * Where can your product be improved or expanded?
+    * How you approached dividing the work between the team member
+    * What did you learn about working on a team?
+* A closing
+  * Where can it be improved or expanded?

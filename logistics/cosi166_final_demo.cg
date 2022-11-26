@@ -1,0 +1,31 @@
+---
+title: Cosi166 Final demo
+desc: How to prepare and how to conduct
+slides: true
+---
+:slide_bigtitle About the product demo
+
+* Plan out your final demo
+    * Demos work best that are not just a list of features
+    * Instead think of a scenario that you can use as a way to visit your key features
+    * If appropriate and there are multiple "roles", then have different students play those
+* Make a final list of features that you will need for the demo
+    * Consider carefully :topic_link :good_166_product, especially the "beyond the basics" technologies
+    * Implement their routes, controllers, and views
+* Build up some interesting demonstration data to show off your product
+    * A demo is 10x more effective if it has plausible content. 
+    * It helps the viewer understand and appreciate what you have.
+    * Once you have the viewer they will fill in blanks and imagine features that you don't even have (yet)
+* Create a demo 'script'
+    * The best demo scripts tell a bit of a story
+    * Try to 'hook' the listener with a scenario that they recognize
+    * Don't worry about explaining marketability, pricing, target market and so on.
+    * Remember, this is not a marketing or selling course
+* Practice!
+    * You should practice it at least once
+    * Decide who will do the demo (or sometimes two people)
+    * By now, you should be able to demonstrate your product!
+* Deliver
+    * This is part of the presentation, near the beginning. So do the demo around the 2nd or 3d slide. 
+    * Then after the demo do the rest of the presentation.
+    * The combination of the demo and presentation should be no more than 10 minutes.

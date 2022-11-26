@@ -20,12 +20,12 @@ desc: You need to complete the finishing touches
 
 * Re-read :topic_link :good_166_product
 * Re-read :topic_link :hw_166_final_deliverables
-* Plan out your final demo (which will be around 5 minutes in length)
+* Plan out your final demo
     * Demos work best that are not just a list of features
     * Instead think of a scenario that you can use as a way to visit your key features
     * If appropriate and there are multiple "roles", then have different students play those
 * Make a final list of features that you will need for the demo
-    * Consider carefully :topic_link :good_166_product , especially the "beyond the basics" technologies
+    * Consider carefully :topic_link :good_166_product, especially the "beyond the basics" technologies
     * Implement their routes, controllers, and views
 * Build up some interesting demonstration data to show off your product
     * A demo is 10x more effective if it has plausible content. 
@@ -51,6 +51,6 @@ desc: You need to complete the finishing touches
 :h2 Deliverables :teambadge
 
 * Link to your shared Github repo. 
-    * Please make sure you set up Mitchell and your team TA as collaborators!
+    * Please make sure you set up Pito and your team TA as collaborators!
     * And make sure that we are able to find all the parts of the deliverable (e.g. by mentioning them in the readme.md)
 * Link to deployed version of your application

@@ -1,0 +1,46 @@
+---
+title: Fully Complete product
+desc: Finishing touches
+slides: true
+---
+:slide_title Finish Coding
+
+* Impement Missing Features
+    * Focus on the ones that are the most important
+    * Make sure that you are going beyond the basics
+    * Be ruthless in deferring features which don't contribute to your goals
+
+* Make sure you have sufficient tests
+    * As we have discussed, unit tests are the easiest
+    * Also include some more non-unit tests
+
+* Implement continuous integration and/or deployment
+    * Make sure that whenever you push to your repo, the tests and run and if successful, the site is updated
+    * You can use Heroku Deploy pipeline or Github actions
+
+* Make it pretty
+    * Finally it's the time to really worry about aesthetics of the UI
+    * We are looking for a professional, craftperson-like appearance (More like trello.com than like canva.com)
+    * Also focus on the quality of the code you are delivering
+    * Get rid of old left over files, make sure your readme is updated
+    * Look at code style, use some tool to analyze quality of the code so you can update it.
+
+:slide_title A great final product
+
+* Looks "profesional
+    1. If you saw it "cold" would you start using it?
+    1. Are things aligned? Are fields correctly sized, etc.
+* Has a level of ambition
+    1. It has no visible remainders of the scaffold code
+    1. No ambition: Take the tutorial code and modify fields and forms.
+    1. Ambition: Going beyond the minimum.
+    1. See: :topic_link :good_166_product
+* Follows excellent software engineering practice
+    1. Short lived branches
+    1. Continuous integration and testing
+    1. Automated test suite
+    1. Continuous deployment
+* Works
+    1. Buttons work, menus work, updates work
+    1. Performs well under load (users, records, etc.)
+    1. Doesn't crash
