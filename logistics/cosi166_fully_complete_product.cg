@@ -40,6 +40,7 @@ slides: true
     1. Continuous integration and testing
     1. Automated test suite
     1. Continuous deployment
+    1. Scales to at least 100 users
 * Works
     1. Buttons work, menus work, updates work
     1. Performs well under load (users, records, etc.)
