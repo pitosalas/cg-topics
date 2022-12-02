@@ -8,24 +8,23 @@ title: Rails API
 * The "automatically created" REST APIs in Rails are "questionable"
 * Client side frameworks (e.g. React etc) put all the UI in the client
 * Introducing: rails new foo --api-only
-
-:slide_title But why use Rails in that case?
-
 * Alternatives: Sinatra, Express, etc etc
 * Nothing wrong with a hybrid configuration
-* Isn't Rails overkill?
-    * development, test, production modes
-    * Really good security protection
-    * "Reloading" -- really nice for developer
-    * Logging is built in
-    * routes.rb
-    * Really deep caching
-    * on and on
-    * Finally: Why learn another framework?
-* Why not just use Rails in the usual way?
-    * That would be fine
-    * Unless you're concerned about memory footprint etc
-    * Or your sense of aesthetics is offended (why have all this stuff I never use?)
+
+:slide_title But how is Rails overkill?
+* development, test, production modes
+* Really good security protection
+* "Reloading" -- really nice for developer
+* Logging is built in
+* routes.rb
+* Really deep caching
+* on and on
+* Finally: Why learn another framework?
+
+:slide_title Why not just use Rails in the usual way?
+* That would be fine
+* Unless you're concerned about memory footprint etc
+* Or your sense of aesthetics is offended (why have all this stuff I never use?)
 
 ## Using Rails API
 

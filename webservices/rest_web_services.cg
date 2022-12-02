@@ -49,10 +49,11 @@ slides: true
 
 :slide_title One level deeper: RPC - Remote Procedure Calls
 
-* Imagine a procedure (method): `get_horoscope(date, sign) => String`
-* So for example: `get_horoscope("march 22, 2015", "aries")` which returns a sentence of text (not html!)
-    * I could use it to improve my calendar app to optionally display the user's horoscope
-    * Or, I could use it to create a twitter "robot" to answer a tweet with my horoscope
+* Imagine a procedure (method): `get_fortune() => String`
+* So for example: `get_fortune()` => returns a piece of text (not html)
+  * e.g. `get_fortune() => "You will live a long life"`
+  * I could use it to improve my calendar app to optionally display the a fortune each week
+  * Or, I could use it to create a twitter "robot" to answer a certain tweet with a fortune or joke
 * What would it mean to call it between two computers?
 * What would it mean to call it between two computers over the internet?
 * How would you approach it?
@@ -70,13 +71,12 @@ slides: true
     * `GET http://www.nanotwitter.com/user/pitosalas/tweets/10231`
 * Some things are harder to fit with the model
   * What might a fortune cookie service look like as REST?
-  * The 'resource' here is a single fortune
-    * http://myfortunes.org/fortune/1
-    * http://myfortunes.org/fortune
+  * The 'resource' here is a single fortune `https://fortune.onrender.com/fortune/1`
+  * I can also ask for all fortunes `https://fortune.onrender.com/fortune`
   * But things get weird, and don't necessarily feel like a resource
-    * http://myfortunes.org/fortune/random
-    * http://myfortunes.org/fortune?about=money
-    * http://myfortunes.org/fortune/create
+    * `https://fortune.onrender.com/fortune/random`
+    * `https://fortune.onrender.com/fortune?about=money`
+    * `https://fortune.onrender.com/fortune/create`
 
 * Note fortunes/random, random is not exactly identifying a resource; but close enough.
 
@@ -86,11 +86,6 @@ slides: true
   * Different 'representations' possible: html and xml, but others too, say csv or video
   * Big one: Standards allow caching in the cloud. But what about 'random' case? TTL!
 
-:slide_title Example!
-
-* Here's the web site for [Fortunes](https://pitofortune.herokuapp.com)
-* Here's the code for it [Fortunes RAILS Source code](https://github.com/pitosalas/public_samples/tree/master/rails/rails_restapi_demo)
-
 :slide_title Accessing a web service
 
 * Accessing and testing out a Web Api before using it
@@ -99,4 +94,8 @@ slides: true
 * Don't be scared: How to look inside a gem at its code (see gem `gem-open`)
 * If the gem doesn't do what you need, look for another one!
 * Data conversions are often a challenge
-* Discuss the examples in ruby [Web Service Demo Code](https://github.com/pitosalas/public_samples/tree/master/ruby/webservicedemo)
+
+:slide_title Look at the code
+* [QuestionAnswer (the client)](https://github.com/pitosalas/questionanswer/tree/prod)
+* [Fortune (the service)](https://fortune.onrender.com)
+* [Render.com (the cloud PaaS)(http://www.render.com)
