@@ -15,14 +15,13 @@ slides: true
 :callout :small, "Modularity", " This brings the notion of modularity, isolation, information hiding all the way up to the level of full servers. And creating an application can now become the stringing together of web services, each of which might be delivered by a different company (think Amazon, Heroku, Apple, IBM)"
 
 :slide_title Scenario
-
+e
 * Consider this web page: [Brandeis Course Catalog](http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all)
 * How would you design an app to display courses and allow students create their schedules?
 * Grab all the text
-`curl http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all > brandeiscourses.txt`
+    `curl http://registrar-prod.unet.brandeis.edu/registrar/schedule/classes/2019/Spring/1400/all > brandeiscourses.txt`
 * Write a program to parse that page and then load the results into a database.
 * This is called "scraping" and usually that would violate a copyright
-
 * Server can also deliver information in "machine readable" formats (such as JSON or XML)
 
 :slide_title API
