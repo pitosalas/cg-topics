@@ -12,11 +12,13 @@ slides: true
   * White dots: open space (passable)
   * Grey dots: Unknown
 
+:slide_title mymap.yaml
+
 * Maps in fact are stored as images - .png, .jpg, .pgm
 * You can edit them in any appropriate image editing tool
 * Accompanying YAML file defines mapping between image and real world
 * Map = *.png + *.yaml
-* example:
+* Example
 
 :source_begin :yaml
 # contents of mymap.yaml
