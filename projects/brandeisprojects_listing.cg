@@ -8,7 +8,7 @@ One of your deliverables is a text file describing your project. It is essential
 **NOTE: I changed this a little today on May 4 2021. If you already submitted according to the previous definition then you will still get full credit for this item**
 
 * The text file defined below
-* A 256x256 (approximately) image in .png or .jpeg form
+* A 256x256 (approximately) logo image in .png or .jpeg form. Don't spend any time on this, just use something handy, something off the shelf or whatver. It's just window dressing.
   
 :h2 Specification. Follow this carefully or points are deducted.
 
@@ -18,6 +18,8 @@ One of your deliverables is a text file describing your project. It is essential
 1. Not all fields apply to all courses
 1. Make sure that the image: is a url to an image, not to an imgur page or other general web page. Just an image, .png or .jpeg
 1. We check each URL and if it doesn't work, points are deducted.
+1. Make sure that you include the `---` as the first and last lines
+1. Make sure you remember the logo (A 256x256 (approximately) image in .png or .jpeg form)
 
 :h3 Example
 
