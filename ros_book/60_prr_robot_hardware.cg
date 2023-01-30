@@ -17,14 +17,17 @@ slides: true
 * Holonomic - non-Holonomic
 * Holonomic - can move in any direction
 * Degrees of freedom
+* Ambiguity in defining DoF
 
 :slide_title 2 Wheel scenario
-* Differential drive: Turtlebot3
+
+* Differential drive: Turtlebot3, Platform, Bullet
 * Turning by different speed on two or more wheels
 * Sometimes there is a caster
 * Can only move forward and backward or pivot in place
 
 :slide_title 4 Wheel scenario
+
 * Not up and down or (directly) sideways
 * With more than 2 wheels, or a track - skid steering
 * Cars have "Akkerman" steering (4 wheels, 2 that can steer)
@@ -35,11 +38,14 @@ slides: true
 * Problem with odometry
   
 :slide_title Manipulator Arms
+
 * Degrees of freedom
+* Still doesn't tell the whole story - how fast, in what order, or simulatanuous?
 * Coordinate transforms
 * Forward and reverse Kinematics
 
 :slide_title Quadruped
+
 * Gait - trot, gallop, etc
 * Sensing vs. Non Sensing issues
 
@@ -69,6 +75,7 @@ slides: true
 ## Sensors
 
 :slide_title LiDAR
+
 * Rotates and uses a laser to measure distance to nearest obstacle
 * Returns a vector of values corresponding to the directions
 * LiDAR's can operate in 2d (scan) or 3d (point cloud), ours is 2d
