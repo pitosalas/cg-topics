@@ -4,16 +4,25 @@ slides: true
 ---
 :slide_bigtitle Overall Process
 
-1. Deciding on the project (see :topic_link :project_selection)
+This is a little different from previous years, so the following is not yet definitive.
+
+1. General Brainstorming in a Lab early in the semester. (see :topic_link :project_selection)
+1. Each student writes up one or two project ideas to submit as homework
+1. Students can work on these original projects or join a "Campus Rover" subproject. There are tradeoffs.
+1. Teams are proposed by a group of 1, 2 or 3 students. Pito has to approve
+1. In Class "Project Bazaar" where we talk and vote and choose projects
+1. Teams commit to a project
 1. Pursuing the project (either alone or with a teammate)
+1. Weekly project updates (scrum style)
 1. Preparing for the "Autonomous Robotics Final Project Showcase"
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
 1. Demoing your project and poster on Showcase Day
 
+
 :slide_title Key Dates
 
-* All deliverables due: Tue May 3 at 11:50pm (see below)
-* Autonomous Robotics Final Project Showcase: May 12 2022 at 10:00am in the lab (see below)
+* All deliverables due: TBD
+* Autonomous Robotics Final Project Showcase: TBD
 
 :slide_title What to submit
 
@@ -67,7 +76,6 @@ slides: true
     1. How it unfolded, how the team worked together
     1. problems that were solved, pivots that had to be taken
     1. Your own assessment
-
 
 :slide_title Presenting and Explaining Your Project
 
