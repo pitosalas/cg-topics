@@ -3,60 +3,75 @@ title: ROS Best Practices and Patterns
 ---
 :slide_bigtitle ROS Best Practices and Patterns
 
-:h3 Python 
+* These are best practices not ironclad rules
+* Rules of thumb are good when you are starting
+* When you know more you will know when to break them :)
+
+:slide_title Python 
 
 * We use ROS1 Noetic which requires Python 3.x
 * You can choose to use classes or just top level functions
-* If you find yourself using `global` often, that's a code smell and a hint that you should be using classes
+* If you find yourself using `global` often, it's a hint that you should be using classes
 * Other code smells to watch out for are: Functions of more than 20 or so lines, and classes of more than 100 or so lines, 
 
-:h3 ROS Nodes, Topics, Messages
+:slide_title ROS Nodes, Topics, Messages
 
-* There’s rarely a need to design a custom message (.msg) If you need one it’s ok but you should try and avoid it if possible.
-* As a general rule if you can organize your functionality into multiple separate ROS nodes you will get better modularity and reusability.
-* Each node should be in its own file.
-* As a general rule you can get nicer ROS code if you break the functionality into python classes and in separate files (packages)
+* There’s rarely a need to design a custom message (.msg) 
+* If you need one it’s ok but you should try and avoid it if possible.
+* As a general rule organize your functionality into multiple separate ROS nodes (python modules)
+* As a general rule you can get nicer ROS code if you break the functionality into python classes and in separate files (modules)
 * This works especially well if you can identify bits functionality that may be reused in other applications
-* Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. Even in our simple case, the YDLidar Driver we use seems to have 720 items, that is ½ degree entries. If you get that wrong your code just won’t work. You can use len(msg.ranges) to figure out the actual number you have.
+* Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. 
+    * Use len(msg.ranges) to figure out how many items there are.
+* Make sure you know how to work with Quaternions. The x,y,z fields in a Quaternion have nothing to do with x, y, z in Euler angles. 
+    * See [this](https://www.andre-gaschler.com/rotationconverter/) for a nice tool to help you visualize them. 
 
-:h3 Concurrency, threading, race conditions, etc
-:source_begin :python
-# (1) Don't ever use time.sleep() in a ROS node. It will block the whole operation of ROS, 
-# causing other callbacks not to fire and other bad things. instead use either
-rospy.sleep(n) # to sleep n seconds
+:slide_title Concurrency, threading, race conditions, etc
 
-# (2) or
-rate = rospy.Rate(h) 
-rate.sleep() # to sleep for 1/h seconds - i.e. at a rate of h per second
+:callout :small, "NB", "ROS is heavily concurrent which affects how you structure your code. Your logic may look right but cause misbehavior because of concurrency."
 
-# (3) Allow ^c to kill your node
-while not rospy.is_shutdown():
-    # do stuff
-    rospy.sleep(0.2)
+* Each ROS node (i.e. something you run with rosrun or roslaunch) is a single linux Process. (Think of it like any other python program.)
+* Each distinct topic subscription within a node forms a single Thread for the callback.
+* Like any other thread you need to be aware of the Python GIL (Global Interpreter Lock). 
 
-# (3) If you want your node wait indefinitely for a ^c while allowing callbacks
-# Typically make this your last statement executed
-rospy.spin()
-:source_end
+:slide_title Callbacks and race conditions
 
-:h3 Package Structure
+* Do not use sleep() inside a callback. This is for many reasons, including race conditions.
+* Be careful using globals for communicating between your callback and your main loop. It may lead to a race condition.
+* Your main program should do a rospy.spin() or rospy.is_shutdown() to make sure that you can ^c out of it.
+
+:slide_title Package Structure
 
 * Create properly structured packages so they can easily be added to other workspaces.
-* Name the directory with the programs `src`
+* Use the `create_package` utility to create a correct package
+* This will create a `package.xml` and `CMakeFile.txt`
+* You rarely (but not never) need to edit either one of them. Eventually you will have to learn them.
+* Name the directory with the programs `src` and the directory with launch files `launch`
 * Other directories should be present only if you use them
-* Include a package.xml and CMakeFile.txt (these are tricky, but you have to learn them)
-* Use the create_package utility to create a correct package
-* It's a good idea to include a readme.md
-* It's a good idea to include a license.md
+* It's a good idea to include a readme.md and a license.md
 
-:h3 Launch files
-* ... more to come
+:slide_title Writing and rsunning a single ros node
+* Put the code in a file called *.py
+* The first line should be a "shebang": `#!/usr/bin/env python`
+* Set it to be excecutable (chmod +x filename.py)
+* Put it in a package
+* `rosrun package-name filename.py`
 
-:h3 Starter Code
+:slide_title Using Launch Files to run multiple nodes
+* As you know oftena ROS application contains multiple nodes.
+* You can run them all at once with a launch file.
+* A launch file is an .xml formatt file with the extension .xml
+* You can find [detailed documentation here](http://wiki.ros.org/roslaunch/XML)
+* The most important purpose of a launch file is to launch multiple nodes
+* `roslaunch package-name filename.launch`
 
-* Look at [node_template.py](https://github.com/campusrover/prrexamples/tree/master/src/pa_starters) for a nice general starting template. The prrexamples repo has lots of code for you to look at. *Beware that you should understand what it is that you're using!*
+:slide_title Starter Code
 
-:h3 Sources and references (quality varies a lot!)
+* As you know there are lots of examples in [prrexamples](https://github.com/campusrover/prrexamples) 
+* You can find [some general starts here]](/tree/master/src/pa_starters)
+* *Beware that you should understand what it is that you're using!*
+
+:slide_title Sources and references (quality varies a lot!)
 
 * [List of other Best Practices](https://github.com/leggedrobotics/ros_best_practices/wiki)
 * [ROS Best Practices](http://wiki.ros.org/Tutorials/Best%20Practices)
