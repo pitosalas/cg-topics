@@ -1,22 +1,26 @@
 ---
 title: "7: Wander Bot"
 desc: Simulating behavior in simulation
+slides: true
 ---
+* Prev: :topic_link :prr_robots_simulators
+* Next: :topic_link :prr_teleop_bot
+
 :callout :small, "NOTE!", " All the book instructions make reference to turtlebot_xxx. We will be using turtlebot3_xxx"
 
-## Intro
+:slide_title Intro
 
 * We will modify the instructions from the book so follow along here!
 * Code will be part of `prrexamples` package which we have been using: [prrexamples](https://github.com/campusrover/prrexamples)
 * Setup the simulation packages for Turtlebot3 by following [11. Simulation](http://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). In particular make sure you add the turtlebot3_simulations package, as follows:
 
-:source_begin :language-bash
+:source_begin :bash
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 $ cd ~/catkin_ws && catkin_make
 :source_end
 
-## Red Light! Green Light!
+:slide_title Red Light! Green Light!
 
 * Pretty trivial, toe in the water
   * Drive forward for a bit
@@ -25,7 +29,7 @@ $ cd ~/catkin_ws && catkin_make
 * Look at red_light_green_light.py
 * Run code:
 
-:source_begin :language-bash
+:source_begin :bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ ./red_light_green_light.py
 :source_end
@@ -83,3 +87,4 @@ $ ./wander.py
 * Nodes can publish and subscribe, and do both at the same Time
 * Need to know the exact names of the topics
 * Simulator is used for an idealized context for testing
+

@@ -3,8 +3,10 @@ title: "6: Robots"
 desc: Going through the hardware
 slides: true
 ---
+* Prev: :topic_link :prr_actions
+* Next: :topic_link :prr_robots_simulators
 
-:slide_title Robots are made up from many Subsystems
+:h2 Robots are made up from many Subsystems
 
 * Subsystems are 'represented' in the software
 * Locomotion (e.g. wheels)
@@ -108,6 +110,7 @@ slides: true
 * This would make the robot much more independent
 
 :slide_title Our actual Robots
+
 1. Differential Drive - 2 powered wheels and one (or two) casters
 1. Arduino or Arduino-like computer to control the motor.
 1. Motor Controller and IMU directly connected to Arduino

@@ -3,7 +3,10 @@ title: "9: Building Maps"
 desc: "What is a map, how to build one"
 slides: true
 ---
-:h3 Maps in ROS
+* Prev: :topic_link :prr_teleop_bot
+* Next: :topic_link :prr_building_maps_additional
+
+:slide_title Maps in ROS
 
 * Our focus is mobile, ground based robots
 * In ROS maps are represented as a 2d grid
@@ -153,5 +156,3 @@ $ rosrun rviz rviz
 * Used slam_gmapping package to create a map of a simulated world
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes
 * On the [Gmapping Wiki Page](http://wiki.ros.org/gmapping)
-
-

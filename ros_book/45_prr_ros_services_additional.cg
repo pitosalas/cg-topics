@@ -3,7 +3,10 @@ title: "4a: Services - example"
 desc: "WordCount.srv in a little detail"
 slides: true
 ---
-:slide_title Example: WordCount.srv
+* Prev: :topic_link :prr_ros_services
+* Next: :topic_link :prr_actions
+
+:h2 Example: WordCount.srv
 
 * WordCount.srv shows that it will take one input (string) and give one output (uint32)
 * Notice some hairy tweaks of both CMakeLists.txt and package.xml
@@ -28,4 +31,3 @@ slides: true
 * You can tell that it worked:
   1. It shows up in `$ rosservice list`
   1. It shows up in `$ rosservice info word_count`
-

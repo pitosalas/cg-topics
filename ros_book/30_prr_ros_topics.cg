@@ -3,6 +3,10 @@ title: "3: Topics"
 desc: By the end of the semester you will be living and breathing TOPICS!"
 slides: true
 ---
+
+* Prev: :topic_link :prr_ros_fundamentals_additional
+* Next: :topic_link :prr_ros_topics_additional
+
 :topic_include :intro_nodes_topics
 
 :slide_title Some Further details

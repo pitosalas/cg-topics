@@ -3,6 +3,10 @@ title: "2A: Workspaces and packages"
 desc: "ROS modularity"
 slides: true
 ---
+
+* Prev: :topic_link :prr_ros_fundamentals
+* Next: :topic_link :prr_ros_topics
+
 :slide_title Odometry 
 
 * `Odometry` message  is used for `/odom` topic.

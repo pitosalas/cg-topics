@@ -1,7 +1,11 @@
 ---
 title: "8: Teleop-bot"
 desc: Designing and implementing a slightly more complicated ROS program
+slides: true
 ---
+* Prev: :topic_link :prr_wander_bot
+* Next: :topic_link :prr_building_maps
+
 ## Intro
 
 * Teleop is a common term for "remote controlling" a robot
@@ -32,10 +36,11 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Notice that Twist is generic and general, but depending on what kind of robot is receiving it, there are limits in which direction it will be told to move.
 * Notice also that Twist is about motion, not about location
 
-<%= lab_note("Lab Instruction: rostopic and rosmsg")%>
+:slide_title Lab Instruction: rostopic and rosmsg
+
 * Use `rostopic` and `rosmsg` to examine /cmd_vel topic and Twist message
 
-## Keyboard Driver
+:slide_title Keyboard Driver
 
 * Node 1 - Keyboard Driver
   * listens to keystrokes, interprets them
@@ -44,7 +49,7 @@ desc: Designing and implementing a slightly more complicated ROS program
   * Subscribes to 'semantic' commands
   * Publishes `cmd_vel`
 
-<%= lab_note("Lab Instruction: Keyboard Driver") %>
+:slide_title Lab Instruction: Keyboard Driver
 
 * You can find `key_publisher.py` in the `src/prrexamples` directory. If it's not there try doing a git pull.
 * You will need two Terminals (plus `roscore` running somewhere)
@@ -57,7 +62,7 @@ desc: Designing and implementing a slightly more complicated ROS program
   * Could you write a graphical interface to control the robot given what you know?
   * What features could you add to the basic `key_publisher.py`?
 
-<%= lab_note("Lab Instruction: Motion Generator") %>
+:slide_title Lab Instruction: Motion Generator"
 
 * You can find `keys_to_twist.py` in the `src/prrexamples` directory
 * Run it with key_publisher from before and then monitor both topics with two separate instances of `rostopic` echo. This will require two terminals!
@@ -66,7 +71,7 @@ desc: Designing and implementing a slightly more complicated ROS program
   * Does it work?
   * How long will the robot move in the requested direction as the result of a single cmd_vel?
 
-<%= lab_note("Lab Instruction: Generating a stream of cmd_vel")%>
+:slide_title Lab Instruction: Generating a stream of cmd_vel
  
 * We will update the program to generate a stream of cmd_vels, around 10 per second
 * You can find `keys_to_twist_using_rate.py` in the `src/prrexamples` directory. If it is not there try doing a git pull.
@@ -120,15 +125,15 @@ rospy.get_param('~linear_scale') # => returns 0.5
 * Oddly enough, the `-` hyphen preceding the parameter in the command line argument, means the same thing!
 * A default value can be supplied
 
-<%= lab_note("Lab Instruction: Command Line") %>
+:slide_title Lab Instruction: Command Line
 
 * It is possible to set parameters directly from the command line
 
-:source_begin :language-bash
+:source_begin :bash
 $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
 :source_end
 
-## Velocity Ramps
+:slide_title Velocity Ramps
 
 * When a robot with mass is commanded to change speed or direction  too suddenly
 * Cant defy physics so you can see misbehavior: skidding, slipping, shuddering, even damaging the motor
@@ -136,7 +141,7 @@ $ ./keys_to_twist_parameterized.py _linear_scale:=0.5 _angular_scale:=0.4
 * Take a close look at `keys_to_twist_with_ramps.py`
 * Make sure you understand how the ramp works
 
-<%= lab_note("Lab Instruction: Using Gazebo to test") %>
+:slide_title Lab Instruction: Using Gazebo to test
 
 * Gazebo is a simulator which can simulate physical things with 3d rendering and realistic physics
 * In our case we configure it to simulate a tb3 and reasonable surroundings.
@@ -151,7 +156,7 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch model:="NAME OF MODEL"
 * If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
 * Don't forget that you need to have roscore running as well
 
-## rviz
+:slide_title rviz
 
 * Unlike Gazebo, RViz is NOT a simulator
 * RViz == ROS Visualization
@@ -159,15 +164,15 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch model:="NAME OF MODEL"
 * Note that in ROS, whenever a set of coordinates are given (x,y,z) they always are accompanied by a "frame of reference" (or a *tf*)
 * The *odometry* TF has an origin where the robot was powered on (or where the odometry was most recently reset)
 
-<%= lab_note("Lab Instruction: Running RViz") %>
+:slide_title Lab Instruction: Running RViz
 
 * You run rviz as follows with the fake robot. It comes up with a fake robot and the landscape
-:source_begin :language-bash
+:source_begin :bash
 $ roslaunch turtlebot3_fake turtlebot3_fake.launch
 :source_end
 * You can zoom and rotate and move around that world
 * In order to run rviz with your actual robot you need two commands:
-:source_begin :language-bash
+:source_begin :bash
 # In a terminal window:
 $ roslaunch turtlebot3_bringup turtlebot3_remote.launch
 

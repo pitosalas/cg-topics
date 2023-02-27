@@ -3,6 +3,8 @@ title: "12: Follow Bot"
 desc: "Adding perception to our robot algorithms"
 slides: true
 ---
+* prev: :topic_link :prr_move_base
+
 ## Introduction
 
 * How can the robot follow lines on the ground?

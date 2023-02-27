@@ -3,6 +3,11 @@ title: "4: Services"
 desc: "What are ROS services, and why do we need them? How are they different?"
 slides: true
 ---
+* Prev: :topic_link :prr_ros_topics_additional
+* Next: :topic_link :prr_ros_services_additional
+
+:slide_title services
+
 * Very related to a topic
 * Instead of "subscribing" and "publishing"
 * Services are a classic "client/server"

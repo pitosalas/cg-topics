@@ -1,7 +1,11 @@
 ---
 title: "10 part3: Move Base"
 desc: Looking inside move base
+slides: true
 ---
+* Prev: :topic_link :prr_navigating
+* Next: :topic_link :prr_follow_bot
+
 :slide_title Behind the scenes
 
 * amcl subscribes to a topic `geometry_msgs/PoseWith`
@@ -34,4 +38,3 @@ desc: Looking inside move base
 * [move_base Wiki Page](http://wiki.ros.org/move_base)
 * [Video about navstack](https://vimeo.com/106994708)
 * [Paper: Layered Costmaps for Context Sensitive Navigation](http://wustl.probablydavid.com/publications/IROS2014.pdf)
-

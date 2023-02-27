@@ -3,6 +3,9 @@ title: "9a: Building Maps"
 desc: "Some details from the chapter"
 slides: true
 ---
+* Prev: :topic_link :prr_building_maps
+* Next: :topic_link :prr_localization
+
 :slide_title rosbag
 
 * A tool to record messages (some or all) and replay them later
@@ -21,4 +24,3 @@ $ rosbag play --clock foo.bag
 :source_end
 
 * The --clock flag is interesting. rosbag play will set and publish the clock. Be careful that nothing else (e.g. gazebo) is publishing the clock at the same time because this will mess things up!
-

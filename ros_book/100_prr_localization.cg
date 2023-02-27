@@ -1,7 +1,11 @@
 ---
 title: "10 part1: Localizing"
 desc: How does a Robot figure out where it is? Even if there's no map?
+slides: true
 ---
+* Prev: :topic_link :prr_building_maps_additional
+* Next: :topic_link :prr_navigating
+
 :slide_title Localization
 
 * How does the Robot "know" where it is?

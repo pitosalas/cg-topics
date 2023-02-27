@@ -3,6 +3,9 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
+* Prev: :topic_link :prr_ros_intro
+* Next: :topic_link :prr_ros_fundamentals_additional
+
 :slide_title Introduction
 
 * A distributed "operating system"
@@ -136,4 +139,5 @@ while not rospy.is_shutdown():
   CMAkeLists.txt
   package.xml
 :source_end
+
 
