@@ -70,12 +70,12 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:={filena
 * Inputs are a map, an estimated current position, scanner information, and a destination
 * Behavior is to generate a path and steer the robot to it
 * Avoiding obstacles
-* Roughly:
-    1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
-    1. Nav stack uses a path-planning algorithm in the *global planner* to create shortest path route
-    1. Local planner drives along that path, while using sensor information to aboid obstacles.
-    1. When the robot arrives at the goal pose the action terminates.
-* Lets try it!
+
+:slide_title How it works
+1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
+1. Nav stack uses a path-planning algorithm in the *global planner* to create shortest path route
+1. Local planner drives along that path, while using sensor information to aboid obstacles.
+1. When the robot arrives at the goal pose the action terminates.
 
 :slide_title AMCL
 
