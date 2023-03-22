@@ -4,19 +4,17 @@ desc: "Robot follows a path laid out by fiducials"
 ---
 ## Introduction
 
-* This assignment will teach you a new method of localization using fiducial tags
-* By placing fiducial tags (they look likeQR codes)  in simulation or in the lab you can use the robots camera to find the relative position and orientation between the robot and the fiducial
-* With that information you can do SLAM and find the location of the tag relative to the global map using odometry
-* This is useful for multiple applications and we will use fiducials to follow a path defined by the tags in increasing order
+This assignment will teach you a new method of localization using fiducial tags. The general concept is to use fiducial tags (they look like QR codes) to determine the distance and orientation of a robot relative to the tag.
+
+With that information you can do SLAM and find the location of the tag relative to the global map using odometry. This is useful for multiple applications and we will use fiducials to follow a path defined by the tags in increasing order
 
 ### Purpose
 
-* Write a single node or multi-node program that allows your robot to navigate through a path of fiducials
-* There are many ways to solve this with the fiducial information and it is up to you to figure out what approach you want to take
-    * Use fiducial relative information and control techniques to follow the path 
-    * Use fiducial relative information and odometry to build a map of fiducial locations and publish a navigation command to the fiducial path locations on the global map
-    * Use fiducial relative location and camera vision information to control the movement of your robot to follow the path
-    * Find your own way using fiducials and whatever other sensory information you want
+This assignment has several purposes. First, in general it will be very useful to practice writing another ROS application. You will also learn about Fiducials and how to use them in ROS. Finally, you will learn about TFs and how to use them to control your robot.
+
+### Assignment 
+
+Write a single node or multi-node program that allows your robot to drive to one fiducial, turn around and return to another fiducial. There are many ways to solve this with the fiducial information and it is up to you to figure out what approach you want to take. There are additional challenges if you want to try something more complicated.
 
 ### What I hope you will learn
 
@@ -28,52 +26,31 @@ desc: "Robot follows a path laid out by fiducials"
 
 ### Background
 
-<<<<<<< HEAD
-You will find many different variations on fiducials and fiducial recognition. First at the high level there are April tags and Aruco tags. I have used Aruco and so that's what I prefer. But if you want to try some different options, that's ok too. http://wiki.ros.org/fiducials>
+You will find many different variations on fiducials and fiducial recognition. First at the high level there are April tags and Aruco tags. I have used Aruco and so that's what I prefer. If you want to try some different options, that's ok too. In this writeup I will focus on Aruco tags. I find that this is a [good introductory explanation](http://wiki.ros.org/fiducials) but there are many others.
 
+[Aruco Detect](http://wiki.ros.org/aruco_detect) - A key ROS package that uses the image from the camera and detects an Aruco fiducial. It publishes two topics, /aruco_vertex and /fiducial_transforms. Probably though you will use TFs. This package automatically publishes a TF between the marker and the camera. You can analyze this tranasfor to figure out the relative position and orientation of the marker to the camera. Be careful, the orientation of the each of the coordinate systems is confusing and illogical. I mean what does it consider to be X, Y and Z in the tf is different from what you would expect. The best way to go is to visualize the tf in rviz.
 
-[Aruco Detect](http://wiki.ros.org/aruco_detect) - The key ROS package that uses the image from the camera and detects an Aruco fiducial. It publishes two topics, /aruco_vertex and /fiducial_transforms. But also, automatically publishes a TF between the marker and the camera. You can analyze this tranasfor to figure out the relative position and orientation of the marker to the camera. Be careful, the orientation of the each of the coordinate systems is confusing and illogical. I mean what does it consider to be X, Y and Z in the tf is different from what you would expect. The best way to go is to visualize the tf in rviz.
-* Fiducial SLAM <http://wiki.ros.org/fiducial_slam>
-* ROS transforms <http://docs.ros.org/api/geometry_msgs/html/msg/Transform.html>
-=======
-* [Aruco Detect](http://wiki.ros.org/aruco_detect)
-* [Fiducials](http://wiki.ros.org/fiducials)
-* [Fiducial SLAM](http://wiki.ros.org/fiducial_slam)
-* [ROS transforms](http://docs.ros.org/api/geometry_msgs/html/msg/Transform.html)
-* [Ubiquity Robotics Reseources](https://learn.ubiquityrobotics.com/fiducials)
+A cool extension that you may be interested in for your project is [Fiducial SLAM](http://wiki.ros.org/fiducial_slam/). This package uses fiducials to do SLAM. It is a bit more complicated to use but it is a very cool package. It creates a kind of map of the relative positions of multiple Fiducials so that they can then be used for localization.
 
-### Topics and Message Types Used
+You will need to pay attention to your launch files and getting the whole thing to work. On the robot you will need the camera to be on, which means running raspicam or using one of the camera related launch files. On VNC you will need to run aruco detect because it will create the tfs that you need. In addition you should also run Rviz so you can see what is going on. And finally you will need to run your own node that subscribes to the fiducial transforms and uses them to control your robot.
 
->>>>>>> 3f6bd8f5d8cd4475da2da442c3e1ac9998df549c
-* fiducial_transforms [FiducialTransformArray](http://docs.ros.org/kinetic/api/fiducial_msgs/html/msg/FiducialTransformArray.html)
-* Fiducial-vertices
-* odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
-* scan [LaserScan](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html)
-* camera/image/compressed [CompressedImage](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/CompressedImage.html)
-* cmd_vel [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html)
+### Getting Started
 
-## Assignment
+I suggesst you first get the robot set up, run the camera and aruco detect and see that you can visualize the transforms in rviz. Move the robot around to see how the tfs change. Print out the tfs on the console to see the relative distance and orientation.
 
-* Write a ROS node that subscribes to `fiducial_transforms`
-* Place two fiducials in gazebo or in the lab
-* Launch aruco_detect to get the published topics 
-* Print out the infomration from the `fiducial_transforms` topic and watch how it changes as your robot changes its position relative to the fiducial
-* Position the robot so that it can see one of the Fiducials
-* Drive the robot to that fiducial
-* When you are within ~30cm of the fiducial, start spinning in place to see the other fiducial
-* Drive the robot to the other one.
+Then you can start writing your own node. You will need to subscribe to the fiducial transforms. Learn the functions that will allow you to get the distance between the camera and the fiducial and the relative orientation. This will be the key info you need for your purposes.
+
+Make sure that all the needed nodes are launched: raspicam to turn the camera on and aruco_detect to look for fiducials. If it is working then you will see a tf created for each fiducial that the camera sees at any instance. It doesn't remember.
+
+Notice that the tf created will be named for the fiducial's numer, e.g. 100. This is the ID of the fiducial. You can use this to keep track of which fiducial you are looking at. You can also use the ID to determine which fiducial you are looking for next. When you created the fiducials or printed on the label there is a second number, e.g. 7, which is the same for all of them. That is the "dictionary number" which is just a classification of the type of fiducial.
+
+With all this information it should be a simple task to have the robot drive towards fiducial "n" and detect when it is withint 0.3 meters from it. Then the robot should turn around and drive towards fiducial "n+1". Once it gets there you are done, unless you want to tackle further challenges.
 
 ### Additional Challenges for additional credit (no need to do them all!)
 
 * Robot starts without either fiducial in sight
-* Robot visits each of more than 2 fiducials
-* Robot uses fiducials to localize and then drive to a certain coordinate away from it. For example, say that you consider the first fiducial to be 0,0. Then drive to 2,2 relative to that coordiante system, even though there's not a second fiducial
-
-### Hints
-
-* Use the ID of the fiducal to keep track of your progress along the path
-* It can save time to test in simulation before your lab at home
-* If you are getting unexpected results make sure your fiducials have the proper position/orientation
+* Robot visits each of more than 2 fiducials, and visits them in order, and never twice.
+* Robot uses fiducials to localize and then drive to a certain coordinate away rom it. For example, say that you consider the first fiducial to be 0,0. Then drive to 2,2 relative to that coordiante system, even though there's not a second fiducial
 
 ### Deliverables
 
