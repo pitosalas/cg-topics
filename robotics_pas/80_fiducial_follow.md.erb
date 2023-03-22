@@ -28,12 +28,23 @@ desc: "Robot follows a path laid out by fiducials"
 
 ### Background
 
+<<<<<<< HEAD
 You will find many different variations on fiducials and fiducial recognition. First at the high level there are April tags and Aruco tags. I have used Aruco and so that's what I prefer. But if you want to try some different options, that's ok too. http://wiki.ros.org/fiducials>
 
 
 [Aruco Detect](http://wiki.ros.org/aruco_detect) - The key ROS package that uses the image from the camera and detects an Aruco fiducial. It publishes two topics, /aruco_vertex and /fiducial_transforms. But also, automatically publishes a TF between the marker and the camera. You can analyze this tranasfor to figure out the relative position and orientation of the marker to the camera. Be careful, the orientation of the each of the coordinate systems is confusing and illogical. I mean what does it consider to be X, Y and Z in the tf is different from what you would expect. The best way to go is to visualize the tf in rviz.
 * Fiducial SLAM <http://wiki.ros.org/fiducial_slam>
 * ROS transforms <http://docs.ros.org/api/geometry_msgs/html/msg/Transform.html>
+=======
+* [Aruco Detect](http://wiki.ros.org/aruco_detect)
+* [Fiducials](http://wiki.ros.org/fiducials)
+* [Fiducial SLAM](http://wiki.ros.org/fiducial_slam)
+* [ROS transforms](http://docs.ros.org/api/geometry_msgs/html/msg/Transform.html)
+* [Ubiquity Robotics Reseources](https://learn.ubiquityrobotics.com/fiducials)
+
+### Topics and Message Types Used
+
+>>>>>>> 3f6bd8f5d8cd4475da2da442c3e1ac9998df549c
 * fiducial_transforms [FiducialTransformArray](http://docs.ros.org/kinetic/api/fiducial_msgs/html/msg/FiducialTransformArray.html)
 * Fiducial-vertices
 * odom [Odom](http://docs.ros.org/melodic/api/nav_msgs/html/msg/Odometry.html)
