@@ -1,15 +1,24 @@
 ---
 title: Kalman Filters
 ---
-:slide_title What is a Kalman Filter?
+:slide_bigtitle Kalman Filter?
+
+* Kalman "Filter" is a mathematical algorithm
+* It estimates the true value of an uncertain measurement 
+* Kalman filters are ideal for systems which are continuously changing
+* Given noisy inputs, for example, GPS, Odom or IMU
+* Calculate, for example, the actual speed of a robot, or the true location of a robot
+* Makes an "educated guess" about what the system is going to do next.
+
+:slide_title What question does it try to answer?
 
 * Given uncertain sensor data 
-* And uncertain state information 
-* And uncertain control inputs
-* And uncertain measurements
-* How do you get the best possible estimate of the state?
+  1. And uncertain state information 
+  1. And uncertain control inputs
+  1. And uncertain measurements
+  1. How do you get the best possible estimate of the state?
 * Well supported by math and statistical analysis
-* One key insight two inaccurate readings can be combined into an estimate that is more accurate than either one alone.
+  * One key insight two inaccurate readings can be combined into an estimate that is **more** (not less)  accurate than either one alone.
 
 :slide_title Learning about Kalman Filters
 
@@ -17,10 +26,10 @@ title: Kalman Filters
 * Because it is difficult and important
 * The explanations are not consistent and don't use consistent nomenclature
 
-:slide_title Estimation
+:slide_title State Estimation
 
 * Kalman filter is an iterative model
-* Each loop tries to make the state ESTIMATE more accurate
+* Each loop tries to make the ESTIMATE of the state more accurate
 * By processing data from SENSORS (which are statistically characterized)
 * And considering known control inputs (which are statistically characterized)
 * And unknown perturbations (which are statistically characterized)
@@ -42,15 +51,18 @@ title: Kalman Filters
 
 :slide_title Why care?
 
-Why do we care? Sensors are everywhere in robotics. Sensors are known to be inaccurate. Kalman filters are a family of algorithms that give us more accurate estimates by combining readings with known error rates
+* Sensors are everywhere in robotics
+* Sensors are known to be inaccurate
+* Kalman filters are a family of algorithms that give us more accurate estimates by combining readings with known error rates
+* They are efficient and they work
 
 :slide_title System
 
 * Kalman filter looks at a "system" which has a "state"
 * The system may change over time
-* Based on it's own internal operation
-* Based on "control" input from the outside
-* Based on "sensor" readings
+  1. Based on it's own internal operation
+  1. Based on "control" input from the outside
+  1. Based on "sensor" readings
 * We gain information about the "system"
 * By sensing data which allow us to infer system changes
 
@@ -65,6 +77,7 @@ Why do we care? Sensors are everywhere in robotics. Sensors are known to be inac
 * In other words, if I am at x=0 and I am moving at 1cm / second
 * Then 1 second later, I am at x=0.01
 * "all things being equal"
+* (Note the conceptual similarity to AMCL)
 
 :slide_title State
 
@@ -143,6 +156,8 @@ Why do we care? Sensors are everywhere in robotics. Sensors are known to be inac
 * If the `state` is location and velocity in the x direction (a falling ball) that is stored in a 1x2 matrix
 * This simplifies the expression and calculation of the formulas but it is initially confusing
 * That is unless you are fluent in matrix and linear algebra which I am not
+
+:image :codekalman
 
 :slide_break Links for further study
 
