@@ -4,8 +4,6 @@ slides: true
 ---
 :slide_bigtitle Overall Process
 
-This is a little different from previous years, so the following is not yet definitive.
-
 1. General Brainstorming in a Lab early in the semester. (see :topic_link :project_selection)
 1. Each student writes up one or two project ideas to submit as homework
 1. Students can work on these original projects or join a "Campus Rover" subproject. There are tradeoffs.
@@ -16,7 +14,7 @@ This is a little different from previous years, so the following is not yet defi
 1. Weekly project updates (scrum style)
 1. Preparing for the "Autonomous Robotics Final Project Showcase"
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
-1. Demoing your project and poster on Showcase Day
+1. Demoing your project and :topic_link :poster on Showcase Day
 
 
 
@@ -25,13 +23,13 @@ This is a little different from previous years, so the following is not yet defi
 * Link to your clean GitHub repo, in the campusrover github organization. While we will start looking at this for grading, you can still make corrections and adjustments until demo day. 
 * Each team member contributes one FAQ item to the Labnotebook
 * A Project Report in the Labnotebook
-* A poster describing the project to people at the showdcase
+* A :topic_link :poster describing the project to people at the showdcase
 * Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was
 
 :slide_title Autonomous Robotics Final Project Showcase
 
 * You (and your teammates) prepare to demonstrate your work in the best possible light
-* You also prepare a "poster" explaining your project
+* You also prepare a :topic_link :poster explaining your project
 * The teaching staff plus at least one outside robotics expert will visit and hear your presentation and ask you questions
 
 :slide_title Grading
@@ -48,15 +46,15 @@ This is a little different from previous years, so the following is not yet defi
 
 * The code should be clean and well structured, and organized as a working ROS package. 
 * It should not have any random left over files so that you would be proud to put the link on your resume
-* It should include the pdf of your poster (Color, 27x36 inches landscape)
+* It should include the pdf of your :topic_link :poster
 * It should include a readme.md including links to the labnotebook Project Report (check [How to write a quality readme](https://dev.to/coderarchive/writing-a-high-quality-readme-1k3j) for ideas)
 
 :slide_title Final Project report
 
-* Report should be around 5, max 10 pages. 
+* Report should be around 10 pages
 * We pay attention to appearance, quality of writing, "fit and finish". 
 * You will add it to the appropriate section of the Lab Notebook.
-* Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/gen4-reports)
+* Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/reports)
 
 :slide_title Rough outline of report
 
