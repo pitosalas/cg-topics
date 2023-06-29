@@ -23,7 +23,7 @@ title: Load Testing nanoTwitter
 
 :slide_title Load Testing Tools
 
-* There are numerous Load Testing tools. Here are two lists: [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use) and [Performance Testing Tools](https://www.guru99.com/performance-testing-tools.html)
+* There are numerous Load Testing tools, e.g.: [open source Load Testing Tools](http://blazemeter.com/blog/open-source-load-testing-tools-which-one-should-you-use)
 * We are using [loader.io](http://www.loader.io)
 * You need to understand the different [types of tests](https://support.loader.io/article/16-test-types)
 
