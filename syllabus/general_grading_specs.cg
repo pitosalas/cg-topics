@@ -1,0 +1,36 @@
+---
+title: General Grading Info
+---
+:slide_title Specifications Grading
+
+This semester we are grading in a new, more transparent way. We are using a system called "specifications grading" that is designed to make it clear what you need to do to get a particular grade. The basic idea is that you will be able to choose what grade you want to get in the course, and then you will be able to choose what work you want to do to get that grade. 
+
+:slide_title EMRF
+
+:image :600, :emrf
+
+All work will be avaluated using the EMN framework. This stands for Excellent, Meets expectations, Does Not Meet Expectations. It is a little like pass-fail, in that "Meets" is like a Pass and below that is like a Fail. Every assignment will have a section that states exactly what is needed to achieve a "Meets".
+
+:slide_title Pick your adventure
+
+One goal is to give you more control over the work. For exampler, different students in different contexts will decide how they approach things. A student may have a very heavy course load and decide that a "B" is what they want. Another student may consider that entrepreneurship is their main focus and decide that they want to get an "A" in this course. 
+
+Each assignment you receive will have a specification of "Meets Expecations". If your submission is notably better than that, you will receiive an "Exceeds Expectations". And of course otherwise you will receive a "Does Not Meet Expecations". Certain assigments such as reading assignments will receive one overall rating at the end of the semester. All this will be clearer as you read further.
+
+<% tbh = TableHelper.new("table-striped table-sm table-responsive table-hover") %>
+<% tbh.headers("", "A", "B", "C". "D", "F") %>
+<% tbh.row("Instructors", "Pito Salas") %>
+<%= tbh.render %>
+
+:slide_title Final Grade
+
+The final grade in this course will reflect my assessment of your performance in the course. This includes your participation; your mastery of the key learning objectives; your demonstration this both in written form and in code (if applicable); your application of what you've learned to working on a team; building an interesting product; and communicating what you achieved at the end of the semester.
+
+For your final grades, I will follow the guidelines from the University Bulletin:
+
+* A -> High Distinction
+* B -> Distinction
+* C -> Satisfactory
+* D -> Passing, but Unsatisfactory
+
+
