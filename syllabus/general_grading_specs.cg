@@ -4,15 +4,20 @@ title: Specs Grading in Cosi102a
 
 :slide_bigtitle Introduction to Specs Grading in Cosi102a
 
-In order to make grading simpler and more meaningful we’ve adopted a new scheme, based on the concepts of “Specifications Grading”. It is likely that many of you have not come across this before, so please bear with me as I explain how it will work. 
+In order to make grading simpler and more meaningful we’ve adopted a new scheme, based on the concepts of “Specifications Grading”. It is likely that many of you have not come across this before. So let me explain why I am taking this approach.
+
+* By ensuring that all assignments are clearly tied to defined learning objectives, I have been able to reduce the number of assignments, and sharpen the remaining ones. 
+* By clearly defining what is expected for each and every assignment, I hope to reduce student stress and uncertainty around grading.
+* By eliminating partial credit I hope to avoid pointless splitting of hairs. Either the submission meets or does not meet objectives.
+
 
 My hope and intention is to remove some stress from the grading process for you as well as the TAs. I will solicit your feedback early to clarify and refine the details.
 
 :slide_title Pick your adventure
 
-One goal is to give you more control over the work. For example, different students in different contexts will decide how they approach things. A student may have a very heavy course load and decide that a "B" is what they want. Another student may consider that entrepreneurship is their main focus and decide that they want to get an "A" in this course. 
+One goal with this grading philosophy is to provide you with clearer expectations and more control over your grade. For example, different students in different contexts will decide how they approach things. A student may have a very heavy course load and decide that a "B" is what they want. Another student may consider that entrepreneurship is their main focus and decide that they want to get an "A" in this course. In either of these scenarios the students will know exactly what it takes to achieve their grade.
 
-Each assignment you receive will have a specification of "Meets Expectations". If your submission is notably better than that, you will receive an "Exceeds Expectations". And of course otherwise you will receive a "Does Not Meet Expectations". Certain assignments such as reading assignments will receive one overall rating at the end of the semester. All this will be clearer as you read further.
+Each assignment has a specification indicating in detail what the expectations are. If the submission meets them it receives an “M” and if it falls short it receives an “N”, Certain assignments such as reading assignments will receive one overall rating at the end of the semester. 
 
 :slide_title Overall Guiding Principles
 
@@ -20,7 +25,7 @@ These guiding principles are probably a little different from what you've seen i
 
 * Every assignment will have a “specification” included which will define exactly what is expected from you. Depending on the assignment it might be more or less detailed. 
 * The assessment of the assignment will be either Meets (M) or Does Not Meet (N) expectations. There is no partial credit. 
-* There will be some choices or options to allow you to calibrate for yourself where you would like to invest your time and effort..
+* Some assignments will be optional to allow you to calibrate for yourself where you would like to invest your time and effort.
 
 Example
 TBD
@@ -35,31 +40,36 @@ TAs may give you hints and feedback. However they are instructed to be careful n
 
 In this course there will several major kinds of assignments:
 
-1. Reading assignments: Mostly these will be chapters from the textbook "The Lean Startup", but there will be others. You will submit these as a single running document, the :topic_link :reflections_portfolio. Each of the reading assignments will have its own specification. In the end we will look at what percentage of these reading assignments received a Meets Expectations
-1. Individual Assignments: There are a wide variety of these. Each will have its specification. They will be assessed simply as Meets or Doesn't Meet expectations.
-1. Team Deliverables: As you know this course includes a significant, and important component of group work. There are many group submissions, and they will all be assessed in the usual way. These assessments will apply to all members of the team. We are aware that not every students contributes equally to a project.
-1. Term Project: The core of this course is a term project. It will be the culmination of the course.
+* Reading assignments: Mostly these will be chapters from the textbook "The Lean Startup", but there will be others. You will submit these as a single running document, the :topic_link :reflections_portfolio. Each of the reading assignments will have its own specification. In the end we will look at what percentage of these reading assignments received a Meets Expectations
+* Individual Assignments: There are a wide variety of these. Each will have its specification. They will be assessed simply as Meets or Doesn't Meet expectations.
+* Team Assignments: As you know this course includes a significant, and important component of group work. There are many team submissions, and they will all be assessed with M and N like all others. These assessments will apply to all members of the team.
+* Term Project: The core of this course is a term project. It will be the culmination of the course.
 
-:slide_title Bundles
+:slide_title Grade Bundles
+**THESE ARE PRELIMINARY AND WILL CHANGE**
 
-:h4 To Receive an "A" you must:
+#### To Receive an "A" you must:
 * Receive a Meets for 95% of the :topic_link :reflections_portfolio assignments
 * Receive a Meets for all the individual assignments
 * Receive a Meets from all your teammates on "Team Contribution"
+* Be assignment lead at least 4 times (see :topic_link :cosi102_team_assignments)
 
-:h4 To receive a "B" you must:
+#### To receive a "B" you must:
 * Receive a Meets for 85% of the :topic_link :reflections_portfolio assignments
 * Receive a Meets for all the individual assignments
-* Receive a Meets from all but one of your teammates on "Team Contribution"
+* Receive a Meets from two of your teammates on "Team Contribution"
+* Be assignment lead at least 2 times (see :topic_link :cosi102_team_assignments)
+* Your final project receives a "Meets"
 
-:h4 To receive a "C" you must:
+#### To receive a "C" you must:
 * Receive a Meets for 50% of the :topic_link :reflections_portfolio assignments
 * Receive a Meets for all but 2 the individual assignments
-* Receive a Meets from all but one of your teammates on "Team Contribution"
+* Receive a Meets from one of your teammates on "Team Contribution"
+* Your final project receives a "Meets"
 
-:h4 To receive a "D" you must:
-* Receive a Meets from all but one of your teammates on "Team Contribution"
+#### To receive a "D" you must:
 * Receive a Meets for all but 4 the individual assignments
+* Your final project receives a "Meets"
 
 :slide_title Additional Details
 
