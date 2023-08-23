@@ -46,30 +46,8 @@ In this course there will several major kinds of assignments:
 * Term Project: The core of this course is a term project. It will be the culmination of the course.
 
 :slide_title Grade Bundles
-**THESE ARE PRELIMINARY AND WILL CHANGE**
 
-#### To Receive an "A" you must:
-* Receive a Meets for 95% of the :topic_link :reflections_portfolio assignments
-* Receive a Meets for all the individual assignments
-* Receive a Meets from all your teammates on "Team Contribution"
-* Be assignment lead at least 4 times (see :topic_link :cosi102_team_assignments)
-
-#### To receive a "B" you must:
-* Receive a Meets for 85% of the :topic_link :reflections_portfolio assignments
-* Receive a Meets for all the individual assignments
-* Receive a Meets from two of your teammates on "Team Contribution"
-* Be assignment lead at least 2 times (see :topic_link :cosi102_team_assignments)
-* Your final project receives a "Meets"
-
-#### To receive a "C" you must:
-* Receive a Meets for 50% of the :topic_link :reflections_portfolio assignments
-* Receive a Meets for all but 2 the individual assignments
-* Receive a Meets from one of your teammates on "Team Contribution"
-* Your final project receives a "Meets"
-
-#### To receive a "D" you must:
-* Receive a Meets for all but 4 the individual assignments
-* Your final project receives a "Meets"
+:topic_include :cosi102_grade_bundles
 
 :slide_title Additional Details
 

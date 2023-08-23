@@ -5,64 +5,63 @@ title: What you will learn
 
 In great detail, here are all the individual outcomes that I am aiming for in this course:
 
-* Basic use of a spreadsheet. Absolute/relative, vlookup, formulas
-* has a general sense of how venture capital works. What the different roles are, partner, limited partner. What rounds are and funds.
-* Read and design a business model spreadsheet
-* What are some of the reasons why a startup might need to raise money?
-* general sense of how financing a startup works. Options that exist, angel, self-funded, seed, VC
-* understand the concept of a runway and why it is very important
-* What does a venture capitalist do?
-* Why would a founder need to get their company incorporated?
-* How patents work and when they are appropriate/
-* How trade secret fits in the scheme of IP protection. Reason about when it is useful and not.
-* Is "trade secret" a valid way to protect intellectual property?
-* What are some of the reasons a startup might try to get a patent?
-* What is a Copyright. Give a creative example
-* What are the tradeoffs in being secretive (in "stealth mode")
-* What is a corporation; in what way is it similar to an individaul person
-* What is an NDA. When should you ask for one; when should you sign one?
-* When does it make sense to incorporate?
-* Give a concise and clear desctription of network effects and give a compelling example
-* Give examples of lock in and what the strategic advantages are
-* According to TLS what is the paid engine of growth
-* According to TLS what is the sticky engine of growth
-* According to TLS what is the value hypothesis
-* According to TLS what is the viral engine of growth
-* explain Build/Measure/Learn: What kinds of metrics?
-* explain validation, and some ways to get it
-* explain what is meant by "a stratup" and "an entrepreneur"
-* Getting out of the building. How to do it. Actual practice
-* How do you conduct an A/B test
-* How do you do innovation accounting?
-* Identify, enumerate and articulate product hypotheses
-* In what way is the LS like the "scientific method"
-* Key elements of the Lean Startup model; understand how to apply it; be able to explain it.
-* pirate metrics (should go with ch 7)
-* The role of hypotheses, and the different categories of hypotheses
-* Tradeoffs in deciding to pursue an idea
-* Use and understand the concept of engine of growth, the feature of the business plan which will generate growth. Actions of past customers contribute to generating growth -- new customers
-* What are some of the kinds of pivots. Explain when they are needed
-* What is meant by a MVP. Give an example. What are some types of MVP
-* What is meant by a pricing model? What is an example of one that you can describe?
-* Analyze a pricing model
-* Demonstrate effective team contribution
-* Explain what we mean by gaining alignment on a team and why is it important
-* Implement Agile project management on a small team
-* Plan, prioritize and re-prioritize work on a team
-* Show that you are able to be an effective meeting leader and participants
-* Show that you are able to be constructive during team conflict
-* Show that you are able to constructively brainstorm
-* Show that you can use a tool to track commitments
-* Show that you understand and are able to set and meet commitments
-* understands the basic elements of an agile process: a backlog, stories, sprints, velocity
-* Use Trello to manage team work
-* What are some of the key advantages claimed of Agile?
-* What are the key characteristics of a lean/agile project
-* What is meant by sprints or iterations; why are they a usueful practice?
-* Able to organize, prioritize, and be effective as a remote team member even over zoom
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "Topic"
+:trow "Basic use of a spreadsheet. Absolute/relative, vlookup, formulas"
+:trow "has a general sense of how venture capital works. What the different roles are, partner, limited partner. What rounds are and funds."
+:trow "Read and design a business model spreadsheet"
+:trow "What are some of the reasons why a startup might need to raise money?"
+:trow "general sense of how financing a startup works. Options that exist, angel, self-funded, seed, VC"
+:trow "understand the concept of a runway and why it is very important"
+:trow "What does a venture capitalist do?"
+:trow "Why would a founder need to get their company incorporated?"
+:trow "How patents work and when they are appropriate"
+:trow "How trade secret fits in the scheme of IP protection. Reason about when it is useful and not."
+:trow "Is \"trade secret\" a valid way to protect intellectual property?"
+:trow "What are some of the reasons a startup might try to get a patent?"
+:trow "What is a Copyright. Give a creative example"
+:trow "What are the tradeoffs in being secretive (in stealth mode)"
+:trow "What is a corporation...in what way is it similar to an individual person"
+:trow "What is an NDA. When should you ask for one...when should you sign one?"
+:trow "When does it make sense to incorporate?"
+:trow "Give a concise and clear description of network effects and give a compelling example"
+:trow "Give examples of lock in and what the strategic advantages are"
+:trow "According to TLS what is the paid engine of growth"
+:trow "According to TLS what is the sticky engine of growth"
+:trow "According to TLS what is the value hypothesis"
+:trow "According to TLS what is the viral engine of growth"
+:trow "explain Build/Measure/Learn: What kinds of metrics?"
+:trow "explain validation, and some ways to get it"
+:trow "explain what is meant by \"a startup\" and an entrepreneur"
+:trow "Getting out of the building. How to do it. Actual practice"
+:trow "How do you conduct an A/B test"
+:trow "How do you do innovation accounting?"
+:trow "Identify, enumerate and articulate product hypotheses"
+:trow "In what way is the LS like the "scientific method"
+:trow "Key elements of the Lean Startup model...understand how to apply it...be able to explain it."
+:trow "pirate metrics"
+:trow "The role of hypotheses, and the different categories of hypotheses"
+:trow "Tradeoffs in deciding to pursue an idea"
+:trow "Use and understand the concept of engine of growth, the feature of the business plan which will generate growth. Actions of past customers contribute to generating growth -- new customers"
+:trow "Show that you can use a tool to track commitments"
+:trow "Show that you understand and are able to set and meet commitments"
+:trow "understands the basic elements of an agile process: a backlog, stories, sprints, velocity"
+:trow "Use Trello to manage team work"
+:trow "Show that you are able to be an effective meeting leader and participants"
+:trow "Show that you are able to be constructive during team conflict"
+:trow "Show that you are able to constructively brainstorm"
+:trow "What are some of the key advantages claimed of Agile?"
+:trow "What are the key characteristics of a lean/agile project"
+:trow "What is meant by sprints or iterations...why are they a useful practice?"
+:trow "Able to organize, prioritize, and be effective as a remote team member even over zoom"
+:trow "What are some of the kinds of pivots. Explain when they are needed"
+:trow "What is meant by a MVP. Give an example. What are some types of MVP"
+:trow "What is meant by a pricing model? What is an example of one that you can describe?"
+:trow "Analyze a pricing model"
+:trow "Demonstrate effective team contribution"
+:trow "Explain what we mean by gaining alignment on a team and why is it important"
+:trow "Implement Agile project management on a small team"
+:trow "Plan, prioritize and re-prioritize work on a team"
 
 
-
-
-
-
+:tend
