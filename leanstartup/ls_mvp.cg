@@ -1,13 +1,7 @@
 ---
-title: "Key Learning: MVP"
+title: Key Concept - MVP
 ---
-
 :slide_bigtitle Minimum Viable Product
 
-:topic_include :mvp_overview
-
-:topic_include :mvp_why
-
+:topic_include :mvp_summary
 :topic_include :mvp_taxonomy
-
-
