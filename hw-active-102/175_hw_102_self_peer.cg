@@ -1,5 +1,5 @@
 ---
-title: (I) Self and Peer Assessments
+title: (R) Self and Peer Assessments
 desc: We ask you to complete a simple self and peer assessment.
 ---
 <%= include_topic :hw_self_peer_assess_v3 %>
