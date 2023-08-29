@@ -10,7 +10,6 @@ In order to make grading simpler and more meaningful we have adopted a new schem
 * By clearly defining what is expected for each and every assignment, I hope to reduce student stress and uncertainty around grading.
 * By eliminating partial credit I hope to avoid pointless splitting of hairs. Either the submission meets or does not meet objectives.
 
-
 My hope and intention is to remove some stress from the grading process for you as well as the TAs. I will solicit your feedback early to clarify and refine the details.
 
 :slide_title Pick your adventure
@@ -27,9 +26,6 @@ These guiding principles are probably a little different from what you've seen i
 * The assessment of the assignment will be either Meets (M) or Does Not Meet (N) expectations. There is no partial credit. 
 * Some assignments will be optional to allow you to calibrate for yourself where you would like to invest your time and effort.
 
-Example
-TBD
-
 :slide_title Office Hours and Teaching Assistants
 
 There will be plenty of office hours with our team of TAs. The office hours will be where you can ask questions, review concepts, get explanations and clarifications. They will be busier just before due dates of course. 
@@ -45,16 +41,21 @@ In this course there will several major kinds of assignments:
 * Team Assignments: As you know this course includes a significant, and important component of group work. There are many team submissions, and they will all be assessed with M and N like all others. These assessments will apply to all members of the team.
 * Term Project: The core of this course is a term project. It will be the culmination of the course.
 
-:slide_title Grade Bundles
-
-:topic_include :cosi102_grade_bundles
-
 :slide_title Additional Details
 
-* What about resubmissions? he quiz, the two Stage Reports, and the Final report may be resubmitted once. No other work may be resubmitted
+* What about resubmissions? The quiz, the two Stage Reports, and the Final report may be resubmitted once. No other work may be resubmitted
 * What about + and - grades? They are added at my discretion when submissions are barely "M" or well beyond an "M"
 * What about regrade requests? As we have only M and N, there is no grade to regrade. But the equivalent would be if you want to petition that an N become an M. You will have a specific number of opportunities. A different TA will consider your petition.
-* What about resubmit requests? In certain specific assignments there may be an option to submit.
+
+:slide_title "Tokens"
+
+* Each student gets 5 tokens at the start of the semester
+* A student can use a token for:
+    * A resubmit request (of the quiz, the two stage reports and the final report)
+    * A late submission request (available up to 10 days late)
+    * And maybe something else (TBD)
+
+:topic_include :cosi102_grade_bundles
 
 :topic_include :cosi102_team_assignments
 
