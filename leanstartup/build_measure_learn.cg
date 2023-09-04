@@ -1,6 +1,7 @@
 ---
 title: Build Measure Learn
 ---
+
 1. Decide what your goals are right now (they change over time!)
 1. Analyze them to determine metrics for growth and success
 1. Loop to tune the engine of growth:
@@ -8,6 +9,12 @@ title: Build Measure Learn
 	1. Conduct Experiments to try and move reality towards
 	1. Rinse and repeat until you have tuned your engine
 1. AKA: "Iterating"
+
+:slide_title AKA: "Validated Learning"
+* Kind of like a scientific method
+* Form a hypothesis
+* Gather data to validate or invalidate it
+* Update your design, beliefs, assumptions, bsaed on data
 
 :slide_title Build Measure Learn
 :image :500, :build_measure_learn_diagram
