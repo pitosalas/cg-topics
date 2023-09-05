@@ -2,6 +2,8 @@
 title: Build Measure Learn
 ---
 
+One of the big ideas of :topic_link :ch1
+
 1. Decide what your goals are right now (they change over time!)
 1. Analyze them to determine metrics for growth and success
 1. Loop to tune the engine of growth:
@@ -11,15 +13,17 @@ title: Build Measure Learn
 1. AKA: "Iterating"
 
 :slide_title AKA: "Validated Learning"
+
 * Kind of like a scientific method
 * Form a hypothesis
 * Gather data to validate or invalidate it
-* Update your design, beliefs, assumptions, bsaed on data
+* Update your design, beliefs, assumptions, based on data
 
 :slide_title Build Measure Learn
 :image :500, :build_measure_learn_diagram
 
-:slide_title Ask questions 
+:slide_title Ask questions
+ 
 * Are you making your product better?
 * How do you know?
 * Are the changes you are making affecting the measures you care about?
@@ -28,7 +32,7 @@ title: Build Measure Learn
 
 :slide_title Basic pattern
 
-* Use an MVP to get real data to test a belief
+* Use an :topic_link :mvp_summary to get real data to test a belief
 * Make a series of micro changes (parallel or serial)
 * Measure whether metrics are better or worse
 * When you feel like you are not making real progress
