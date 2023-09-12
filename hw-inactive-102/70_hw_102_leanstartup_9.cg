@@ -12,7 +12,7 @@ cat: read
 
 ### Please do this
 * Read Chaapter 9 of TLS
-* Think about and respond to these questions in your :topic_link :reflections_portfolio
+* Think about and submit your response to these questions:
     * **Batch Sizes:** Why are small batch sizes said to be superior in planning? What exactly is a batch? Can you think of an example not in the book where batch sizes can be small or large? Does the book match your intuition?
     * **Pull vs. Push:** Imagine that you lived in an apartment with several other people, and it was your job to make sure you never ran out of milk or toilet paper (...or beer?). Describe how you would go about this if you were employing a pull model vs. a push model. What are the tradeoffs that you will need to make? What resources (time, money, space, transportation) would affect your choice? What are the pros and cons when using pull or push in this scenario?
     * What is your top take away from this chapter?
