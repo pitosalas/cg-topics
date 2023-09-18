@@ -12,3 +12,7 @@ slides: true
 * The quantitive results of an experiment often accompanied by qualitative feedback
 * See :topic_link :tls_case_summaries
 
+:topic_include :ls_hypotheses
+
+
+
