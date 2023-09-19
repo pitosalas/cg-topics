@@ -1,7 +1,7 @@
 ---
 title: Examples of Hypotheses
 ---
-:slide_title Hypotheses examples for discussion of B20
+:slide_title Hypotheses examples for discussion of :topic_link :warmup_bodega20
 
 * Customer hypotheses
   * What type of small, owner operated, retail shop, needs this the most? What do they sell?
@@ -21,7 +21,7 @@ title: Examples of Hypotheses
 * Leap of faith hypothesis
   * Shop owners realize that they have trouble competing with franchised businesses
   
-:slide_title Hypothesis examples for discussion for SBC
+:slide_title Hypothesis examples for discussion for :topic_link :warmup_studentbuying
 
 * Customer Hypotheses, examples:
   * International Students
@@ -44,7 +44,7 @@ title: Examples of Hypotheses
   * Students have spare $ and want to get good deals
   * No legal or regulatory or Brandeis administration rules broken
 
-:slide_title Hypothesis examples for discussion for P2PTours
+:slide_title Hypothesis examples for discussion for :topic_link :warmup_p2ptours
 
 * Customer Hypothesis, examples:
 	* Young American tourists visiting Europe
@@ -66,3 +66,8 @@ title: Examples of Hypotheses
 	* Part of your vision and hard to test
 	* If this kind of hypothesis turns out to be false then you will certainly need to pivot
 	* These are also the riskiest assumptions
+
+:slide_title others
+
+:topic_link :warmup_magic_travel
+:topic_link :warmup_motorcycle_uber
