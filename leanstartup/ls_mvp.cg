@@ -1,12 +1,10 @@
 ---
 title: "Key Concept - MVP"
+slides: true
 ---
+
 :slide_bigtitle Minimum Viable Product
 
-What is an MVP?
-
-:topic_link :mvp_summary
-
-Here's the taxonomy:
+* :topic_link :mvp_summary
 
 :topic_include :mvp_taxonomy
