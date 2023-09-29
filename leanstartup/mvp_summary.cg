@@ -2,8 +2,7 @@
 title: Minimum Viable Product
 desc: Overview of the MVP
 ---
-
-:slide_bigtitle The MVP or Minimum Viable Product
+:slide_bigtitle MVP Overview
 
 * "It's not necessarily minimal nor a product nor viable!"
 * MVP is not a perfectly descriptive term
@@ -23,4 +22,10 @@ desc: Overview of the MVP
 
 * Discussion: Does MVP mean that quality is not important?
 
-:topic_include :mvp_why
+:slide_title What role does the MVP Play
+
+* Goal is to test articulated hypotheses
+* MVP different from a prototype, beta test, mockup because of it's explicit purpose
+* Visionaries or early adopters accept expect a product that is incomplete. They want to be ahead
+* Early adopters want to feel special: be the first one on the block with a product, or have an unfair advantage over other companies.
+* If you leave out features, customer often fills in the blanks which may suggest missing features
