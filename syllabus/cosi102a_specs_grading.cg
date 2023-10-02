@@ -50,10 +50,8 @@ In this course there will several major kinds of assignments:
 :slide_title "Tokens"
 
 * Each student gets 5 tokens at the start of the semester
-* A student can use a token for:
-    * A resubmit request (of the quiz, the two stage reports and the final report)
-    * A late submission request (available up to 10 days late)
-    * And maybe something else (TBD)
+* A token can be used to request resubmit any PA, Individual, Team or Quiz (not for reflections). You may request a resubmit within 1 day of receiving the grade, to extend the deadline by 5 calendar days after requesting the resubmit, without distinctions for holidays or weekends.”
+* Additional TBD
 
 :topic_include :cosi102_grade_bundles
 
