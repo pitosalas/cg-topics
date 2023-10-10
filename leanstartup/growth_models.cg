@@ -3,11 +3,12 @@ title: Growth Models
 ---
 :slide_bigtitle Principles
 
-:callout :small, "Keys", "Growth models explain how actions of past customers generate new customers."
 
 * Excludes one-time campaigns and actions
 * Systematic: built into the product's usage
 * Comes from actions of past and existing users or customers
+
+:callout :small, "Keys", "Growth models explain how actions of past customers generate new customers."
 
 :slide_title How does use lead to growth?
 
@@ -35,9 +36,9 @@ title: Growth Models
 * Key Metrics
   1. Customer acquisition rate (new customers per unit time)
   1. Churn rate (customers lost per unit time)
-  1. Customer retention rate
+  1. Customer lifetime (average time a customer stays with the service)
 
-* Rule: Rate of new customer acquisition exceeds the churn rate then the company will growth
+* Rule: Growth requires that the rate of new customer acquisition exceeds the churn rate
 
 * Focus
   1. Attracting new customers and retaining the ones you have
@@ -56,8 +57,9 @@ title: Growth Models
   1. Powered by a "viral loop"
 
 * Key Metrics
-  1. "Viral Coefficient" - how many new customers a single customer brings in, and over what period
-  1. Viral coefficient should be > 1 to get exponential growth
+  1. "Viral Coefficient" - how many new customers a single customer brings in, and over what period 
+
+* Rule: Growth requires that the viral coefficient be greater than 1
 
 * Focus
   1. Increase the viral coefficient
@@ -76,14 +78,15 @@ title: Growth Models
 * Key Metrics
   1. Customer Lifetime Value (LTV): How much does a single customer bring in over their lifetime (as long as they use the product)
   1. Customer Acquisition Cost (CAC): How much (in sales costs, advertisting, etc.) does it cost to acquire a single customer
-  1. Growth depends on the simple ratio of customer acquisition cost vs. per customer earnings
+
+* Rule: Growth requires that customer acquisition cost is less than Lifetime Value of a customer
 
 * Focus
-  1. LTV of a customer tells you how much you can spend on customer acquisition
+  1. Increase Lifetime Value of a customer (LTV)
+  1. Reduce the Customer Acquisition Cost (CAC)
   1. Simply add more money to customer acquisition and you get a predictable amount of earnings from that.
 
 * Example
   1. Ad costs $100 and it predictably causes 2 customers to sign up. CPA = $50.00
   1. Average customer spends $25 per year and lasts an average of 1.5 years). LTV = $37.50
-  1. If LTV > CPA the company grows, because profits can be invested in more ads or sales people
-
+  1. If LTV > CAC the company grows, because profits can be invested in more ads or sales people
