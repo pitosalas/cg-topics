@@ -2,14 +2,12 @@
 title: Startup Funding
 ---
 
-## Startup Funding
+:slide_title Startup Funding
 
 * You need money to pay salaries and other expenses
 * You don't have revenue, or you don't have enough profit
 
-<slide_break></slide_break>
-
-### Where might money come from?
+:slide_title Where might money come from?
 
 1. Friends and Family
 2. Consulting/Work on the side
@@ -19,25 +17,47 @@ title: Startup Funding
 6. Crowdfunding (e.g. KickStarter)
 7. (Banks)
 
-<slide_break></slide_break>
+:slide_title What stage is your business?
 
-### What is a VC firm?
+* These are not set in concrete, but they are typical
+* Key parameters are: How much is being invested, and at what valuation
+
+:slide_title Stages
+
+* Pre-seed:
+  * Idea, maybe a prototype, no revenue
+  * 1 to 5 founders
+  * Friends and Family, Angels, Incubators
+  * $10K to $100K investments
+* Seed: Prototype, maybe some revenue, no profit
+  * 1 to 5 founders
+  * Angels, Incubators, Seed Funds
+  * $100K to $1M investments
+* A-Round: Product, some revenue, no profit
+  * 5 to 20 employees
+  * Super-Angels, VCs
+  * $1M to $10M investments
+
+:slide_title Angels, Super Angels, Micro VCs
+
+* Generally invest their own money
+* (Contrast VC who invest other people's money)
+* Decision making process is less formal and more intuitive
+* Investment amounts are smaller
+
+:slide_title What is a VC firm?
 
 * A "firm" that stands between two constituencies
 * Limited Partners (LPs) and Startups
 
-<slide_break></slide_break>
-
-### "Limited Partners"
+:slide_title "Limited Partners"
 
 * Organizations like Universities or pension Plans
 * Who need to "manage" a large sum of money
 * They allocate portions of their funds to different investment types
 * One of the investment types is "venture capital"
 
-<slide_break></slide_break>
-
-### Venture capital as a "investment class"
+:slide_title Venture capital as a "investment class"
 
 * Considered high risk and very long term
 * Startups and other businesses who need money
@@ -45,23 +65,18 @@ title: Startup Funding
 * Previously funded teams who need more capital
 * Existing companies who are established and need more capital.
 
-<slide_break></slide_break>
-
-### "Value add" of VC firm
+:slide_title "Value add" of VC firm
 
 * Locating the best investments into a portfolio of investments
 * Managing the portfolio companies for best outcome
 * Over 7 years goal is
-  1. 10% companies are 100+x successes
-  1. 40% companies do "ok"
-  1. 40% fail outright
+1. 10% companies are 100+x successes
+1. 40% companies do "ok"
+1. 40% fail outright
 * VC pools "Limited Partner" funds into numbered Funds
 * Each VC will choose an appropriate size fund.
 
-<slide_break></slide_break>
-
-
-### What is the process?
+:slide_title What is the process?
 
 * Rounds of investment
 * How valuation changes
@@ -70,27 +85,24 @@ title: Startup Funding
 * Founders have an idea - investors have money
 * It's a contract between founders and investors
 
-<slide_break></slide_break>
-
-### Valuation
+:slide_title Valuation
 
 * What is the company worth - what would it cost for me to buy it from you?
 * Like any asset, it's a negotiation (like a house)
 * It's simple arithmetic but it is confusing
 * Pre-money - what is your company worth before the investment?
 * Post-money - Note that this is equal to pre-money + amount invested
-* [Let's work an example in google sheets](https://docs.google.com/a/brandeis.edu/spreadsheets/d/1e40QxrBat3WOoZ0kMV9Omd6MUius4JUaqSUvIamzILc/edit?usp=sharing)
+* [Let's work an example in google
+sheets](https://docs.google.com/a/brandeis.edu/spreadsheets/d/1e40QxrBat3WOoZ0kMV9Omd6MUius4JUaqSUvIamzILc/edit?usp=sharing)
 
 
-### Rounds of financing
+:slide_title Rounds of financing
 
 * What is a round
 * How does it end? Liquidity Event
 * Seed/Angel, A-Round, B-Round, ... IPO or Acquisition
 
-<slide_break></slide_break>
-
-### What you negotiate over
+:slide_title What you negotiate over
 
 * Valuation and Investment amount are the key parameters
 * How term sheets turn into "deals"
@@ -99,4 +111,3 @@ title: Startup Funding
 * What are VC firms really?
 * General and Limited Partners
 * Why do people love/hate VCs?
-
