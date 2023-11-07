@@ -69,7 +69,7 @@ slides: true
 * Output from the model (e.g. Operating Profit in Q2)
 * There will be lots of assumptions.
 
-:slide_title Cstomers or units and the Growth Engine
+:slide_title Customers or units and the Growth Engine
 
 * A very typical "driver" for your model will be the number of customers served or units sold
 * Your assumptions there will have a big effect on the overall model
