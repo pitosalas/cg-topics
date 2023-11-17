@@ -1,9 +1,12 @@
 ---
 title: IP Exercise
 ---
-<%= discussion_box "Go into your breakout rooms and look at the list below. Discuss which kind of IP protection each item below would needm, and why. Come up with answers and reasoning for as many of the cases as you can in 15 minutes. Report outs from each group" %>
 
-<slide_break></slide_break>
+:slide_bigtitle IP Exercise
+
+:discussion "Break into teams and look at the list below. Discuss which kind of IP protection each item below would needm, and why. Come up with answers and reasoning for as many of the cases as you can in 15 minutes. Report outs from each group"
+
+:slide_title Look at these
 
 * The Nest industrial design
 * The use of two motion detectors inside the Nest

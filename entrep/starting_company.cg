@@ -1,22 +1,19 @@
 ---
 title: Starting a company
 ---
-### Incorporation
+:callout :big, "Opinion", "This is my experience and my opinion, not set in stone!"
 
+:slide_title Incorporation
+
+* What is a corporation?
+* Why do we need one?
 * When is it a good idea
 * What are the key reasons forcing the decision?
 * Types of corporations
+* Board of directors
+* Board meetings
 
-<slide_break></slide_break>
-
-### Founding team
-
-* What is a founder and why does it matter?
-* "Can I be a founder too?"
-
-<slide_break></slide_break>
-
-### Equity
+:slide_title Equity
 
 * What is it?
 * How to divide up the pie
@@ -25,39 +22,27 @@ title: Starting a company
 * Vesting
 * Percentages
 
-<slide_break></slide_break>
+:slide_title Founding team
 
-### Building a company
-
+* What is a founder and why does it matter?
+* "Can I be a founder too?"
 * Who should be on the founding team?
-
-<slide_break></slide_break>
-
-### Interviewing
-
 * How fast do you hire?
 * What do you look for?
 * How do you decide?
 
-<slide_break></slide_break>
-
-### Company Culture
+:slide_title Company Culture
 
 * Titles
 * Salaries - how much?
 * Giving feedback
 * Fairness
-
-<slide_break></slide_break>
-
-### Benefits
-
 * Offices, office space, remote work, dogs
 * Secrecy/Confidentiality
 
-<slide_break></slide_break>
+:slide_title When things go wrong
 
-### When things go wrong
+* They will!
 * Firing
 * Layoffs
 * Legal issues

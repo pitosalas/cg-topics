@@ -2,7 +2,7 @@
 title: Additional Topics in Intellectual Property
 ---
 
-### Protecting your IP and respecting others' IP
+:slide_title Protecting your IP and respecting others' IP
 
 * Licensing is a contract between two parties where I allow you to 'use' something that I own
 * You need to decide what you 'release' and what you don't. For example, do you release source code? Do you release your circuit diagrams, and so on. Whatever you 'release' you have to 'protect'
@@ -10,9 +10,13 @@ title: Additional Topics in Intellectual Property
   1. First, make it protected, so you own it
   1. Second, grant someone else permission to use it in a controlled way, by licensing it
 
-<slide_break></slide_break>
+:slide_title NDA
 
-### Open Source and Creative Commons
+* Non disclosure agreement
+* Entered in before a meeting where you will hear or tell secrets
+* Required to preserve "trade secret" status
+* FrieNDA
+:slide_bigtitle Open Source and Creative Commons
 
 * Both allow you to control the sharing of your IP
 * Open Source is a form of license
@@ -20,22 +24,4 @@ title: Additional Topics in Intellectual Property
 * [Open Source Initiative](http://opensource.org/licenses) collects and explains all the variations
 * [Creative commons](http://creativecommons.org) - a refinement over "all rights reserved"
 * Can I make money if I open source my product?
-
-<slide_break></slide_break>
-
-
-### NDA
-
-* Non disclosure agreement
-* Entered in before a meeting where you will hear or tell secrets
-* Required to preserve "trade secret" status
-* FrieNDA
-
-<slide_break></slide_break>
-
-### Practical Issues for startups
-
-* Stealth mode: Pros and Cons
-* How do you get customer feedback if you can't tell anyone?
-* Who owns the IP, individuals or the startup?
 
