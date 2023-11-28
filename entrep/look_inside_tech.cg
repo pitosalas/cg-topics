@@ -1,0 +1,174 @@
+---
+title: Looking inside a tech company
+slide: true
+---
+
+:slide_bigtitle How the software world works
+
+* Goal for today: Answer your questions about how a real business works
+* Important things to understand as a Software Entrepreneur
+* ... as well as someone thinking about their carreer
+* Very practical and actionable information
+
+:callout :big, "ASK", "Ask questions and feel free to take the discussion in different directions"
+
+:slide_title Focus
+
+* Focus specifically on "tech" companies
+* Companies where computers are core to the business
+* How are Large Companies different from Small Companies?
+* Overall company structure, departments, leadership and titles
+* Software Developer vs. Product Manager vs. Other Roles
+* When things go wrong
+
+:slide_bigtitle Types of Companies
+
+:slide_title Large company (1000+)
+
+#### PRO
+* Well known: "Where do you work"?
+* Usually have many product/services
+* Provides mobility, interest and opportunities (e.g)
+* Better pay, possibly more comprehensive benefgits
+
+#### CON
+* More processes and politics: takes longer to get things done
+* Little connection with senior leaders
+* Less control over your own fate (see sudden layoffs)
+* You may need to accept an offer without knowing exactly what the job will be
+
+:discussion "Is Google medium, large, or massive? Is Brandeis small, medium or large"
+
+:slide_title Small companies (100-)
+
+#### PRO
+
+* Very focused
+* More transparency. Connection to senior leaders.
+* Less or no process, take initiative to get things done (fix your own problems)
+* Company lives & breathes the one project - not good if you want to experience more than one type of thing
+* Company depends more on you
+
+#### CONS
+
+* Not well known: "Where do you work???"
+* Less variety of work, technologies, people
+* Less room for major mistakes (nowhere to hide)
+
+:discussion "Have you thought about this? What do you hear?"
+
+:slide_title Comments
+
+* Don't assume that any job will last forever
+* Or that you won't have multiple jobs during your career
+* Work Life Balance anyone?
+
+:slide_title Aside: What's a "Lifestyle Business"
+
+* Doesn't grow (not designed to grow exponentially)
+* Gives a decent, liveable salary for a small number of workers
+* Supports the lifestyle its employees want to maintain
+* Sometimes used pejoratively but can be an excellent option
+
+:slide_title Contractor vs. Consultant
+
+* Mostly the same, self employed and not working directly as an employee
+* Implication of contractor - do a lot of work quickly for the compnay
+* Consultant- more of an advising position
+
+:slide_bigtitle Nuts and Bolts
+
+:image :700, :orgcharts
+
+:slide_title Typical Departments in a Tech Company
+
+* Development or engineering
+* Quality Assurance or testing
+* Product Management
+* Sales
+* Marketing
+* Business Development
+* Finance
+* Human Resources
+
+:slide_title Org Chart
+
+* C-Suite: CEO, CTO, CMO, COO, CxO
+* What's an Executive? CxOs, VPs
+* But like grades, there is title creep
+
+:slide_title Hiring and firing
+
+* Almost always, in the US, it's "employment at will"
+* In other countries there are more typically employment contracts
+* At Will means that (legally) you can quit whenever you want and you can be let go whenever they want
+* In practice there is an expectation of a period of "notice" of 2-4 weels
+* Reputation and professional considerations come into play
+
+:slide_title Non Competes and NDAs
+* You will likely be asked to sign one of the two or both
+* Non-Compete is a promise that when you leave the company you will not work for a competitor
+* What's a competitor? Definition is important if  not crucial
+* How long is it in force?
+* Is it actually enforcable?
+* Non Disclosure Agreements are a promise that you will not reveal trade secret to anyone
+* Usually as part of talking to another company
+
+
+:slide_title Taxes and Benefits
+
+* Some companies withhold taxes automatically
+* 401K- deposits are not taxed
+* Some companies match a portion of salary
+* "5% match" - they will match up to 5% of your income
+
+:slide_title Stock purchase plans
+
+* Usually stock options and not actual stock
+* Vesting - you can buy stock but you cannot get it unless you work at the company for x amount of time
+* Significance of each benefit depends on person
+
+:slide_bigtitle What is a software development process?
+
+* How specifications are gathered from customers and stake holders
+* Where and whether and how they are written down
+* How careful and rigorous the scheduling is
+* How large or small teams are
+* The role of a team lead vs. development manager
+* Care put into scheduling
+* Coding standards, standarized tools
+
+:slide_title What are some software development Processes?
+
+* The software process for a cool mobile app vs. for a product deployed to millions vs. a product on which lives depend
+* Two extremes: Waterfall model and Agile model
+* Even those two categories oversimplify things quite a lot
+
+:slide_title What does a developer's typical day look like?
+
+* A developer (of software engineer) writes code but...
+* In addition: design, testing, deploying, learning, discussing, arguing
+* A lot more interaction with others than you might think
+* Depends on the experience level of the developer
+* A lot more variety than people think
+
+:slide_title What does a product manager's typical day look like?
+
+* They map customer requiremetns to product requirements
+* They are the ones who "go outside the building" usually
+* On the crossroads between development, marketing, sales and CEO
+* Best ones have a strong technical background but also excellent reapport skills
+
+:slide_title What does a tester (or QA person's typical day look like?
+
+* They ensure that the product works according to the spec (if there is a spec :)
+* Some companies don't have separate testers, developers do the testing
+* A lot more reliance on test automation
+* Some kinds of tests can only be done by hand
+* Testers need to be fully qualified developers
+
+:slide_title Conclusion
+
+* Better sense of the way a real company is put together
+* What your role within it might be
+* What to expect when you join
