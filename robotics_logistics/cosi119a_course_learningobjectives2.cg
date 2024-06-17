@@ -1,0 +1,27 @@
+---
+title: Cosi119a Learning Objectives
+---
+### Learning Objectives
+
+This course is a pragmatic introduction to autonomous robotics. Our goal is to introduce students to the "big questions" that need to be answered in order to build autonomous robots. Questions such as "How do I know where I am?" and "How do I decide what to do?" We will take a software engineering approach, always focusing on how to turn the concepts into actual robot behaviors in the real world. 
+
+The concepts and skills that I hope you acquire by the end of the course.
+
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "Concepts;Skills; "
+:trow "Localization; Basic structure of a ros app"
+:trow "Coordinate Systems; publish and subscribe"
+:trow "Real-time and concurrent algorithm structure;  cmd_vel for motion"
+:trow "Forward and inverse kinematics;  odom for odometry"
+:trow "Principles of Computer Vision;  Run code in Simulation"
+:trow ";  LIDAR data formats and /scan topic"
+:trow ";  PID to manage the distances from the wall"
+:trow ";  States of the algorithm"
+:trow ";  highly concurrent programming"
+:trow ";  Image topics"
+:trow ";  Working with image data"
+:trow ";  Basic opencv for line detection"
+:trow ";  Fiducial detection"
+:trow ";  Using TFs for detection of motion"
+:trow ";  Maze solving with left hand rule"
+:tend
