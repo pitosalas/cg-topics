@@ -3,25 +3,148 @@ title: What is a robot?
 desc: "It's not necessarily obvious"
 slides: true
 ---
-:slide_title Discussion
+:slide_bigtitle What is a robot?
 
 * (I agree the definition is not super important)
 * (I agree there are different definitions)
 * What are the characteristics of a robot
 * What must it have to be called a robot
 
-:slide_title Opportunities in Robotics
+:slide_title Did you know
 
 * [Boston is a global hub for robotics!](https://masstech.org/robotics)
-* Humanoid robots are cool but there are many more important types of robots
-* Let's take a look
+* Amazon: Has a major robotics hub in Boston
+* Boston Dynamics is right here in Waltham
+* Let's take a look at how robots are impacting the world
+
+:slide_bigtitle Let's take a look
+
+* The scope of the concept of robotics is very wide
+* The robots are coming - in a good way
+* **Take away**: There are many directions that learning Robotics can take you!
+
 
 :slide_title Humanoid Robots
 
-:image :teslaoptimus
+:image :teslaoptimus, {class="float-right" style="margin-right: 30px; height:300px"}
+
+**This is the Tesla Optimus, the humanoid robot**
 
 * Tesla, Boston Dynamics, Amazon and others
 * Cool Sci-Fi look
-* Lots of questions remain
+* Uncanny Valley
+* What will it actually do?
+* Humanoid robots like Tesla Optimus could perform dangerous or repetitive tasks, improving workplace safety for humans.
+* These robots may provide companionship and social interaction for isolated individuals, potentially reducing loneliness in society.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Surgical Robots
+
+:image :davinci, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**The DaVinci Robot from Intuitive**
+
+* Why is this consixered to be a robot?
+* Allows certain kinds of surgeries to be more reliable
+* They make big claims
+* Surgical robots improve precision in complex procedures.
+* They reduce recovery time for patients after surgery.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Assistive Robots for the elderly
+
+:image :companion, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Cognative Assisive Robots for Dementia Caree**
+
+* Also look at [Jennie from Tombot](https://tombot.com)
+* Allows certain kinds of surgeries to be more reliable
+* Assistive robots can help older adults maintain independence and age in place comfortably.
+* These robots can reduce the workload on caregivers and family members, improving their quality of life.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Autonomous public transportation systems
+
+:image :airporttram, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Transportation between airport terminals**
+
+* Autonomous public transport reduces traffic congestion.
+* It improves accessibility for those unable to drive.
+* There is no driver. It is autonomous?
+* Would you consider it a robot?
+* What if it were "smart"?
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Bomb Disposal Robots
+
+:image :bomb, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Robots to safely examine suspicious packages**
+
+* Dangerous situations where a robot can provide safety
+* Usually a combination of remote control and autonomy
+* [Many are "research projects" still](https://www.overtdefense.com/2020/11/26/re2-robotics-to-develop-autonomous-casualty-extraction-ugv-manipulator-arms-for-us-army/)
+* Bomb disposal robots save lives of human technicians.
+* They reduce the psychological stress on bomb squad personnel.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Domestic Chore Robots
+
+:image :roomba, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Roomba Autonomous Vaccum Cleaner**
+
+* Well known product from [iRobot](https://www.irobot.com)
+* I have two of them (a really old one and a somewhat old one)
+* Overall assessment: they are a work saver
+* Domestic chore robots free up time for family activities.
+* They assist elderly or disabled individuals with daily tasks.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Agricultural Robots
+
+:image :agricultural, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Many different farm applications**
+
+* This one is an experimental one from [Odd Bot Weedwhacker](https://www.odd.bot)
+* Pulling weeds reduces the need for herbicides
+* Greatly reduces the amoung of manual labor
+* Agricultural robots increase crop yields and efficiency.
+* They reduce the physical strain on farm workers.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Manufacturing Robots
+
+:image :industrial, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**Robots used in manufacturing of all kinds**
+
+* Utilizes advanced robotics technology from leading manufacturers.
+* Increases production precision and reduces manufacturing errors.
+* Significantly enhances production speed and output capacity.
+* Improves workplace safety by handling hazardous tasks.
+* Enables consistent 24/7 operation in manufacturing facilities.
+
+<div style="clear:both; height:20px;"></div>
+
+:slide_title Science Fiction Robots
+
+:image :walle, {class="float-right" style="margin-right: 30px; height:300px ;clear:right"}
+
+**They won't be scifi for long!**
+
+* This one is from the [pixar movie Wall-E](https://www.pixar.com/feature-films/walle)
+* It looks like something we could build today
+* But if you see the movie you see that has cognition, emotion, reasoning, and more
+
 
 
