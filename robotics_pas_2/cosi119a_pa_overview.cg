@@ -1,0 +1,70 @@
+
+Programming assignment sketches
+‌
+Guide:
+first solve it fully
+then create a skeleton as a starting point
+put it all into a new repo called programming-assignments
+Once approved by Pito then write the instructions in the new format.
+‌
+‌
+PA1
+Drive the robot 50cm out and 180 degree turn in place and try to get back to the same spot
+Drive robot in an exact 30 cm square
+Drive robot in a circle with a radius of 30cm
+Demonstrate this in sim.
+‌
+Skills:
+ Basic structure of a ros app
+publish and subscribe
+cmd_vel for motion
+odom for odometry
+Run code in Simulation
+‌
+PA2
+Subscribe to the scan topic to receive LaserScan messages
+Start the robot along a wall
+Circumnavigate the wall by maintaining a constant distance
+PID
+Demonstrate this in SIM
+‌
+Skills:
+LIDAR concepts and /scan topic
+PID to manage the distances from the wall
+States of the algorithm
+Highly concurrent program
+‌
+PA3
+Follow a black line on the floor
+Using opencv
+Deal with an obstacle placed on the line
+Demonstrate this in SIM and real
+‌
+Skills:
+image topics
+working with image data
+basic opencv for line detection
+‌
+PA4
+A space has several blocks with fiducials on them
+Map the space with SLAM
+Each fiducial is numbered
+Go to each block in turn and return to the first one using SLAM
+‌
+Skills:
+Fiducial detection
+Using TFs for detection of motion
+‌
+PA5
+A simple block maze
+Robot is put into the maze
+It has to find its way out
+Solve both in simulation and in real life.
+‌
+Skills:
+‌
+‌
+NOTES TO SELF:
+‌
+Need a scenario where we need more than one node
+Need a scenario where student node publishes to another student node

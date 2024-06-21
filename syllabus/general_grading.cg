@@ -1,7 +1,7 @@
 ---
 title: General Grading Info
 ---
-## General Policies related to grades and grading
+### Overview
 
 The final grade in this course will reflect my assessment of your performance in the course. This includes your participation; your mastery of the key learning objectives; your demonstration this both in written form and in code (if applicable); your application of what you've learned to working on a team; building an interesting product; and communicating what you achieved at the end of the semester.
 
@@ -11,12 +11,3 @@ Individual assignments are scored and weighted (see below), and used to determin
 * B -> Distinction
 * C -> Satisfactory
 * D -> Passing, but Unsatisfactory
-
-:slide_title Marks for assignments
-
-Throughout the semester, there will be homeworks, assignments, presentations, quizzes etc., small and large. Those assignments are all given a 0-100 mark. We use [Gradescope](https://www.gradescope.com) for all assignments.
-
-* All assignments have a due date.
-* Written homeworks must all be in pdf form with your name and homework number at the top.
-
-:callout :small, "NOTE:", " You have a maximum 3 weeks after a mark has been posted to call our attention to a possible error, oversight or misunderstanding. That is your responsibility. After that, the mark as recorded in Latte will not be changed."
