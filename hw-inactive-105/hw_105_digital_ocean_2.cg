@@ -2,7 +2,7 @@
 title: "Service API - 2: Sinatra"
 ---
 
-<link rel="stylesheet" href="http://prismjs.com/themes/prism-okaidia.css"/>
+<link rel="stylesheet" href="https://prismjs.com/themes/prism-okaidia.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 
 ## Prerequisites
