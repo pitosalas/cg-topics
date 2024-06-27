@@ -3,8 +3,9 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
-* Prev: :topic_link :prr_ros_intro
-* Next: :topic_link :prr_ros_fundamentals_additional
+:slide_bigtitle PRR Chapter 2
+
+* Reading and doing assignment: PRR Chapter 2
 
 :slide_title Introduction
 
@@ -46,8 +47,6 @@ slides: true
   1. A real robot will have dozens to hundreds of nodes
   1. You can write nodes in Python (we will do) or C++
 * Nodes talk to each other by publishing and subscribing to messages
-
-
 
 :slide_title Example of a very simple node
 

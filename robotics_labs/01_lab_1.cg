@@ -4,7 +4,6 @@ title: Check environments, do series of tutorials, work on homework
 ## Plan for today
 
 * This lab will be a guided independent programming session. Please do the following during lab while we are around to help everyone solve their problems.
-* This is brand new so we don't know yet how much time it will take
 * When you complete each section, ask a TA to come over so you can discuss what you achieved 
 
 
@@ -24,7 +23,8 @@ title: Check environments, do series of tutorials, work on homework
 
 ### Basic Concepts
 
-<%= callout("NB", " Use your cloud desktop and vscode", :small) %>
+:callout :small, "NB", " Use your cloud desktop and vscode"
+
 * Do [Navigating ROS Filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 * Do [Creating a Package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage)
 * Do [Building Packages](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
