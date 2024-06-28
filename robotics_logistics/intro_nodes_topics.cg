@@ -3,7 +3,7 @@ title: ROS Nodes and Topics
 desc: One of the most central concepts
 slides: true
 ---
-:h3 High level review
+:slide_title High level review
 
 * ROS is a distributed operating system
 * Meaning it controls potentially (and typically) multiple computers
