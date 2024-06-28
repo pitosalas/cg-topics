@@ -5,8 +5,6 @@ slides: true
 ---
 :slide_bigtitle PRR Chapter 2
 
-* Reading and doing assignment: PRR Chapter 2
-
 :slide_title Introduction
 
 * A distributed "operating system"
@@ -25,8 +23,8 @@ slides: true
 
 * Computers (running any OS potentially)
   1. The robot itself
-  1. Your or my laptop
-  1. Your or my ROS environment
+  2. Your or my laptop
+  3. Your or my ROS environment
 * Of course they need to be on the/a network
 * EDUROAM or some other network.
 * Somehow they need to know about each other
@@ -34,10 +32,10 @@ slides: true
 
 :slide_title Writing ROS software
 
-* Can be written in Python or C++ (or any other language)
+* Can be written in Python or C++. We will be using Python exclusively
 * Built up from multiple independent programs called Nodes
 * Each node is implemented as a separate program
-* It can use all the features, classes, multiple packages, importing other packages. There are no limits
+* It can use all the python features: classes, functions, imported packages, etc
 
 :slide_title ROS Nodes - the basic unit
 
@@ -45,7 +43,7 @@ slides: true
 * ROS runs a number of collaborating processes called "nodes"
 * Think of it as a program or a process which forms part of a system
   1. A real robot will have dozens to hundreds of nodes
-  1. You can write nodes in Python (we will do) or C++
+  2. You can write nodes in Python (we will do) or C++
 * Nodes talk to each other by publishing and subscribing to messages
 
 :slide_title Example of a very simple node
@@ -58,7 +56,7 @@ import rospy
 from std_msgs.msg import Int32
 
 # Make this into a ROS node.
-rospy.init_node('topic_publisher')
+rospy.init_node('my_publisher_node')
 
 # Prepare to publish topic `counter`
 pub = rospy.Publisher('counter', Int32, queue_size=10)
@@ -72,7 +70,7 @@ while not rospy.is_shutdown():
     pub.publish(count)
     count += 1
     rate.sleep()
-
+    rospy.sleep(0.5)
 :source_end
 
 :slide_title ROSCORE
@@ -85,7 +83,7 @@ while not rospy.is_shutdown():
   1. Once `roscore` runs, additional nodes can run
 * Each node is essentially a separate program, maybe even a single file
   1. A node can be written in Python or C++ (or really technically any language)
-  1. We will use Python mostly
+  2. We will use Python mostly
 
 :slide_title "Running" a ROS application
 
@@ -122,10 +120,15 @@ while not rospy.is_shutdown():
   /devel
   /build
   /src
- 
- # inside ./src there are directories each with a ROS package.
- # They all have a standard shape as well and can be nested inside each other.
- # Here is an example
+     /cosi119_src/
+        /src
+        /...etc
+:source_end
+
+Inside ./src there are directories each with a ROS package. They all have a standard shape as well and can be nested inside each other.
+
+:source_begin :lanugage-bash
+# Here is an example
  ./turtlebot3_gazebo
   /launch
     turtlebot3_stage_1.launch
