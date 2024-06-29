@@ -16,6 +16,14 @@ slides: true
 * Understand the relationship between time, velocity, and distance
 * Understand nodes, topics, publish, subscribe and messages
 
+:slide_title Specific Readings (PRR)
+
+1. pp.26-27 on frames, positions, orientations, and poses;
+2. pp.77-80 on mobile platform actuation;
+3. pp.85-87 on odometry;
+4. pp.92-93 on simulators in general, and pp.95-96 on Gazebo in particular;
+5. pp.99-103 on basic mobile platform actuation with the Wander-bot.
+
 :slide_title What skills this assignment covers
 
 * Basic structure of a ros app
@@ -32,11 +40,27 @@ slides: true
 * Demonstrate this in sim.
 
 :slide_title Steps
-* Note: this PA is done in simuilation
-* Locate the file pa1_starter.py in the cs119_samples/ directory
-* Read it and the comments
-* Launch the provided gazebo enviornment and play with gazebo to get the hang of it.
 
+* Baseline
+  * Note: this PA is done in simuilation
+  * Locate the file pa1_starter.py in the cs119_src/ directory
+  * Read it and the comments
+  * Launch the provided gazebo environment and play with gazebo to get the hang of it
+* Drive 1 meter out
+  * Consider what it means to drive out 1 meter and stop
+  * Use cmd_vel to move the robot forward
+  * Collect current position from odom subscription
+  * Monitor odom until it tells you that you've gone 1 meter
+* 180 degree turn and return
+  * How do you use cmd_vel to rotate in place
+  * Again use odom, this time to monitor the orientation
+  * Rotate until you see 180 degrees ( = 1*math.pi)
+  * ...more to come
+  
+
+:slide_title What to submit
+* Zipped up source code
+* url to 120 second youtube video s
 
 
 
