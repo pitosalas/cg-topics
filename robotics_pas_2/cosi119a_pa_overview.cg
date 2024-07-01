@@ -16,7 +16,9 @@ slides: true
     * cmd_vel for motion
     * odom for odometry
     * Run code in Simulation
+
 ‌:slide_title PA2 - Lidar
+
 * Requirements
     * Subscribe to the scan topic to receive LaserScan messages
     * Start the robot along a wall

@@ -67,10 +67,6 @@ title: ROS Best Practices and Patterns
 
 :slide_title Starter Code
 
-* As you know there are lots of examples in [prrexamples](https://github.com/campusrover/prrexamples) 
-* You can find [some general starts here]](/tree/master/src/pa_starters)
-* *Beware that you should understand what it is that you're using!*
-
 :slide_title Sources and references (quality varies a lot!)
 
 * [List of other Best Practices](https://github.com/leggedrobotics/ros_best_practices/wiki)

@@ -3,7 +3,7 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
-:slide_bigtitle PRR Chapter 2
+:slide_bigtitle ROS Fundamentals (PRR 1,2)
 
 :slide_title Introduction
 
@@ -23,8 +23,8 @@ slides: true
 
 * Computers (running any OS potentially)
   1. The robot itself
-  2. Your or my laptop
-  3. Your or my ROS environment
+  2. Your ROS cluster account
+* Really any computer with ROS installed
 * Of course they need to be on the/a network
 * EDUROAM or some other network.
 * Somehow they need to know about each other

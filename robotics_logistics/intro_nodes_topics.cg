@@ -3,7 +3,7 @@ title: ROS Nodes and Topics
 desc: One of the most central concepts
 slides: true
 ---
-:slide_title High level review
+:slide_title Introduction to Nodes and Topics (PRR 3)
 
 * ROS is a distributed operating system
 * Meaning it controls potentially (and typically) multiple computers
@@ -60,9 +60,9 @@ slides: true
 * `Twist` message is used for `cmd_vel`
 * Expresses a velocity in linear and angular aspects
   1. Note our robot can only move forward and backward (x axis)
-  1. And it can only rotate around (z axis)
-  1. Twist doesn't say anything about where the robot (thinks it) is
-  1. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
+  2. And it can only rotate around (z axis)
+  3. Twist doesn't say anything about where the robot (thinks it) is
+  4. "cmd_vel" is the topic to *directly* command the base (people often refer to the robot as a whole as the base) to move. The message type for cmd_vel is Twist
 
 :slide_title Publishing and Subscribing
 
@@ -105,7 +105,7 @@ slides: true
 * It contains data about the surrounding area and obstacles seen by the robot
 * Any node can subscribe to that ROS topic if it needs to know the current values
 
-:slide_title Conclusion
+:slide_title Takeaways
 
 * ROS: distributed operating system
 * Node: One process which can run on any computer

@@ -3,10 +3,7 @@ title: "6: Robots"
 desc: Going through the hardware
 slides: true
 ---
-* Prev: :topic_link :prr_actions
-* Next: :topic_link :prr_robots_simulators
-
-:h2 Robots are made up from many Subsystems
+:slide_bigtitle Robot Hardware
 
 * Subsystems are 'represented' in the software
 * Locomotion (e.g. wheels)
@@ -14,38 +11,30 @@ slides: true
 * Sensing (e.g. cameras, lidar, buttons, encoders)
 * Computing (e.g. single-board computer SBC, microcontroller)
 
-:slide_bigtitle Concepts in Actuation
+:slide_bigtitle Locomotion
 
 * Holonomic - non-Holonomic
-* Holonomic - can move in any direction
+  * Holonomic - can move in any direction
+  * Non-holonomic - can't move in any direction
 * Degrees of freedom
 * Ambiguity in defining DoF
 
-:slide_title 2 Wheel scenario
+:slide_title 2 wheeled vehicles
 
-* Differential drive: Turtlebot3, Platform, Bullet
+* Differential drive: Turtlebot3, Platform, Bullet, Branbot
 * Turning by different speed on two or more wheels
 * Sometimes there is a caster
 * Can only move forward and backward or pivot in place
 
-:slide_title 4 Wheel scenario
+:slide_title 4 wheeled vehicles
 
 * Not up and down or (directly) sideways
 * With more than 2 wheels, or a track - skid steering
 * Cars have "Akkerman" steering (4 wheels, 2 that can steer)
-
-:slide_title Tracked Vehicles
-
-* Skid steering
-* Problem with odometry
+* 4WD "Mechanum" steering
   
-:slide_title Manipulator Arms
-
-* Degrees of freedom
-* Still doesn't tell the whole story - how fast, in what order, or simulatanuous?
-* Coordinate transforms
-* Forward and reverse Kinematics
-
+:youtube "https://www.youtube.com/embed/mpnDXD9cM1o?si=MA36gR3JZ5bhh0JV"
+  
 :slide_title Quadruped
 
 * Gait - trot, gallop, etc
@@ -72,9 +61,11 @@ slides: true
 * Encoder counts up for each rotation
 
 :slide_title Algorithm
-* PID control to minimize delta between desired and actual
 
-## Sensors
+* PID control to minimize delta between desired and actual
+* Forward kinematics
+
+:slide_bigtitle Sensors
 
 :slide_title LiDAR
 
@@ -99,7 +90,7 @@ slides: true
 * In addition to `{r,g,b}` also has distance so we get `{r,g,b,d}`
 * Useful for getting range measurements of an object detected through camera
 
-## Computation
+:slide_title Computation
 
 * Distributed environment, typically:
   1. roscore running onboard. on Raspberry pi
@@ -109,7 +100,7 @@ slides: true
 * Eventually we may have to have a much beefier computer running all three
 * This would make the robot much more independent
 
-:slide_title Our actual Robots
+:slide_bigtitle Our actual Robots
 
 1. Differential Drive - 2 powered wheels and one (or two) casters
 1. Arduino or Arduino-like computer to control the motor.
