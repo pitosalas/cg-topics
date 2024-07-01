@@ -5,12 +5,12 @@ slides: true
 ---
 
 :slide_title Introduction
-* High level descritpion of assignment
-* And of what will be learned.
+In this assignment you will learn how to process sensor data and use it to drive the robot based on that. You will also learn a little bit about processing the noisy data coming from a sensor in particular
 
 :slide_title Expected preparation
 
-* What we should have covered up to now
+* You should know how to run your app in simulation
+* You should know how to subscribe to a topic
 
 :slide_title Specific Readings (PRR)
 
@@ -18,11 +18,20 @@ slides: true
 
 :slide_title What skills this assignment covers
 
-* The list of "skills"
+* LIDAR concepts and /scan topic
+* PID to manage the distances from the wall
+* States of the algorithm
+* Highly concurrent program
 
 :slide_title Requirements for the PA
 
-* Exactly what behaviors are expected
+* A single wall without corners, or one with corners, or a square
+* In simulation
+* Robot starts not far from the wall
+* Robot drives towards the wall to a distance of 1 meter
+* Robot follows the wall all the way around
+* If it is a closed shape it goes around it.
+* If it is an open shape then it goes along one side, makes a uturn and goes along the other side of the wall.
 
 :slide_title Steps
 
