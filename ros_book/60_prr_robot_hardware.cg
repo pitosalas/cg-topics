@@ -107,3 +107,7 @@ slides: true
 1. Motor Controller and IMU directly connected to Arduino
 1. Raspberry Pi which runs Ubuntu and ROS, connected to Arduino via a USB cable
 1. Lidar connected to Raspberry Pi connected via USB cable
+
+:slide_title Diagram
+
+:image :small, :linorobotblock

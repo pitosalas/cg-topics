@@ -3,10 +3,7 @@ title: "3a: Custom Messages"
 desc: How to create a custom message
 slides: true
 ---
-* Prev: :topic_link :prr_ros_topics
-* Next: :topic_link :prr_ros_services
-
-## Some extra details
+:slide_title Some extra details
 
 :slide_title Defining Your Own Message Types
 
@@ -19,6 +16,6 @@ slides: true
 :slide_title Steps to create a new message type (see [Creating a msg](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg))
 
 1. Define the message file, foo.msg, and place it in the msg/ subdirectory of the package
-1. Update (if needed) the package.xml file to include two new commands to indicate dependencies
-1. Update your python program to import the messages
-1. Update CMakeLists.txt
+2. Update (if needed) the package.xml file to include two new commands to indicate dependencies
+3. Update your python program to import the messages
+4. Update CMakeLists.txt

@@ -5,8 +5,6 @@ slides: true
 ---
 :slide_bigtitle ROS Fundamentals (PRR 1,2)
 
-:slide_title Introduction
-
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
 * Different parts (nodes) can run on different computers
