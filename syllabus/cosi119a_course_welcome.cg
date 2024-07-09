@@ -2,7 +2,8 @@
 title: Course Welcome
 desc: Why is this course great
 ---
-### Welcome!
+:slide_title Welcome from Professor Salas
 
-title: Welcome!
----
+Welcome to Cosi119a - Autonomous Robotics. Robots are everywhere these daysm and they impact life in almost every dimension, professional and personal, local, national and global. As a Computer Scientist, it is so important to have understanding of how robots can be designed and built to do all the different things that they do. What is especially fun and challenging with robotics is that spans many Computer Science sub-disciplines and also some adjacent fields. It is hard to define or reach consensus on where the boundaries are, does it include AI? Does it include Computer Vision? 
+
+ As in all my classes, I am trying to share with you not just the theory but what you will need to apply the theory in the real world. I am unabashed in wanting to prepare you for a future career in computation - broadly defined. Most of you are here not because you want to work in Robotics, but because you want a challenging advanced course in computation. Whatever you end up in the rich field of computing, I am confident that your experience in this course add to your toolkit and your success.

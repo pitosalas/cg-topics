@@ -3,9 +3,6 @@ title: "5: Actions"
 desc: What are ROS actions and how do they relate to topics and services?
 slides: true
 ---
-* Prev: :topic_link :prr_ros_services_additional
-* Next: :topic_link :prr_robot_hardware
-
 :h2 Review
 
 * Nodes: all code written for ROS is a Node
@@ -21,8 +18,6 @@ slides: true
   * Client/Server
   * Ask and answer
   * Like a function call
-
-
 
 :slide_title Defining an Action
 

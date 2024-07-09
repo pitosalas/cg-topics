@@ -3,9 +3,6 @@ title: "7: Wander Bot"
 desc: Simulating behavior in simulation
 slides: true
 ---
-* Prev: :topic_link :prr_robots_simulators
-* Next: :topic_link :prr_teleop_bot
-
 :callout :small, "NOTE!", " All the book instructions make reference to turtlebot_xxx. We will be using turtlebot3_xxx"
 
 :slide_title Intro

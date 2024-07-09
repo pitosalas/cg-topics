@@ -1,14 +1,12 @@
 ---
-title: (P) Read PRR Chapters 1 and 2
+title: Read PRR Chapters 1 and 2
 desc: Setting the foundations
 ---
-
 ### Purpose 
 
 We will follow along the reading of the textbook pretty closely and in so learn all about how ROS works. The warmup questions will help guide your reading and experimenting. *Remember* you can get it free of charge from the Brandeis library here. This reading introduces you to some very essential concepts in ROS.
 
 ### Do This
-
 
 * First google 'brandeis safari' to find the link in the Brandeis web site for the Safari library. Next look for the specific book: [Programming Robots with ROS](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch01.html)
 
@@ -19,9 +17,9 @@ We will follow along the reading of the textbook pretty closely and in so learn 
 
 **ALERT: "We have provided 'corrected' versions of the source code**
 
-* You will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/prrexamples) package. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_intro, :topic_link :prr_ros_fundamentals and :topic_link :prr_ros_fundamentals_additional.
+* You will find the code for the examples all in the provided [prrexamples](https://github.com/campusrover/cosi119_src.git) package. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_intro, :topic_link :prr_ros_fundamentals and :topic_link :prr_ros_fundamentals_additional.
 
-### Submit this
+### You should be able to answer these questions
 
 After doing this please answer the following  questions:
 
