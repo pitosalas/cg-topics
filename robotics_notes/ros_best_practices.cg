@@ -65,8 +65,6 @@ title: ROS Best Practices and Patterns
 * The most important purpose of a launch file is to launch multiple nodes
 * `roslaunch package-name filename.launch`
 
-:slide_title Starter Code
-
 :slide_title Sources and references (quality varies a lot!)
 
 * [List of other Best Practices](https://github.com/leggedrobotics/ros_best_practices/wiki)
