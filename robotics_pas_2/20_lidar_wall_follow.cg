@@ -5,6 +5,7 @@ slides: true
 ---
 
 :slide_title Introduction
+
 In this assignment you will learn how to process sensor data and use it to drive the robot based on that. You will also learn a little bit about processing the noisy data coming from a sensor in particular
 
 :slide_title Expected preparation
