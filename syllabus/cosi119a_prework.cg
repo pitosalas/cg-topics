@@ -11,6 +11,6 @@ We are going to jump right in so it is crucial that you invest time so that you 
 
 3. **Linux**: All programming and robotic software we will use in this class will run on Ubuntu Linux. Don't feat though, we are providing you a personal Ubuntu environment so you don't have to install or reinstall anything. But you will need to learn Linux and the Linux shell. You need to be comfortable with all the basic commands, such as md, cd, rm, mv, ls, ln You should have a clear understanding of how the Linux directory structure, file specifications. You should also know your way around Linux, booting, shutdown, installing software, running a shell, etc.
 
-    * [Mastering Bash and Terminal](https://www.blockloop.io/mastering-bash-and-terminal?utm_source=hackernewsletter&utm_medium=email&utm_term=fav)
     * [Learn Enough Command Line to be Dangerous](https://www.learnenough.com/command-line-tutorial) seems to be a very nice resource.
+    * [101 Bash Commands and Tips for Beginners to Experts](https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je)
 
