@@ -1,0 +1,24 @@
+---
+title: Read PRR Chapters 1 and 2
+desc: Setting the foundations
+---
+### Purpose 
+
+We will follow along the reading of the textbook pretty closely and in so learn all about how ROS works. The warmup questions will help guide your reading and experimenting. *Remember* you can get it free of charge from the Brandeis library here. This reading introduces you to some very essential concepts in ROS.
+
+### Do This
+
+
+* Read PRR Chapter 1. This is a pretty general chapter so it will be easy to read. We will provide you with a ROS environment with a complete installation of ROS. You don't need to install it yourself. Use of this environment is [documented here](https://campusrover.github.io/labnotebook2/cluster/user-guide/getting-started/)
+* Read PRR Chapter 2. This is a very meaty chapter which gives the 10,000 foot view of the whole world of ROS. Expect to find it a bit confusing. It would be great if you tried using your ROS environment to try and do the code examples. 
+
+**ALERT: "We have provided 'corrected' versions of the source code**
+
+* You will find the code for the examples all in the provided [directories](https://github.com/campusrover/cosi119_src.git). These are all alreadu preloaded into your cluster account. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_intro, :topic_link :prr_ros_fundamentals and :topic_link :prr_ros_fundamentals_additional.
+
+### You should be able to answer these questions
+
+* It is said that ROS nodes communicate peer to peer. What does this mean?
+* If a ROS node is running on a robot and another one is running on my laptop, how do they communicate with each other?
+* Which of the ros command-line ("CLI") tools are used to run a ROS node?
+
