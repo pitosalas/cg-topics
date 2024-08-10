@@ -1,20 +1,26 @@
 ---
 title: Working With Lidar Data
+slides: True
 ---
-###  Working with Lidar Data
+:slide_title Data Validity
+* Sensors generate a flood of data often drifting and intermixed with some invalid readings
+* The Lidar is no different. Beware of invalid data from the lidar.
+* Lidar on our robots will work correctly between a minimum and maximum distance. Beyond those limits the data is junk.
+* It is useful to filter the lidar data to remove INF, and numbers below the minimum or above the maximume 
 
-Beware of invalid data from the lidar. the lidar on our robots has particular limitations: The specs say that minimum distance is 120 mm (12 cm, about 5 inches) and maximum distance is 3.5 meters. ### Working with LaserScan data
+:slide_title Working with Lidar Data
 
-Lidar data is published as a `/scan` topic with `/LaserScan` messages. Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a sub-array by using "range[index0:index1]"
+* Lidar data is published as a `/scan` topic with `/LaserScan` messages. 
+* Here is a great video which provides almost everything you need to understand to manipulate the LaserScan data: [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) 
+* The most important field that you need to understand is the "ranges". You can access the reading of a specific angle by using "range[index]", and access a sub-array by using "range[index0:index1]"
+* An infinite LIDAR value in a gazebo simulation is inf (infinity), while that on the actual Turtlebot3 is 0. * A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
 
-An infinite LIDAR value in a gazebo simulation is inf (infinity), while that on the actual Turtlebot3 is 0. A 0 reading from Turltebot3 can refer to either infinity or actual 0 (obstacle is right next to Turtlebot3). Check the valid ranges and also remember that the Lidar's range is not infinite!
+:slide_title LaserScan
 
-The LiDAR data comes via a subscription to `/scan` topic with message type [`LaserScan.msg`](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html). In Python it will be delivered to you as an object of class `LaserScan`.
+* The LiDAR data comes via a subscription to `/scan` topic with message type [`LaserScan.msg`](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html). In Python it will be delivered to you as an object of class `LaserScan`.
 
-`LaserScan` has lots of fields, see if you can understand them. A key one is `.ranges`/. `ranges` in a python list structure and can be easily manipulated as any other list. you can break the data down into relevant chunks (front view, rear view, etc). for more information, try googling: python list slicing, list comprehension, list basics, could be a few staring points. Notice that the in `ranges` is a little noisy. Before you use it, you need to do some filtering. You will find a min_value in the `LaserScan`. Check each value you get and if it's less than the min_value or if its equal to `inf` consider it to be zero.
+* `LaserScan` has lots of fields, see if you can understand them. A key one is `.ranges`/. `ranges` in a python list structure and can be easily manipulated as any other list. you can break the data down into relevant chunks (front view, rear view, etc). for more information, try googling: python list slicing, list comprehension, list basics, could be a few staring points. Notice that the in `ranges` is a little noisy. Before you use it, you need to do some filtering. You will find a min_value in the `LaserScan`. Check each value you get and if it's less than the min_value or if its equal to `inf` consider it to be zero.
 
-Consider writing a separate filter node which takes "raw" LiDAR data (subscribes to /scan) and publishes "cleaned up" LiDAR data (publishes for example to /scan/clean). A related approach is to subscribe to /scan and publish something like /scan/semantic that instead of just cleaning up the data also computes some mins and maxes in different directions of interest.
+:slide_title Filter Node
 
-When you pick a turning method, reason with yourself why you are choosing your method example: "I am choosing to make the robot turn exactly 90 degrees every turn because most corners are 90 degrees and most walls are flat, so one or two 90 degree turns should always get a robot unstuck" Then, think of all the ways your turning method could fail - sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist (you may lose points for this) B: add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method. Hint: The angle between two points (forming a line) and the x axis of the coordinate system can be calculated by: angle = arctan((y2 - y1)/(x2-x1))
-
-Get code to run in simulation before real life. Make note of sensor readings- like lidar (using rostopic in the command line). Then, run the exact same code on a real robot. How does the behavior change? Maybe go back and forth a 1 or 2 times without changing anything, just observe and begin to form hypotheses. does the sensor data look different? Add to your code to account for real world inconsistencies that are not present in simulation. 
+* Consider writing a separate filter node which takes "raw" LiDAR data (subscribes to /scan) and publishes "cleaned up" LiDAR data (publishes for example to /scan/clean). A related approach is to subscribe to /scan and publish something like /scan/semantic that instead of just cleaning up the data also computes some mins and maxes in different directions of interest.
