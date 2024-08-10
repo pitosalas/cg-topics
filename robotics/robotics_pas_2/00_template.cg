@@ -1,0 +1,50 @@
+---
+title: PA Template
+desc: Sections
+slides: true
+---
+:slide_title Introduction
+
+* High level descritpion of assignment
+* And of what will be learned.
+
+:slide_title What I hope you will learn
+* software structure
+* roscore and nodes
+* Sim/Real/Gazebo
+* TF and Coord Systems
+* pub/sub
+* sensors
+* scan/lidar
+* move,cmd_vel
+* odom	
+* pid
+* states	
+* slam and maps	
+* localizatoin and amcl
+* concurr and multi
+* cv
+* linedetect
+* fid
+
+
+:slide_title Requirements for the PA
+
+* Exactly what behaviors are expected
+
+:slide_title Steps
+
+* Outline (sections and subsections)
+* Steps and order to follow
+* Without giving away the answer
+
+:slide_title Tips and thought process
+  
+:slide_title Specific Readings (PRR)
+
+* Key sections of PRR that are relevant
+* And other 
+
+:slide_title What to submit
+* self explanatoriy
+
