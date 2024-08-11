@@ -4,10 +4,12 @@ desc: Demonstrate basic control of the robot
 slides: true
 ---
 :slide_title Introduction
+
 * This assignment is an will introduce you to creating a basic ROS program
 * You will control the robot to do a few autonomous behaviors
 * Get practice with publishing to topics
 * Get practice with using Timing to affect Robot behaviors
+* You need to have studied PRR Chapter 1,2,3,6 and 7
 
 :slide_title Expected preparation
 

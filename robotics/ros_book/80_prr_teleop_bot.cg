@@ -3,9 +3,6 @@ title: "8: Teleop-bot"
 desc: Designing and implementing a slightly more complicated ROS program
 slides: true
 ---
-* Prev: :topic_link :prr_wander_bot
-* Next: :topic_link :prr_building_maps
-
 ## Intro
 
 * Teleop is a common term for "remote controlling" a robot

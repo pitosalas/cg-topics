@@ -67,7 +67,7 @@ slides: true
 
 :slide_bigtitle Sensors
 
-:slide_title LiDAR
+:slide_title Lidar
 
 * Rotates and uses a laser to measure distance to nearest obstacle
 * Returns a vector of values corresponding to the directions
