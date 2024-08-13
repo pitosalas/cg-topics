@@ -28,6 +28,9 @@ slides: true
 * Somehow they need to know about each other
 * Virtual Private Network
 
+
+:slide_title **Look at our [Lab Notebook](https://campusrover.github.io/labnotebook2/)! It has lots of useful information and a good search box!**
+
 :slide_title Writing ROS software
 
 * Can be written in Python or C++. We will be using Python exclusively
@@ -100,13 +103,13 @@ while not rospy.is_shutdown():
   1. `roscd` - change directory to a ROS package
   1. `catkin_make` (alias `cm`)
 
-:slide_title Our built-in aliases
+:slide_title Our built-in aliases: See [labnotebook aliases](https://campusrover.github.io/labnotebook2/cheatsheets/alias/?h=aliases)
 :callout :small, "ALERT", " The most common explanation for weird result is that your environment variables are not set up"
+
   * Reset environment: `cs`
   * Rebuild `cm`
   * My own IP address: `myip`
   * My own vpn IP address `myvpnip`
-
 
 :slide_title ROS Directory Structure
 
@@ -121,6 +124,7 @@ while not rospy.is_shutdown():
      /cosi119_src/
         /src
         /...etc
+        
 :source_end
 
 Inside ./src there are directories each with a ROS package. They all have a standard shape as well and can be nested inside each other.
