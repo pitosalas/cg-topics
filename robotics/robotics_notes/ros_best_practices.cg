@@ -32,7 +32,8 @@ title: ROS Best Practices and Patterns
 
 * Each ROS node (i.e. something you run with rosrun or roslaunch) is a single linux Process. (Think of it like any other python program.)
 * Each distinct topic subscription within a node forms a single Thread for the callback.
-* Like any other thread you need to be aware of the Python GIL (Global Interpreter Lock). 
+* Like any other thread you need to be aware of the Python GIL (Global Interpreter Lock).
+* Don't create threads yourself! If you feel the need to do so, figure out how to break the algorithm into multiple nodes. 
 
 :slide_title Callbacks and race conditions
 
@@ -51,13 +52,15 @@ title: ROS Best Practices and Patterns
 * It's a good idea to include a readme.md and a license.md
 
 :slide_title Writing and rsunning a single ros node
-* Put the code in a file called *.py
+* Put the code for each node in a file called *.py
+* You can also have regular .py programs which are imported, as usual
 * The first line should be a "shebang": `#!/usr/bin/env python`
 * Set it to be excecutable (chmod +x filename.py)
 * Put it in a package
 * `rosrun package-name filename.py`
 
 :slide_title Using Launch Files to run multiple nodes
+* Put the code for each node in a file called *.py
 * As you know oftena ROS application contains multiple nodes.
 * You can run them all at once with a launch file.
 * A launch file is an .xml formatt file with the extension .xml
