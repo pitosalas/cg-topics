@@ -8,14 +8,14 @@ This course is a pragmatic introduction to autonomous robotics. Our goal is to i
 The concepts and skills that I hope you acquire by the end of the course.
 
 :tbegin "table-striped table-sm table-responsive table-hover"
-:thead "Concepts;Skills; "
-:trow "Localization; Basic structure of a ros app"
-:trow "Maze solving with left hand rule;ROSCore and Nodes"
-:trow "Coordinate Systems; Run code in Simulation"
-:trow "Real-time and concurrent algorithm structure;Control motion with cmd_vel"
+:thead "Concepts;Skills"
+:trow "Real-time and concurrent algorithms; Basic structure of a ros app"
+:trow "Coordinate Systems;ROSCore and Nodes"
+:trow "Degrees of Freedom; Run code in Simulation"
+:trow "Localization;Control motion with cmd_vel"
 :trow "Forward and inverse kinematics;publish and subscribem"
 :trow "Principles of Computer Vision;using tfs with coordinates, orientation"
-:trow ";  sensing with lidar and odom"
+:trow "Maze solving with left hand rule;  sensing with lidar and odom"
 :trow ";  PID as key control algorith"
 :trow ";  States of the algorithm"
 :trow ";  Slam and Maps for path planning"
@@ -24,5 +24,5 @@ The concepts and skills that I hope you acquire by the end of the course.
 :trow ";  Image topics, cv"
 :trow ";  Basic opencv for line detection"
 :trow ";  Fiducials for localizaton"
-:trow ";  Able to finish, debug, and get an app to work"
+:trow ";  Finish, debug, and get an app to work"
 :tend

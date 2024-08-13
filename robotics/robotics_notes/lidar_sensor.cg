@@ -16,7 +16,7 @@ slides: true
 * Each sensor, each model and brand, has different specifications and characteristics
 * Like all other sensors, the data you get from a Lidar is `noisy`
 * Depending on the software you may have to 'clean' the data before you can make sense of it
-* Our mini rovers have a [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
+* Our robots all use a [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 
 :slide_title `/scan` topic
 
