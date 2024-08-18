@@ -3,6 +3,8 @@ title: Final Papers Spec for Business Case
 desc: Details on what should go into the Business Case Paper
 slides: true
 ---
+:topic_include :final_papers_general_spec
+
 :slide_title Business Case Paper
 
 This paper is about the business side. It will look at competitors, pricing, business model and overall financial plan.

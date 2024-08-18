@@ -3,6 +3,8 @@ title: Final Papers Spec for Executive Summary
 desc: Details on what should go into the Executive Summary Paper
 slides: true
 ---
+:topic_include :final_papers_general_spec
+
 :slide_title Executive Summary Paper
 
 This paper is written by the team and mostly towards the end. It summarizes the conclusions and highlights key points of the individual papers.
