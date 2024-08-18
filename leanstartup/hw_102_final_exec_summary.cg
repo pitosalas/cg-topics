@@ -1,13 +1,13 @@
 ---
-title: Final Papers Spec for Executive Summary
+title: Spec for Executive Summary
 desc: Details on what should go into the Executive Summary Paper
 slides: true
 ---
-:topic_include :final_papers_general_spec
+:slide_title Intro
 
-:slide_title Executive Summary Paper
+This paper is written by the team and mostly towards the end. It summarizes the conclusions and highlights key points of the individual papers. Here is a general outline. Just about all the content will come from the other three papers, but with less detail. You do want to ensure that this one tells a story and can be read and understood on its own.
 
-This paper is written by the team and mostly towards the end. It summarizes the conclusions and highlights key points of the individual papers.
+:slide_bigtitle Outline
 
 * Summary of product or service
 * Summary of target customer
@@ -17,3 +17,5 @@ This paper is written by the team and mostly towards the end. It summarizes the 
 * Financing requiredto get to the first milestone and deliverables
 * Retrospective: what went well, what less well, and recommended next steps
 * Link to trello (which includes both to-do and meeting summaries)
+
+:topic_include :final_papers_general_spec
