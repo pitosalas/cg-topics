@@ -3,18 +3,32 @@ title: PA Lidar wall follow
 desc: Using LIDAR sensing to drive the robot along a wall
 slides: true
 ---
-:slide_title Introduction
+---
+:slide_title Purpose
 
-Wall Following happens to be one of the fundamental behaviors that have to be solved on your Robotics journey. It is also one of the most popular initial assignments for new roboticists. This assignment will get you using the LiDAR as well as learning to control the robot's movement for a more complex task.
+Wall Following happens to be one of the fundamental behaviors that have to be solved on your Robotics journey. It is also one of the most popular initial assignments for new roboticists. This assignment will get you using the LiDAR as well as learning to control the robot's movement for a more complex task. This assignment will expose you to a few key ideas that will occur over and over again. You will demonstrate this in Simulation, using Gazebo and RViz. But when you have a chance it is interesting to try and get it to work with real robots too.
 
-:slide_title What I hope you will learn or reinforce
 
-* Software Structure: the design of a multi node ROS program
-* Scan/Lidar: Working with LIDAR data. Process and filtering sensor noise.
-* Coordinate Systems: How to think about the orientation of the robot relative with other things in the environment, which can be quite confusing.
-* States: Learn how to think about a more complicated robot behavior, and how to use simple state management to control it
+:slide_title Skills that you will practice
 
-:slide_bigtitle Assignment Specifics
+* ROS App: Basic structure of a ros app"
+* roscore: ROSCore and Nodes
+* launch and run: Launch files, bringing up robots, running with simulation
+* Motion: Control motion with cmd_vel
+* Pubsub: publish and subscribe
+* sensing: sensing with lidar and odom
+* calc: Algorithms, calculations and state management
+* Debug: *Finish, debug, and get an app to work"
+
+:slide_title Expectations
+* You have read and done the exercises in PRR Chapters 6 (:topic_link :prr_robots_simulators) and  Chatper 7 (:topic_link :prr_wander_bot)
+
+:slide_title Resources and Tips
+* Reference: :topic_link :working_with_lidar_data
+* Reference: [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
+* Reference: [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
+
+:slide_title Assignment Specifics
 
 * Write ROS code that allows your robot to follow a wall or perimeter.
 * Demonstrate it in simulation
@@ -23,76 +37,51 @@ Wall Following happens to be one of the fundamental behaviors that have to be so
   * Then drive along the wall, maintaining a distance of 1.0 meters as best you can
   * Handle inside and outside corners as well as a wall that stops, so you have to make a u turn and go along the other side.
 
-:slide_title Deliverables
-
-* ROS Package with
-  * Commented Python source code file
-  * README with specific instructions on how to run it
-  * Correct package.xml CMakeLists.txt
-* Video of your program running in gazebo or the lab
-
-:slide_title One way to proceed
-
-* Publish movement commands to a robot in Gazebo simulation
-* Subscribe to the LiDAR scan topic to detect how far the robot is from the wall
-* Design your own algorithm move forward while staying parallel with the wall
-* Next have it follow a single wall, and make a u-turn to follow its other side
-* Next have it follow the "inside" of an L-Shaped Wall
-* Next have it follow  the "inside" of a rectangular wall
-* Test using any of the _stage_1, _2, or _4 gazebo worlds
-
-:slide_title Useful Readings and references
-
-* :topic_link :working_with_lidar_data
-* :topic_link :pid_control
-* PRR Chapters 6 and 7
-* :topic_link :prr_robots_simulators
-* :topic_link :prr_wander_bot
-* [Robotics Programming: PID Algorithm](https://www.youtube.com/watch?v=dynSWBXu9aA): Shows how to implement the math of PID control in code, and gives a high-level overview of the algorithm.
-* [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
-1. [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
-
-:slide_bigtitle Scaffolding
-
-[Sample Solution](https://www.youtube.com/watch?v=yH474O4mAdw&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76)
-
-:slide_title Running
+:slide_title How to Run ([Sample Solution](https://www.youtube.com/watch?v=yH474O4mAdw&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76))
 
 1. `roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch`
 2. `roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch`
 2. Put the robot where you want it to start
 3. `rosrun wall_follower wall_follower.py`
 
-:slide_bigtitle Tips
+:slide_bigtitle Tips and thought process
 
-* This assignment will expose you to a few key ideas that will occur over and over again.
-* You will demonstrate this in Simulation, using Gazebo and RViz. But when you have a chance it is interesting to try and get it to work with real robots too.
-* Put print statements to let you see a log of actions while you are debugging
+At the highest level the algorithm is a loop that:
 
-:slide_title Turning
+1. Determines the distance to the wall (e.g. on the left)
+1. Tells the robot to move and/or turn to get to and maintain the desired distance.
 
-* You will publish to cmd_vel to get the robot to move and, either straight or turning
-* Pick small values for the velocities, like 0.5 for linear.x and 0.3 for rotation.z
+To do this it will publish to cmd_vel to order movement of the robot, and subscribe to /scan to get data from the lidar. You will process the Lidar data to figure out where the robot is relative to the wall.
 
-:slide_title Sensor Data
+:slide_title Processing Lidar Data
 
 * Remember that the Lidar will generate 10 or more "scans" per second. and each time your callback will be called.
-* Typically 0 degrees is foreward. and then we go (XXX) around positive up to 359
-* Typically we analyze the data by dividing the 360 degrees around the robot into "wedges", for example, forward might be from -15 to +15 degrees. Left might be from 250  to 290 degrees.
-* Get a feel for what kind of data the `scan` topic publishes by moving the robot around in Gazebo and executing `rostopic echo scan` on a separate terminal.
-* Change the `fixed_frame` in RViz from `odom` to `base_link` to make RViz graphically display the LIDAR readings.
+* Typically 0 degrees is foreward. and then we go counter clockwise around positive up to 359
+* Typically we analyze the data by dividing the 360 degrees around the robot into "wedges", for example, forward might be from -15 to +15 degrees. Left might be from 250  to 290 degrees
+* The data from the Lidar needs a little cleaning. Any Inf or NaN values should be ignored. Any values outside of the spec range of the Lidar (e.g below 0.1 meter or above 5m) should also be ignored.
 
-:slide_title Turning
+:slide_title How to think about the algorithm
 
 * When you pick a turning method, reason with yourself why you are choosing your method example: "I am choosing to make the robot turn exactly 90 degrees every turn because most corners are 90 degrees and most walls are flat, so one or two 90 degree turns should always get a robot unstuck" 
 
 * Then, think of all the ways your turning method could fail- sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist
 
-* Typically, forward motion are positive cmd_vel linear.x and counter clockwise rotation are positive angular.z.
-
-:slide_title State
 * add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method. Hint: The angle between two points (forming a line) and the x axis of the coordinate system can be calculated by: angle = arctan((y2 - y1)/(x2-x1))
 
-:slide_title Testing
-* Get code to run in simulation before real life. Make note of sensor readings- like lidar (using rostopic in the command line). Then, run the exact same code on a real robot. How does the behavior change? Maybe go back and forth a 1 or 2 times without changing anything, just observe and begin to form hypotheses. does the sensor data look different? Add to your code to account for real world inconsistencies that are not present in simulation. 
+:slide_title Practical Tips
+
+* Put print statements to let you see a log of actions while you are debugging
+* Get a feel for what kind of data the `scan` topic publishes by moving the robot around in Gazebo and executing `rostopic echo scan` on a separate terminal.
+* Change the `fixed_frame` in RViz from `odom` to `base_link` to make RViz graphically display the LIDAR readings.
+* Typically, forward motion are positive cmd_vel linear.x and counter clockwise rotation is positive angular.z.
+
+:slide_title Deliverables
+* ROS Package with
+  * Commented Python source code file
+  * README with specific instructions on how to run it
+  * Correct package.xml CMakeLists.txt
+* Video of your program running in gazebo or the lab
+*Filled in by Ephraim*
+
+
 

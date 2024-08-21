@@ -3,48 +3,45 @@ title: PA Template
 desc: Sections
 slides: true
 ---
-:slide_title Introduction
+:slide_title Purpose
+*High level descritpion of assignment amd its purpose*
 
-* High level descritpion of assignment
-* And of what will be learned.
+:slide_title Skills that you will practice
+*Delete the ones that dont apply*
+* ROS App: Basic structure of a ros app"
+* roscore: ROSCore and Nodes
+* launch and run: Launch files, bringing up robots, running with simulation
+* Motion: Control motion with cmd_vel
+* Pubsub: publish and subscribe
+* tf: Coordinates, tfs, orientation
+* sensing: sensing with lidar and odom
+* pid: PID as key control algorithm
+* calc: Algorithms, calculations and state management
+* maps: Slam and Maps for path planning"
+* localize: Using AMCL for localization
+* concurrent: highly concurrent programming
+* cv: images, cameras and opencv
+* lines: Basic opencv for line detection
+* Fiducials: Fiducials for localizaton"
+* Debug: *Finish, debug, and get an app to work"
 
-:slide_title What I hope you will learn
-* software structure
-* roscore and nodes
-* Sim/Real/Gazebo
-* TF and Coord Systems
-* pub/sub
-* sensors
-* scan/lidar
-* move,cmd_vel
-* odom	
-* pid
-* states	
-* slam and maps	
-* localizatoin and amcl
-* concurr and multi
-* cv
-* linedetect
-* fid
+:slide_title Expectations
+*What we assume for this assignment*
 
+:slide_title Resources and Tips
+*Comhbine all the helpful hints needed before the PA*
 
-:slide_title Requirements for the PA
+:slide_title Assignment Specifics 
+*Specifically what the assignment requests*
 
-* Exactly what behaviors are expected
-
-:slide_title Steps
-
-* Outline (sections and subsections)
-* Steps and order to follow
-* Without giving away the answer
+:slide_title How to Run
+*How to launch. Setup and launching*
 
 :slide_title Tips and thought process
+*Ideas on how to approach the problem*
   
-:slide_title Specific Readings (PRR)
+:slide_title Deliverables
+*Filled in by Ephraim*
 
-* Key sections of PRR that are relevant
-* And other 
 
-:slide_title What to submit
-* self explanatoriy
-
+  

@@ -1,28 +1,30 @@
 ---
 title: Cosi119a Learning Objectives
 ---
-### Learning Objectives
+:slide_bigtitle Learning Objectives
 
 This course is a pragmatic introduction to autonomous robotics. Our goal is to introduce students to the "big questions" that need to be answered in order to build autonomous robots. Questions such as "How do I know where I am?" and "How do I decide what to do?" We will take a software engineering approach, always focusing on how to turn the concepts into actual robot behaviors in the real world. 
 
-The concepts and skills that I hope you acquire by the end of the course.
+:slide_title Skills
+
+The skills that I hope you acquire by the end of the course.
 
 :tbegin "table-striped table-sm table-responsive table-hover"
-:thead "Concepts;Skills"
-:trow "Real-time and concurrent algorithms; Basic structure of a ros app"
-:trow "Coordinate Systems;ROSCore and Nodes"
-:trow "Degrees of Freedom; Run code in Simulation"
-:trow "Localization;Control motion with cmd_vel"
-:trow "Forward and inverse kinematics;publish and subscribe"
-:trow "Principles of Computer Vision;using tfs with coordinates, orientation"
-:trow "Maze solving with left hand rule;sensing with lidar and odom"
-:trow ";  PID as key control algorith"
-:trow ";  States of the algorithm"
-:trow ";  Slam and Maps for path planning"
-:trow ";  Using AMCL for localization
-:trow ";  highly concurrent programming"
-:trow ";  Image topics, cv"
-:trow ";  Basic opencv for line detection"
-:trow ";  Fiducials for localizaton"
-:trow ";  Finish, debug, and get an app to work"
+:thead "Skills"
+:trow "ROS App: Basic structure of a ros app"
+:trow "roscore: ROSCore and Nodes"
+:trow "launch and run: Launch files, bringing up robots, running with simulation"
+:trow "Motion: Control motion with cmd_vel"
+:trow "Pubsub: publish and subscribe"
+:trow "tf: Coordinates, tfs, orientation"
+:trow "sensing: sensing with lidar and odom"
+:trow "pid: PID as key control algorithm"
+:trow "calc: Algorithms, calculations and state management"
+:trow "maps: Slam and Maps for path planning"
+:trow "localize: Using AMCL for localization"
+:trow "concurrent: highly concurrent programming"
+:trow "cv: images, cameras and opencv"
+:trow "lines: Basic opencv for line detection"
+:trow "Fiducials: Fiducials for localizaton"
+:trow "Debug: Finish, debug, and get an app to work"
 :tend

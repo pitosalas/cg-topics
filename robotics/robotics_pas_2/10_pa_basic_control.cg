@@ -3,46 +3,53 @@ title: PA Basic Control
 desc: Demonstrate basic control of the robot
 slides: true
 ---
-:slide_title Introduction
+:slide_title Purpose
+This assignment is an will introduce you to creating a basic ROS program. It is the foundation of everything that follows. It is also a lot of fun!
 
-* This assignment is an will introduce you to creating a basic ROS program
-* You will control the robot to do a few autonomous behaviors
-* Get practice with publishing to topics
-* Get practice with using Timing to affect Robot behaviors
-* You need to have studied PRR Chapter 1,2,3,6 and 7
+:slide_title Skills that you will practice
+* ROS App: Basic structure of a ros app"
+* roscore: ROSCore and Nodes
+* launch and run: Launch files, bringing up robots, running with simulation
+* Motion: Control motion with cmd_vel
+* Pubsub: publish and subscribe
+* sensing: sensing with lidar and odom
+* calc: Algorithms, calculations and state management
+* Debug: *Finish, debug, and get an app to work"
 
-:slide_title Expected preparation
+:slide_title Expectations
 
-* Python programming, linux shell
+* Be comfortable with python programming, linux shell
 * Know the basics of the ROS distributed messaging architecture
 * Understand the relationship between time, velocity, and distance
 * Understand nodes, topics, publish, subscribe and messages
+* You should have studied Chapter 2, Chatper 6 and Chapter 7
 
-:slide_title Specific Readings (PRR)
+:slide_title Resources and Tips
 
-1. pp.26-27 on frames, positions, orientations, and poses;
-2. pp.77-80 on mobile platform actuation;
-3. pp.85-87 on odometry;
-4. pp.92-93 on simulators in general, and pp.95-96 on Gazebo in particular;
-5. pp.99-103 on basic mobile platform actuation with the Wander-bot.
+* Refer: [How to determine the distance traveled by a robot by using odometry](https://www.theconstruct.ai/ros-qa-195-how-to-know-if-robot-has-moved-one-meter-using-odometry/).
+* Refer: [How to rotate a robot to a desired heading using odometry](https://www.theconstruct.ai/ros-qa-135-how-to-rotate-a-robot-to-a-desired-heading-using-feedback-from-odometry)
+* Refer: [How to compare two floats in Python using math.isclose()](https://stackoverflow.com/questions/5595425/)
+* Tip: Press `Ctrl + R` while in Gazebo to reposition the simulated robot to its original pose. Spamming the command may sometimes be necessary.
+* Tip: Use [format specifiers](https://peps.python.org/pep-0498/#format-specifiers) with f-strings to truncate long floats. It's easy to misread `number =
+4.38411315886986e-06` as a large value if you miss the exponent `e-06` near the end, but `print(f'{number:9.4f}')` yields `0.0000` which is much less misleading.
 
-:slide_title What skills this assignment covers
-
-* Basic structure of a ros app
-* publish and subscribe
-* cmd_vel for motion
-* odom for odometry
-* Run code in Simulation
-
-:slide_title Requirements for the PA
+:slide_title Assignment Specifics 
+Here is what you are asked to do ([Sample Solution](https://www.youtube.com/watch?v=VVKwB_DNsKc&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=72)
+)
 
 * Drive the robot 50cm out and 180 degree turn in place and try to get back to the same spot
 * Drive robot in an exact 30 cm square
 * Drive robot in a circle with a radius of 30cm
-* Demonstrate this in sim.
+* Demonstrate this in sim
 
-:slide_title Steps
+:slide_title How to run the starter code
+1. `roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch`
+2. `rosrun basic_mover my_odom.py`
+3. Comment in or out lines under `if __name__=='__main__':` in `basic_mover_answer.py`
+   for desired behavior.
+4. `rosrun basic_mover basic_mover.py`
 
+:slide_title Tips and thought process
 * Baseline
   * Note: this PA is done in simuilation
   * Locate the file pa1_starter.py in the cs119_src/ directory
@@ -57,59 +64,9 @@ slides: true
   * How do you use cmd_vel to rotate in place
   * Again use odom, this time to monitor the orientation
   * Rotate until you see 180 degrees ( = 1*math.pi)
-  * ...more to come
-  
-
-:slide_title What to submit
-* Zipped up source code
-* url to 120 second youtube video s
 
 
-# wall_follower
+:slide_title Deliverables
+*Filled in by Ephraim*
 
-## Video
 
-[Sample Solution](https://www.youtube.com/watch?v=yH474O4mAdw&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76)
-
-## How to Run
-
-### The Skeleton Code
-
-1. `roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch`
-2. Move robot to the south of the southern wall in stage_1.
-3. `rosrun wall_follower wall_follower.py`
-
-### The Final Submission
-
-1. `roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch`
-2. Move robot to the south of the southern wall in stage_1.
-3. `rosrun wall_follower wall_follower_answer.py`
-
-## Instructions
-
-1. Subsribe to the `scan` topic to receive `LaserScan` messages.
-2. Move the robot to the south of the souther wall in the `turtlebot3_stage_1` world.
-3. Circumnavigate the wall by maintaining a constant distance.
-4. Use PID control.
-5. Demonstrate this in SIM.
-
-## PRR Readings
-
-Reference:
-
-1. Chapter 6:
-   1. section "Sensors", till start of "Visual Camera" subsection (pp.81-82).
-   2. section "Laser Scanners" (p. 85).
-2. Chapter 7, from section "Reading Sensor Data" to the end (pp. 103-108)
-
-## Other Resources
-
-1. [Robotics Programming: PID Algorithm](https://www.youtube.com/watch?v=dynSWBXu9aA): Shows how to implement the math of PID control in code, and gives a high-level overview of the algorithm.
-2. [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
-3. [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
-
-## Notes
-
-1. Get a feel for what kind of data the `scan` topic publishes by moving the robot around in Gazebo and executing `rostopic echo scan` on a separate terminal.
-
-2. Change the `fixed_frame` in RViz from `odom` to `base_link` to make RViz graphically display the LIDAR readings.
