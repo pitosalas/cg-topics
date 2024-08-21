@@ -11,8 +11,7 @@ Wall Following happens to be one of the fundamental behaviors that have to be so
 
 :slide_title Skills that you will practice
 
-* ROS App: Basic structure of a ros app"
-* roscore: ROSCore and Nodes
+* ROS App: Basic structure of a ros app, ROSCore and Nodes
 * launch and run: Launch files, bringing up robots, running with simulation
 * Motion: Control motion with cmd_vel
 * Pubsub: publish and subscribe
@@ -27,6 +26,9 @@ Wall Following happens to be one of the fundamental behaviors that have to be so
 * Reference: :topic_link :working_with_lidar_data
 * Reference: [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
 * Reference: [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
+* Reference: [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
+* Reference: [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)
+
 
 :slide_title Assignment Specifics
 
@@ -66,7 +68,7 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
 
 * Then, think of all the ways your turning method could fail- sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist
 
-* add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method. Hint: The angle between two points (forming a line) and the x axis of the coordinate system can be calculated by: angle = arctan((y2 - y1)/(x2-x1))
+* Add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method. Hint: The angle between two points (forming a line) and the x axis of the coordinate system can be calculated by: angle = arctan((y2 - y1)/(x2-x1))
 
 :slide_title Practical Tips
 

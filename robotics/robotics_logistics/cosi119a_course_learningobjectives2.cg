@@ -11,8 +11,7 @@ The skills that I hope you acquire by the end of the course.
 
 :tbegin "table-striped table-sm table-responsive table-hover"
 :thead "Skills"
-:trow "ROS App: Basic structure of a ros app"
-:trow "roscore: ROSCore and Nodes"
+:trow "ROS App: Basic structure of a ros app, ROSCore and Nodes"
 :trow "launch and run: Launch files, bringing up robots, running with simulation"
 :trow "Motion: Control motion with cmd_vel"
 :trow "Pubsub: publish and subscribe"

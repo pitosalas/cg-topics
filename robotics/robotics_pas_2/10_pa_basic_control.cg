@@ -7,8 +7,7 @@ slides: true
 This assignment is an will introduce you to creating a basic ROS program. It is the foundation of everything that follows. It is also a lot of fun!
 
 :slide_title Skills that you will practice
-* ROS App: Basic structure of a ros app"
-* roscore: ROSCore and Nodes
+* ROS App: Basic structure of a ros app, ROSCore and Nodes
 * launch and run: Launch files, bringing up robots, running with simulation
 * Motion: Control motion with cmd_vel
 * Pubsub: publish and subscribe

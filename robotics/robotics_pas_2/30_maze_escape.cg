@@ -1,78 +1,74 @@
 ---
-title: PA Maze Escape
+title: PA Maze Escape!
 desc: Use wall following algorithms in a maze escape
 slides: true
 ---
-:slide_title Introduction
-* High level descritpion of assignment
-* And of what will be learned.
 
-:slide_title Expected preparation
+:slide_title Purpose
 
-* What we should have covered up to now
+Solving a maze is the logical next step after you have a working wall follower. However it will challenge the wall follower to deal with scenarios that it might not know about yet. Like a dead end, or outside corners, and so on. The assignment will touch on most of the basics that we've covered so far and it will give you a real chance to show off what you've learned. 
 
-:slide_title Specific Readings (PRR)
+:slide_title Skills that you will practice
+* ROS App: Basic structure of a ros app"
+* roscore: ROSCore and Nodes
+* launch and run: Launch files, bringing up robots, running with simulation
+* Motion: Control motion with cmd_vel
+* Pubsub: publish and subscribe
+* sensing: sensing with lidar and odom
+* calc: Algorithms, calculations and state management
+* Debug: *Finish, debug, and get an app to work"
 
-* Key sections of PRR that are relevant
+:slide_title Expectations
+* Successful and correct wall follower from the previous assigment. Very important that you actually understand it!
 
-:slide_title What skills this assignment covers
+:slide_title Resources and Tips
 
-* The list of "skills"
+1. [Maze Escape with Wall-Following Algorithm](https://andrewyong7338.medium.com/maze-escape-with-wall-following-algorithm-170c35b88e00): A practical guide on how to approach the problem.
+2. [Design a Line Maze Solving Robot](https://www.pololu.com/file/0J195/line-maze-algorithm.pdf): A set of slides that elaborate a bit more on maze-solving methodology.
 
-:slide_title Requirements for the PA
+:slide_title Assignment Specifics 
 
-* Exactly what behaviors are expected
+* This programming assignment requires you to develop a maze solver and demonstrate it in simulation as wel as with a real robot
+* We will construct a simple maze in the lab and provide one in gazebo as well
+* In both examples, the robot will begin in the middle of the maze and find its way out.
 
-:slide_title Steps
+:slide_title How to Run
+**See videos of sample solutions for [simulated](https://www.youtube.com/watch?v=jr6osD9w2ME&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=74)
+and [real](https://www.youtube.com/watch?v=6P6UJM_pO3M&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=79)**
 
-* Outline (sections and subsections)
-* Steps and order to follow
-* Without giving away the answer
-  
-:slide_title What to submit
-* self explanatoriy
-
-# maze_solver
-
-## Videos
-
-- [Sample Solution - Sim](https://www.youtube.com/watch?v=jr6osD9w2ME&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=74)
-- [Sample Solution - Real](https://www.youtube.com/watch?v=6P6UJM_pO3M&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=79)
-
-## How To Run
-
-### The Skeleton Code (Sim)
+#### Running in Simulation
 
 1. `roslaunch maze_solver maze.launch`
 2. `rosrun maze_solver maze_solver_sim.py`
 
-### The Answer (Sim)
-
-1. `roslaunch maze_solver maze.launch`
-2. `rosrun maze_solver maze_solver_sim_answer.py`
-
-### The Skeleton Code (Real)
-
+#### Running on a real robot
 1. `bringup` (onboard the robot)
 2. `rosrun maze_solver maze_solver_real.py`
 
-### The Answer (Real)
+:slide_title Tips and thought process
 
-1. `bringup` (onboard the robot)
-2. `rosrun maze_solver maze_solver_real_answer.py`
+*Wall Following*: The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control to smooth out the behavior
 
-### Instructions (Sim)
+For this assignment, you can choose to modify your wall following algorithm from the previous assignment to run the maze. Keep in mind the width of the corridor when you make your adjustment. Some of the places which the algorithm might struggle can be: corners, dead-ends and invalid lidar reading when the robot is too close to the wall.
 
-Have the robot escape the maze autonomously!
+One of the most successful approach from the students of previous years is the 'longest distance algorithm', which looks for the longest unobstructed distance using the lidar and solve the maze by repeatedly finding and moving to the location where the distance between the robot and the location is the longest.
 
-### Instructions (Real)
+*Design Notes*: Break the problem down into smaller parts. This is standard programming practice. Think about situations that robot may find itself in, and how it should behave given that circumstance. Note that as you are following a wall, you need to notice when the wall suddenly disappears and at that point you have to turn to keep following it. Conversely the robot might be in the middle where all walls are far and as far from it, in which case you have to just drive until you get to the wall and then start following it.
 
-1. Construct a real maze using materials from the lab, such as the cardboard
-   bricks.
-2. Place your robot inside the maze.
-3. Write an algorithm that has the robot escape the maze autonomously!
+*right (or left) hand rule:* The easiest approach is to have the robot find the wall on the right and follow it and eventually it will get to the exit. We promise that the maze will not have any loops in it. While the right hand rule always works in this situation it does not necessarily find the fastest way out.
 
-## Resources
+*Solving the maze*: Once you have a handle on following the wall, you next have to consider how to use that to solve the maze. The obvious approach is the "right hand rule". Put your hand on the wall on the right and walk, never let go and eventually you will come out - as long there are no walls
 
-1. [Maze Escape with Wall-Following Algorithm](https://andrewyong7338.medium.com/maze-escape-with-wall-following-algorithm-170c35b88e00): A practical guide on how to approach the problem.
-2. [Design a Line Maze Solving Robot](https://www.pololu.com/file/0J195/line-maze-algorithm.pdf): A set of slides that elaborate a bit more on maze-solving methodology.
+*Other sensors:* You may find that the /odom topic has some useful information to help solve this problem. Odometery is not required to solve this problem, but it could lead to a more robust solution if used correctly.  A totally different option which has never been attempted is to use the robots camera to help find the way. In this solution it would be allowed to ensure that the floor has a totally different color from the walls by using colored paper.
+
+
+:image :600, :pa2samplesolutions
+
+*Other ideas*: Imagine that from where the robot is positioned it can "see" the exit even if there are other walls and  doorways in between. That exit will be the longest unobstructed view. You are welcome to google for other ideas as well. 
+
+:slide_title Deliverables
+*Filled in by Ephraim*
+
+
+
+
