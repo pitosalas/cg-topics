@@ -27,8 +27,7 @@ Wall Following happens to be one of the fundamental behaviors that have to be so
 * Reference: [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
 * Reference: [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
 * Reference: [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
-* Reference: [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)
-
+* Reference: [A wall-following algorithm based on dynamic virtual walls for mobile robots navigation](/content/topics/documents/wallfollower.pdf)
 
 :slide_title Assignment Specifics
 
