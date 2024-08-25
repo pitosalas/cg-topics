@@ -47,7 +47,7 @@ and [real](https://www.youtube.com/watch?v=6P6UJM_pO3M&list=PLWp7_Yk4l1aPcMGxCCv
 
 :slide_title Tips and thought process
 
-*Wall Following*: The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control to smooth out the behavior
+*Wall Following*: The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control_intro to smooth out the behavior
 
 For this assignment, you can choose to modify your wall following algorithm from the previous assignment to run the maze. Keep in mind the width of the corridor when you make your adjustment. Some of the places which the algorithm might struggle can be: corners, dead-ends and invalid lidar reading when the robot is too close to the wall.
 

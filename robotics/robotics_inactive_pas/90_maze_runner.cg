@@ -53,7 +53,7 @@ Break the problem down into smaller parts. This is standard programming practice
 
 The wall-following algorithm can be the basis of the solution, but it is not the only one. And even if you use that, going around corners or handling dead ends will need special attention. But you are encouraged to try different algorithms. You can find tons of algorithms online. Feel free to use any of them. You can invent your own algorithm as well. You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas.
 
-Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control to smooth out the behavior.
+Wall following is tricky because depending on how you do it, it might oscillate back and forth. You should consider using :topic_link :pid_control_intro to smooth out the behavior.
 
 * [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
 * [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)

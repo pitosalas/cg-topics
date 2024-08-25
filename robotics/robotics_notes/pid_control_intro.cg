@@ -1,38 +1,20 @@
 ---
 title: PID Control
-desc: Proportional, Integral, Derivative
+desc: "Proportional, Integral, Derivative"
 slides: true
 ---
 :slide_title PID Control
 
-* PID is a well known technique for smoothing out control, to avoid oscillation. PID stands for "proportional", "integrated", "derivative". 
+* PID is a well known technique for smoothing out control, to avoid oscillation. PID stands for
 * Applying PID control to your algorithm will make it more robust and perform more consistently. When used with a wall follower it will help better follow the wall without too much fluctuation.
 * It will make the robot turn at a higher speed when you are too away from the designated route (too far or too close to the wall), and turn at a slower speed when you are close to it.
 
-:slide_title Example Code1
-:source_begin :python
-import numpy as np
-class PID():
-    def __init__(self, min_val, max_val, kp, ki, kd):
-        self.min_val = min_val
-        self.max_val = max_val
-        self.kp = kp
-        self.ki = ki
-        self.kd = kd
-        self.integral = 0
-        self.prev_error = 0
+:slide_title Example Code
 
-    def compute(self, setpoint, measured_value):
-        error = setpoint - measured_value
-        self.integral += error
-        self.derivative = error - self.prev_error
-        if setpoint == 0 and self.prev_error == 0: self.integral = 0
-        pid = (self.kp * error + self.ki * self.integral + self.kd * self.derivative)
-        self.prev_error = error
-        r = np.clip(pid, self.min_val, self.max_val)
-        return np.clip(pid, self.min_val, self.max_val)
-:source_end
+:image :400, :pid_code
+
 :slide_title Graph
+
 :image :pa2pidgraph
 
 :slide_title Nice video
@@ -47,7 +29,3 @@ Here are some great links. You will be amazed at how well this works.
 * [Learn PID](https://en.wikipedia.org/wiki/PID_controller)
 * [The PID Tuning Guide](/content/topics/documents/pidtuningguide.pdf)
 * [PID without a PhD](/content/topics/documents/pidwithoutaphd.pdf)
-
-
-
-  
