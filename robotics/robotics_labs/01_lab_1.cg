@@ -9,9 +9,12 @@ title: Check environments, do series of tutorials, work on homework
 
 ### Environment
 
-* Check out your environments by using your cloud vscode:
-  * Cloud desktop: http://vnc.yourbrandeisname.ros.campusrover.org
-  * Cloud VSCode: http://code.yourbrandeisname.ros.campusrover.org
+* Each student has their own cluster environment
+* There are two urls, one gives you a linux GUI desktop and the other gives you a vscode programming editor
+* All through your browser
+* Check out your cluster environments by using your cloud vscode:
+  * cluster desktop: http://vnc.yourbrandeisname.ros.campusrover.org
+  * cluster VSCode: http://code.yourbrandeisname.ros.campusrover.org
   
 * Use the vscode based shell to create a new directory
 * Write a trivial python program in it. 
@@ -23,7 +26,7 @@ title: Check environments, do series of tutorials, work on homework
 
 ### Basic Concepts
 
-:callout :small, "NB", " Use your cloud desktop and vscode"
+:callout :small, "NB", " Use your cluster desktop and vscode"
 
 * Do [Navigating ROS Filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 * Do [Creating a Package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage)

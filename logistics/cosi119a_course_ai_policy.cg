@@ -5,7 +5,11 @@ author: Pito Salas
 ---
 ### Artificial Intelligence Tools
 
-:callout :small, "note: ", "This includes any AI tools but especially so called Large Language Model Chat tools like ChatGpt and others."
+:callout :small, "note:", "AI Tools include any AI tools but especially so called Large Language Model Chat tools like ChatGpt and others. "
 
-I believe that these tools have become essential part of the toolkit for any Robotics Engineer (and any Developer, Software Engineer or Computer Scientist) In fact I will go as far as to say that without developing skills using the tools you are working with one hand tied behind your back and putting yourself at an unacceptable competitive disadvantage.
+I believe that AI Tools tools have become essential part of the toolkit for any Robotics Engineer (and any Developer, Software Engineer or Computer Scientist) In fact I will go as far as to say that without developing skills using the tools you are working with one hand tied behind your back and putting yourself at an unacceptable competitive disadvantage. This is no different than using Google or Youtube and similar. Here is how to use these tools in a way that are acceptable and don't violate academic integrity.
 
+* **What's OK**: To use AI Tools as reminders for APIs, Python Syntax, Shell commands, ask what an error message means, and even to generate a code snippet so you can see how it works or how to do something. 
+* **What's not OK**: To submit as homework or a programming assigment, anything that was written by you, that you don't understand, that was taken verbatim from an AI Tools output (or any other place.) Use common sense, but as a guideline, no whole functions, classes, or snippets greater than a few lines shall be submitted.
+  
+**It’s always better to ask a TA if you’re not certain!**
