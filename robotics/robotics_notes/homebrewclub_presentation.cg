@@ -1,0 +1,79 @@
+---
+title: Home Brew Robotics Talk
+slides: true
+---
+:slide_title Housekeeping
+* Using my course materials as a place to write my presentaation!
+* Yes, I will remove this before the class starts
+* Ok with me to record this
+* Happy to be interrupted with questions at any time
+  
+:slide_title About Me
+
+* Computer Science B.S. from Brandeis University
+* Actually was pre-med but switched to computers early
+* Back in those days (80's) getting a programming job wsa pretty easy
+  
+:slide_title Worked
+
+  * DEC (Digital)
+  * long-forgotten-database-company "Software House" (before relational was a thing!)
+  * Lotus Development (Jazz, Improv, Notes, ccMail)
+  * Founded eRoom Technology
+  * Consuted in tech strategy
+  * Brandeis (around 10 years ago)
+
+:slide_title What I know and don't know
+
+* "Software Engineer" not an academic
+* Although I've dabbled in research and have a handful of published papers
+* I've been a programmer for xx years! Many.
+* Age does change what you are good at and less good at
+  
+:slide_title How I got into teaching
+
+* Around 2010 I was done with consulting
+* Always liked explaining
+* Had built up a massive knowledge base in my head
+* How to share it? Sure, become a college professor!
+* How hard can it be?
+* No PhD. In my 50's. Hard to break into academia
+
+:slide_title Brandeis
+
+* Multiple universities approached
+* Developed a few different ideas for courses
+* Initially co-taught a summer course. $0
+* Eventually full time "Professor of the Practice"
+* Yes, my alma mater but that was not the deciding factor
+* Brandeis, traditionally is a liberal arts college
+  
+:slide_title Computer Science at Brandeis
+
+* My one data point so YMMV
+* I was actually in the very first Comp Sci cohort at Brandeis (1976)
+* Relatively small department, ~15 faculty
+* About 300-400 Computer Science majors at any moment in time
+* Traditionally it was focused more on theory and research
+* Lately bringing in more "applied" people but still a minority
+
+:slide_title Brandeis Curriculum
+
+* Bretty broad coverage of the "basics" of computer science (a few gaps closed recently)
+* Very strong representation of AI, Machine Learning, Neural Nets, Computational Linguistics
+* Almost all the courses have a significant "programmning" component
+* Java, Python and then various other languages
+* Until the Robotics course there was no course that involved actual hardware
+
+
+
+:slide_title what are the students like, how prepared are they, what are they good at and what not, what kind of laptop will they have with them?
+:slide_title what are students motivated to do, how to motivate them, 
+:slide_title how to design a course, learning objectives, homework assignments, assessment and grading
+:slide_title what is it like to be the only Robotics course, is it too much to fit into one course
+:slide_title selecting ROS, selecting the hardware, creating the Robotics Lab
+:slide_title building the course scaffolding, tools to allow students to be successful
+:slide_title open ended student projects - what’s the benefit and what are the risks
+:slide_title students working in teams, what can work well and what can go wrong
+:slide_title how has the course evolved over the years, what is my self-assessment of the course, 
+:slide_title what do I think students have really learned by the end of the course, has it met my aspirations, and is it considered a success?
