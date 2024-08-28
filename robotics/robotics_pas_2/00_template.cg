@@ -8,18 +8,16 @@ slides: true
 
 :slide_title Skills that you will practice
 *Delete the ones that dont apply*
-* ROS App: Basic structure of a ros app"
-* roscore: ROSCore and Nodes
+* ROS App: Basic structure of a ros app
+* roscore: ROSCore and Nodes, publishing and subscribing
 * launch and run: Launch files, bringing up robots, running with simulation
 * Motion: Control motion with cmd_vel
-* Pubsub: publish and subscribe
+* Simulation: Gazebo and simulation tools
 * tf: Coordinates, tfs, orientation
 * sensing: sensing with lidar and odom
 * pid: PID as key control algorithm
-* calc: Algorithms, calculations and state management
-* maps: Slam and Maps for path planning"
+* maps and slam: Slam and Maps for path planning"
 * localize: Using AMCL for localization
-* concurrent: highly concurrent programming
 * cv: images, cameras and opencv
 * lines: Basic opencv for line detection
 * Fiducials: Fiducials for localizaton"
