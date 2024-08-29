@@ -82,7 +82,22 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
   * README with specific instructions on how to run it
   * Correct package.xml CMakeLists.txt
 * Video of your program running in gazebo or the lab
-*Filled in by Ephraim*
+*Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
+
+Please follow the following steps for a successful submission: 
+
+Video submission: 
+
+1. Record your video submission.
+2. Upload the video file to Google Drive and ensure that "Anyone with the link" is selected on the sharing tab. 
+3. Copy/paste this link as an inline comment below the import statements in the wall_follower.py file. DO NOT remove the `#!/usr/bin/env python3` present on the first line of the code.  
+
+Code submission: 
+
+1. Navigate to `/my_ros_data/catkin_ws/src/wall_follower/src` in your cluster account VSCode view.
+2. Compress the files: `zip basic_mover_<brandeis email prefix>.zip wall_follower.py`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman.
+3. The previous step will generate a .zip file. Right click it, then press download. This will download the files onto your machine. 
+4. Upload the zip file, named, for example, wall_follower_ezimmerman.zip, to the Moodle submission.
 
 
 

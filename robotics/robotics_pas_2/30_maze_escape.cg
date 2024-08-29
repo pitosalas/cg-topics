@@ -67,8 +67,22 @@ One of the most successful approach from the students of previous years is the '
 *Other ideas*: Imagine that from where the robot is positioned it can "see" the exit even if there are other walls and  doorways in between. That exit will be the longest unobstructed view. You are welcome to google for other ideas as well. 
 
 :slide_title Deliverables
-*Filled in by Ephraim*
+*Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
 
+Please follow the following steps for a successful submission: 
+
+Video submission: 
+
+1. Record your video submission.
+2. Upload the video file to Google Drive and ensure that "Anyone with the link" is selected on the sharing tab. 
+3. Copy/paste this link as an inline comment below the import statements in the maze_solver_sim.py file. DO NOT remove the `#!/usr/bin/env python3` present on the first line of the code.  
+
+Code submission: 
+
+1. Navigate to `/my_ros_data/catkin_ws/src/maze_solver/src` in your cluster account VSCode view.
+2. Compress the files: `zip maze_solver_<brandeis email prefix>.zip maze_solver_real.py maze_solver_sim.py`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman.
+3. The previous step will generate a .zip file. Right click it, then press download. This will download the files onto your machine. 
+4. Upload the zip file, named, for example, maze_solver_ezimmerman.zip, to the Moodle submission.
 
 
 
