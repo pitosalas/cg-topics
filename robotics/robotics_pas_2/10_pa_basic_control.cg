@@ -78,7 +78,7 @@ Video submission:
 
 Code submission: 
 
-1. Navigate to `/my_ros_data/catkin_ws/src/basic_mover/src` in your cluster account VSCode view.
+1. Navigate to `/my_ros_data/catkin_ws/src/cosi119_src/basic_mover/src` in your cluster account VSCode view.
 2. Compress the files: `zip basic_mover_<brandeis email prefix>.zip my_odom.py basic_mover.py`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman.
     >An obvious question is: Why not just download the files and zip them on your machine? While that is an option, if you need to repeat the process when fixing a mistake in your code, keeping track of which file is the most recent can become difficult. Simply downloading the zip file removes some room for error. There will be no leniency for uploading the incorrect files. 
 3. The previous step will generate a .zip file. Right click it, then press download. This will download the files onto your machine. 
