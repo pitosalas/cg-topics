@@ -32,4 +32,4 @@ slides: true
 
 * Analogous to defining the "method signature" of the service
 * Very reminiscent of how Topic messages were defined
-* You will find this example in the [prrexamples github package](https://github.com/campusrover/prrexamples)
+* You will find this example in the `samples` package

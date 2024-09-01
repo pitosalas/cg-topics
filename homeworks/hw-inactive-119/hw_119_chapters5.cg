@@ -7,7 +7,7 @@ desc: Another big jump in understanding
 Actions are a somewhat specialized kind of ROS message. They are used initially as a way to give navigation commands and monitor progress. While not used a lot, they are worth understanding.
 
 ### Do this
-Please read [Chapter 5, Actions](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch05.html) in Programming Robots with ROS. As you read, you can follow along the comments in :topic_link :prr_actions. Remember that it's worth the effort to try and run and understand the examples that we have for you in [prr_examples](https://github.com/campusrover/prrexamples)
+Please read [Chapter 5, Actions](https://learning.oreilly.com/library/view/programming-robots-with/9781449325480/ch05.html) in Programming Robots with ROS. As you read, you can follow along the comments in :topic_link :prr_actions. Remember that it's worth the effort to try and run and understand the examples that we have for you in :topic_link :
 
 ### What to submit
 

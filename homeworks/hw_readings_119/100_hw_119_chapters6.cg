@@ -1,5 +1,5 @@
 ---
-title: (P) Read PRR Chapter 6
+title: Read PRR Chapter 6
 desc: A tour of robots and simulators
 ---
 ### Purpose
@@ -8,7 +8,12 @@ This is a pretty light chapter. You will get a bit of a tour of the different ki
 
 ### Do this
 
-Please read PRR Chapter 6, Robots and Simulators. As you read, as usual, you can find supplementary information here: :topic_link :prr_robot_hardware and :topic_link :prr_robots_simulators. Remember that it's worth the effort to try and run and understand the examples that we have for you in [prr_examples](https://github.com/campusrover/prrexamples)
+Please read PRR Chapter 6, Robots and Simulators. As you read, as usual, you can find supplementary information here:
+
+* :topic_link :prr_robot_hardware
+* :topic_link :prr_robots_simulators. 
+   
+Remember that it's worth the effort to try and run and understand the examples that we have for you in [cosi119_src](https://github.com/campusrover/cosi119_src)
 
 ### And here are some questions
 

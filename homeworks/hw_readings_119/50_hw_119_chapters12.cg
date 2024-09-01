@@ -14,7 +14,10 @@ We will follow along the reading of the textbook pretty closely and in so learn 
 
 **ALERT: "We have provided 'corrected' versions of the source code**
 
-* You will find the code for the examples all in the provided [directories](https://github.com/campusrover/cosi119_src.git). These are all alreadu preloaded into your cluster account. We also provide additional chapter notes to add detail and make some corrections. :topic_link :prr_ros_intro, :topic_link :prr_ros_fundamentals and :topic_link :prr_ros_fundamentals_additional.
+* You will find the code for the examples all in the provided [directories](https://github.com/campusrover/cosi119_src.git). These are all alreadu preloaded into your cluster account. We also provide additional chapter notes to add detail and make some corrections.       
+  * :topic_link :prr_ros_intro
+  * :topic_link :prr_ros_fundamentals
+  * :topic_link :prr_ros_fundamentals_additional.
 
 ### You should be able to answer these questions
 

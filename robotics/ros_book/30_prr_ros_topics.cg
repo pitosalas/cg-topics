@@ -46,12 +46,12 @@ $ rostopic echo counter -n 5
 
 :slide_title Subscribing to a Topic
 
-* See `$ ~/catkin_ws/src/prrexamples/scripts/topic_subscriber.py`
+* See `samples` topic_subscriber.py
 * It defines and runs a node whch subscribes to the counter, and prints it
 
 :source_begin :language-bash
 # shell commands
-$ roscd prrexamples
+$ roscd samples
 $ chmod +x scripts/topic_subscriber.py
-$ rosrun prrexamples topic_subscriber.py
+$ rosrun samples topic_subscriber.py
 :source_end

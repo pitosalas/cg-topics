@@ -4,7 +4,7 @@ desc: Continuing onto navigation
 ---
 ### Purpose
 
-Chapter 10 has a lot in it so I've divided it into two. This is part 2 so remember to refer to this [Chapter 10 addendum](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/110_prr_navigating.md/) in parallel and use the code that I provided in prrexamples. 
+Chapter 10 has a lot in it so I've divided it into two. This is part 2 so remember to refer to this [Chapter 10 addendum](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/110_prr_navigating.md/) in parallel and use the code that I provided in `samples`. 
 
 ### Do This
 

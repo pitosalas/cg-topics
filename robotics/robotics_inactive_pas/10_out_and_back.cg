@@ -26,12 +26,11 @@ desc: "Robot drives out and returns to its starting position."
 
 * Publish movement commands to a robot in Gazebo simulation
 * Use ROS timing to command the robot to move forward X distance and backwards X distance so the robot stops at it's original position (do not worry about robot's final orientation)  
-* You can either modify existing code from the prrexamples repo or write your own python ROS node
+* You can either modify existing code from the `samples` package or write your own python ROS node
 * The instructions will give you the pieces of code to get you started but the rest will be up to you
 
 ### Steps
 
-* Clone the prrexamples repo and copy & paste a ROS node from prrexamples/src/anyfile.py OR create a new python file (for now the directory where you create it doesn't matter but  I would suggest keeping it in prrexamples or another ros package repo)
 * The following modules/classes need to be imported. `rospy` provides an interface to the ROS system variables/methods and [Twist](http://docs.ros.org/melodic/api/geometry_msgs/html/msg/Twist.html) is how we represent movement in ROS.
 
 

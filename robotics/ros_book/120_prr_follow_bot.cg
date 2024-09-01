@@ -44,8 +44,8 @@ $ rqt_image_view
 :slide_title Run the simplest program
 
 :source_begin :bash
-$ rosrun prrexamples follower.py
-$ rosnode info follower
+$ rosrun samples follower.py
+$ rosnode samples follower
 --------------------------------------------------------------------------------
 Node [/follower]
 Publications: 
@@ -119,7 +119,7 @@ $ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
 * Note that this will fail in many normal cases!
 * First, just demonstrate that OpenCV and ROS Talk:
 ```
-$ rosrun prrexamples follower_opencv.py
+$ rosrun samples follower_opencv.py
 ```
 
 * Simple program captures each image from camera
@@ -134,7 +134,7 @@ $ rosrun prrexamples follower_opencv.py
 * These values are very rough and could be improved
 
 ```
-$ rosrun prrexamples follower_color_filter.py
+$ rosrun samples follower_color_filter.py
 ```
 
 * Will display three windows: the original image, the mask and the original as masked
@@ -148,9 +148,8 @@ $ rosrun prrexamples follower_color_filter.py
 * Notice that while the image is still, its actually being regenerated 10 times per second, once for each  frame. Move the robot manually in Gazebo to notice this.
 
 ```
-$ rosrun prrexamples follower_line_finder.py
+$ rosrun samples follower_line_finder.py
 ```
-
 :slide_title Actually following the line
 * We will use the location of the centroid
 * We offset it because the yellow line is not in the middle of the road
@@ -159,7 +158,7 @@ $ rosrun prrexamples follower_line_finder.py
 * Notice this is a PID controller!
 
 ```
-$ rosrun prrexamples follower_p.py
+$ rosrun samples follower_p.py
 ```
 
 

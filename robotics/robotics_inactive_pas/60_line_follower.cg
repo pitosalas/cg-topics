@@ -40,7 +40,7 @@ desc: "Robot looks for line on the floor and follows it"
 * To run the gazebo world:
 
 ```
-roslaunch prrexamples linemission.launch model:=waffle
+roslaunch samples linemission.launch model:=waffle
 ```
 
 * The robot will begin at a spot just before the line.

@@ -7,7 +7,6 @@ desc: "Robot starts on a race track and completes a lap"
 * This assignment contains many open-ended problems in perception, planning, and controls.
 * It is a group project based on the groups you are in.
 * Only one team member needs to submit it, Latte will copy it to the others
-* Remember to `cd ~/catkin_ws/src/prrexamples; git pull`
 
 :h3 Rules
 
@@ -42,7 +41,7 @@ desc: "Robot starts on a race track and completes a lap"
 * To run the gazebo world:
 
 :source_begin :python
-roslaunch prrexamples racetrack.launch
+roslaunch samples racetrack.launch
 :source_end
 
 * The robot will begin right at the start of the race track.

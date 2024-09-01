@@ -25,9 +25,9 @@ slides: true
 :slide_title Implementing a Service
 
 * Run the service with a standard `rosrun` command
-* Remember our package is called `prrexamples`
+* Remember our package is called `samples`
 * Remember that you must have `roscore` running!
-* `rosrun prrexamples service_server.py`
+* `rosrun samples service_server.py`
 * You can tell that it worked:
   1. It shows up in `$ rosservice list`
   1. It shows up in `$ rosservice info word_count`
