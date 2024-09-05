@@ -9,14 +9,9 @@ This paper is about the actual product or service that the team decided on, test
   
 * **Product Summary**: Name and description of your product or business, accompanied by a concise explanation. This high-level overview should be easily understandable and outline the specific problems it aims to solve. Based on your brainstorming what is a succinct explanation of the vision for your product or business? It may be different from the one from Stage 1 and from your final one. It is a work in progress. Based on your brainstorming what is a succinct explanation of the vision for your product or business? 
 
-**Elevator Pitch**: A viable Elevator pitch by this stage. Make sure you practice it and could give it to "the president" if you
-happened to run into her in an elevator. You might have more than one elevator pitch if, for example, it is aimed at two
-different audiences. Try it on some appropriate people and make note of their reaction and refine the pitch as required.
-Include the text of the pitch in your report.
+
+**Features**: List of the most important features, services, aspects of the product. Not a functional specification. Enough so that the reader can understand. Keep in mind the different kinds of users (if applicable) and what different capabilities they might have. It could be user and administrator, or buyer and seller, or student and teacher, etc. Each feature should include how they relate to the value propositions.
 
 * **Visual**: Mockup or other product visuals. This can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing (:topic_link :ideas_for_visuals) These can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing.
-
-* What does the product do
-* Key Features and how they address the value proposition
 
 :topic_include :final_papers_general_spec

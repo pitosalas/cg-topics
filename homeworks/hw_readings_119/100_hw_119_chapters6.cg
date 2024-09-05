@@ -13,7 +13,7 @@ Please read PRR Chapter 6, Robots and Simulators. As you read, as usual, you can
 * :topic_link :prr_robot_hardware
 * :topic_link :prr_robots_simulators. 
    
-Remember that it's worth the effort to try and run and understand the examples that we have for you in [cosi119_src](https://github.com/campusrover/cosi119_src)
+Remember that it's worth the effort to try and run and understand the examples that we have for you in the samples package on the cluster
 
 ### And here are some questions
 

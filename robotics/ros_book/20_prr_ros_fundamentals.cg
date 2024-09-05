@@ -3,7 +3,7 @@ title: "2: ROS at a high level"
 desc: "A quick flyby of the most important concepts of ROS"
 slides: true
 ---
-:slide_bigtitle ROS Fundamentals (PRR 1,2)
+:slide_bigtitle ROS Fundamentals
 
 * A distributed "operating system"
 * A process coordinator and an inter-process communications model
