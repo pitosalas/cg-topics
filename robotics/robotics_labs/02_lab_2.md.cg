@@ -3,11 +3,20 @@ title: Practice Topics, Messages, Services and Actions
 ---
 ## Plan for today
 
-* This lab will be a guided independent programming session.
+* Review Lab rules/safety rules
+* Everyone runs gazebo and play around with it
+* Everyone runs Rviz with gazebo and play around with it
+* Everyone creates a package under catkin_ws/src for their stuff
+* Copy the starter code for PA1 there
+* We code together
+
+
+## Optional 
+
 * Please do the following during lab while we are around to help everyone solve their problems.
 * The goal is that it takes 90 minutes but if you need the extra 30 minutes we will stick around
 
-<%= callout("NB", " After completing each section, enter a TA's breakout room for so they can sign off", :small) %>
+callout :small, "NB", " After completing each section, enter a TA's breakout room for so they can sign off"
 
 ### Sections
 
