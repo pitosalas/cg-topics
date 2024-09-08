@@ -7,6 +7,7 @@ slides: true
 This assignment is an will introduce you to creating a basic ROS program. It is the foundation of everything that follows. It is also a lot of fun!
 
 :slide_title Skills that you will practice
+
 * ROS App: Basic structure of a ros app, ROSCore and Nodes
 * launch and run: Launch files, bringing up robots, running with simulation
 * Motion: Control motion with cmd_vel
@@ -33,12 +34,12 @@ This assignment is an will introduce you to creating a basic ROS program. It is 
 4.38411315886986e-06` as a large value if you miss the exponent `e-06` near the end, but `print(f'{number:9.4f}')` yields `0.0000` which is much less misleading.
 
 :slide_title Assignment Specifics 
-Here is what you are asked to do ([Sample Solution](https://www.youtube.com/watch?v=VVKwB_DNsKc&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=72)
-)
 
-* Drive the robot 50cm out and 180 degree turn in place and try to get back to the same spot
-* Drive robot in an exact 30 cm square
-* Drive robot in a circle with a radius of 30cm
+Here is what you are asked to do ([Sample Solution](https://www.youtube.com/watch?v=VVKwB_DNsKc&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=72)
+
+* Drive the robot 1 Meter out and 180 degree turn in place and try to get back to the same spot
+* Drive robot in an exact 1 Meter square
+* Drive robot in a circle with a radius of 1 Meter
 * Demonstrate this in sim
 
 :slide_title How to run the starter code
@@ -48,26 +49,37 @@ Here is what you are asked to do ([Sample Solution](https://www.youtube.com/watc
    for desired behavior.
 4. `rosrun basic_mover basic_mover.py`
 
+:slide_title Sample Code
+
+You will find the starter code package in catkin_ws/src/cosi119_src/basic_mover
+
+* `src/basic_mover.py` - Basic Mover Node
+* `src/my_odom.py` - Odometry node (start with this one)
+* `src/my_odom_alt.py` - Alternative Odometry node (look this one over and understand the difference)
+
 :slide_title Tips and thought process
+
 * Baseline
   * Note: this PA is done in simuilation
-  * Locate the file pa1_starter.py in the cs119_src/ directory
-  * Read it and the comments
   * Launch the provided gazebo environment and play with gazebo to get the hang of it
+  * *You are not required to follow the starter code if you have a better idea*
 * Drive 1 meter out
   * Consider what it means to drive out 1 meter and stop
   * Use cmd_vel to move the robot forward
-  * Collect current position from odom subscription
-  * Monitor odom until it tells you that you've gone 1 meter
+  * Collect location and orientation information ion from my_odom subscription
+  * Monitor my_odom until it tells you that you've gone 1 meter
 * 180 degree turn and return
   * How do you use cmd_vel to rotate in place
-  * Again use odom, this time to monitor the orientation
+  * Again use my_odom, this time to monitor the orientation
   * Rotate until you see 180 degrees ( = 1*math.pi)
 
-
 :slide_title Deliverables
-*Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
+* The starter code is meant as a guide. Unlike other courses, you are not required to use it as is.
+* The resultant shapes driven don't have to be exact. The square doesn't have to be perfectly square
+* We want to see good clean Python code that reflects a good understanding of ROS, robot motion, and sensing
 
+
+*Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
 Please follow the following steps for a successful submission: 
 
 Video submission: 
