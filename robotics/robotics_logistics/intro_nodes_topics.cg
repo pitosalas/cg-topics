@@ -3,7 +3,7 @@ title: ROS Nodes and Topics
 desc: One of the most central concepts
 slides: true
 ---
-:slide_title Introduction to Nodes and Topics (PRR 3)
+:slide_title Introduction to Nodes and Topics
 
 * ROS is a distributed operating system
 * Meaning it controls potentially (and typically) multiple computers
@@ -52,7 +52,7 @@ slides: true
 * Two of the most common basic ones: `/cmd_vel` and `/odom`
 * Topics can be published and subscribed
 * Which sends a receives messages of a certain message type
-* `cmd/vel`: sent to a robot to command it to move (locomotion)
+* `cmd_vel`: sent to a robot to command it to move (locomotion)
 * `odom`:  received from a robot to report where (it thinks) it is
 
 :slide_title Message Types
@@ -96,6 +96,16 @@ slides: true
 * Odometry is the term for data coming from the wheels which allow the robot to estimate its location and speed.
 * In this case, ROS is publishing the ROS topic `odom` constantly (say 30 times per second)
 * Any node can subscribe to that ROS topic if it needs to know the current Odometry values
+* [Here is the message definition](http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html)
+* [Here is a diagram](https://claude.site/artifacts/e55a3b72-181e-4871-b274-e5db03f9c3d4)
+
+:source_begin :python
+subs = rospy.Subscriber("/odom", Odometry, odom_callback)
+
+def odom_callback(msg):
+    x_position = msg.pose.pose.position.x
+:source_end
+
 
 :slide_title ROS Topic /scan
 
@@ -104,6 +114,22 @@ slides: true
 * It also is published constantly, say 30 times per second
 * It contains data about the surrounding area and obstacles seen by the robot
 * Any node can subscribe to that ROS topic if it needs to know the current values
+* [Here is the message definition](http://docs.ros.org/en/melodic/api/sensor_msgs/html/msg/LaserScan.html)
+* [Here is a diagram](https://claude.site/artifacts/d1c6bc70-cf0a-4795-a0e5-35f2dffaca1d)
+
+:source_begin :python
+def scan_callback(self, msg):
+  indices = list(range(350, 360)) + list(range(0, 11))
+  relevant_ranges = [msg.ranges[i] for i in indices]
+  valid_ranges = [r for r in relevant_ranges if msg.range_min < r < msg.range_max]
+  if valid_ranges:
+    self.average_distance = sum(valid_ranges) / len(valid_ranges)
+
+def main():
+    rospy.init_node('scan_subscriber', anonymous=True)
+    rospy.Subscriber("/scan", LaserScan, scan_callback)
+    rospy.spin()
+:source_end
 
 :slide_title Takeaways
 

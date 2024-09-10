@@ -68,6 +68,6 @@ rostopic echo /scan -w 4 -p -n 50 > ~/scan_data
 
 :slide_title Video Tutorials
 * Watch and study these for a review from a different perspective. 
-  * This [letture from Udemy](https://youtu.be/tEayzulupxE) introduces you to a lasert scanner or LIDAR
+  * This [lecture from Udemy](https://youtu.be/tEayzulupxE) introduces you to a lasert scanner or LIDAR
   * This [lecture from Udemy](https://youtu.be/kze3Z8rTkZo) gives you more detail on how to process the lidar data
   * This [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/) provides almost everything you need to understand to manipulate the LaserScan data
