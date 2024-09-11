@@ -80,12 +80,7 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
 
 :slide_title Resources and Tips
 
-I recommend you look at all of these!
-
 * Reference: :topic_link :working_with_lidar_data
-* Reference: [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
-* Reference: [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
-* Reference: [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
 * Reference: [A wall-following algorithm based on dynamic virtual walls for mobile robots navigation](/content/topics/documents/wallfollower.pdf)
 
 
