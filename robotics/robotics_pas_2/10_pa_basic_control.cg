@@ -8,8 +8,6 @@ This assignment is an will introduce you to creating a basic ROS program. It is 
 
 :slide_title Skills that you will practice
 
-* ROS App: Basic structure of a ros app, ROSCore and Nodes
-* launch and run: Launch files, bringing up robots, running with simulation
 * Motion: Control motion with cmd_vel
 * Pubsub: publish and subscribe
 * sensing: sensing with lidar and odom
@@ -74,10 +72,11 @@ You will find the starter code package in catkin_ws/src/cosi119_src/basic_mover
   * Rotate until you see 180 degrees ( = 1*math.pi)
 
 :slide_title Deliverables
+
 * The starter code is meant as a guide. Unlike other courses, you are not required to use it as is.
 * The resultant shapes driven don't have to be exact. The square doesn't have to be perfectly square
 * We want to see good clean Python code that reflects a good understanding of ROS, robot motion, and sensing
-
+* The video can go 3 minutes and must include both a video of the demo running IRL or in sim, as well as a tour of some key parts of the code. 
 
 *Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
 Please follow the following steps for a successful submission: 
