@@ -16,27 +16,22 @@ slides: true
   * Drive forward for a bit
   * Stop.
   * Repeat
-* Look at red_light_green_light.py
+* Look at [red_light_green_light.py](https://github.com/campusrover/cosi119_src/blob/main/samples/src/red_light_green_light.py)
 * Run code:
 
 :source_begin :bash
 $ cw
-$ cd src/cosi119_src/src
+$ cd src/cosi119_src/samples/src
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ ./red_light_green_light.py
 :source_end
 
 ## Reading Sensor Data
+
 * TB3 has a lidar
 * Lidar returns and array of 360 doubles (and some other stuff)
 * 0 degrees is straight ahead
 * Each element has distance to nearest obstacle (in M)
-* Compute bearing (in degrees) of element i as follows:
-
-:source_begin :language-python
-bearing = ((msg.angle_max - msg.angle_min) / (len (msg.ranges) - 1) * i + msg.angle_min
-:source_end
-
 * To compute the distance to the obstacle immediately ahead (0 degrees)
   * `msg.ranges[0]`
 * To compute the nearest obstacle:
@@ -58,7 +53,7 @@ $ rostopic echo scan
 * If it is too near an obstacle then it will spin in place
 * It turns out this is a pretty terrible algorithm
 * It gets stuck all the time
-* Take a look at the annotated code: [Wander Bot Code](https://github.com/campusrover/cosi119_src/blob/main/wander.py)
+* Take a look at the annotated code: [Wander Bot Code](https://github.com/campusrover/cosi119_src/blob/main/samples/src/wander.py)
 
 * `rospy.Time.now()`
   * returns a time structure with

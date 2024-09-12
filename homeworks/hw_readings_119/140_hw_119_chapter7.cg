@@ -1,5 +1,5 @@
 ---
-title: (P) Read PRR Chapter 7
+title: Read PRR Chapter 7
 desc: Another great chapter
 ---
 ### Purpose
@@ -14,7 +14,7 @@ desc: Another great chapter
 * Remember to refer to :topic_link :prr_wander_bot for potentially supplementary information.
 * Run some the code in `samples` and watch it in the simulator
 
-### And submit this
+### Consider this as you read
 
 1. As we are talking about sensors, think about this: In the Red Light! Green Light! program what plays the role of a sensor?
 1. This is tricky: the formula on page 104: `bearing = msg.angle_min + i * msg.angle_max / len(msg.ranges)` is incorrect (i.e. it's an error in the book!) What is the correct formula, or what is the error?

@@ -24,8 +24,8 @@ slides: true
 * This works especially well if you can identify bits functionality that may be reused in other applications
 * Don’t assume that /scan topic’s LaserScan message has 360 items in the ranges array. 
     * Use len(msg.ranges) to figure out how many items there are.
-* Make sure you know how to work with Quaternions. The x,y,z fields in a Quaternion have nothing to do with x, y, z in Euler angles. 
-    * See [this](https://www.andre-gaschler.com/rotationconverter/) for a nice tool to help you visualize them. 
+* Make sure you know how to work with Quaternions. The x, y, z, w fields in a Quaternion have nothing to do with x, y, z in Euler angles. 
+* See [this](https://www.andre-gaschler.com/rotationconverter/) for a nice tool to help you visualize them. 
 
 :slide_title Concurrency, threading, race conditions, etc
 
@@ -38,7 +38,7 @@ slides: true
 
 :slide_title Callbacks and race conditions
 
-* Do not use sleep() inside a callback. This is for many reasons, including race conditions.
+* Do not use rate.sleep() inside a callback. This is for many reasons, including race conditions.
 * Be careful using globals for communicating between your callback and your main loop. It may lead to a race condition.
 * Your main program should do a rospy.spin() or rospy.is_shutdown() to make sure that you can ^c out of it.
 
@@ -52,7 +52,8 @@ slides: true
 * Other directories should be present only if you use them
 * It's a good idea to include a readme.md and a license.md
 
-:slide_title Writing and rsunning a single ros node
+:slide_title Writing and running a single ros node
+
 * Put the code for each node in a file called *.py
 * You can also have regular .py programs which are imported, as usual
 * The first line should be a "shebang": `#!/usr/bin/env python`
