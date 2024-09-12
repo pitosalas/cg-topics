@@ -3,11 +3,9 @@ title: PA Lidar wall follow
 desc: Using LIDAR sensing to drive the robot along a wall
 slides: true
 ---
----
 :slide_title Purpose
 
-Wall Following happens to be one of the fundamental behaviors that have to be solved on your Robotics journey. It is also one of the most popular initial assignments for new roboticists. This assignment will get you using the LiDAR as well as learning to control the robot's movement for a more complex task. This assignment will expose you to a few key ideas that will occur over and over again. You will demonstrate this in Simulation, using Gazebo and RViz. But when you have a chance it is interesting to try and get it to work with real robots too.
-
+Wall following is a classic early Robotics problem to solve. It brings together motion control and sesning with Lidar. It is a building block for some of the next assignments as well. I think you will find it quite interesting..
 
 :slide_title Skills that you will practice
 
@@ -17,26 +15,24 @@ Wall Following happens to be one of the fundamental behaviors that have to be so
 * Pubsub: publish and subscribe
 * sensing: sensing with lidar and odom
 * calc: Algorithms, calculations and state management
-* Debug: *Finish, debug, and get an app to work"
-
-:slide_title Expectations
-* You have read and done the exercises in PRR Chapters 6 (:topic_link :prr_robots_simulators) and  Chatper 7 (:topic_link :prr_wander_bot)
-
-:slide_title Resources and Tips
-* Reference: :topic_link :working_with_lidar_data
-* Reference: [How to move objects in Gazebo using its GUI](https://answers.gazebosim.org//question/13445/how-to-move-objects-and-robot-models-using-gui/)
-* Reference: [Difference between Gazebo and RViz](https://answers.ros.org/question/200044/different-between-gazebo-and-rviz/)
-* Reference: [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
-* Reference: [A wall-following algorithm based on dynamic virtual walls for mobile robots navigation](/content/topics/documents/wallfollower.pdf)
+* Debug: Finish, debug, and get an app to work
 
 :slide_title Assignment Specifics
 
-* Write ROS code that allows your robot to follow a wall or perimeter.
-* Demonstrate it in simulation
-* You are free to refer to hints for inspiration, and are encouraged to experiment with novel ideas. 
-  * Write ROS code to have the robot find a wall
-  * Then drive along the wall, maintaining a distance of 1.0 meters as best you can
-  * Handle inside and outside corners as well as a wall that stops, so you have to make a u turn and go along the other side.
+* At a high level, you are writing a node which will move the robot along a wall, maintaining a fixed distance.
+* Test and demonstrate the code in simulation
+* Consider the following basic starting  conditions:
+  * Robot already at the right distance from the wall and pointing parallel to the wall
+  * Robot at 1.5 the desired distance and pointing in the right direction
+  * Robot at 0.5 the desired distance and pointing in the right direction
+* These are some more challenging starting conditions:
+  * Robot is pointing in various other ways
+  * Robot is well away from the wall
+  * The wall has an inside corner
+  * The wall has an outside corner
+* Beware: It will be hard to get all of these to work correctly but it is worth the struggle
+* Don't pressure yourself to get all of them to work seamlessly.
+* We will assess this based on how well the simple cases work and how far your attempts at the more difficult cases get.
 
 :slide_title How to Run ([Sample Solution](https://www.youtube.com/watch?v=yH474O4mAdw&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76))
 
@@ -60,14 +56,20 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
 * Typically 0 degrees is foreward. and then we go counter clockwise around positive up to 359
 * Typically we analyze the data by dividing the 360 degrees around the robot into "wedges", for example, forward might be from -15 to +15 degrees. Left might be from 250  to 290 degrees
 * The data from the Lidar needs a little cleaning. Any Inf or NaN values should be ignored. Any values outside of the spec range of the Lidar (e.g below 0.1 meter or above 5m) should also be ignored.
+* Think through how when the robot is not aligned paralel to the wall (e.g lets say it is pointing at it) your LIDAR will not report a wall to the left, even if it is very close to it
 
 :slide_title How to think about the algorithm
 
-* When you pick a turning method, reason with yourself why you are choosing your method example: "I am choosing to make the robot turn exactly 90 degrees every turn because most corners are 90 degrees and most walls are flat, so one or two 90 degree turns should always get a robot unstuck" 
+* Theh logic is basically a loop where you are looking at data derived from the LIDAR and deciding what cmd_vel to publish. If the robot is at the right distance and pointing in the right direction then you command it to drive straight.
+* But if it's too far, how do you get it to get closer? A combination of linear velocity with a little angular. But how much? Do you give more angular velocity if you are farther? But then the robot may end up pointing in the wrong direction so that your measurements of the distance turn out to be wrong.
 
-* Then, think of all the ways your turning method could fail- sort of a proof by counterexample. if you come up with failure cases, your next step is to either A: accept, and create both simulation and real life environments where that condition doesn't exist
+:slide_title Good Engineering Practices
 
-* Add more cases/ states to your robot. example: "turn 90 degrees if x and 45 degrees if Y" or C: pick a completely new turning method. Hint: The angle between two points (forming a line) and the x axis of the coordinate system can be calculated by: angle = arctan((y2 - y1)/(x2-x1))
+* Avoid "magic numbers". Define them in some way. Simplest is an (all caps) global Python variable, but there are other ways.
+* Use print statements to make the behavior of your code more transparent to you.
+* Aternatively write print statements which print out a list of numbers, separated by commas. That way you can capture those in a file, load them into a spreadsheet or script and look at the data visually
+* Learn to use the python debugger
+* Remember YAGNI - You're not gonna need it. Implement and test one case before going to the more complicated case. For example, the case where the robot is pointing paralel to the wall and at the right distance. Can you get it to maintain that. Once you have that, try it when the robot is too far. Then not eactly parlel. 
 
 :slide_title Practical Tips
 
@@ -75,6 +77,12 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
 * Get a feel for what kind of data the `scan` topic publishes by moving the robot around in Gazebo and executing `rostopic echo scan` on a separate terminal.
 * Change the `fixed_frame` in RViz from `odom` to `base_link` to make RViz graphically display the LIDAR readings.
 * Typically, forward motion are positive cmd_vel linear.x and counter clockwise rotation is positive angular.z.
+
+:slide_title Resources and Tips
+
+* Reference: :topic_link :working_with_lidar_data
+* Reference: [A wall-following algorithm based on dynamic virtual walls for mobile robots navigation](/content/topics/documents/wallfollower.pdf)
+
 
 :slide_title Deliverables
 * ROS Package with
