@@ -1,0 +1,22 @@
+---
+title: Dependency on Initial conditions
+desc: Verify whether your basic_mover worked as you expected
+---
+:slide_title Purpose
+
+This small assignment will ask you to go deeper on how your "basic mover" programming assignment works. You will discover a detail that you may or may not have noticed.
+
+:slide_title Do this
+
+* Launch gazebo with stage_0 or any other one
+* Manually move the robot to another location and rotate it's orientation so it's not in the default position
+* Run your "out and back" and "rectangle scenarios
+* Diagnose it's behavior in case it is not doing what you expected.
+* Fix the bug if there is one
+
+:slide_title Deliverable
+
+* Describe the behavior of your robot
+* Explain it (in words or code)
+* Did it work or was the algorithm affected by the different initial conditions
+* Did you find a "bug" and could you figure out how to fix it?
