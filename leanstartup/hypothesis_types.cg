@@ -69,5 +69,5 @@ title: Examples of Hypotheses
 
 :slide_title others
 
-:topic_link :warmup_magic_travel
-:topic_link :warmup_motorcycle_uber
+* :topic_link :warmup_magic_travel
+* :topic_link :warmup_motorcycle_uber
