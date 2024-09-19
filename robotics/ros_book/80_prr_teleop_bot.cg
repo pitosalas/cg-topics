@@ -3,17 +3,10 @@ title: "8: Teleop-bot"
 desc: Designing and implementing a slightly more complicated ROS program
 slides: true
 ---
-## Intro
+:slide_bigtitle Development Patterns
 
-* Teleop is a common term for "remote controlling" a robot
-* It's a perfectly respectable way go, and there are plenty of real world examples which are tele-operated
-* Campus Rover will be autonomous, meaning there's no person overtly steering it
-* That does not preclude, for example, having a person give commands to the robot, like where to go
-* CampusRobot will have a small tablet interface mounted on it to give it commands
-* That tablet will be directly wired to the robot (as it is mounted!)
-* Notice that with a slightly more capable computer (processor, memory and storage) directly mounted on the robot it is perfectly possible to run `roscore` directly on the robot
+* *Teleop is a common term for "remote controlling" a robot*
 
-## Development Pattern
 
 :slide_title Structure of an "idiomatic" ROS program
 * ROS is distributed, with nodes talking to each other

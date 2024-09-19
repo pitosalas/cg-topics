@@ -3,13 +3,11 @@ title: Practice Topics, Messages, Services and Actions
 ---
 ## Plan for today
 
-* Review Lab rules/safety rules
 * Everyone runs gazebo and play around with it
 * Everyone runs Rviz with gazebo and play around with it
 * Everyone creates a package under catkin_ws/src for their stuff
 * Copy the starter code for PA1 there
 * We code together
-
 
 ## Optional 
 

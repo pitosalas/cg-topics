@@ -1,0 +1,9 @@
+---
+title: Do teleop_bot 
+---
+:slide_title Setup
+* Let's try and pair 1-1 student-robot and see how that goes
+* Look for sections called "Lab Instructions"
+* If they go well, then we play with the same code on a real robot
+
+:topic_include :prr_teleop_bot
