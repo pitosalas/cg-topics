@@ -79,10 +79,9 @@ Video submission:
 
 Code submission: 
 
-1. Navigate to `/my_ros_data/catkin_ws/src/cosi119_src/maze_solver/src` in your cluster account VSCode view.
-2. Compress the files: `zip maze_solver_<brandeis email prefix>.zip maze_solver_real.py maze_solver_sim.py`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman.
+1. Navigate to `/my_ros_data/catkin_ws/src/cosi119_src` in your cluster account VSCode view.
+2. Compress the assignment: `zip -rv maze_solver_<brandeis email prefix>.zip maze_solver/`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman. After you run the command, wait about 10 seconds, then refresh your browser. It should appear in your cosi119_src/ directory. 
 3. The previous step will generate a .zip file. Right click it, then press download. This will download the files onto your machine. 
-4. Upload the zip file, named, for example, maze_solver_ezimmerman.zip, to the Moodle submission.
-
+4. Upload the zip file, named, for example, maze_solver_ezimmerman.zip, to the Moodle submission. We recommend opening the zip and making sure all of your files are there (and the compression is not corrupted). 
 
 
