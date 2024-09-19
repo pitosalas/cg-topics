@@ -90,6 +90,7 @@ To do this it will publish to cmd_vel to order movement of the robot, and subscr
   * README with specific instructions on how to run it
   * Correct package.xml CMakeLists.txt
 * Video of your program running in gazebo or the lab
+
 *Filled in by Ephraim (ezimmerman@brandeis.edu for questions)*
 
 Please follow the following steps for a successful submission: 
@@ -102,10 +103,12 @@ Video submission:
 
 Code submission: 
 
-1. Navigate to `/my_ros_data/catkin_ws/src/cosi119_src/wall_follower/src` in your cluster account VSCode view.
-2. Compress the files: `zip basic_mover_<brandeis email prefix>.zip wall_follower.py`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman.
+*Note added 9/19/24: This is different from Basic Mover* 
+
+1. Navigate to `/my_ros_data/catkin_ws/src/cosi119_src` in your cluster account VSCode view.
+2. Compress the assignment: `zip -rv wall_follower_<brandeis email prefix>.zip wall_follower/`. Replace <brandeis prefix> with your email prefix. For example, ezimmerman. After you run the command, wait about 10 seconds, then refresh your browser. It should appear in your cosi119_src/ directory. 
 3. The previous step will generate a .zip file. Right click it, then press download. This will download the files onto your machine. 
-4. Upload the zip file, named, for example, wall_follower_ezimmerman.zip, to the Moodle submission.
+4. Upload the zip file, named, for example, maze_solver_ezimmerman.zip, to the Moodle submission. We recommend opening the zip and making sure all of your files are there (and the compression is not corrupted). 
 
 
 
