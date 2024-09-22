@@ -43,7 +43,7 @@ slides: true
 
 * You can find `key_publisher.py` in the `samples` package. If it's not there try doing a git pull.
 * You will need two Terminals (plus `roscore` running somewhere)
-  * `rosrun roscore key_publisher.py`
+  * `rosrun samples key_publisher.py`
   * `rostopic echo keys`
 * Verify that the topic is being published any time a key is pressed
   * All that is happening is that the letter is being sent as the content of the message
