@@ -1,0 +1,28 @@
+---
+title: nanoTwitter
+desc: All about nanoTwitter
+slides: true
+---
+Welcome to nanoTwitter. You will be working with a team of 2  students (changes from year to year) on creating this application using Ruby and Sinatra. In doing this you will be applying advanced testing, deployment and scaling techniques. The sections below outline the project in further detail
+
+* Functionality: :topic_link :nt_functionality
+* Implementation sequence:
+    1. :topic_link :nt_begin
+    2. :topic_link :nt_storage
+    3. :topic_link :nt_ui
+    4. :topic_link :nt_authentication
+    5. :topic_link :nt_core
+    6. :topic_link :nt_test_api
+    7. :topic_link :nt_loadtest
+    8. :topic_link :nt_instrument
+
+:slide_title Important Readings and Resources
+
+These readings will be assigned or referenced during the semester. They are here just to pull them all together in one place to make them easier to find again.
+
+* [Twitter: From Ruby on Rails to the JVM](http://youtu.be/ohHdZXnsNi8)
+* [Real Time Delivery Architecture at Twitter](http://www.infoq.com/presentations/Real-Time-Delivery-Twitter)
+* [Timelines at Scale](http://www.infoq.com/presentations/Twitter-Timeline-Scalability)
+* [Rare peek into the massive scale of AWS](http://www.enterprisetech.com/2014/11/14/rare-peek-massive-scale-aws/)
+* [Loader.io Test Types](http://support.loader.io/article/16-test-types)
+
