@@ -13,3 +13,70 @@ slides: true
 * Visionaries or early adopters accept expect a product that is incomplete. They want to be ahead
 * Early adopters want to feel special: be the first one on the block with a product, or have an unfair advantage over other companies.
 * If you leave out features, customer often fills in the blanks which may suggest missing features
+
+:slide_title Summary of Chapter 6
+
+* Introducing MVP: designed to test a hypothesis. Not necessarily a prototype.
+* Visionaries or early adopters accept in fact expect a product that is incomplete. They want to be ahead. Early adopters want to feel special: be the first one on the block with a product, or have an unfair advantage over other companies.
+* Also realize that if you leave out features, customer will often fill in the blanks in their mind giving you info about what feature to add or not.
+* How can you test whether 10% of trial users will install, if you can't even get trial users?
+* MVP: any work beyond whats needed to learn / prove the hypothesis is waste!
+* Food on the Table: I thought it an odd idea: delivering customized recipes based on specials in the local grocery store. An extended scenario of an MVP is described. Lessons:
+  * While CEO was visiting customer to learn what recipes would be worth while, this very inefficient MVP is different from a restaurant where the owner is serving customers personally. In the former case, we are trying to learn. In the case of the restaurant, this is not a test, it is the real product.
+* Aardvark uses "wizard of oz testing" which to me sounds just like concierge!
+* Is the MVP philosophy at odds with 'quality'?
+  * No. But don't build quality, or beauty because you assume it is a customer requirement.
+  * Sometimes that's not what matters initially.
+  * If you discover that your MVP is failing because people think its ugly or cannot figure out how to use it, that's something else
+  * Remove any feature, process or effort that does not contribute directly to learning.
+* MVP thoughts
+  * Customers don’t care how difficult or costly it is to provide something; and the thing they love most might be very minor in your eyes
+  * Role of courage: you need to dare to respond to what you learn even if it is not what you thought or intuited.
+* Commit to iterate
+    * Even if the MVP fails decide up front that you will pivot and iterate
+
+:slide_title Discussion Questions for Chapter 4-6
+* Preparation
+    * Someone to present Zappos, Kodak, HP, VLS cases, CFPB, 
+* What are some of the hypotheses that had to be tested in Zappos case? List them.
+  * Are people willing to buy premium shoes online?
+  * What kinds of shoes, and prices do better?
+  * Will customers will appreciate a very liberal return policy over a big discount?
+  * What kind of photography is required? Will videos help sales?
+* What is a concierge product and in Zappos case?
+* What are "Leap of Faith" Assumptions? What were they for Zappos? What were they for HP? What were they for Kodak? How are they different from other assumptions?
+  * Those which if not true will cause the business to fail or need to be rethought. The riskiest assumptions. Crux of the vision.
+  * Zappos: People will buy shoes online
+  * HP: Employees have a desire to do volunteering
+  * Whats an MVP? What are the kinds of MVP? What would an MVP be for your project?
+    * video
+    * web site
+    * sign up for beta waiting list
+    * concierge product
+    * mockup/prototype/3d rendering
+* What does "Genchi Gembutsu" mean to you? "Go see for yourself"?
+* Give an example of analysis paralysis
+* Dropbox: Were there previous products? What was the key leap of faith value assumption? How could it be tested in an MVP?
+    * yes there were lots. But they were all hard to use
+    * that if the product was seamless to use people would in fact flock to it
+    * hard to test in an mvp because it was difficult to prove seamlessness
+    * but then they made a video to fake the product
+    * added tons of people to the beta waiting list.
+* What did you think of Food on the Table service?
+    * What about Craig's List, eBay? Can you think of products that are kind of known for their roughness? First release of iPod? Original cordless phones, original cell phones? Original laptops?
+    * Seems very complicated and elaborate
+    * Is it solving a real problem?
+* What is the direct connection between the mvp and the hypotheses?
+    * An mvp should clearly be designed to validate a hypothesis.
+* What are some MVP Challenges?
+    * IP protection might be impeded if you reveal your product too early. You might loose your ability to patent
+    * Competitors might learn about your product and rip it off. In fact the biggest challenge is to be noticed at all! Ideas are cheap!
+    * Damaging the brand? You should be able to insulate yourself by making sure customers know this is a test or a alpha product, but worse comes to worse, give it a separate identity. Change the name!
+    * Bad for morale: team gets discouraged by bad news or failure to penetrate
+* Is the MVP approach at odds with a good quality? What are the risks and are they worth it?
+    * give the company or the name a bad reputation?
+    * the product concept may be good but because of bad quality it is not appreciated?
+    * OTOH in the startup phase we don't know who the user or the product is so how do we know what quality is?
+* Is the MVP approach workable for hardware products?
+    * Why not? Because it costs too much to create an MVP
+    * No: MVP is not necessarily a prototype!

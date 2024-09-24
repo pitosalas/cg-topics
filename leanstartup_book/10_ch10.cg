@@ -15,3 +15,49 @@ desc: Chapter summary
     * Sticky Engine: Relies on repeat purchases; focuses on churn
     * Viral Engine: Effective use requires customers to attract new customers; focus on viral coefficient
     * Paid Engine: Revenue feeds customer acquisition: focus on customer aquisition cost and lifetime value of customer
+
+:slide_title Detailed Outline of Chapter 10
+* Growth
+    * Sustainable growth is systematic and excludes one time campaigns and actions
+    * Comes from the actions of past and existing customers
+    * Four ways in general:
+      * Word of mouth and referencing (people recommend your product to others)
+      * Simple side effect of using the product (people see you using it and want to use it too; or in order to use you have to recommend)
+      * Advertising (you spend money to get people interested in your product)
+      * Inherent repeating model (subscriptions or consumables that have to be repurchased)
+    * Sticky Engine of Growth
+      * When your growth comes from retention of existing customers
+      * attrition, retention or churn rate: fraction of customers in period n who don't renew in period n+1
+      * new customers added in period n+1 must exceed number of existing who dropped off
+      * Focus on either attracting more new or getting the ones you have to renew
+    * Viral Engine of Growth
+      * When your growth comes when use of the product inherently attracts new customers
+      * "viral coefficient" = How many new customers a single customer brings along, and after how long a delay
+      * viral coefficient should be > 1 to get exponential growth
+    * Paid Engine of Growth
+      * When your growth comes from the simple ratio of customer acquisition cost vs. per customer earnings
+      * Simply add more money to customer acquisition and you get a predictable amount of earnings from that
+      * LTV of a customer tells you how much you can spend on customer acquisition
+
+:slide_title Discussion Questions for Chapter 10
+* What are actionable metrics vs. vanity metrics, and how are they used?
+* Why is growth important? What is the 'engine of growth'
+* Analyze Keurig Coffee Maker in this context
+* Sticky Engine
+    * What is it and how does it work?
+    * What is the critical measure to say whether it is working?
+    * What is a non-software product that exhibits this?
+* Viral Engine:
+    * what is it, and how does it work?
+    * Whats the critical component? (Feedback loop)
+    * What's a non-software product or service that has a viral engine?
+    * How would you determine the viral coefficient?
+* Paid Engine:
+    * What is it and how does it work?
+    * How do you figure out LTV of a customer?
+* Under what conditions does he engine of growth change?
+    * What worked before is not working any more
+    * Now something is possible that was not possible before because of scale.
+* Can there be more than one simultaneously?
+* Can there be more than one source of revenue simultaneously?
+* How do you 'tune' the engine?
