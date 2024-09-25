@@ -1,42 +1,44 @@
 ---
 title: Spec for Customer Discovery
 desc: Details on what should go into the Customer Discovery Paper
-slides: true
 ---
+:topic_btn :hw_102_final_cust_disc :topic_btn :hw_102_final_biz_case :topic_btn :hw_102_final_marketing :topic_btn :hw_102_final_offering
 
-:slide_title Customer Discovery Paper
 
-This paper is all about how the product idea(s) were tested against potential customers. What hypotheses were formed and how they were tested.  It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.)
+:slide_bigtitle Topics covered in this report
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "topic;description;course"
+:trow "Hypotheses;List of at least 5 hypotheses, including testing status and results"
+:trow "MVPs;Descriptions of MVPs used or planned for hypothesis testing"
+:trow "Testing;Commentary on testing methods, hypotheses tested, and results"
+:trow "Pivots;Pivots if any"
+:trow "Out-of-the-building work;Description of engagement with external parties to validate hypotheses"
+:tend
 
-* **Candidates**: Candidate product ideas that made it to your final round of discussion (i.e. no more than 3). Describe them in summary form and include whatever interesting insights and tradeoffs you had that led you to picking them or not picking them in the end.
+:slide_bigtitle Details
 
-* **Hypotheses:** List at least 5 hypotheses, prioritized and classified by type, and indicate whether they have been tested, and whether they were proven or rejected. 
+This paper is all about how the product idea(s) were tested against potential customers. What hypotheses were formed and how they were tested.  
 
-    Early on you will not have tested many hypotheses but the process is ongoing. You will be asked to explain what Hypotheses are being tested by what MVP. Obviously you will not have tested all of them yet, and some you may never test.
+It is written in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.)
+
+:slide_title Hypotheses
+
+List at least 5 hypotheses, prioritized and classified by type, and indicate whether they have been tested, and whether they were proven or rejected. Early on you will not have tested many hypotheses but the process is ongoing. You will be asked to explain what Hypotheses are being tested by what MVP. Obviously you will not have tested all of them yet, and some you may never test. Initially the focus should be on the leap of faith, value and customer hypotheses. Make sure that they are consistent with your product concept/vision and that the team is aligned.   
     
-    Initially the focus should be on the leap of faith, value and customer hypotheses. Make sure that they are consistent with your product concept/vision and that the team is aligned.   
-    
-    By the end you should tested a series of hypothese with out-the-building work. There are many ways to test them as we will learn. ypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
+By the end you should tested a series of hypothese with out-the-building work. There are many ways to test them as we will learn. ypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
 
-* **MVPs:** MVPs that were develoed or will be developed and what hypotheses you hope that they will test?
+:slide_title MVPs
 
-* **Testing**: Test hypotheses with real out of the building experiments of various kinds with potentially different MVPs. 
+MVPs that were develoed or will be developed and what hypotheses you hope that they will test?
 
-    Remember that sometimes you can legitimately test more than one hypothesis with one MVP. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
-    
-* **Result of testing. Many of these should be done virtually out of the building, meaning, with outside people who were not previously known to you.  at least 5 hypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
+:slide_title Testing
 
-* **Out of the building work:** Our metaphor of "out of the building" covers any time that you went beyond your own immediate team to validate your hypotheses. 
+Test hypotheses with real out of the building experiments of various kinds with potentially different MVPs. Remember that sometimes you can legitimately test more than one hypothesis with one MVP. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven Many of these should be done virtually out of the building, meaning, with outside people who were not previously known to you.  at least 5 hypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
 
-    As you know there are a variety of tools and mechanisms and audiences that you can be tapping. We wll see that some provide far better information than others. Asking your best friend, roommate or parent will be almost useless beause they will not want to disappoint you. Asking your social media friends is a little better. Gathering some random students in the library for an impromptu round table is very effective. Converation (live, phone or zoom) is far superior to sending out a google survey.
+:slide_title Pivots
 
-:slide_title Work Items
+Were any pivots considered throughout the process? Did you need to do a pivot and if so what led to it and what kind of a pivot was it?
 
-*Note: These cannot be done in isolation but in consultation with your team* 
+:slide_title Out of the building work
 
-* Build list of hypotheses
-* Build a set of corresponding MVPs
-* Drive and record results of out of building work
-
-:topic_include :final_papers_general_spec
-
+Our metaphor of "out of the building" covers any time that you went beyond your own immediate team to validate your hypotheses. As you know there are a variety of tools and mechanisms and audiences that you can be tapping. We wll see that some provide far better information than others. Asking your best friend, roommate or parent will be almost useless beause they will not want to disappoint you. Asking your social media friends is a little better. Gathering some random students in the library for an impromptu round table is very effective. Converation (live, phone or zoom) is far superior to sending out a google survey.

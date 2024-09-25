@@ -1,37 +1,50 @@
 ---
 title: Spec for Business Case
 desc: Details on what should go into the Business Case Paper
-slides: true
 ---
-:slide_title Intro
+:topic_btn :hw_102_final_cust_disc :topic_btn :hw_102_final_biz_case :topic_btn :hw_102_final_marketing :topic_btn :hw_102_final_offering
+
+:slide_bigtitle Topics covered in this report
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "topic;description;course"
+:trow "Growth;Identifying the engine of growth and how the business will scale"
+:trow "Pricing Model;Approach to pricing, tested through MVPs, and financial implications"
+:trow "Financial Model;Basic financial forecast, focusing on costs and revenue"
+:trow "Milestones;Key business milestones and their impact on assumptions"
+:trow "Financing Requirements;Explanation of funds that need to be raised"
+:tend
+
+:slide_bigtitle Details
 
 This paper is about the business side. It will look at competitors, pricing, business model and overall financial plan. It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.) 
 
-* **Growth**: What is your engine of growth? What techniques will likely work to achieve growth and make your business sustainable? Remember that as an entrepreneur you are only successful when your impact on the world increases from your starting point. 
+:slide_title Growth
 
-    If your project is about delivering blankets to homeless in Boston, how do you now think about having the same impact in Waltham? Or Providence? Or in 100 cities around the USA? If your project is a two sided marketplace in one geography, for one segment, or for one type of service, then how do you grow the initial market places, or how to you add geographies or segments or services?
+What is your engine of growth? What techniques will likely work to achieve growth and make your business sustainable? Remember that as an entrepreneur you are only successful when your impact on the world increases from your starting point. 
 
-    Where are the costs in your product? Consider your startup phase and your growth phase. Consider material, service, and especially people costs. Also think about the intimate connection of your costs with your growth models.
+If your project is about delivering blankets to homeless in Boston, how do you now think about having the same impact in Waltham? Or Providence? Or in 100 cities around the USA? If your project is a two sided marketplace in one geography, for one segment, or for one type of service, then how do you grow the initial market places, or how to you add geographies or segments or services?
 
-* **Pricing Model and Approaches**: We will talk a lot about pricing. You will have tested pricing ideas, AS HYPOTHESES  in your MVPs. And you should do the spreadsheet modeling to show that you have an understanding of the impact of your pricing on the overall finances of your business. 
+Where are the costs in your product? Consider your startup phase and your growth phase. Consider material, service, and especially people costs. Also think about the intimate connection of your costs with your growth models.
 
-    What approach to capturing revenue is right for your product? Who are the users vs. the customers? Is this a two sided market? Who pays? Who gets paid? 
+:slide_title Pricing Model and Approaches
 
-* **Financial Model**
+We will talk a lot about pricing. You will have tested pricing ideas, AS HYPOTHESES  in your MVPs. And you should do the spreadsheet modeling to show that you have an understanding of the impact of your pricing on the overall finances of your business. 
+
+What approach to capturing revenue is right for your product? Who are the users vs. the customers? Is this a two sided market? Who pays? Who gets paid? 
+
+:slide_title Financial Model
+
 Provide a basic financial model and/or forecast. Remember to work out the costs for delivering your product or service, its relationship to the number of customers.
 
-* **Milestones** It's reasonable to consider several "milestones" where the assumptions change. Typical milestones might be: First real user; First paying customer. etc. The milestones often correspond to a point in time when you would seek additional funding. 
+:slide_title Milestones
 
-    Generally it's not useful to show more than 2 years in months. Of course we understand that this is just a common-sense forecast that is well reasoned but certainly will depend on guesses on key unknowns.
+It's reasonable to consider several "milestones" where the assumptions change. Typical milestones might be: First real user; First paying customer. etc. The milestones often correspond to a point in time when you would seek additional funding. 
 
+Generally it's not useful to show more than 2 years in months. Of course we understand that this is just a common-sense forecast that is well reasoned but certainly will depend on guesses on key unknowns.
 
-:slide_title Work Items
+:slide_title Financial Requirements
 
-*Note: These cannot be done in isolation but in consultation with your team* 
+This ties together the financial model and the milestones. The amount of funds raised to finance is tied to what the planned use of the funds is. Ideally the first funding will be enough for the company to come to a point in its evolution that will justify another round of funds. 
 
-1. Figure out what engine(s) of growth is(are) (with Cust Disc)
-1. Figure out the pricing model (with Cust Disc)
-1. 
-
-:topic_include :final_papers_general_spec
+In other words, you don't want to run out of funds when you are in the middle of finishing the first release. Better to plan that your first round of funds will take you to, for example, first 100 users, or first paying user, or product accepted into the app store. 
 

@@ -1,30 +1,38 @@
 ---
-title: Spec for The Offering
-desc: Details on what should go into the Offering Paper
-slides: true
+title: Spec for Product or Service
+desc: Details on what should go into the Product or Service Paper
 ---
-:slide_title Intro
+:topic_btn :hw_102_final_cust_disc :topic_btn :hw_102_final_biz_case :topic_btn :hw_102_final_marketing :topic_btn :hw_102_final_offering
 
-This paper is about the actual product or service that the team decided on, tested and planned out.  It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.) 
+:slide_bigtitle Topics covered in this report
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "topic;description;course"
+
+:trow "Product Summary;High-level product description and problem it solves"
+:trow "Candidates;Describes product ideas considered, insights, and tradeoffs"
+:trow "Features;List of key features/services and how they relate to user needs"
+:trow "Visuals;Mockups or prototypes, with explanations of their role in testing"
+:tend
+
+:slide_bigtitle Details
+
+This paper is about the actual product or service that the team decided on, tested and planned out.
+
+It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.) 
   
-* **Product Summary**: Name and description of your product or business, accompanied by a concise explanation. This high-level overview should be easily understandable and outline the specific problems it aims to solve. 
+:slide_title Product Summary
 
-    Based on your brainstorming what is a succinct explanation of the vision for your product or business? It may be different from the one from Stage 1 and from your final one. It is a work in progress. Based on your brainstorming what is a succinct explanation of the vision for your product or business? 
+Name and description of your product or business, accompanied by a concise explanation. This high-level overview should be easily understandable and outline the specific problems it aims to solve.  Based on your brainstorming what is a succinct explanation of the vision for your product or business? It may be different from the one from Stage 1 and from your final one. It is a work in progress. Based on your brainstorming what is a succinct explanation of the vision for your product or business? 
 
-* **Features**: List of the most important features, services, aspects of the product. Not a functional specification. Enough so that the reader can understand. 
+:slide_title Candidates
 
-    Keep in mind the different kinds of users (if applicable) and what different capabilities they might have. It could be user and administrator, or buyer and seller, or student and teacher, etc. Each feature should include how they relate to the value propositions.
+Candidate product ideas that made it to your final round of discussion (i.e. no more than 3). Describe them in summary form and include whatever interesting insights and tradeoffs you had that led you to picking them or not picking them in the end.
 
-* **Visual**: Mockup or other product visuals. This can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product.
+:slide_title Features
 
-    Include some explanation or documentation of how you used this in your testing (:topic_link :ideas_for_visuals) These can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing.
+List of the most important features, services, aspects of the product. Not a functional specification. Enough so that the reader can understand. Keep in mind the different kinds of users (if applicable) and what different capabilities they might have. It could be user and administrator, or buyer and seller, or student and teacher, etc. Each feature should include how they relate to the value propositions.
 
-:slide_title Work Items
+:slide_title Visual
 
-*Note: These cannot be done in isolation but in consultation with your team* 
+Mockup or other product visuals. This can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing (:topic_link :ideas_for_visuals) These can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing.
 
-* Determine the preliminary list of features
-* Design a nice visual for the product or service making it clear where each feature is
-
-
-:topic_include :final_papers_general_spec
