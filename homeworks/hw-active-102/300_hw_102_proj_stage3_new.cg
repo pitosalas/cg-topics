@@ -4,10 +4,9 @@ desc: Final Deliverables for the Term Project
 cat: Lean, Pres
 slides: true
 ---
-### Purpose
+:slide_title Purpose
 
-During the final 3 weeks you will focus on the business issues for your product. In particular I hope that you will
-learn and apply the following keys:
+During the final weeks you will focus on the business issues for your product. In particular I hope that you will learn and apply the following keys:
 
 1. How to create a basic financial model for your business
 1. Understanding the financing and different financing approaches
@@ -17,24 +16,12 @@ learn and apply the following keys:
 1. You will learn how to think holistically about your project and distill it into a great final report and
 presentation.
 
-### Tasks
-
-It is important to remember that what you did for Stage 1 and Stage 2 likely has evolved and will keep on evolving. For
-example, a new pricing idea might have come to light. Or you might have had a major pivot. This is expected. So, when
-you use information from earlier in the course, e.g. Stages 1 and 2, for your final deliverable it is reasonable and
-likely that you will make updates.
-
-* This final report builds on your stage 1 and stage 2 reports, from which it will take a lot of content. However you
-have more freedom in how you organize it. The report will be assessed as a whole. This is the last stage and so you will
-be submitting a finalized report. It should be 12 pages, as pdf. Longer is usually not better.
-
-* Unlike the first two stages, this should be a report, not a list of bullets. The report should be written at the level
-of quality of any academic report. It should be written in professional English, have an introduction and a conclusion.
-It does not need a title page. The outline below is a suggestion and not required in specific detail. What we will be
-looking for is that you include all the information suggested but you may organize it differently, for example to remove
-duplication, or if you want to emphasize the stages of your business, or your process, or some other aspect of the
-project.
-
+:slide_title Tasks
+* **Pricing**: Investigate further the pricing of your offering. This spans customer discovery (what does the customer need), marketing (how do we communicate the pricing and what are comparable products charging) and business model. It even may touch on the product itself, because pricing models sometimes require the product to change based on the price tier the customer is on.
+* **Milestones and financing**: It is generally a useful idea to map out the early life of a startup into a series of milestones (e.g. first revenue, or product accepted to app store, or first 100 users). The milestones should be objective and tied to some internal events. The reason for this is that we use the milestones as likely points in time when we can raise new financing. They demonstrate some degree of success to a potential investor and a target to shoot for for the startup. 
+* **Financials**: We will have discussed in class, many times., how to structure the financials or "operating model". You need to find the balance of clarity and brevity. This is a lot of work!
+* **Final Reports**: Each of the four reports need to be reviewed by the other teammates. We want to have documents which are well written and consistent. THey should all be about the same product! They should not be repetitive but tight and well written. In the end each one will be under the name of one teammate and any plagiarism (regular or AI) will be the responsibility of that author.
+ 
 
 :slide_bigtitle Guidelines
 
@@ -43,5 +30,5 @@ project.
 3. As you get into it, you might see that it doesn't fit your specific project perfectly. You are welcome to add and rearrange sections of each paper.
 4. For this assignment you will receive feedback and be graded purely by the effort and care you put into the paper. We know that you will be revising it. 
 
-**Each student submits their paper to latte as a pdf and exactly the guidelines specified in :section_link :intro, :major_deliverables
+Each student submits their paper to moodle as a pdf and exactly the guidelines specified in :section_link :intro, :major_deliverables
 

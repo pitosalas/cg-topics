@@ -14,25 +14,27 @@ desc: Details on what should go into the Product or Service Paper
 :trow "Visuals;Mockups or prototypes, with explanations of their role in testing"
 :tend
 
+:topic_include :final_papers_general_spec
+
 :slide_bigtitle Details
 
 This paper is about the actual product or service that the team decided on, tested and planned out.
 
-It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.) 
+It is written in three drafts, stage 1, 2 and Final. It will be written and submitted ed by a single student (but input and collaboration from the team.) 
   
+:slide_title Top Products Considered
+
+Early on the team evaluated a number of products. In this section please briefly describe the other favorite product ideas that you considered before choosing your finalist which is the one you are describing here.
+
 :slide_title Product Summary
 
 Name and description of your product or business, accompanied by a concise explanation. This high-level overview should be easily understandable and outline the specific problems it aims to solve.  Based on your brainstorming what is a succinct explanation of the vision for your product or business? It may be different from the one from Stage 1 and from your final one. It is a work in progress. Based on your brainstorming what is a succinct explanation of the vision for your product or business? 
 
-:slide_title Candidates
-
-Candidate product ideas that made it to your final round of discussion (i.e. no more than 3). Describe them in summary form and include whatever interesting insights and tradeoffs you had that led you to picking them or not picking them in the end.
-
 :slide_title Features
 
-List of the most important features, services, aspects of the product. Not a functional specification. Enough so that the reader can understand. Keep in mind the different kinds of users (if applicable) and what different capabilities they might have. It could be user and administrator, or buyer and seller, or student and teacher, etc. Each feature should include how they relate to the value propositions.
+List of the most important features, services, aspects of the product. You are not asked to described each feature in ultimate detail. Provide enough so that the reader can understand the feature and how it would work. You don't need to describe every last feature. Also don't describe common features like printing or logging out. Keep in mind the different kinds of users (if applicable) and what different capabilities they might have. It could be user and administrator, or buyer and seller, or student and teacher, etc. Each feature should include how they relate to the value propositions.
 
 :slide_title Visual
 
-Mockup or other product visuals. This can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing (:topic_link :ideas_for_visuals) These can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing.
+Mockup or other product visuals. This can be a Paper Prototype, a non-working model, a working model, a video, a rendering of the product. Include some explanation or documentation of how you used this in your testing (:topic_link :ideas_for_visuals)
 

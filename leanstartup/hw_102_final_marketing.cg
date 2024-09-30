@@ -11,13 +11,21 @@ desc: Details on elements of marketing that will support the overall product
 :trow "Elevator Pitch;Concise, practiced pitch aimed at specific audiences"
 :trow "Competition;Competitive analysis, including a comparison matrix"
 :trow "Marketing Tactics;Appropriate to the growth model for your business"
-:trow "Online Presence;Sketch out a web site and/or social media page consistent with product"
 :tend
 
+:topic_include :final_papers_general_spec
+
 :slide_bigtitle Details
+
 This paper is about the marketing aspects that the team decided on, tested and planned out.
 
 It is sritten in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.) 
+
+:slide_title  Markets and Customers
+
+List of customer categories or types, and an explanation of their role in your startup.
+
+Be specific about why each customer type makes sense for your business. List of customer categories or types, and an explanation of their role in your startup. Be specific about why each customer type makes sense for your business. Based on your Value Proposition work, explain your conclusions about your product's value to certain customers, as well as a sense of the channels you can use to reach them. 
 
 :slide_title Elevator Pitch
 
@@ -25,18 +33,12 @@ A viable Elevator pitch. Make sure you practice it and could give it to "the pre
 
 You might have more than one elevator pitch if, for example, it is aimed at two different audiences. Try it on some appropriate people and make note of their reaction and refine the pitch as required. Include the text of the pitch in your report.
 
-:slide_title  Markets and Customers
-
-List of customer categories or types, and an explanation of their role in your startup.
-
-Be specific about why each customer type makes sense for your business. List of customer categories or types, and an explanation of their role in your startup. Be specific about why each customer type makes sense for your business. Based on your Value Proposition work, explain your conclusions about your product's value to certain customers, as well as a sense of the channels you can use to reach them. Make sure it is legible.
-
-:slide_title Value prooposition
-
-Discussion of value proposition, how it was tested and what conclusions there are. Your completed Value Proposition Canvas, and your conclusions about your product's value to certain customers, as well as a sense of the channels you can use to reach them.
-
 :slide_title Competition
 
 What is your ecosystem? Similar products, complementary products, who is doing what? What or who are the major competitors. How do they compare with your product or business? Create a competitive matrix to show how your product compares. 
 
 What is out there that attempts to solve the same (or similar) problem for the same (or similar) users? How will you be different from your competition? You need to have an awareness of what else is out there, and often it is useful to think in terms of a 'feature grid'
+
+:slide_title Marketing Tactics and Social Media
+
+What marketing tactics and approaches do you recommend for your business? What are some approaches to acquring customers and growing it over time. As discussed in class there are numerous possibilities, for example a great social media presence, online and offline advertising, loyalty programs and more. Marketing is not free, so make sure that your business plan includes the costs of the programs. And be realistic in terms of how fast and well a tactic can be expected to work. 

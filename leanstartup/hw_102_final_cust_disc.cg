@@ -7,31 +7,34 @@ desc: Details on what should go into the Customer Discovery Paper
 
 :slide_bigtitle Topics covered in this report
 :tbegin "table-striped table-sm table-responsive table-hover"
-:thead "topic;description;course"
+:thead "topic;description"
 :trow "Hypotheses;List of at least 5 hypotheses, including testing status and results"
 :trow "MVPs;Descriptions of MVPs used or planned for hypothesis testing"
-:trow "Testing;Commentary on testing methods, hypotheses tested, and results"
 :trow "Pivots;Pivots if any"
 :trow "Out-of-the-building work;Description of engagement with external parties to validate hypotheses"
 :tend
+
+:topic_include :final_papers_general_spec
 
 :slide_bigtitle Details
 
 This paper is all about how the product idea(s) were tested against potential customers. What hypotheses were formed and how they were tested.  
 
-It is written in three drafts, stage 1, 2 and Final. It will be owned by a single student (but input and collaboration from the team.)
+It is written in three drafts, stage 1, 2 and Final. It will be written and submitted by a single student (but input and collaboration from the team.)
+
+**The Hypothesis and MVP sections are closely related. The first will describe hypotheses and refer to MVPs that were or could  be used to test them; The MVP section will describe the MVPs and refer to the Hypotheses that they were or could be used to test.**
 
 :slide_title Hypotheses
 
-List at least 5 hypotheses, prioritized and classified by type, and indicate whether they have been tested, and whether they were proven or rejected. Early on you will not have tested many hypotheses but the process is ongoing. You will be asked to explain what Hypotheses are being tested by what MVP. Obviously you will not have tested all of them yet, and some you may never test. Initially the focus should be on the leap of faith, value and customer hypotheses. Make sure that they are consistent with your product concept/vision and that the team is aligned.   
+List at least 5 hypotheses, prioritized and classified by type, and indicate whether they have been tested, and whether they were proven or rejected. 
+
+Early on you will not have tested many hypotheses but the process is ongoing. You will be asked to explain what Hypotheses are being tested by what MVP. Obviously you will not have tested all of them yet, and some you may never test. Initially the focus should be on the leap of faith, value and customer hypotheses. Make sure that they are consistent with your product concept/vision and that the team is aligned.   
     
-By the end you should tested a series of hypothese with out-the-building work. There are many ways to test them as we will learn. ypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
+By the end you should have tested a series of hypotheses with out-the-building work. As we have learned, here are many ways to test hypotheses with real out of the building experiments, using MVPs of different kinds. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
 
 :slide_title MVPs
 
-MVPs that were develoed or will be developed and what hypotheses you hope that they will test?
-
-:slide_title Testing
+List MVPs that were developed or will be developed as well as what hypotheses they have tested/will test. Test hypotheses with real out of the building experiments of various kinds with potentially different MVPs. Remember that sometimes you can legitimately test more than one hypothesis with one MVP. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven. Many of these should be done virtually out of the building, meaning, with outside people who were not previously known to you. Include at least 5 hypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
 
 Test hypotheses with real out of the building experiments of various kinds with potentially different MVPs. Remember that sometimes you can legitimately test more than one hypothesis with one MVP. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven Many of these should be done virtually out of the building, meaning, with outside people who were not previously known to you.  at least 5 hypotheses with real out of the building experiments, of various kinds, using a variety of MVPs. Write them up and comment on the process and how it worked, what hypothesis was, and whether it was proven.
 
@@ -41,4 +44,5 @@ Were any pivots considered throughout the process? Did you need to do a pivot an
 
 :slide_title Out of the building work
 
-Our metaphor of "out of the building" covers any time that you went beyond your own immediate team to validate your hypotheses. As you know there are a variety of tools and mechanisms and audiences that you can be tapping. We wll see that some provide far better information than others. Asking your best friend, roommate or parent will be almost useless beause they will not want to disappoint you. Asking your social media friends is a little better. Gathering some random students in the library for an impromptu round table is very effective. Converation (live, phone or zoom) is far superior to sending out a google survey.
+Our metaphor of "out of the building" covers any time that you went beyond your own immediate team to validate your hypotheses. As you know there are a variety of tools and mechanisms and audiences that you can be tapping. We will see that some provide far better information than others. Asking your best friend, roommate or parent will be almost useless beause they will not want to disappoint you. Asking your social media friends is a little better. Gathering some random students in the library for an impromptu round table is very effective. Converation (live, phone or zoom) is far superior to sending out a google survey.
+
