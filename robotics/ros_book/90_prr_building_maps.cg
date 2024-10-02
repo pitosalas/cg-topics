@@ -3,9 +3,6 @@ title: "9: Building Maps"
 desc: "What is a map, how to build one"
 slides: true
 ---
-* Prev: :topic_link :prr_teleop_bot
-* Next: :topic_link :prr_building_maps_additional
-
 :slide_title Maps in ROS
 
 * Our focus is mobile, ground based robots
