@@ -3,9 +3,6 @@ title: "9a: Building Maps"
 desc: "Some details from the chapter"
 slides: true
 ---
-* Prev: :topic_link :prr_building_maps
-* Next: :topic_link :prr_localization
-
 :slide_title rosbag
 
 * A tool to record messages (some or all) and replay them later
