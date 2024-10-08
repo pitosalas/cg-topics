@@ -1,0 +1,118 @@
+---
+title: TF Cheatsheet
+---
+
+## Introduction
+
+This document gives coding tips for using tfs in ROS. It assumes that the reader
+has:
+
+1. studied [the ROS Wiki tf2 tutorial](http://wiki.ros.org/tf2/Tutorials); and
+2. understood the basic math behind transforms (e.g., what coordinate frames  
+   are, what the translation from one frame to another is, etc.).  
+
+
+## Prelude
+
+Suppose that we've executed:
+
+:source_begin :python
+import rospy
+import tf2_ros
+from geometry_msgs.msg import TransformStamped
+
+tf_buffer = tf2_ros.Buffer()
+tf_listener = tf2_ros.TransformListener(tf_buffer)
+tf_broadcaster = tf2_ros.TransformBroadcaster()
+
+:source_end
+
+:slide_bigtitle Tips
+
+:slide_title Pose in fram 'A' for a known pose in frame 'X'
+
+To get the pose of an existing frame `A` for an known posein frame 'X':
+
+:source_begin :python
+A_tf = tf_buffer.lookup_transform('A', 'A', rospy.Time()).transform
+A_translation = A_tf.translation
+A_rotation = A_tf.rotation
+:source_end
+
+The resulting A_tf will contain the transformation needed to convert coordinates or poses from frame 'X' to frame 'A'.
+
+:slide_title A node that broadcasts a frame continuously:
+
+1. wrap the broadcasting functionality in a `while` loop with the `try-except` structure  
+below
+1. don't forget to update the timestamp of your frame.
+
+:source_begin :python
+while not rospy.is_shutdown():
+    try:
+        new_tfs = TransformStamped()
+        # ...
+        # Configure new_tfs here.
+        # ...
+        new_tfs.header.stamp = rospy.Time.now()
+        tf_broadcaster.sendTransform(new_tfs)
+    except rospy.ROSException as e:
+        rospy.logerr(f"ROS Exception occurred: {e}")
+        continue
+    except Exception as e:
+        rospy.logerr(f"Unexpected error occurred: {e}")
+        continue
+    rate.sleep()
+:source_end
+
+:slide_title To broadcast a new frame `C` as a child of `A` 
+
+Given the following requirements:
+
+1. that `C` has the same rotation as `A`
+2. that `C` is part of the same tf tree as `A`):
+
+:source_begin :python
+C_tfs = TransformStamped()
+C_tfs.header.frame_id = 'A'
+C_tfs.child_frame_id = 'C'
+
+while not rospy.is_shutdown():
+    try:
+        A_tf = tf_buffer.lookup_transform('A', 'A', rospy.Time()).transform
+        A_to_B_tf = tf_buffer.lookup_transform('A', 'B', rospy.Time()).transform
+        C_tfs.transform.rotation = A_tf.rotation
+        C_tfs.transform.translation = A_to_B_tf.translation
+        C_tfs.header.stamp = rospy.Time.now()
+        tf_broadcaster.sendTransform(C_tfs)
+    except rospy.ROSException as e:
+        rospy.logerr(f"ROS Exception occurred: {e}")
+        continue
+    except Exception as e:
+        rospy.logerr(f"Unexpected error occurred: {e}")
+        continue
+    rate.sleep()
+:source_end
+
+:slide_title Distance between origins
+
+To get the distance between the origin of frame `A` and that of frame `B`:
+
+:source_begin :python
+import numpy as np
+A_to_B_transl = tf_buffer.lookup_transform(
+    'A',
+    'B',
+    rospy.Time()
+).transform.translation
+
+dist = np.linalg.norm(
+    np.array(
+        [
+            A_to_B_transl.x,
+            A_to_B_transl.y,
+            A_to_B_transl.z,
+        ]
+    )
+)
+:source_end
