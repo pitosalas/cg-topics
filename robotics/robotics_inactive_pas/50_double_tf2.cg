@@ -15,7 +15,7 @@ You can decide to have all the robots follow a single leader, or more fun, to ha
 
 You will need to understand how the robots are launched, and how tf is used to transform the location of the second robot into the world of the first one.
 
-#### You may earn extra points by doing one or more of these:
+### Some ideas on how to take the work further
 
 1. Have two turtles controlled by either side of the keyboard
 1. Have a robot turtles runs away from the controlled one instead of towards it
@@ -24,7 +24,7 @@ You will need to understand how the robots are launched, and how tf is used to t
 
 ### Deliverable
 
-* Your working code as a clean package and a readme
-* A conceptual explanation of the way the app works, how it uses tf, to demonstrate your understanding in the readme
-* A rough video (as usual) of the code running.
-
+* Your working code as a clean package, including a README.md and video.txt in the top directory
+  * The src folder should contain the *.py file(s)
+  * The README.md should feature A conceptual explanation of the way the app works, how it uses tf, to demonstrate your understanding
+  * The video.txt should contain the url to a rough video (as usual) of the code running
