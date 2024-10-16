@@ -14,3 +14,34 @@ title: The Pivot
 :slide_title A picture is worth a thousand words
 
 :image :600, :pivot_diagram
+
+:slide_title Iterations vs. Pivots
+
+* Iterations are smaller, incremental changes based on feedback and learning
+* These are part of the normal "Build-Measure-Learn" feedback loop that Ries describes.
+* Pivots are more significant changes that alter the fundamental hypothesis about the product, strategy, or growth engine.
+
+:slide_title Matter of Degree
+
+* Minor product tweaks, feature adjustments, or small changes in targeting are typically considered iterations, not pivots.
+* A pivot involves a more substantial shift in the business model, product direction, or core strategy.
+
+:slide_title Examples to Illustrate
+
+* Iteration: Changing the color of a button based on A/B testing results.
+* Pivot: Realizing your photo-sharing app is more valuable as a messaging platform (like Instagram's shift towards Stories and direct messaging).
+
+:slide_title Ries's Perspective:
+
+* Ries emphasizes that pivots are major changes that arise from validated learning. They're not just random ideas or minor adjustments.
+* He sees pivots as a way to "zoom out" from day-to-day iteration to reassess the overall direction.
+
+:slide_title Frequency
+
+* Iterations happen frequently, often daily or weekly.
+* Pivots are less common, occurring when a startup realizes its current path isn't leading to sustainable growth.
+
+:slide_title Decision-Making
+
+* Iterations are often decided at the team or product management level.
+* Pivots usually involve higher-level strategic decisions, often requiring buy-in from founders or executives.

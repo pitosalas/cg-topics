@@ -40,6 +40,12 @@ negate: 1
 * free_thresh: pixels with color value less than this number are considered free. (Values in between are considered unknown)
 * negate: Depending on whether black is 1 or black is 0 in the image representation, it might have to be negated
 
+:slide_title To View
+
+:source_begin :bash
+sudo apt-get install imagemagick
+display map.pgm
+:source_end 
 
 :slide_title Building Maps
 
@@ -62,9 +68,9 @@ negate: 1
 * The obstacles are simulated so that they bounce the simulated lidar
 * And they also are solid so that the simulated robot will not drive 'through' them!
 
-:slide_break
+:slide_title Demo: Launch a basic world
 
-* Lab instructions: Launch and capture data in a bag
+* Launch and capture data in a bag
 * Launch Gazebo simulator with a basic Turtlebot3 World
 
 :source_begin :bash
@@ -73,7 +79,8 @@ $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 
 :image :rosbag3
 
-* Lab Instruction: Save all the messages
+:slide_title Demo: Save all the messages
+
 * We are going to save all the topics published by the simulated robot. plus a timestamp
 * With that we will be able to run other nodes and algorithms against the exact same experience
 * If we ran the simulation over and over again, it would be different and not a good baseline
@@ -84,7 +91,8 @@ $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 $ rosbag record -O data.bag /scan /tf /odom
 :source_end
 
-* Lab instructions: Teleop through the space
+:slide_title Demo: Teleop through the space
+
 * Help the robot 'see' the whole space
 * As long as we are recording a rosbag and the simulation (gazebo) is running, all messages are saved
 * Use teleop to visit enough of the space so that all surfaces to be mapped are within unobstructed view
@@ -94,7 +102,8 @@ $ rosbag record -O data.bag /scan /tf /odom
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 :source_end
 
-* Lab Instruction: Save and inspect the rosbag
+:slide_title Save and inspect the rosbag
+
 * Once you are satisfied you have visited the whole space
 * Click ^c to stop saving topics to the bag and close the file
 * Inspect the file and see if it looks reasoble
