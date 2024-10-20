@@ -1,87 +1,85 @@
 ---
 title: PA Line Follower
-desc: Sections
+desc: "Robot looks for line on the floor and follows it"
 slides: true
 ---
+
 :slide_title Introduction
-* High level descritpion of assignment
-* And of what will be learned.
+
+* This small but tricky assignment pulls together many of the strands of robotics engineering that we've been covering
+* You will work with basic image processing and computer vision, PID control, and more complex behaviors
+* This will not require any machine learning but feel free to use it yourself
+* You will Write a program to follow a distinct line on the ground using the robots camera
+* You will work with and process camera RGB data
+* You will learn how to use line detection, image filtering, and contour detection to identify already known features
 
 :slide_title Expected preparation
 
-* What we should have covered up to now
+* (Re-) read [Chapter 12 of PRR](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/ros_book/120_prr_follow_bot/)
+* Learn how to use openCV in ROS
+* Learn how to subscribe and use the camera image topics
+* Understand the RGB representation of an image
 
-:slide_title Specific Readings (PRR)
+:slide_title Additional references and resources
 
-* Key sections of PRR that are relevant
-
-:slide_title What skills this assignment covers
-
-* The list of "skills"
+* [OpenCV](https://docs.opencv.org/master/d6/d00/tutorial_py_root.html)
+* [OpenCV to ROS compatible image bridge](http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython)
+* [Contouring](https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html)
+* [Line recognition](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html)
 
 :slide_title Requirements for the PA
 
-* Exactly what behaviors are expected
+* You will solve this both in Sim and with an actual robot
+* The robot will begin at a spot just before the line.
+* It will Follow a distinct line on the ground/floor
+* It is your task to keep the robot as close to the line as possible for as much of the length of the path as possible
+* Much of this comes out of the book, but make sure you understand it
+
+And here are some Additional Challenges
+
+* Robot starts somewhere where the line is not immediately visible
+* Robot is able to double back along the line allowing it to follow the line infinitely
+* Robot uses Lidar (/scan) to detect an obstacle in the way. Place an object in gazebo of your choice to move around. The more "challenging" choice of obstacle(s) will mean more extra points awarded
 
 :slide_title Steps
 
-* Outline (sections and subsections)
-* Steps and order to follow
-* Without giving away the answer
-  
+* Subscribe to the compressed image topic
+* Convert the callback message compressed image to a opencv compatible image
+* Apply the image manipulation techniques to identify features of the line
+* Use the feature information to control the robots movement to keep following the line
+* Also it will be very helpful to find a way to debug your algorithms
+* Think: What information can you use about the location of your detected line to help control the robot?
+* Think: How can you debug your computer vision algorithms in Rviz?
+
+:slide_title Tips for the simulation
+:source_begin :bash
+# You will be provided with a basic gazebo world without any walls, 
+# and a single line. First make sure you have it.
+
+cw
+cd src/cosi119_src
+git pull
+
+# And now launch it with this command.
+
+roslaunch samples linemission.launch model:=waffle
+:source_end
+
 :slide_title What to submit
-* self explanatoriy
 
-# line_follower
+* A correctly structured ROS package including
+  * Nicely commented python source files
+  * Appropriate launch file
+  * Readme explaining how the code works
+* Video of your program running
+  * One in gazebo and one IRL
+  * Best to put the video on youtube and give the link
 
-## Videos
+:slide_title Example Videos
 
-- [Sample Solution - Sim](https://www.youtube.com/watch?v=tygWRKdvnPo&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=75)
-- [Sample Solution - Real](https://www.youtube.com/watch?v=8AC597dVKHg&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=80)
+* [Sample Solution - Sim](https://www.youtube.com/watch?v=tygWRKdvnPo&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=75)
+* [Sample Solution - Real](https://www.youtube.com/watch?v=8AC597dVKHg&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=80)
 
-## How to Run
-
-### The Skeleton Code (Sim)
-
-1. `export TURTLEBOT3_MODEL=waffle_pi`
-2. `roslaunch line_follower line_follower_sim.launch`
-3. `rosrun line_follower line_follower_sim.py`
-
-### The Answer (Sim)
-
-1. `export TURTLEBOT3_MODEL=waffle_pi`
-2. `roslaunch line_follower line_follower.launch`
-3. `rosrun line_follower line_follower_sim_answer.py`
-
-### The Skeleton Code (Real)
-
-1. `bringup` (onboard the robot)
-2. `rosrun line_follower my_odom.py`
-3. `rosrun line_follower line_follower_real.py`
-
-### The Final Submission (Real)
-
-1. `bringup` (onboard the robot)
-2. `rosrun line_follower my_odom.py`
-3. `rosrun line_follower line_follower_real_answer.py`
-
-## Instructions
-
-### Sim
-
-1. Using OpenCV, have the simulated robot follow the yellow line in the
-   `line_follower` world.
-
-### Real
-
-1. Have the robot follow a black line on the floor.
-2. Deal with an obstacle of known dimensions placed on the line.
-
-## PRR Readings
-
-Note: The PRR Readings are especially important for this assignment.
-
-All of Chapter 12 (pp.193-208).
 
 ## Notes
 
@@ -89,4 +87,20 @@ All of Chapter 12 (pp.193-208).
    In this case, it's not good to follow PRR's line following code, which puts all
    of its logic in the image callback function. This approach works in simulation,
    but when you work with a real robot, you'll quickly run into performance issues.
+1. Even though the starter code includes a my_odom.py, you are not required to use it, and you are also welcome to modify it.
+
+:slide_title What skills this assignment covers
+
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "Skills"
+:trow "ROS App: Basic structure of a ros app, ROSCore and Nodes"
+:trow "launch and run: Launch files, bringing up robots, running with simulation"
+:trow "Motion: Control motion with cmd_vel"
+:trow "Pubsub: publish and subscribe"
+:trow "pid: PID as key control algorithm"
+:trow "calc: Algorithms, calculations and state management"
+:trow "concurrent: highly concurrent programming"
+:trow "cv: images, cameras and opencv"
+:trow "lines: Basic opencv for line detection"
+:tend
 
