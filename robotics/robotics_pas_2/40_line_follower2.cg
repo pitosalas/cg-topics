@@ -60,7 +60,7 @@ cw
 cd src/cosi119_src
 git pull
 
-# And now launch it with this command.
+# And now launch it with this command. NOTE that it says model:=waffle
 
 roslaunch line_follower line_follower_sim.launch model:=waffle
 :source_end
