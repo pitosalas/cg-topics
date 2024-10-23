@@ -62,7 +62,7 @@ git pull
 
 # And now launch it with this command.
 
-roslaunch samples linemission.launch model:=waffle
+roslaunch line_follower line_follower_sim.launch model:=waffle
 :source_end
 
 :slide_title What to submit
