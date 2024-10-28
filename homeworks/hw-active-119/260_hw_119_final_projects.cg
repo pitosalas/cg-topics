@@ -1,18 +1,16 @@
 ---
-title: Final Submissions
+title: Final Instructions for Term Projects
 desc: See detailed instructions
 ---
 ## Purpose
 
-**NOTE** This is the integrated final deliverable that I promised to set up **
+We've come a long way and we are nearing the last turn to the finish line! This is when you pull it all together: your understanding of robotics, your engineering of your final project, your ability to explain and show it off. This note supersedes the original instructiosn which are here: :topic_link :cosi119a_final_project
 
-We've come a long way and we are nearing the last turn to the finish line! This is when you pull it all together: your understanding of robotics, your engineering of your final project, your ability to explain and show it off. [Additional Informatation](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/syllabus/cosi119a_final_project/) can be found [here](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/syllabus/cosi119a_final_project/).
+We are having our "dress rehearsal" ondate/time TBD. I expect that all of you will continue to tweak your work until the last minute for our actual Demo Day on Wedneday May 10. Be there at 9 or 9:30. Guests will arrive at 10:00. Don't expect a crowd. They will pop in and out.
 
-We are having our "dress rehearsal" on Friday May 5, from 11 to 1 in the lab. I expect that all of you will continue to tweak your work until the last minute for our actual Demo Day on Wedneday May 10. Be there at 9 or 9:30. Guests will arrive at 10:00. Don't expect a crowd. They will pop in and out.
+These submissions are due, as you can see, on TBD. But you are welcome to continue updating your github until demo day. I will be reviewing them over the weekend but the actual grading will be done after demo day. I will be looking for completeness and professionalism. I will be looking for the degree of challenge that you undertook and how well you met that challenge. I will be looking for the quality of your work and your ability to explain it.
 
-These submissions are due, as you can see, on Friday May 5 at midnight - 1 minute. But you are welcome to continue updating your github until demo day. I will be reviewing them over the weekend but the actual grading will be done after demo day. I will be looking for completeness and professionalism. I will be looking for the degree of challenge that you undertook and how well you met that challenge. I will be looking for the quality of your work and your ability to explain it.
-
-## Here are specific instructions (they are unchanged from the original instructions just elaborated, less duplication and clearer.
+## Here are specific instructions 
 
 * Prepare your demo for demo day
     1. It should take around 5-10 minutes
@@ -52,32 +50,20 @@ These submissions are due, as you can see, on Friday May 5 at midnight - 1 minut
     1. This is a private reflection, so you can be honest and open.
     1. No need to butter me up, I am sincerely interested in how this course affected you (or not) positively or negatively.
 
-## Grading
+### You will be graded on:
 
-* You will be graded on
-    1. Preparation
-    1. Quality and professionalism of the Deliverables
-    1. Degree of challenge that you undertook
-    1. How well you met that challenge
+1. Preparation for demo day
+1. Completeness of the deliverables per these instructions
+1. Quality and professionalism of the Deliverables
+1. Degree of challenge that you undertook
+1. How well you met that challenge
 
-* Please provide the deliverables (or links to them) here:
+### Submit
 
-* Link to your clean GitHub repo, in the campusrover github organization. While we will start looking at this for grading, you can still make corrections and adjustments until demo day.
-|____|
-
-* Each team member contributes one FAQ item to the Labnotebook (two or three links, depends on the team ). Your contributions will be in [this section of the lab notebook](https://campus-rover.gitbook.io/lab-notebook/faq)
-|____|
-
----
+* Link to your clean GitHub repo, in the campusrover github organization. 
+* Each team member contributes one FAQ item to the Labnotebook (two or three links, depends on the team ). Your contributions will be in [this section of the lab notebook](https://campus-rover.gitbook.io/lab-notebook/faq) Provide the link to each students' submission
 * A Project Report in the Labnotebook (one Link). Your project report will be in  the [Reports section](https://github.com/campusrover/labnotebook/tree/master/reports) of the lab notebook:
-
-|____|
-
 * A poster describing the project to people at the showcase  (1 pdf). The pdf should also be in your github. [Specifications and instructions for poster](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/logistics/poster/)
 |files|
-
 * The short video. Please provide the link here and in your github repo
-|____|
-
-
 * Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was. Please simply email that to me.

@@ -4,11 +4,10 @@ slides: true
 ---
 :slide_bigtitle Overall Process
 
-1. General Brainstorming in a Lab early in the semester. (see :topic_link :project_selection)
-1. Each student writes up one or two project ideas to submit as homework
-1. Students can work on these original projects or join a "Campus Rover" subproject. There are tradeoffs.
-1. Teams are proposed by a group of 1, 2 or 3 students. Pito has to approve
-1. In Class "Project Bazaar" where we talk and vote and choose projects
+1. [DONE] General Brainstorming in a Lab early in the semester. (see :topic_link :project_selection)
+1. [DONE] Each student writes up one or two project ideas to submit as homework
+1. [DONE] Teams are proposed by a group of 1, 2 or 3 students. Pito has to approve
+1. [DONE] In Class "Project Bazaar" where we talk and vote and choose projects
 1. Teams commit to a project
 1. Pursuing the project (either alone or with a teammate)
 1. Weekly project updates (scrum style)
@@ -16,9 +15,15 @@ slides: true
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
 1. Demoing your project and :topic_link :poster on Showcase Day
 
+:slide_title Scope
+
+* Starting now the majority of your "homework" will be your term project.
+* Expect 5-10 hours a week per student
+* This is work outside the classroom (and also outside lab time)
+* You will need to plan and manage your time to achieve this
 
 
-:slide_title What to submit
+:slide_title Final Submission
 
 * Link to your clean GitHub repo, in the campusrover github organization. While we will start looking at this for grading, you can still make corrections and adjustments until demo day. 
 * Each team member contributes one FAQ item to the Labnotebook
@@ -94,3 +99,4 @@ slides: true
 * Each student should make one Notebook contributions.
 * Think about a how-to, tutorial, explanation, concept, that you had to figure out yourselves that was difficult to track down and write it up for the next generation of students
 * Here are some examples: [Communicating with Rosserial](https://campus-rover.gitbook.io/lab-notebook/ros-tips/communicate-with-rosserial), [AWS RoboMaker](https://campus-rover.gitbook.io/lab-notebook/miscellaneous/aws-robomaker), [Alexa Voice Integration](https://campus-rover.gitbook.io/lab-notebook/cr-package/voice/voice)
+
