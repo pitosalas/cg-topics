@@ -1,0 +1,20 @@
+---
+title: Weekly Standups
+desc: Sharing your wins
+---
+:slide_title Borrowing some Agile/Scrum Principles
+
+* Try to always have something running
+* Integrate Early
+* Transparency about status
+* Demo early and often
+
+:slide_title Weekly Standup Reports
+
+* A standard and very simple report
+* Weekly deliverable, imilar to what professional software engineering teams do
+* Purpose is to give the team something clear to shoot for each week
+* It is a joint deliverable, most likely agreed upon during your weekly meetings
+* Designed to be extremely simple to prepare
+
+:topic_include :weekly_progress_updates
