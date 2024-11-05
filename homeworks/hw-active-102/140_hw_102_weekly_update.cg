@@ -1,0 +1,34 @@
+---
+title: Weekly Status Update
+desc: Deliverable from each team, every week
+cat: Pres
+---
+:slide_title Purpose of Weekly Status Report
+
+* Explaining the weekly status report Deliverable
+* Purpose is to give the team something clear to shoot for each week
+* It is a joint deliverable, most likely agreed upon during your weekly meetings
+* Designed to be extremely simple to prepare
+
+:slide_title Contents of Weekly Status Report
+* Each team submits a one page update covering their progress. It is a list as follows:
+
+:source_begin :shell
+Team Name:
+Date:
+
+Accomplished this week:
+    a.
+    b.
+Goal for next week:
+    a.
+    b.
+Blocking issues:
+    a.
+    b.
+
+Required is a link and/or screenshot to your team's
+social media post for this week, and provide
+a brief description of what you learned in the process.
+:source_end 
+
