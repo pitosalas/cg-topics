@@ -8,8 +8,8 @@ slides: true
 
 Every team will submit a single PDF every week with:
 
-* Team number, name and date
-* URL to your GitHub repo and your deployed Heroku app
+* Project name and date
+* URL to your GitHub repo 
 * For each team member: 
     * name
     * What you worked on last week (bullets, one sentence each)
