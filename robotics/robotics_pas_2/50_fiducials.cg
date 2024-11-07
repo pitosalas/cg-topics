@@ -1,80 +1,80 @@
 ---
 title: PA Fiducials
-desc: Sections
+desc: Fiducial Navigation Programming Assignment
 slides: true
 ---
+
 :slide_title Introduction
-* High level descritpion of assignment
-* And of what will be learned.
+
+* This final programming assignment pulls together what we've learned up to now
+* You will practice detecting fiducials and using them to do simple navigation
+* You will have to make sure the camera sees the fiducial and then navigates to it
+* The task seems quite simple but it requires mastery of several aspects of Robotics at once
+* What you learn here will very likely be directly applicable to your projects.
 
 :slide_title Expected preparation
 
-* What we should have covered up to now
+* Remember that the Platform and BranBot robots are preconfigured for fiducials where as the turtlebots will need some packages installed.
+* Before tackling the full assignment, experiment with the fiducials IRL interactively
+* You have to write a test program that prints out information of the fiducial it sees
+* You can choose to use OpenCV's fiducial algorithms by themselves or use the aruco_detect layer
+* Re-read PRR Chapter 2 to refresh your memory of coordinates and tfs/
 
-:slide_title Specific Readings (PRR)
-
-* Key sections of PRR that are relevant
-
-:slide_title What skills this assignment covers
-
-* The list of "skills"
+:slide_title Additional references and resources
+* [Ubiquity Robotics Fiducial Follow](https://github.com/UbiquityRobotics/demos/tree/master/fiducial_follow)
+* [Ubiquity Robotics Fiducials](https://learn.ubiquityrobotics.com/fiducials)
+* More generic CV: [OpenCV aruco detection](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) 
+* ROS Oriented: [aruco_detect](http://wiki.ros.org/aruco_detect)
 
 :slide_title Requirements for the PA
+* Setup
+   * Set up four red blocks in a square with about 2m edges (you can tweak this if you need to)
+   * Tape a fiducial to each of the blocks, facing inwards
+   * Place the robot in the center of the square
+* roslaunch your package
+   * The robot spins in place until it seems one (or more) fiducials
+   * It drives slowly up to one, and returns to the center
+   * And does it for the other three
+`
+:slide_title Videos showing a solution
 
-* Exactly what behaviors are expected
+* [Sample Solution - Sim](https://www.youtube.com/watch?v=w7RfK3PKW8M&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76)
+* [Sample Solution - IRL](https://www.youtube.com/watch?v=3K-Q4WguUSE&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=78)
 
-:slide_title Steps
+:slide_title Steps (Sim)
 
-* Outline (sections and subsections)
-* Steps and order to follow
-* Without giving away the answer
-  
+1. Study and understand the `mapper.py` file.
+2. Complete the `nav_sim.py` file such that the robot:
+   1. rotates in place to scan all the target fiducials; and
+   2. moves to each target fiducial in turn.
+
 :slide_title What to submit
-* self explanatoriy
 
-# fiducial_nav
+* A correctly structured ROS package including
+  * Nicely commented python source files
+  * Appropriate launch file
+  * Readme how to run it
+* Video of your program running
+  * One in gazebo and one IRL
+  * Best to put the video on youtube and give the link
+  * In your own voice, explain how the code works
 
-## Videos
-
-- [Sample Solution - Sim](https://www.youtube.com/watch?v=w7RfK3PKW8M&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76)
-- [Sample Solution - Real](https://www.youtube.com/watch?v=3K-Q4WguUSE&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=78)
-
-## How to Run
-
-### The Skeleton Code (Sim)
+:slide_title The Skeleton Code (Sim)
 
 1. `roslaunch fiducial_nav fiducials_sim.launch`
 2. `export TURTLEBOT3_MODEL=waffle_pi`
 3. `roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch`
 4. `rosrun fiducial_nav nav_sim.py`
 
-### The Answer (Sim)
+:callout :small, "NOTE", "The fiducials look wrong in gazebo, but the image through the camera is correct."
 
-1. `roslaunch fiducial_nav fiducials_sim.launch`
-2. `export TURTLEBOT3_MODEL=waffle_pi`
-3. `roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch`
-4. `rosrun fiducial_nav nav_sim_answer.py`
-
-### The Skeleton Code (Real)
+:slide_title The Skeleton Code (Real)
 
 1. `bringup` (onboard the robot)
 2. `roslaunch fiducial_nav fiducials_real.launch` (on your vnc)
 3. `rosrun rviz rviz` (on your vnc. Tune the RViz to visualize what you want.)
 4. `rosrun fiducial_nav nav_real.py`
 
-### The Answer (Real)
-
-1. `bringup` (onboard the robot)
-2. `roslaunch fiducial_nav fiducials_real.launch` (on your vnc)
-3. `rosrun rviz rviz` (on your vnc. Tune the RViz to visualize what you want.)
-4. `rosrun fiducial_nav nav_real_answer.py`
-
-## Instructions (Sim)
-
-1. Study and understand the `mapper.py` file.
-2. Complete the `nav_sim.py` file such that the robot:
-   1. rotates in place to scan all the target fiducials; and
-   2. moves to each target fiducial in turn.
 
 ## Instructions (Real)
 
@@ -88,7 +88,6 @@ slides: true
 
 ## PRR Readings
 
-1. Chapter 2, sections "tf: Coordinate Transforms" and "Pose, Positions, and Orientations" (pp.25-26)
 
 ## Resources
 
