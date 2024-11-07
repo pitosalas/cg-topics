@@ -11,6 +11,7 @@ Chapter 10 has a lot in it so I've divided it into three. This is part 2 so reme
 There's not a lot of code to write, but I would like you to actually run all the examples and try to understand what is going on. Remember, again: **look at the code provided in topic_link :prr_navigating
 
 ### Please submit responses
+
 1. How does move_base use the map, if at all?
 1. Why is it necessary to give an "estimated position"?
 1. What does amcl do during navigation, and why is that necessary?

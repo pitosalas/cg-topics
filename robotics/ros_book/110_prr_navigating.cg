@@ -3,9 +3,6 @@ title: "10 part2: Navigating"
 desc: How does the robot get from here to there, iven a map and AMCL localization
 slides: true
 ---
-* Prev: :topic_link :prr_localization
-* Next: :topic_link :prr_move_base
-
 :slide_bigtitle Navigation
 
 * Continuing from where we left off
