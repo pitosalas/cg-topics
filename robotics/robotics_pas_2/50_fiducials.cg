@@ -30,7 +30,7 @@ slides: true
 * [ROS Wiki tutorials on the tf2 package](http://wiki.ros.org/tf2/Tutorials).
 * [This](https://www.rosroboticslearning.com/rigid-body-transformations) may help
    you understand transforms better.
-* The `tf_cheatsheet.md` file found in the lab notebook.
+* The [tf cheatsheet in the labnotebook](https://campusrover.github.io/labnotebook2/faq/tf/tf_cheatsheet/?h=cheat)
 
 :slide_title Requirements for the PA
 
