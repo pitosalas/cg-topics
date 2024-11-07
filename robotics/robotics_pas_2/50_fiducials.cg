@@ -11,6 +11,7 @@ slides: true
 * You will have to make sure the camera sees the fiducial and then navigates to it
 * The task seems quite simple but it requires mastery of several aspects of Robotics at once
 * What you learn here will very likely be directly applicable to your projects.
+* Note that this assignment will only be done IRL.
 
 :slide_title Expected preparation
 
@@ -21,52 +22,41 @@ slides: true
 * Re-read PRR Chapter 2 to refresh your memory of coordinates and tfs/
 
 :slide_title Additional references and resources
+
 * [Ubiquity Robotics Fiducial Follow](https://github.com/UbiquityRobotics/demos/tree/master/fiducial_follow)
 * [Ubiquity Robotics Fiducials](https://learn.ubiquityrobotics.com/fiducials)
 * More generic CV: [OpenCV aruco detection](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) 
 * ROS Oriented: [aruco_detect](http://wiki.ros.org/aruco_detect)
+* [ROS Wiki tutorials on the tf2 package](http://wiki.ros.org/tf2/Tutorials).
+* [This](https://www.rosroboticslearning.com/rigid-body-transformations) may help
+   you understand transforms better.
+* The `tf_cheatsheet.md` file found in the lab notebook.
 
 :slide_title Requirements for the PA
+
 * Setup
-   * Set up four red blocks in a square with about 2m edges (you can tweak this if you need to)
-   * Tape a fiducial to each of the blocks, facing inwards
-   * Place the robot in the center of the square
+   * Four red blocks in a square with about 2m edges (you can tweak this if you need to)
+   * Fiducial taped to each of the blocks, facing inwards
+   * Robot in the center of the square
 * roslaunch your package
    * The robot spins in place until it seems one (or more) fiducials
    * It drives slowly up to one, and returns to the center
    * And does it for the other three
 `
-:slide_title Videos showing a solution
-
-* [Sample Solution - Sim](https://www.youtube.com/watch?v=w7RfK3PKW8M&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=76)
-* [Sample Solution - IRL](https://www.youtube.com/watch?v=3K-Q4WguUSE&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=78)
 
 :slide_title Steps (Sim)
 
+1. Construct the real environment that matches the simulation world, using real
+   fiducials.
 1. Study and understand the `mapper.py` file.
-2. Complete the `nav_sim.py` file such that the robot:
+1. Change the `fid_ids` parameter of the `mapper.py` file to match the ids of
+   your fiducials.
+1. Complete the `nav_real.py` file such that the robot:
    1. rotates in place to scan all the target fiducials; and
    2. moves to each target fiducial in turn.
-
-:slide_title What to submit
-
-* A correctly structured ROS package including
-  * Nicely commented python source files
-  * Appropriate launch file
-  * Readme how to run it
-* Video of your program running
-  * One in gazebo and one IRL
-  * Best to put the video on youtube and give the link
-  * In your own voice, explain how the code works
-
-:slide_title The Skeleton Code (Sim)
-
-1. `roslaunch fiducial_nav fiducials_sim.launch`
-2. `export TURTLEBOT3_MODEL=waffle_pi`
-3. `roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch`
-4. `rosrun fiducial_nav nav_sim.py`
-
-:callout :small, "NOTE", "The fiducials look wrong in gazebo, but the image through the camera is correct."
+1. Complete the `nav_sim.py` file such that the robot:
+   1. rotates in place to scan all the target fiducials; and
+   2. moves to each target fiducial in turn.
 
 :slide_title The Skeleton Code (Real)
 
@@ -75,29 +65,16 @@ slides: true
 3. `rosrun rviz rviz` (on your vnc. Tune the RViz to visualize what you want.)
 4. `rosrun fiducial_nav nav_real.py`
 
+* [Sample Solution - IRL](https://www.youtube.com/watch?v=3K-Q4WguUSE&list=PLWp7_Yk4l1aPcMGxCCvqKCSwnkTBBInI3&index=78)
 
-## Instructions (Real)
+:slide_title What to submit
 
-1. Construct a real environment that matches the simulation world, using real
-   fiducials.
-2. Change the `fid_ids` parameter of the `mapper.py` file to match the ids of
-   your fiducials.
-3. Complete the `nav_real.py` file such that the robot:
-   1. rotates in place to scan all the target fiducials; and
-   2. moves to each target fiducial in turn.
+* A correctly structured ROS package including
+  * Nicely commented python source files
+  * Readme how to run it
+  * Appropriate launch file
+* Video of your program running
+  * IRL
+  * Best to put the video on youtube and give the link
+  * In your own voice, explain how the code works
 
-## PRR Readings
-
-
-## Resources
-
-1. [ROS Wiki tutorials on the tf2 package](http://wiki.ros.org/tf2/Tutorials).
-2. [This](https://www.rosroboticslearning.com/rigid-body-transformations) may help
-   you understand transforms better.
-3. The `tf_cheatsheet.md` file found in the lab notebook.
-
-## Notes
-
-1. Pressing CTRL-R to reset your robot's position in Gazebo won't work for this project. This is because CTRL-R causes us to travel back in time in the simulation, which breaks the tf tree and the associated functionalities.
-
-2. Sometimes the tf2 package fails to build the tf tree correctly (e.g., reporting that certain frames that clearly do exist do not, or saying that two frames are not part of the same tf tree when they clearly are). You'll have to simply try relaunching Gazebo, RViz, and your `nav_sim` node in these situations.
