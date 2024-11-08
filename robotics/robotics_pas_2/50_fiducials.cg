@@ -44,17 +44,15 @@ slides: true
    * And does it for the other three
 `
 
-:slide_title Steps (Sim)
+:slide_title Steps
 
-1. Construct the real environment that matches the simulation world, using real
-   fiducials.
 1. Study and understand the `mapper.py` file.
-1. Change the `fid_ids` parameter of the `mapper.py` file to match the ids of
+2. Change the `fid_ids` parameter of the `mapper.py` file to match the ids of
    your fiducials.
-1. Complete the `nav_real.py` file such that the robot:
+3. Complete the `nav_real.py` file such that the robot:
    1. rotates in place to scan all the target fiducials; and
    2. moves to each target fiducial in turn.
-1. Complete the `nav_sim.py` file such that the robot:
+4. Complete the `nav_sim.py` file such that the robot:
    1. rotates in place to scan all the target fiducials; and
    2. moves to each target fiducial in turn.
 
