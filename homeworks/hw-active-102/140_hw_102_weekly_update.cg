@@ -11,20 +11,23 @@ cat: Pres
 * Designed to be extremely simple to prepare
 
 :slide_title Contents of Weekly Status Report
-* Each team submits a one page update covering their progress. It is a list as follows:
+* Each team submits a one page update covering their progress. 
+* Each bullet includes the student who was responsibile
+* It is a list as follows:
+
 
 :source_begin :shell
 Team Name:
 Date:
 
 Accomplished this week:
-    a.
-    b.
+    a. Student1: finished xxx
+    b. Student2: Got yyy to work
 Goal for next week:
-    a.
-    b.
+    a. Student 3: Continues working on xxx
+    b. Student 2: Hopefully will be ready with demo
 Blocking issues:
-    a.
+    a. Student 4: Has been out sick for several days
     b.
 
 Required is a link and/or screenshot to your team's
