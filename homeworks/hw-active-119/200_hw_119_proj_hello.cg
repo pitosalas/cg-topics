@@ -4,12 +4,17 @@ desc: First running program
 ---
 ### Purpose
 
-It's only one week later. This step is to push you to get to running and integrated code and then maintain that throughout the time on the project.
+It's only one week later. This step is to push you to get to running and integrated code and then maintain that throughout the time on the project. 
 
 ### Do this
 
-As advertised last week, this deliverable is the most inimal version of the project, in a real ROS package, demonstratable in 1 week. Very simplistic. We call that the "Hello Robot" version of your project. It's required to be up on your github repo and structued as a real ROS package. And it should run on a real robot and do something.
+I understand that you are just starting. The goal here is to demonstrate good practice by having a github repo set up and a ROS package created, including your initial nodes, topics, resources. And that it runs! Even if it does something very basic. They will certainly change in coming weeks. And it should run on a real robot and do something.
 
-### Submit this
+### To meet expectatoins submit this:
 
-Please submit the url of your repo. And also a video of your project running on a real robot. Make sure you and your teammate explain and narrate what is going on. You can talk about the code or show it if you like. No fancy production values needed. However it should be explanatory. Pretend you are giving a demo to Antonella!
+* The url of your repo containing your work as described above
+* A video of your project running on a real robot abd a tour of the package and code you are showing
+* It should be narrated by one of you humans
+* The narration should explain what you are showing, what is interesting about it, and what your next steps are.
+* No fancy production values needed. However it should be explanatory.
+* Pretend you are giving a demo to Antonella!
