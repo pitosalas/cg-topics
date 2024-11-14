@@ -1,0 +1,82 @@
+---
+title: Behavior Trees
+desc: More sophisticated control of behavior trees
+---
+:slide_bigtitle Introduction to Behavior Trees
+
+* Some similarity to FSM, however...
+* BTs are specifically trees, with one root and leaves
+* BTs have different `kinds` of nodes with very different semantics
+* The `leaves` represent the actual control actions
+* All the other nodes are part of the control logic
+
+:slide_title py_trees
+
+* This example uses this library: [py_trees](https://py-trees.readthedocs.io/en/devel/)
+* As we are using ROS1, you need to use py_trees 0.7 of this library
+* Latest version is not compatible with the current version of ROS
+
+https://www.youtube.com/watch?v=KeShMInMjro
+
+:slide_title Behavior Tree Execution
+
+:image :bt_example_move_base
+
+* "Tick" oriented control flow
+* A tree is "ticked", which "ticks" the top node
+* Each node type has specific semantics about what happens on a tick
+* Nodes can return one of: SUCCESS, FAILURE, RUNNING
+
+:slide_title Behavior Tree Returns
+
+* SUCCESS: The action is complete and was successfull
+* FAILURE: The action is done but failed
+* RUNNING: The action is incomplete and needs to be ticked again
+
+* You will discover that the semantics of these are a little subtler than they seem initially
+
+:slide_title Behavior Nodes - Example
+
+* Behavior nodes are the leaf nodes.
+* They execute code which actually "do something" to outside of the tree
+* They could cause an action or read a sensor or anything else.
+* Simple example: `blink light once` would:
+  1. On Update: Tell the hardware to turn the light on and off; Return SUCCESS (because it always works.)
+* Simple example: `turn light on` with a parameter: n seconds, would:
+  1. On Init: set initial time <- current time; turn the light on
+  1. On Update: if current time > initial time + n: turn off the light; return SUCCESS; else return RUNNING
+
+:slide_title Behavior Nodes
+
+* Life Cycle of a behavior node
+* Setup (optional): one time initiatlization of state when first instantiated
+* Initialize (optional): called each time that the node is entered anew (i.e. when its not RUNNING)
+* Update (required): called each time the node is ticked
+* Terminate (optional): called whenever the node goes to not RUNNING
+
+:slide_title Composites
+
+* The non-leaf nodes are all known as composites
+* Generally the leftmost leaf is `ticked` first
+* Depending on Composite type and returned status of that node, different next nodes may be ticked
+* Core (traditional) set of Composites are: Sequence, Selector, Parallel
+* But depending on the library, there may be other variations (which are all extensions of this set.
+
+:slide_title Sequence
+
+* Most common
+* Tick from left to right
+* Each SUCCESS result leads to the next node
+* Any non-SUCCESS ends the sequence and returns that same status up the chain
+
+:slide_title Selector
+
+* Also very useful, kind of the reverse
+* Tick from left to right as long as the child returns FAILURE
+* The first non-failure makes the whole Composit3e return
+
+:slide_title Parallel
+
+* Returns FAILURE if any child returns FAILURE
+* Otherwise keeps ticking all the children
+* Depending on policy it will return when one or all the children have returned SUCCESS
