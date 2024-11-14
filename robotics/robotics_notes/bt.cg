@@ -12,11 +12,11 @@ desc: More sophisticated control of behavior trees
 
 :slide_title py_trees
 
-* This example uses this library: [py_trees](https://py-trees.readthedocs.io/en/devel/)
+* This example uses this library: [py_trees](https://py-trees.readthedocs.io/en/release-0.7.x/)
 * As we are using ROS1, you need to use py_trees 0.7 of this library
 * Latest version is not compatible with the current version of ROS
 
-https://www.youtube.com/watch?v=KeShMInMjro
+:youtube "https://www.youtube.com/embed/KeShMInMjro?si=sL_Kh0KkQ3LX1qyE"
 
 :slide_title Behavior Tree Execution
 
@@ -26,6 +26,14 @@ https://www.youtube.com/watch?v=KeShMInMjro
 * A tree is "ticked", which "ticks" the top node
 * Each node type has specific semantics about what happens on a tick
 * Nodes can return one of: SUCCESS, FAILURE, RUNNING
+
+:slide_title Node Types 
+* These control flow
+  * Sequence - perform each child node in turn as long as they return SUCCESS
+  * Selector - perform the first child node that returns SUCCESS
+  * ... several mode
+
+* Behavior nodes actually DO somerthing
 
 :slide_title Behavior Tree Returns
 
