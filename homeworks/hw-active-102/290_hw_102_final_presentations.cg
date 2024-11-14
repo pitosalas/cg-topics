@@ -30,8 +30,8 @@ cat: Pres
 :slide_title Read The following
 
 * [How to Nail A group Presentation](https://bothsidesofthetable.com/how-to-nail-a-group-presentation-dfaaac59aa75)
-* [General Hints for Presentation](http://cosi102r.s3-website-us-east-1.amazonaws.com/content/topics/logistics/presentation_hints_general/)
-* [Specific Tips for 102a](http://cosi102r.s3-website-us-east-1.amazonaws.com/content/topics/syllabus/cosi102a_presentation_content_tips/)
+* :topic_link :presentation_hints_general
+* :topic_link :cosi102a_presentation_content_tips
 
 ### Do this
 
