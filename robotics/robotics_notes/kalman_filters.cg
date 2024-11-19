@@ -6,7 +6,7 @@ title: Kalman Filters
 * Kalman "Filter" is a mathematical algorithm
 * It estimates the true value of an uncertain measurement 
 * Kalman filters are ideal for systems which are continuously changing
-* Given noisy inputs, for example, GPS, Odom or IMU
+* Given noisy inputs, for example, GPS, Odom and/or IMU
 * Calculate, for example, the actual speed of a robot, or the true location of a robot
 * Makes an "educated guess" about what the system is going to do next.
 
@@ -18,7 +18,8 @@ title: Kalman Filters
   1. And uncertain measurements
   1. How do you get the best possible estimate of the state?
 * Well supported by math and statistical analysis
-  * One key insight two inaccurate readings can be combined into an estimate that is **more** (not less)  accurate than either one alone.
+  * One key insight two inaccurate readings can be combined into an estimate that is **more** (not less) accurate than either one alone.
+  * Assuming errors are truly independent
 
 :slide_title Learning about Kalman Filters
 
@@ -53,18 +54,20 @@ title: Kalman Filters
 
 * Sensors are everywhere in robotics
 * Sensors are known to be inaccurate
-* Kalman filters are a family of algorithms that give us more accurate estimates by combining readings with known error rates
+* Kalman filters are a family of algorithms *that give us 
+* More accurate estimates by combining readings with known error rates
 * They are efficient and they work
 
 :slide_title System
 
 * Kalman filter looks at a "system" which has a "state"
-* The system may change over time
+* The system state may change over time
   1. Based on it's own internal operation
-  1. Based on "control" input from the outside
-  1. Based on "sensor" readings
+  2. Based on "control" input from the outside
+  3. Noise or pertrubation 
 * We gain information about the "system"
 * By sensing data which allow us to infer system changes
+
 
 :slide_title Kalman Filter
 
@@ -79,23 +82,30 @@ title: Kalman Filters
 * "all things being equal"
 * (Note the conceptual similarity to AMCL)
 
-:slide_title State
+:slide_title State (X)
 
-* a vector (set) of numbers representing the state you are trying to measure
+* a vector (set) of numbers representing the state you are trying to measure (e.g. location)
 * Vector/Matrix representation is for ease of calculation
 * But it can also make things look more complicated (for some people)
 * Usually denoted by X, containing numbers, here are a series of examples
   1. current x or y position
-  1. current speed in the x or y direction
-  1. current distance from obstacle
-  1. current altitude from the surface
+  2. current speed in the x or y direction
+  3. current distance from obstacle
+  4. current altitude from the surface
+
+:slide_title Covariance Matrix (Σ)
+
+* A way to express the confidence in each component of the state
+* And the known correlation between them
 
 :slide_title Control Model
 
 * Look beyond the internal of the system, what is telling it to change?
-* Control input: driver steps on break or accelerator
-* Gravity is pulling the ball downhill
-* cmd_vel is telling the robot to stop
+* Control input: 
+  * Driver steps on break or accelerator
+  * Gravity is pulling the ball downhill
+  * cmd_vel is telling the robot to stop
+* The control model determines the next state given the current state and the control input
 * Note: The model often has a random component called process noise.
 
 :slide_title  Sensor Model
@@ -113,9 +123,9 @@ title: Kalman Filters
 * What if you have thousands of measurements (10 per second, like a bathroom scale)
 * Models:
   1. State: unchanging (objects weight is  not expected to change)
-  1. Control Inputs: (is an outside agent acting to change) None
-  1. Measurement Model: (how accurate is the sensor)
-  1. Update: What is the weight estimate now?
+  2. Control Inputs: (is an outside agent acting to change) None
+  3. Measurement Model: (how accurate is the sensor)
+  4. Update: What is the weight estimate now?
 * In this situation the Kalman filter does not have an advantage over a simple moving average
 * Why?
 
