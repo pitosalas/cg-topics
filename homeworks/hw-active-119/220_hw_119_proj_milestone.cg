@@ -23,23 +23,12 @@ This will be a 30 minute meeting with me where the team presents their current s
 * Explaining the current status of the project
 * How you are dividing up the work so that all teammates have a meaningful role
 
-## GRADING
+## Expectations
 
-* If you dom't schedule the meeting, or come totally unprepared and I abort the meeting, that is a zero
-* If the presentation is not well organized or clear or doesn't cover the requested points -5
-* For each teammate that is absent from the meeting -5
-* If there is no real presentation -10
-* If you have not considered the schedule, or who does what, -5
-* There is no code to look at or it is too little or otherwise problematic
-* If you cannot explain what you will be demoing -5
-
-
-## SUBMIT THIS
-
-* The url of your github repo
-
-|____|
-
-* The reqested writeup
-
-|files|
+* You must schedule and show up for it (I might abort the meeting if I decide that you are not prepared.)
+* Your presentation must be organzied and clear and cover the requested points
+* You should have code to look at (github) and be prepared to explain it to me
+* Who should be present:
+  * 1 person for teams of 1 or 2
+  * 2 people for larger teamsTeams
+  * Preferably all teammaes
