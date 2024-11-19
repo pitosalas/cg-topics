@@ -93,10 +93,10 @@ title: Kalman Filters
   3. current distance from obstacle
   4. current altitude from the surface
 
-:slide_title Covariance Matrix (Σ)
+:slide_title Covariance Matrix (P)
 
-* A way to express the confidence in each component of the state
-* And the known correlation between them
+* A way to express the confidence in each component of the state 
+* And the known correlation between them (Σ)
 
 :slide_title Control Model
 
@@ -174,6 +174,6 @@ title: Kalman Filters
 * Learning Kalman Filters: [The Extended Kalman Filter, an interactive tutorial](https://simondlevy.github.io/ekf-tutorial/)
 * [Kalman Filter In Depth](https://www.kalmanfilter.net/kalman1d.html)
 * [How a Kalman Filter Works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
-* [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
+* [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.github.io/ekf-tutorial/)
 * [Kalman Filter for Dummies](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies)
 * [Kalman Filter: Predict, Measure, Repeat](https://medium.com/@tjosh.owoyemi/kalman-filter-predict-measure-update-repeat-20a5e618be66)
