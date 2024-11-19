@@ -96,25 +96,28 @@ title: Kalman Filters
 * Control input: driver steps on break or accelerator
 * Gravity is pulling the ball downhill
 * cmd_vel is telling the robot to stop
+* Note: The model often has a random component called process noise.
 
 :slide_title  Sensor Model
 
 * Given a measurement from the outside world
+* Important: what is the reliability of the sensor (from spec or empirical measurement)
 * How does the state model change
 
 :slide_title 1D Scenario: bathroom scale
 
 * Using a scale with a known error rate
 * Sensor generates 10 readings per second
-* You know that the weight won't change
-* What do you use? Average? Weighted Average? Or?
+* You know that the weight won't change (ground truth)
+* What do you use? Average? Moving Average? Or?
 * What if you have thousands of measurements (10 per second, like a bathroom scale)
 * Models:
   1. State: unchanging (objects weight is  not expected to change)
   1. Control Inputs: (is an outside agent acting to change) None
   1. Measurement Model: (how accurate is the sensor)
   1. Update: What is the weight estimate now?
-
+* In this situation the Kalman filter does not have an advantage over a simple moving average
+* Why?
 
 :slide_title 1D Scenario: Train
 
@@ -158,7 +161,7 @@ title: Kalman Filters
 :slide_break Links for further study
 
 * [Detailed Youtube on Kalman FIlters](https://www.youtube.com/watch?v=u1QcZxWRYtg&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=10)
-* Learning Kalman Filters: [The Extended Kalman Filter, an interactive tutorial](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
+* Learning Kalman Filters: [The Extended Kalman Filter, an interactive tutorial](https://simondlevy.github.io/ekf-tutorial/)
 * [Kalman Filter In Depth](https://www.kalmanfilter.net/kalman1d.html)
 * [How a Kalman Filter Works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 * [Extended Kalman Filter Tutorial for Non-Experts](https://simondlevy.academic.wlu.edu/kalman-tutorial/)
