@@ -8,10 +8,10 @@ slides: true
 1. [DONE] Each student writes up one or two project ideas to submit as homework
 1. [DONE] Teams are proposed by a group of 1, 2 or 3 students. Pito has to approve
 1. [DONE] In Class "Project Bazaar" where we talk and vote and choose projects
-1. Teams commit to a project
-1. Pursuing the project (either alone or with a teammate)
-1. Weekly project updates (scrum style)
-1. Preparing for the "Autonomous Robotics Final Project Showcase"
+1. [DONE] Teams commit to a project
+1. [DONE] Pursuing the project (either alone or with a teammate)
+1. [DONE] Weekly project updates (scrum style)
+1. [DONE] Preparing for the "Autonomous Robotics Final Project Showcase"
 1. Writing a Project Report and adding it to the Lab Notebook (see below)
 1. Demoing your project and :topic_link :poster on Showcase Day
 
@@ -22,14 +22,11 @@ slides: true
 * This is work outside the classroom (and also outside lab time)
 * You will need to plan and manage your time to achieve this
 
-
 :slide_title Final Submission
 
 * Link to your clean GitHub repo, in the campusrover github organization. While we will start looking at this for grading, you can still make corrections and adjustments until demo day. 
 * Each team member contributes one FAQ item to the Labnotebook
 * A Project Report in the Labnotebook
-* A :topic_link :poster describing the project to people at the showdcase
-* Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was
 
 :slide_title Autonomous Robotics Final Project Showcase
 
@@ -43,7 +40,6 @@ slides: true
 * In the case of team, we grade the work of the team as a whole
 * Each team member however will be assigned a grade reflecting their level of participation and contribution to the group work. 
 * In other words, you might not get the full project grade if you didn't participate fully in the project. 
-* This grade will count for 40% of your final grade.
 
 :slide_bigtitle Details
 
@@ -83,16 +79,6 @@ slides: true
 * Make sure that you reserve the robot you need for your demo
 * If you want to share a demo with another team that's fine
 * But the assessment will be individual
-
-:slide_title Posters
-
-* Make a classic "Poster" describing your project
-* Format: pdf size: 27x36 inches (landscape)
-* See, e.g. [Poster Basics](https://guides.nyu.edu/posters), [Duke guide](https://dukeahead.duke.edu/sites/dukeahead.duke.edu/files/u94/Poster%20Creation%20Presentation.pdf), [google](http://lmgtfy.com/?q=academic+poster)
-* Audience is someone familiar with robotics
-* Explain your objective and your project
-* Team members, dates
-* Make it look pretty! Don't have too many words. Have some çdiagrams or pictures
 
 :slide_title Contribution to Lab Notebook
 

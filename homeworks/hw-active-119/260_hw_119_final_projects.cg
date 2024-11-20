@@ -4,13 +4,14 @@ desc: See detailed instructions
 ---
 ## Purpose
 
-We've come a long way and we are nearing the last turn to the finish line! This is when you pull it all together: your understanding of robotics, your engineering of your final project, your ability to explain and show it off. This note supersedes the original instructiosn which are here: :topic_link :cosi119a_final_project
+We've come a long way and we are nearing the last turn to the finish line! This is when you pull it all together: your understanding of robotics, your engineering of your final project, your ability to explain and show it off. This note supersedes the original instructions.
 
-We are having our "dress rehearsal" ondate/time TBD. I expect that all of you will continue to tweak your work until the last minute for our actual Demo Day on Wedneday May 10. Be there at 9 or 9:30. Guests will arrive at 10:00. Don't expect a crowd. They will pop in and out.
+### Dates
 
-These submissions are due, as you can see, on TBD. But you are welcome to continue updating your github until demo day. I will be reviewing them over the weekend but the actual grading will be done after demo day. I will be looking for completeness and professionalism. I will be looking for the degree of challenge that you undertook and how well you met that challenge. I will be looking for the quality of your work and your ability to explain it.
+1. **Dress Rehearsal**: Date/Time tbd: . expect that all of you will continue to tweak your work until the last minute. The purpose of this meeting is mostly to work out coordination etc.
+1. **Cosi119 Demo Day**: Fridqy December 13 at 1:30pm in the lab. Please be there at 1:00pm or before. Guests will arrive at 1:30pm. Don't expect a crowd. They will pop in and out.
 
-## Here are specific instructions 
+### Here are specific instructions 
 
 * Prepare your demo for demo day
     1. It should take around 5-10 minutes
@@ -21,8 +22,6 @@ These submissions are due, as you can see, on TBD. But you are welcome to contin
     1. Decide on what "props" (walls, obstacles, costumes) you need and make sure you have them
     1. You may use the big screen or the movable screen
     1. Using actual physical robots you will do your demo
-* Prepare the Poster as per instructions
-    1. The pdf of the poster **should be in your github repo**
 * Prepare a short video of a dry run of your demo
     1. It should be 2-6 minutes
     1. You are not Stephen Spielberg, neither am I
@@ -43,27 +42,64 @@ These submissions are due, as you can see, on TBD. But you are welcome to contin
     1. There's no set length
     1. It's something useful that you can explain how to do for future students in this course.
     1. Again there are lots of examples.
-* Each teammate prepares a reflection on the course
-    1. If possible explain your part of the project, what you produced
-    1. Talk about the team dynamics, how you split up the work and how it all worked out
-    1. Talk aboutu maybe the impact of this course on your view of yourself as a computer scientist and your future.
-    1. This is a private reflection, so you can be honest and open.
-    1. No need to butter me up, I am sincerely interested in how this course affected you (or not) positively or negatively.
 
 ### You will be graded on:
 
 1. Preparation for demo day
 1. Completeness of the deliverables per these instructions
 1. Quality and professionalism of the Deliverables
-1. Degree of challenge that you undertook
+1. Degree of challenge that you undertook (relative to the number of students on your team)
 1. How well you met that challenge
 
 ### Submit
 
 * Link to your clean GitHub repo, in the campusrover github organization. 
-* Each team member contributes one FAQ item to the Labnotebook (two or three links, depends on the team ). Your contributions will be in [this section of the lab notebook](https://campus-rover.gitbook.io/lab-notebook/faq) Provide the link to each students' submission
-* A Project Report in the Labnotebook (one Link). Your project report will be in  the [Reports section](https://github.com/campusrover/labnotebook/tree/master/reports) of the lab notebook:
-* A poster describing the project to people at the showcase  (1 pdf). The pdf should also be in your github. [Specifications and instructions for poster](http://cosi119r.s3-website-us-west-2.amazonaws.com/content/topics/logistics/poster/)
-|files|
+* Each team member contributes one FAQ item to the Labnotebook (two or three links, depends on the team). Your contributions will be in [this section of the lab notebook](https://campusrover.github.io/labnotebook2/faq/home/) Provide the link to each students' submission
+* A Project Report in the Labnotebook (one Link). Your project report will be in  the [Reports section]https://campusrover.github.io/labnotebook2/reports/) of the lab notebook:
 * The short video. Please provide the link here and in your github repo
-* Each teammate separately (and not in the lab notebook), is asked to provide a reflection, including specifically what their contribution was to the project was. Please simply email that to me.
+
+:slide_bigtitle Details on Deliverables
+:slide_title Github Repo
+
+* The code should be clean and well structured, and organized as a working ROS package. 
+* It should not have any random left over files so that you would be proud to put the link on your resume
+* It should include the pdf of your :topic_link :poster
+* It should include a readme.md including links to the labnotebook Project Report (check [How to write a quality readme](https://dev.to/coderarchive/writing-a-high-quality-readme-1k3j) for ideas)
+
+:slide_title Final Project report
+
+* Report should be around 10 pages
+* We pay attention to appearance, quality of writing, "fit and finish". 
+* You will add it to the appropriate section of the Lab Notebook.
+* Here are instructions on how to do that: [Lab Notebook Final Reports Section](https://campus-rover.gitbook.io/lab-notebook/reports)
+
+:slide_title Rough outline of report
+
+1. Introduction
+    1. Problem statement, including original objectives
+    1. Relevant literature
+1. What was created (**biggest section**)
+    1. Technical descriptions, illustrations
+    1. Discussion of interesting algorithms, modules, techniques
+    1. Guide on how to use the code written
+    1. Clear description and tables of source files, nodes, messages, actions and so on
+1. Story of the project. 
+    1. How it unfolded, how the team worked together
+    1. problems that were solved, pivots that had to be taken
+    1. Your own assessment
+
+:slide_title Presenting and Explaining Your Project
+
+* Show case what you've learned and what you built in the best possible light
+* Come up with a cool and interesting demo
+* Make sure that you reserve the robot you need for your demo
+* If you want to share a demo with another team that's fine
+* But the assessment will be individual
+
+:slide_title Contribution to Lab Notebook
+
+* Each student should make one Notebook contributions.
+* Think about a how-to, tutorial, explanation, concept, that you had to figure out yourselves that was difficult to track down and write it up for the next generation of students
+* Here are some examples: [Communicating with Rosserial](https://campus-rover.gitbook.io/lab-notebook/ros-tips/communicate-with-rosserial), [AWS RoboMaker](https://campus-rover.gitbook.io/lab-notebook/miscellaneous/aws-robomaker), [Alexa Voice Integration](https://campus-rover.gitbook.io/lab-notebook/cr-package/voice/voice)
+
+
