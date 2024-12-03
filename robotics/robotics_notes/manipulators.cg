@@ -1,0 +1,42 @@
+---
+title: Manipulators
+---
+
+slide_bigtitle Manipulators
+
+:topic_include :joints_and_links
+
+:slide_title Kinematic Chains
+
+* A set of links and joints together form a *kinematic chain*
+* If one end is attached to something fixed (like the floor) it is "grounded"
+* The other end will usually have some kind of gripper, sensor, or effector
+* This system can be complex and can be analyzed mathematically
+
+:slide_title Coordinate Frames
+
+* Ground based mobile robots have two important coordinate frames: the map and robot frames.
+* Robot arms have many more coordinate systems.
+* The links are fixed and of known length
+* The joints are all in a known position represented by one or more angles
+* Joint space and task space
+* In ROS, names in URDF are used to name the frames
+
+:slide_title Forward and Reverse
+
+* Forward Kinematics
+    1. If you set all the joint angles a certain way, where will the end be in space?
+    1. This has a single solution and is tractable
+* Reverse Kinematics
+    1. If you want the end to be in a certain location, what should the joint angles be?
+    1. This might have zero (out of reach), or more solutions
+
+:slide_title Simple case
+
+:youtube "https://www.youtube.com/embed/IKOGwoJ2HLk"
+
+:slide_bigtitle PythonRobotics Learning Samples
+
+* Let's skim some code: [Arm Navigation](https://pythonrobotics.readthedocs.io/en/latest/modules/arm_navigation/arm_navigation.html#inverse-kinematics-for-a-planar-two-link-robotic-arm)
+* Lets run that code too
+
