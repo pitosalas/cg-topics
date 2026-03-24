@@ -4,110 +4,140 @@ title: Startup Funding
 
 :slide_bigtitle Startup Funding
 
-* You need money to pay salaries and other expenses
-* You don't have revenue, or you don't have enough profit
+(Alternate version :topic_link :startup_funding_good)
 
-:slide_title Where might money come from?
+* You need money. You don't have enough revenue.
+* Before you raise: **do you actually need outside money?**
 
-1. Friends and Family
-2. Consulting/Work on the side
-3. Angels - Individuals or in groups (e.g. Walnut or Common Angels)
-4. Venture Capital - Organized as funds - two sided (e.g. North Bridge or NEA)
-5. Incubators/Seed funding companies (e.g. Y-Combinator or TechStars)
-6. Crowdfunding (e.g. KickStarter)
-7. (Banks)
+:slide_title The Road Map Today
 
-:slide_title What stage is your business?
+* Should you raise at all?
+* Where does the money come from — and what does it cost you?
+* Who are investors and what do they want?
+* How do you actually raise?
+* What are you signing?
 
-* These are not set in concrete, but they are typical
-* Key parameters are: How much is being invested, and at what valuation
+:slide_title Should You Raise At All?
 
-:slide_title Stages
+* Raising money is not an achievement — it's a trade
+* You are selling a piece of your company, permanently
+* VC money = **growth-or-bust trajectory**
+* Many great companies are bootstrapped
+* Can you reach profitability without outside capital?
 
-* Pre-seed:
-  * Idea, maybe a prototype, no revenue
-  * 1 to 5 founders
-  * Friends and Family, Angels, Incubators
-  * $10K to $100K investments
-* Seed: Prototype, maybe some revenue, no profit
-  * 1 to 5 founders
-  * Angels, Incubators, Seed Funds
-  * $100K to $1M investments
-* A-Round: Product, some revenue, no profit
-  * 5 to 20 employees
-  * Super-Angels, VCs
-  * $1M to $10M investments
+:slide_title Where Might Money Come From?
 
-:slide_title Angels, Super Angels, Micro VCs
+* **Keep all your equity:**
+  * Consulting / Side Work
+  * Grants (NSF SBIR, NIH)
 
-* Generally invest their own money
-* (Contrast VC who invest other people's money)
-* Decision making process is less formal and more intuitive
-* Investment amounts are smaller
+* **Give up some equity, stay in control:**
+  * Friends and Family
+  * Crowdfunding
+  * Angels
 
-:slide_title What is a VC firm?
+* **Give up equity and a seat at the table:**
+  * Incubators / Accelerators (Y-Combinator, TechStars)
+  * Micro VCs (Precursor, Hustle Fund)
+  * Venture Capital (North Bridge, NEA)
 
-* A "firm" that stands between two constituencies
-* Limited Partners (LPs) and Startups
+:slide_title What Stage Is Your Business?
 
-:slide_title "Limited Partners"
+* **Pre-seed**: idea/prototype, no revenue — $50K–$500K
+* **Seed**: early users, maybe revenue — $500K–$3M
+* **A-Round**: real traction, growing fast — $8M–$25M
+* Note: stage names have inflated
 
-* Organizations like Universities or pension Plans
-* Who need to "manage" a large sum of money
-* They allocate portions of their funds to different investment types
-* One of the investment types is "venture capital"
+:slide_title What Do Investors Want to See?
 
-:slide_title Venture capital as a "investment class"
+* **Team** — expertise and resilience
+* **Market** — is the TAM big enough?
+* **Traction** — show don't tell
+* **Insight** — do you see something others don't?
+* **Timing** — why now?
 
-* Considered high risk and very long term
-* Startups and other businesses who need money
-* New teams looking to raise capital
-* Previously funded teams who need more capital
-* Existing companies who are established and need more capital.
+:slide_title Understanding Your Investors: VCs
 
-:slide_title "Value add" of VC firm
+* Fund structure: Limited Partners → GPs → Startups
+* GPs get paid: **2% management fee + 20% carry**
+* 10-year fund life: 5 years investing, 5 years returning
+* Returns follow a **power law** — one deal returns the whole fund
+* This is why VCs need hypergrowth
+* **Wrong tool for a lifestyle business**
 
-* Locating the best investments into a portfolio of investments
-* Managing the portfolio companies for best outcome
-* Over 7 years goal is
-1. 10% companies are 100+x successes
-1. 40% companies do "ok"
-1. 40% fail outright
-* VC pools "Limited Partner" funds into numbered Funds
-* Each VC will choose an appropriate size fund.
+:slide_title The Fundraising Process
 
-:slide_title What is the process?
+* It's a **sales process** — treat it like one
+* Warm introductions only — cold emails don't work
+* Run a **parallel process** — many investors at once
+* Timeline: 3–6 months
+* Create urgency
+* Get a lawyer before you sign anything
 
-* Rounds of investment
-* How valuation changes
-* Term sheets
-* Liquidation preferences will turn your hair grey.
-* Founders have an idea - investors have money
-* It's a contract between founders and investors
+:slide_title How Money Is Structured: Equity vs. Debt
 
-:slide_title Valuation
+* **Equity** — sell a percentage. Permanent. No repayment.
+* **Debt** — borrow and repay with interest. Keep ownership.
+* Most startup funding is equity, or converts into equity
+* Equity investors become part-owners — they have opinions
 
-* What is the company worth - what would it cost for me to buy it from you?
-* Like any asset, it's a negotiation (like a house)
-* It's simple arithmetic but it is confusing
-* Pre-money - what is your company worth before the investment?
-* Post-money - Note that this is equal to pre-money + amount invested
-* [Let's work an example in google
-sheets](https://docs.google.com/a/brandeis.edu/spreadsheets/d/1e40QxrBat3WOoZ0kMV9Omd6MUius4JUaqSUvIamzILc/edit?usp=sharing)
+:slide_title SAFEs and Convertible Notes
+
+* Early deals rarely use priced equity rounds
+* **SAFE**: no interest, no maturity date, converts at next round
+* **Convertible Note**: similar but carries interest and maturity date
+* Both include a **valuation cap** and/or **discount rate**
+* SAFE is now the industry standard
+
+:slide_title Valuation and Dilution
+
+* **Pre-money**: what your company is worth before the check
+* **Post-money**: pre-money + investment
+* Example: raise $1M on $4M pre-money
+  * Post-money = $5M. Investor owns **20%**. You own **80%**.
+* Every round you give up a slice — this is **dilution**
+* Small slice of something big beats all of something small
+
+:slide_title How Dilution Compounds
+:tbegin "table-striped table-sm table-responsive table-hover"
+:thead "Round;Raised;Pre-money;% Sold;Founder Owns"
+:trow "Seed;$1M;$4M;20%;80%"
+:trow "A;$5M;$15M;25%;60%"
+:trow "B;$15M;$45M;25%;45%"
+:tend
+* 10–20% at IPO is normal — the company is worth far more
+* Watch out for excessive early dilution and option pool requirements
+
+:slide_title Term Sheets — What You're Negotiating
+
+* Non-binding summary of the deal
+* Economic terms: **valuation, option pool, liquidation preference**
+  * 1x non-participating preference = founder-friendly
+  * Participating preferred ("double dip") = not
+* Control terms: **board seats, pro-rata rights**
+
+:slide_title Board, Control and Governance
+
+* VC money usually means giving up a board seat
+* Board controls: hiring/firing CEO, selling the company, future rounds
+* Early: founders control. Later: balance shifts.
+* Founders get fired by their own boards — this happens
+* Understand what you're signing before you sign it
+
+:slide_title Fund Raising Step By Step
+
+* Develop a plan that balances capital/time/milestones
+* Decide what need to do now, and what can be deferred
+* Define your financing milestones
+* Determine how much capital to raise for your first milestone
+* Ensure you position yourself for the next financing, ideally at a step-up
 
 
-:slide_title Rounds of financing
+:slide_title Key Takeaways
 
-* What is a round
-* How does it end? Liquidity Event
-* Seed/Angel, A-Round, B-Round, ... IPO or Acquisition
-
-:slide_title What you negotiate over
-
-* Valuation and Investment amount are the key parameters
-* How term sheets turn into "deals"
-* What's a seed deal?
-* Should you or shouldn't you?
-* What are VC firms really?
-* General and Limited Partners
-* Why do people love/hate VCs?
+* Raising is a trade — only do it if you need to
+* Know what each funding source actually costs you
+* Investors are not your friends or your bosses — they are partners with their own agenda
+* Dilution compounds — model it before you sign
+* The term sheet is where you win or lose control of your company
+* Get a lawyer. Read everything.
